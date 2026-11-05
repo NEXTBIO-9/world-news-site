@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="국제·군사·외교·경제 뉴스를 모아보는 독립 디지털 뉴스 플랫폼">
+  <title>WORLD NEWS | 글로벌 뉴스 브리핑</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="brand-row">
+        <a class="brand" href="./">WORLD<span>NEWS</span></a>
+        <span class="live"><i></i> LIVE BRIEFING</span>
+      </div>
+      <nav aria-label="주요 메뉴">
+        <a class="active" href="#latest">뉴스피드</a><a href="#topics">테마별 뉴스</a>
+        <a href="#about">서비스 소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">GLOBAL · POLITICS · SECURITY · ECONOMY</p>
+        <h1>세상을 읽는<br><em>오늘의 뉴스</em></h1>
+        <p class="hero-copy">국제 정세와 주요 현안을 한눈에 살펴보세요.</p>
+      </div>
+      <div class="hero-stamp"><b>W</b><span>WORLD<br>NEWS</span></div>
+    </section>
+
+    <section class="section" id="top">
+      <div class="section-heading"><div><p class="eyebrow">EDITOR'S PICK</p><h2>오늘 주요뉴스</h2></div><span class="muted" id="updated">업데이트 확인 중</span></div>
+      <div id="featured" class="featured-grid"><div class="loading">뉴스를 불러오는 중입니다…</div></div>
+    </section>
+
+    <section class="section" id="latest">
+      <div class="section-heading"><div><p class="eyebrow">LATEST REPORTS</p><h2>최신 뉴스</h2></div><span class="count" id="count">0 ARTICLES</span></div>
+      <div class="filters" id="filters">
+        <button class="selected" data-category="전체">전체</button>
+        <button data-category="분쟁·군사">분쟁·군사</button>
+        <button data-category="외교·국제">외교·국제</button>
+        <button data-category="경제·금융">경제·금융</button>
+        <button data-category="재해·재난">재해·재난</button>
+        <button data-category="일반">일반</button>
+      </div>
+      <div id="articles" class="article-list"><div class="loading">최신 기사를 불러오는 중입니다…</div></div>
+    </section>
+
+    <section class="section topics" id="topics">
+      <div class="section-heading"><div><p class="eyebrow">TOPIC TRACKER</p><h2>테마별 뉴스</h2></div></div>
+      <p>관심 주제를 선택하면 해당 주제의 최신 보도를 모아볼 수 있도록 확장할 수 있습니다.</p>
+      <div class="topic-chips"><span>미국</span><span>중국</span><span>우크라이나</span><span>중동</span><span>북한</span><span>반도체</span><span>에너지</span></div>
+    </section>
+    <section class="disclaimer" id="about">
+      <b>편집 및 출처 안내</b>
+      <p>이 사이트는 공개 RSS 피드의 제목·요약·출처 링크를 모아 보여주는 개인 프로젝트용 시제품입니다. 원문 기사는 각 언론사의 웹사이트에서 확인하세요. 기사 내용과 정확성은 원 출처에 따릅니다.</p>
+    </section>
+  </main>
+  <footer><div class="wrap"><b>WORLD NEWS</b><span>Independent news prototype · 2026</span></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>
