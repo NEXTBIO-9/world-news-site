@@ -1,36 +1,11 @@
-
-/* ==========================================================
-   WORLD NEWS V12.1
-   Global News Map + Improved Country Classification
-   ========================================================== */
-
-const DATA_URL = './data/articles.json';
-const $ = id => document.getElementById(id);
-
-const safe = s => String(s ?? '').replace(/[&<>"']/g, c => ({
-  '&': '&amp;',
-  '<': '&lt;',
-  '>': '&gt;',
-  '"': '&quot;',
-  "'": '&#39;'
-}[c]));
-
-const dateText = d => {
-  const v = new Date(d);
-  return isNaN(v) ? '' : v.toLocaleString('ko-KR', {
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
-};
-
-/* ==========================================================
-   국가 데이터
-   [국가명, 위도, 경도, 검색 키워드]
-   ========================================================== */
-
-const countries = [
+/* WORLD NEWS V13: country evidence + unclassified list */
+/* WORLD NEWS V12 — global country classification */
+const DATA_URL='./data/articles.json';
+const $=id=>document.getElementById(id);
+const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const dateText=d=>{const v=new Date(d);return isNaN(v)?'':v.toLocaleString('ko-KR',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});};
+// [name, latitude, longitude, country/city aliases]
+const countries=[
 ['대한민국',36.5,127.8,['대한민국','한국','남한','south korea','republic of korea','seoul','서울','부산','인천','대전','대구','광주','울산','수원','제주']],
 ['북한',40.3,127.5,['북한','north korea','pyongyang','평양']],
 ['미국',39,-98,['미국','united states','u.s.','u.s.a.','usa','american','워싱턴','washington dc','washington d.c.','new york','뉴욕','california','캘리포니아','texas','텍사스','boston','보스턴','chicago','시카고','los angeles','로스앤젤레스','트럼프','바이든']],
@@ -167,481 +142,91 @@ const countries = [
 ['키프로스',35,33,['키프로스','cyprus','cypriot','nicosia','니코시아']],
 ['아이슬란드',65,-19,['아이슬란드','iceland','icelandic','reykjavik','레이캬비크']]
 ];
-
-/* ==========================================================
-   분류 및 문자열 처리
-   ========================================================== */
-
-const BIO_CATEGORIES = [
-  '제약·신약',
-  '미생물',
-  '의료기기',
-  '바이오기업',
-  '감염병'
-];
-
-const norm = s => String(s ?? '')
-  .normalize('NFKC')
-  .trim()
-  .replace(/\s+/g, '')
-  .toLocaleLowerCase();
-
-const normText = s => String(s ?? '')
-  .normalize('NFKC')
-  .toLocaleLowerCase();
-
-function aliasMatch(text, alias) {
-  const k = normText(alias).trim();
-
-  if (!k) return false;
-
-  if (/^[a-z][a-z .'-]*$/.test(k)) {
-    const escaped = k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const pattern = new RegExp(
-      `(^|[^a-z])${escaped}(?=$|[^a-z])`,
-      'i'
-    );
-
-    return pattern.test(text);
-  }
-
-  return text.includes(k);
+const BIO_CATEGORIES=['제약·신약','미생물','의료기기','바이오기업','감염병'];
+const norm=s=>String(s??'').normalize('NFKC').trim().replace(/\s+/g,'').toLocaleLowerCase();
+const normText=s=>String(s??'').normalize('NFKC').toLocaleLowerCase();
+const aliasMatch=(text,alias)=>{
+ const k=normText(alias).trim();if(!k)return false;
+ if(/^[a-z][a-z .'-]*$/.test(k)){
+  const escaped=k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  return new RegExp(`(^|[^a-z])${escaped}(?=$|[^a-z])`,'i').test(text);
+ }
+ return text.includes(k);
+};
+const map=L.map('map',{worldCopyJump:true,minZoom:2,maxZoom:7,zoomControl:true}).setView([22,15],2);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+const layer=L.layerGroup().addTo(map);
+let all=[],chosen=null,onlyUnclassified=false;
+function ensureUnclassifiedButton(){
+ const subtitle=$('country-subtitle');
+ if(!subtitle||$('unclassified-toggle'))return;
+ const btn=document.createElement('button');
+ btn.id='unclassified-toggle';btn.type='button';
+ btn.style.cssText='display:inline-block;margin:8px 0;padding:8px 13px;border-radius:8px;border:1px solid #64748b;background:#0f172a;color:white;cursor:pointer';
+ btn.addEventListener('click',()=>{chosen=null;onlyUnclassified=!onlyUnclassified;render();});
+ subtitle.insertAdjacentElement('afterend',btn);
 }
 
-/* ==========================================================
-   지도 생성
-   ========================================================== */
-
-const map = L.map('map', {
-  worldCopyJump: true,
-  minZoom: 2,
-  maxZoom: 7,
-  zoomControl: true
-}).setView([22, 15], 2);
-
-L.tileLayer(
-  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-  {
-    attribution: '&copy; OpenStreetMap contributors',
-    maxZoom: 19
-  }
-).addTo(map);
-
-const layer = L.layerGroup().addTo(map);
-
-let all = [];
-let chosen = null;
-
-/* ==========================================================
-   V12.1 핵심: 국가 정보 통합 분류
-   ========================================================== */
-
-function matchedCountries(a) {
-  const explicit = Array.isArray(a.countries)
-    ? a.countries.filter(name =>
-        countries.some(c => c[0] === name)
-      )
-    : [];
-
-  const headline = normText(
-    [a.title, a.title_ko].filter(Boolean).join(' ')
-  );
-
-  const summary = normText(a.summary || '');
-
-  const match = text => countries
-    .filter(c =>
-      c[3].some(keyword => aliasMatch(text, keyword))
-    )
-    .map(c => c[0]);
-
-  const fromTitle = match(headline);
-  const fromSummary = match(summary);
-
-  return [...new Set([
-    ...explicit,
-    ...fromTitle,
-    ...fromSummary
-  ])];
+function matchedCountries(a){
+ const explicit=Array.isArray(a.countries)?a.countries.filter(n=>countries.some(c=>c[0]===n)):[];
+ const headline=normText([a.title,a.title_ko].filter(Boolean).join(' '));
+ const summary=normText(a.summary||'');
+ const match=t=>countries.filter(c=>c[3].some(k=>aliasMatch(t,k))).map(c=>c[0]);
+ return [...new Set([...explicit,...match(headline),...match(summary)])];
 }
 
-/* ==========================================================
-   뉴스 필터
-   ========================================================== */
-
-function filtered() {
-  const category = $('category')?.value || '전체';
-  const query = ($('search')?.value || '')
-    .trim()
-    .toLocaleLowerCase();
-
-  const region = $('region-filter')?.value || '전체';
-  const sub = $('micro-filter')?.value || '전체';
-
-  return all.filter(a => {
-    const cat = norm(a.category);
-    const selected = norm(category);
-
-    const catOK =
-      category === '전체' ||
-      cat === selected ||
-      (
-        category === '바이오' &&
-        (
-          cat === norm('바이오') ||
-          BIO_CATEGORIES.some(c => norm(c) === cat)
-        )
-      );
-
-    const regionOK =
-      region === '전체' ||
-      a.region === region;
-
-    const subOK =
-      sub === '전체' ||
-      a.subcategory === sub;
-
-    const queryOK =
-      !query ||
-      [
-        a.title,
-        a.title_ko,
-        a.summary,
-        a.source,
-        a.category,
-        a.subcategory,
-        ...(a.countries || [])
-      ].join(' ').toLocaleLowerCase().includes(query);
-
-    return catOK && regionOK && subOK && queryOK;
-  });
+function filtered(){
+ const category=$('category')?.value||'전체',query=($('search')?.value||'').trim().toLocaleLowerCase();
+ const region=$('region-filter')?.value||'전체',sub=$('micro-filter')?.value||'전체';
+ return all.filter(a=>{
+  const cat=norm(a.category),selected=norm(category);
+  const catOK=category==='전체'||cat===selected||(category==='바이오'&&(cat===norm('바이오')||BIO_CATEGORIES.some(c=>norm(c)===cat)));
+  const regionOK=region==='전체'||a.region===region;
+  const subOK=sub==='전체'||a.subcategory===sub;
+  const queryOK=!query||[a.title,a.title_ko,a.summary,a.source,a.category,a.subcategory,...a.countries].join(' ').toLocaleLowerCase().includes(query);
+  return catOK&&regionOK&&subOK&&queryOK;
+ });
 }
-
-/* ==========================================================
-   뉴스 카드
-   ========================================================== */
-
-function item(a, cls) {
-  const url = String(a.url || '');
-  const href = /^https?:\/\//i.test(url) ? safe(url) : '#';
-
-  return `
-    <a class="${cls}"
-       href="${href}"
-       target="_blank"
-       rel="noopener noreferrer">
-
-      <span class="category">
-        ${safe(a.category || '일반')}
-      </span>
-
-      <strong>
-        ${safe(a.title_ko || a.title || '제목 없음')}
-      </strong>
-
-      ${
-        cls === 'latest-item'
-          ? `<p>${safe(a.summary || '').slice(0, 150)}</p>`
-          : ''
-      }
-
-      <span class="meta">
-        ${safe(a.region || '')}
-        ${safe(a.subcategory || '')}
-        · ${safe(a.source || '원문')}
-        · ${dateText(a.published)}
-      </span>
-    </a>
-  `;
+function item(a,cls){
+ const url=String(a.url||''),href=/^https?:\/\//i.test(url)?safe(url):'#';
+ return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"><span class="category">${safe(a.category||'일반')}</span><strong>${safe(a.title_ko||a.title||'제목 없음')}</strong>${cls==='latest-item'?`<p>${safe(a.summary||'').slice(0,150)}</p>`:''}<span class="meta">${safe(a.region||'')} ${safe(a.subcategory||'')} · ${safe(a.source||'원문')} · ${dateText(a.published)}</span></a>`;
 }
-
-/* ==========================================================
-   국가 선택
-   ========================================================== */
-
-function selectCountry(name) {
-  chosen = name;
-  render();
-
-  const country = countries.find(c => c[0] === name);
-
-  if (country) {
-    map.flyTo(
-      [country[1], country[2]],
-      Math.max(map.getZoom(), 4),
-      { duration: 0.6 }
-    );
-  }
+function selectCountry(name){chosen=name;onlyUnclassified=false;render();const c=countries.find(x=>x[0]===name);if(c)map.flyTo([c[1],c[2]],Math.max(map.getZoom(),4),{duration:.6});}
+function render(){
+ const list=filtered(),groups=new Map();
+ for(const a of list)for(const name of a.countries){if(!groups.has(name))groups.set(name,[]);groups.get(name).push(a);}
+ const unclassified=list.filter(a=>!a.countries.length);
+ layer.clearLayers();
+ for(const c of countries){
+  const articles=groups.get(c[0]);if(!articles?.length)continue;
+  const icon=L.divIcon({className:'',html:`<div class="news-pin ${chosen===c[0]?'selected':''}">${articles.length}</div>`,iconSize:[30,30],iconAnchor:[15,15]});
+  const marker=L.marker([c[1],c[2]],{icon,title:`${c[0]} 관련 기사 ${articles.length}건`}).addTo(layer);
+  marker.on('click',()=>selectCountry(c[0]));marker.bindTooltip(`${c[0]} · ${articles.length}건`);
+ }
+ if($('stat-articles'))$('stat-articles').textContent=all.length;
+ if($('stat-countries'))$('stat-countries').textContent=groups.size;
+ const selected=onlyUnclassified?unclassified:(chosen?(groups.get(chosen)||[]):list);
+ if($('country-title'))$('country-title').textContent=onlyUnclassified?'국가 미분류 뉴스':(chosen?`${chosen} 관련 뉴스`:'전 세계 주요 뉴스');
+ if($('country-subtitle'))$('country-subtitle').textContent=onlyUnclassified?`국가 정보가 확인되지 않은 기사 ${selected.length}건`:(chosen?`${chosen} 관련 기사 ${selected.length}건 · 전체 목록 표시`:`현재 필터 ${list.length}건 · 국가 분류 ${list.length-unclassified.length}건 · 국가 미분류 ${unclassified.length}건 · 지도 마커 ${groups.size}개`);
+ ensureUnclassifiedButton();
+ const toggle=$('unclassified-toggle');if(toggle)toggle.textContent=onlyUnclassified?'전체 뉴스 보기':`국가 미분류 뉴스 보기 (${unclassified.length}건)`;
+ if($('country-feed'))$('country-feed').innerHTML=selected.length?selected.map(a=>item(a,'country-item')).join(''):'<p class="empty">선택한 조건에 해당하는 뉴스가 없습니다.</p>';
+ if($('count'))$('count').textContent=`${list.length} ARTICLES`;
+ if($('latest-list'))$('latest-list').innerHTML=list.length?list.map(a=>item(a,'latest-item')).join(''):'<p class="empty">표시할 기사가 없습니다.</p>';
+ if($('featured-list'))$('featured-list').innerHTML=list.length?list.slice(0,3).map(a=>item(a,'feature-item')).join(''):'<p class="empty">표시할 기사가 없습니다.</p>';
+ if($('ticker'))$('ticker').textContent=list[0]?.title_ko||list[0]?.title||'현재 필터에 해당하는 뉴스가 없습니다.';
 }
-
-/* ==========================================================
-   지도 및 기사 목록 표시
-   ========================================================== */
-
-function render() {
-  const list = filtered();
-  const groups = new Map();
-
-  for (const a of list) {
-    for (const name of a.countries || []) {
-      if (!groups.has(name)) {
-        groups.set(name, []);
-      }
-
-      groups.get(name).push(a);
-    }
-  }
-
-  const unclassified = list.filter(
-    a => !a.countries || a.countries.length === 0
-  );
-
-  layer.clearLayers();
-
-  for (const c of countries) {
-    const articles = groups.get(c[0]);
-
-    if (!articles || articles.length === 0) {
-      continue;
-    }
-
-    const icon = L.divIcon({
-      className: '',
-      html: `
-        <div class="news-pin ${
-          chosen === c[0] ? 'selected' : ''
-        }">
-          ${articles.length}
-        </div>
-      `,
-      iconSize: [30, 30],
-      iconAnchor: [15, 15]
-    });
-
-    const marker = L.marker(
-      [c[1], c[2]],
-      {
-        icon,
-        title: `${c[0]} 관련 기사 ${articles.length}건`
-      }
-    ).addTo(layer);
-
-    marker.on('click', () => selectCountry(c[0]));
-
-    marker.bindTooltip(
-      `${c[0]} · ${articles.length}건`
-    );
-  }
-
-  if ($('stat-articles')) {
-    $('stat-articles').textContent = all.length;
-  }
-
-  if ($('stat-countries')) {
-    $('stat-countries').textContent = groups.size;
-  }
-
-  const selected = chosen
-    ? (groups.get(chosen) || [])
-    : list;
-
-  if ($('country-title')) {
-    $('country-title').textContent = chosen
-      ? `${chosen} 관련 뉴스`
-      : '전 세계 주요 뉴스';
-  }
-
-  if ($('country-subtitle')) {
-    $('country-subtitle').textContent = chosen
-      ? `${chosen} 관련 기사 ${selected.length}건 · 전체 목록 표시`
-      : `현재 필터 ${list.length}건 · 국가 분류 ${
-          list.length - unclassified.length
-        }건 · 국가 미분류 ${
-          unclassified.length
-        }건 · 지도 마커 ${groups.size}개`;
-  }
-
-  if ($('country-feed')) {
-    $('country-feed').innerHTML = selected.length
-      ? selected.map(a => item(a, 'country-item')).join('')
-      : '<p class="empty">선택한 조건에 해당하는 뉴스가 없습니다.</p>';
-  }
-
-  if ($('count')) {
-    $('count').textContent = `${list.length} ARTICLES`;
-  }
-
-  if ($('latest-list')) {
-    $('latest-list').innerHTML = list.length
-      ? list.map(a => item(a, 'latest-item')).join('')
-      : '<p class="empty">표시할 기사가 없습니다.</p>';
-  }
-
-  if ($('featured-list')) {
-    $('featured-list').innerHTML = list.length
-      ? list.slice(0, 3)
-          .map(a => item(a, 'feature-item'))
-          .join('')
-      : '<p class="empty">표시할 기사가 없습니다.</p>';
-  }
-
-  if ($('ticker')) {
-    $('ticker').textContent =
-      list[0]?.title_ko ||
-      list[0]?.title ||
-      '현재 필터에 해당하는 뉴스가 없습니다.';
-  }
-}
-
-/* ==========================================================
-   필터 이벤트
-   ========================================================== */
-
-$('category')?.addEventListener('change', () => {
-  chosen = null;
-
-  const micro = $('micro-filter');
-
-  if (micro) {
-    micro.style.display =
-      $('category').value === '미생물'
-        ? 'inline-block'
-        : 'none';
-
-    micro.value = '전체';
-  }
-
-  render();
-});
-
-$('search')?.addEventListener('input', () => {
-  chosen = null;
-  render();
-});
-
-$('region-filter')?.addEventListener('change', () => {
-  chosen = null;
-  render();
-});
-
-$('micro-filter')?.addEventListener('change', () => {
-  chosen = null;
-  render();
-});
-
-$('reset')?.addEventListener('click', () => {
-  chosen = null;
-
-  if ($('category')) {
-    $('category').value = '전체';
-  }
-
-  if ($('search')) {
-    $('search').value = '';
-  }
-
-  if ($('region-filter')) {
-    $('region-filter').value = '전체';
-  }
-
-  if ($('micro-filter')) {
-    $('micro-filter').value = '전체';
-    $('micro-filter').style.display = 'none';
-  }
-
-  map.setView([22, 15], 2);
-  render();
-});
-
-/* ==========================================================
-   날짜 및 화면 크기
-   ========================================================== */
-
-if ($('today')) {
-  $('today').textContent =
-    new Date().toLocaleDateString('ko-KR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-}
-
-window.addEventListener('resize', () => {
-  map.invalidateSize();
-});
-
-/* ==========================================================
-   RSS 뉴스 데이터 로딩
-   ========================================================== */
-
-(async () => {
-  try {
-    const response = await fetch(
-      DATA_URL + '?t=' + Date.now(),
-      { cache: 'no-store' }
-    );
-
-    if (!response.ok) {
-      throw Error(`HTTP ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    all = (
-      Array.isArray(data.articles)
-        ? data.articles
-        : []
-    )
-      .filter(a =>
-        a &&
-        a.title &&
-        /^https?:\/\//i.test(a.url || '')
-      )
-      .map(a => ({
-        ...a,
-        countries: matchedCountries(a)
-      }))
-      .sort(
-        (a, b) =>
-          new Date(b.published) -
-          new Date(a.published)
-      );
-
-    if ($('updated')) {
-      $('updated').textContent = data.updated
-        ? `업데이트 ${dateText(data.updated)}`
-        : '업데이트 정보 없음';
-    }
-
-    render();
-
-    setTimeout(() => {
-      map.invalidateSize();
-    }, 200);
-
-  } catch (error) {
-    if ($('ticker')) {
-      $('ticker').textContent =
-        '뉴스 데이터를 불러오지 못했습니다.';
-    }
-
-    if ($('country-feed')) {
-      $('country-feed').innerHTML =
-        '<p class="empty">data/articles.json 파일과 뉴스 수집 작업을 확인하세요.</p>';
-    }
-
-    if ($('latest-list')) {
-      $('latest-list').innerHTML =
-        '<p class="empty">뉴스 데이터 로딩 실패: ' +
-        safe(error.message) +
-        '</p>';
-    }
-
-    if ($('featured-list')) {
-      $('featured-list').innerHTML =
-        '<p class="empty">데이터를 불러올 수 없습니다.</p>';
-    }
-
-    console.error('WORLD NEWS V12.1:', error);
-  }
-})();
+$('category')?.addEventListener('change',()=>{chosen=null;onlyUnclassified=false;const m=$('micro-filter');if(m){m.style.display=$('category').value==='미생물'?'inline-block':'none';m.value='전체';}render();});
+$('search')?.addEventListener('input',()=>{chosen=null;onlyUnclassified=false;render();});
+$('region-filter')?.addEventListener('change',()=>{chosen=null;onlyUnclassified=false;render();});
+$('micro-filter')?.addEventListener('change',()=>{chosen=null;onlyUnclassified=false;render();});
+$('reset')?.addEventListener('click',()=>{chosen=null;onlyUnclassified=false;if($('category'))$('category').value='전체';if($('search'))$('search').value='';if($('region-filter'))$('region-filter').value='전체';if($('micro-filter')){$('micro-filter').value='전체';$('micro-filter').style.display='none';}map.setView([22,15],2);render();});
+if($('today'))$('today').textContent=new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric'});
+window.addEventListener('resize',()=>map.invalidateSize());
+(async()=>{try{
+ const r=await fetch(DATA_URL+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error(`HTTP ${r.status}`);
+ const data=await r.json();
+ all=(Array.isArray(data.articles)?data.articles:[]).filter(a=>a&&a.title&&/^https?:\/\//i.test(a.url||'')).map(a=>({...a,countries:matchedCountries(a)})).sort((a,b)=>new Date(b.published)-new Date(a.published));
+ if($('updated'))$('updated').textContent=data.updated?`업데이트 ${dateText(data.updated)}`:'업데이트 정보 없음';
+ render();setTimeout(()=>map.invalidateSize(),200);
+}catch(e){if($('ticker'))$('ticker').textContent='뉴스 데이터를 불러오지 못했습니다.';if($('country-feed'))$('country-feed').innerHTML='<p class="empty">data/articles.json 파일과 뉴스 수집 작업을 확인하세요.</p>';if($('latest-list'))$('latest-list').innerHTML='<p class="empty">뉴스 데이터 로딩 실패: '+safe(e.message)+'</p>';if($('featured-list'))$('featured-list').innerHTML='<p class="empty">데이터를 불러올 수 없습니다.</p>';console.error(e);}})();
