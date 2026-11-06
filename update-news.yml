@@ -1,0 +1,83 @@
+
+name: Update news feed
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 */3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: world-news-feed-update
+  cancel-in-progress: false
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Collect public RSS headlines
+        run: |
+          python scripts/fetch_news.py
+
+      - name: Commit updated feed
+        shell: bash
+        run: |
+          set -e
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # 수집한 뉴스 데이터 임시 저장
+          cp data/articles.json /tmp/world-news-articles.json
+
+          # 최대 5번 업로드 시도
+          for attempt in 1 2 3 4 5; do
+            echo "Push attempt: $attempt"
+
+            # GitHub 최신 버전 가져오기
+            git fetch origin main
+
+            # 최신 main 기준으로 이동
+            git reset --hard origin/main
+
+            # 수집한 뉴스 데이터 복원
+            cp /tmp/world-news-articles.json data/articles.json
+
+            git add data/articles.json
+
+            # 변경 사항이 없으면 종료
+            if git diff --cached --quiet; then
+              echo "No changes to commit"
+              exit 0
+            fi
+
+            git commit -m "Update news feed"
+
+            # GitHub 업로드
+            if git push origin HEAD:main; then
+              echo "News feed updated successfully"
+              exit 0
+            fi
+
+            echo "Push failed. Retrying..."
+            sleep 5
+          done
+
+          echo "ERROR: Failed to push after 5 attempts"
+          exit 1
