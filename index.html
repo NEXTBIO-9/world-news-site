@@ -1,5 +1,17 @@
+
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f8fc"><meta name="description" content="세계지도에서 국가별 국제 뉴스를 탐색하는 WORLD NEWS"><title>WORLD NEWS | 세계 뉴스 지도</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="styles.css?v=9"><style>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f8fc">
+<meta name="description" content="NEXT BIO - 세계 뉴스와 바이오·미생물 뉴스를 탐색하는 세계지도">
+<title>NEXT BIO | 세계 뉴스 지도</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="styles.css?v=9">
+
+<style>
 /* V7: Leaflet fallback layout, even if CDN stylesheet is blocked */
 #map{position:relative!important;overflow:hidden!important;isolation:isolate;contain:layout paint;width:100%;height:520px;z-index:0}
 .map-col{min-width:0;overflow:hidden;position:relative}
@@ -8,19 +20,255 @@
 .leaflet-tile{visibility:hidden;border:0;max-width:none!important;max-height:none!important}
 .leaflet-tile-loaded{visibility:inherit}
 .leaflet-tile-container{pointer-events:none}
-.leaflet-pane{z-index:400}.leaflet-tile-pane{z-index:200}.leaflet-overlay-pane{z-index:400}.leaflet-shadow-pane{z-index:500}.leaflet-marker-pane{z-index:600}.leaflet-tooltip-pane{z-index:650}.leaflet-popup-pane{z-index:700}
-.leaflet-control{position:relative;z-index:800;pointer-events:auto}.leaflet-top,.leaflet-bottom{position:absolute;z-index:1000;pointer-events:none}.leaflet-top{top:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}.leaflet-right{right:0}
-.leaflet-left .leaflet-control{float:left;clear:both;margin-left:10px}.leaflet-right .leaflet-control{float:right;clear:both;margin-right:10px}.leaflet-top .leaflet-control{margin-top:10px}.leaflet-bottom .leaflet-control{margin-bottom:10px}
-.leaflet-control-zoom a{display:block;width:30px;height:30px;line-height:30px;text-align:center;background:white;color:#203d5e;border-bottom:1px solid #ddd}.leaflet-control-attribution{background:#fffc;font-size:10px;padding:1px 5px}
-@media(max-width:950px){#map{height:450px}}@media(max-width:620px){#map{height:370px}}
-.map-toolbar{flex-wrap:wrap;gap:8px}.map-toolbar #region-filter,.map-toolbar #micro-filter{max-width:155px}.micro-label{display:none} .map-toolbar:has(#micro-filter[style*="inline-block"]) .micro-label{display:inline} </style></head>
-<body><div class="utility"><div class="wrap"><span id="today">NEXT BIO</span><span>GLOBAL NEWS MONITOR</span></div></div>
-<header class="header"><div class="wrap head-inner"><a href="./" class="logo">WORLD<span>NEWS</span><small>GLOBAL NEWS NETWORK</small></a><div class="head-right"><span class="live-dot"></span> NEWS FEED <span class="desktop-only">· HOURLY UPDATES</span></div></div><nav class="wrap nav"><a href="#map-section">세계지도</a><a href="#latest">최신 뉴스</a><a href="#featured">주요 헤드라인</a></nav></header>
-<main class="wrap"><section class="intro"><div><p class="eyebrow">GLOBAL NEWS EXPLORER</p><h1>세계 뉴스 지도 <span>WORLD MAP</span></h1><p>지도에서 국가를 선택하고 관련 최신 보도를 확인하세요.</p></div><div class="stats"><div><strong id="stat-articles">0</strong><small>수집 기사</small></div><div><strong id="stat-countries">0</strong><small>분류 국가</small></div></div></section>
-<div class="ticker"><b><span class="live-dot"></span> NEWS UPDATE</b><span id="ticker">공개 RSS 뉴스 데이터를 불러오는 중입니다.</span><span id="updated">업데이트 확인 중</span></div>
-<section id="map-section" class="map-section"><div class="section-heading"><div><p class="eyebrow">INTERACTIVE WORLD COVERAGE</p><h2>국가별 뉴스 탐색</h2></div><button id="reset" class="outline-btn" type="button">전체 지도 보기</button></div><div class="map-layout"><div class="map-col"><div class="map-toolbar"><label for="category">분야</label><select id="category"><option value="전체">전체 분야</option><option>분쟁·군사</option><option>외교·국제</option><option>경제·금융</option><option>재해·재난</option><optgroup label="바이오 세부 분야"><option value="바이오">바이오 전체</option><option>제약·신약</option><option>미생물</option><option>의료기기</option><option>바이오기업</option><option>감염병</option></optgroup><option>일반</option></select><label for="region-filter">지역</label><select id="region-filter"><option value="전체">국내·해외 전체</option><option value="국내">국내</option><option value="해외">해외</option></select><label for="micro-filter" class="micro-label">미생물 세부</label><select id="micro-filter" style="display:none"><option value="전체">미생물 전체</option><option>세균</option><option>진균</option><option>바이러스</option><option>항생제 내성</option><option>미생물 검사</option></select><label for="search">검색</label><input id="search" type="search" placeholder="뉴스 제목 또는 국가" aria-label="뉴스 검색"><span class="map-legend"><i></i> 국가 관련 뉴스</span></div><div id="map" role="region" aria-label="세계 뉴스 지도"></div><div class="map-footnote">● 마커는 기사 제목에 언급된 국가의 대표 좌표입니다. 사건의 정확한 발생 위치를 의미하지 않습니다. 위치를 분류할 수 없는 기사는 아래 뉴스피드에서 확인할 수 있습니다.</div></div><aside class="country-panel"><div class="panel-top"><span class="eyebrow">COUNTRY BRIEFING</span><h3 id="country-title">전 세계 주요 뉴스</h3><p id="country-subtitle">지도에서 국가 마커를 선택해 보세요.</p></div><div id="country-feed" class="country-feed"><p class="empty">뉴스를 불러오는 중입니다.</p></div></aside></div></section>
-<section id="featured" class="section"><div class="section-heading"><div><p class="eyebrow">TOP HEADLINES</p><h2>주요 헤드라인</h2></div></div><div id="featured-list" class="featured-list"><p class="empty">뉴스를 불러오는 중입니다.</p></div></section>
-<section id="latest" class="section"><div class="section-heading"><div><p class="eyebrow">LATEST REPORTS</p><h2>최신 뉴스피드</h2></div><span id="count" class="small-muted">0 ARTICLES</span></div><div id="latest-list" class="latest-list"><p class="empty">뉴스를 불러오는 중입니다.</p></div></section>
-<section class="notice"><b>출처 및 지도 표시 안내</b><p>공개 RSS에서 수집한 기사 제목, 요약, 출처 링크를 표시합니다. 제목에 언급된 국가를 기준으로 분류하므로 사건 발생 지역과 다를 수 있습니다. 기사 원문은 해당 언론사에서 확인하세요. 지도 타일은 OpenStreetMap 기여자에게 저작권이 있습니다.</p></section></main>
-<footer><div class="wrap footer-inner"><strong>WORLD<span>NEWS</span></strong><span>INDEPENDENT GLOBAL NEWSROOM · 2026</span></div></footer>
-<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script><script src="app.js?v=13"></script></body></html>
+.leaflet-pane{z-index:400}
+.leaflet-tile-pane{z-index:200}
+.leaflet-overlay-pane{z-index:400}
+.leaflet-shadow-pane{z-index:500}
+.leaflet-marker-pane{z-index:600}
+.leaflet-tooltip-pane{z-index:650}
+.leaflet-popup-pane{z-index:700}
+.leaflet-control{position:relative;z-index:800;pointer-events:auto}
+.leaflet-top,.leaflet-bottom{position:absolute;z-index:1000;pointer-events:none}
+.leaflet-top{top:0}
+.leaflet-bottom{bottom:0}
+.leaflet-left{left:0}
+.leaflet-right{right:0}
+.leaflet-left .leaflet-control{float:left;clear:both;margin-left:10px}
+.leaflet-right .leaflet-control{float:right;clear:both;margin-right:10px}
+.leaflet-top .leaflet-control{margin-top:10px}
+.leaflet-bottom .leaflet-control{margin-bottom:10px}
+.leaflet-control-zoom a{display:block;width:30px;height:30px;line-height:30px;text-align:center;background:white;color:#203d5e;border-bottom:1px solid #ddd}
+.leaflet-control-attribution{background:#fffc;font-size:10px;padding:1px 5px}
+
+@media(max-width:950px){
+  #map{height:450px}
+}
+@media(max-width:620px){
+  #map{height:370px}
+}
+
+.map-toolbar{flex-wrap:wrap;gap:8px}
+.map-toolbar #region-filter,.map-toolbar #micro-filter{max-width:155px}
+.micro-label{display:none}
+.map-toolbar:has(#micro-filter[style*="inline-block"]) .micro-label{display:inline}
+</style>
+</head>
+
+<body>
+
+<div class="utility">
+  <div class="wrap">
+    <span id="today">NEXT BIO</span>
+    <span>GLOBAL NEWS MONITOR</span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap head-inner">
+    <a href="./" class="logo">
+      NEXT<span>BIO</span>
+      <small>GLOBAL BIO & NEWS NETWORK</small>
+    </a>
+    <div class="head-right">
+      <span class="live-dot"></span>
+      NEWS FEED
+      <span class="desktop-only">· HOURLY UPDATES</span>
+    </div>
+  </div>
+
+  <nav class="wrap nav">
+    <a href="#map-section">세계지도</a>
+    <a href="#latest">최신 뉴스</a>
+    <a href="#featured">주요 헤드라인</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+<section class="intro">
+  <div>
+    <p class="eyebrow">GLOBAL NEWS EXPLORER</p>
+    <h1>세계 뉴스 지도 <span>WORLD MAP</span></h1>
+    <p>지도에서 국가를 선택하고 관련 최신 보도를 확인하세요.</p>
+  </div>
+
+  <div class="stats">
+    <div>
+      <strong id="stat-articles">0</strong>
+      <small>수집 기사</small>
+    </div>
+    <div>
+      <strong id="stat-countries">0</strong>
+      <small>분류 국가</small>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <b><span class="live-dot"></span> NEWS UPDATE</b>
+  <span id="ticker">공개 RSS 뉴스 데이터를 불러오는 중입니다.</span>
+  <span id="updated">업데이트 확인 중</span>
+</div>
+
+<section id="map-section" class="map-section">
+
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">INTERACTIVE WORLD COVERAGE</p>
+      <h2>국가별 뉴스 탐색</h2>
+    </div>
+    <button id="reset" class="outline-btn" type="button">
+      전체 지도 보기
+    </button>
+  </div>
+
+  <div class="map-layout">
+
+    <div class="map-col">
+
+      <div class="map-toolbar">
+
+        <label for="category">분야</label>
+        <select id="category">
+          <option value="전체">전체 분야</option>
+          <option>분쟁·군사</option>
+          <option>외교·국제</option>
+          <option>경제·금융</option>
+          <option>재해·재난</option>
+          <optgroup label="바이오 세부 분야">
+            <option value="바이오">바이오 전체</option>
+            <option>제약·신약</option>
+            <option>미생물</option>
+            <option>의료기기</option>
+            <option>바이오기업</option>
+            <option>감염병</option>
+          </optgroup>
+          <option>일반</option>
+        </select>
+
+        <label for="region-filter">지역</label>
+        <select id="region-filter">
+          <option value="전체">국내·해외 전체</option>
+          <option value="국내">국내</option>
+          <option value="해외">해외</option>
+        </select>
+
+        <label for="micro-filter" class="micro-label">
+          미생물 세부
+        </label>
+        <select id="micro-filter" style="display:none">
+          <option value="전체">미생물 전체</option>
+          <option>세균</option>
+          <option>진균</option>
+          <option>바이러스</option>
+          <option>항생제 내성</option>
+          <option>미생물 검사</option>
+        </select>
+
+        <label for="search">검색</label>
+        <input
+          id="search"
+          type="search"
+          placeholder="뉴스 제목 또는 국가"
+          aria-label="뉴스 검색"
+        >
+
+        <span class="map-legend">
+          <i></i> 국가 관련 뉴스
+        </span>
+
+      </div>
+
+      <div
+        id="map"
+        role="region"
+        aria-label="세계 뉴스 지도"
+      ></div>
+
+      <div class="map-footnote">
+        ● 마커는 기사 제목에 언급된 국가의 대표 좌표입니다.
+        사건의 정확한 발생 위치를 의미하지 않습니다.
+        위치를 분류할 수 없는 기사는 아래 뉴스피드에서 확인할 수 있습니다.
+      </div>
+
+    </div>
+
+    <aside class="country-panel">
+
+      <div class="panel-top">
+        <span class="eyebrow">COUNTRY BRIEFING</span>
+        <h3 id="country-title">전 세계 주요 뉴스</h3>
+        <p id="country-subtitle">
+          지도에서 국가 마커를 선택해 보세요.
+        </p>
+      </div>
+
+      <div id="country-feed" class="country-feed">
+        <p class="empty">
+          뉴스를 불러오는 중입니다.
+        </p>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+
+<section id="featured" class="section">
+
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">TOP HEADLINES</p>
+      <h2>주요 헤드라인</h2>
+    </div>
+  </div>
+
+  <div id="featured-list" class="featured-list">
+    <p class="empty">뉴스를 불러오는 중입니다.</p>
+  </div>
+
+</section>
+
+<section id="latest" class="section">
+
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">LATEST REPORTS</p>
+      <h2>최신 뉴스피드</h2>
+    </div>
+
+    <span id="count" class="small-muted">
+      0 ARTICLES
+    </span>
+  </div>
+
+  <div id="latest-list" class="latest-list">
+    <p class="empty">뉴스를 불러오는 중입니다.</p>
+  </div>
+
+</section>
+
+<section class="notice">
+  <b>출처 및 지도 표시 안내</b>
+  <p>
+    공개 RSS에서 수집한 기사 제목, 요약, 출처 링크를 표시합니다.
+    제목에 언급된 국가를 기준으로 분류하므로 사건 발생 지역과 다를 수 있습니다.
+    기사 원문은 해당 언론사에서 확인하세요.
+    지도 타일은 OpenStreetMap 기여자에게 저작권이 있습니다.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <strong>NEXT<span>BIO</span></strong>
+    <span>INDEPENDENT GLOBAL NEWSROOM · 2026</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js?v=13"></script>
+
+</body>
+</html>
