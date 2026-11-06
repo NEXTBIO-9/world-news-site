@@ -6,10 +6,10 @@
 .nb-command-center .ticker{margin-bottom:18px}
 .nb-command-center #map-section{margin-bottom:24px}
 .nb-command-center #map-section>.section-heading{margin-bottom:12px}
-.nb-command-center .map-layout{grid-template-columns:minmax(0,3fr) minmax(280px,1fr);gap:12px}
+.nb-command-center .map-layout{grid-template-columns:minmax(0,3fr) minmax(280px,1fr);gap:12px;align-items:start}
 .nb-command-center #map{height:clamp(560px,70vh,900px)!important;min-height:0}
-.nb-command-center .country-panel{max-height:none;height:auto;min-height:0}
-.nb-command-center .country-feed{min-height:0;overflow-y:auto}
+.nb-command-center .country-panel{height:calc(clamp(560px,70vh,900px) + 125px);max-height:none;min-height:0;overflow:hidden}
+.nb-command-center .country-feed{min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .nb-command-center .map-col,.nb-command-center .country-panel{border-radius:10px}
 .nb-command-center .nb-tour-controls{margin:10px 12px 0;background:#eaf2fa}
 .nb-command-center .map-toolbar{padding:11px 12px}
@@ -25,7 +25,7 @@
 @media(max-width:1000px){
   .nb-command-center .map-layout{grid-template-columns:minmax(0,1fr)}
   .nb-command-center #map{height:clamp(430px,64vh,700px)!important}
-  .nb-command-center .country-panel{max-height:340px;min-height:210px}
+  .nb-command-center .country-panel{height:auto;max-height:340px;min-height:210px}
 }
 @media(max-width:620px){
   .nb-command-center .wrap{width:calc(100% - 24px)}
@@ -39,4 +39,36 @@
   .nb-command-center .nb-tour-controls{margin:8px 8px 0}
   .nb-command-center .map-toolbar{padding:9px}
   .nb-command-center .section-heading h2{font-size:19px}
+}
+
+/* 2.3 MAP GAP FIX V2: fixed panel box, independently scrollable news.
+   The map column is the source of truth for desktop row height. */
+@media (min-width:1001px) {
+  .nb-command-center .map-layout {
+    align-items:start !important;
+    grid-template-columns:minmax(0,3fr) minmax(280px,1fr);
+  }
+  .nb-command-center .map-col {
+    align-self:start;
+    height:auto !important;
+  }
+  .nb-command-center .country-panel {
+    align-self:start;
+    box-sizing:border-box;
+    height:var(--nb-map-column-height, 700px) !important;
+    max-height:var(--nb-map-column-height, 700px) !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+    display:flex !important;
+    flex-direction:column !important;
+  }
+  .nb-command-center .country-panel .panel-top {
+    flex:0 0 auto;
+  }
+  .nb-command-center .country-feed {
+    flex:1 1 0 !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow-y:auto !important;
+  }
 }
