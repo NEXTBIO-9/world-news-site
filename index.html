@@ -217,10 +217,11 @@ html.theme-preload-dark body{
   background:#101827;
 }
 </style>
-<link rel="stylesheet" href="nextbio-extras.css?v=22">
+<link rel="stylesheet" href="nextbio-extras.css?v=23">
+<link rel="stylesheet" href="nextbio-command-center.css?v=23">
 </head>
 
-<body>
+<body class="nb-command-center">
 
 <div class="utility">
   <div class="wrap">
@@ -258,7 +259,8 @@ html.theme-preload-dark body{
 
   <nav class="wrap nav">
     <a href="#map-section">세계지도</a>
-    <a href="#latest">최신 뉴스</a>
+    <a href="#nb-intelligence">뉴스 분석</a>
+    <a href="#latest">최신 뉴스피드</a>
     
   </nav>
 </header>
@@ -268,8 +270,8 @@ html.theme-preload-dark body{
 <section class="intro">
   <div>
     <p class="eyebrow">GLOBAL NEWS EXPLORER</p>
-    <h1>세계 뉴스 지도 <span>WORLD MAP</span></h1>
-    <p>지도에서 국가를 선택하고 관련 최신 보도를 확인하세요.</p>
+    <h1>글로벌 뉴스 상황실 <span>WORLD MONITOR</span></h1>
+    <p>세계지도가 메인입니다. 최신 뉴스가 있는 국가를 자동 순회하며 주요 소식을 확인하세요.</p>
   </div>
 
   <div class="stats">
@@ -298,20 +300,12 @@ html.theme-preload-dark body{
 </div>
 
 
-<section class="nb2-panel" aria-label="NEXT BIO 추가 기능">
-  <div class="nb2-top"><strong>NEWS INTELLIGENCE</strong><div class="nb2-actions"><button type="button" id="nb-lang">EN</button><button type="button" id="nb-bookmark-open">☆ <span data-nb="saved">북마크</span></button></div></div>
-  <div class="nb2-filters"><label><span data-nb="period">기간</span> <select id="nb-date"><option value="all">전체 기간</option><option value="1">최근 24시간</option><option value="3">최근 3일</option><option value="7">최근 7일</option><option value="30">최근 30일</option></select></label><label><span data-nb="from">시작일</span> <input type="date" id="nb-from"></label><label><span data-nb="to">종료일</span> <input type="date" id="nb-to"></label><button type="button" id="nb-clear">초기화</button><label class="nb2-check"><input type="checkbox" id="nb-heat"> <span data-nb="heat">뉴스 밀도 지도</span></label></div>
-  <div class="nb2-columns"><section><h3>⚡ <span data-nb="alerts">신규·주요 뉴스</span></h3><div id="nb-alerts" class="nb2-list"></div></section><section><h3>🧬 <span data-nb="bio">바이오 대시보드</span></h3><div id="nb-bio" class="nb2-list"></div></section></div>
-  <section id="nb-bookmarks" hidden><h3>☆ <span data-nb="saved">북마크</span></h3><div id="nb-saved-list"></div></section>
-  <p class="nb2-note" id="nb-notice">속보 표시는 수집된 기사 제목과 시간에 기반한 자동 분류이며, 공식 긴급재난 알림이 아닙니다.</p>
-</section>
-
 <section id="map-section" class="map-section">
 
   <div class="section-heading">
     <div>
-      <p class="eyebrow">INTERACTIVE WORLD COVERAGE</p>
-      <h2>국가별 뉴스 탐색</h2>
+      <p class="eyebrow">GLOBAL SITUATION ROOM</p>
+      <h2>실시간 세계 뉴스 모니터</h2>
     </div>
 
     <button id="reset" class="outline-btn" type="button">
@@ -417,6 +411,15 @@ html.theme-preload-dark body{
   </div>
 </section>
 
+<section id="nb-intelligence" class="nb2-panel" aria-label="NEXT BIO 추가 기능">
+  <div class="nb2-top"><strong>NEWS INTELLIGENCE</strong><div class="nb2-actions"><button type="button" id="nb-lang">EN</button><button type="button" id="nb-bookmark-open">☆ <span data-nb="saved">북마크</span></button></div></div>
+  <div class="nb2-filters"><label><span data-nb="period">기간</span> <select id="nb-date"><option value="all">전체 기간</option><option value="1">최근 24시간</option><option value="3">최근 3일</option><option value="7">최근 7일</option><option value="30">최근 30일</option></select></label><label><span data-nb="from">시작일</span> <input type="date" id="nb-from"></label><label><span data-nb="to">종료일</span> <input type="date" id="nb-to"></label><button type="button" id="nb-clear">초기화</button><label class="nb2-check"><input type="checkbox" id="nb-heat"> <span data-nb="heat">뉴스 밀도 지도</span></label></div>
+  <div class="nb2-columns"><section><h3>⚡ <span data-nb="alerts">신규·주요 뉴스</span></h3><div id="nb-alerts" class="nb2-list"></div></section><section><h3>🧬 <span data-nb="bio">바이오 대시보드</span></h3><div id="nb-bio" class="nb2-list"></div></section></div>
+  <section id="nb-bookmarks" hidden><h3>☆ <span data-nb="saved">북마크</span></h3><div id="nb-saved-list"></div></section>
+  <p class="nb2-note" id="nb-notice">속보 표시는 수집된 기사 제목과 시간에 기반한 자동 분류이며, 공식 긴급재난 알림이 아닙니다.</p>
+</section>
+
+
 <section id="latest" class="section">
 
   <div class="section-heading">
@@ -459,7 +462,7 @@ html.theme-preload-dark body{
 
 <!-- 기존 지도 및 뉴스 프로그램 유지 -->
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="app.js?v=22"></script><script src="nextbio-extras.js?v=22"></script>
+<script src="app.js?v=23"></script><script src="nextbio-extras.js?v=23"></script>
 
 <!-- NEXT BIO 테마 전환 기능 -->
 <script>
