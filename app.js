@@ -184,7 +184,8 @@ function filtered(){
   const regionOK=region==='전체'||a.region===region;
   const subOK=sub==='전체'||a.subcategory===sub;
   const queryOK=!query||[a.title,a.title_ko,a.summary,a.source,a.category,a.subcategory,...a.countries].join(' ').toLocaleLowerCase().includes(query);
-  return catOK&&regionOK&&subOK&&queryOK;
+  const dateOK=window.NB2?.dateOK?.(a) ?? true;
+  return catOK&&regionOK&&subOK&&queryOK&&dateOK;
  });
 }
 function item(a,cls){
@@ -197,6 +198,7 @@ function render(){
  for(const a of list)for(const name of a.countries){if(!groups.has(name))groups.set(name,[]);groups.get(name).push(a);}
  const unclassified=list.filter(a=>!a.countries.length);
  layer.clearLayers();
+ window.NB2?.heatmap?.(groups);
  for(const c of countries){
   const articles=groups.get(c[0]);if(!articles?.length)continue;
   const icon=L.divIcon({className:'',html:`<div class="news-pin ${chosen===c[0]?'selected':''}">${articles.length}</div>`,iconSize:[30,30],iconAnchor:[15,15]});
@@ -215,6 +217,7 @@ function render(){
  if($('latest-list'))$('latest-list').innerHTML=list.length?list.map(a=>item(a,'latest-item')).join(''):'<p class="empty">표시할 기사가 없습니다.</p>';
  if($('featured-list'))$('featured-list').innerHTML=list.length?list.slice(0,3).map(a=>item(a,'feature-item')).join(''):'<p class="empty">표시할 기사가 없습니다.</p>';
  if($('ticker'))$('ticker').textContent=list[0]?.title_ko||list[0]?.title||'현재 필터에 해당하는 뉴스가 없습니다.';
+ window.NB2?.afterRender?.(list,all);
 }
 $('category')?.addEventListener('change',()=>{chosen=null;onlyUnclassified=false;const m=$('micro-filter');if(m){m.style.display=$('category').value==='미생물'?'inline-block':'none';m.value='전체';}render();});
 $('search')?.addEventListener('input',()=>{chosen=null;onlyUnclassified=false;render();});
