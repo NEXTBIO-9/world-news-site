@@ -4,392 +4,217 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <meta name="theme-color" content="#f5f8fc">
-  <meta name="description" content="NEXT BIO - 세계 뉴스와 바이오·미생물 뉴스 지도">
-
+  <meta name="description" content="NEXT BIO 세계 뉴스와 바이오·미생물 뉴스 지도">
   <title>NEXT BIO | 세계 뉴스 지도</title>
 
-  <!-- Leaflet 지도 CSS: 무결성 검사 오류 방지 -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  >
+  <!-- 지도 스타일: 잘못된 무결성 검사 속성 제거 -->
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
   <!-- 기존 사이트 디자인 -->
-  <link rel="stylesheet" href="styles.css?v=final2">
-
-  <style>
-    /* Leaflet 지도가 사이트 레이아웃을 벗어나지 않도록 보호 */
-    #map {
-      width: 100%;
-      height: 520px;
-      position: relative;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    .map-col {
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    .leaflet-container {
-      width: 100%;
-      height: 100%;
-    }
-
-    .leaflet-pane,
-    .leaflet-tile,
-    .leaflet-marker-icon,
-    .leaflet-marker-shadow,
-    .leaflet-tile-container {
-      max-width: none !important;
-      max-height: none !important;
-    }
-
-    @media (max-width: 950px) {
-      #map {
-        height: 450px;
-      }
-    }
-
-    @media (max-width: 620px) {
-      #map {
-        height: 370px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css?v=final3">
 </head>
-
 <body>
 
-  <!-- 최상단 -->
-  <div class="utility">
-    <div class="wrap">
-      <span id="today">NEXT BIO</span>
-      <span>GLOBAL NEWS MONITOR</span>
+<div class="utility">
+  <div class="wrap">
+    <span id="today">NEXT BIO</span>
+    <span>GLOBAL NEWS MONITOR</span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap head-inner">
+    <a href="./" class="logo">
+      NEXT<span>BIO</span>
+      <small>GLOBAL BIO & NEWS NETWORK</small>
+    </a>
+    <div class="head-right">
+      <span class="live-dot"></span>
+      NEWS FEED · AUTOMATIC UPDATES
     </div>
   </div>
 
-  <!-- 헤더 -->
-  <header class="header">
-    <div class="wrap head-inner">
+  <nav class="wrap nav">
+    <a href="#map-section">세계지도</a>
+    <a href="#latest">최신 뉴스</a>
+    <a href="#featured">주요 헤드라인</a>
+  </nav>
+</header>
 
-      <a href="./" class="logo">
-        NEXT<span>BIO</span>
-        <small>GLOBAL BIO & NEWS NETWORK</small>
-      </a>
+<main class="wrap">
 
-      <div class="head-right">
-        <span class="live-dot"></span>
-        NEWS FEED · AUTOMATIC UPDATES
-      </div>
-
+  <section class="intro">
+    <div>
+      <p class="eyebrow">GLOBAL NEWS EXPLORER</p>
+      <h1>NEXT BIO <span>WORLD NEWS MAP</span></h1>
+      <p>지도에서 국가를 선택하고 관련 최신 보도를 확인하세요.</p>
     </div>
 
-    <nav class="wrap nav">
-      <a href="#map-section">세계지도</a>
-      <a href="#latest">최신 뉴스</a>
-      <a href="#featured">주요 헤드라인</a>
-    </nav>
-  </header>
-
-  <main class="wrap">
-
-    <!-- 사이트 소개 -->
-    <section class="intro">
-
+    <div class="stats">
       <div>
-        <p class="eyebrow">NEXT BIO · GLOBAL NEWS EXPLORER</p>
-
-        <h1>
-          NEXT BIO
-          <span>WORLD NEWS MAP</span>
-        </h1>
-
-        <p>
-          지도에서 국가를 선택하고 관련 최신 보도를 확인하세요.
-        </p>
+        <strong id="stat-articles">0</strong>
+        <small>수집 기사</small>
       </div>
-
-      <div class="stats">
-        <div>
-          <strong id="stat-articles">0</strong>
-          <small>수집 기사</small>
-        </div>
-
-        <div>
-          <strong id="stat-countries">0</strong>
-          <small>분류 국가</small>
-        </div>
+      <div>
+        <strong id="stat-countries">0</strong>
+        <small>분류 국가</small>
       </div>
+    </div>
+  </section>
 
-    </section>
+  <div class="ticker">
+    <b><span class="live-dot"></span> NEWS UPDATE</b>
+    <span id="ticker">공개 RSS 뉴스를 불러오는 중입니다.</span>
+    <span id="updated">업데이트 확인 중</span>
+  </div>
 
-    <!-- 뉴스 업데이트 -->
-    <div class="ticker">
+  <section id="map-section" class="map-section">
 
-      <b>
-        <span class="live-dot"></span>
-        NEWS UPDATE
-      </b>
-
-      <span id="ticker">
-        공개 RSS 뉴스를 불러오는 중입니다.
-      </span>
-
-      <span id="updated">
-        업데이트 확인 중
-      </span>
-
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">INTERACTIVE WORLD COVERAGE</p>
+        <h2>국가별 뉴스 탐색</h2>
+      </div>
+      <button id="reset" class="outline-btn" type="button">
+        전체 지도 보기
+      </button>
     </div>
 
-    <!-- 세계지도 -->
-    <section id="map-section" class="map-section">
+    <div class="map-layout">
+      <div class="map-col">
 
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">
-            INTERACTIVE WORLD COVERAGE
+        <div class="map-toolbar">
+          <label for="category">분야</label>
+          <select id="category">
+            <option value="전체">전체 분야</option>
+            <option>분쟁·군사</option>
+            <option>외교·국제</option>
+            <option>경제·금융</option>
+            <option>재해·재난</option>
+            <option value="바이오">바이오 전체</option>
+            <option>제약·신약</option>
+            <option>미생물</option>
+            <option>의료기기</option>
+            <option>바이오기업</option>
+            <option>감염병</option>
+            <option>일반</option>
+          </select>
+
+          <label for="micro-filter" class="sr-only">
+            미생물 세부분야
+          </label>
+          <select id="micro-filter" hidden>
+            <option>전체</option>
+            <option>세균</option>
+            <option>진균</option>
+            <option>바이러스</option>
+            <option>항생제 내성</option>
+            <option>미생물 검사</option>
+          </select>
+
+          <label for="region-filter">피드</label>
+          <select id="region-filter">
+            <option>전체</option>
+            <option>국내</option>
+            <option>해외</option>
+          </select>
+
+          <label for="search">검색</label>
+          <input id="search" type="search"
+                 placeholder="기사 제목·국가·키워드"
+                 aria-label="뉴스 검색">
+        </div>
+
+        <div id="map" role="region"
+             aria-label="세계 뉴스 지도"></div>
+
+        <div class="map-footnote">
+          ● 마커는 기사에 언급된 국가의 대표 좌표이며
+          사건의 정확한 발생 장소가 아닙니다.
+          국내/해외는 RSS 수집 언어권을 나타내며
+          국가 판별의 근거로 사용하지 않습니다.
+        </div>
+      </div>
+
+      <aside class="country-panel">
+        <div class="panel-top">
+          <span class="eyebrow">COUNTRY BRIEFING</span>
+          <h3 id="country-title">전 세계 주요 뉴스</h3>
+          <p id="country-subtitle">
+            지도에서 국가 마커를 선택해 보세요.
           </p>
-
-          <h2>국가별 뉴스 탐색</h2>
+          <button id="unclassified-toggle"
+                  type="button" class="outline-btn">
+            국가 미분류 보기
+          </button>
         </div>
 
-        <button
-          id="reset"
-          class="outline-btn"
-          type="button"
-        >
-          전체 지도 보기
-        </button>
-      </div>
-
-      <div class="map-layout">
-
-        <!-- 지도 왼쪽 영역 -->
-        <div class="map-col">
-
-          <!-- 필터 -->
-          <div class="map-toolbar">
-
-            <label for="category">분야</label>
-
-            <select id="category">
-              <option value="전체">전체 분야</option>
-              <option>분쟁·군사</option>
-              <option>외교·국제</option>
-              <option>경제·금융</option>
-              <option>재해·재난</option>
-              <option value="바이오">바이오 전체</option>
-              <option>제약·신약</option>
-              <option>미생물</option>
-              <option>의료기기</option>
-              <option>바이오기업</option>
-              <option>감염병</option>
-              <option>일반</option>
-            </select>
-
-            <label
-              for="micro-filter"
-              class="sr-only"
-            >
-              미생물 세부분야
-            </label>
-
-            <select id="micro-filter" hidden>
-              <option>전체</option>
-              <option>세균</option>
-              <option>진균</option>
-              <option>바이러스</option>
-              <option>항생제 내성</option>
-              <option>미생물 검사</option>
-            </select>
-
-            <label for="region-filter">피드</label>
-
-            <select id="region-filter">
-              <option>전체</option>
-              <option>국내</option>
-              <option>해외</option>
-            </select>
-
-            <label for="search">검색</label>
-
-            <input
-              id="search"
-              type="search"
-              placeholder="기사 제목·국가·키워드"
-              aria-label="뉴스 검색"
-            >
-
-          </div>
-
-          <!-- 실제 지도 -->
-          <div
-            id="map"
-            role="region"
-            aria-label="NEXT BIO 세계 뉴스 지도"
-          ></div>
-
-          <div class="map-footnote">
-            ● 마커는 기사에 언급된 국가의 대표 좌표이며
-            사건의 정확한 발생 장소가 아닙니다.
-            국내/해외는 RSS 수집 언어권을 나타내며
-            국가 판별의 근거로 사용하지 않습니다.
-          </div>
-
+        <div id="country-feed" class="country-feed">
+          <p class="empty">뉴스를 불러오는 중입니다.</p>
         </div>
+      </aside>
+    </div>
+  </section>
 
-        <!-- 오른쪽 국가별 뉴스 -->
-        <aside class="country-panel">
-
-          <div class="panel-top">
-
-            <span class="eyebrow">
-              COUNTRY BRIEFING
-            </span>
-
-            <h3 id="country-title">
-              전 세계 주요 뉴스
-            </h3>
-
-            <p id="country-subtitle">
-              지도에서 국가 마커를 선택해 보세요.
-            </p>
-
-            <button
-              id="unclassified-toggle"
-              type="button"
-              class="outline-btn"
-            >
-              국가 미분류 보기
-            </button>
-
-          </div>
-
-          <div
-            id="country-feed"
-            class="country-feed"
-          >
-            <p class="empty">
-              뉴스를 불러오는 중입니다.
-            </p>
-          </div>
-
-        </aside>
-
+  <section id="featured" class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">TOP HEADLINES</p>
+        <h2>주요 헤드라인</h2>
       </div>
+    </div>
+    <div id="featured-list" class="featured-list"></div>
+  </section>
 
-    </section>
-
-    <!-- 주요 헤드라인 -->
-    <section id="featured" class="section">
-
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">TOP HEADLINES</p>
-          <h2>주요 헤드라인</h2>
-        </div>
+  <section id="latest" class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">LATEST REPORTS</p>
+        <h2>최신 뉴스피드</h2>
       </div>
-
-      <div
-        id="featured-list"
-        class="featured-list"
-      ></div>
-
-    </section>
-
-    <!-- 최신 뉴스 -->
-    <section id="latest" class="section">
-
-      <div class="section-heading">
-
-        <div>
-          <p class="eyebrow">LATEST REPORTS</p>
-          <h2>최신 뉴스피드</h2>
-        </div>
-
-        <span id="count" class="small-muted">
-          0 ARTICLES
-        </span>
-
-      </div>
-
-      <div
-        id="latest-list"
-        class="latest-list"
-      ></div>
-
-      <!-- 페이지 이동 -->
-      <div class="pagination">
-
-        <button
-          id="prev-page"
-          type="button"
-          class="outline-btn"
-        >
-          이전
-        </button>
-
-        <span id="page-info">
-          1 / 1 페이지
-        </span>
-
-        <button
-          id="next-page"
-          type="button"
-          class="outline-btn"
-        >
-          다음
-        </button>
-
-      </div>
-
-    </section>
-
-    <!-- 출처 안내 -->
-    <section class="notice">
-
-      <b>출처 및 지도 표시 안내</b>
-
-      <p>
-        Google News 공개 RSS의 기사 제목과 출처 링크를
-        표시합니다. 국가 분류는 기사 제목 또는 독립적인
-        요약 내용의 국가·지명 근거에 따릅니다.
-        근거가 없으면 국가 미분류로 남깁니다.
-        지도 타일 © OpenStreetMap 기여자.
-      </p>
-
-    </section>
-
-  </main>
-
-  <!-- 하단 -->
-  <footer>
-
-    <div class="wrap footer-inner">
-
-      <strong>
-        NEXT<span>BIO</span>
-      </strong>
-
-      <span>
-        NEXT BIO NEWSROOM
-      </span>
-
+      <span id="count" class="small-muted">0 ARTICLES</span>
     </div>
 
-  </footer>
+    <div id="latest-list" class="latest-list"></div>
 
-  <!-- Leaflet 지도 JavaScript -->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  ></script>
+    <div class="pagination">
+      <button id="prev-page" type="button" class="outline-btn">
+        이전
+      </button>
+      <span id="page-info">1 / 1 페이지</span>
+      <button id="next-page" type="button" class="outline-btn">
+        다음
+      </button>
+    </div>
+  </section>
 
-  <!-- 기존 뉴스 프로그램 -->
-  <script src="app.js?v=final2"></script>
+  <section class="notice">
+    <b>출처 및 지도 표시 안내</b>
+    <p>
+      Google News 공개 RSS의 기사 제목과 출처 링크를
+      표시합니다. 국가 분류는 제목 또는 독립적인 요약
+      내용의 명시적 국가·지명 근거에 따르며,
+      실제 사건 장소·언론사 소재지와 다를 수 있습니다.
+      근거가 없으면 국가 미분류로 남깁니다.
+      지도 타일 © OpenStreetMap 기여자.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <strong>NEXT<span>BIO</span></strong>
+    <span>NEXT BIO NEWSROOM</span>
+  </div>
+</footer>
+
+<!-- 지도 프로그램 -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- 뉴스 프로그램 -->
+<script src="app.js?v=final3"></script>
 
 </body>
 </html>
