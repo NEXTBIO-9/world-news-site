@@ -154,7 +154,28 @@ const aliasMatch=(text,alias)=>{
  return text.includes(k);
 };
 const map=L.map('map',{worldCopyJump:true,minZoom:2,maxZoom:7,zoomControl:true}).setView([22,15],2);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19}).addTo(map);
+/* NEXT BIO: switch only the base tiles; keep existing map, markers and tour. */
+const nbMapAttribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
+const nbLightTiles=L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
+ attribution:nbMapAttribution,subdomains:'abcd',maxZoom:19
+});
+const nbDarkTiles=L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+ attribution:nbMapAttribution,subdomains:'abcd',maxZoom:19
+});
+let nbActiveTiles=null;
+function nbSetMapTheme(dark){
+ const target=dark?nbDarkTiles:nbLightTiles;
+ if(nbActiveTiles===target)return;
+ // Add the new base tiles before removing the old ones to avoid blank frames.
+ target.addTo(map);
+ target.bringToBack();
+ if(nbActiveTiles)map.removeLayer(nbActiveTiles);
+ nbActiveTiles=target;
+}
+window.NEXTBIO_setMapTheme=nbSetMapTheme;
+nbSetMapTheme(document.body.classList.contains('dark-mode') ||
+ document.documentElement.classList.contains('theme-preload-dark'));
+
 const layer=L.layerGroup().addTo(map);
 let all=[],chosen=null,onlyUnclassified=false;
 function ensureUnclassifiedButton(){
