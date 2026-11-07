@@ -16,7 +16,7 @@ concurrency:
 jobs:
   update-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
 
     steps:
       - name: Checkout repository
@@ -41,9 +41,20 @@ jobs:
 
       - name: Translate English headlines locally (no paid API)
         env:
-          TRANSLATE_MAX_NEW: "60"
+          TRANSLATE_MAX_NEW: "100"
         run: |
           python translate_titles.py
+
+      - name: Report translated headlines
+        run: |
+          python - <<'PYREPORT'
+          import json
+          a=json.load(open("data/articles.json",encoding="utf-8")).get("articles",[])
+          count=sum(bool(x.get("title_ko")) for x in a)
+          print(f"Korean titles: {count}/{len(a)}")
+          if count==0:
+              print("WARNING: No Korean titles generated. Check Argos installation and model download logs.")
+          PYREPORT
 
       - name: Commit updated feed
         shell: bash
