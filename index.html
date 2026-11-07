@@ -321,7 +321,7 @@ body:not(.dark-mode) #country-feed .nb-news-row:hover {
 <script>
 (function(){
   try{
-    if(localStorage.getItem("nextbio-theme")==="dark"){
+    if(localStorage.getItem("nextbio-theme")!=="light"){
       document.documentElement.classList.add("theme-preload-dark");
     }
   }catch(error){}
@@ -585,10 +585,10 @@ html.theme-preload-dark body{
   const button = document.getElementById("theme-toggle");
   if(!button) return;
 
-  let savedTheme = "light";
+  let savedTheme = "dark";
 
   try{
-    savedTheme = localStorage.getItem("nextbio-theme") || "light";
+    savedTheme = localStorage.getItem("nextbio-theme") || "dark";
   }catch(error){}
 
   function applyTheme(theme){
@@ -628,6 +628,6 @@ html.theme-preload-dark body{
 })();
 </script>
 <script src="./market-ticker.js?v=1" defer></script>
-<script src="./nextbio-tour-sound.js?v=1" defer></script>
+<script src="./nextbio-tour-sound.js?v=2" defer></script>
 </body>
 </html>
