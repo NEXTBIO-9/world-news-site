@@ -1,8 +1,11 @@
-name: Build and translate source-grounded summaries v12 model fix
+name: Build and translate source-grounded summaries v13
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '8,23,38,53 * * * *'
+  workflow_run:
+    workflows:
+      - 'Update news feed'
+    types:
+      - completed
 permissions:
   contents: write
 concurrency:
@@ -10,6 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   summaries:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
