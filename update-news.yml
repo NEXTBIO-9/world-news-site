@@ -35,6 +35,12 @@ jobs:
         run: |
           python scripts/fetch_news.py
 
+      - name: Translate English titles to Korean
+        env:
+          GOOGLE_TRANSLATE_API_KEY: ${{ secrets.GOOGLE_TRANSLATE_API_KEY }}
+          TRANSLATE_MAX_NEW: "60"
+        run: python scripts/translate_titles.py
+
       - name: Commit updated feed
         shell: bash
         run: |
