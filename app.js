@@ -219,12 +219,24 @@ function nbPlaceMatches(t){
  }
  return found;
 }
+/* Context-aware country evidence: source locale alone is NOT country evidence. */
+const nbCountryContextRules=[
+ ['대한민국', /(?:질병관리청|질병청|식약처|식품의약품안전처|보건복지부|산업통상자원부|한국은행|한은|금융위원회|금융감독원|코스피|코스닥|국회|국민대|서울대|연세대|고려대|카이스트|KAIST|K-바이오|국산\s*신약|국내\s*(?:제약|바이오|의료|기업|연구|증시)|전국\s*(?:병원체|감시기관)|[가-힣]+시(?:청|의회)|[가-힣]+도청|한미약품|SK바이오팜|대웅제약|안국약품|GC녹십자|지씨씨엘|셀트리온|삼성바이오로직스|유한양행|종근당|보령제약|동아에스티|디앤디파마텍|뉴릭스|한국\s*제약)/i],
+ ['미국', /(?:\b(?:FDA|NIH|CDC|HHS|DHS|USDA|SEC|NASDAQ|NYSE|US\s+measles|U\.S\.\s+measles)\b|미\s*중간선거|미국\s*식품의약국|미\s*증시|미\s*연준|연방준비제도)/i],
+ ['영국', /\b(?:NHS|MHRA|UKHSA)\b/i],
+ ['유럽연합', /\b(?:EMA|ECDC)\b/i]
+];
+const nbCountryContextValid=nbCountryContextRules.filter(([name])=>countries.some(c=>c[0]===name));
+function nbContextMatches(a){
+ const t=[a.title,a.summary].filter(Boolean).join(' ');
+ return nbCountryContextValid.filter(([,rx])=>rx.test(t)).map(([name])=>name);
+}
 function matchedCountries(a){
  const explicit=Array.isArray(a.countries)?a.countries.filter(n=>countries.some(c=>c[0]===n)):[];
  const headline=normText([a.title,a.title_ko].filter(Boolean).join(' '));
  const summary=normText(a.summary||'');
  const match=t=>countries.filter(c=>c[3].some(k=>aliasMatch(t,k))).map(c=>c[0]).filter(n=>!(n==='인도'&&/인도네시아/.test(t))&&!(n==='수단'&&/남수단/.test(t))&&!(n==='콩고공화국'&&/콩고민주공화국/.test(t)));
- return [...new Set([...explicit,...match(headline),...nbPlaceMatches(headline),...match(summary),...nbPlaceMatches(summary)])];
+ return [...new Set([...explicit,...match(headline),...nbPlaceMatches(headline),...match(summary),...nbPlaceMatches(summary),...nbContextMatches(a)])];
 }
 
 function filtered(){
