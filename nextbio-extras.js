@@ -56,7 +56,7 @@ function alerts(list){
   seen.add(key);chosen.push(x);if(chosen.length>=limit)break;
  }
  const root=$('nb-alerts');if(!root)return;
- root.innerHTML=chosen.length?chosen.map(({a,score})=>`<div class="nb2-row"><span class="nb2-tag">${score>=85?'🚨 ':score>=70?'⚡ ':'📰 '}${lang==='ko'?(score>=85?'긴급':score>=70?'주요':'최신'):(score>=85?'Urgent':score>=70?'Priority':'Latest')}${score>=70?' · '+score:''}</span><a target="_blank" rel="noopener noreferrer" href="${safe(/^https?:\/\//i.test(a.url||'')?a.url:'#')}">${safe(lang==='en'?(a.title||a.title_ko):(a.title_ko||a.title))}</a></div>`).join(''):`<p class="nb2-muted">${lang==='ko'?'최근 7일간 표시할 뉴스가 없습니다.':'No news available from the past 7 days.'}</p>`;
+ root.innerHTML=chosen.length?chosen.map(({a,score})=>`<div class="nb2-row"><span class="nb2-tag">${score>=85?'🚨 ':score>=70?'⚡ ':'📰 '}${lang==='ko'?(score>=85?'긴급':score>=70?'주요':'최신'):(score>=85?'Urgent':score>=70?'Priority':'Latest')}${score>=70?' · '+score:''}</span><a target="_blank" rel="noopener noreferrer" href="${safe(/^https?:\/\//i.test(a.url||'')?a.url:'#')}">${safe(window.NBTitleTranslation?.title(a)||(a.title_ko||a.title))}</a></div>`).join(''):`<p class="nb2-muted">${lang==='ko'?'최근 7일간 표시할 뉴스가 없습니다.':'No news available from the past 7 days.'}</p>`;
 }
 function saveButtons(){
  document.querySelectorAll('#latest-list a.latest-item,#country-feed a.country-item').forEach(a=>{

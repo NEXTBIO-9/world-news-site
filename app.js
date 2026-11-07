@@ -365,7 +365,7 @@ function item(a,cls){
  const url=String(a.url||'');
  const href=/^https?:\/\//i.test(url)?safe(url):'#';
 
- return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"><span class="category">${safe(a.category||'일반')}</span><strong>${safe(a.title||'제목 없음')}</strong>${cls==='latest-item'?`<p>${safe(a.summary||'').slice(0,150)}</p>`:''}<span class="meta">${safe(a.region||'')} ${safe(a.subcategory||'')} · ${safe(a.source||'원문')} · ${cls==='country-item'?nbRelativeTime(a.published):dateText(a.published)}</span></a>`;
+ return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"><span class="category">${safe(a.category||'일반')}</span><strong>${safe(window.NBTitleTranslation?.title(a)||a.title||'제목 없음')}</strong>${cls==='latest-item'?`<p>${safe(a.summary||'').slice(0,150)}</p>`:''}<span class="meta">${safe(a.region||'')} ${safe(a.subcategory||'')} · ${safe(a.source||'원문')} · ${cls==='country-item'?nbRelativeTime(a.published):dateText(a.published)}</span></a>`;
 }
 
 /* Country briefing: richer cards, existing links and bookmark integration retained. */
