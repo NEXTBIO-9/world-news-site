@@ -301,8 +301,48 @@ function selectCountry(name){
  if(tourTimer!==null)stopTour('국가 선택 · 자동 순회 꺼짐');
  chosen=name;onlyUnclassified=false;render();const c=countries.find(x=>x[0]===name);if(c)map.flyTo([c[1],c[2]],Math.max(map.getZoom(),4),{duration:.6});
 }
+/* NEXT BIO: latest-news pagination (10 articles per page). */
+const NB_PAGE_SIZE=10;
+let nbNewsPage=1,nbNewsSignature='';
+const nbPagerStyle=document.createElement('style');
+nbPagerStyle.textContent=`
+ #nb-news-pagination{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:7px;padding:22px 10px 30px}
+ #nb-news-pagination button{min-width:36px;padding:9px 12px;border:1px solid #64748b;border-radius:7px;background:transparent;color:inherit;font:inherit;cursor:pointer}
+ #nb-news-pagination button[aria-current="page"]{background:#2563eb;color:#fff;border-color:#2563eb;font-weight:700}
+ #nb-news-pagination button:disabled{opacity:.35;cursor:default}
+ #nb-news-pagination button:focus-visible{outline:2px solid #60a5fa;outline-offset:2px}
+ #nb-news-pagination .nb-page-summary{flex-basis:100%;text-align:center;font-size:12px;opacity:.75;margin-top:5px}
+`;
+document.head.appendChild(nbPagerStyle);
+function nbRenderLatestPage(list){
+ const feed=$('latest-list');if(!feed)return;
+ const pages=Math.max(1,Math.ceil(list.length/NB_PAGE_SIZE));
+ nbNewsPage=Math.min(Math.max(1,nbNewsPage),pages);
+ const start=(nbNewsPage-1)*NB_PAGE_SIZE;
+ feed.innerHTML=list.length?list.slice(start,start+NB_PAGE_SIZE).map(a=>item(a,'latest-item')).join(''):'<p class="empty">표시할 기사가 없습니다.</p>';
+ let pager=$('nb-news-pagination');
+ if(!pager){pager=document.createElement('nav');pager.id='nb-news-pagination';pager.setAttribute('aria-label','최신 뉴스 페이지');feed.insertAdjacentElement('afterend',pager);}
+ if(pages<=1){pager.hidden=true;pager.innerHTML='';return;}
+ pager.hidden=false;
+ const pageButtons=[];
+ const first=Math.max(1,Math.min(nbNewsPage-2,pages-4));
+ const last=Math.min(pages,first+4);
+ for(let p=first;p<=last;p++)pageButtons.push(`<button type="button" data-page="${p}" ${p===nbNewsPage?'aria-current="page"':''} aria-label="${p}페이지">${p}</button>`);
+ pager.innerHTML=`<button type="button" data-page="${nbNewsPage-1}" ${nbNewsPage===1?'disabled':''}>이전</button>${pageButtons.join('')}<button type="button" data-page="${nbNewsPage+1}" ${nbNewsPage===pages?'disabled':''}>다음</button><span class="nb-page-summary">전체 ${list.length}건 · ${nbNewsPage} / ${pages} 페이지</span>`;
+}
+document.addEventListener('click',e=>{
+ const btn=e.target.closest('#nb-news-pagination button[data-page]');if(!btn||btn.disabled)return;
+ const next=Number(btn.dataset.page);if(!Number.isInteger(next)||next===nbNewsPage)return;
+ nbNewsPage=next;
+ const list=filtered();nbRenderLatestPage(list);
+ window.NB2?.afterRender?.(list,all);
+ $('latest-list')?.scrollIntoView({behavior:'smooth',block:'start'});
+});
 function render(){
  const list=filtered(),groups=new Map();
+ // Reset pagination only when the filtered article set/order changes.
+ const signature=list.map(a=>a.url).join('\n');
+ if(signature!==nbNewsSignature){nbNewsPage=1;nbNewsSignature=signature;}
  for(const a of list)for(const name of a.countries){if(!groups.has(name))groups.set(name,[]);groups.get(name).push(a);}
  const unclassified=list.filter(a=>!a.countries.length);
  layer.clearLayers();
@@ -322,7 +362,7 @@ function render(){
  const toggle=$('unclassified-toggle');if(toggle)toggle.textContent=onlyUnclassified?'전체 뉴스 보기':`국가 미분류 뉴스 보기 (${unclassified.length}건)`;
  if($('country-feed'))$('country-feed').innerHTML=selected.length?selected.map(a=>item(a,'country-item')).join(''):'<p class="empty">선택한 조건에 해당하는 뉴스가 없습니다.</p>';
  if($('count'))$('count').textContent=`${list.length} ARTICLES`;
- if($('latest-list'))$('latest-list').innerHTML=list.length?list.map(a=>item(a,'latest-item')).join(''):'<p class="empty">표시할 기사가 없습니다.</p>';
+ nbRenderLatestPage(list);
  
  if($('ticker'))$('ticker').textContent=list[0]?.title||'현재 필터에 해당하는 뉴스가 없습니다.';
  window.NB2?.afterRender?.(list,all);
