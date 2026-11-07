@@ -11,7 +11,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from difflib import SequenceMatcher
 
-MAX_PER_FEED = 35
+MAX_PER_FEED = 25
 MAX_TOTAL = 1000
 ARTICLE_MAX_AGE_DAYS = 7
 HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; WorldNews/9.1)'}
@@ -50,6 +50,54 @@ SEARCHES = [
     ('미생물', None, '미생물 마이크로바이옴 연구', 'ko', 'KR'),
     ('일반', None, '주요 뉴스', 'ko', 'KR'),
 ]
+
+
+# 추가 국가별 RSS: 국가명을 검색어에 포함해 현지 관련 뉴스를 확보합니다.
+# 지역 설정은 검색 언어/노출 시장일 뿐 기사 발생 국가의 증거가 아닙니다.
+GLOBAL_SEARCHES = [
+    ('일반', None, 'Japan latest news', 'en', 'JP'),
+    ('제약·신약', None, 'Japan biotech pharmaceutical', 'en', 'JP'),
+    ('일반', None, 'China latest news', 'en', 'SG'),
+    ('경제·금융', None, 'China economy technology', 'en', 'SG'),
+    ('일반', None, 'India latest news', 'en', 'IN'),
+    ('제약·신약', None, 'India pharmaceutical biotech', 'en', 'IN'),
+    ('일반', None, 'United Kingdom latest news', 'en', 'GB'),
+    ('제약·신약', None, 'UK biotech NHS research', 'en', 'GB'),
+    ('일반', None, 'Germany latest news', 'en', 'DE'),
+    ('경제·금융', None, 'Germany economy industry', 'en', 'DE'),
+    ('일반', None, 'France latest news', 'en', 'FR'),
+    ('일반', None, 'Italy latest news', 'en', 'IT'),
+    ('일반', None, 'Spain latest news', 'en', 'ES'),
+    ('일반', None, 'Poland latest news', 'en', 'PL'),
+    ('일반', None, 'Ukraine latest news', 'en', 'UA'),
+    ('일반', None, 'Russia latest news', 'en', 'GB'),
+    ('일반', None, 'Canada latest news', 'en', 'CA'),
+    ('일반', None, 'Mexico latest news', 'en', 'MX'),
+    ('일반', None, 'Brazil latest news', 'en', 'BR'),
+    ('일반', None, 'Argentina latest news', 'en', 'AR'),
+    ('일반', None, 'Australia latest news', 'en', 'AU'),
+    ('일반', None, 'New Zealand latest news', 'en', 'NZ'),
+    ('일반', None, 'Indonesia latest news', 'en', 'ID'),
+    ('일반', None, 'Vietnam latest news', 'en', 'VN'),
+    ('일반', None, 'Thailand latest news', 'en', 'TH'),
+    ('일반', None, 'Philippines latest news', 'en', 'PH'),
+    ('일반', None, 'Malaysia latest news', 'en', 'MY'),
+    ('일반', None, 'Singapore latest news', 'en', 'SG'),
+    ('일반', None, 'Taiwan latest news', 'en', 'TW'),
+    ('일반', None, 'Saudi Arabia latest news', 'en', 'SA'),
+    ('일반', None, 'United Arab Emirates latest news', 'en', 'AE'),
+    ('일반', None, 'Israel latest news', 'en', 'IL'),
+    ('일반', None, 'Iran latest news', 'en', 'GB'),
+    ('일반', None, 'Turkey latest news', 'en', 'TR'),
+    ('일반', None, 'Egypt latest news', 'en', 'EG'),
+    ('일반', None, 'South Africa latest news', 'en', 'ZA'),
+    ('일반', None, 'Nigeria latest news', 'en', 'NG'),
+    ('일반', None, 'Kenya latest news', 'en', 'KE'),
+]
+
+# 동일 국가를 단순히 언론사 소재지로 판별하지 않습니다.
+# 지도 국가 배정은 기존 app.js의 기사 내용 분석이 담당합니다.
+SEARCHES.extend(GLOBAL_SEARCHES)
 
 def rss_url(query, language, region):
     ceid = f'{region}:{language}'
