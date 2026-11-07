@@ -155,16 +155,16 @@ const aliasMatch=(text,alias)=>{
 };
 
 const map=L.map('map',{worldCopyJump:true,minZoom:2,maxZoom:7,zoomControl:true}).setView([22,15],2);
-const nbBaseTiles=L.tileLayer(
- 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{
- attribution:'Tiles &copy; Esri',
- maxNativeZoom:16,maxZoom:19
-}).addTo(map);
+// NEXT BIO v21: self-hosted SVG basemap. No third-party tile requests.
+const nbBaseTiles=L.imageOverlay('./nextbio-world-map.svg',
+  [[-85.05112878,-180],[85.05112878,180]],
+  {interactive:false, attribution:'Map outlines: Natural Earth / Basemap (public domain)', className:'nb-local-svg-map'}
+).addTo(map);
 
 const nbMapThemeStyle=document.createElement('style');
 nbMapThemeStyle.textContent=`
- #map.nb-map-dark .leaflet-tile-pane {filter:invert(1) hue-rotate(180deg) brightness(.76) contrast(.9)}
- #map .leaflet-tile-pane {transition:filter .25s ease}
+ #map.nb-map-dark .nb-local-svg-map {filter:brightness(.58) saturate(.7) hue-rotate(165deg)}
+ #map .nb-local-svg-map {transition:filter .25s ease}
 `;
 document.head.appendChild(nbMapThemeStyle);
 
