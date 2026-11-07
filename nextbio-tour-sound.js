@@ -25,8 +25,8 @@
   selector.id = 'nb-tour-sound-select';
   selector.setAttribute('aria-label', '국가 자동 순회 효과음 선택');
   selector.style.cssText = 'margin-left:7px;padding:4px 6px;border-radius:6px;max-width:145px;font-size:12px;background:#182a41;color:#e5edf7;border:1px solid #526680;';
-  selector.add(new Option('22번 공항 차임', '22'));
-  selector.add(new Option('9번 레이더 핑', '9'));
+  selector.add(new Option('공항 차임', '22'));
+  selector.add(new Option('레이더 핑', '9'));
   try { selector.value = localStorage.getItem('nextbio-tour-sound-type') === '9' ? '9' : '22'; }
   catch (_) { selector.value = '22'; }
   selector.addEventListener('change', () => {
