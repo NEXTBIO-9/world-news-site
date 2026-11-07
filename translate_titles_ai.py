@@ -13,7 +13,7 @@ from pathlib import Path
 DATA = Path('data/articles.json')
 MODEL = os.getenv('TRANSLATION_MODEL', 'facebook/nllb-200-distilled-600M')
 LIMIT = min(max(int(os.getenv('TRANSLATE_MAX_NEW', '100')), 0), 300)
-VERSION = 'nllb600m-v7'
+VERSION = 'nllb600m-v8'
 # v3 prioritizes missing titles, then refreshes older translations without deleting them.
 
 
@@ -142,28 +142,20 @@ def roundtrip_score(model, tokenizer, candidate, source, torch):
 
 
 def select_best(model, tokenizer, target_id, source, torch):
-    """Evaluate multiple beam candidates with local backtranslation as a weak signal."""
+    """Fast first pass. Retry only if the first candidate fails safety checks.
+
+    Avoid the costly NLLB Korean->English round trip for every title.
+    """
+    first = generate_candidates(model, tokenizer, target_id, source, torch, beams=3, count=1)
+    if first and valid(source, first[0])[0]:
+        return first[0], 'fast-pass'
+    # One more beam search is used only when the cheap first pass failed.
     options = generate_candidates(model, tokenizer, target_id, source, torch, beams=5, count=3)
     good = [x for x in options if valid(source, x)[0]]
     if not good:
         return None, 'no candidate passed factual safeguards'
-    # Evaluate up to 3 candidates, only for already-valid headlines.
-    scored = []
-    for candidate in good[:3]:
-        try:
-            fidelity = roundtrip_score(model, tokenizer, candidate, source, torch)
-        except Exception as exc:
-            print(f'Backtranslation check unavailable: {type(exc).__name__}: {exc}', flush=True)
-            fidelity = None
-        # A low round-trip score is a warning, not automatic proof of mistranslation.
-        score = headline_score(source, candidate) + (fidelity * 6 if fidelity is not None else 0)
-        scored.append((score, fidelity, candidate))
-    scored.sort(key=lambda x: x[0], reverse=True)
-    _, fidelity, candidate = scored[0]
-    # Only reject extremely low lexical recovery on longer titles, as a safety net.
-    if fidelity is not None and len(content_words(source)) >= 6 and fidelity < 0.12:
-        return None, f'very low round-trip content overlap ({fidelity:.2f})'
-    return candidate, 'ok'
+    return max(good, key=lambda x: headline_score(source, x)), 'retry-pass'
+
 
 def main():
     data = json.loads(DATA.read_text(encoding='utf-8'))
@@ -209,7 +201,13 @@ def main():
         raise RuntimeError('Korean target language token unavailable')
 
     ok_count = reject_count = 0
+    import time
+    started = time.monotonic()
+    budget = max(60, int(os.getenv('TRANSLATE_TIME_BUDGET_SECONDS', '2700')))
     for i, article in enumerate(pending[:LIMIT], 1):
+        if time.monotonic() - started > budget:
+            print(f'Time budget reached after {i-1} articles; saving progress.', flush=True)
+            break
         source = article['title'].strip()
         try:
             candidate, selection_reason = select_best(model, tokenizer, target_id, source, torch)
@@ -234,6 +232,7 @@ def main():
             print(f'[{i}] Error: {type(exc).__name__}: {exc}', flush=True)
         # Save after every headline so an interrupted run retains progress locally.
         if i % 5 == 0:
+            print(f'Progress {i}/{min(LIMIT,len(pending))}: accepted={ok_count} rejected={reject_count} elapsed={int(time.monotonic()-started)}s', flush=True)
             DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Finished: translated={ok_count}, rejected={reject_count}, remaining~={max(0,len(pending)-LIMIT)}', flush=True)
