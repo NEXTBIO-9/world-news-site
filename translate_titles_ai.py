@@ -12,7 +12,7 @@ from pathlib import Path
 
 DATA = Path('data/articles.json')
 MODEL = os.getenv('TRANSLATION_MODEL', 'facebook/nllb-200-distilled-600M')
-LIMIT = min(max(int(os.getenv('TRANSLATE_MAX_NEW', '30')), 0), 100)
+LIMIT = min(max(int(os.getenv('TRANSLATE_MAX_NEW', '100')), 0), 300)
 VERSION = 'nllb600m-v1'
 
 
