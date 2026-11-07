@@ -155,22 +155,34 @@ const aliasMatch=(text,alias)=>{
 };
 
 const map=L.map('map',{worldCopyJump:true,minZoom:2,maxZoom:7,zoomControl:true}).setView([22,15],2);
-// NEXT BIO v21: self-hosted SVG basemap. No third-party tile requests.
-const nbBaseTiles=L.imageOverlay('./nextbio-world-map.svg',
+// NEXT BIO v22: local, repeating SVG map with separate light/dark palettes.
+// Repeat the world to avoid blank edges when panning or centering on countries.
+const nbMapBounds = [
+  [[-85.05112878,-540],[85.05112878,-180]],
   [[-85.05112878,-180],[85.05112878,180]],
-  {interactive:false, attribution:'Map outlines: Natural Earth / Basemap (public domain)', className:'nb-local-svg-map'}
-).addTo(map);
-
+  [[-85.05112878,180],[85.05112878,540]]
+];
+const nbMapLayers = {light:[], dark:[]};
+for (const theme of ['light','dark']) {
+  for (const bounds of nbMapBounds) {
+    nbMapLayers[theme].push(L.imageOverlay(
+      `./nextbio-world-map-${theme}.svg`, bounds,
+      {interactive:false, className:`nb-local-svg-map nb-local-svg-map-${theme}`,
+       attribution:'Map data: Natural Earth (public domain)'}
+    ).addTo(map));
+  }
+}
 const nbMapThemeStyle=document.createElement('style');
 nbMapThemeStyle.textContent=`
- #map.nb-map-dark .nb-local-svg-map {filter:brightness(.58) saturate(.7) hue-rotate(165deg)}
- #map .nb-local-svg-map {transition:filter .25s ease}
+ #map {background:#e7edf3}
+ #map.nb-map-dark {background:#15283c}
+ #map .nb-local-svg-map {transition:opacity .2s ease}
+ #map:not(.nb-map-dark) .nb-local-svg-map-dark {opacity:0 !important}
+ #map.nb-map-dark .nb-local-svg-map-light {opacity:0 !important}
 `;
 document.head.appendChild(nbMapThemeStyle);
-
 function nbSetMapTheme(dark){
- const el=map.getContainer();
- el.classList.toggle('nb-map-dark',!!dark);
+ map.getContainer().classList.toggle('nb-map-dark',!!dark);
 }
 window.NEXTBIO_setMapTheme=nbSetMapTheme;
 nbSetMapTheme(document.body.classList.contains('dark-mode') ||
