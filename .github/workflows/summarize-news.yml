@@ -1,4 +1,4 @@
-name: Build and translate source-grounded summaries v12
+name: Build and translate source-grounded summaries v12 model fix
 on:
   workflow_dispatch:
   schedule:
@@ -11,7 +11,7 @@ concurrency:
 jobs:
   summaries:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,8 +31,8 @@ jobs:
         run: pip install 'torch>=2.2,<3' 'transformers>=4.40,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
       - name: Translate new and cached excerpts to Korean
         env:
-          SUMMARY_KO_LIMIT: '18'
-          SUMMARY_KO_BUDGET: '270'
+          SUMMARY_KO_LIMIT: '12'
+          SUMMARY_KO_BUDGET: '420'
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python scripts/translate_article_summaries.py
       - name: Commit summaries safely without overwriting other updates
