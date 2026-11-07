@@ -1,4 +1,4 @@
-name: Build and translate source-grounded summaries v13
+name: Build and translate source-grounded summaries v15
 on:
   workflow_dispatch:
   workflow_run:
@@ -15,7 +15,7 @@ jobs:
   summaries:
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,15 +28,15 @@ jobs:
         run: pip install 'requests>=2.31,<3' 'trafilatura>=1.12,<3' 'googlenewsdecoder>=0.1.7,<1'
       - name: Extract new-first excerpts and rotate backlog
         env:
-          SUMMARY_MAX_NEW: '35'
-          SUMMARY_TIME_BUDGET: '300'
+          SUMMARY_MAX_NEW: '45'
+          SUMMARY_TIME_BUDGET: '360'
         run: python scripts/build_article_summaries.py
       - name: Install Korean translation model dependencies
         run: pip install 'torch>=2.2,<3' 'transformers>=4.40,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
       - name: Translate new and cached excerpts to Korean
         env:
-          SUMMARY_KO_LIMIT: '12'
-          SUMMARY_KO_BUDGET: '420'
+          SUMMARY_KO_LIMIT: '28'
+          SUMMARY_KO_BUDGET: '1000'
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python scripts/translate_article_summaries.py
       - name: Commit summaries safely without overwriting other updates
