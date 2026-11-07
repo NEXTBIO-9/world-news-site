@@ -162,6 +162,54 @@ const nbBaseTiles=L.tileLayer(
  maxNativeZoom:16,maxZoom:19
 }).addTo(map);
 
+/* English-only country labels, no Korean country names, cities, or regions. */
+const nbEnglishNames={
+ '대한민국':'SOUTH KOREA','북한':'NORTH KOREA','미국':'UNITED STATES',
+ '영국':'UNITED KINGDOM','팔레스타인':'PALESTINE',
+ '사우디아라비아':'SAUDI ARABIA','튀르키예':'TURKEY',
+ '남아프리카공화국':'SOUTH AFRICA','체코':'CZECHIA',
+ '대만':'TAIWAN','조지아':'GEORGIA'
+};
+const nbEnglishLabelLayer=L.layerGroup().addTo(map);
+const nbEnglishStyle=document.createElement('style');
+nbEnglishStyle.textContent=`
+ #map .nb-english-country-label{background:transparent;border:0;box-shadow:none;
+  white-space:nowrap;text-align:center;pointer-events:none;color:#526170;
+  font:600 10px/1.2 system-ui,sans-serif;letter-spacing:1.2px;
+  text-shadow:0 1px 2px #fff,0 -1px 2px #fff}
+ #map.nb-map-dark .nb-english-country-label{color:#d8e3ef;
+  text-shadow:0 1px 2px #111827,0 -1px 2px #111827}
+`;
+document.head.appendChild(nbEnglishStyle);
+function nbEnglishCountryName(c){
+ const override=nbEnglishNames[c[0]];
+ if(override)return override;
+ const aliases=c[3]||[];
+ const english=aliases.find(x=>/^[a-z][a-z .'-]*$/i.test(x)&&
+  !/^(u\.s\.|u\.s\.a\.|usa|american|chinese|russian|french|german|british|japanese|korean|israeli|iranian|indian|thai|saudi|canadian|mexican|australian|ukrainian|taiwanese|pakistani|brazilian|vietnamese|indonesian|egyptian|polish|spanish|italian|argentine|dutch|belgian|swiss|swedish|norwegian|danish|finnish|irish|portuguese|austrian|hungarian|greek|romanian|bulgarian|serbian|croatian|slovak|slovenian|lithuanian|latvian|estonian|belarusian|moldovan|armenian|azerbaijani|kazakh|uzbek|kyrgyz|tajik|turkmen|mongolian|nepalese|bangladeshi|sri lankan|cambodian|laotian|malaysian)$/i.test(x));
+ return english?english.toUpperCase():'';
+}
+function nbRefreshEnglishCountryLabels(){
+ nbEnglishLabelLayer.clearLayers();
+ const size=map.getSize(),zoom=map.getZoom();
+ const gapX=zoom<=2?90:zoom===3?75:zoom===4?58:40;
+ const placed=[];
+ for(const c of countries){
+  const label=nbEnglishCountryName(c);
+  if(!label)continue;
+  const pt=map.latLngToContainerPoint([c[1],c[2]]);
+  if(pt.x < -70||pt.x > size.x+70||pt.y < -20||pt.y > size.y+20)continue;
+  if(placed.some(p=>Math.abs(p.x-pt.x)<gapX&&Math.abs(p.y-pt.y)<20))continue;
+  placed.push(pt);
+  L.marker([c[1],c[2]],{interactive:false,keyboard:false,zIndexOffset:-1000,
+   icon:L.divIcon({className:'nb-english-country-label',html:safe(label),
+    iconSize:[132,16],iconAnchor:[66,8]})
+  }).addTo(nbEnglishLabelLayer);
+ }
+}
+map.on('moveend zoomend resize',nbRefreshEnglishCountryLabels);
+nbRefreshEnglishCountryLabels();
+
 const nbMapThemeStyle=document.createElement('style');
 nbMapThemeStyle.textContent=`
  #map.nb-map-dark .leaflet-tile-pane {filter:invert(1) hue-rotate(180deg) brightness(.76) contrast(.9)}
