@@ -191,12 +191,40 @@ function ensureUnclassifiedButton(){
  subtitle.insertAdjacentElement('afterend',btn);
 }
 
+/* NEXT BIO country detection enhancement: place names, not publisher origin. */
+const nbExtraPlaces={
+ '미국':['ohio','오하이오','anchorage','앵커리지','alaska','알래스카','florida','플로리다','georgia state','atlanta','애틀랜타','pennsylvania','펜실베이니아','philadelphia','필라델피아','virginia','버지니아','west virginia','웨스트버지니아','maryland','메릴랜드','massachusetts','매사추세츠','connecticut','코네티컷','new jersey','뉴저지','new mexico','뉴멕시코','arizona','애리조나','nevada','네바다','oregon','오리건','워싱턴주','washington state','seattle','시애틀','colorado','콜로라도','denver','덴버','michigan','미시간','detroit','디트로이트','illinois','일리노이','wisconsin','위스콘신','minnesota','미네소타','iowa','아이오와','indiana','인디애나','kentucky','켄터키','tennessee','테네시','nashville','내슈빌','missouri','미주리','kansas','캔자스','oklahoma','오클라호마','arkansas','아칸소','louisiana','루이지애나','new orleans','뉴올리언스','mississippi','미시시피','alabama','앨라배마','south carolina','사우스캐롤라이나','north carolina','노스캐롤라이나','north dakota','노스다코타','south dakota','사우스다코타','nebraska','네브래스카','montana','몬태나','wyoming','와이오밍','idaho','아이다호','utah','유타','hawaii','하와이','maine','메인주','vermont','버몬트','new hampshire','뉴햄프셔','rhode island','로드아일랜드','delaware','델라웨어','san francisco','샌프란시스코','san diego','샌디에이고','houston','휴스턴','dallas','댈러스','miami','마이애미','baltimore','볼티모어','cleveland','클리블랜드','columbus ohio','콜럼버스','cdc atlanta'],
+ '대한민국':['경기도','경북','경남','경상북도','경상남도','전라남도','전라북도','전남','전북','충청남도','충청북도','충남','충북','강원도','강원특별자치도','세종시','세종특별자치시','제주도','제주특별자치도','화성시','동탄','용인','성남','안양','안산','평택','천안','청주','전주','목포','여수','포항','창원','진주','김해','춘천','원주','강릉','군산','순천'],
+ '인도':['andhra pradesh','안드라프라데시','maharashtra','마하라슈트라','karnataka','카르나타카','kerala','케랄라','tamil nadu','타밀나두','uttar pradesh','우타르프라데시','gujarat','구자라트','hyderabad','하이데라바드','chennai','첸나이','kolkata','콜카타','pune','푸네'],
+ '영국':['belfast','벨파스트','wales','웨일스','cardiff','카디프','manchester','맨체스터','birmingham uk','리버풀','liverpool','edinburgh','에든버러','glasgow','글래스고','northern ireland','북아일랜드'],
+ '중국':['guangdong','광둥','guangzhou','광저우','chengdu','청두','hangzhou','항저우','nanjing','난징','suzhou','쑤저우','쑤저우시','tianjin','톈진','chongqing','충칭','hubei','후베이','xinjiang','신장위구르','홍콩','hong kong','마카오','macau'],
+ '일본':['hokkaido','홋카이도','sapporo','삿포로','fukuoka','후쿠오카','nagoya','나고야','hiroshima','히로시마','okinawa','오키나와','yokohama','요코하마'],
+ '캐나다':['ontario','온타리오','quebec','퀘벡','montreal','몬트리올','alberta','앨버타','calgary','캘거리','british columbia','브리티시컬럼비아'],
+ '호주':['new south wales','뉴사우스웨일스','queensland','퀸즐랜드','victoria australia','빅토리아주','perth','퍼스','brisbane','브리즈번','adelaide','애들레이드'],
+ '브라질':['rio de janeiro','리우데자네이루'],
+ '인도네시아':['bali','발리','surabaya','수라바야'],
+ '베트남':['da nang','다낭','ho chi minh city','호치민시'],
+ '우크라이나':['kharkiv','하르키우','odesa','오데사','dnipro','드니프로'],
+ '러시아':['saint petersburg','st petersburg','상트페테르부르크','siberia','시베리아'],
+ '콩고민주공화국':['democratic republic of congo','콩고민주공화국','킨샤사','kinshasa'],
+ '아랍에미리트':['abu dhabi','아부다비'],
+ '멕시코':['guadalajara','과달라하라','monterrey','몬테레이']
+};
+const nbPlaceMap=new Map(Object.entries(nbExtraPlaces));
+const nbCountryNames=new Set(countries.map(c=>c[0]));
+function nbPlaceMatches(t){
+ const found=[];
+ for(const [name,aliases] of nbPlaceMap){
+  if(nbCountryNames.has(name)&&aliases.some(k=>aliasMatch(t,k)))found.push(name);
+ }
+ return found;
+}
 function matchedCountries(a){
  const explicit=Array.isArray(a.countries)?a.countries.filter(n=>countries.some(c=>c[0]===n)):[];
  const headline=normText([a.title,a.title_ko].filter(Boolean).join(' '));
  const summary=normText(a.summary||'');
- const match=t=>countries.filter(c=>c[3].some(k=>aliasMatch(t,k))).map(c=>c[0]);
- return [...new Set([...explicit,...match(headline),...match(summary)])];
+ const match=t=>countries.filter(c=>c[3].some(k=>aliasMatch(t,k))).map(c=>c[0]).filter(n=>!(n==='인도'&&/인도네시아/.test(t))&&!(n==='수단'&&/남수단/.test(t))&&!(n==='콩고공화국'&&/콩고민주공화국/.test(t)));
+ return [...new Set([...explicit,...match(headline),...nbPlaceMatches(headline),...match(summary),...nbPlaceMatches(summary)])];
 }
 
 function filtered(){
@@ -207,14 +235,14 @@ function filtered(){
   const catOK=category==='전체'||cat===selected||(category==='바이오'&&(cat===norm('바이오')||BIO_CATEGORIES.some(c=>norm(c)===cat)));
   const regionOK=region==='전체'||a.region===region;
   const subOK=sub==='전체'||a.subcategory===sub;
-  const queryOK=!query||[a.title,a.title_ko,a.summary,a.source,a.category,a.subcategory,...a.countries].join(' ').toLocaleLowerCase().includes(query);
+  const queryOK=!query||[a.title,a.title_ko,a.summary,a.source,a.category,a.subcategory,...(a.countries||[])].join(' ').toLocaleLowerCase().includes(query);
   const dateOK=window.NB2?.dateOK?.(a) ?? true;
   return catOK&&regionOK&&subOK&&queryOK&&dateOK;
  });
 }
 function item(a,cls){
  const url=String(a.url||''),href=/^https?:\/\//i.test(url)?safe(url):'#';
- return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"><span class="category">${safe(a.category||'일반')}</span><strong>${safe(a.title_ko||a.title||'제목 없음')}</strong>${cls==='latest-item'?`<p>${safe(a.summary||'').slice(0,150)}</p>`:''}<span class="meta">${safe(a.region||'')} ${safe(a.subcategory||'')} · ${safe(a.source||'원문')} · ${dateText(a.published)}</span></a>`;
+ return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"><span class="category">${safe(a.category||'일반')}</span><strong>${safe(a.title||'제목 없음')}</strong>${cls==='latest-item'?`<p>${safe(a.summary||'').slice(0,150)}</p>`:''}<span class="meta">${safe(a.region||'')} ${safe(a.subcategory||'')} · ${safe(a.source||'원문')} · ${dateText(a.published)}</span></a>`;
 }
 /* NEXT BIO 2.2: country tour uses the existing map and selected-country feed. */
 let tourTimer=null,tourIndex=0,tourCountries=[];
@@ -284,7 +312,7 @@ function render(){
  if($('count'))$('count').textContent=`${list.length} ARTICLES`;
  if($('latest-list'))$('latest-list').innerHTML=list.length?list.map(a=>item(a,'latest-item')).join(''):'<p class="empty">표시할 기사가 없습니다.</p>';
  
- if($('ticker'))$('ticker').textContent=list[0]?.title_ko||list[0]?.title||'현재 필터에 해당하는 뉴스가 없습니다.';
+ if($('ticker'))$('ticker').textContent=list[0]?.title||'현재 필터에 해당하는 뉴스가 없습니다.';
  window.NB2?.afterRender?.(list,all);
 }
 $('category')?.addEventListener('change',()=>{stopTour();chosen=null;onlyUnclassified=false;const m=$('micro-filter');if(m){m.style.display=$('category').value==='미생물'?'inline-block':'none';m.value='전체';}render();});
