@@ -16,7 +16,7 @@ concurrency:
 jobs:
   update-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -49,11 +49,12 @@ jobs:
         run: |
           python - <<'PYREPORT'
           import json
-          a=json.load(open("data/articles.json",encoding="utf-8")).get("articles",[])
-          count=sum(bool(x.get("title_ko")) for x in a)
-          print(f"Korean titles: {count}/{len(a)}")
-          if count==0:
-              print("WARNING: No Korean titles generated. Check Argos installation and model download logs.")
+          data = json.load(open('data/articles.json', encoding='utf-8'))
+          articles = data.get('articles', [])
+          count = sum(bool(a.get('title_ko')) for a in articles if isinstance(a, dict))
+          print(f'Korean titles: {count}/{len(articles)}')
+          if count == 0:
+              print('WARNING: No Korean titles generated; inspect translation step logs.')
           PYREPORT
 
       - name: Commit updated feed
