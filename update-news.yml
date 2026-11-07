@@ -35,9 +35,17 @@ jobs:
         run: |
           python scripts/fetch_news.py
 
-      - name: Translate English titles to Korean
+      - name: Cache offline translation models
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/argos-translate
+          key: argos-en-ko-v1
+
+      - name: Install free translation engine
+        run: python -m pip install "argostranslate>=1.9,<2"
+
+      - name: Translate English titles to Korean (offline)
         env:
-          GOOGLE_TRANSLATE_API_KEY: ${{ secrets.GOOGLE_TRANSLATE_API_KEY }}
           TRANSLATE_MAX_NEW: "60"
         run: python scripts/translate_titles.py
 
