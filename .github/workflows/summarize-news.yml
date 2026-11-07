@@ -1,4 +1,4 @@
-name: Build source-grounded news summaries
+name: Build source-grounded news summaries v10
 on:
   workflow_dispatch:
   schedule:
@@ -22,7 +22,7 @@ jobs:
           python-version: '3.11'
       - name: Install lightweight article extraction
         run: pip install 'requests>=2.31,<3' 'trafilatura>=1.12,<3' 'googlenewsdecoder>=0.1.7,<1'
-      - name: Extract real article excerpts
+      - name: Extract excerpts with rotation and diagnostics
         env:
           SUMMARY_MAX_NEW: '35'
           SUMMARY_TIME_BUDGET: '360'
