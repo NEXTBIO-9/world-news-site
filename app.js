@@ -154,41 +154,13 @@ const aliasMatch=(text,alias)=>{
  return text.includes(k);
 };
 
-const map=L.map('map',{worldCopyJump:true,minZoom:2,maxZoom:7,zoomControl:true}).setView([22,15],2);
-// NEXT BIO v22: local, repeating SVG map with separate light/dark palettes.
-// Repeat the world to avoid blank edges when panning or centering on countries.
-const nbMapBounds = [
-  [[-85.05112878,-540],[85.05112878,-180]],
-  [[-85.05112878,-180],[85.05112878,180]],
-  [[-85.05112878,180],[85.05112878,540]]
-];
-const nbMapLayers = {light:[], dark:[]};
-for (const theme of ['light','dark']) {
-  for (const bounds of nbMapBounds) {
-    nbMapLayers[theme].push(L.imageOverlay(
-      `./nextbio-world-map-${theme}.svg`, bounds,
-      {interactive:false, className:`nb-local-svg-map nb-local-svg-map-${theme}`,
-       attribution:'Map data: Natural Earth (public domain)'}
-    ).addTo(map));
-  }
-}
-const nbMapThemeStyle=document.createElement('style');
-nbMapThemeStyle.textContent=`
- #map {background:#e7edf3}
- #map.nb-map-dark {background:#15283c}
- #map .nb-local-svg-map {transition:opacity .2s ease}
- #map:not(.nb-map-dark) .nb-local-svg-map-dark {opacity:0 !important}
- #map.nb-map-dark .nb-local-svg-map-light {opacity:0 !important}
-`;
-document.head.appendChild(nbMapThemeStyle);
-function nbSetMapTheme(dark){
- map.getContainer().classList.toggle('nb-map-dark',!!dark);
-}
+// NEXT BIO v24 — pure JavaScript/SVG map, no Leaflet or tile provider.
+const map=window.NEXTBIO_NATIVE_MAP.create('map');
+function nbSetMapTheme(dark){map.setTheme(!!dark);}
 window.NEXTBIO_setMapTheme=nbSetMapTheme;
 nbSetMapTheme(document.body.classList.contains('dark-mode') ||
  document.documentElement.classList.contains('theme-preload-dark'));
-
-const layer=L.layerGroup().addTo(map);
+const layer=map.createMarkerLayer();
 let all=[],chosen=null,onlyUnclassified=false;
 
 function ensureUnclassifiedButton(){
@@ -603,20 +575,8 @@ function render(){
   const mapCount=mapCountByCountry.get(c[0])||0;
   if(!mapCount)continue;
 
-  const icon=L.divIcon({
-   className:'',
-   html:`<div class="news-pin ${chosen===c[0]?'selected':''}">${mapCount}</div>`,
-   iconSize:[30,30],
-   iconAnchor:[15,15]
-  });
-
-  const marker=L.marker([c[1],c[2]],{
-   icon,
-   title:`${c[0]} 관련 기사 ${mapCount}건`
-  }).addTo(layer);
-
+  const marker=layer.addMarker([c[1],c[2]], mapCount, c[0], chosen===c[0]);
   marker.on('click',()=>selectCountry(c[0]));
-  marker.bindTooltip(`${c[0]} · ${mapCount}건`);
  }
 
  if($('stat-articles')){
