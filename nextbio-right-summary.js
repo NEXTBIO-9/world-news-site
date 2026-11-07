@@ -13,6 +13,7 @@
     if (text.length < 90 || text.startsWith(title) || title.startsWith(text)) return '';
     return summary.slice(0, 390);
   }
+  const koreanEnabled = () => window.NBTitleTranslation ? window.NBTitleTranslation.enabled() : (() => { try { return localStorage.getItem('nextbio-title-translation') !== 'off'; } catch (_) { return true; } })();
   let busy = false;
   function render() {
     if (busy) return;
@@ -29,19 +30,22 @@
           row.insertBefore(panel, row.querySelector(':scope > .nb2-bookmark') || null);
         }
         const a = byUrl.get(link.getAttribute('href'));
-        const content = a && (a.excerpt || fallback(a.article));
+        const ko = koreanEnabled();
+        const cached = a && a.cached;
+        const excerpt = cached && normalize(ko ? (cached.text_ko || cached.text) : (cached.text || cached.text_ko));
+        const content = a && (excerpt || fallback(a.article));
         // When article text is unavailable, show only information actually stated in the headline.
         // This is explicitly NOT an article summary and never invents missing facts.
-        const headline = normalize(a && (a.article.title_ko || a.article.title) || link.querySelector('.latest-title')?.textContent || link.textContent);
+        const headline = normalize(a && ((ko ? (a.article.title_ko || a.article.title) : (a.article.title || a.article.title_ko))) || link.querySelector('.latest-title')?.textContent || link.textContent);
         const headlineFallback = !content && headline ? headline.slice(0, 260) : '';
         const displayed = content || headlineFallback;
-        const signature = (content ? 'summary:' : 'headline:') + displayed;
+        const signature = (ko ? 'ko:' : 'original:') + (content ? 'summary:' : 'headline:') + displayed;
         if (panel.dataset.signature === signature) return;
         panel.dataset.signature = signature;
         panel.replaceChildren();
         const heading = document.createElement('span');
         heading.className = 'nb-right-summary-label';
-        heading.textContent = a && a.excerpt ? (a.translated ? '기사 요약 · 한국어 번역' : '기사 요약 · 원문 발췌') : content ? '기사 요약 · RSS 설명' : headlineFallback ? '제목 기준 · 본문 미확보' : '기사 요약';
+        heading.textContent = excerpt ? (ko && cached.text_ko ? '기사 요약 · 한국어 번역' : '기사 요약 · 원문 발췌') : content ? '기사 요약 · RSS 설명' : headlineFallback ? '제목 기준 · 본문 미확보' : '기사 요약';
         const body = document.createElement('p');
         body.textContent = displayed || '기사 본문과 제목 정보를 확보하지 못했습니다.';
         panel.classList.toggle('nb-summary-empty', !content);
@@ -56,10 +60,11 @@
     const articles = news.status === 'fulfilled' ? news.value.articles || [] : [];
     const cache = summaries.status === 'fulfilled' ? summaries.value.summaries || {} : {};
     articles.forEach(article => {
-      if (article.url) byUrl.set(article.url, {article, excerpt: normalize(cache[article.url] && (cache[article.url].text_ko || cache[article.url].text)), translated: !!(cache[article.url] && cache[article.url].text_ko)});
+      if (article.url) byUrl.set(article.url, {article, cached: cache[article.url] || null});
     });
     render();
   }).catch(() => render());
+  document.addEventListener('nb-title-translation-changed', render);
   const observer = new MutationObserver(render);
   observer.observe(feed, {childList:true, subtree:true});
   render();
