@@ -30,15 +30,20 @@
         }
         const a = byUrl.get(link.getAttribute('href'));
         const content = a && (a.excerpt || fallback(a.article));
-        const signature = content || '__empty__';
+        // When article text is unavailable, show only information actually stated in the headline.
+        // This is explicitly NOT an article summary and never invents missing facts.
+        const headline = normalize(a && (a.article.title_ko || a.article.title) || link.querySelector('.latest-title')?.textContent || link.textContent);
+        const headlineFallback = !content && headline ? headline.slice(0, 260) : '';
+        const displayed = content || headlineFallback;
+        const signature = (content ? 'summary:' : 'headline:') + displayed;
         if (panel.dataset.signature === signature) return;
         panel.dataset.signature = signature;
         panel.replaceChildren();
         const heading = document.createElement('span');
         heading.className = 'nb-right-summary-label';
-        heading.textContent = a && a.excerpt ? (a.translated ? '기사 요약 · 한국어 번역' : '기사 요약 · 원문 발췌') : content ? '기사 요약 · RSS 설명' : '기사 요약';
+        heading.textContent = a && a.excerpt ? (a.translated ? '기사 요약 · 한국어 번역' : '기사 요약 · 원문 발췌') : content ? '기사 요약 · RSS 설명' : headlineFallback ? '제목 기준 · 본문 미확보' : '기사 요약';
         const body = document.createElement('p');
-        body.textContent = content || '기사 본문을 확보하지 못해 요약을 제공할 수 없습니다.';
+        body.textContent = displayed || '기사 본문과 제목 정보를 확보하지 못했습니다.';
         panel.classList.toggle('nb-summary-empty', !content);
         panel.append(heading, body);
       });
