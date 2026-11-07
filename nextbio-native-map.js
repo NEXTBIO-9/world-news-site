@@ -5,7 +5,7 @@ const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));
 // Robinson projection, matching the self-hosted SVG (Natural Earth 10m).
 const RX=[1,.9986,.9954,.99,.9822,.973,.96,.9427,.9216,.8962,.8679,.835,.7986,.7597,.7186,.6732,.6213,.5722,.5322];
 const RY=[0,.062,.124,.186,.248,.31,.372,.434,.4958,.5571,.6176,.6769,.7346,.7903,.8435,.8936,.9394,.9761,1];
-function coeff(lat,arr){let a=clamp(Math.abs(lat),0,90)/5,i=Math.min(17,Math.floor(a)),f=a-i*5;return arr[i]*(1-f)+arr[i+1]*f;}
+function coeff(lat,arr){let a=clamp(Math.abs(lat),0,90)/5,i=Math.min(17,Math.floor(a)),f=a-i;return arr[i]*(1-f)+arr[i+1]*f;}
 function project(lat,lon){return [0.5+(lon/180)*coeff(lat,RX)*560/1200, (305-Math.sign(lat)*coeff(lat,RY)*282)/610];}
 function inverseY(y){const v=clamp((305-y*610)/282,-1,1);let lo=0,hi=90;for(let i=0;i<26;i++){let mid=(lo+hi)/2;if(coeff(mid,RY)<Math.abs(v))lo=mid;else hi=mid;}return Math.sign(v)*(lo+hi)/2;}
 function inverseX(x,lat){return (x-.5)*1200/560*180/coeff(lat,RX);}
