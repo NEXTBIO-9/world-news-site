@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""NEXT BIO v11: multi-route Google News resolution with safe fallback and diagnostics."""
+"""NEXT BIO v12: prioritize fresh articles, retain cursor backfill and source-grounded excerpts."""
 import html
 import base64
 import binascii
@@ -168,20 +168,45 @@ def main():
     if not isinstance(cache, dict):
         cache = {}
     now = datetime.now(timezone.utc).isoformat()
+    failures = previous.get('failed_urls', {})
+    if not isinstance(failures, dict):
+        failures = {}
+    # Retry failed URLs after 12 hours, not on every 15-minute run.
+    retry_after = time.time() - 12 * 3600
     start = time.monotonic()
     reasons = Counter()
     new_count = attempts = rss_count = 0
-    # Key fix: continue from the NEXT article on each run rather than retrying the same first 35 forever.
+    # Preserve cursor-based backfill, but give newly published articles priority.
+    # The priority queue is bounded so older articles still receive coverage.
     cursor = int(previous.get('next_index', 0) or 0) % max(1, len(articles))
     scanned = 0
+    fresh_count = 0
+    # Prefer the newest unprocessed articles while reserving ~1/3 of attempts for backlog.
+    # Stable URL cache prevents duplicate fetching and existing translated text is preserved.
+    fresh_limit = max(1, MAX_ATTEMPTS * 2 // 3)
+    fresh_order = sorted(range(len(articles)), key=lambda i: str(articles[i].get('published') or ''), reverse=True)
     session = requests.Session()
     session.headers.update(HEADERS)
-    while scanned < len(articles) and time.monotonic() - start < BUDGET:
-        index = (cursor + scanned) % len(articles)
+    # Phase A: new-first (only entries not yet cached). Phase B: rotating backlog.
+    queue = [(i, True) for i in fresh_order[:min(len(articles), 120)]] + [((cursor + i) % len(articles), False) for i in range(len(articles))]
+    seen_indices = set()
+    backlog_scanned = 0
+    for index, is_fresh in queue:
+        if time.monotonic() - start >= BUDGET:
+            break
+        if is_fresh and fresh_count >= fresh_limit:
+            continue
+        if index in seen_indices:
+            continue
+        seen_indices.add(index)
+        if not is_fresh:
+            backlog_scanned += 1
         scanned += 1
         article = articles[index]
         url, title = article.get('url', ''), article.get('title', '')
         if not url or not title or url in cache:
+            continue
+        if float(failures.get(url, 0) or 0) > retry_after:
             continue
         rss = clean(article.get('summary_ko') or article.get('summary'))
         text = excerpt(rss, title) if useful(rss, title) else ''
@@ -190,16 +215,22 @@ def main():
             rss_count += 1
         else:
             if attempts >= MAX_ATTEMPTS:
-                scanned -= 1
+                if not is_fresh:
+                    backlog_scanned -= 1
                 break
             attempts += 1
+            if is_fresh:
+                fresh_count += 1
             text, reason = get_article(url, title, session)
             reasons[reason] += 1
+            if not text:
+                failures[url] = time.time()
             kind = 'source_excerpt'
         if text:
             cache[url] = {'text': text, 'kind': kind, 'updated': now}
             new_count += 1
-    next_index = (cursor + scanned) % max(1, len(articles))
+            failures.pop(url, None)
+    next_index = (cursor + backlog_scanned) % max(1, len(articles))
     # Retain prior successful summaries; bound stale cache without deleting current articles.
     if len(cache) > 2400:
         current = {a.get('url') for a in articles}
@@ -207,9 +238,11 @@ def main():
         keep = current | {u for u, _ in stale[:max(0, 2400 - len(current))]}
         cache = {u: v for u, v in cache.items() if u in keep}
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps({'updated': now, 'next_index': next_index, 'summaries': cache}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    current_urls = {a.get('url') for a in articles}
+    failures = {u: t for u, t in failures.items() if u in current_urls and float(t or 0) > time.time() - 3 * 86400}
+    OUT.write_text(json.dumps({'updated': now, 'next_index': next_index, 'failed_urls': failures, 'summaries': cache}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Articles={len(articles)}, cached={len(cache)}, new_summaries={new_count}, rss_summaries={rss_count}, fetch_attempts={attempts}')
-    print(f'cursor_start={cursor}, cursor_next={next_index}, scanned={scanned}, elapsed_seconds={int(time.monotonic()-start)}')
+    print(f'cursor_start={cursor}, cursor_next={next_index}, scanned={scanned}, fresh_attempts={fresh_count}, elapsed_seconds={int(time.monotonic()-start)}')
     print('Failure reasons: ' + json.dumps(dict(reasons.most_common()), ensure_ascii=False))
     print('NOTE: Google News URLs may not reveal publisher links; failures cannot be solved by retries alone.')
     if not new_count:
