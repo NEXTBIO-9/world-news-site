@@ -278,13 +278,58 @@ function matchedCountries(a){
  ])];
 }
 
+/* Balanced display: real articles only, up to 15 per country.
+   This affects map pins and visible feeds, not the collected JSON. */
+const NB_COUNTRY_DISPLAY_LIMIT=15;
+const NB_UNCLASSIFIED_DISPLAY_LIMIT=120;
+
+function nbBalancedArticles(articles){
+ const buckets=new Map();
+ const unknown=[];
+ for(const article of articles){
+  const names=[...new Set((article.countries||[]).filter(n=>nbCountryNames.has(n)))];
+  if(!names.length){unknown.push(article);continue;}
+  for(const name of names){
+   if(!buckets.has(name))buckets.set(name,[]);
+   buckets.get(name).push(article);
+  }
+ }
+ const selected=new Set();
+ const counts=new Map();
+ const positions=new Map([...buckets.keys()].map(name=>[name,0]));
+ // One article per country per pass prevents high-volume countries
+ // from dominating the visible map and global feed.
+ for(let round=0;round<NB_COUNTRY_DISPLAY_LIMIT;round++){
+  let added=false;
+  for(const [name,bucket] of buckets){
+   if((counts.get(name)||0)>=NB_COUNTRY_DISPLAY_LIMIT)continue;
+   let pos=positions.get(name)||0;
+   while(pos<bucket.length){
+    const article=bucket[pos++];
+    if(selected.has(article))continue;
+    const linked=[...new Set((article.countries||[]).filter(n=>nbCountryNames.has(n)))];
+    if(linked.some(n=>(counts.get(n)||0)>=NB_COUNTRY_DISPLAY_LIMIT))continue;
+    selected.add(article);
+    linked.forEach(n=>counts.set(n,(counts.get(n)||0)+1));
+    added=true;
+    break;
+   }
+   positions.set(name,pos);
+  }
+  if(!added)break;
+ }
+ // Unclassified articles are retained in their own view, with a modest cap.
+ unknown.slice(0,NB_UNCLASSIFIED_DISPLAY_LIMIT).forEach(a=>selected.add(a));
+ return articles.filter(a=>selected.has(a));
+}
+
 function filtered(){
  const category=$('category')?.value||'전체';
  const query=($('search')?.value||'').trim().toLocaleLowerCase();
  const region=$('region-filter')?.value||'전체';
  const sub=$('micro-filter')?.value||'전체';
 
- return all.filter(a=>{
+ const matched=all.filter(a=>{
   const cat=norm(a.category);
   const selected=norm(category);
 
@@ -304,6 +349,7 @@ function filtered(){
 
   return catOK&&regionOK&&subOK&&queryOK&&dateOK;
  });
+ return nbBalancedArticles(matched);
 }
 
 function nbRelativeTime(published){
@@ -576,7 +622,7 @@ function render(){
    ?`국가 정보가 확인되지 않은 기사 ${selected.length}건`
    :(chosen
     ?`${chosen} 관련 기사 ${selected.length}건 · 전체 목록 표시`
-    :`현재 필터 ${list.length}건 · 국가 분류 ${list.length-unclassified.length}건 · 국가 미분류 ${unclassified.length}건 · 지도 마커 ${groups.size}개`);
+    :`균형 표시 ${list.length}건 · 국가당 최대 ${NB_COUNTRY_DISPLAY_LIMIT}건 · 국가 분류 ${list.length-unclassified.length}건 · 국가 미분류 ${unclassified.length}건 · 지도 마커 ${groups.size}개`);
  }
 
  ensureUnclassifiedButton();
