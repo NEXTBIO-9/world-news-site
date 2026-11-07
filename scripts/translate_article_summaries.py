@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PATH = ROOT / 'data/article-summaries.json'
-MODEL = os.getenv('SUMMARY_KO_MODEL', 'Helsinki-NLP/opus-mt-en-ko')
+MODEL = os.getenv('SUMMARY_KO_MODEL', 'facebook/nllb-200-distilled-600M')
 LIMIT = max(1, int(os.getenv('SUMMARY_KO_LIMIT', '18')))
 BUDGET = max(30, int(os.getenv('SUMMARY_KO_BUDGET', '270')))
 
@@ -48,10 +48,13 @@ def main():
         return
     # Model loads only when needed, in a separate workflow step from article fetching.
     import torch
-    from transformers import MarianMTModel, MarianTokenizer
+    from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
     torch.set_num_threads(min(4, os.cpu_count() or 2))
-    tokenizer = MarianTokenizer.from_pretrained(MODEL)
-    model = MarianMTModel.from_pretrained(MODEL).eval()
+    tokenizer = AutoTokenizer.from_pretrained(MODEL, src_lang='eng_Latn')
+    model = AutoModelForSeq2SeqLM.from_pretrained(MODEL).eval()
+    target_lang_id = tokenizer.convert_tokens_to_ids('kor_Hang')
+    if target_lang_id is None or target_lang_id == tokenizer.unk_token_id:
+        raise RuntimeError('NLLB Korean target language ID unavailable')
     started = time.monotonic()
     successes = 0
     rejected = 0
@@ -62,7 +65,7 @@ def main():
         try:
             inputs = tokenizer([source], return_tensors='pt', truncation=True, max_length=384)
             with torch.inference_mode():
-                tokens = model.generate(**inputs, max_new_tokens=400, num_beams=3, do_sample=False)
+                tokens = model.generate(**inputs, max_new_tokens=400, num_beams=2, do_sample=False, forced_bos_token_id=target_lang_id)
             translated = tokenizer.batch_decode(tokens, skip_special_tokens=True)[0].strip()
             if acceptable(source, translated):
                 item['text_ko'] = translated
