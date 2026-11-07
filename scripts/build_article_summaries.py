@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-"""NEXT BIO v10: rotating source-grounded excerpts and actionable failure diagnostics."""
+"""NEXT BIO v11: multi-route Google News resolution with safe fallback and diagnostics."""
 import html
+import base64
+import binascii
+from html.parser import HTMLParser
 import json
 import os
 import re
@@ -8,7 +11,7 @@ import time
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs, unquote, urljoin
 
 import requests
 import trafilatura
@@ -49,28 +52,100 @@ def excerpt(value, title):
     result = ' '.join(chosen)[:420]
     return result if useful(result, title) else ''
 
+# Google News uses multiple URL formats. A decoder failure must not stop every attempt.
+BLOCKED_HOSTS = ('google.com', 'googleusercontent.com', 'gstatic.com', 'youtube.com',
+                 'facebook.com', 'instagram.com', 'twitter.com', 'x.com', 't.co')
+
+def allowed_source(url):
+    p = urlparse(url)
+    if p.scheme not in ('http', 'https') or not p.hostname:
+        return False
+    h = p.hostname.lower().rstrip('.')
+    return not any(h == b or h.endswith('.' + b) for b in BLOCKED_HOSTS)
+
+class LinkCollector(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.links = []
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == 'meta' and a.get('property', '').lower() in ('og:url', 'article:published_url'):
+            self.links.append(a.get('content', ''))
+        if tag == 'link' and a.get('rel', '').lower() == 'canonical':
+            self.links.append(a.get('href', ''))
+        if tag == 'a':
+            self.links.append(a.get('href', ''))
+
+def legacy_google_decode(url):
+    # Older Google News RSS links contain an encoded publisher URL. Newer ones do not.
+    token = urlparse(url).path.rstrip('/').split('/')[-1]
+    try:
+        raw = base64.urlsafe_b64decode(token + '=' * (-len(token) % 4))
+        for match in re.finditer(rb'https?://[^\x00-\x20\x7f"<>]+', raw):
+            candidate = match.group(0).decode('utf-8', 'ignore').rstrip('\\')
+            if allowed_source(candidate):
+                return candidate
+    except (ValueError, binascii.Error):
+        pass
+    return ''
+
+def resolve_google(url, session):
+    # 1. Google's own redirect/URL parameter (when present).
+    query = parse_qs(urlparse(url).query)
+    for key in ('url', 'q', 'u'):
+        for candidate in query.get(key, []):
+            candidate = unquote(candidate)
+            if allowed_source(candidate):
+                return candidate, 'google_query'
+    # 2. Current googlenewsdecoder package, when supported by the URL format.
+    if gnewsdecoder is not None:
+        try:
+            decoded = gnewsdecoder(url, interval=0)
+            candidate = decoded.get('decoded_url', '') if isinstance(decoded, dict) else ''
+            if allowed_source(candidate):
+                return candidate, 'google_decoder'
+        except Exception:
+            pass
+    # 3. Legacy embedded URL.
+    candidate = legacy_google_decode(url)
+    if candidate:
+        return candidate, 'google_legacy'
+    # 4. Follow HTTP redirects; inspect explicit publisher links in the landing HTML.
+    # Never choose an arbitrary external link (ads/navigation could be mistaken for news).
+    try:
+        with session.get(url, timeout=(4, 10), allow_redirects=True, stream=True) as response:
+            final = response.url
+            if allowed_source(final):
+                return final, 'google_redirect'
+            if response.status_code != 200 or 'text/html' not in response.headers.get('Content-Type', '').lower():
+                return '', 'google_http_' + str(response.status_code)
+            page = response.raw.read(450_000, decode_content=True).decode('utf-8', 'replace')
+        parser = LinkCollector()
+        parser.feed(page)
+        # Accept only an explicit canonical/og:url if it is a publisher URL.
+        for link in parser.links[:2]:
+            candidate = urljoin(final, html.unescape(link))
+            if allowed_source(candidate):
+                return candidate, 'google_canonical'
+    except requests.RequestException as exc:
+        return '', 'google_request_' + type(exc).__name__
+    except Exception as exc:
+        return '', 'google_parse_' + type(exc).__name__
+    return '', 'google_unresolved'
+
 def get_article(url, title, session):
     parsed = urlparse(url)
     if parsed.scheme not in ('http', 'https') or not parsed.hostname:
         return '', 'invalid_url'
     host = parsed.hostname.lower()
-    if host.endswith(('facebook.com', 'youtube.com', 'x.com', 'twitter.com', 'instagram.com')):
-        return '', 'social_media'
     if host == 'news.google.com':
-        if gnewsdecoder is None:
-            return '', 'decoder_missing'
-        try:
-            result = gnewsdecoder(url, interval=0)
-            if not isinstance(result, dict) or not result.get('status'):
-                return '', 'google_decode_failed'
-            url = result.get('decoded_url', '')
-            decoded = urlparse(url)
-            if decoded.scheme not in ('http', 'https') or not decoded.hostname or decoded.hostname.endswith('google.com'):
-                return '', 'google_decode_invalid'
-        except Exception as exc:
-            return '', 'google_decode_exception_' + type(exc).__name__
+        url, route = resolve_google(url, session)
+        if not url:
+            return '', route
+    elif not allowed_source(url):
+        return '', 'unsupported_host'
     try:
-        with session.get(url, timeout=(3, 7), allow_redirects=True, stream=True) as response:
+        with session.get(url, timeout=(4, 9), allow_redirects=True, stream=True) as response:
             if response.status_code != 200:
                 return '', 'http_' + str(response.status_code)
             if 'text/html' not in response.headers.get('Content-Type', '').lower():
@@ -136,6 +211,7 @@ def main():
     print(f'Articles={len(articles)}, cached={len(cache)}, new_summaries={new_count}, rss_summaries={rss_count}, fetch_attempts={attempts}')
     print(f'cursor_start={cursor}, cursor_next={next_index}, scanned={scanned}, elapsed_seconds={int(time.monotonic()-start)}')
     print('Failure reasons: ' + json.dumps(dict(reasons.most_common()), ensure_ascii=False))
+    print('NOTE: Google News URLs may not reveal publisher links; failures cannot be solved by retries alone.')
     if not new_count:
         print('WARNING: zero summaries. Check failure reasons. Do not mistake a successful workflow for successful extraction.')
     print('Only source-backed excerpts are saved; no fabricated article summaries.')
