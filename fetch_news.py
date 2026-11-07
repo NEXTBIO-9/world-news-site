@@ -11,7 +11,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from difflib import SequenceMatcher
 
-MAX_PER_FEED = 25
+MAX_PER_FEED = 35
 MAX_TOTAL = 1800
 MAX_PER_COUNTRY = 15
 MAX_GENERAL = 120
@@ -101,15 +101,57 @@ TOPIC_FEEDS = [
     ('보건·의료',None,'public health hospitals medical research','en','US'),
 ]
 # (category, subcategory, query, language, region, country_hint)
+# Search terms must explicitly include the country; locale alone is not a location tag.
 FEEDS = [(cat, sub, query, lang, region, None)
-         for cat,sub,query,lang,region in SEARCHES + TOPIC_FEEDS]
-for country,english,region in COUNTRY_FEEDS:
+         for cat, sub, query, lang, region in SEARCHES + TOPIC_FEEDS]
+
+# A local-language query can find reporting that English-only searches miss.
+# Google News language/edition combinations are intentionally conservative.
+LOCAL_EDITION = {
+    '대한민국': ('ko', 'KR', '한국'),
+    '일본': ('ja', 'JP', '日本'),
+    '중국': ('zh-CN', 'CN', '中国'),
+    '독일': ('de', 'DE', 'Deutschland'),
+    '프랑스': ('fr', 'FR', 'France'),
+    '이탈리아': ('it', 'IT', 'Italia'),
+    '스페인': ('es', 'ES', 'España'),
+    '멕시코': ('es', 'MX', 'México'),
+    '브라질': ('pt-BR', 'BR', 'Brasil'),
+    '아르헨티나': ('es', 'AR', 'Argentina'),
+    '인도네시아': ('id', 'ID', 'Indonesia'),
+    '베트남': ('vi', 'VN', 'Việt Nam'),
+    '태국': ('th', 'TH', 'ประเทศไทย'),
+    '튀르키예': ('tr', 'TR', 'Türkiye'),
+    '네덜란드': ('nl', 'NL', 'Nederland'),
+    '폴란드': ('pl', 'PL', 'Polska'),
+    '포르투갈': ('pt-PT', 'PT', 'Portugal'),
+    '칠레': ('es', 'CL', 'Chile'),
+    '콜롬비아': ('es', 'CO', 'Colombia'),
+    '페루': ('es', 'PE', 'Perú'),
+}
+
+# News-rich markets need fewer extra searches. For underrepresented countries,
+# add broader economic, social, disaster and local-language discovery feeds.
+HIGH_VOLUME = {'대한민국', '미국', '일본'}
+for country, english, region in COUNTRY_FEEDS:
     FEEDS.extend([
-        ('일반',None,f'{english} latest breaking news','en',region,country),
-        ('정치',None,f'{english} politics economy diplomacy','en',region,country),
-        ('분쟁·군사',None,f'{english} security military conflict','en',region,country),
-        ('제약·신약',None,f'{english} biotech healthcare pharmaceuticals','en',region,country),
+        ('일반', None, f'"{english}" latest news', 'en', region, country),
+        ('정치', None, f'"{english}" government election diplomacy', 'en', region, country),
+        ('분쟁·군사', None, f'"{english}" security defense conflict', 'en', region, country),
+        ('보건·의료', None, f'"{english}" healthcare biotech pharmaceuticals', 'en', region, country),
     ])
+    if country not in HIGH_VOLUME:
+        FEEDS.extend([
+            ('경제·금융', None, f'"{english}" economy business trade investment', 'en', region, country),
+            ('재해·재난', None, f'"{english}" flood earthquake weather disaster', 'en', region, country),
+            ('과학·기술', None, f'"{english}" technology science energy', 'en', region, country),
+        ])
+        if country in LOCAL_EDITION:
+            lang, edition, native = LOCAL_EDITION[country]
+            FEEDS.append(('일반', None, f'{native} 뉴스 경제 정치 사회', lang, edition, country))
+
+# Avoid duplicate requests with identical query/locale/category.
+FEEDS = list(dict.fromkeys(FEEDS))
 
 def rss_url(query, language, region):
     ceid = f'{region}:{language}'
@@ -313,6 +355,8 @@ def main():
     print('Country distribution:', sorted(counts.items(), key=lambda x: -x[1]))
     print('Unassigned/general articles:', general_count)
     print('Countries represented:', len(counts), '/', len(COUNTRY_FEEDS))
+    print('Countries with 0 articles:', [name for name, _, _ in COUNTRY_FEEDS if counts.get(name, 0) == 0])
+    print('Countries with 1-2 articles:', [(name, counts.get(name, 0)) for name, _, _ in COUNTRY_FEEDS if 0 < counts.get(name, 0) <= 2])
     print(
         'Microbiology:',
         sum(a['category'] == '미생물' for a in articles),
