@@ -13,7 +13,7 @@ from difflib import SequenceMatcher
 
 MAX_PER_FEED = 35
 MAX_TOTAL = 1800
-MAX_PER_COUNTRY = 100
+MAX_PER_COUNTRY = 15
 MAX_GENERAL = 120
 ARTICLE_MAX_AGE_DAYS = 7
 HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; WorldNews/9.1)'}
@@ -334,6 +334,23 @@ def main():
         {k: v for k, v in article.items() if k != '_key'}
         for article in accepted
     ]
+
+    # Preserve verified translations across regular RSS refreshes.
+    # Only reuse when both URL and original title match; never trust stale text.
+    prior_translations = {}
+    try:
+        old_payload = json.loads(Path('data/articles.json').read_text(encoding='utf-8'))
+        for old in old_payload.get('articles', []):
+            if isinstance(old, dict) and old.get('translation_quality_version') == 'nllb600m-v1' and old.get('title_ko'):
+                prior_translations[(old.get('url'), old.get('title'))] = old['title_ko']
+    except (OSError, ValueError, TypeError):
+        pass
+    for article in articles:
+        translated = prior_translations.get((article.get('url'), article.get('title')))
+        if translated:
+            article['title_ko'] = translated
+            article['translation_quality_version'] = 'nllb600m-v1'
+
 
     payload = {
         'updated': datetime.now(timezone.utc).isoformat(),

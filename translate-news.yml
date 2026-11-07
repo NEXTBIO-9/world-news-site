@@ -1,0 +1,88 @@
+name: Translate news headlines (free AI)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: world-news-feed-update
+  cancel-in-progress: false
+
+jobs:
+  translate-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cache Hugging Face model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface/hub
+          key: nextbio-nllb-600m-v1
+      - name: Install free translation dependencies
+        run: |
+          python -m pip install --disable-pip-version-check 'torch>=2.2,<3' 'transformers>=4.44,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
+      - name: Translate new titles using NLLB
+        env:
+          TRANSLATE_MAX_NEW: '30'
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: python translate_titles_ai.py
+      - name: Report translated titles
+        run: |
+          python - <<'PY'
+          import json
+          data=json.load(open('data/articles.json', encoding='utf-8'))
+          a=data.get('articles',[])
+          n=sum(bool(x.get('title_ko')) for x in a if isinstance(x,dict))
+          print(f'Korean titles: {n}/{len(a)}')
+          PY
+      - name: Commit translated headlines safely
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp data/articles.json /tmp/translated-articles.json
+          # Rebase translation changes onto the latest news feed without discarding new articles.
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path('data/articles.json')
+          current=json.loads(path.read_text(encoding='utf-8'))
+          translated=json.loads(Path('/tmp/translated-articles.json').read_text(encoding='utf-8'))
+          lookup={(a.get('url'),a.get('title')):a for a in translated.get('articles',[]) if isinstance(a,dict)}
+          for a in current.get('articles',[]):
+              if not isinstance(a,dict): continue
+              old=lookup.get((a.get('url'),a.get('title')))
+              if old is None: continue
+              # Only apply new-model translation; never overwrite fresh news content.
+              if old.get('translation_quality_version')=='nllb600m-v1' and old.get('title_ko'):
+                  a['title_ko']=old['title_ko']
+                  a['translation_quality_version']='nllb600m-v1'
+              elif a.get('translation_quality_version')!='nllb600m-v1':
+                  a.pop('title_ko',None)
+                  a.pop('translation_quality_version',None)
+          path.write_text(json.dumps(current,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+            git add data/articles.json
+            if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
+            git commit -m 'Translate news headlines with free AI'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1
