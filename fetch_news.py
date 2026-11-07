@@ -13,7 +13,7 @@ from difflib import SequenceMatcher
 
 MAX_PER_FEED = 35
 MAX_TOTAL = 1800
-MAX_PER_COUNTRY = 100
+MAX_PER_COUNTRY = 15
 MAX_GENERAL = 120
 ARTICLE_MAX_AGE_DAYS = 7
 HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; WorldNews/9.1)'}
