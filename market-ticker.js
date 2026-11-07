@@ -58,7 +58,8 @@
   const graph=bar.querySelector('polyline'), age=bar.querySelector('.nbm-age');
   const clock=bar.querySelector('.nbm-clock');
   const formatter=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
-  let quotes={}, index=0;
+  let quotes={}, index=0, fetching=false, fetchFailed=false, lastChecked=0;
+  const REFRESH_MS=60000;
   const number = (n,decimals) => Number(n).toLocaleString('ko-KR',{minimumFractionDigits:decimals,maximumFractionDigits:decimals});
   function drawSparkline(values, direction){
     const data=Array.isArray(values)?values.map(Number).filter(Number.isFinite):[];
@@ -73,7 +74,7 @@
     link.href=m.url;
     if(!q||!Number.isFinite(Number(q.price))){
       price.textContent='시세 대기';change.textContent='';change.className='nbm-change';
-      graph.setAttribute('points','');age.textContent='데이터 준비 중';return;
+      graph.setAttribute('points','');age.textContent=fetchFailed?'데이터 연결 실패':'데이터 준비 중';return;
     }
     price.textContent=number(q.price,m.decimals);
     const pct=Number(q.change_percent);
@@ -82,12 +83,18 @@
     drawSparkline(q.sparkline || q.history,pct);
     const time=Date.parse(q.as_of || quotes.__updated_at || '');
     const mins=Number.isFinite(time)?Math.max(0,Math.floor((Date.now()-time)/60000)):null;
-    age.textContent=q.stale?'이전 시세':mins===null?'갱신 시각 미상':mins<60?`${mins}분 전 갱신`:`${Math.floor(mins/60)}시간 전 갱신`;
+    const quoteAge=mins===null?'갱신 시각 미상':mins<60?`${mins}분 전 시세`:`${Math.floor(mins/60)}시간 전 시세`;
+    age.textContent=fetchFailed?'연결 실패 · 이전 시세':q.stale?'이전 시세':quoteAge;
+    age.title=lastChecked?`마지막 데이터 확인: ${formatter.format(new Date(lastChecked))} KST`:'아직 데이터 확인 전';
     link.title=`${m.name} 시세 보기 (지연 가능)`;
   }
   async function fetchQuotes(){
+    if(fetching) return;
+    fetching=true;
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),12000);
     try{
-      const res=await fetch(`./data/market.json?t=${Date.now()}`,{cache:'no-store'});
+      const res=await fetch(`./data/market.json?t=${Date.now()}`,{cache:'no-store',signal:controller.signal});
       if(!res.ok) throw new Error(`HTTP ${res.status}`);
       const data=await res.json();
       if(!data) throw new Error('empty market data');
@@ -100,16 +107,25 @@
       } else {
         throw new Error('invalid market data format');
       }
+      fetchFailed=false;
+      lastChecked=Date.now();
       render();
     }catch(err){
-      if(!Object.keys(quotes).length)age.textContent='데이터 연결 대기';
+      fetchFailed=true;
+      render();
       console.warn('[NEXT BIO market]',err);
+    }finally{
+      clearTimeout(timeout);
+      fetching=false;
     }
   }
   clock.textContent=formatter.format(new Date())+' KST';
   const clockTimer=setInterval(()=>{clock.textContent=formatter.format(new Date())+' KST';},1000);
   const rotationTimer=setInterval(()=>{index++;render();},5000);
-  const refreshTimer=setInterval(fetchQuotes,60000);
+  setInterval(fetchQuotes,REFRESH_MS);
+  // Background tabs can throttle timers; refresh immediately when the page is revisited.
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)fetchQuotes();});
+  window.addEventListener('focus',()=>{if(Date.now()-lastChecked>15000)fetchQuotes();});
+  window.addEventListener('pageshow',event=>{if(event.persisted)fetchQuotes();});
   render();fetchQuotes();
-  window.addEventListener('pagehide',()=>{clearInterval(clockTimer);clearInterval(rotationTimer);clearInterval(refreshTimer);},{once:true});
 })();
