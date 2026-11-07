@@ -79,8 +79,8 @@
     const pct=Number(q.change_percent);
     change.textContent=Number.isFinite(pct)?`${pct>0?'+':''}${pct.toFixed(2)}%`:'';
     change.className=`nbm-change ${pct>0?'up':pct<0?'down':'flat'}`;
-    drawSparkline(q.sparkline,pct);
-    const time=Date.parse(q.as_of||'');
+    drawSparkline(q.sparkline || q.history,pct);
+    const time=Date.parse(q.as_of || quotes.__updated_at || '');
     const mins=Number.isFinite(time)?Math.max(0,Math.floor((Date.now()-time)/60000)):null;
     age.textContent=q.stale?'이전 시세':mins===null?'갱신 시각 미상':mins<60?`${mins}분 전 갱신`:`${Math.floor(mins/60)}시간 전 갱신`;
     link.title=`${m.name} 시세 보기 (지연 가능)`;
@@ -90,8 +90,17 @@
       const res=await fetch(`./data/market.json?t=${Date.now()}`,{cache:'no-store'});
       if(!res.ok) throw new Error(`HTTP ${res.status}`);
       const data=await res.json();
-      if(!data||typeof data.quotes!=='object') throw new Error('invalid market data');
-      quotes=data.quotes;render();
+      if(!data) throw new Error('empty market data');
+      if(Array.isArray(data.markets)) {
+        quotes = Object.fromEntries(data.markets.filter(q => q && q.id).map(q => [q.id, q]));
+        quotes.__updated_at = data.updated_at;
+      } else if(data.quotes && typeof data.quotes === 'object') {
+        quotes = data.quotes;
+        quotes.__updated_at = data.updated_at;
+      } else {
+        throw new Error('invalid market data format');
+      }
+      render();
     }catch(err){
       if(!Object.keys(quotes).length)age.textContent='데이터 연결 대기';
       console.warn('[NEXT BIO market]',err);
