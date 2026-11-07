@@ -43,14 +43,20 @@ function nbPriorityKey(a){
  return t.slice(0,110)||String(a.url||'');
 }
 function alerts(list){
- const now=Date.now(),threshold=70;
+ const now=Date.now(),limit=10;
  const ranked=list.map(a=>({a,score:nbPriorityScore(a),date:validDate(a)}))
-  .filter(x=>x.date&&x.date.getTime()>=now-48*3600000&&x.date.getTime()<=now+3600000&&x.score>=threshold)
+  .filter(x=>x.date&&x.date.getTime()<=now+3600000&&x.date.getTime()>=now-7*86400000)
   .sort((x,y)=>y.score-x.score||y.date-x.date);
  const seen=new Set(),chosen=[];
- for(const x of ranked){const key=nbPriorityKey(x.a);if(seen.has(key))continue;seen.add(key);chosen.push(x);if(chosen.length>=5)break;}
+ // First show genuinely important recent stories; fill remaining slots with fresh news.
+ const priority=ranked.filter(x=>x.score>=70&&x.date.getTime()>=now-48*3600000);
+ const recent=[...ranked].sort((x,y)=>y.date-x.date);
+ for(const x of [...priority,...recent]){
+  const key=nbPriorityKey(x.a);if(seen.has(key))continue;
+  seen.add(key);chosen.push(x);if(chosen.length>=limit)break;
+ }
  const root=$('nb-alerts');if(!root)return;
- root.innerHTML=chosen.length?chosen.map(({a,score})=>`<div class="nb2-row"><span class="nb2-tag">${score>=85?'🚨 ': '⚡ '}${lang==='ko'?(score>=85?'긴급':'주요'):(score>=85?'Urgent':'Priority')} · ${score}</span><a target="_blank" rel="noopener noreferrer" href="${safe(/^https?:\/\//i.test(a.url||'')?a.url:'#')}">${safe(lang==='en'?(a.title||a.title_ko):(a.title_ko||a.title))}</a></div>`).join(''):`<p class="nb2-muted">${lang==='ko'?'현재 기준에 해당하는 주요 뉴스가 없습니다.':'No qualifying priority stories right now.'}</p>`;
+ root.innerHTML=chosen.length?chosen.map(({a,score})=>`<div class="nb2-row"><span class="nb2-tag">${score>=85?'🚨 ':score>=70?'⚡ ':'📰 '}${lang==='ko'?(score>=85?'긴급':score>=70?'주요':'최신'):(score>=85?'Urgent':score>=70?'Priority':'Latest')}${score>=70?' · '+score:''}</span><a target="_blank" rel="noopener noreferrer" href="${safe(/^https?:\/\//i.test(a.url||'')?a.url:'#')}">${safe(lang==='en'?(a.title||a.title_ko):(a.title_ko||a.title))}</a></div>`).join(''):`<p class="nb2-muted">${lang==='ko'?'최근 7일간 표시할 뉴스가 없습니다.':'No news available from the past 7 days.'}</p>`;
 }
 function saveButtons(){
  document.querySelectorAll('#latest-list a.latest-item,#country-feed a.country-item').forEach(a=>{
