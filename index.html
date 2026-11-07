@@ -220,6 +220,101 @@ body.dark-mode .leaflet-control-attribution a{
 #latest-list .nb-news-row > a.latest-item { padding-top:12px; padding-bottom:12px; }
 #latest-list .nb-news-row > a.latest-item p { margin-top:4px; margin-bottom:0; }
 
+
+/* NEXT BIO unified news + bookmark card */
+#latest-list .nb-news-row,
+#country-feed .nb-news-row {
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden;
+  border: 1px solid #344963 !important;
+  border-radius: 11px !important;
+  background: #21334b !important;
+  box-shadow: none !important;
+  transition: border-color .18s ease, background .18s ease;
+}
+#latest-list .nb-news-row:hover,
+#country-feed .nb-news-row:hover {
+  border-color: #6085b4 !important;
+  background: #293d57 !important;
+}
+#latest-list .nb-news-row > a.latest-item,
+#country-feed .nb-news-row > a.country-item {
+  flex: 1 1 0 !important;
+  display: block !important;
+  min-width: 0 !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 14px 8px 14px 15px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-decoration: none;
+}
+#latest-list .nb-news-row > a.latest-item:hover,
+#country-feed .nb-news-row > a.country-item:hover {
+  background: transparent !important;
+}
+#latest-list .nb-news-row > .nb2-bookmark,
+#country-feed .nb-news-row > .nb2-bookmark {
+  position: static !important;
+  flex: 0 0 42px !important;
+  align-self: stretch !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 42px !important;
+  height: auto !important;
+  min-height: 42px !important;
+  margin: 0 5px 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #a9bdd7;
+  cursor: pointer;
+}
+#latest-list .nb-news-row > .nb2-bookmark:hover,
+#country-feed .nb-news-row > .nb2-bookmark:hover {
+  color: #75b4ff;
+  background: transparent !important;
+}
+#latest-list .nb-news-row > .nb2-bookmark:focus-visible,
+#country-feed .nb-news-row > .nb2-bookmark:focus-visible {
+  outline: 2px solid #75b4ff;
+  outline-offset: -4px;
+  border-radius: 8px !important;
+}
+/* Light mode keeps the same single-card structure. */
+body:not(.dark-mode) #latest-list .nb-news-row,
+body:not(.dark-mode) #country-feed .nb-news-row {
+  background: #ffffff !important;
+  border-color: #dce6f1 !important;
+}
+body:not(.dark-mode) #latest-list .nb-news-row:hover,
+body:not(.dark-mode) #country-feed .nb-news-row:hover {
+  background: #f2f7ff !important;
+  border-color: #a8c5e8 !important;
+}
+@media(max-width:620px) {
+  #latest-list .nb-news-row > a.latest-item,
+  #country-feed .nb-news-row > a.country-item {
+    padding: 12px 6px 12px 12px !important;
+  }
+  #latest-list .nb-news-row > .nb2-bookmark,
+  #country-feed .nb-news-row > .nb2-bookmark {
+    flex-basis: 38px !important;
+    width: 38px !important;
+    margin-right: 3px !important;
+  }
+}
 </style>
 
 <!-- 저장된 테마를 페이지 표시 전에 적용 -->
@@ -280,6 +375,7 @@ html.theme-preload-dark body{
     <a href="#map-section">세계지도</a>
     <a href="#nb-intelligence">뉴스 분석</a>
     <a href="#latest">최신 뉴스피드</a>
+    
   </nav>
 </header>
 
@@ -317,6 +413,7 @@ html.theme-preload-dark body{
   </span>
 </div>
 
+
 <section id="map-section" class="map-section">
 
   <div class="section-heading">
@@ -335,16 +432,10 @@ html.theme-preload-dark body{
     <div class="map-col">
 
       <div class="nb-tour-controls" aria-label="뉴스 국가 자동 순회">
-        <label class="nb-tour-switch">
-          <input type="checkbox" id="nb-tour-toggle">
-          <span id="nb-tour-label">최신 뉴스 국가 자동 순회</span>
-        </label>
-        <span id="nb-tour-status" role="status" aria-live="polite">
-          자동 순회 꺼짐
-        </span>
-      </div>
-
-      <div class="map-toolbar">
+  <label class="nb-tour-switch"><input type="checkbox" id="nb-tour-toggle"> <span id="nb-tour-label">최신 뉴스 국가 자동 순회</span></label>
+  <span id="nb-tour-status" role="status" aria-live="polite">자동 순회 꺼짐</span>
+</div>
+<div class="map-toolbar">
 
         <label for="category">분야</label>
         <select id="category">
@@ -448,49 +539,12 @@ html.theme-preload-dark body{
   </div>
 
   <section id="nb-intelligence" class="nb2-panel" aria-label="NEXT BIO 추가 기능">
-    <div class="nb2-top">
-      <strong>NEWS INTELLIGENCE</strong>
-      <div class="nb2-actions">
-        <button type="button" id="nb-lang">EN</button>
-        <button type="button" id="nb-bookmark-open">
-          ☆ <span data-nb="saved">북마크</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="nb2-filters">
-      <label>
-        <span data-nb="period">기간</span>
-        <select id="nb-date">
-          <option value="7" selected>최근 7일</option>
-          <option value="3">최근 3일</option>
-          <option value="1">최근 24시간</option>
-        </select>
-      </label>
-      <button type="button" id="nb-clear">초기화</button>
-    </div>
-
-    <div class="nb2-columns">
-      <section>
-        <h3>⚡ <span data-nb="alerts">신규·주요 뉴스</span></h3>
-        <div id="nb-alerts" class="nb2-list"></div>
-      </section>
-      <section>
-        <h3>🧬 <span data-nb="bio">바이오 대시보드</span></h3>
-        <div id="nb-bio" class="nb2-list"></div>
-      </section>
-    </div>
-
-    <section id="nb-bookmarks" hidden>
-      <h3>☆ <span data-nb="saved">북마크</span></h3>
-      <div id="nb-saved-list"></div>
-    </section>
-
-    <p class="nb2-note" id="nb-notice">
-      속보 표시는 수집된 기사 제목과 시간에 기반한 자동 분류이며,
-      공식 긴급재난 알림이 아닙니다.
-    </p>
-  </section>
+  <div class="nb2-top"><strong>NEWS INTELLIGENCE</strong><div class="nb2-actions"><button type="button" id="nb-lang">EN</button><button type="button" id="nb-bookmark-open">☆ <span data-nb="saved">북마크</span></button></div></div>
+  <div class="nb2-filters"><label><span data-nb="period">기간</span> <select id="nb-date"><option value="7" selected>최근 7일</option><option value="3">최근 3일</option><option value="1">최근 24시간</option></select></label><button type="button" id="nb-clear">초기화</button></div>
+  <div class="nb2-columns"><section><h3>⚡ <span data-nb="alerts">신규·주요 뉴스</span></h3><div id="nb-alerts" class="nb2-list"></div></section><section><h3>🧬 <span data-nb="bio">바이오 대시보드</span></h3><div id="nb-bio" class="nb2-list"></div></section></div>
+  <section id="nb-bookmarks" hidden><h3>☆ <span data-nb="saved">북마크</span></h3><div id="nb-saved-list"></div></section>
+  <p class="nb2-note" id="nb-notice">속보 표시는 수집된 기사 제목과 시간에 기반한 자동 분류이며, 공식 긴급재난 알림이 아닙니다.</p>
+</section>
 
   <div id="latest-list" class="latest-list">
     <p class="empty">
@@ -521,8 +575,8 @@ html.theme-preload-dark body{
 
 <!-- 기존 지도 및 뉴스 프로그램 유지 -->
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="app.js?v=26"></script>
-<script src="nextbio-extras.js?v=26"></script>
+<script src="app.js?v=26"></script><script src="nextbio-extras.js?v=26"></script>
+
 <script src="nextbio-map-layout-fix.js?v=25"></script>
 
 <!-- NEXT BIO 테마 전환 기능 -->
@@ -541,11 +595,9 @@ html.theme-preload-dark body{
     const isDark = theme === "dark";
 
     document.body.classList.toggle("dark-mode", isDark);
-
     if(typeof window.NEXTBIO_setMapTheme === "function") {
       window.NEXTBIO_setMapTheme(isDark);
     }
-
     document.documentElement.classList.remove("theme-preload-dark");
 
     button.textContent = isDark
@@ -575,9 +627,6 @@ html.theme-preload-dark body{
   });
 })();
 </script>
-
-<!-- 금융 티커 V2 -->
-<script src="./market-ticker.js?v=5" defer></script>
-
+<script src="./market-ticker.js?v=1" defer></script>
 </body>
 </html>
