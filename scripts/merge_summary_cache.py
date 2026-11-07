@@ -17,6 +17,12 @@ for url, entry in (local.get('summaries') or {}).items():
         combined.update(entry)
         if old.get('text_ko') and not entry.get('text_ko'):
             combined['text_ko'] = old['text_ko']
+        # Keep a newer Korean translation and avoid erasing retry cooldown.
+        if old.get('translated_at', '') > entry.get('translated_at', '') and old.get('text_ko'):
+            combined['text_ko'] = old['text_ko']
+            combined['translated_at'] = old['translated_at']
+        if not combined.get('text_ko'):
+            combined['ko_retry_after'] = max(float(old.get('ko_retry_after', 0) or 0), float(entry.get('ko_retry_after', 0) or 0))
         merged['summaries'][url] = combined
     else:
         merged['summaries'][url] = entry

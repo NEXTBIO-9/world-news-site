@@ -39,10 +39,19 @@ def main():
     summaries = data.get('summaries', {})
     if not isinstance(summaries, dict):
         raise ValueError('Invalid summary cache')
-    pending = [(url, item) for url, item in summaries.items() if isinstance(item, dict) and needs_translation(item)]
-    # Newest excerpts first; older entries are translated over subsequent runs.
-    pending.sort(key=lambda pair: pair[1].get('updated', ''), reverse=True)
-    pending = pending[:LIMIT]
+    # Failed translations are retried after a cooldown, rather than consuming every run.
+    retry_before = time.time() - 12 * 3600
+    pending = [(url, item) for url, item in summaries.items()
+               if isinstance(item, dict) and needs_translation(item)
+               and float(item.get('ko_retry_after', 0) or 0) <= time.time()]
+    # Split the capacity between fresh stories and old untranslated backlog.
+    # Without this, a continuous stream of new articles can starve older summaries.
+    newest = sorted(pending, key=lambda pair: pair[1].get('updated', ''), reverse=True)
+    oldest = list(reversed(newest))
+    selected = newest[:(LIMIT + 1) // 2]
+    used = {url for url, _ in selected}
+    selected += [(url, item) for url, item in oldest if url not in used][:LIMIT - len(selected)]
+    pending = selected
     if not pending:
         print('Korean summary translations: pending=0, translated=0')
         return
@@ -70,11 +79,14 @@ def main():
             if acceptable(source, translated):
                 item['text_ko'] = translated
                 item['translated_at'] = datetime.now(timezone.utc).isoformat()
+                item.pop('ko_retry_after', None)
                 successes += 1
             else:
                 rejected += 1
+                item['ko_retry_after'] = time.time() + 12 * 3600
         except Exception as exc:
             rejected += 1
+            item['ko_retry_after'] = time.time() + 12 * 3600
             print('Translation error: ' + type(exc).__name__)
     data['updated'] = datetime.now(timezone.utc).isoformat()
     PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

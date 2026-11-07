@@ -37,6 +37,20 @@ def useful(value, title):
     text, heading = normalized(value), normalized(title)
     return len(text) >= 100 and text != heading and not text.startswith(heading) and len(text) >= len(heading) * 1.5
 
+def rss_excerpt(value, title):
+    # RSS descriptions are often shorter than article-body paragraphs.
+    # Accept a substantive description, never the title alone or a title prefix.
+    raw = clean(value)
+    if len(raw) < 85 or normalized(raw) == normalized(title):
+        return ''
+    heading = normalized(title)
+    if normalized(raw).startswith(heading) and len(normalized(raw)) < len(heading) * 1.6:
+        return ''
+    if len(normalized(raw)) < max(65, int(len(heading) * 1.25)):
+        return ''
+    return raw[:420].rsplit(' ', 1)[0] if len(raw) > 420 else raw
+
+
 def excerpt(value, title):
     chunks = re.split(r'(?<=[.!?。！？])\s+', clean(value)[:7000])
     chosen = []
@@ -209,7 +223,7 @@ def main():
         if float(failures.get(url, 0) or 0) > retry_after:
             continue
         rss = clean(article.get('summary_ko') or article.get('summary'))
-        text = excerpt(rss, title) if useful(rss, title) else ''
+        text = rss_excerpt(rss, title)
         kind = 'rss_excerpt'
         if text:
             rss_count += 1
