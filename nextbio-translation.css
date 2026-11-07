@@ -3,3 +3,34 @@
 #nb-title-translation-toggle{border:1px solid rgba(100,160,225,.55);background:#245585;color:#fff;border-radius:7px;padding:7px 12px;cursor:pointer;font-weight:700}
 #nb-title-translation-toggle[aria-pressed="false"]{background:#475569}
 .nb-translation-hint{font-size:11px;opacity:.7}
+
+/* NEXT BIO v16 — independent floating translation control */
+.nb-translation-control{
+  position:fixed !important;
+  right:max(18px,env(safe-area-inset-right)) !important;
+  bottom:max(20px,env(safe-area-inset-bottom)) !important;
+  left:auto !important;
+  top:auto !important;
+  z-index:10050 !important;
+  display:flex !important;
+  align-items:center;
+  gap:9px;
+  width:max-content;
+  max-width:calc(100vw - 36px);
+  margin:0 !important;
+  padding:10px 12px !important;
+  background:rgba(22,35,55,.96) !important;
+  color:#f5f9ff !important;
+  border:1px solid rgba(125,165,215,.6) !important;
+  border-radius:12px !important;
+  box-shadow:0 7px 24px rgba(0,0,0,.3);
+  backdrop-filter:blur(10px);
+}
+.nb-translation-control label{color:inherit;white-space:nowrap}
+.nb-translation-control .nb-translation-hint{display:none !important}
+.nb-translation-control #nb-title-translation-toggle{white-space:nowrap}
+@media(max-width:600px){
+  .nb-translation-control{right:max(10px,env(safe-area-inset-right)) !important;bottom:max(12px,env(safe-area-inset-bottom)) !important;padding:7px 9px !important;gap:7px;font-size:11px}
+  .nb-translation-control label{font-size:11px}
+  .nb-translation-control #nb-title-translation-toggle{padding:6px 8px;font-size:11px}
+}
