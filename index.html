@@ -425,7 +425,7 @@ html.theme-preload-dark body{
 
   <section id="nb-intelligence" class="nb2-panel" aria-label="NEXT BIO 추가 기능">
   <div class="nb2-top"><strong>NEWS INTELLIGENCE</strong><div class="nb2-actions"><button type="button" id="nb-lang">EN</button><button type="button" id="nb-bookmark-open">☆ <span data-nb="saved">북마크</span></button></div></div>
-  <div class="nb2-filters"><label><span data-nb="period">기간</span> <select id="nb-date"><option value="all">전체 기간</option><option value="1">최근 24시간</option><option value="3">최근 3일</option><option value="7">최근 7일</option><option value="30">최근 30일</option></select></label><label><span data-nb="from">시작일</span> <input type="date" id="nb-from"></label><label><span data-nb="to">종료일</span> <input type="date" id="nb-to"></label><button type="button" id="nb-clear">초기화</button><label class="nb2-check"><input type="checkbox" id="nb-heat"> <span data-nb="heat">뉴스 밀도 지도</span></label></div>
+  <div class="nb2-filters"><label><span data-nb="period">기간</span> <select id="nb-date"><option value="7" selected>최근 7일</option><option value="3">최근 3일</option><option value="1">최근 24시간</option></select></label><button type="button" id="nb-clear">초기화</button></div>
   <div class="nb2-columns"><section><h3>⚡ <span data-nb="alerts">신규·주요 뉴스</span></h3><div id="nb-alerts" class="nb2-list"></div></section><section><h3>🧬 <span data-nb="bio">바이오 대시보드</span></h3><div id="nb-bio" class="nb2-list"></div></section></div>
   <section id="nb-bookmarks" hidden><h3>☆ <span data-nb="saved">북마크</span></h3><div id="nb-saved-list"></div></section>
   <p class="nb2-note" id="nb-notice">속보 표시는 수집된 기사 제목과 시간에 기반한 자동 분류이며, 공식 긴급재난 알림이 아닙니다.</p>
@@ -460,7 +460,7 @@ html.theme-preload-dark body{
 
 <!-- 기존 지도 및 뉴스 프로그램 유지 -->
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="app.js?v=25"></script><script src="nextbio-extras.js?v=25"></script>
+<script src="app.js?v=26"></script><script src="nextbio-extras.js?v=26"></script>
 
 <script src="nextbio-map-layout-fix.js?v=25"></script>
 
