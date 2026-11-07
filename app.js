@@ -280,7 +280,7 @@ function matchedCountries(a){
 
 /* Balanced display: real articles only, up to 15 per country.
    This affects map pins and visible feeds, not the collected JSON. */
-const NB_COUNTRY_DISPLAY_LIMIT=15;
+const NB_COUNTRY_DISPLAY_LIMIT=100;
 const NB_UNCLASSIFIED_DISPLAY_LIMIT=120;
 
 function nbBalancedArticles(articles){
