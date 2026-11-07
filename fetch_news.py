@@ -13,8 +13,8 @@ from difflib import SequenceMatcher
 
 MAX_PER_FEED = 25
 MAX_TOTAL = 1800
-MAX_PER_COUNTRY = 55
-MAX_GENERAL = 500
+MAX_PER_COUNTRY = 15
+MAX_GENERAL = 120
 ARTICLE_MAX_AGE_DAYS = 7
 HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; WorldNews/9.1)'}
 
@@ -311,6 +311,8 @@ def main():
     )
 
     print('Country distribution:', sorted(counts.items(), key=lambda x: -x[1]))
+    print('Unassigned/general articles:', general_count)
+    print('Countries represented:', len(counts), '/', len(COUNTRY_FEEDS))
     print(
         'Microbiology:',
         sum(a['category'] == '미생물' for a in articles),
