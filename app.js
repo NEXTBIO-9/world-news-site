@@ -278,7 +278,7 @@ function matchedCountries(a){
  ])];
 }
 
-/* Balanced display: real articles only, up to 15 per country.
+/* Balanced display: real articles only, up to 100 per country.
    This affects map pins and visible feeds, not the collected JSON. */
 const NB_COUNTRY_DISPLAY_LIMIT=100;
 const NB_UNCLASSIFIED_DISPLAY_LIMIT=120;
@@ -323,7 +323,7 @@ function nbBalancedArticles(articles){
  return articles.filter(a=>selected.has(a));
 }
 
-function filtered(){
+function filtered(includeAllForMap=false){
  const category=$('category')?.value||'전체';
  const query=($('search')?.value||'').trim().toLocaleLowerCase();
  const region=$('region-filter')?.value||'전체';
@@ -349,7 +349,7 @@ function filtered(){
 
   return catOK&&regionOK&&subOK&&queryOK&&dateOK;
  });
- return nbBalancedArticles(matched);
+ return includeAllForMap ? matched : nbBalancedArticles(matched);
 }
 
 function nbRelativeTime(published){
@@ -560,6 +560,13 @@ document.addEventListener('click',e=>{
 /* 지도 및 뉴스 목록 렌더링 */
 function render(){
  const list=filtered(),groups=new Map();
+ // Map pin counts use every matching article, without the display cap.
+ const mapCountByCountry=new Map();
+ for(const a of filtered(true)){
+  for(const name of a.countries||[]){
+   mapCountByCountry.set(name,(mapCountByCountry.get(name)||0)+1);
+  }
+ }
 
  const signature=list.map(a=>a.url).join('\n');
  if(signature!==nbNewsSignature){
@@ -581,22 +588,23 @@ function render(){
 
  for(const c of countries){
   const articles=groups.get(c[0]);
-  if(!articles?.length)continue;
+  const mapCount=mapCountByCountry.get(c[0])||0;
+  if(!mapCount)continue;
 
   const icon=L.divIcon({
    className:'',
-   html:`<div class="news-pin ${chosen===c[0]?'selected':''}">${articles.length}</div>`,
+   html:`<div class="news-pin ${chosen===c[0]?'selected':''}">${mapCount}</div>`,
    iconSize:[30,30],
    iconAnchor:[15,15]
   });
 
   const marker=L.marker([c[1],c[2]],{
    icon,
-   title:`${c[0]} 관련 기사 ${articles.length}건`
+   title:`${c[0]} 관련 기사 ${mapCount}건`
   }).addTo(layer);
 
   marker.on('click',()=>selectCountry(c[0]));
-  marker.bindTooltip(`${c[0]} · ${articles.length}건`);
+  marker.bindTooltip(`${c[0]} · ${mapCount}건`);
  }
 
  if($('stat-articles')){
