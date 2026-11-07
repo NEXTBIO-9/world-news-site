@@ -154,12 +154,43 @@ const aliasMatch=(text,alias)=>{
  return text.includes(k);
 };
 const map=L.map('map',{worldCopyJump:true,minZoom:2,maxZoom:7,zoomControl:true}).setView([22,15],2);
-/* NEXT BIO: public OpenStreetMap tiles, no CARTO API key required.
-   Dark mode changes ONLY the base tile pane, not markers or heatmap. */
-const nbBaseTiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
- attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
- maxZoom:19
+/* NEXT BIO: Esri light gray BASE layer without the separate reference-label layer.
+   Place labels ourselves so cities, streets, and regional names do not appear. */
+const nbBaseTiles=L.tileLayer(
+ 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{
+ attribution:'Tiles &copy; Esri',
+ maxNativeZoom:16,maxZoom:19
 }).addTo(map);
+
+/* Korean country names only; collision-aware and non-interactive.
+   Keep marker and heatmap layers untouched. */
+const nbCountryLabels=L.layerGroup().addTo(map);
+const nbCountryLabelStyle=document.createElement('style');
+nbCountryLabelStyle.textContent=`
+ #map .nb-country-label {background:transparent;border:0;box-shadow:none;white-space:nowrap;
+  color:#30465c;font:600 11px/1.2 system-ui,sans-serif;text-shadow:0 1px 2px white,1px 0 2px white;
+  text-align:center;pointer-events:none}
+ #map.nb-map-dark .nb-country-label {color:#e6edf5;text-shadow:0 1px 2px #111827,1px 0 2px #111827}
+`;
+document.head.appendChild(nbCountryLabelStyle);
+function nbRefreshCountryLabels(){
+ nbCountryLabels.clearLayers();
+ const zoom=map.getZoom(), width=map.getSize().x;
+ const minDistance=zoom<=2?100:zoom===3?76:zoom===4?56:38;
+ const seen=[];
+ for(const c of countries){
+  const pt=map.latLngToContainerPoint([c[1],c[2]]);
+  if(pt.x < -60 || pt.x > width+60 || pt.y < -25 || pt.y > map.getSize().y+25)continue;
+  if(seen.some(p=>Math.abs(p.x-pt.x)<minDistance && Math.abs(p.y-pt.y)<23))continue;
+  seen.push(pt);
+  L.marker([c[1],c[2]],{
+   interactive:false,keyboard:false,zIndexOffset:-1000,
+   icon:L.divIcon({className:'nb-country-label',html:c[0],iconSize:[120,16],iconAnchor:[60,8]})
+  }).addTo(nbCountryLabels);
+ }
+}
+map.on('moveend zoomend resize',nbRefreshCountryLabels);
+nbRefreshCountryLabels();
 const nbMapThemeStyle=document.createElement('style');
 nbMapThemeStyle.textContent=`
  #map.nb-map-dark .leaflet-tile-pane {filter:invert(1) hue-rotate(180deg) brightness(.76) contrast(.9)}
