@@ -12,7 +12,9 @@ from pathlib import Path
 from difflib import SequenceMatcher
 
 MAX_PER_FEED = 25
-MAX_TOTAL = 1000
+MAX_TOTAL = 1800
+MAX_PER_COUNTRY = 55
+MAX_GENERAL = 500
 ARTICLE_MAX_AGE_DAYS = 7
 HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; WorldNews/9.1)'}
 
@@ -52,52 +54,62 @@ SEARCHES = [
 ]
 
 
-# 추가 국가별 RSS: 국가명을 검색어에 포함해 현지 관련 뉴스를 확보합니다.
-# 지역 설정은 검색 언어/노출 시장일 뿐 기사 발생 국가의 증거가 아닙니다.
-GLOBAL_SEARCHES = [
-    ('일반', None, 'Japan latest news', 'en', 'JP'),
-    ('제약·신약', None, 'Japan biotech pharmaceutical', 'en', 'JP'),
-    ('일반', None, 'China latest news', 'en', 'SG'),
-    ('경제·금융', None, 'China economy technology', 'en', 'SG'),
-    ('일반', None, 'India latest news', 'en', 'IN'),
-    ('제약·신약', None, 'India pharmaceutical biotech', 'en', 'IN'),
-    ('일반', None, 'United Kingdom latest news', 'en', 'GB'),
-    ('제약·신약', None, 'UK biotech NHS research', 'en', 'GB'),
-    ('일반', None, 'Germany latest news', 'en', 'DE'),
-    ('경제·금융', None, 'Germany economy industry', 'en', 'DE'),
-    ('일반', None, 'France latest news', 'en', 'FR'),
-    ('일반', None, 'Italy latest news', 'en', 'IT'),
-    ('일반', None, 'Spain latest news', 'en', 'ES'),
-    ('일반', None, 'Poland latest news', 'en', 'PL'),
-    ('일반', None, 'Ukraine latest news', 'en', 'UA'),
-    ('일반', None, 'Russia latest news', 'en', 'GB'),
-    ('일반', None, 'Canada latest news', 'en', 'CA'),
-    ('일반', None, 'Mexico latest news', 'en', 'MX'),
-    ('일반', None, 'Brazil latest news', 'en', 'BR'),
-    ('일반', None, 'Argentina latest news', 'en', 'AR'),
-    ('일반', None, 'Australia latest news', 'en', 'AU'),
-    ('일반', None, 'New Zealand latest news', 'en', 'NZ'),
-    ('일반', None, 'Indonesia latest news', 'en', 'ID'),
-    ('일반', None, 'Vietnam latest news', 'en', 'VN'),
-    ('일반', None, 'Thailand latest news', 'en', 'TH'),
-    ('일반', None, 'Philippines latest news', 'en', 'PH'),
-    ('일반', None, 'Malaysia latest news', 'en', 'MY'),
-    ('일반', None, 'Singapore latest news', 'en', 'SG'),
-    ('일반', None, 'Taiwan latest news', 'en', 'TW'),
-    ('일반', None, 'Saudi Arabia latest news', 'en', 'SA'),
-    ('일반', None, 'United Arab Emirates latest news', 'en', 'AE'),
-    ('일반', None, 'Israel latest news', 'en', 'IL'),
-    ('일반', None, 'Iran latest news', 'en', 'GB'),
-    ('일반', None, 'Turkey latest news', 'en', 'TR'),
-    ('일반', None, 'Egypt latest news', 'en', 'EG'),
-    ('일반', None, 'South Africa latest news', 'en', 'ZA'),
-    ('일반', None, 'Nigeria latest news', 'en', 'NG'),
-    ('일반', None, 'Kenya latest news', 'en', 'KE'),
+# Comprehensive world coverage. Search locale is not itself evidence of event location.
+# A country tag is attached only to queries explicitly scoped to that country.
+COUNTRY_FEEDS = [
+    ('대한민국','South Korea','KR'),('미국','United States','US'),
+    ('일본','Japan','JP'),('중국','China','SG'),('인도','India','IN'),
+    ('영국','United Kingdom','GB'),('독일','Germany','DE'),
+    ('프랑스','France','FR'),('이탈리아','Italy','IT'),('스페인','Spain','ES'),
+    ('폴란드','Poland','PL'),('우크라이나','Ukraine','UA'),
+    ('러시아','Russia','GB'),('캐나다','Canada','CA'),
+    ('멕시코','Mexico','MX'),('브라질','Brazil','BR'),
+    ('아르헨티나','Argentina','AR'),('호주','Australia','AU'),
+    ('뉴질랜드','New Zealand','NZ'),('인도네시아','Indonesia','ID'),
+    ('베트남','Vietnam','VN'),('태국','Thailand','TH'),
+    ('필리핀','Philippines','PH'),('말레이시아','Malaysia','MY'),
+    ('싱가포르','Singapore','SG'),('대만','Taiwan','TW'),
+    ('사우디아라비아','Saudi Arabia','SA'),
+    ('아랍에미리트','United Arab Emirates','AE'),
+    ('이스라엘','Israel','IL'),('이란','Iran','GB'),
+    ('튀르키예','Turkey','TR'),('이집트','Egypt','EG'),
+    ('남아프리카공화국','South Africa','ZA'),
+    ('나이지리아','Nigeria','NG'),('케냐','Kenya','KE'),
+    ('파키스탄','Pakistan','PK'),('방글라데시','Bangladesh','BD'),
+    ('스웨덴','Sweden','SE'),('노르웨이','Norway','NO'),
+    ('스위스','Switzerland','CH'),('네덜란드','Netherlands','NL'),
+    ('벨기에','Belgium','BE'),('핀란드','Finland','FI'),
+    ('그리스','Greece','GR'),('포르투갈','Portugal','PT'),
+    ('칠레','Chile','CL'),('콜롬비아','Colombia','CO'),
+    ('페루','Peru','PE'),('에티오피아','Ethiopia','ET'),
+    ('수단','Sudan','GB'),('팔레스타인','Palestine','GB'),
+    ('레바논','Lebanon','LB'),('시리아','Syria','GB'),
+    ('이라크','Iraq','GB'),('카타르','Qatar','QA'),
+    ('카자흐스탄','Kazakhstan','KZ'),('몽골','Mongolia','MN'),
 ]
 
-# 동일 국가를 단순히 언론사 소재지로 판별하지 않습니다.
-# 지도 국가 배정은 기존 app.js의 기사 내용 분석이 담당합니다.
-SEARCHES.extend(GLOBAL_SEARCHES)
+TOPIC_FEEDS = [
+    ('정치',None,'election parliament government policy','en','US'),
+    ('정치',None,'대통령 국회 정부 정책 정치','ko','KR'),
+    ('경제·금융',None,'global economy inflation interest rates stocks','en','US'),
+    ('경제·금융',None,'세계 경제 금융 증시 물가','ko','KR'),
+    ('외교·국제',None,'diplomacy summit international relations','en','GB'),
+    ('분쟁·군사',None,'war conflict military ceasefire defense','en','GB'),
+    ('분쟁·군사',None,'전쟁 분쟁 군사 휴전 국방','ko','KR'),
+    ('재해·재난',None,'earthquake flood wildfire disaster','en','US'),
+    ('과학·기술',None,'artificial intelligence technology semiconductor space','en','US'),
+    ('보건·의료',None,'public health hospitals medical research','en','US'),
+]
+# (category, subcategory, query, language, region, country_hint)
+FEEDS = [(cat, sub, query, lang, region, None)
+         for cat,sub,query,lang,region in SEARCHES + TOPIC_FEEDS]
+for country,english,region in COUNTRY_FEEDS:
+    FEEDS.extend([
+        ('일반',None,f'{english} latest breaking news','en',region,country),
+        ('정치',None,f'{english} politics economy diplomacy','en',region,country),
+        ('분쟁·군사',None,f'{english} security military conflict','en',region,country),
+        ('제약·신약',None,f'{english} biotech healthcare pharmaceuticals','en',region,country),
+    ])
 
 def rss_url(query, language, region):
     ceid = f'{region}:{language}'
@@ -121,7 +133,7 @@ def title_key(title):
     title = normalize_title(title).lower()
     return re.sub(r'[^\w가-힣]+', '', title)
 
-def fetch(category, subcategory, query, language, region):
+def fetch(category, subcategory, query, language, region, country_hint=None):
     url = rss_url(query, language, region)
     req = urllib.request.Request(url, headers=HEADERS)
 
@@ -170,6 +182,7 @@ def fetch(category, subcategory, query, language, region):
             'published': published,
             'region': '국내' if region == 'KR' else '해외',
             'language': language,
+            'countries': [country_hint] if country_hint else [],
         })
 
     return results
@@ -197,9 +210,9 @@ def main():
     candidates = []
     succeeded = 0
 
-    for category, subcategory, query, language, region in SEARCHES:
+    for category, subcategory, query, language, region, country_hint in FEEDS:
         try:
-            items = fetch(category, subcategory, query, language, region)
+            items = fetch(category, subcategory, query, language, region, country_hint)
             candidates.extend(items)
             succeeded += 1
             print(f'OK {category} [{language}/{region}] {len(items)} items')
@@ -213,33 +226,67 @@ def main():
             'No RSS articles retrieved; existing data preserved'
         )
 
-    candidates.sort(
-        key=lambda a: a['published'],
-        reverse=True
-    )
+    # Preserve country coverage before allowing general feeds to fill remaining slots.
+    # Deduplicate by URL/title, keeping all applicable country tags from scoped searches.
+    candidates.sort(key=lambda a: a['published'], reverse=True)
+    unique = {}
+    url_index = {}
+    for a in candidates:
+        key = title_key(a['title'])
+        if not key:
+            continue
+        previous = unique.get(key) or url_index.get(a['url'])
+        if previous is not None:
+            previous['countries'] = sorted(set(previous['countries'] + a['countries']))
+            if previous['category'] == '일반' and a['category'] != '일반':
+                previous['category'] = a['category']
+                previous['subcategory'] = a['subcategory']
+            continue
+        unique[key] = a
+        url_index[a['url']] = a
 
-    seen_urls = set()
-    seen_titles = set()
+    pool = list(unique.values())
+    pool.sort(key=lambda a: a['published'], reverse=True)
     accepted = []
-
-    for article in candidates:
-        if article['url'] in seen_urls:
-            continue
-
-        if is_duplicate(article, accepted, seen_titles):
-            continue
-
-        seen_urls.add(article['url'])
-        key = title_key(article['title'])
-        seen_titles.add(key)
-
-        accepted.append({
-            **article,
-            '_key': key
-        })
-
+    selected = set()
+    counts = {}
+    # Round-robin across countries, not just one large global latest-first queue.
+    country_order = [name for name, _, _ in COUNTRY_FEEDS]
+    for _ in range(MAX_PER_COUNTRY):
+        added = False
+        for country in country_order:
+            for a in pool:
+                if id(a) in selected or country not in a['countries']:
+                    continue
+                if counts.get(country, 0) >= MAX_PER_COUNTRY:
+                    break
+                if any(counts.get(c, 0) >= MAX_PER_COUNTRY for c in a['countries']):
+                    continue
+                selected.add(id(a))
+                accepted.append(a)
+                for c in a['countries']:
+                    counts[c] = counts.get(c, 0) + 1
+                added = True
+                break
+        if not added or len(accepted) >= MAX_TOTAL:
+            break
+    general_count = 0
+    for a in pool:
         if len(accepted) >= MAX_TOTAL:
             break
+        if id(a) in selected:
+            continue
+        if a['countries']:
+            if any(counts.get(c, 0) >= MAX_PER_COUNTRY for c in a['countries']):
+                continue
+            for c in a['countries']:
+                counts[c] = counts.get(c, 0) + 1
+        else:
+            if general_count >= MAX_GENERAL:
+                continue
+            general_count += 1
+        accepted.append(a)
+    accepted.sort(key=lambda a: a['published'], reverse=True)
 
     articles = [
         {k: v for k, v in article.items() if k != '_key'}
@@ -259,10 +306,11 @@ def main():
     )
 
     print(
-        f'Successful feeds: {succeeded}/{len(SEARCHES)}; '
+        f'Successful feeds: {succeeded}/{len(FEEDS)}; '
         f'candidates: {len(candidates)}; saved: {len(articles)}'
     )
 
+    print('Country distribution:', sorted(counts.items(), key=lambda x: -x[1]))
     print(
         'Microbiology:',
         sum(a['category'] == '미생물' for a in articles),

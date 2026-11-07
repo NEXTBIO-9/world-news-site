@@ -306,12 +306,32 @@ function filtered(){
  });
 }
 
+function nbRelativeTime(published){
+ const ms=Date.now()-new Date(published).getTime();
+ if(!Number.isFinite(ms)||ms<0)return dateText(published);
+ const minutes=Math.floor(ms/60000);
+ if(minutes<60)return `${Math.max(1,minutes)}분 전`;
+ const hours=Math.floor(minutes/60);
+ if(hours<24)return `${hours}시간 전`;
+ return `${Math.floor(hours/24)}일 전`;
+}
 function item(a,cls){
  const url=String(a.url||'');
  const href=/^https?:\/\//i.test(url)?safe(url):'#';
 
- return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"><span class="category">${safe(a.category||'일반')}</span><strong>${safe(a.title||'제목 없음')}</strong>${cls==='latest-item'?`<p>${safe(a.summary||'').slice(0,150)}</p>`:''}<span class="meta">${safe(a.region||'')} ${safe(a.subcategory||'')} · ${safe(a.source||'원문')} · ${dateText(a.published)}</span></a>`;
+ return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"><span class="category">${safe(a.category||'일반')}</span><strong>${safe(a.title||'제목 없음')}</strong>${cls==='latest-item'?`<p>${safe(a.summary||'').slice(0,150)}</p>`:''}<span class="meta">${safe(a.region||'')} ${safe(a.subcategory||'')} · ${safe(a.source||'원문')} · ${cls==='country-item'?nbRelativeTime(a.published):dateText(a.published)}</span></a>`;
 }
+
+/* Country briefing: richer cards, existing links and bookmark integration retained. */
+const nbBriefingStyle=document.createElement('style');
+nbBriefingStyle.textContent=`
+ #country-feed .country-item{display:block;padding:15px 16px;margin:0 0 10px;border:1px solid rgba(148,163,184,.22);border-radius:10px;background:rgba(148,163,184,.055);text-decoration:none;transition:background .15s,border-color .15s}
+ #country-feed .country-item:hover{background:rgba(59,130,246,.12);border-color:rgba(96,165,250,.5)}
+ #country-feed .country-item strong{display:block;font-size:15px;line-height:1.5;margin:6px 0;overflow-wrap:anywhere}
+ #country-feed .country-item .category{display:inline-block;font-size:11px;font-weight:700}
+ #country-feed .country-item .meta{display:block;font-size:12px;opacity:.75;line-height:1.6}
+`;
+document.head.appendChild(nbBriefingStyle);
 
 /* 국가 자동 순회 */
 let tourTimer=null,tourIndex=0,tourCountries=[];
