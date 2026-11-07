@@ -5,11 +5,11 @@ const $=id=>document.getElementById(id);
 const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}};
 const write=(key,val)=>{try{localStorage.setItem(key,JSON.stringify(val))}catch{}};
-let bookmarks=read('nb2-bookmarks',{}),lang=read('nb2-language','ko'),showSaved=false,lastList=[],lastAll=[];
+let bookmarks=read('nb2-bookmarks',{}),lang=read('nb2-language','ko'),showSaved=false,heatLayer=null,lastList=[],lastAll=[];
 const labels={ko:{saved:'북마크',period:'기간',from:'시작일',to:'종료일',heat:'뉴스 밀도 지도',alerts:'신규·주요 뉴스',bio:'바이오 대시보드',empty:'표시할 뉴스가 없습니다.',clear:'초기화',all:'전체 기간',hours:'최근 24시간',days3:'최근 3일',days7:'최근 7일',days30:'최근 30일',notice:'속보 표시는 수집된 기사 제목과 시간에 기반한 자동 분류이며, 공식 긴급재난 알림이 아닙니다.'},en:{saved:'Bookmarks',period:'Period',from:'From',to:'To',heat:'News density overlay',alerts:'New & important stories',bio:'Biotech dashboard',empty:'No matching articles.',clear:'Reset',all:'All dates',hours:'Last 24 hours',days3:'Last 3 days',days7:'Last 7 days',days30:'Last 30 days',notice:'Breaking labels are automated based on article timestamps and headlines, not official emergency alerts.'}};
 const tr=k=>labels[lang]?.[k]||labels.ko[k]||k;
 const validDate=a=>{const d=new Date(a.published);return Number.isFinite(d.getTime())?d:null};
-function dateOK(a){const d=validDate(a);if(!d)return false;const period=Number($('nb-date')?.value||7);const now=Date.now();return d.getTime()>=now-period*86400000&&d.getTime()<=now+3600000}
+function dateOK(a){const d=validDate(a);if(!d)return $('nb-date').value==='all'&&!$('nb-from').value&&!$('nb-to').value;const period=$('nb-date').value;const now=Date.now();if(period!=='all'&&(d.getTime()<now-Number(period)*86400000||d.getTime()>now+3600000))return false;const start=$('nb-from').value,end=$('nb-to').value;const day=d.toISOString().slice(0,10);return (!start||day>=start)&&(!end||day<=end)}
 function bio(list){const cats=['미생물','제약·신약','의료기기','바이오기업','감염병'];const counts=cats.map(k=>[k,list.filter(a=>a.category===k).length]);const max=Math.max(1,...counts.map(x=>x[1]));$('nb-bio').innerHTML=counts.map(([k,n])=>`<div class="nb2-row">${safe(k)} <span class="nb2-bar" style="width:${Math.round(n/max*42)}%"></span><b>${n}</b></div>`).join('')}
 /* Importance scoring applies ONLY to the "New & important" panel.
    Other feeds, country markers, and category filters are unchanged. */
@@ -52,55 +52,53 @@ function alerts(list){
  const root=$('nb-alerts');if(!root)return;
  root.innerHTML=chosen.length?chosen.map(({a,score})=>`<div class="nb2-row"><span class="nb2-tag">${score>=85?'🚨 ': '⚡ '}${lang==='ko'?(score>=85?'긴급':'주요'):(score>=85?'Urgent':'Priority')} · ${score}</span><a target="_blank" rel="noopener noreferrer" href="${safe(/^https?:\/\//i.test(a.url||'')?a.url:'#')}">${safe(lang==='en'?(a.title||a.title_ko):(a.title_ko||a.title))}</a></div>`).join(''):`<p class="nb2-muted">${lang==='ko'?'현재 기준에 해당하는 주요 뉴스가 없습니다.':'No qualifying priority stories right now.'}</p>`;
 }
-function saveButtons(){
- document.querySelectorAll('#latest-list a.latest-item,#country-feed a.country-item').forEach(a=>{
-  const url=a.getAttribute('href');
-  if(!/^https?:\/\//i.test(url||''))return;
-  let wrap=a.parentElement;
-  if(!wrap.classList.contains('nb-news-row')){
-   wrap=document.createElement('div');wrap.className='nb-news-row';
-   a.parentNode.insertBefore(wrap,a);wrap.appendChild(a);
-  }
-  // Force the article and its bookmark into ONE layout row, regardless of theme CSS.
-  wrap.style.setProperty('display','flex','important');
-  wrap.style.setProperty('align-items','center','important');
-  wrap.style.setProperty('width','100%','important');
-  wrap.style.setProperty('min-height','0','important');
-  wrap.style.setProperty('margin','0','important');
-  wrap.style.setProperty('padding','0','important');
-  wrap.style.setProperty('position','relative','important');
-  a.style.setProperty('flex','1 1 auto','important');
-  a.style.setProperty('min-width','0','important');
-  a.style.setProperty('width','auto','important');
-  a.style.setProperty('min-height','0','important');
-  a.style.setProperty('margin','0','important');
-  a.style.setProperty('padding','12px 10px 12px 16px','important');
-  let btn=wrap.querySelector(':scope > .nb2-bookmark');
-  if(!btn){
-   btn=document.createElement('button');btn.type='button';btn.className='nb2-bookmark';
-   wrap.appendChild(btn);
-  }
-  btn.dataset.url=url;btn.textContent=bookmarks[url]?'★':'☆';
-  btn.title=tr('saved');btn.setAttribute('aria-label',tr('saved'));
-  btn.setAttribute('aria-pressed',String(!!bookmarks[url]));
-  btn.style.setProperty('position','static','important');
-  btn.style.setProperty('display','inline-flex','important');
-  btn.style.setProperty('flex','0 0 30px','important');
-  btn.style.setProperty('align-items','center','important');
-  btn.style.setProperty('justify-content','center','important');
-  btn.style.setProperty('width','30px','important');
-  btn.style.setProperty('height','30px','important');
-  btn.style.setProperty('margin','0 10px 0 0','important');
-  btn.style.setProperty('padding','0','important');
- }
- );
+function saveButtons(){document.querySelectorAll('#latest-list a.latest-item,#country-feed a.country-item').forEach(a=>{if(a.nextElementSibling?.classList.contains('nb2-bookmark'))return;const url=a.getAttribute('href');if(!/^https?:\/\//i.test(url||''))return;const btn=document.createElement('button');btn.type='button';btn.className='nb2-bookmark';btn.dataset.url=url;btn.textContent=bookmarks[url]?'★':'☆';btn.title=tr('saved');btn.setAttribute('aria-label',tr('saved'));btn.setAttribute('aria-pressed',String(!!bookmarks[url]));a.insertAdjacentElement('afterend',btn)})}
+function saved(){
+ const root=$('nb-saved-list');if(!root)return;
+ const query=($('nb-scrap-search')?.value||'').trim().toLocaleLowerCase();
+ const folder=$('nb-scrap-folder')?.value||'all';
+ const vals=Object.values(bookmarks).filter(a=>a&&/^https?:\/\//i.test(a.url||''))
+  .filter(a=>(folder==='all'||(a.folder||'기타')===folder)&&(!query||String(a.title||'').toLocaleLowerCase().includes(query)||String(a.source||'').toLocaleLowerCase().includes(query)))
+  .sort((a,b)=>String(b.savedAt||'').localeCompare(String(a.savedAt||'')));
+ $('nb-scrap-count').textContent=(lang==='ko'?`저장 ${Object.keys(bookmarks).length}개 · 표시 ${vals.length}개`:`${Object.keys(bookmarks).length} saved · ${vals.length} shown`);
+ root.innerHTML=vals.length?vals.map(a=>{
+  const date=a.savedAt?new Date(a.savedAt):null;
+  const stamp=date&&!isNaN(date)?date.toLocaleDateString(lang==='ko'?'ko-KR':'en-US'):'';
+  const folder=a.folder||'기타';
+  const opts=['국제·정치','경제','스포츠','과학·기술','기타'].map(x=>`<option value="${safe(x)}" ${x===folder?'selected':''}>${safe(x)}</option>`).join('');
+  return `<article class="nb-scrap-card"><div class="nb-scrap-meta"><span>${safe(folder)}</span><span>${safe(a.source||'')}${stamp?' · '+safe(stamp):''}</span></div><a class="nb-scrap-title" href="${safe(a.url)}" target="_blank" rel="noopener noreferrer">${safe(a.title||a.url)}</a><div class="nb-scrap-actions"><label>${lang==='ko'?'폴더':'Folder'} <select class="nb-scrap-assign" data-url="${safe(a.url)}">${opts}</select></label><button type="button" class="nb2-remove" data-url="${safe(a.url)}">${lang==='ko'?'삭제':'Remove'}</button></div></article>`;
+ }).join(''):`<p class="nb2-muted">${lang==='ko'?'조건에 맞는 스크랩이 없습니다.':'No matching bookmarks.'}</p>`;
 }
-function saved(){const vals=Object.values(bookmarks);$('nb-saved-list').innerHTML=vals.length?vals.map(a=>`<div class="nb2-savewrap"><a href="${safe(a.url)}" target="_blank" rel="noopener noreferrer">${safe(a.title)}</a><button type="button" class="nb2-remove" data-url="${safe(a.url)}">${lang==='ko'?'삭제':'Remove'}</button></div>`).join(''):`<p class="nb2-muted">${tr('empty')}</p>`}
+function scrapExport(){const data={format:'nextbio-bookmarks',version:1,exportedAt:new Date().toISOString(),bookmarks};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='nextbio-bookmarks.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+async function scrapImport(file){
+ if(!file)return;
+ try{
+  if(file.size>2e6)throw Error('File too large');
+  const raw=JSON.parse(await file.text());const incoming=raw?.format==='nextbio-bookmarks'?raw.bookmarks:raw;
+  if(!incoming||typeof incoming!=='object'||Array.isArray(incoming))throw Error('Invalid format');
+  let count=0;
+  for(const [key,a] of Object.entries(incoming)){
+   if(!a||typeof a!=='object'||typeof a.url!=='string'||!/^https?:\/\//i.test(a.url)||a.url.length>4096)continue;
+   if(Object.keys(bookmarks).length>=5000&&!bookmarks[a.url])break;
+   bookmarks[a.url]={url:a.url,title:String(a.title||a.url).slice(0,500),folder:['국제·정치','경제','스포츠','과학·기술','기타'].includes(a.folder)?a.folder:'기타',source:String(a.source||'').slice(0,100),savedAt:typeof a.savedAt==='string'?a.savedAt:''};count++;
+  }
+  write('nb2-bookmarks',bookmarks);syncBookmarkStars();saved();alert(lang==='ko'?`${count}개 항목을 가져왔습니다. (기존 항목은 유지)`: `Imported ${count} items (existing items retained).`);
+ }catch(e){alert(lang==='ko'?'올바른 북마크 JSON 파일이 아닙니다.':'Invalid bookmark JSON file.');}
+}
+function syncBookmarkStars(){document.querySelectorAll('.nb2-bookmark').forEach(b=>{b.textContent=bookmarks[b.dataset.url]?'★':'☆';b.setAttribute('aria-pressed',String(!!bookmarks[b.dataset.url]))})}
+
+function heatmap(groups){if(heatLayer){heatLayer.remove();heatLayer=null}if(!$('nb-heat')?.checked)return;heatLayer=L.layerGroup().addTo(map);const max=Math.max(1,...[...groups.values()].map(a=>a.length));for(const c of countries){const n=groups.get(c[0])?.length||0;if(!n)continue;const intensity=n/max;const circle=L.circleMarker([c[1],c[2]],{radius:16+Math.sqrt(intensity)*28,color:'#ef6b37',weight:2,fillColor:'#f48b37',fillOpacity:.13+intensity*.4,interactive:false});circle.addTo(heatLayer)}}
 function afterRender(list,all){lastList=list;lastAll=all;bio(list);alerts(list);saveButtons();if(showSaved)saved()}
-function translate(){document.querySelectorAll('[data-nb]').forEach(el=>{el.textContent=tr(el.dataset.nb)});$('nb-lang').textContent=lang==='ko'?'EN':'한국어';$('nb-clear').textContent=tr('clear');const sel=$('nb-date');['days7','days3','hours'].forEach((k,i)=>{sel.options[i].textContent=tr(k)});$('nb-notice').textContent=tr('notice');document.documentElement.lang=lang;afterRender(lastList,lastAll)}
-window.NB2={dateOK,afterRender};
-$('nb-date').addEventListener('change',()=>{if(document.getElementById('nb-tour-toggle')?.checked)document.getElementById('nb-tour-toggle').click();render()});$('nb-clear').addEventListener('click',()=>{$('nb-date').value='7';render()});
+function translate(){document.querySelectorAll('[data-nb]').forEach(el=>{el.textContent=tr(el.dataset.nb)});$('nb-lang').textContent=lang==='ko'?'EN':'한국어';$('nb-clear').textContent=tr('clear');const sel=$('nb-date');['all','hours','days3','days7','days30'].forEach((k,i)=>{sel.options[i].textContent=tr(k)});$('nb-notice').textContent=tr('notice');document.documentElement.lang=lang;afterRender(lastList,lastAll)}
+window.NB2={dateOK,heatmap,afterRender};
+$('nb-date').addEventListener('change',()=>{document.getElementById('nb-tour-toggle')?.checked&&document.getElementById('nb-tour-toggle').click();render()});$('nb-from').addEventListener('change',()=>render());$('nb-to').addEventListener('change',()=>render());$('nb-heat').addEventListener('change',()=>render());$('nb-clear').addEventListener('click',()=>{$('nb-date').value='all';$('nb-from').value='';$('nb-to').value='';render()});
 $('nb-lang').addEventListener('click',()=>{lang=lang==='ko'?'en':'ko';write('nb2-language',lang);translate()});$('nb-bookmark-open').addEventListener('click',()=>{showSaved=!showSaved;$('nb-bookmarks').hidden=!showSaved;if(showSaved)saved()});
-document.addEventListener('click',e=>{const btn=e.target.closest('.nb2-bookmark,.nb2-remove');if(!btn)return;const url=btn.dataset.url;if(btn.classList.contains('nb2-remove'))delete bookmarks[url];else if(bookmarks[url])delete bookmarks[url];else{const anchor=btn.previousElementSibling;bookmarks[url]={url,title:anchor?.querySelector('strong')?.textContent||anchor?.textContent?.trim()||url}}write('nb2-bookmarks',bookmarks);saveButtons();document.querySelectorAll('.nb2-bookmark').forEach(b=>{b.textContent=bookmarks[b.dataset.url]?'★':'☆';b.setAttribute('aria-pressed',String(!!bookmarks[b.dataset.url]))});if(showSaved)saved()});
+document.addEventListener('click',e=>{const btn=e.target.closest('.nb2-bookmark,.nb2-remove');if(!btn)return;const url=btn.dataset.url;if(btn.classList.contains('nb2-remove'))delete bookmarks[url];else if(bookmarks[url])delete bookmarks[url];else{const anchor=btn.previousElementSibling;const title=anchor?.querySelector('strong')?.textContent||anchor?.textContent?.trim()||url;const match=lastAll.find(a=>a.url===url)||{};const category=String(match.category||'');const folder=/스포츠|sport/i.test(category+' '+title)?'스포츠':/경제|금융|business|econom/i.test(category)?'경제':/과학|기술|science|tech/i.test(category)?'과학·기술':/외교|국제|정치|politic/i.test(category)?'국제·정치':'기타';bookmarks[url]={url,title,folder,source:match.source||match.publisher||'',savedAt:new Date().toISOString()}}write('nb2-bookmarks',bookmarks);saveButtons();syncBookmarkStars();if(showSaved)saved()});
+$('nb-scrap-search')?.addEventListener('input',saved);
+$('nb-scrap-folder')?.addEventListener('change',saved);
+document.addEventListener('change',e=>{const el=e.target.closest('.nb-scrap-assign');if(!el)return;const a=bookmarks[el.dataset.url];if(!a)return;a.folder=el.value;write('nb2-bookmarks',bookmarks);saved()});
+$('nb-scrap-export')?.addEventListener('click',scrapExport);
+$('nb-scrap-import')?.addEventListener('change',async e=>{await scrapImport(e.target.files?.[0]);e.target.value=''});
+$('nb-scrap-clear')?.addEventListener('click',()=>{if(!Object.keys(bookmarks).length)return;if(!confirm(lang==='ko'?'저장한 모든 스크랩을 삭제할까요? 이 작업은 되돌릴 수 없습니다.':'Delete all saved bookmarks? This cannot be undone.'))return;bookmarks={};write('nb2-bookmarks',bookmarks);syncBookmarkStars();saved()});
 translate();
 })();

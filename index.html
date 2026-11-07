@@ -333,7 +333,23 @@ html.theme-preload-dark body{
 }
 </style>
 <link rel="stylesheet" href="nextbio-ui.css?v=24">
-<link rel="stylesheet" href="./nextbio-atmosphere.css?v=1">
+<link rel="stylesheet" href="./nextbio-atmosphere.css?v=2">
+<style id="nb-scrapbook-style">
+#nb-bookmarks .nb-scrap-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0}
+#nb-scrap-search{flex:1 1 210px;min-width:130px}
+#nb-bookmarks input,#nb-bookmarks select,#nb-bookmarks button,#nb-bookmarks .nb-scrap-upload{border:1px solid #64748b66;border-radius:8px;padding:7px 10px;background:transparent;color:inherit;font:inherit}
+#nb-bookmarks select option{color:#111;background:#fff}
+#nb-bookmarks .nb-scrap-upload{cursor:pointer}
+#nb-scrap-count{font-size:12px;opacity:.75;margin-right:auto}
+#nb-scrap-clear{color:#fca5a5}
+#nb-saved-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+#nb-saved-list .nb-scrap-card{min-width:0;border:1px solid #64748b44;border-radius:12px;padding:14px;background:rgba(100,116,139,.07);display:flex;flex-direction:column;gap:12px}
+#nb-saved-list .nb-scrap-meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;opacity:.72;flex-wrap:wrap}
+#nb-saved-list .nb-scrap-title{font-weight:600;line-height:1.5;overflow-wrap:anywhere;text-decoration:none;color:inherit}
+#nb-saved-list .nb-scrap-title:hover{text-decoration:underline}
+#nb-saved-list .nb-scrap-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;flex-wrap:wrap;font-size:12px}
+#nb-saved-list .nb-scrap-actions label{display:flex;align-items:center;gap:5px}
+</style>
 </head>
 
 <body class="nb-command-center">
@@ -543,7 +559,10 @@ html.theme-preload-dark body{
   <div class="nb2-top"><strong>NEWS INTELLIGENCE</strong><div class="nb2-actions"><button type="button" id="nb-lang">EN</button><button type="button" id="nb-bookmark-open">☆ <span data-nb="saved">북마크</span></button></div></div>
   <div class="nb2-filters"><label><span data-nb="period">기간</span> <select id="nb-date"><option value="7" selected>최근 7일</option><option value="3">최근 3일</option><option value="1">최근 24시간</option></select></label><button type="button" id="nb-clear">초기화</button></div>
   <div class="nb2-columns"><section><h3>⚡ <span data-nb="alerts">신규·주요 뉴스</span></h3><div id="nb-alerts" class="nb2-list"></div></section><section><h3>🧬 <span data-nb="bio">바이오 대시보드</span></h3><div id="nb-bio" class="nb2-list"></div></section></div>
-  <section id="nb-bookmarks" hidden><h3>☆ <span data-nb="saved">북마크</span></h3><div id="nb-saved-list"></div></section>
+  <section id="nb-bookmarks" hidden><h3>☆ <span data-nb="saved">북마크</span></h3>
+<div class="nb-scrap-toolbar"><input id="nb-scrap-search" type="search" placeholder="저장한 기사 검색" aria-label="저장한 기사 검색"><select id="nb-scrap-folder" aria-label="스크랩 폴더"><option value="all">전체 폴더</option><option>국제·정치</option><option>경제</option><option>스포츠</option><option>과학·기술</option><option>기타</option></select></div>
+<div class="nb-scrap-toolbar"><span id="nb-scrap-count" aria-live="polite"></span><button type="button" id="nb-scrap-export">JSON 백업</button><label class="nb-scrap-upload">JSON 복원<input type="file" id="nb-scrap-import" accept=".json,application/json" hidden></label><button type="button" id="nb-scrap-clear">전체 삭제</button></div>
+<div id="nb-saved-list"></div></section>
   <p class="nb2-note" id="nb-notice">속보 표시는 수집된 기사 제목과 시간에 기반한 자동 분류이며, 공식 긴급재난 알림이 아닙니다.</p>
 </section>
 
@@ -576,7 +595,7 @@ html.theme-preload-dark body{
 
 <!-- 기존 지도 및 뉴스 프로그램 유지 -->
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="app.js?v=26"></script><script src="nextbio-extras.js?v=26"></script>
+<script src="app.js?v=26"></script><script src="nextbio-extras.js?v=27"></script>
 
 <script src="nextbio-map-layout-fix.js?v=25"></script>
 
@@ -630,6 +649,6 @@ html.theme-preload-dark body{
 </script>
 <script src="./market-ticker.js?v=1" defer></script>
 <script src="./nextbio-tour-sound.js?v=2" defer></script>
-<script src="./nextbio-atmosphere.js?v=1" defer></script>
+<script src="./nextbio-atmosphere.js?v=2" defer></script>
 </body>
 </html>

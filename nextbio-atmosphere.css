@@ -1,9 +1,4 @@
-/* Independent BGM and opening; no news or map styles overridden. */
-.nb-bgm-panel{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0 8px 10px;font-size:12px;color:inherit}
-.nb-bgm-panel button{background:#203652;color:#edf5ff;border:1px solid #526780;border-radius:7px;padding:6px 10px;cursor:pointer;font:inherit}
-.nb-bgm-panel button:focus-visible{outline:2px solid #8bc9ff;outline-offset:2px}
-.nb-bgm-panel input[type=range]{width:88px;accent-color:#80b7f8}
-.nb-bgm-panel .nb-bgm-status{opacity:.75}
+/* NEXT BIO opening animation only. */
 #nb-opening{position:fixed;inset:0;z-index:2147483640;background:radial-gradient(ellipse at 50% 40%,#213a5c 0%,#101827 50%,#070d17 100%);color:#f1f7ff;display:flex;align-items:center;justify-content:center;text-align:center;transition:opacity .55s ease,visibility .55s ease}
 #nb-opening.nb-hide{opacity:0;visibility:hidden;pointer-events:none}
 .nb-opening-inner{padding:30px;animation:nb-intro-rise 1.2s ease both}
