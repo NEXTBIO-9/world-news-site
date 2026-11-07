@@ -185,8 +185,8 @@ def main():
     failures = previous.get('failed_urls', {})
     if not isinstance(failures, dict):
         failures = {}
-    # Retry failed URLs after 12 hours, not on every 15-minute run.
-    retry_after = time.time() - 12 * 3600
+    # Retry failed URLs after 3 hours, not on every 15-minute run.
+    retry_after = time.time() - 3 * 3600
     start = time.monotonic()
     reasons = Counter()
     new_count = attempts = rss_count = 0

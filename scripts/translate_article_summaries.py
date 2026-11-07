@@ -40,7 +40,7 @@ def main():
     if not isinstance(summaries, dict):
         raise ValueError('Invalid summary cache')
     # Failed translations are retried after a cooldown, rather than consuming every run.
-    retry_before = time.time() - 12 * 3600
+    retry_before = time.time() - 3 * 3600
     pending = [(url, item) for url, item in summaries.items()
                if isinstance(item, dict) and needs_translation(item)
                and float(item.get('ko_retry_after', 0) or 0) <= time.time()]
@@ -83,10 +83,10 @@ def main():
                 successes += 1
             else:
                 rejected += 1
-                item['ko_retry_after'] = time.time() + 12 * 3600
+                item['ko_retry_after'] = time.time() + 3 * 3600
         except Exception as exc:
             rejected += 1
-            item['ko_retry_after'] = time.time() + 12 * 3600
+            item['ko_retry_after'] = time.time() + 3 * 3600
             print('Translation error: ' + type(exc).__name__)
     data['updated'] = datetime.now(timezone.utc).isoformat()
     PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
