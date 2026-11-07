@@ -52,7 +52,49 @@ function alerts(list){
  const root=$('nb-alerts');if(!root)return;
  root.innerHTML=chosen.length?chosen.map(({a,score})=>`<div class="nb2-row"><span class="nb2-tag">${score>=85?'🚨 ': '⚡ '}${lang==='ko'?(score>=85?'긴급':'주요'):(score>=85?'Urgent':'Priority')} · ${score}</span><a target="_blank" rel="noopener noreferrer" href="${safe(/^https?:\/\//i.test(a.url||'')?a.url:'#')}">${safe(lang==='en'?(a.title||a.title_ko):(a.title_ko||a.title))}</a></div>`).join(''):`<p class="nb2-muted">${lang==='ko'?'현재 기준에 해당하는 주요 뉴스가 없습니다.':'No qualifying priority stories right now.'}</p>`;
 }
-function saveButtons(){document.querySelectorAll('#latest-list a.latest-item,#country-feed a.country-item').forEach(a=>{if(a.nextElementSibling?.classList.contains('nb2-bookmark'))return;const url=a.getAttribute('href');if(!/^https?:\/\//i.test(url||''))return;const btn=document.createElement('button');btn.type='button';btn.className='nb2-bookmark';btn.dataset.url=url;btn.textContent=bookmarks[url]?'★':'☆';btn.title=tr('saved');btn.setAttribute('aria-label',tr('saved'));btn.setAttribute('aria-pressed',String(!!bookmarks[url]));const wrap=document.createElement('div');wrap.className='nb-news-row';a.parentNode.insertBefore(wrap,a);wrap.appendChild(a);wrap.appendChild(btn)})}
+function saveButtons(){
+ document.querySelectorAll('#latest-list a.latest-item,#country-feed a.country-item').forEach(a=>{
+  const url=a.getAttribute('href');
+  if(!/^https?:\/\//i.test(url||''))return;
+  let wrap=a.parentElement;
+  if(!wrap.classList.contains('nb-news-row')){
+   wrap=document.createElement('div');wrap.className='nb-news-row';
+   a.parentNode.insertBefore(wrap,a);wrap.appendChild(a);
+  }
+  // Force the article and its bookmark into ONE layout row, regardless of theme CSS.
+  wrap.style.setProperty('display','flex','important');
+  wrap.style.setProperty('align-items','center','important');
+  wrap.style.setProperty('width','100%','important');
+  wrap.style.setProperty('min-height','0','important');
+  wrap.style.setProperty('margin','0','important');
+  wrap.style.setProperty('padding','0','important');
+  wrap.style.setProperty('position','relative','important');
+  a.style.setProperty('flex','1 1 auto','important');
+  a.style.setProperty('min-width','0','important');
+  a.style.setProperty('width','auto','important');
+  a.style.setProperty('min-height','0','important');
+  a.style.setProperty('margin','0','important');
+  a.style.setProperty('padding','12px 10px 12px 16px','important');
+  let btn=wrap.querySelector(':scope > .nb2-bookmark');
+  if(!btn){
+   btn=document.createElement('button');btn.type='button';btn.className='nb2-bookmark';
+   wrap.appendChild(btn);
+  }
+  btn.dataset.url=url;btn.textContent=bookmarks[url]?'★':'☆';
+  btn.title=tr('saved');btn.setAttribute('aria-label',tr('saved'));
+  btn.setAttribute('aria-pressed',String(!!bookmarks[url]));
+  btn.style.setProperty('position','static','important');
+  btn.style.setProperty('display','inline-flex','important');
+  btn.style.setProperty('flex','0 0 30px','important');
+  btn.style.setProperty('align-items','center','important');
+  btn.style.setProperty('justify-content','center','important');
+  btn.style.setProperty('width','30px','important');
+  btn.style.setProperty('height','30px','important');
+  btn.style.setProperty('margin','0 10px 0 0','important');
+  btn.style.setProperty('padding','0','important');
+ }
+ );
+}
 function saved(){const vals=Object.values(bookmarks);$('nb-saved-list').innerHTML=vals.length?vals.map(a=>`<div class="nb2-savewrap"><a href="${safe(a.url)}" target="_blank" rel="noopener noreferrer">${safe(a.title)}</a><button type="button" class="nb2-remove" data-url="${safe(a.url)}">${lang==='ko'?'삭제':'Remove'}</button></div>`).join(''):`<p class="nb2-muted">${tr('empty')}</p>`}
 function afterRender(list,all){lastList=list;lastAll=all;bio(list);alerts(list);saveButtons();if(showSaved)saved()}
 function translate(){document.querySelectorAll('[data-nb]').forEach(el=>{el.textContent=tr(el.dataset.nb)});$('nb-lang').textContent=lang==='ko'?'EN':'한국어';$('nb-clear').textContent=tr('clear');const sel=$('nb-date');['days7','days3','hours'].forEach((k,i)=>{sel.options[i].textContent=tr(k)});$('nb-notice').textContent=tr('notice');document.documentElement.lang=lang;afterRender(lastList,lastAll)}
