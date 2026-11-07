@@ -36,7 +36,7 @@
         panel.replaceChildren();
         const heading = document.createElement('span');
         heading.className = 'nb-right-summary-label';
-        heading.textContent = a && a.excerpt ? '기사 요약 · 원문 발췌' : content ? '기사 요약 · RSS 설명' : '기사 요약';
+        heading.textContent = a && a.excerpt ? (a.translated ? '기사 요약 · 한국어 번역' : '기사 요약 · 원문 발췌') : content ? '기사 요약 · RSS 설명' : '기사 요약';
         const body = document.createElement('p');
         body.textContent = content || '기사 본문을 확보하지 못해 요약을 제공할 수 없습니다.';
         panel.classList.toggle('nb-summary-empty', !content);
@@ -51,7 +51,7 @@
     const articles = news.status === 'fulfilled' ? news.value.articles || [] : [];
     const cache = summaries.status === 'fulfilled' ? summaries.value.summaries || {} : {};
     articles.forEach(article => {
-      if (article.url) byUrl.set(article.url, {article, excerpt: normalize(cache[article.url] && cache[article.url].text)});
+      if (article.url) byUrl.set(article.url, {article, excerpt: normalize(cache[article.url] && (cache[article.url].text_ko || cache[article.url].text)), translated: !!(cache[article.url] && cache[article.url].text_ko)});
     });
     render();
   }).catch(() => render());
