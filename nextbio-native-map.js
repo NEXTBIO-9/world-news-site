@@ -1,14 +1,9 @@
 /* NEXT BIO v24: standalone SVG map controller. No Leaflet, tile servers, or external JS. */
 (function(){'use strict';
-const MAX=90;
+const R=Math.PI/180,MAX=85.05112878;
 const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));
-// Robinson projection, matching the self-hosted SVG (Natural Earth 10m).
-const RX=[1,.9986,.9954,.99,.9822,.973,.96,.9427,.9216,.8962,.8679,.835,.7986,.7597,.7186,.6732,.6213,.5722,.5322];
-const RY=[0,.062,.124,.186,.248,.31,.372,.434,.4958,.5571,.6176,.6769,.7346,.7903,.8435,.8936,.9394,.9761,1];
-function coeff(lat,arr){let a=clamp(Math.abs(lat),0,90)/5,i=Math.min(17,Math.floor(a)),f=a-i;return arr[i]*(1-f)+arr[i+1]*f;}
-function project(lat,lon){return [0.5+(lon/180)*coeff(lat,RX)*560/1200, (305-Math.sign(lat)*coeff(lat,RY)*282)/610];}
-function inverseY(y){const v=clamp((305-y*610)/282,-1,1);let lo=0,hi=90;for(let i=0;i<26;i++){let mid=(lo+hi)/2;if(coeff(mid,RY)<Math.abs(v))lo=mid;else hi=mid;}return Math.sign(v)*(lo+hi)/2;}
-function inverseX(x,lat){return (x-.5)*1200/560*180/coeff(lat,RX);}
+const latY=lat=>(1-Math.asinh(Math.tan(clamp(lat,-MAX,MAX)*R))/Math.PI)/2;
+const lonX=lon=>(lon+180)/360;
 function create(id){
  const root=document.getElementById(id);if(!root)throw Error('Map container missing');
  root.replaceChildren();root.classList.add('nb-native-map');
@@ -36,22 +31,22 @@ function create(id){
  let zoom=2,center=[22,15],items=[],drag=null,handlers={},flight=null;
  const cancelFlight=()=>{if(flight!==null){cancelAnimationFrame(flight);flight=null;}};
  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
- const mercLat=y=>inverseY(y);
+ const mercLat=y=>Math.atan(Math.sinh(Math.PI*(1-2*y)))/R;
  function size(){return 256*Math.pow(2,zoom)}
- function centerXY(){const [x,y]=project(center[0],center[1]);return [x*size(),y*size()*610/1200]}
- function xy(lat,lon){const [cx,cy]=centerXY(),[x,y]=project(lat,lon);return [root.clientWidth/2+(x*size()-cx),root.clientHeight/2+(y*size()*610/1200-cy)]}
- function repaint(){const s=size(),[cx,cy]=centerXY();world.style.width=s+'px';world.style.height=(s*610/1200)+'px';world.style.left=(root.clientWidth/2-cx)+'px';world.style.top=(root.clientHeight/2-cy)+'px';for(const c of copies)c.el.style.transform=`translateX(${c.i*100}%)`;
-  for(const item of items){let [x,y]=xy(item.lat,item.lon);item.el.style.left=x+'px';item.el.style.top=y+'px';item.el.style.display=(y< -20||y>root.clientHeight+20||x< -20||x>root.clientWidth+20)?'none':'';}}
+ function centerXY(){return [lonX(center[1])*size(),latY(center[0])*size()]}
+ function xy(lat,lon){const [cx,cy]=centerXY();return [root.clientWidth/2+(lonX(lon)*size()-cx),root.clientHeight/2+(latY(lat)*size()-cy)]}
+ function repaint(){const s=size(),[cx,cy]=centerXY();world.style.width=s+'px';world.style.height=s+'px';world.style.left=(root.clientWidth/2-cx)+'px';world.style.top=(root.clientHeight/2-cy)+'px';for(const c of copies)c.el.style.transform=`translateX(${c.i*100}%)`;
+  for(const item of items){let [x,y]=xy(item.lat,item.lon);while(x< -15)x+=s;while(x>root.clientWidth+15)x-=s;item.el.style.left=x+'px';item.el.style.top=y+'px';item.el.style.display=(y< -20||y>root.clientHeight+20||x< -20||x>root.clientWidth+20)?'none':'';}}
  function setView(latlon,z){cancelFlight();center=[clamp(+latlon[0],-MAX,MAX),+latlon[1]];zoom=clamp(+z,2,7);repaint();return api;}
- function zoomTo(z,px,py){cancelFlight();const old=size(),[ox,oy]=project(center[0],center[1]),wx=ox+(px-root.clientWidth/2)/old,wy=oy+(py-root.clientHeight/2)/(old*610/1200);zoom=clamp(z,2,7);const ns=size(),nx=wx-(px-root.clientWidth/2)/ns,ny=wy-(py-root.clientHeight/2)/(ns*610/1200);const lat=mercLat(ny);center=[lat,inverseX(nx,lat)];center[0]=clamp(center[0],-MAX,MAX);repaint();}
+ function zoomTo(z,px,py){cancelFlight();const old=size(),wx=lonX(center[1])+(px-root.clientWidth/2)/old,wy=latY(center[0])+(py-root.clientHeight/2)/old;zoom=clamp(z,2,7);const ns=size(),nx=wx-(px-root.clientWidth/2)/ns,ny=wy-(py-root.clientHeight/2)/ns;center=[mercLat(ny),nx*360-180];center[0]=clamp(center[0],-MAX,MAX);repaint();}
  root.addEventListener('wheel',e=>{e.preventDefault();zoomTo(zoom+(e.deltaY<0?.5:-.5),e.offsetX,e.offsetY);},{passive:false});
  root.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;cancelFlight();drag={x:e.clientX,y:e.clientY,lat:center[0],lon:center[1]};root.setPointerCapture(e.pointerId);});
- root.addEventListener('pointermove',e=>{if(!drag)return;const s=size(),dx=e.clientX-drag.x,dy=e.clientY-drag.y;const [ox,oy]=project(drag.lat,drag.lon),ny=oy-dy/(s*610/1200),lat=clamp(mercLat(ny),-MAX,MAX);center=[lat,inverseX(ox-dx/s,lat)];repaint();if(Math.abs(dx)+Math.abs(dy)>5&&handlers.dragstart&&!drag.fired){drag.fired=true;handlers.dragstart.forEach(fn=>fn());}});
+ root.addEventListener('pointermove',e=>{if(!drag)return;const s=size(),dx=e.clientX-drag.x,dy=e.clientY-drag.y;const ny=latY(drag.lat)-dy/s;center=[clamp(mercLat(ny),-MAX,MAX),drag.lon-dx/s*360];repaint();if(Math.abs(dx)+Math.abs(dy)>5&&handlers.dragstart&&!drag.fired){drag.fired=true;handlers.dragstart.forEach(fn=>fn());}});
  root.addEventListener('pointerup',()=>{drag=null;});root.addEventListener('pointercancel',()=>{drag=null;});
  function flyTo(loc,z,options={}){
   cancelFlight();
   const start=performance.now(),duration=Math.max(0.15,Math.min(6,Number(options.duration)||1.8))*1000;
-  const fromLat=project(center[0],0)[1],toLat=project(+loc[0],0)[1];
+  const fromLat=latY(center[0]),toLat=latY(+loc[0]);
   const fromLon=center[1];
   // Use the shortest east/west path, including across the date line.
   const lonDelta=((+loc[1]-fromLon+540)%360+360)%360-180;
