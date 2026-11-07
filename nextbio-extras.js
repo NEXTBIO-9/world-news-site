@@ -5,12 +5,12 @@ const $=id=>document.getElementById(id);
 const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}};
 const write=(key,val)=>{try{localStorage.setItem(key,JSON.stringify(val))}catch{}};
-let bookmarks=read('nb2-bookmarks',{}),lang=read('nb2-language','ko'),showSaved=false,heatLayer=null,lastList=[],lastAll=[];
+let bookmarks=read('nb2-bookmarks',{}),lang=read('nb2-language','ko'),showSaved=true,heatLayer=null,lastList=[],lastAll=[];
 const labels={ko:{saved:'북마크',period:'기간',from:'시작일',to:'종료일',heat:'뉴스 밀도 지도',alerts:'신규·주요 뉴스',bio:'바이오 대시보드',empty:'표시할 뉴스가 없습니다.',clear:'초기화',all:'전체 기간',hours:'최근 24시간',days3:'최근 3일',days7:'최근 7일',days30:'최근 30일',notice:'속보 표시는 수집된 기사 제목과 시간에 기반한 자동 분류이며, 공식 긴급재난 알림이 아닙니다.'},en:{saved:'Bookmarks',period:'Period',from:'From',to:'To',heat:'News density overlay',alerts:'New & important stories',bio:'Biotech dashboard',empty:'No matching articles.',clear:'Reset',all:'All dates',hours:'Last 24 hours',days3:'Last 3 days',days7:'Last 7 days',days30:'Last 30 days',notice:'Breaking labels are automated based on article timestamps and headlines, not official emergency alerts.'}};
 const tr=k=>labels[lang]?.[k]||labels.ko[k]||k;
 const validDate=a=>{const d=new Date(a.published);return Number.isFinite(d.getTime())?d:null};
 function dateOK(a){const d=validDate(a);if(!d)return (!$('nb-date')||$('nb-date').value==='all')&&!$('nb-from')?.value&&!$('nb-to')?.value;const period=$('nb-date')?.value||'all';const now=Date.now();if(period!=='all'&&(d.getTime()<now-Number(period)*86400000||d.getTime()>now+3600000))return false;const start=$('nb-from')?.value||'',end=$('nb-to')?.value||'';const day=d.toISOString().slice(0,10);return (!start||day>=start)&&(!end||day<=end)}
-function bio(list){const cats=['미생물','제약·신약','의료기기','바이오기업','감염병'];const counts=cats.map(k=>[k,list.filter(a=>a.category===k).length]);const max=Math.max(1,...counts.map(x=>x[1]));$('nb-bio').innerHTML=counts.map(([k,n])=>`<div class="nb2-row">${safe(k)} <span class="nb2-bar" style="width:${Math.round(n/max*42)}%"></span><b>${n}</b></div>`).join('')}
+function bio(list){const cats=['미생물','제약·신약','의료기기','바이오기업','감염병'];const counts=cats.map(k=>[k,list.filter(a=>a.category===k).length]);const max=Math.max(1,...counts.map(x=>x[1]));if(!$('nb-bio'))return;$('nb-bio').innerHTML=counts.map(([k,n])=>`<div class="nb2-row">${safe(k)} <span class="nb2-bar" style="width:${Math.round(n/max*42)}%"></span><b>${n}</b></div>`).join('')}
 /* Importance scoring applies ONLY to the "New & important" panel.
    Other feeds, country markers, and category filters are unchanged. */
 const nbPriorityRules=[
@@ -117,7 +117,7 @@ function afterRender(list,all){lastList=list;lastAll=all;bio(list);alerts(list);
 function translate(){document.querySelectorAll('[data-nb]').forEach(el=>{el.textContent=tr(el.dataset.nb)});$('nb-lang').textContent=lang==='ko'?'EN':'한국어';$('nb-clear').textContent=tr('clear');const sel=$('nb-date');if(sel){[...sel.options].forEach(o=>{const key=({'1':'hours','3':'days3','7':'days7','30':'days30','all':'all'})[o.value];if(key)o.textContent=tr(key)})}$('nb-notice').textContent=tr('notice');document.documentElement.lang=lang;afterRender(lastList,lastAll)}
 window.NB2={dateOK,heatmap,afterRender};
 $('nb-date').addEventListener('change',()=>{document.getElementById('nb-tour-toggle')?.checked&&document.getElementById('nb-tour-toggle').click();render()});$('nb-from')?.addEventListener('change',()=>render());$('nb-to')?.addEventListener('change',()=>render());$('nb-heat')?.addEventListener('change',()=>render());$('nb-clear').addEventListener('click',()=>{$('nb-date').value='all';if($('nb-from'))$('nb-from').value='';if($('nb-to'))$('nb-to').value='';render()});
-$('nb-lang').addEventListener('click',()=>{lang=lang==='ko'?'en':'ko';write('nb2-language',lang);translate()});$('nb-bookmark-open').addEventListener('click',()=>{showSaved=!showSaved;$('nb-bookmarks').hidden=!showSaved;if(showSaved)saved()});
+$('nb-lang').addEventListener('click',()=>{lang=lang==='ko'?'en':'ko';write('nb2-language',lang);translate()});$('nb-bookmark-open').addEventListener('click',()=>{$('nb-bookmarks')?.scrollIntoView({behavior:'smooth',block:'nearest'});$('nb-scrap-search')?.focus({preventScroll:true})});
 document.addEventListener('click',e=>{const btn=e.target.closest('.nb2-bookmark,.nb2-remove');if(!btn)return;const url=btn.dataset.url;if(btn.classList.contains('nb2-remove'))delete bookmarks[url];else if(bookmarks[url])delete bookmarks[url];else{const anchor=btn.previousElementSibling;const title=anchor?.querySelector('strong')?.textContent||anchor?.textContent?.trim()||url;const match=lastAll.find(a=>a.url===url)||{};const category=String(match.category||'');const folder=/스포츠|sport/i.test(category+' '+title)?'스포츠':/경제|금융|business|econom/i.test(category)?'경제':/과학|기술|science|tech/i.test(category)?'과학·기술':/외교|국제|정치|politic/i.test(category)?'국제·정치':'기타';bookmarks[url]={url,title,folder,source:match.source||match.publisher||'',savedAt:new Date().toISOString()}}write('nb2-bookmarks',bookmarks);saveButtons();syncBookmarkStars();if(showSaved)saved()});
 $('nb-scrap-search')?.addEventListener('input',saved);
 $('nb-scrap-folder')?.addEventListener('change',saved);
@@ -125,5 +125,18 @@ document.addEventListener('change',e=>{const el=e.target.closest('.nb-scrap-assi
 $('nb-scrap-export')?.addEventListener('click',scrapExport);
 $('nb-scrap-import')?.addEventListener('change',async e=>{await scrapImport(e.target.files?.[0]);e.target.value=''});
 $('nb-scrap-clear')?.addEventListener('click',()=>{if(!Object.keys(bookmarks).length)return;if(!confirm(lang==='ko'?'저장한 모든 스크랩을 삭제할까요? 이 작업은 되돌릴 수 없습니다.':'Delete all saved bookmarks? This cannot be undone.'))return;bookmarks={};write('nb2-bookmarks',bookmarks);syncBookmarkStars();saved()});
+// Put the existing scrapbook in the former biotech dashboard column.
+// Move the actual DOM node to preserve stored bookmarks and all event handlers.
+(function mountScrapbook(){
+ const panel=$('nb-bookmarks'),bioPanel=$('nb-bio'),columns=document.querySelector('#nb-intelligence .nb2-columns');
+ if(!panel||!columns)return;
+ const target=bioPanel?.closest('section')||columns.children[1];
+ if(target){target.replaceWith(panel)}else{columns.appendChild(panel)}
+ panel.hidden=false;
+ panel.classList.add('nb-scrap-inline');
+ const css=document.createElement('style');
+ css.textContent=`#nb-intelligence .nb2-columns{align-items:stretch}#nb-intelligence #nb-bookmarks.nb-scrap-inline{min-width:0;margin:0;padding:12px 14px;border:1px solid var(--border,#334155);border-radius:7px}#nb-intelligence #nb-bookmarks.nb-scrap-inline #nb-saved-list{grid-template-columns:minmax(0,1fr);max-height:380px;overflow-y:auto}#nb-intelligence #nb-bookmarks.nb-scrap-inline .nb-scrap-toolbar{min-width:0}#nb-intelligence #nb-bookmarks.nb-scrap-inline .nb-scrap-toolbar>*{max-width:100%}@media(max-width:780px){#nb-intelligence .nb2-columns{grid-template-columns:minmax(0,1fr)!important}}`;
+ document.head.appendChild(css);
+})();
 translate();
 })();
