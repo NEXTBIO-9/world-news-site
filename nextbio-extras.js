@@ -52,7 +52,26 @@ function alerts(list){
  const root=$('nb-alerts');if(!root)return;
  root.innerHTML=chosen.length?chosen.map(({a,score})=>`<div class="nb2-row"><span class="nb2-tag">${score>=85?'🚨 ': '⚡ '}${lang==='ko'?(score>=85?'긴급':'주요'):(score>=85?'Urgent':'Priority')} · ${score}</span><a target="_blank" rel="noopener noreferrer" href="${safe(/^https?:\/\//i.test(a.url||'')?a.url:'#')}">${safe(lang==='en'?(a.title||a.title_ko):(a.title_ko||a.title))}</a></div>`).join(''):`<p class="nb2-muted">${lang==='ko'?'현재 기준에 해당하는 주요 뉴스가 없습니다.':'No qualifying priority stories right now.'}</p>`;
 }
-function saveButtons(){document.querySelectorAll('#latest-list a.latest-item,#country-feed a.country-item').forEach(a=>{if(a.nextElementSibling?.classList.contains('nb2-bookmark'))return;const url=a.getAttribute('href');if(!/^https?:\/\//i.test(url||''))return;const btn=document.createElement('button');btn.type='button';btn.className='nb2-bookmark';btn.dataset.url=url;btn.textContent=bookmarks[url]?'★':'☆';btn.title=tr('saved');btn.setAttribute('aria-label',tr('saved'));btn.setAttribute('aria-pressed',String(!!bookmarks[url]));a.insertAdjacentElement('afterend',btn)})}
+function saveButtons(){
+ document.querySelectorAll('#latest-list a.latest-item,#country-feed a.country-item').forEach(a=>{
+  const url=a.getAttribute('href');
+  if(!/^https?:\/\//i.test(url||''))return;
+  // Keep the article and its bookmark button inside the SAME card row.
+  // The old version appended a button beside the anchor without a wrapper,
+  // leaving the button on a separate line and creating large blank gaps.
+  let row=a.parentElement?.classList.contains('nb-news-row')?a.parentElement:null;
+  if(!row){row=document.createElement('div');row.className='nb-news-row';a.parentNode.insertBefore(row,a);row.appendChild(a)}
+  let btn=Array.from(row.children).find(el=>el.classList.contains('nb2-bookmark'));
+  if(!btn){
+   const adjacent=row.nextElementSibling;
+   if(adjacent?.classList.contains('nb2-bookmark')&&adjacent.dataset.url===url){btn=adjacent;row.appendChild(btn)}
+  }
+  if(!btn){btn=document.createElement('button');btn.type='button';btn.className='nb2-bookmark';row.appendChild(btn)}
+  btn.dataset.url=url;btn.textContent=bookmarks[url]?'★':'☆';btn.title=tr('saved');
+  btn.setAttribute('aria-label',tr('saved'));btn.setAttribute('aria-pressed',String(!!bookmarks[url]));
+ });
+}
+
 function saved(){
  const root=$('nb-saved-list');if(!root)return;
  const query=($('nb-scrap-search')?.value||'').trim().toLocaleLowerCase();
