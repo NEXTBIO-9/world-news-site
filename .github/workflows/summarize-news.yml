@@ -71,7 +71,7 @@ jobs:
           TITLE_KO_ATTEMPT_LOG: /tmp/nextbio-title-attempts.json
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python scripts/translate_news_titles.py
-      - name: Publish only translated new headlines and merge caches safely
+      - name: Commit translated headline cache without publishing articles
         shell: bash
         run: |
           set -euo pipefail
@@ -84,15 +84,30 @@ jobs:
             if [ -f /tmp/nextbio-local-titles.json ]; then
               python scripts/merge_title_cache.py data/title-translations.json /tmp/nextbio-local-titles.json
             fi
-            python scripts/publish_translated_news.py /tmp/nextbio-staged/articles.json /tmp/nextbio-staged/news_quality_audit.json /tmp/nextbio-title-attempts.json
-            git add data/articles.json data/title-translations.json data/pending-title-news.json
-            if [ -f data/news_quality_audit.json ]; then git add data/news_quality_audit.json; fi
+            git add data/title-translations.json
             if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
-            git commit -m 'Publish news after Korean headline translation'
+            git commit -m 'Cache translated headlines before news publication'
             if git push origin HEAD:main; then exit 0; fi
             sleep 5
           done
           exit 1
+      - name: Save headline attempt record for summary publication
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p /tmp/nextbio-title-record
+          if [ -f /tmp/nextbio-title-attempts.json ]; then
+            cp /tmp/nextbio-title-attempts.json /tmp/nextbio-title-record/attempts.json
+          else
+            printf '{"attempted":[]}\n' > /tmp/nextbio-title-record/attempts.json
+          fi
+      - name: Upload headline attempt record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextbio-headline-attempts
+          path: /tmp/nextbio-title-record/attempts.json
+          retention-days: 2
   summaries:
     needs: titles
     if: ${{ needs.titles.result == 'success' }}
@@ -106,6 +121,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Download unpublished feed for summary processing
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        with:
+          name: nextbio-unpublished-news
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/nextbio-staged
+      - name: Use current feed for manual backfill
+        if: github.event_name == 'workflow_dispatch'
+        shell: bash
+        run: |
+          mkdir -p /tmp/nextbio-staged
+          cp data/articles.json /tmp/nextbio-staged/articles.json
+          if [ -f data/news_quality_audit.json ]; then cp data/news_quality_audit.json /tmp/nextbio-staged/news_quality_audit.json; fi
+      - name: Download headline attempt record
+        uses: actions/download-artifact@v4
+        with:
+          name: nextbio-headline-attempts
+          path: /tmp/nextbio-title-record
+      - name: Prepare unpublished candidates for summary processing
+        shell: bash
+        run: |
+          python scripts/publish_translated_news.py prepare /tmp/nextbio-staged/articles.json /tmp/nextbio-summary-candidates.json
+          cp /tmp/nextbio-summary-candidates.json data/articles.json
       - name: Check whether article extraction is needed
         id: extract_gate
         run: python scripts/summary_work_gate.py extract
@@ -131,8 +171,7 @@ jobs:
           SUMMARY_KO_BUDGET: '1000'
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python scripts/translate_article_summaries.py
-      - name: Commit summaries safely
-        if: steps.extract_gate.outputs.should_run == 'true' || steps.translate_gate.outputs.should_run == 'true'
+      - name: Publish only articles with Korean titles and source-backed Korean summaries
         shell: bash
         run: |
           set -euo pipefail
@@ -144,10 +183,12 @@ jobs:
             git reset --hard origin/main
             if [ -f /tmp/nextbio-summaries.json ]; then
               python scripts/merge_summary_cache.py data/article-summaries.json /tmp/nextbio-summaries.json
-              git add data/article-summaries.json
             fi
+            python scripts/publish_translated_news.py /tmp/nextbio-staged/articles.json /tmp/nextbio-staged/news_quality_audit.json /tmp/nextbio-title-record/attempts.json
+            git add data/articles.json data/article-summaries.json data/pending-title-news.json
+            if [ -f data/news_quality_audit.json ]; then git add data/news_quality_audit.json; fi
             if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
-            git commit -m 'Update Korean article summaries'
+            git commit -m 'Publish only fully summarized Korean news'
             if git push origin HEAD:main; then exit 0; fi
             sleep 5
           done
