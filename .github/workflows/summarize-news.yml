@@ -40,10 +40,12 @@ jobs:
           mkdir -p /tmp/nextbio-staged
           cp data/articles.json /tmp/nextbio-staged/articles.json
           if [ -f data/news_quality_audit.json ]; then cp data/news_quality_audit.json /tmp/nextbio-staged/news_quality_audit.json; fi
+      - name: Add retained untranslated headlines to translation candidates
+        run: python scripts/publish_translated_news.py prepare /tmp/nextbio-staged/articles.json /tmp/nextbio-translation-candidates.json
       - name: Check whether Korean headline translation is needed
         id: title_gate
         env:
-          TITLE_KO_FEED: /tmp/nextbio-staged/articles.json
+          TITLE_KO_FEED: /tmp/nextbio-translation-candidates.json
         run: |
           python - <<'PY'
           import json, os
@@ -53,7 +55,7 @@ jobs:
           path=Path('data/title-translations.json')
           cache=json.loads(path.read_text(encoding='utf-8')).get('translations',{}) if path.exists() else {}
           count=len(pending(feed,cache))
-          print('Untranslated English titles:',count)
+          print('Untranslated English titles including backlog:',count)
           with open(os.environ['GITHUB_OUTPUT'],'a') as f:
               f.write('should_run='+('true' if count else 'false')+'\n')
           PY
@@ -63,9 +65,10 @@ jobs:
       - name: Translate English headlines to Korean with retry
         if: steps.title_gate.outputs.should_run == 'true'
         env:
-          TITLE_KO_FEED: /tmp/nextbio-staged/articles.json
+          TITLE_KO_FEED: /tmp/nextbio-translation-candidates.json
           TITLE_KO_LIMIT: '60'
           TITLE_KO_BUDGET: '900'
+          TITLE_KO_ATTEMPT_LOG: /tmp/nextbio-title-attempts.json
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python scripts/translate_news_titles.py
       - name: Publish only translated new headlines and merge caches safely
@@ -81,8 +84,8 @@ jobs:
             if [ -f /tmp/nextbio-local-titles.json ]; then
               python scripts/merge_title_cache.py data/title-translations.json /tmp/nextbio-local-titles.json
             fi
-            python scripts/publish_translated_news.py /tmp/nextbio-staged/articles.json /tmp/nextbio-staged/news_quality_audit.json
-            git add data/articles.json data/title-translations.json
+            python scripts/publish_translated_news.py /tmp/nextbio-staged/articles.json /tmp/nextbio-staged/news_quality_audit.json /tmp/nextbio-title-attempts.json
+            git add data/articles.json data/title-translations.json data/pending-title-news.json
             if [ -f data/news_quality_audit.json ]; then git add data/news_quality_audit.json; fi
             if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
             git commit -m 'Publish news after Korean headline translation'
@@ -90,7 +93,6 @@ jobs:
             sleep 5
           done
           exit 1
-
   summaries:
     needs: titles
     if: ${{ needs.titles.result == 'success' }}
