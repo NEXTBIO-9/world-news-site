@@ -35,28 +35,6 @@ jobs:
         run: |
           python scripts/fetch_news.py
 
-      - name: Install free offline translation engine
-        run: |
-          python -m pip install --disable-pip-version-check 'argostranslate==1.9.6'
-
-      - name: Translate English headlines locally (no paid API)
-        env:
-          TRANSLATE_MAX_NEW: "100"
-        run: |
-          python translate_titles.py
-
-      - name: Report translated headlines
-        run: |
-          python - <<'PYREPORT'
-          import json
-          data = json.load(open('data/articles.json', encoding='utf-8'))
-          articles = data.get('articles', [])
-          count = sum(bool(a.get('title_ko')) for a in articles if isinstance(a, dict))
-          print(f'Korean titles: {count}/{len(articles)}')
-          if count == 0:
-              print('WARNING: No Korean titles generated; inspect translation step logs.')
-          PYREPORT
-
       - name: Commit updated feed
         shell: bash
         run: |
