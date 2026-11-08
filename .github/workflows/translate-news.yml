@@ -1,15 +1,15 @@
 name: Translate news headlines (free AI)
 
+# Legacy translator: manual recovery only. Automated translations are handled
+# by Build and translate source-grounded summaries v20.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '17 * * * *'
 
 permissions:
   contents: write
 
 concurrency:
-  group: world-news-feed-update
+  group: legacy-headline-translation-manual
   cancel-in-progress: false
 
 jobs:
@@ -56,7 +56,6 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cp data/articles.json /tmp/translated-articles.json
-          # Rebase translation changes onto the latest news feed without discarding new articles.
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
@@ -71,7 +70,6 @@ jobs:
               if not isinstance(a,dict): continue
               old=lookup.get((a.get('url'),a.get('title')))
               if old is None: continue
-              # Only apply new-model translation; never overwrite fresh news content.
               if old.get('translation_quality_version')=='nllb600m-v8' and old.get('title_ko'):
                   a['title_ko']=old['title_ko']
                   a['translation_quality_version']='nllb600m-v8'
