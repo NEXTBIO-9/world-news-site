@@ -1,0 +1,70 @@
+name: Build and translate source-grounded summaries v19
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - 'Update news feed'
+    types:
+      - completed
+permissions:
+  contents: write
+concurrency:
+  group: nextbio-summary-cache
+  cancel-in-progress: false
+jobs:
+  summaries:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check whether article extraction is needed (no dependencies)
+        id: extract_gate
+        run: python scripts/summary_work_gate.py extract
+      - name: Install article extraction only if needed
+        if: steps.extract_gate.outputs.should_run == 'true'
+        run: pip install 'requests>=2.31,<3' 'trafilatura>=1.12,<3' 'googlenewsdecoder>=0.1.7,<1'
+      - name: Extract new-first excerpts and rotate backlog
+        if: steps.extract_gate.outputs.should_run == 'true'
+        env:
+          SUMMARY_MAX_NEW: '50'
+          SUMMARY_TIME_BUDGET: '360'
+        run: python scripts/build_article_summaries.py
+      - name: Check whether Korean translation is needed (no model load)
+        id: translate_gate
+        run: python scripts/summary_work_gate.py translate
+      - name: Install Korean model dependencies only if needed
+        if: steps.translate_gate.outputs.should_run == 'true'
+        run: pip install 'torch>=2.2,<3' 'transformers>=4.40,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
+      - name: Translate new and cached excerpts to Korean
+        if: steps.translate_gate.outputs.should_run == 'true'
+        env:
+          SUMMARY_KO_LIMIT: '50'
+          SUMMARY_KO_BUDGET: '1500'
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: python scripts/translate_article_summaries.py
+      - name: Commit summaries safely without overwriting other updates
+        if: steps.extract_gate.outputs.should_run == 'true' || steps.translate_gate.outputs.should_run == 'true'
+        shell: bash
+        run: |
+          set -e
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp data/article-summaries.json /tmp/nextbio-v18-summaries.json
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/merge_summary_cache.py data/article-summaries.json /tmp/nextbio-v18-summaries.json
+            git add data/article-summaries.json
+            if git diff --cached --quiet; then echo 'No new summaries'; exit 0; fi
+            git commit -m 'Update and translate source-grounded article summaries'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1

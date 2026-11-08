@@ -1,10 +1,14 @@
+
 name: Update NEXT BIO market quotes
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/5 * * * *'
+
 permissions:
   contents: write
+
 jobs:
   update-market:
     runs-on: ubuntu-latest

@@ -15,7 +15,7 @@ concurrency:
 jobs:
   translate-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -37,6 +37,7 @@ jobs:
       - name: Translate new titles using NLLB
         env:
           TRANSLATE_MAX_NEW: '100'
+          TRANSLATE_TIME_BUDGET_SECONDS: '2700'
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python translate_titles_ai.py
       - name: Report translated titles
@@ -71,12 +72,12 @@ jobs:
               old=lookup.get((a.get('url'),a.get('title')))
               if old is None: continue
               # Only apply new-model translation; never overwrite fresh news content.
-              if old.get('translation_quality_version')=='nllb600m-v1' and old.get('title_ko'):
+              if old.get('translation_quality_version')=='nllb600m-v8' and old.get('title_ko'):
                   a['title_ko']=old['title_ko']
-                  a['translation_quality_version']='nllb600m-v1'
-              elif a.get('translation_quality_version')!='nllb600m-v1':
-                  a.pop('title_ko',None)
-                  a.pop('translation_quality_version',None)
+                  a['translation_quality_version']='nllb600m-v8'
+                  a.pop('translation_failed_version', None)
+              elif old.get('translation_failed_version')=='nllb600m-v8':
+                  a['translation_failed_version']='nllb600m-v8'
           path.write_text(json.dumps(current,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
           PY
             git add data/articles.json
