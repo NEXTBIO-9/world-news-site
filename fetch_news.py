@@ -335,29 +335,34 @@ def main():
         for article in accepted
     ]
 
-    # Preserve verified translations across regular RSS refreshes.
-    # Only reuse when both URL and original title match; never trust stale text.
-    prior_translations = {}
-    try:
-        old_payload = json.loads(Path('data/articles.json').read_text(encoding='utf-8'))
-        for old in old_payload.get('articles', []):
-            if isinstance(old, dict) and old.get('translation_quality_version') == 'nllb600m-v1' and old.get('title_ko'):
-                prior_translations[(old.get('url'), old.get('title'))] = old['title_ko']
-    except (OSError, ValueError, TypeError):
-        pass
-    for article in articles:
-        translated = prior_translations.get((article.get('url'), article.get('title')))
-        if translated:
-            article['title_ko'] = translated
-            article['translation_quality_version'] = 'nllb600m-v1'
-
-
     payload = {
         'updated': datetime.now(timezone.utc).isoformat(),
         'articles': articles
     }
 
     Path('data').mkdir(exist_ok=True)
+
+    # Keep translations for unchanged articles across frequent RSS refreshes.
+    # Never reuse a translation for a different headline, even at the same URL.
+    previous_path = Path('data/articles.json')
+    if previous_path.exists():
+        try:
+            previous = json.loads(previous_path.read_text(encoding='utf-8'))
+            translations = {
+                (a.get('url'), a.get('title')): a
+                for a in previous.get('articles', [])
+                if isinstance(a, dict) and a.get('url') and a.get('title')
+            }
+            for article in payload['articles']:
+                old = translations.get((article.get('url'), article.get('title')))
+                if old and isinstance(old.get('title_ko'), str) and old['title_ko'].strip():
+                    article['title_ko'] = old['title_ko']
+                    if old.get('translation_quality_version'):
+                        article['translation_quality_version'] = old['translation_quality_version']
+                if old and old.get('translation_failed_version'):
+                    article['translation_failed_version'] = old['translation_failed_version']
+        except (OSError, ValueError, TypeError) as exc:
+            print(f'Could not restore old translations: {exc}; continuing with news update')
 
     Path('data/articles.json').write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
