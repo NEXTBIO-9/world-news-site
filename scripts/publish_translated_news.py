@@ -3,6 +3,7 @@
 import json
 import sys
 from datetime import datetime, timezone
+import re
 from pathlib import Path
 from translate_news_titles import english, valid
 
@@ -59,10 +60,28 @@ def prepare(staged_path, output_path):
     print('Translation candidates including retained backlog:', len(items))
 
 
+def korean_summary_ready(article, summaries):
+    """Require source-backed Korean excerpt; never accept a title-only placeholder."""
+    entry = summaries.get(article.get('url'))
+    if not isinstance(entry, dict) or entry.get('kind') not in ('source_excerpt', 'rss_excerpt'):
+        return False
+    source = str(entry.get('text') or '').strip()
+    korean = str(entry.get('text_ko') or '').strip()
+    if not korean and len(re.findall(r'[가-힣]', source)) >= 15:
+        korean = source
+    if len(korean) < 25 or len(re.findall(r'[가-힣]', korean)) < 15:
+        return False
+    title = str(article.get('title_ko') or article.get('title') or '').strip()
+    return korean != title and len(korean) > len(title) * 0.7
+
+
 def publish(staged_path, audit_path):
     staged = read(staged_path)
     current = read(DATA / 'articles.json')
     cache = read(DATA / 'title-translations.json').get('translations') or {}
+    summaries = read(DATA / 'article-summaries.json').get('summaries') or {}
+    if not isinstance(summaries, dict):
+        raise ValueError('Invalid summary cache')
     if not isinstance(cache, dict):
         raise ValueError('Invalid translation cache')
     new_items = staged.get('articles')
@@ -103,17 +122,29 @@ def publish(staged_path, audit_path):
         item = dict(a)
         if translated:
             item['title_ko'] = translated
+        if not korean_summary_ready(item, summaries):
+            waiting.append({'failures': failure_counts.get(key, 0), 'article': a})
+            continue
         published.append(item)
         seen.add(key)
     for old in current_items:
         if not isinstance(old, dict):
             continue
         key = identity(old)
-        if key not in seen:
-            published.append(old)
+        if key in seen or key in excluded:
+            continue
+        old_title = old.get('title', '')
+        old_ko = old.get('title_ko') or cache.get(old_title)
+        if english(old_title) and not valid(old_title, old_ko):
+            continue
+        restored = dict(old)
+        if english(old_title):
+            restored['title_ko'] = old_ko
+        if korean_summary_ready(restored, summaries):
+            published.append(restored)
             seen.add(key)
     # Bound site feed and backlog independently.
-    cap = max(1, len(new_items))
+    cap = min(180, max(1, len(new_items)))
     published = published[:cap]
     waiting = waiting[:MAX_PENDING]
     write(DATA / 'articles.json', {'updated': staged.get('updated'), 'articles': published})
