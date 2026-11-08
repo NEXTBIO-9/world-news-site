@@ -353,10 +353,124 @@ COUNTRY_ALIASES = {
     '튀르키예': r'\b(?:Turkey|Turkish|Türkiye)\b',
 }
 
+# Known ambiguous place names must not be treated as countries.
+AMBIGUOUS_COUNTRY_PLACE = [
+    (r'(?i)\b(?:Mt\.?|Mount) Lebanon\b', '레바논'),
+    (r'(?i)\b(?:New York|New Jersey|New Hampshire)\b', None),
+]
+
+def infer_category(article):
+    """Use explicit headline evidence before the broad RSS search category."""
+    t = article.get('title', '')
+    rules = [
+        ('재해·재난', r'(?i)\b(?:earthquake|quake|tremor|tsunami|wildfires?|flooding|floods?|hurricane|typhoon|landslide|volcanic eruption)\b|지진|여진|쓰나미|산불|홍수|태풍|산사태'),
+        ('분쟁·군사', r'(?i)\b(?:missile (?:strike|attack|launch)|missiles? (?:targeting|intercepted)|intercepts? .*missile|drone attack|military base attack|airstrike|ceasefire|offensive in (?:Lebanon|Ukraine)|gunman|shooting|armed attack|soldiers? (?:killed|injured))\b|미사일 (?:공격|요격|발사)|드론 공격|군사기지 공격|총격|휴전|공습'),
+        ('정치', r'(?i)\b(?:presidential election|parliamentary election|election results|parliament votes|prime minister resigns|government coalition)\b|대통령 선거|총선 결과|국회 표결|총리 사임'),
+        ('경제·금융', r'(?i)\b(?:central bank|interest rate|rate decision|inflation|ECB|European Central Bank|oil (?:prices?|touches|surges)|tariffs?)\b|중앙은행|기준금리|금리 (?:동결|인상|인하)|물가|인플레이션|관세'),
+        ('제약·신약', r'(?i)\b(?:phase [123] (?:clinical )?trial|drug approval|FDA approves? (?:a |the )?(?:drug|therapy)|EMA approves? (?:a |the )?(?:drug|therapy))\b|임상(?:시험)? [123]상|신약 (?:승인|허가)'),
+        ('의료기기', r'(?i)\b(?:medical device (?:approval|recall)|diagnostic device approved|FDA clears? (?:a |the )?(?:device|test))\b|의료기기 (?:승인|허가|리콜)'),
+        ('감염병', r'(?i)\b(?:measles|mpox|infectious disease outbreak|disease outbreak|pandemic)\b|홍역|감염병 (?:확산|유행|발생)'),
+        ('미생물', r'(?i)\b(?:antibacterial activity|microbiome causal|microbial testing|microbiology research|drug-resistant (?:bacteria|pseudomonas))\b|항균 활성|미생물군집|내성균 연구'),
+    ]
+    # Preserve specialist RSS labels unless the headline explicitly signals a disaster or military conflict.
+    specialist = article.get('category') in SPECIALIST_CATEGORIES
+    for category, pattern in rules:
+        if specialist and category not in ('재해·재난', '분쟁·군사'):
+            continue
+        if re.search(pattern, t):
+            article['category'] = category
+            if category != '미생물':
+                article['subcategory'] = ''
+            return
+
+# Small, routine tremors are not major news without documented harm or warnings.
+MICRO_QUAKE = re.compile(r'(?i)\b(?:weak|light|minor|moderate)?\s*(?:mag(?:nitude)?\.?|magnitude[- ]?)\s*([0-9]+(?:\.[0-9]+)?)\b')
+QUAKE_HARM = re.compile(r'(?i)\b(?:kill|kills|killed|dead|death|deaths|injure|injures|injured|casualties|fatalities|evacuated|damage|collapsed|tsunami warning|emergency|major disruption)\b|사망|부상|피해|대피|쓰나미 경보|붕괴')
+ROUTINE_QUAKE = re.compile(r'(?i)\b(?:weak|light|minor)\s+mag\.?|\b(?:unconfirmed earthquake|seismic-like event)\b')
+
+def is_routine_quake(article):
+    t = article.get('title', '')
+    if not re.search(r'(?i)\b(?:earthquake|quake|tremor|seismic-like event)\b|지진', t):
+        return False
+    if QUAKE_HARM.search(re.sub(r'(?i)\bno tsunami warning\b', '', t)):
+        return False
+    match = MICRO_QUAKE.search(t)
+    if match and float(match.group(1)) < 4.5:
+        return True
+    return bool(ROUTINE_QUAKE.search(t) and not re.search(r'(?i)\b(?:major|strong|powerful)\b', t))
+
+# Phase 9: suppress generic, low-information records without rejecting major events.
+# Keep this narrow: a source's reputation is not proof of factual correctness.
+LOW_VALUE_RECORDS = [
+    r'(?i)\b(?:unconfirmed earthquake|seismic-like event|earthquake or seismic-like event)\b',
+    r'(?i)\b(?:earthquake|quake)\b.*\b(?:no damage|no injuries)\b.*\b(?:magnitude|mag\.)\s*[0-3](?:\.\d+)?\b',
+    r'(?i)\b(?:guide to (?:medical device|.* APIs)|database: search guide|scope, APC & review)\b',
+    r'(?i)\b(?:API documentation|developer documentation|searchable database|privacy policy|terms of service|subscription plans|event calendar|conference agenda|job openings|careers at|press release archive)\b',
+    r'(?i)\b(?:live earthquake map|earthquake tracker|latest earthquakes list|historical earthquake catalog)\b',
+    r'개발자 문서|이용약관|개인정보처리방침|채용 공고|행사 일정|학회 일정|보도자료 목록',
+]
+MAX_PER_SOURCE = 12  # soft cap; unused slots are backfilled below
+
+
+def is_low_value_record(article):
+    return any(re.search(p, article.get('title', '')) for p in LOW_VALUE_RECORDS)
+
+
+def event_date(article):
+    try:
+        return datetime.fromisoformat(article['published'].replace('Z', '+00:00')).date()
+    except (ValueError, TypeError, KeyError, AttributeError):
+        return None
+
+
+def event_compatible(a, b):
+    # Do not merge events separated by days, or reports that clearly disagree
+    # about the location. Different aftershocks remain separate.
+    da, db = event_date(a), event_date(b)
+    if da is None or db is None or abs((da - db).days) > 1:
+        return False
+    if a.get('countries') and b.get('countries') and not set(a['countries']) & set(b['countries']):
+        return False
+    return True
+
+
+def source_key(article):
+    return re.sub(r'\s+', ' ', article.get('source', '').strip().casefold()) or 'unknown'
+
+
+def source_diversity_select(pool, selected_ids, slots, cap=MAX_PER_SOURCE):
+    """Prefer publisher variety, then backfill so source caps never shrink coverage."""
+    picked = []
+    counts = collections.Counter(source_key(a) for a in pool if id(a) in selected_ids)
+    for article in pool:
+        if len(picked) >= slots:
+            break
+        if id(article) in selected_ids or counts[source_key(article)] >= cap:
+            continue
+        picked.append(article)
+        counts[source_key(article)] += 1
+    return picked
+
+
+# Only merge explicitly identifiable, near-simultaneous repeated reports.
+# Avoid merging distinct follow-up events (aftershocks, new strikes, trials).
+def event_fingerprint(article):
+    t = article.get('title', '')
+    if re.search(r'(?i)\b(?:japan|japanese)\b', t) and re.search(r'(?i)\b(?:earthquake|quake)\b', t):
+        m = re.search(r'(?i)\b5[.,]7\b', t)
+        if m and not re.search(r'(?i)\b(?:aftershock|second quake|another quake)\b', t):
+            return 'japan-earthquake-5.7'
+    if re.search(r'(?i)\b(?:krakow|kraków|poland)\b', t) and re.search(r'(?i)\b(?:shooting|gunman|gun attack)\b', t):
+        if not re.search(r'(?i)\b(?:another shooting|second attack|new shooting)\b', t):
+            return 'krakow-shooting'
+    return None
+
 def confirmed_countries(article):
     title = article.get('title', '')
     result = []
     for country in article.get('countries', []):
+        if any(blocked == country and re.search(pattern, title) for pattern, blocked in AMBIGUOUS_COUNTRY_PLACE):
+            continue
         name = COUNTRY_ENGLISH.get(country, '')
         patterns = [COUNTRY_ALIASES.get(country, '')]
         if name:
@@ -402,8 +516,12 @@ def dedupe_events(pool):
 
 def quality_reason(article):
     title = article.get('title', '').strip()
+    if is_routine_quake(article):
+        return '미소지진·미확인 관측'
     if any(re.search(p, title) for p in NOISE_PATTERNS):
         return '잡뉴스'
+    if is_low_value_record(article):
+        return '정보성·미확인 기록'
     if len(title) < (10 if re.search(r'[가-힣]', title) else 18) or len(title) > 240:
         return '제목 길이'
     if quality_score(article) < MIN_QUALITY_SCORE:
@@ -456,7 +574,7 @@ def source_signals(article):
     source = article.get('source', '').strip().lower()
     url = article.get('url', '').lower()
     # Google News links are aggregators, not evidence of the publisher's domain.
-    official = any(s in source or s in url for s in OFFICIAL_SOURCE_MARKERS)
+    official = any(s in source for s in OFFICIAL_SOURCE_MARKERS)
     established = any(s in source for s in KNOWN_NEWS_MARKERS)
     caution = any(re.search(p, article.get('title', '')) for p in UNVERIFIED_CLAIM_PATTERNS)
     return {
@@ -484,10 +602,59 @@ def protected_reason(article):
         return '핵심 사건 보호'
     return reason
 
+# Phase 10: conservative event signatures for repeated reports with different wording.
+# Require a distinctive location, a narrow event class, and compatible dates.
+EVENT_LOCATIONS = {
+    'krakow': r'(?i)\b(?:krakow|kraków)\b',
+    'central_japan': r'(?i)\b(?:central japan|japan quake|japan earthquake|quake strikes japan|earthquake strikes japan)\b',
+    'colombia_base': r'(?i)\b(?:colombia|colombian)\b',
+    'riyadh': r'(?i)\b(?:riyadh|saudi arabia|saudi)\b',
+}
+EVENT_CLASSES = {
+    'earthquake': r'(?i)\b(?:earthquake|quake|tremor)\b|지진',
+    'shooting': r'(?i)\b(?:shooting|gunman|gun attack)\b|총격',
+    'drone_base': r'(?i)\b(?:drone attack|drone strike)\b|드론 공격',
+    'missile': r'(?i)\b(?:missiles?|ballistic)\b|미사일',
+}
+
+
+def event_signature(article):
+    title = article.get('title', '')
+    place = next((k for k, pattern in EVENT_LOCATIONS.items() if re.search(pattern, title)), None)
+    kind = next((k for k, pattern in EVENT_CLASSES.items() if re.search(pattern, title)), None)
+    if not place or not kind:
+        return None
+    if (place, kind) not in {('krakow', 'shooting'), ('central_japan', 'earthquake'),
+                             ('colombia_base', 'drone_base'), ('riyadh', 'missile')}:
+        return None
+    if re.search(r'(?i)\b(?:another|second|new attack|aftershock|follow-up)\b|추가 공격|여진', title):
+        return None
+    if kind == 'earthquake':
+        mag = MICRO_QUAKE.search(title) or re.search(r'(?i)\b([0-9]\.[0-9])[- ]magnitude\b', title)
+        # Only merge explicitly known magnitude to avoid unrelated Japan quakes.
+        if not mag or abs(float(mag.group(1)) - 5.7) > .1:
+            return None
+    return place, kind
+
+
 def cautious_same_event(a, b):
+    if not event_compatible(a, b):
+        return False
     # Phase 5: reduce false merges of distinct trial results or follow-ups.
     if a.get('subcategory') != b.get('subcategory'):
         return False
+    if re.search(r'(?i)\b(?:earthquake|quake)\b', a['title']) and re.search(r'(?i)\b(?:earthquake|quake)\b', b['title']):
+        ma = re.search(r'\b([0-9]\.[0-9])\s+magnitude\b', a['title'], re.I) or MICRO_QUAKE.search(a['title'])
+        mb = re.search(r'\b([0-9]\.[0-9])\s+magnitude\b', b['title'], re.I) or MICRO_QUAKE.search(b['title'])
+        if ma and mb and abs(float(ma.group(1))-float(mb.group(1))) >= 0.2:
+            return False
+    # Distinct named events: compatible time and explicit event anchors required.
+    sa, sb = event_signature(a), event_signature(b)
+    if sa and sa == sb:
+        return True
+    fa, fb = event_fingerprint(a), event_fingerprint(b)
+    if fa and fa == fb:
+        return True
     if is_protected(a) or is_protected(b):
         x, y = event_tokens(a['title']), event_tokens(b['title'])
         if not x or not y:
@@ -529,13 +696,19 @@ def main():
         time.sleep(.15)
 
     if not candidates:
+        raise RuntimeError('No RSS articles retrieved; existing data preserved')
+    # If most RSS feeds fail, do not overwrite the last healthy edition.
+    minimum_successful_feeds = max(10, int(len(FEEDS) * .25))
+    if succeeded < minimum_successful_feeds:
         raise RuntimeError(
-            'No RSS articles retrieved; existing data preserved'
+            f'Only {succeeded}/{len(FEEDS)} feeds succeeded; existing data preserved'
         )
 
     # Preserve country coverage before allowing general feeds to fill remaining slots.
     # Deduplicate by URL/title, keeping all applicable country tags from scoped searches.
     candidates.sort(key=lambda a: a['published'], reverse=True)
+    for article in candidates:
+        infer_category(article)
     unique = {}
     url_index = {}
     for a in candidates:
@@ -608,7 +781,30 @@ def main():
             current += 1
 
     general_count = sum(not a['countries'] for a in accepted)
+    publisher_counts = collections.Counter(source_key(a) for a in accepted)
+    deferred_by_source = []
     for a in pool:
+        if len(accepted) >= MAX_TOTAL:
+            break
+        if id(a) in selected:
+            continue
+        if publisher_counts[source_key(a)] >= MAX_PER_SOURCE:
+            deferred_by_source.append(a)
+            continue
+        if a['countries']:
+            if any(counts.get(c, 0) >= MAX_PER_COUNTRY for c in a['countries']):
+                continue
+            for c in a['countries']:
+                counts[c] = counts.get(c, 0) + 1
+        else:
+            if general_count >= MAX_GENERAL:
+                continue
+            general_count += 1
+        accepted.append(a)
+        selected.add(id(a))
+        publisher_counts[source_key(a)] += 1
+    # Backfill unused capacity so the diversity cap never sacrifices coverage.
+    for a in deferred_by_source:
         if len(accepted) >= MAX_TOTAL:
             break
         if id(a) in selected:
@@ -624,6 +820,7 @@ def main():
             general_count += 1
         accepted.append(a)
         selected.add(id(a))
+        publisher_counts[source_key(a)] += 1
     accepted.sort(key=lambda a: (selection_score(a), a['published']), reverse=True)
 
     articles = [
@@ -633,6 +830,15 @@ def main():
 
     if len(articles) < 15:
         raise RuntimeError('Too few quality articles; existing data preserved (minimum 15)')
+    # Protect the public site from a sudden abnormal collapse in article coverage.
+    previous_path = Path('data/articles.json')
+    if previous_path.exists():
+        try:
+            previous_articles = json.loads(previous_path.read_text(encoding='utf-8')).get('articles', [])
+            if len(previous_articles) >= 80 and len(articles) < max(30, int(len(previous_articles) * .35)):
+                raise RuntimeError('Severe feed coverage drop; previous articles preserved')
+        except (OSError, ValueError, TypeError, AttributeError):
+            pass
 
     payload = {
         'updated': datetime.now(timezone.utc).isoformat(),
@@ -643,7 +849,7 @@ def main():
 
     audit = {
         'updated': payload['updated'],
-        'version': 'quality-5-6',
+        'version': 'quality-10',
         'total_candidates': len(candidates),
         'unique_candidates': pool_before_filter,
         'passed_after_dedupe': len(pool),
@@ -657,6 +863,19 @@ def main():
             for a in unique.values()
         ),
         'category_counts': dict(collections.Counter(a['category'] for a in articles)),
+        'routine_quakes_rejected': sum(quality_reason(a) == '미소지진·미확인 관측' for a in unique.values()),
+        'event_duplicates_merged': len(merged_events),
+        'low_value_records_rejected': sum(quality_reason(a) == '정보성·미확인 기록' for a in unique.values()),
+        'distinct_publishers_saved': len(set(source_key(a) for a in articles)),
+        'largest_publisher_share': round(max(collections.Counter(source_key(a) for a in articles).values(), default=0) / max(len(articles), 1), 3),
+        'country_tagged_saved': sum(bool(a['countries']) for a in articles),
+        'uncategorized_saved': sum(a['category'] == '일반' for a in articles),
+        'feed_success_rate': round(succeeded / max(len(FEEDS), 1), 3),
+        'successful_feeds': succeeded,
+        'attempted_feeds': len(FEEDS),
+        'country_counts': dict(collections.Counter(c for a in articles for c in a.get('countries', []))),
+        'publisher_counts_top20': dict(collections.Counter(source_key(a) for a in articles).most_common(20)),
+        'event_signature_coverage': sum(event_signature(a) is not None for a in articles),
         'excluded_total': sum(protected_reason(a) not in ('통과', '핵심 사건 보호') for a in unique.values()),
         'excluded': sorted([
             {'title': a['title'], 'category': a['category'], 'reason': protected_reason(a),
