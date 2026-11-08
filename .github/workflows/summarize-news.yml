@@ -1,4 +1,4 @@
-name: Build and translate source-grounded summaries v19
+name: Build and translate source-grounded summaries v20
 on:
   workflow_dispatch:
   workflow_run:
@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Check whether article extraction is needed (no dependencies)
+      - name: Check whether article extraction is needed
         id: extract_gate
         run: python scripts/summary_work_gate.py extract
       - name: Install article extraction only if needed
@@ -36,34 +36,63 @@ jobs:
           SUMMARY_MAX_NEW: '50'
           SUMMARY_TIME_BUDGET: '360'
         run: python scripts/build_article_summaries.py
-      - name: Check whether Korean translation is needed (no model load)
+      - name: Check whether Korean summary translation is needed
         id: translate_gate
         run: python scripts/summary_work_gate.py translate
+      - name: Check whether Korean headline translation is needed
+        id: title_gate
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from scripts.translate_news_titles import pending
+          feed=json.loads(Path('data/articles.json').read_text(encoding='utf-8'))
+          path=Path('data/title-translations.json')
+          cache=json.loads(path.read_text(encoding='utf-8')).get('translations',{}) if path.exists() else {}
+          count=len(pending(feed,cache))
+          print('Untranslated English titles:',count)
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              f.write('should_run='+('true' if count else 'false')+'\n')
+          PY
       - name: Install Korean model dependencies only if needed
-        if: steps.translate_gate.outputs.should_run == 'true'
+        if: steps.translate_gate.outputs.should_run == 'true' || steps.title_gate.outputs.should_run == 'true'
         run: pip install 'torch>=2.2,<3' 'transformers>=4.40,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
       - name: Translate new and cached excerpts to Korean
         if: steps.translate_gate.outputs.should_run == 'true'
         env:
           SUMMARY_KO_LIMIT: '50'
-          SUMMARY_KO_BUDGET: '1500'
+          SUMMARY_KO_BUDGET: '1000'
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python scripts/translate_article_summaries.py
-      - name: Commit summaries safely without overwriting other updates
-        if: steps.extract_gate.outputs.should_run == 'true' || steps.translate_gate.outputs.should_run == 'true'
+      - name: Translate English headlines to Korean
+        if: steps.title_gate.outputs.should_run == 'true'
+        env:
+          TITLE_KO_LIMIT: '60'
+          TITLE_KO_BUDGET: '900'
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: python scripts/translate_news_titles.py
+      - name: Commit summaries and title translations safely
+        if: steps.extract_gate.outputs.should_run == 'true' || steps.translate_gate.outputs.should_run == 'true' || steps.title_gate.outputs.should_run == 'true'
         shell: bash
         run: |
           set -e
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          cp data/article-summaries.json /tmp/nextbio-v18-summaries.json
+          if [ -f data/article-summaries.json ]; then cp data/article-summaries.json /tmp/nextbio-summaries.json; fi
+          if [ -f data/title-translations.json ]; then cp data/title-translations.json /tmp/nextbio-titles.json; fi
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
-            python scripts/merge_summary_cache.py data/article-summaries.json /tmp/nextbio-v18-summaries.json
-            git add data/article-summaries.json
-            if git diff --cached --quiet; then echo 'No new summaries'; exit 0; fi
-            git commit -m 'Update and translate source-grounded article summaries'
+            if [ -f /tmp/nextbio-summaries.json ]; then
+              python scripts/merge_summary_cache.py data/article-summaries.json /tmp/nextbio-summaries.json
+              git add data/article-summaries.json
+            fi
+            if [ -f /tmp/nextbio-titles.json ]; then
+              python scripts/merge_title_cache.py data/title-translations.json /tmp/nextbio-titles.json
+              git add data/title-translations.json
+            fi
+            if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
+            git commit -m 'Update Korean headlines and article summaries'
             if git push origin HEAD:main; then exit 0; fi
             sleep 5
           done
