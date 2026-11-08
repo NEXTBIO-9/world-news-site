@@ -3,10 +3,10 @@ name: Update news feed
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: '*/15 * * * *'
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: world-news-feed-update
@@ -16,87 +16,28 @@ jobs:
   update-news:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           ref: main
-          fetch-depth: 0
-          persist-credentials: true
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-
-      - name: Collect public RSS headlines
-        run: |
-          python scripts/fetch_news.py
-
-      - name: Commit updated feed and quality audit
+          python-version: '3.11'
+      - name: Collect public RSS headlines (not yet published)
+        run: python scripts/fetch_news.py
+      - name: Stage unpublished news and audit
         shell: bash
         run: |
-          set -e
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          cp data/articles.json /tmp/world-news-articles.json
-          cp data/news_quality_audit.json /tmp/world-news-quality-audit.json
-
-          for attempt in 1 2 3 4 5; do
-            echo "Push attempt: $attempt"
-
-            git fetch origin main
-            git reset --hard origin/main
-
-            # Merge translated titles from latest remote feed into fresh articles.
-            # Match both URL and original title to avoid applying stale translations.
-            python - <<'PYCODE'
-          import json
-          from pathlib import Path
-
-          target = Path('data/articles.json')
-          fresh = json.loads(Path('/tmp/world-news-articles.json').read_text(encoding='utf-8'))
-          current = json.loads(target.read_text(encoding='utf-8')) if target.exists() else {}
-          previous = {
-              (item.get('url'), item.get('title')): item
-              for item in current.get('articles', [])
-              if isinstance(item, dict)
-          }
-          for item in fresh.get('articles', []):
-              if not isinstance(item, dict):
-                  continue
-              old = previous.get((item.get('url'), item.get('title')))
-              if not old:
-                  continue
-              if old.get('title_ko'):
-                  item['title_ko'] = old['title_ko']
-                  if old.get('translation_quality_version'):
-                      item['translation_quality_version'] = old['translation_quality_version']
-              elif old.get('translation_failed_version'):
-                  item['translation_failed_version'] = old['translation_failed_version']
-          target.write_text(json.dumps(fresh, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-          PYCODE
-            cp /tmp/world-news-quality-audit.json data/news_quality_audit.json
-            git add data/articles.json data/news_quality_audit.json
-
-            if git diff --cached --quiet; then
-              echo "No news changes to commit."
-              exit 0
-            fi
-
-            git commit -m "Update news feed and quality audit"
-
-            if git push origin HEAD:main; then
-              echo "News feed and quality audit updated successfully."
-              exit 0
-            fi
-
-            echo "Push conflict; retrying..."
-            sleep 5
-          done
-
-          echo "Failed to push news feed after 5 attempts."
-          exit 1
+          set -euo pipefail
+          mkdir -p /tmp/nextbio-staged
+          cp data/articles.json /tmp/nextbio-staged/articles.json
+          cp data/news_quality_audit.json /tmp/nextbio-staged/news_quality_audit.json
+      - name: Upload unpublished news for translation
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextbio-unpublished-news
+          path: /tmp/nextbio-staged/
+          retention-days: 2
+          if-no-files-found: error

@@ -8,12 +8,92 @@ on:
       - completed
 permissions:
   contents: write
+  actions: read
 concurrency:
   group: nextbio-summary-cache
   cancel-in-progress: false
 jobs:
-  summaries:
+  titles:
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download unpublished feed from successful collection
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        with:
+          name: nextbio-unpublished-news
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/nextbio-staged
+      - name: Use current feed for manual backfill
+        if: github.event_name == 'workflow_dispatch'
+        shell: bash
+        run: |
+          mkdir -p /tmp/nextbio-staged
+          cp data/articles.json /tmp/nextbio-staged/articles.json
+          if [ -f data/news_quality_audit.json ]; then cp data/news_quality_audit.json /tmp/nextbio-staged/news_quality_audit.json; fi
+      - name: Check whether Korean headline translation is needed
+        id: title_gate
+        env:
+          TITLE_KO_FEED: /tmp/nextbio-staged/articles.json
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from scripts.translate_news_titles import pending
+          feed=json.loads(Path(os.environ['TITLE_KO_FEED']).read_text(encoding='utf-8'))
+          path=Path('data/title-translations.json')
+          cache=json.loads(path.read_text(encoding='utf-8')).get('translations',{}) if path.exists() else {}
+          count=len(pending(feed,cache))
+          print('Untranslated English titles:',count)
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              f.write('should_run='+('true' if count else 'false')+'\n')
+          PY
+      - name: Install Korean model dependencies only if needed
+        if: steps.title_gate.outputs.should_run == 'true'
+        run: pip install 'torch>=2.2,<3' 'transformers>=4.40,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
+      - name: Translate English headlines to Korean with retry
+        if: steps.title_gate.outputs.should_run == 'true'
+        env:
+          TITLE_KO_FEED: /tmp/nextbio-staged/articles.json
+          TITLE_KO_LIMIT: '60'
+          TITLE_KO_BUDGET: '900'
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: python scripts/translate_news_titles.py
+      - name: Publish only translated new headlines and merge caches safely
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if [ -f data/title-translations.json ]; then cp data/title-translations.json /tmp/nextbio-local-titles.json; fi
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if [ -f /tmp/nextbio-local-titles.json ]; then
+              python scripts/merge_title_cache.py data/title-translations.json /tmp/nextbio-local-titles.json
+            fi
+            python scripts/publish_translated_news.py /tmp/nextbio-staged/articles.json /tmp/nextbio-staged/news_quality_audit.json
+            git add data/articles.json data/title-translations.json
+            if [ -f data/news_quality_audit.json ]; then git add data/news_quality_audit.json; fi
+            if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
+            git commit -m 'Publish news after Korean headline translation'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1
+
+  summaries:
+    needs: titles
+    if: ${{ needs.titles.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 55
     steps:
@@ -53,7 +133,7 @@ jobs:
         if: steps.extract_gate.outputs.should_run == 'true' || steps.translate_gate.outputs.should_run == 'true'
         shell: bash
         run: |
-          set -e
+          set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           if [ -f data/article-summaries.json ]; then cp data/article-summaries.json /tmp/nextbio-summaries.json; fi
@@ -66,65 +146,6 @@ jobs:
             fi
             if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
             git commit -m 'Update Korean article summaries'
-            if git push origin HEAD:main; then exit 0; fi
-            sleep 5
-          done
-          exit 1
-
-  titles:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 40
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Check whether Korean headline translation is needed
-        id: title_gate
-        run: |
-          python - <<'PY'
-          import json, os
-          from pathlib import Path
-          from scripts.translate_news_titles import pending
-          feed=json.loads(Path('data/articles.json').read_text(encoding='utf-8'))
-          path=Path('data/title-translations.json')
-          cache=json.loads(path.read_text(encoding='utf-8')).get('translations',{}) if path.exists() else {}
-          count=len(pending(feed,cache))
-          print('Untranslated English titles:',count)
-          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
-              f.write('should_run='+('true' if count else 'false')+'\n')
-          PY
-      - name: Install Korean model dependencies only if needed
-        if: steps.title_gate.outputs.should_run == 'true'
-        run: pip install 'torch>=2.2,<3' 'transformers>=4.40,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
-      - name: Translate English headlines to Korean
-        if: steps.title_gate.outputs.should_run == 'true'
-        env:
-          TITLE_KO_LIMIT: '60'
-          TITLE_KO_BUDGET: '900'
-          HF_HUB_DISABLE_TELEMETRY: '1'
-        run: python scripts/translate_news_titles.py
-      - name: Commit title translations safely
-        if: steps.title_gate.outputs.should_run == 'true'
-        shell: bash
-        run: |
-          set -e
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          if [ -f data/title-translations.json ]; then cp data/title-translations.json /tmp/nextbio-titles.json; fi
-          for attempt in 1 2 3 4 5; do
-            git fetch origin main
-            git reset --hard origin/main
-            if [ -f /tmp/nextbio-titles.json ]; then
-              python scripts/merge_title_cache.py data/title-translations.json /tmp/nextbio-titles.json
-              git add data/title-translations.json
-            fi
-            if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
-            git commit -m 'Update Korean headline translations'
             if git push origin HEAD:main; then exit 0; fi
             sleep 5
           done
