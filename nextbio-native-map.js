@@ -4,7 +4,9 @@ const MAX=90;
 // SVG source uses an equirectangular 2400 x 1200 projection, not Web Mercator.
 const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));
 const latY=lat=>(90-clamp(lat,-90,90))/180;
-const lonX=lon=>(lon+180)/360;
+// Match the SVG land-path transform: translate(48 0) scale(0.96 1).
+// 48 / 2400 = 0.02. This is applied to every geographic longitude.
+const lonX=lon=>0.02+0.96*(lon+180)/360;
 function create(id){
  const root=document.getElementById(id);if(!root)throw Error('Map container missing');
  root.replaceChildren();root.classList.add('nb-native-map');
@@ -39,10 +41,10 @@ function create(id){
  function repaint(){const s=size(),[cx,cy]=centerXY();world.style.width=s+'px';world.style.height=(s/2)+'px';world.style.left=(root.clientWidth/2-cx)+'px';world.style.top=(root.clientHeight/2-cy)+'px';for(const c of copies)c.el.style.transform=`translateX(${c.i*100}%)`;
   for(const item of items){let [x,y]=xy(item.lat,item.lon);while(x< -15)x+=s;while(x>root.clientWidth+15)x-=s;item.el.style.left=x+'px';item.el.style.top=y+'px';item.el.style.display=(y< -20||y>root.clientHeight+20||x< -20||x>root.clientWidth+20)?'none':'';}}
  function setView(latlon,z){cancelFlight();center=[clamp(+latlon[0],-MAX,MAX),+latlon[1]];zoom=clamp(+z,2,7);repaint();return api;}
- function zoomTo(z,px,py){cancelFlight();const old=size(),wx=lonX(center[1])+(px-root.clientWidth/2)/old,wy=latY(center[0])+(py-root.clientHeight/2)/(old/2);zoom=clamp(z,2,7);const ns=size(),nx=wx-(px-root.clientWidth/2)/ns,ny=wy-(py-root.clientHeight/2)/(ns/2);center=[mercLat(ny),nx*360-180];center[0]=clamp(center[0],-MAX,MAX);repaint();}
+ function zoomTo(z,px,py){cancelFlight();const old=size(),wx=lonX(center[1])+(px-root.clientWidth/2)/old,wy=latY(center[0])+(py-root.clientHeight/2)/(old/2);zoom=clamp(z,2,7);const ns=size(),nx=wx-(px-root.clientWidth/2)/ns,ny=wy-(py-root.clientHeight/2)/(ns/2);center=[mercLat(ny),((nx-0.02)/0.96)*360-180];center[0]=clamp(center[0],-MAX,MAX);repaint();}
  root.addEventListener('wheel',e=>{e.preventDefault();zoomTo(zoom+(e.deltaY<0?.5:-.5),e.offsetX,e.offsetY);},{passive:false});
  root.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;cancelFlight();drag={x:e.clientX,y:e.clientY,lat:center[0],lon:center[1]};root.setPointerCapture(e.pointerId);});
- root.addEventListener('pointermove',e=>{if(!drag)return;const s=size(),dx=e.clientX-drag.x,dy=e.clientY-drag.y;const ny=latY(drag.lat)-dy/(s/2);center=[clamp(mercLat(ny),-MAX,MAX),drag.lon-dx/s*360];repaint();if(Math.abs(dx)+Math.abs(dy)>5&&handlers.dragstart&&!drag.fired){drag.fired=true;handlers.dragstart.forEach(fn=>fn());}});
+ root.addEventListener('pointermove',e=>{if(!drag)return;const s=size(),dx=e.clientX-drag.x,dy=e.clientY-drag.y;const ny=latY(drag.lat)-dy/(s/2);center=[clamp(mercLat(ny),-MAX,MAX),drag.lon-dx/s*(360/0.96)];repaint();if(Math.abs(dx)+Math.abs(dy)>5&&handlers.dragstart&&!drag.fired){drag.fired=true;handlers.dragstart.forEach(fn=>fn());}});
  root.addEventListener('pointerup',()=>{drag=null;});root.addEventListener('pointercancel',()=>{drag=null;});
  function flyTo(loc,z,options={}){
   cancelFlight();
