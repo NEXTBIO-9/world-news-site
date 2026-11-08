@@ -410,6 +410,101 @@ def quality_reason(article):
         return '중요도 미달'
     return '통과'
 
+
+# Phase 5/6: retain high-consequence reporting, audit exclusions, and
+# distinguish source signals from independent verification.
+AUDIT_PATH = Path('data/news_quality_audit.json')
+PROTECTED_EVENTS = [
+    r'(?i)\b(?:ceasefire|invasion|earthquake|tsunami|hurricane|pandemic|outbreak|mass casualty|central bank|rate decision|drug approval|FDA approves|EMA approves|phase [123] (?:trial|results)|clinical trial results|recall|antimicrobial resistance|antibiotic resistance|vaccine approval|emergency declaration)\b',
+    r'휴전|침공|지진|쓰나미|태풍|대규모 사상|기준금리 (?:결정|인상|인하)|신약 (?:허가|승인)|임상(?:시험)? (?:결과|성공|실패)|의약품 리콜|항생제 내성|감염병 (?:확산|발생)|긴급사태',
+]
+SPECIALIST_CATEGORIES = {'미생물', '제약·신약', '의료기기', '감염병', '바이오기업'}
+SPECIALIST_MINIMUM = {'미생물': 5, '제약·신약': 5, '의료기기': 3, '감염병': 5, '바이오기업': 3}
+# Signals only: these are not guarantees of factual correctness.
+OFFICIAL_SOURCE_MARKERS = (
+    'who.int', 'cdc.gov', 'fda.gov', 'ema.europa.eu', 'nih.gov',
+    'ecb.europa.eu', 'federalreserve.gov', 'gov.uk', 'nature.com',
+    'science.org', 'nejm.org', 'thelancet.com',
+)
+KNOWN_NEWS_MARKERS = (
+    'reuters', 'associated press', 'ap news', 'bbc', 'financial times',
+    'bloomberg', 'yonhap', '연합뉴스', 'kbs', 'mbc', 'sbs', 'nhk',
+)
+UNVERIFIED_CLAIM_PATTERNS = [
+    r'(?i)\b(?:rumou?r|unconfirmed|allegedly|reportedly|sources say|claims? without evidence)\b',
+    r'(?i)\b(?:miracle cure|guaranteed cure|shocking truth|you won.t believe)\b',
+    r'확인되지 않은|미확인|루머|소문|충격적인 진실|기적의 치료',
+]
+
+def is_protected(article):
+    title = article.get('title', '')
+    # Hard noise exclusions still apply: a sports article mentioning 'war'
+    # should not be promoted automatically.
+    return not any(re.search(p, title) for p in NOISE_PATTERNS) and any(
+        re.search(p, title) for p in PROTECTED_EVENTS
+    )
+
+def source_signals(article):
+    source = article.get('source', '').strip().lower()
+    url = article.get('url', '').lower()
+    # Google News links are aggregators, not evidence of the publisher's domain.
+    official = any(s in source or s in url for s in OFFICIAL_SOURCE_MARKERS)
+    established = any(s in source for s in KNOWN_NEWS_MARKERS)
+    caution = any(re.search(p, article.get('title', '')) for p in UNVERIFIED_CLAIM_PATTERNS)
+    return {
+        'source_type': 'official_or_journal' if official else ('known_news' if established else 'unassessed'),
+        'independent_verification': 'not_checked',
+        'caution': bool(caution),
+    }
+
+def selection_score(article):
+    score = quality_score(article)
+    if is_protected(article):
+        score += 15
+    signals = source_signals(article)
+    if signals['source_type'] == 'official_or_journal':
+        score += 5
+    elif signals['source_type'] == 'known_news':
+        score += 3
+    if signals['caution']:
+        score -= 12
+    return min(100, max(0, score))
+
+def protected_reason(article):
+    reason = quality_reason(article)
+    if reason == '중요도 미달' and is_protected(article):
+        return '핵심 사건 보호'
+    return reason
+
+def cautious_same_event(a, b):
+    # Phase 5: reduce false merges of distinct trial results or follow-ups.
+    if a.get('subcategory') != b.get('subcategory'):
+        return False
+    if is_protected(a) or is_protected(b):
+        x, y = event_tokens(a['title']), event_tokens(b['title'])
+        if not x or not y:
+            return False
+        similarity = SequenceMatcher(None, title_key(a['title']), title_key(b['title'])).ratio()
+        return similarity >= .94 and len(x & y) / max(len(x | y), 1) >= .78
+    return same_event(a, b)
+
+def audited_dedupe(pool):
+    kept, merged = [], []
+    for article in pool:
+        match = next((old for old in kept if cautious_same_event(article, old)), None)
+        if match is None:
+            kept.append(article)
+        else:
+            match['countries'] = sorted(set(match['countries']) | set(article['countries']))
+            merged.append({'title': article['title'], 'kept_title': match['title'], 'reason': '유사 사건'})
+    return kept, merged
+
+def write_audit(payload):
+    AUDIT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    tmp = AUDIT_PATH.with_suffix('.tmp')
+    tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    tmp.replace(AUDIT_PATH)
+
 def main():
     candidates = []
     succeeded = 0
@@ -453,13 +548,13 @@ def main():
     reasons = collections.Counter()
     pool = []
     for article in unique.values():
-        reason = quality_reason(article)
+        reason = protected_reason(article)
         reasons[reason] += 1
-        if reason == '통과':
+        if reason in ('통과', '핵심 사건 보호'):
             article['countries'] = confirmed_countries(article)
             pool.append(article)
-    pool.sort(key=lambda a: (quality_score(a), a['published']), reverse=True)
-    pool, merged_events = dedupe_events(pool)
+    pool.sort(key=lambda a: (selection_score(a), a['published']), reverse=True)
+    pool, merged_events = audited_dedupe(pool)
     print('Near-duplicate events merged:', len(merged_events))
     print('Sample merged events:', merged_events[:10])
     print(f'Quality filter: {pool_before_filter} unique -> {len(pool)} eligible (threshold {MIN_QUALITY_SCORE})')
@@ -488,7 +583,23 @@ def main():
                 break
         if not added or len(accepted) >= MAX_TOTAL:
             break
-    general_count = 0
+    # Preserve a small number of specialist articles if the candidate pool permits.
+    for category, minimum in SPECIALIST_MINIMUM.items():
+        current = sum(a['category'] == category for a in accepted)
+        for a in pool:
+            if current >= minimum or len(accepted) >= MAX_TOTAL:
+                break
+            if id(a) in selected or a['category'] != category:
+                continue
+            if any(counts.get(c, 0) >= MAX_PER_COUNTRY for c in a['countries']):
+                continue
+            selected.add(id(a))
+            accepted.append(a)
+            for c in a['countries']:
+                counts[c] = counts.get(c, 0) + 1
+            current += 1
+
+    general_count = sum(not a['countries'] for a in accepted)
     for a in pool:
         if len(accepted) >= MAX_TOTAL:
             break
@@ -504,7 +615,8 @@ def main():
                 continue
             general_count += 1
         accepted.append(a)
-    accepted.sort(key=lambda a: (quality_score(a), a['published']), reverse=True)
+        selected.add(id(a))
+    accepted.sort(key=lambda a: (selection_score(a), a['published']), reverse=True)
 
     articles = [
         {k: v for k, v in article.items() if k != '_key'}
@@ -520,6 +632,31 @@ def main():
     }
 
     Path('data').mkdir(exist_ok=True)
+
+    audit = {
+        'updated': payload['updated'],
+        'version': 'quality-5-6',
+        'total_candidates': len(candidates),
+        'unique_candidates': pool_before_filter,
+        'passed_after_dedupe': len(pool),
+        'saved': len(articles),
+        'filter_reasons': dict(reasons),
+        'protected_saved': sum(is_protected(a) for a in articles),
+        'category_counts': dict(collections.Counter(a['category'] for a in articles)),
+        'excluded': [
+            {'title': a['title'], 'category': a['category'], 'reason': protected_reason(a),
+             'source': a.get('source', ''), 'url': a.get('url', '')}
+            for a in unique.values() if protected_reason(a) not in ('통과', '핵심 사건 보호')
+        ][:500],
+        'merged': merged_events[:200],
+        'selected_source_signals': [
+            {'title': a['title'], 'source': a.get('source', ''), **source_signals(a)}
+            for a in articles
+        ],
+        'note': 'Publisher signals are not independent fact checking; article bodies were not verified.',
+    }
+    write_audit(audit)
+    print('Quality audit saved:', AUDIT_PATH, 'excluded:', len(audit['excluded']))
 
     Path('data/articles.json').write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
