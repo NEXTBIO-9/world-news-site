@@ -8,8 +8,7 @@
 <meta name="description" content="NEXT BIO - 세계 뉴스와 바이오·미생물 뉴스를 탐색하는 세계지도">
 <title>NEXT BIO | 세계 뉴스 지도</title>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=restore20261108">
 
 <style>
 /* 기존 정상 작동 지도 보완 CSS - 유지 */
@@ -315,6 +314,10 @@ body:not(.dark-mode) #country-feed .nb-news-row:hover {
     margin-right: 3px !important;
   }
 }
+
+/* 주식 페이지 이동 메뉴 */
+.nav .nb-stock-link{display:inline-flex;align-items:center;padding:8px 13px;border:1px solid #60a5fa;border-radius:8px;background:#1d4ed8;color:#fff!important;text-decoration:none;font-weight:700}
+.nav .nb-stock-link:hover{background:#2563eb}
 </style>
 
 <!-- 저장된 테마를 페이지 표시 전에 적용 -->
@@ -395,7 +398,7 @@ html.theme-preload-dark body{
     <a href="#map-section">세계지도</a>
     <a href="#nb-intelligence">뉴스 분석</a>
     <a href="#latest">최신 뉴스피드</a>
-    <a href="./stock/" style="display:inline-flex;align-items:center;padding:8px 14px;border:1px solid #60a5fa;border-radius:8px;background:#1d4ed8;color:#fff;text-decoration:none;font-weight:700;">📈 주식 인텔리전스</a>
+    <a href="./stock/" class="nb-stock-link">📈 주식 인텔리전스</a>
     
   </nav>
 </header>
@@ -584,7 +587,7 @@ html.theme-preload-dark body{
     공개 RSS에서 수집한 기사 제목, 요약, 출처 링크를 표시합니다.
     제목에 언급된 국가를 기준으로 분류하므로 사건 발생 지역과 다를 수 있습니다.
     기사 원문은 해당 언론사에서 확인하세요.
-    지도 타일은 OpenStreetMap 기여자에게 저작권이 있습니다.
+    지도는 자체 SVG로 표시하며, 지리 경계 자료는 Natural Earth 공개 데이터를 사용합니다.
   </p>
 </section>
 
@@ -598,9 +601,9 @@ html.theme-preload-dark body{
 </footer>
 
 <!-- 기존 지도 및 뉴스 프로그램 유지 -->
-<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="nextbio-native-map.js?v=24"></script>
 <script src="nextbio-translation.js?v=1"></script>
-<script src="app.js?v=27"></script><script src="nextbio-extras.js?v=29"></script>
+<script src="app.js?v=restore20261108"></script><script src="nextbio-extras.js?v=28"></script>
 
 <script src="nextbio-map-layout-fix.js?v=25"></script>
 
