@@ -51,10 +51,12 @@ def main():
         raise RuntimeError('Korean token not found')
     start = time.monotonic()
     successes = failed = attempted = 0
+    attempted_titles = []
     for title in todo[:LIMIT]:
         if time.monotonic() - start >= BUDGET:
             break
         attempted += 1
+        attempted_titles.append(title)
         for retry in range(2):
             if time.monotonic() - start >= BUDGET:
                 break
@@ -72,6 +74,9 @@ def main():
                 print('Title translation failed:', type(exc).__name__, 'retry:', retry + 1, flush=True)
         else:
             failed += 1
+    attempt_log = os.getenv('TITLE_KO_ATTEMPT_LOG')
+    if attempt_log:
+        Path(attempt_log).write_text(json.dumps({'attempted': attempted_titles}, ensure_ascii=False), encoding='utf-8')
     CACHE.parent.mkdir(parents=True, exist_ok=True)
     CACHE.write_text(json.dumps({'updated': datetime.now(timezone.utc).isoformat(),
                                  'translations': cache}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

@@ -1,21 +1,65 @@
 #!/usr/bin/env python3
-"""Publish staged news only after Korean titles exist; keep untranslated new items private."""
-import json, sys
+"""Stage, retry and publish Korean-title news with a bounded persistent backlog."""
+import json
+import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from translate_news_titles import english, valid
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
+QUEUE = DATA / 'pending-title-news.json'
+MAX_FAILURES = 2
+MAX_PENDING = 250
+
 
 def read(path):
     return json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
 
+
+def write(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+
 def identity(article):
     return (article.get('url'), article.get('title'))
 
-def main():
-    staged_path = Path(sys.argv[1])
-    audit_path = Path(sys.argv[2])
+
+def combined(staged):
+    """Current feed first; then still-fresh queued items not in this collection."""
+    queue = read(QUEUE)
+    excluded = {tuple(x) for x in queue.get('excluded', []) if isinstance(x, list) and len(x) == 2}
+    entries = queue.get('pending', [])
+    if not isinstance(entries, list):
+        raise ValueError('Invalid pending-title queue')
+    result = []
+    seen = set()
+    # Retry existing backlog first, so the 60-title batch cannot starve it.
+    for entry in entries:
+        if not isinstance(entry, dict) or not isinstance(entry.get('article'), dict):
+            continue
+        item = entry['article']
+        if int(entry.get('failures', 0)) < MAX_FAILURES and item.get('title') and identity(item) not in seen and identity(item) not in excluded:
+            result.append(item)
+            seen.add(identity(item))
+    for item in staged['articles']:
+        if isinstance(item, dict) and item.get('title') and identity(item) not in seen and identity(item) not in excluded:
+            result.append(item)
+            seen.add(identity(item))
+    return result
+
+
+def prepare(staged_path, output_path):
+    staged = read(staged_path)
+    if not isinstance(staged.get('articles'), list) or not staged['articles']:
+        raise ValueError('Missing or empty staged feed')
+    items = combined(staged)
+    write(output_path, {'updated': staged.get('updated'), 'articles': items})
+    print('Translation candidates including retained backlog:', len(items))
+
+
+def publish(staged_path, audit_path):
     staged = read(staged_path)
     current = read(DATA / 'articles.json')
     cache = read(DATA / 'title-translations.json').get('translations') or {}
@@ -27,30 +71,40 @@ def main():
     current_items = current.get('articles') or []
     if not isinstance(current_items, list):
         raise ValueError('Invalid current feed')
+    # A delayed run must never replace newer published content or backlog.
+    if str(staged.get('updated') or '') < str(current.get('updated') or ''):
+        print('Older staged collection; skipping publication')
+        return
     previous = {identity(a): a for a in current_items if isinstance(a, dict)}
-    published, seen = [], set()
-    withheld = 0
-    for a in new_items:
-        if not isinstance(a, dict) or not a.get('title'):
-            continue
+    existing = read(QUEUE).get('pending', [])
+    if not isinstance(existing, list):
+        raise ValueError('Invalid pending-title queue')
+    excluded = {tuple(x) for x in read(QUEUE).get('excluded', []) if isinstance(x, list) and len(x) == 2}
+    failure_counts = {identity(e['article']): int(e.get('failures', 0)) for e in existing
+                      if isinstance(e, dict) and isinstance(e.get('article'), dict)}
+    attempted_path = Path(sys.argv[3]) if len(sys.argv) > 3 else None
+    attempted = set(read(attempted_path).get('attempted', [])) if attempted_path and attempted_path.exists() else set()
+    now = datetime.now(timezone.utc)
+    published, seen, waiting = [], set(), []
+    for a in combined(staged):
         key = identity(a)
-        if key in seen:
-            continue
         old = previous.get(key, {})
         title = a['title']
-        translated = (cache.get(title) if valid(title, cache.get(title)) else None)
+        translated = cache.get(title) if valid(title, cache.get(title)) else None
         if not translated and valid(title, old.get('title_ko')):
             translated = old['title_ko']
         if english(title) and not translated:
-            withheld += 1
+            failures = failure_counts.get(key, 0) + (1 if title in attempted else 0)
+            if failures < MAX_FAILURES:
+                waiting.append({'failures': failures, 'article': a})
+            else:
+                excluded.add(key)
             continue
         item = dict(a)
         if translated:
             item['title_ko'] = translated
         published.append(item)
         seen.add(key)
-    # Keep previously published articles visible while newly collected titles wait.
-    # Never introduce a new untranslated English headline.
     for old in current_items:
         if not isinstance(old, dict):
             continue
@@ -58,18 +112,24 @@ def main():
         if key not in seen:
             published.append(old)
             seen.add(key)
+    # Bound site feed and backlog independently.
     cap = max(1, len(new_items))
     published = published[:cap]
-    # Do not roll back to an older collection if workflows finish out of order.
-    if str(staged.get('updated') or '') < str(current.get('updated') or ''):
-        print('Older staged collection; skipping publication')
-        return
-    DATA.mkdir(exist_ok=True)
-    output = {'updated': staged.get('updated'), 'articles': published}
-    (DATA / 'articles.json').write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    waiting = waiting[:MAX_PENDING]
+    write(DATA / 'articles.json', {'updated': staged.get('updated'), 'articles': published})
+    write(QUEUE, {'updated': now.isoformat(), 'pending': waiting, 'excluded': [list(k) for k in sorted(excluded, key=str)]})
     if audit_path.exists():
         (DATA / 'news_quality_audit.json').write_bytes(audit_path.read_bytes())
-    print(f'Published={len(published)} withheld_untranslated_new={withheld} staged={len(new_items)}')
+    print(f'Published={len(published)} pending_retry={len(waiting)} excluded_after_2_failures={sum(1 for a in combined(staged) if english(a["title"]) and a["title"] in attempted and failure_counts.get(identity(a), 0) + 1 >= MAX_FAILURES and not valid(a["title"], cache.get(a["title"]))) } staged={len(new_items)}')
+
+
+def main():
+    if len(sys.argv) == 4 and sys.argv[1] == 'prepare':
+        prepare(Path(sys.argv[2]), Path(sys.argv[3]))
+    elif len(sys.argv) in (3, 4):
+        publish(Path(sys.argv[1]), Path(sys.argv[2]))
+    else:
+        raise SystemExit('Usage: publish_translated_news.py prepare STAGED OUT | STAGED AUDIT [ATTEMPTED_JSON]')
 
 if __name__ == '__main__':
     main()
