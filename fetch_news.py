@@ -252,6 +252,7 @@ def is_duplicate(article, existing, exact_keys):
 # Quality filter: conservative, transparent title-based scoring.
 # It does not claim to verify article content or publisher reliability.
 NOISE_PATTERNS = [
+    r'(?i)\b(FIFA sanctions|World Cup final clashes|appeals FIFA sanctions|celebrity|tourist arrivals target)\b',
     r'(?i)\b(horoscope|zodiac|lottery numbers|celebrity gossip|red carpet|box office|recipe|fashion tips|shopping deals|coupon|viral video|dating advice|travel guide|restaurant review|football scores|match highlights|transfer rumours|transfer rumors)\b',
     r'오늘의 운세|별자리 운세|로또 당첨번호|연예인 근황|열애설|결별설|맛집 추천|오늘의 레시피|할인 쿠폰|쇼핑 특가|경기 결과|이적설|패션 화보|방송 예고|미스 유니버스|선수 부상',
     r'(?i)\b(miss universe|beauty pageant|ankle injury|ruled out of .* tour|weekly wrap-up|weekly roundup|horoscope|celebrity wedding|match preview|sports scores|football match|cricket match|player injury|celebrity|reality show|movie premiere|best restaurants|travel tips|daily horoscope|weekend guide)\b',
@@ -288,6 +289,8 @@ def quality_score(article):
     category = article.get('category', '')
     # Category indicates search intent, not verified content.
     score = 42
+    if category == '일반':
+        score -= 8
     if category in {'외교·국제', '분쟁·군사', '경제·금융', '정치', '재해·재난'}:
         score += 14
     elif category in {'제약·신약', '의료기기', '바이오기업', '감염병', '미생물', '보건·의료'}:
@@ -363,6 +366,40 @@ def confirmed_countries(article):
             result.append(country)
     return result
 
+# Conservative event-level deduplication: same language, category and strongly
+# overlapping headline. Different developments should remain separate.
+STOPWORDS = {'the','and','for','with','from','after','over','into','amid','says','said','new','news','report','reports','latest','대한','관련','속보','뉴스','오늘','기자'}
+def event_tokens(title):
+    words = re.findall(r'[a-z0-9]{3,}|[가-힣]{2,}', title.lower())
+    return {w for w in words if w not in STOPWORDS}
+
+def same_event(a, b):
+    if a.get('language') != b.get('language'):
+        return False
+    if a.get('category') != b.get('category'):
+        return False
+    x, y = event_tokens(a['title']), event_tokens(b['title'])
+    if len(x) < 3 or len(y) < 3:
+        return False
+    overlap = len(x & y)
+    if overlap < 3:
+        return False
+    containment = overlap / min(len(x), len(y))
+    similarity = SequenceMatcher(None, title_key(a['title']), title_key(b['title'])).ratio()
+    return (containment >= .78 and similarity >= .64) or similarity >= .88
+
+def dedupe_events(pool):
+    kept = []
+    removed = []
+    for article in pool:
+        match = next((old for old in kept if same_event(article, old)), None)
+        if match is None:
+            kept.append(article)
+        else:
+            match['countries'] = sorted(set(match['countries']) | set(article['countries']))
+            removed.append((article['title'], match['title']))
+    return kept, removed
+
 def quality_reason(article):
     title = article.get('title', '').strip()
     if any(re.search(p, title) for p in NOISE_PATTERNS):
@@ -422,6 +459,9 @@ def main():
             article['countries'] = confirmed_countries(article)
             pool.append(article)
     pool.sort(key=lambda a: (quality_score(a), a['published']), reverse=True)
+    pool, merged_events = dedupe_events(pool)
+    print('Near-duplicate events merged:', len(merged_events))
+    print('Sample merged events:', merged_events[:10])
     print(f'Quality filter: {pool_before_filter} unique -> {len(pool)} eligible (threshold {MIN_QUALITY_SCORE})')
     print('Filter reasons:', dict(reasons))
     print('Sample rejected titles:', [a['title'] for a in list(unique.values()) if quality_reason(a) != '통과'][:12])
