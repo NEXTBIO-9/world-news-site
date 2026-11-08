@@ -1,5 +1,6 @@
 
 import json
+import collections
 import re
 import html
 import time
@@ -12,10 +13,10 @@ from pathlib import Path
 from difflib import SequenceMatcher
 
 MAX_PER_FEED = 35
-MAX_TOTAL = 1800
-MAX_PER_COUNTRY = 15
-MAX_GENERAL = 120
-ARTICLE_MAX_AGE_DAYS = 7
+MAX_TOTAL = 180
+MAX_PER_COUNTRY = 6
+MAX_GENERAL = 80
+ARTICLE_MAX_AGE_DAYS = 3
 HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; WorldNews/9.1)'}
 
 # category, subcategory, query, language, region
@@ -248,6 +249,90 @@ def is_duplicate(article, existing, exact_keys):
 
     return False
 
+# Quality filter: conservative, transparent title-based scoring.
+# It does not claim to verify article content or publisher reliability.
+NOISE_PATTERNS = [
+    r'(?i)\b(horoscope|zodiac|lottery numbers|celebrity gossip|red carpet|box office|recipe|fashion tips|shopping deals|coupon|viral video|dating advice|travel guide|restaurant review|football scores|match highlights|transfer rumours|transfer rumors)\b',
+    r'오늘의 운세|별자리 운세|로또 당첨번호|연예인 근황|열애설|결별설|맛집 추천|오늘의 레시피|할인 쿠폰|쇼핑 특가|경기 결과|이적설|패션 화보|방송 예고|미스 유니버스|선수 부상',
+    r'(?i)\b(miss universe|beauty pageant|ankle injury|ruled out of .* tour|weekly wrap-up|weekly roundup|horoscope|celebrity wedding|match preview|sports scores)\b',
+]
+HIGH_IMPACT = [
+    r'(?i)\b(war|ceasefire|peace deal|sanctions|tariff|trade agreement|election|president|prime minister|parliament|central bank|interest rates?|inflation|recession|earthquake|wildfire|floods?|hurricane|pandemic|outbreak|FDA approval|clinical trial|phase [123]|semiconductor|artificial intelligence|AI regulation|nuclear|missile|treaty|vaccine|antibiotic resistance|antimicrobial resistance|drug approval|merger|acquisition)\b',
+    r'전쟁|휴전|제재|관세|무역협정|대통령|총리|정상회담|선거|국회|금리|인플레이션|물가|지진|산불|홍수|태풍|감염병|백신|임상시험|신약 승인|반도체|인공지능|핵무기|미사일|조약|항생제 내성|기술이전|인수합병',
+]
+BIOMEDICAL = [
+    r'(?i)\b(biotech|biopharma|pharmaceutical|clinical trial|FDA|EMA|drug approval|medical device|diagnostic|pathogen|bacteria|bacterial|fungal|virus|virology|microbiology|microbiome|antibiotic|antimicrobial|sterility testing|culture media|vaccine|genome|genomic)\b',
+    r'바이오|제약|신약|임상|의료기기|체외진단|병원균|세균|진균|바이러스|미생물|마이크로바이옴|항생제|배양배지|무균시험|백신|유전체',
+]
+LOW_INFORMATION = [
+    r'(?i)^(watch|photos?|video|live blog|opinion|what to know|explained|here\'s why|top \d+|how to)\b',
+    r'^\[?(영상|사진|포토|칼럼|사설|기고)\]?',
+]
+
+def quality_score(article):
+    title = article.get('title', '').strip()
+    if len(title) < (10 if re.search(r'[가-힣]', title) else 18) or len(title) > 240:
+        return 0
+    if any(re.search(p, title) for p in NOISE_PATTERNS):
+        return 0
+    category = article.get('category', '')
+    # Category indicates search intent, not verified content.
+    score = 42
+    if category in {'외교·국제', '분쟁·군사', '경제·금융', '정치', '재해·재난'}:
+        score += 14
+    elif category in {'제약·신약', '의료기기', '바이오기업', '감염병', '미생물', '보건·의료'}:
+        score += 16
+    elif category == '과학·기술':
+        score += 10
+    if any(re.search(p, title) for p in HIGH_IMPACT):
+        score += 25
+    if category in {'제약·신약', '의료기기', '바이오기업', '감염병', '미생물', '보건·의료'} and any(re.search(p, title) for p in BIOMEDICAL):
+        score += 18
+    if any(re.search(p, title) for p in LOW_INFORMATION):
+        score -= 18
+    if not article.get('source') or article['source'] == 'Google News RSS':
+        score -= 8
+    try:
+        age_hours = (datetime.now(timezone.utc) - datetime.fromisoformat(article['published'])).total_seconds() / 3600
+        if age_hours > 48:
+            score -= 10
+        elif age_hours > 24:
+            score -= 4
+    except (ValueError, TypeError, KeyError):
+        score -= 10
+    return max(0, min(100, score))
+
+MIN_QUALITY_SCORE = 68
+
+# Country-scoped Google queries are not proof of country relevance.
+# Require a country reference in the title for English queries.
+COUNTRY_ENGLISH = {name: english for name, english, _ in COUNTRY_FEEDS}
+COUNTRY_ALIASES = {
+    '미국': r'\b(?:US|U\.S\.|USA|United States|American)\b',
+    '한국': r'\b(?:South Korea|Korean|Korea)\b',
+    '영국': r'\b(?:UK|U\.K\.|Britain|British|United Kingdom)\b',
+    '아랍에미리트': r'\b(?:UAE|United Arab Emirates|Emirati)\b',
+}
+def confirmed_countries(article):
+    title = article.get('title', '')
+    result = []
+    for country in article.get('countries', []):
+        name = COUNTRY_ENGLISH.get(country, '')
+        pattern = COUNTRY_ALIASES.get(country) or (r'(?i)\b' + re.escape(name) + r'\b' if name else None)
+        if (pattern and re.search(pattern, title, re.I)) or (country in title):
+            result.append(country)
+    return result
+
+def quality_reason(article):
+    title = article.get('title', '').strip()
+    if any(re.search(p, title) for p in NOISE_PATTERNS):
+        return '잡뉴스'
+    if len(title) < (10 if re.search(r'[가-힣]', title) else 18) or len(title) > 240:
+        return '제목 길이'
+    if quality_score(article) < MIN_QUALITY_SCORE:
+        return '중요도 미달'
+    return '통과'
+
 def main():
     candidates = []
     succeeded = 0
@@ -287,8 +372,19 @@ def main():
         unique[key] = a
         url_index[a['url']] = a
 
-    pool = list(unique.values())
-    pool.sort(key=lambda a: a['published'], reverse=True)
+    pool_before_filter = len(unique)
+    reasons = collections.Counter()
+    pool = []
+    for article in unique.values():
+        reason = quality_reason(article)
+        reasons[reason] += 1
+        if reason == '통과':
+            article['countries'] = confirmed_countries(article)
+            pool.append(article)
+    pool.sort(key=lambda a: (quality_score(a), a['published']), reverse=True)
+    print(f'Quality filter: {pool_before_filter} unique -> {len(pool)} eligible (threshold {MIN_QUALITY_SCORE})')
+    print('Filter reasons:', dict(reasons))
+    print('Sample rejected titles:', [a['title'] for a in list(unique.values()) if quality_reason(a) != '통과'][:12])
     accepted = []
     selected = set()
     counts = {}
@@ -328,12 +424,15 @@ def main():
                 continue
             general_count += 1
         accepted.append(a)
-    accepted.sort(key=lambda a: a['published'], reverse=True)
+    accepted.sort(key=lambda a: (quality_score(a), a['published']), reverse=True)
 
     articles = [
         {k: v for k, v in article.items() if k != '_key'}
         for article in accepted
     ]
+
+    if len(articles) < 15:
+        raise RuntimeError('Too few quality articles; existing data preserved (minimum 15)')
 
     payload = {
         'updated': datetime.now(timezone.utc).isoformat(),
@@ -341,28 +440,6 @@ def main():
     }
 
     Path('data').mkdir(exist_ok=True)
-
-    # Keep translations for unchanged articles across frequent RSS refreshes.
-    # Never reuse a translation for a different headline, even at the same URL.
-    previous_path = Path('data/articles.json')
-    if previous_path.exists():
-        try:
-            previous = json.loads(previous_path.read_text(encoding='utf-8'))
-            translations = {
-                (a.get('url'), a.get('title')): a
-                for a in previous.get('articles', [])
-                if isinstance(a, dict) and a.get('url') and a.get('title')
-            }
-            for article in payload['articles']:
-                old = translations.get((article.get('url'), article.get('title')))
-                if old and isinstance(old.get('title_ko'), str) and old['title_ko'].strip():
-                    article['title_ko'] = old['title_ko']
-                    if old.get('translation_quality_version'):
-                        article['translation_quality_version'] = old['translation_quality_version']
-                if old and old.get('translation_failed_version'):
-                    article['translation_failed_version'] = old['translation_failed_version']
-        except (OSError, ValueError, TypeError) as exc:
-            print(f'Could not restore old translations: {exc}; continuing with news update')
 
     Path('data/articles.json').write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
