@@ -254,7 +254,9 @@ def is_duplicate(article, existing, exact_keys):
 NOISE_PATTERNS = [
     r'(?i)\b(horoscope|zodiac|lottery numbers|celebrity gossip|red carpet|box office|recipe|fashion tips|shopping deals|coupon|viral video|dating advice|travel guide|restaurant review|football scores|match highlights|transfer rumours|transfer rumors)\b',
     r'오늘의 운세|별자리 운세|로또 당첨번호|연예인 근황|열애설|결별설|맛집 추천|오늘의 레시피|할인 쿠폰|쇼핑 특가|경기 결과|이적설|패션 화보|방송 예고|미스 유니버스|선수 부상',
-    r'(?i)\b(miss universe|beauty pageant|ankle injury|ruled out of .* tour|weekly wrap-up|weekly roundup|horoscope|celebrity wedding|match preview|sports scores)\b',
+    r'(?i)\b(miss universe|beauty pageant|ankle injury|ruled out of .* tour|weekly wrap-up|weekly roundup|horoscope|celebrity wedding|match preview|sports scores|football match|cricket match|player injury|celebrity|reality show|movie premiere|best restaurants|travel tips|daily horoscope|weekend guide)\b',
+    r'(?i)\b(footballer|cricketer|striker|goalkeeper)\b.*\b(injury|injured|ruled out|transfer)\b',
+    r'연예인|아이돌|미인대회|스포츠 경기|축구 선수|야구 선수|크리켓 선수|주말 여행|주간 소식 모음',
 ]
 HIGH_IMPACT = [
     r'(?i)\b(war|ceasefire|peace deal|sanctions|tariff|trade agreement|election|president|prime minister|parliament|central bank|interest rates?|inflation|recession|earthquake|wildfire|floods?|hurricane|pandemic|outbreak|FDA approval|clinical trial|phase [123]|semiconductor|artificial intelligence|AI regulation|nuclear|missile|treaty|vaccine|antibiotic resistance|antimicrobial resistance|drug approval|merger|acquisition)\b',
@@ -267,6 +269,14 @@ BIOMEDICAL = [
 LOW_INFORMATION = [
     r'(?i)^(watch|photos?|video|live blog|opinion|what to know|explained|here\'s why|top \d+|how to)\b',
     r'^\[?(영상|사진|포토|칼럼|사설|기고)\]?',
+    r'(?i)\b(weekly review|week in review|weekly digest|market roundup|daily roundup|morning briefing)\b',
+    r'주간 종합|한 주간의 소식|이번 주 주요 뉴스',
+]
+
+# An event/action in the headline is stronger evidence than the RSS query category.
+EVENT_SIGNALS = [
+    r'(?i)\b(approves?|approved|passes?|passed|announces?|announced|signs?|signed|launches?|launched|bans?|banned|raises?|raised|cuts?|cut|strikes?|struck|attacks?|attacked|kills?|killed|arrests?|arrested|investigates?|investigation|recalls?|recalled|acquires?|acquired|merges?|merged|files? for|reports?|reported|discovers?|discovered|develops?|developed|publishes?|published|confirms?|confirmed|reaches?|reached|surges?|surged|falls?|fell|declines?|declined|outbreak|earthquake|flood|wildfire|ceasefire|sanctions|tariffs|trial results|phase [123])\b',
+    r'발표|승인|통과|체결|서명|금지|인상|인하|공격|사망|체포|수사|조사|리콜|인수|합병|상장|발견|개발|확인|급등|급락|폭락|발생|확산|휴전|제재|관세|임상 결과|실적|지진|홍수|산불|파업|투자|수출|수입|감염',
 ]
 
 def quality_score(article):
@@ -284,12 +294,18 @@ def quality_score(article):
         score += 16
     elif category == '과학·기술':
         score += 10
-    if any(re.search(p, title) for p in HIGH_IMPACT):
+    impact = any(re.search(p, title) for p in HIGH_IMPACT)
+    event = any(re.search(p, title) for p in EVENT_SIGNALS)
+    if impact:
         score += 25
+    if event:
+        score += 12
+    if not impact and not event:
+        score -= 15
     if category in {'제약·신약', '의료기기', '바이오기업', '감염병', '미생물', '보건·의료'} and any(re.search(p, title) for p in BIOMEDICAL):
         score += 18
     if any(re.search(p, title) for p in LOW_INFORMATION):
-        score -= 18
+        score -= 25
     if not article.get('source') or article['source'] == 'Google News RSS':
         score -= 8
     try:
@@ -307,19 +323,43 @@ MIN_QUALITY_SCORE = 68
 # Country-scoped Google queries are not proof of country relevance.
 # Require a country reference in the title for English queries.
 COUNTRY_ENGLISH = {name: english for name, english, _ in COUNTRY_FEEDS}
-COUNTRY_ALIASES = {
-    '미국': r'\b(?:US|U\.S\.|USA|United States|American)\b',
-    '한국': r'\b(?:South Korea|Korean|Korea)\b',
-    '영국': r'\b(?:UK|U\.K\.|Britain|British|United Kingdom)\b',
-    '아랍에미리트': r'\b(?:UAE|United Arab Emirates|Emirati)\b',
+COUNTRY_NATIVE = {
+    '대한민국': ('한국', '대한민국', '우리나라', '韓国', '한국은행'),
+    '미국': ('미국', '美國', '美联储'),
+    '일본': ('일본', '日本'),
+    '중국': ('중국', '中国', '中國'),
+    '독일': ('독일', 'Deutschland'),
+    '프랑스': ('프랑스',),
+    '이탈리아': ('이탈리아', 'Italia'),
+    '스페인': ('스페인', 'España'),
+    '브라질': ('브라질', 'Brasil'),
+    '베트남': ('베트남', 'Việt Nam'),
+    '태국': ('태국', 'ประเทศไทย'),
+    '튀르키예': ('튀르키예', '터키', 'Türkiye'),
+    '러시아': ('러시아',),
+    '우크라이나': ('우크라이나',),
+    '인도': ('인도',),
+    '영국': ('영국',),
+    '아랍에미리트': ('아랍에미리트',),
 }
+COUNTRY_ALIASES = {
+    '대한민국': r'\b(?:South Korea|South Korean|Republic of Korea)\b',
+    '미국': r'\b(?:U\.S\.|USA|United States|American|Americans)\b',
+    '영국': r'\b(?:U\.K\.|Britain|British|United Kingdom)\b',
+    '아랍에미리트': r'\b(?:UAE|United Arab Emirates|Emirati)\b',
+    '튀르키예': r'\b(?:Turkey|Turkish|Türkiye)\b',
+}
+
 def confirmed_countries(article):
     title = article.get('title', '')
     result = []
     for country in article.get('countries', []):
         name = COUNTRY_ENGLISH.get(country, '')
-        pattern = COUNTRY_ALIASES.get(country) or (r'(?i)\b' + re.escape(name) + r'\b' if name else None)
-        if (pattern and re.search(pattern, title, re.I)) or (country in title):
+        patterns = [COUNTRY_ALIASES.get(country, '')]
+        if name:
+            patterns.append(r'\b' + re.escape(name) + r'\b')
+        native = COUNTRY_NATIVE.get(country, (country,))
+        if any(re.search(p, title, re.I) for p in patterns if p) or any(n in title for n in native):
             result.append(country)
     return result
 
