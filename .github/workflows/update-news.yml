@@ -51,7 +51,33 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
 
-            cp /tmp/world-news-articles.json data/articles.json
+            # Preserve existing Korean translations for unchanged articles.
+            python - <<'PY'
+          import json
+          from pathlib import Path
+
+          current_path = Path('data/articles.json')
+          fresh_path = Path('/tmp/world-news-articles.json')
+          current = json.loads(current_path.read_text(encoding='utf-8')) if current_path.exists() else {}
+          fresh = json.loads(fresh_path.read_text(encoding='utf-8'))
+          by_identity = {
+              (a.get('url'), a.get('title')): a
+              for a in current.get('articles', []) if isinstance(a, dict)
+          }
+          for article in fresh.get('articles', []):
+              if not isinstance(article, dict):
+                  continue
+              old = by_identity.get((article.get('url'), article.get('title')))
+              if not old:
+                  continue
+              if old.get('title_ko'):
+                  article['title_ko'] = old['title_ko']
+                  if old.get('translation_quality_version'):
+                      article['translation_quality_version'] = old['translation_quality_version']
+              elif old.get('translation_failed_version'):
+                  article['translation_failed_version'] = old['translation_failed_version']
+          current_path.write_text(json.dumps(fresh, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
             cp /tmp/world-news-quality-audit.json data/news_quality_audit.json
             git add data/articles.json data/news_quality_audit.json
 
