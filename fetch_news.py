@@ -417,6 +417,14 @@ AUDIT_PATH = Path('data/news_quality_audit.json')
 PROTECTED_EVENTS = [
     r'(?i)\b(?:ceasefire|invasion|earthquake|tsunami|hurricane|pandemic|outbreak|mass casualty|central bank|rate decision|drug approval|FDA approves|EMA approves|phase [123] (?:trial|results)|clinical trial results|recall|antimicrobial resistance|antibiotic resistance|vaccine approval|emergency declaration)\b',
     r'휴전|침공|지진|쓰나미|태풍|대규모 사상|기준금리 (?:결정|인상|인하)|신약 (?:허가|승인)|임상(?:시험)? (?:결과|성공|실패)|의약품 리콜|항생제 내성|감염병 (?:확산|발생)|긴급사태',
+    # 실제 탈락 기사에서 확인된 중대 사건
+    r'(?i)\b(?:missiles? (?:intercepted|targeting|strike)|intercepts? (?:houthi |ballistic )?missiles?|drone attack|military base attack|shooting (?:kills?|leaves?)|(?:\d+|several) (?:people |soldiers )?(?:killed|injured|dead)|(?:kills?|injures?) \d+|attack on (?:military|airbase|airport)|gun attack|measles cases? (?:hit|surpass|reach)|measles outbreaks?|disease epidemiology|drug-resistant (?:bacteria|pathogens?|pseudomonas)|antibacterial activity|microbiome causal analysis)\b',
+    r'미사일 (?:요격|발사|공격)|드론 (?:공격|피격)|군사기지 (?:공격|피격)|총격 (?:사건|사망)|\d+명 (?:사망|부상)|홍역 (?:확산|유행|감염)|항균 활성|내성균|항생제 내성균|역학(?:조사|연구)|미생물군집',
+]
+# 완전히 별개인 전문 연구/사건이 제목 유사성만으로 합쳐지는 것을 제한
+SPECIALIST_EVENT_TERMS = [
+    r'(?i)\b(?:antibacterial|antimicrobial|drug-resistant|microbiome|microbiology|epidemiology|measles|pseudomonas|clinical trial|phase [123]|FDA approval|EMA approval)\b',
+    r'항균|내성균|미생물|역학|홍역|임상|허가|승인',
 ]
 SPECIALIST_CATEGORIES = {'미생물', '제약·신약', '의료기기', '감염병', '바이오기업'}
 SPECIALIST_MINIMUM = {'미생물': 5, '제약·신약': 5, '의료기기': 3, '감염병': 5, '바이오기업': 3}
@@ -642,12 +650,20 @@ def main():
         'saved': len(articles),
         'filter_reasons': dict(reasons),
         'protected_saved': sum(is_protected(a) for a in articles),
+        'protected_candidates': sum(is_protected(a) for a in unique.values()),
+        'excluded_review_priority_high': sum(
+            protected_reason(a) not in ('통과', '핵심 사건 보호')
+            and any(re.search(p, a['title']) for p in SPECIALIST_EVENT_TERMS)
+            for a in unique.values()
+        ),
         'category_counts': dict(collections.Counter(a['category'] for a in articles)),
-        'excluded': [
+        'excluded_total': sum(protected_reason(a) not in ('통과', '핵심 사건 보호') for a in unique.values()),
+        'excluded': sorted([
             {'title': a['title'], 'category': a['category'], 'reason': protected_reason(a),
-             'source': a.get('source', ''), 'url': a.get('url', '')}
+             'source': a.get('source', ''), 'url': a.get('url', ''),
+             'review_priority': 'high' if any(re.search(p, a['title']) for p in SPECIALIST_EVENT_TERMS) else 'normal'}
             for a in unique.values() if protected_reason(a) not in ('통과', '핵심 사건 보호')
-        ][:500],
+        ], key=lambda a: (a['review_priority'] != 'high', a['title'])), 
         'merged': merged_events[:200],
         'selected_source_signals': [
             {'title': a['title'], 'source': a.get('source', ''), **source_signals(a)}
