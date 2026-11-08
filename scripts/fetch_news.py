@@ -342,6 +342,28 @@ def main():
 
     Path('data').mkdir(exist_ok=True)
 
+    # Keep translations for unchanged articles across frequent RSS refreshes.
+    # Never reuse a translation for a different headline, even at the same URL.
+    previous_path = Path('data/articles.json')
+    if previous_path.exists():
+        try:
+            previous = json.loads(previous_path.read_text(encoding='utf-8'))
+            translations = {
+                (a.get('url'), a.get('title')): a
+                for a in previous.get('articles', [])
+                if isinstance(a, dict) and a.get('url') and a.get('title')
+            }
+            for article in payload['articles']:
+                old = translations.get((article.get('url'), article.get('title')))
+                if old and isinstance(old.get('title_ko'), str) and old['title_ko'].strip():
+                    article['title_ko'] = old['title_ko']
+                    if old.get('translation_quality_version'):
+                        article['translation_quality_version'] = old['translation_quality_version']
+                if old and old.get('translation_failed_version'):
+                    article['translation_failed_version'] = old['translation_failed_version']
+        except (OSError, ValueError, TypeError) as exc:
+            print(f'Could not restore old translations: {exc}; continuing with news update')
+
     Path('data/articles.json').write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding='utf-8'
