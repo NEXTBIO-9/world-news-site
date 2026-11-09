@@ -42,6 +42,16 @@ function nbPriorityKey(a){
  const t=String(a.title||a.title_ko||'').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu,' ').replace(/\b(?:the|a|an|to|in|of|on|for|and|amid|after|as|at|with)\b/g,' ').replace(/\s+/g,' ').trim();
  return t.slice(0,110)||String(a.url||'');
 }
+/* Visual event icons only: does not assert that an event is verified. */
+function nbAlertIcon(a,score){
+ const t=String(a.title||'')+' '+String(a.title_ko||'');
+ if(/(?:테러(?:공격|발생|사건)?|terror(?:ist|ism)?\s+(?:attack|bombing)|suicide\s+bombing)/i.test(t))return '💥';
+ if(/(?:국가\s*비상사태|비상사태\s*선포|계엄령|state\s+of\s+emergency|martial\s+law)/i.test(t))return '🚨';
+ if(/(?:대규모\s*(?:전투|공습|폭격|미사일\s*공격)|massive\s+(?:battle|airstrike|bombardment|missile\s+attack)|major\s+(?:battle|airstrike))/i.test(t))return '🚀';
+ if(/(?:전쟁\s*(?:발발|선포|확전)|전면전|침공|war\s+(?:breaks?\s+out|declared|escalat)|full.scale\s+war|invasion)/i.test(t))return '⚔️';
+ if(/(?:대지진|규모\s*[7-9](?:\.\d+)?\s*지진|초강력\s*태풍|대규모\s*(?:홍수|산불|재난)|major\s+(?:earthquake|flood|wildfire)|catastrophic\s+(?:earthquake|flood|disaster)|magnitude\s*[7-9](?:\.\d+)?\s*earthquake)/i.test(t))return '🌋';
+ return score>=70?'⚡':'📰';
+}
 function alerts(list){
  const now=Date.now(),limit=10;
  const ranked=list.map(a=>({a,score:nbPriorityScore(a),date:validDate(a)}))
@@ -56,7 +66,7 @@ function alerts(list){
   seen.add(key);chosen.push(x);if(chosen.length>=limit)break;
  }
  const root=$('nb-alerts');if(!root)return;
- root.innerHTML=chosen.length?chosen.map(({a,score})=>`<div class="nb2-row"><span class="nb2-tag">${score>=85?'🚨 ':score>=70?'⚡ ':'📰 '}${lang==='ko'?(score>=85?'긴급':score>=70?'주요':'최신'):(score>=85?'Urgent':score>=70?'Priority':'Latest')}${score>=70?' · '+score:''}</span><a target="_blank" rel="noopener noreferrer" href="${safe(/^https?:\/\//i.test(a.url||'')?a.url:'#')}">${safe(window.NBTitleTranslation?.title(a)||(a.title_ko||a.title))}</a></div>`).join(''):`<p class="nb2-muted">${lang==='ko'?'최근 7일간 표시할 뉴스가 없습니다.':'No news available from the past 7 days.'}</p>`;
+ root.innerHTML=chosen.length?chosen.map(({a,score})=>`<div class="nb2-row"><span class="nb2-tag">${nbAlertIcon(a,score)+' '}${lang==='ko'?(score>=85?'긴급':score>=70?'주요':'최신'):(score>=85?'Urgent':score>=70?'Priority':'Latest')}${score>=70?' · '+score:''}</span><a target="_blank" rel="noopener noreferrer" href="${safe(/^https?:\/\//i.test(a.url||'')?a.url:'#')}">${safe(window.NBTitleTranslation?.title(a)||(a.title_ko||a.title))}</a></div>`).join(''):`<p class="nb2-muted">${lang==='ko'?'최근 7일간 표시할 뉴스가 없습니다.':'No news available from the past 7 days.'}</p>`;
 }
 function saveButtons(){
  document.querySelectorAll('#latest-list a.latest-item,#country-feed a.country-item').forEach(a=>{
