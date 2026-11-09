@@ -49,9 +49,21 @@
     track.className = 'nb-emergency-track';
     windowEl.appendChild(track);
     root.append(label, windowEl);
-    mapSection.insertAdjacentElement('afterend', root);
+    const map = document.getElementById('map');
+    if (map && map.parentElement) {
+      map.insertAdjacentElement('afterend', root);
+      root.style.margin = '0 0 10px';
+      root.style.borderRadius = '0 0 6px 6px';
+    } else {
+      mapSection.insertAdjacentElement('afterend', root);
+    }
   }
   function verifiedEmergency(article, now) {
+    if (article.verified === true && article.type && article.event_time && article.source) {
+      const kind = allowed.get(String(article.type));
+      const eventAt = Date.parse(article.event_time);
+      if (kind && Number.isFinite(eventAt) && eventAt <= now && now - eventAt <= MAX_AGE_MS) return kind;
+    }
     // An RSS publication timestamp is NOT proof of the incident time.
     // Upstream verification must explicitly supply these metadata fields.
     if (article.emergency_verified !== true || article.event_time_verified !== true) return null;
@@ -67,13 +79,20 @@
     const value = a.title_ko || a.title || '';
     return String(value).trim().slice(0, 180);
   }
-  function render(articles) {
+  function render(articles, verifiedEvents) {
     const root = document.getElementById(ROOT_ID);
     if (!root) return;
     const label = root.querySelector('.nb-emergency-label');
     const track = root.querySelector('.nb-emergency-track');
     const now = Date.now();
     const emergency = [];
+    for (const e of verifiedEvents || []) {
+      if (!e || e.verified !== true || !/^https:\/\//i.test(String(e.url || ""))) continue;
+      const kind = verifiedEmergency(e, now);
+      if (!kind) continue;
+      const title = displayTitle(e);
+      if (title) emergency.push({a:e, title, icon:kind.icon});
+    }
     const normal = [];
     const seen = new Set();
     for (const a of articles) {
@@ -88,10 +107,11 @@
       if (kind) emergency.push({a, title, icon:kind.icon});
       else normal.push({a, title, icon:'🌐'});
     }
-    const active = emergency.length > 0;
+    const uniqueEmergency = Array.from(new Map(emergency.map(x => [x.a.id || x.a.url, x])).values());
+    const active = uniqueEmergency.length > 0;
     root.classList.toggle('nb-normal', !active);
     label.textContent = active ? '긴급속보' : '주요뉴스';
-    const selected = (active ? emergency : normal.sort((x,y)=>Date.parse(y.a.published||0)-Date.parse(x.a.published||0))).slice(0, 12);
+    const selected = (active ? uniqueEmergency : normal.sort((x,y)=>Date.parse(y.a.published||0)-Date.parse(x.a.published||0))).slice(0, 12);
     track.replaceChildren();
     if (!selected.length) {
       const span = document.createElement('span');
@@ -126,7 +146,15 @@
       if (!response.ok) throw new Error('News feed unavailable');
       const data = await response.json();
       if (!Array.isArray(data.articles)) throw new Error('Invalid news feed');
-      render(data.articles);
+      let verifiedEvents = [];
+      try {
+        const verifiedResponse = await fetch('./data/emergency-news.json?nbEmergency=' + Math.floor(Date.now()/60000), {cache:'no-store'});
+        if (verifiedResponse.ok) {
+          const verifiedData = await verifiedResponse.json();
+          if (Array.isArray(verifiedData.events)) verifiedEvents = verifiedData.events;
+        }
+      } catch (_) { /* Keep regular news visible during emergency feed outages. */ }
+      render(data.articles, verifiedEvents);
     } catch (err) {
       const root = document.getElementById(ROOT_ID);
       if (root) {

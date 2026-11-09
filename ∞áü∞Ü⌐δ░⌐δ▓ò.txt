@@ -1,0 +1,31 @@
+NEXT BIO 지도 하단 긴급속보 최종 패키지
+
+[가장 쉬운 방법: GitHub 웹에서 업로드]
+1. ZIP을 압축 해제합니다.
+2. GitHub 저장소 최상위에 아래 파일을 폴더 구조 그대로 업로드합니다.
+   - nextbio-emergency-ticker.js
+   - scripts/update_emergency_news.py
+   - .github/workflows/update-emergency-news.yml
+   - data/emergency-reviewed.json
+   - data/emergency-news.json
+3. 기존 index.html의 </body> 바로 위에 다음 한 줄만 추가합니다.
+   <script src="./nextbio-emergency-ticker.js?v=2" defer></script>
+4. Commit changes를 클릭합니다.
+5. Actions > Update verified emergency ticker > Run workflow를 한 번 실행합니다.
+6. 사이트를 새로고침합니다.
+
+[PC에 저장소 폴더가 있는 경우: 자동 설치]
+  python 설치_자동적용.py "C:\경로\world-news-site"
+  그런 다음 변경 파일을 GitHub에 커밋합니다.
+
+[기능과 검증 한계]
+- 지도 바로 아래 48px 검정/빨강 티커, 굵기 900, 마우스 올리면 정지.
+- 공식 USGS의 최근 30분 내 규모 7.0 이상 강진을 자동 검증합니다.
+- 전쟁/테러/국가비상사태/대규모 전투는 자동 확정하지 않습니다.
+  이 유형은 data/emergency-reviewed.json에 검토된 사건을 등록해야 표시됩니다.
+  reviewed=true, type, event_time(UTC ISO8601), title_ko, 서로 다른 두 출처의 HTTPS URL 필요.
+- RSS 발행 시간은 실제 사건 발생 시간으로 사용하지 않습니다.
+- 확인된 긴급속보가 없으면 공개 기사 중 주요뉴스가 흘러갑니다.
+- GitHub Actions 5분 예약은 정확한 실행 간격을 보장하지 않습니다.
+- 기존 지도/주식/뉴스 수집 파이프라인은 수정하지 않습니다.
+- GitHub 쓰기 권한이 없으므로 자동 업로드는 하지 않았습니다.
