@@ -1,0 +1,28 @@
+name: Publish manual NEXT BIO news
+on:
+  issues:
+    types: [opened, edited, labeled]
+permissions:
+  contents: write
+  issues: write
+jobs:
+  publish:
+    if: github.event.issue.user.login == 'NEXTBIO-9' && contains(github.event.issue.labels.*.name, 'manual-news')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish owner-authored article
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: python scripts/publish_manual_news.py
+      - name: Commit published news
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/manual-articles.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish manual news issue #${{ github.event.issue.number }}"
+            git push
+          fi
