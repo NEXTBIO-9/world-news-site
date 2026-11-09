@@ -81,6 +81,22 @@ def fetch_market():
         )
 
     output = Path("data/market.json")
+    # Keep previously known quotes when a provider temporarily omits a symbol.
+    previous_data = {}
+    if output.exists():
+        try:
+            previous_data = json.loads(output.read_text(encoding="utf-8"))
+        except (ValueError, OSError):
+            previous_data = {}
+    old_markets = {item.get("id"): item for item in previous_data.get("markets", []) if isinstance(item, dict)}
+    fresh_markets = {item["id"]: item for item in result["markets"]}
+    result["markets"] = [fresh_markets.get(key, old_markets.get(key)) for key in SYMBOLS]
+    result["markets"] = [item for item in result["markets"] if item is not None]
+    # An unchanged quote is not a new market update; avoid a commit and Pages rebuild.
+    if result["markets"] == previous_data.get("markets"):
+        print("시세 변동 없음: 기존 market.json 유지")
+        return
+
 
     output.parent.mkdir(
         parents=True,
