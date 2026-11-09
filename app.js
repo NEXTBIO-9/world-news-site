@@ -345,11 +345,31 @@ function nbRelativeTime(published){
  if(hours<24)return `${hours}시간 전`;
  return `${Math.floor(hours/24)}일 전`;
 }
+// Collapse identical syndicated stories while retaining manual articles and distinct reporting.
+function nbDeduplicateArticles(articles){
+ const seenUrls=new Set(),seenTitles=new Set();
+ return articles.filter(a=>{
+  if(a.manual)return true;
+  const url=String(a.url||'').trim().replace(/[#?].*$/,'').replace(/\\/$/,'').toLowerCase();
+  const title=String(a.title||'').normalize('NFKC').toLowerCase().replace(/[^\\p{L}\\p{N}]+/gu,' ').trim();
+  const translated=String(a.title_ko||'').normalize('NFKC').toLowerCase().replace(/[^\\p{L}\\p{N}]+/gu,' ').trim();
+  const keys=[title,translated].filter(x=>x.length>=18);
+  if((url&&seenUrls.has(url))||keys.some(x=>seenTitles.has(x)))return false;
+  if(url)seenUrls.add(url);
+  keys.forEach(x=>seenTitles.add(x));
+  return true;
+ });
+}
+function nbIsNewArticle(a){
+ if(a.manual)return false;
+ const age=Date.now()-Date.parse(a.published||'');
+ return Number.isFinite(age)&&age>=0&&age<3*60*60*1000;
+}
 function item(a,cls){
  const url=String(a.url||'');
  const href=a.manual && Number.isSafeInteger(a.manual_issue) ? './article.html?id='+a.manual_issue : (/^https?:\/\//i.test(url)?safe(url):'#');
 
- return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"><span class="category">${safe(a.category||'일반')}${a.manual?' · NEXT BIO 직접 작성':''}${a.manual&&a.important?' · 중요':''}</span><strong>${safe(window.NBTitleTranslation?.title(a)||a.title||'제목 없음')}</strong>${cls==='latest-item'?`<p>${safe(a.summary||'').slice(0,150)}</p>`:''}<span class="meta">${safe(a.region||'')} ${safe(a.subcategory||'')} · ${safe(a.source||'원문')} · ${cls==='country-item'?nbRelativeTime(a.published):dateText(a.published)}</span></a>`;
+ return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"><span class="category">${safe(a.category||'일반')}${nbIsNewArticle(a)?' · NEW':''}${a.manual?' · NEXT BIO 직접 작성':''}${a.manual&&a.important?' · 중요':''}</span><strong>${safe(window.NBTitleTranslation?.title(a)||a.title||'제목 없음')}</strong>${cls==='latest-item'?`<p>${safe(a.summary||'').slice(0,150)}</p>`:''}<span class="meta">${safe(a.region||'')} ${safe(a.subcategory||'')} · ${safe(a.source||'원문')} · ${cls==='country-item'?nbRelativeTime(a.published):dateText(a.published)}</span></a>`;
 }
 
 /* Country briefing: richer cards, existing links and bookmark integration retained. */
@@ -725,7 +745,7 @@ window.addEventListener('resize',()=>map.invalidateSize());
     if(Array.isArray(md.articles)){manualArticles=md.articles;break;}
    } catch(error){console.warn('Manual news source unavailable',error);}
   }
-  all=[...manualArticles,...(Array.isArray(data.articles)?data.articles:[])]
+  all=nbDeduplicateArticles([...manualArticles,...(Array.isArray(data.articles)?data.articles:[])])
    .filter(a=>
     a&&a.title&&(a.manual===true && Number.isSafeInteger(a.manual_issue) || /^https?:\/\//i.test(a.url||''))
    )
@@ -797,7 +817,7 @@ async function nbRefreshManualNews(){
   const manual=data.articles.filter(a=>a&&a.manual===true&&Number.isSafeInteger(a.manual_issue)&&a.title)
    .map(a=>({...a,countries:matchedCountries(a)}));
   const previous=all.filter(a=>!a.manual);
-  const next=[...manual,...previous].sort((a,b)=>
+  const next=nbDeduplicateArticles([...manual,...previous]).sort((a,b)=>
    (Number(Boolean(b.manual&&b.important))-Number(Boolean(a.manual&&a.important)))||
    (new Date(b.published)-new Date(a.published))
   );
