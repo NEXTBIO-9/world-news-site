@@ -4,7 +4,9 @@ on:
     types: [opened, edited, labeled]
 permissions:
   contents: write
-  issues: write
+concurrency:
+  group: nextbio-manual-news-publish
+  cancel-in-progress: false
 jobs:
   publish:
     if: github.event.issue.user.login == 'NEXTBIO-9' && startsWith(github.event.issue.title, '[직접뉴스]')
