@@ -775,7 +775,7 @@ window.addEventListener('resize',()=>map.invalidateSize());
 let nbManualRefreshBusy=false;
 let nbManualRevision='';
 async function nbRefreshManualNews(){
- if(nbManualRefreshBusy||document.hidden||!Array.isArray(all)||!all.length)return;
+ if(nbManualRefreshBusy||document.hidden||!Array.isArray(all))return;
  nbManualRefreshBusy=true;
  try{
   let data=null;
@@ -801,7 +801,9 @@ async function nbRefreshManualNews(){
    (Number(Boolean(b.manual&&b.important))-Number(Boolean(a.manual&&a.important)))||
    (new Date(b.published)-new Date(a.published))
   );
-  if(JSON.stringify(all.filter(a=>a.manual))===JSON.stringify(manual))return;
+  const existing=all.filter(a=>a.manual).map(a=>({manual_issue:a.manual_issue,title:a.title,body:a.body,important:a.important,published:a.published,category:a.category,countries:a.countries}));
+  const incoming=manual.map(a=>({manual_issue:a.manual_issue,title:a.title,body:a.body,important:a.important,published:a.published,category:a.category,countries:a.countries}));
+  if(JSON.stringify(existing)===JSON.stringify(incoming))return;
   all=next;
   render();
  }catch(error){console.warn('Live manual news refresh failed',error);}
