@@ -1,43 +1,116 @@
 #!/usr/bin/env python3
-"""Fetch official disease-outbreak notices; never infer active outbreak risk."""
-import json, re, urllib.request, xml.etree.ElementTree as ET
-from pathlib import Path
+"""Collect WHO Disease Outbreak News announcements from the official WHO listing.
+
+Only WHO-origin links are accepted; no invented dates or risk classifications.
+"""
+import json
+import re
+import sys
 from datetime import datetime, timezone
-from email.utils import parsedate_to_datetime
-OUT=Path('data/bio-official.json')
-SOURCES=[('WHO Disease Outbreak News','https://www.who.int/feeds/entity/csr/don/en/rss.xml'),('WHO News','https://www.who.int/feeds/entity/mediacentre/news/en/rss.xml')]
-KEYWORDS=re.compile(r'outbreak|disease|virus|cholera|measles|ebola|influenza|infection|epidemic|pandemic|infectious|health emergency',re.I)
-def tagtext(node,name):
-    for child in node:
-        if child.tag.rsplit('}',1)[-1]==name:return ''.join(child.itertext()).strip()
-    return ''
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.parse import urljoin, urlparse, unquote
+from urllib.request import Request, urlopen
+
+OUT = Path('data/bio-official.json')
+WHO = 'https://www.who.int'
+PAGES = [
+    WHO + '/emergencies/disease-outbreak-news',
+    WHO + '/emergencies/disease-outbreak-news/',
+]
+# WHO Disease Outbreak News articles normally live under /emergencies/disease-outbreak-news/item/.
+ARTICLE = re.compile(r'^/emergencies/disease-outbreak-news/(?:item|don)/[^/?#]+/?$', re.I)
+DATE = re.compile(r'(20\d{2})[-/](\d{1,2})[-/](\d{1,2})')
+
+class Links(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.current = None
+        self.links = []
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() != 'a': return
+        attrs = dict(attrs)
+        self.current = {'href': attrs.get('href', ''), 'text': [], 'title': attrs.get('title', '')}
+    def handle_data(self, data):
+        if self.current is not None:
+            self.current['text'].append(data)
+    def handle_endtag(self, tag):
+        if tag.lower() == 'a' and self.current is not None:
+            self.links.append(self.current)
+            self.current = None
+
+def fetch(url):
+    request = Request(url, headers={
+        'User-Agent': 'Mozilla/5.0 (compatible; NEXTBIO-OfficialNoticeMonitor/2.0)',
+        'Accept': 'text/html,application/xhtml+xml',
+    })
+    with urlopen(request, timeout=25) as response:
+        return response.read(5_000_000).decode('utf-8', 'replace')
+
+def normalize(href):
+    url = urljoin(WHO + '/', href.strip())
+    parsed = urlparse(url)
+    if parsed.scheme != 'https' or parsed.hostname not in ('www.who.int', 'who.int'):
+        return None
+    path = unquote(parsed.path)
+    if not ARTICLE.match(path):
+        return None
+    return WHO + path.rstrip('/')
+
+def extract(html):
+    parser = Links()
+    parser.feed(html)
+    results = {}
+    for link in parser.links:
+        url = normalize(link['href'])
+        if not url: continue
+        title = re.sub(r'\s+', ' ', ''.join(link['text']).strip() or link['title'].strip())
+        # A link without a readable article title is not publishable.
+        if len(title) < 8: continue
+        # Avoid repeated site navigation / misleading placeholders.
+        if title.lower() in ('read more', 'learn more', 'more information', 'view details'): continue
+        date_match = DATE.search(url)
+        published = ''
+        if date_match:
+            try:
+                published = datetime(*map(int, date_match.groups()), tzinfo=timezone.utc).isoformat()
+            except ValueError:
+                pass
+        results[url] = {'title': title[:240], 'url': url,
+                        'source': 'WHO Disease Outbreak News', 'published': published}
+    return list(results.values())
+
 def main():
-    items=[]
-    for source,url in SOURCES:
+    items = []
+    for url in PAGES:
         try:
-            req=urllib.request.Request(url,headers={'User-Agent':'NEXTBIO-OfficialNoticeMonitor/1.0'})
-            with urllib.request.urlopen(req,timeout=18) as response:raw=response.read(2_000_000)
-            xml=ET.fromstring(raw)
-            entries=[x for x in xml.iter() if x.tag.rsplit('}',1)[-1] in ('item','entry')]
-            for e in entries[:60]:
-                title=tagtext(e,'title');link=tagtext(e,'link');published=tagtext(e,'pubDate') or tagtext(e,'published') or tagtext(e,'updated')
-                if not link:
-                    for c in e:
-                        if c.tag.rsplit('}',1)[-1]=='link':link=c.attrib.get('href','');break
-                if not title or not link.startswith('https://') or not KEYWORDS.search(title):continue
-                try:stamp=parsedate_to_datetime(published).astimezone(timezone.utc).isoformat()
-                except Exception:
-                    try:stamp=datetime.fromisoformat(published.replace('Z','+00:00')).astimezone(timezone.utc).isoformat()
-                    except Exception:stamp=''
-                items.append({'title':title[:240],'url':link,'source':source,'published':stamp})
-        except Exception as e:print('source unavailable:',source,str(e)[:180])
-    seen=set();unique=[]
-    for a in sorted(items,key=lambda x:x['published'],reverse=True):
-        if a['url'] not in seen:seen.add(a['url']);unique.append(a)
-    if not unique and OUT.exists():
-        print('No new official data; retaining previous verified source snapshot')
-        return
-    OUT.parent.mkdir(parents=True,exist_ok=True)
-    OUT.write_text(json.dumps({'updated':datetime.now(timezone.utc).isoformat(),'items':unique[:50]},ensure_ascii=False,indent=2)+'\n')
-    print('official notices:',len(unique))
-if __name__=='__main__':main()
+            html = fetch(url)
+            items = extract(html)
+            print(f'WHO page fetched: {url}; article links: {len(items)}')
+            if items: break
+        except Exception as exc:
+            print(f'WHO page unavailable: {url}: {exc}', file=sys.stderr)
+    if not items:
+        print('ERROR: No WHO announcements parsed. Existing data preserved.', file=sys.stderr)
+        sys.exit(1)
+    # Keep older stored announcements as well, without mixing in non-WHO content.
+    old = []
+    if OUT.exists():
+        try:
+            data = json.loads(OUT.read_text(encoding='utf-8'))
+            old = [x for x in data.get('items', []) if isinstance(x, dict)
+                   and normalize(str(x.get('url', ''))) and
+                   str(x.get('source', '')).startswith('WHO')]
+        except (ValueError, OSError):
+            pass
+    merged = {}
+    for item in old + items:
+        merged[item['url']] = item
+    unique = sorted(merged.values(), key=lambda a: a.get('published', ''), reverse=True)[:100]
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps({'updated': datetime.now(timezone.utc).isoformat(),
+                               'items': unique}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print(f'WHO official announcements saved: {len(unique)}')
+
+if __name__ == '__main__':
+    main()
