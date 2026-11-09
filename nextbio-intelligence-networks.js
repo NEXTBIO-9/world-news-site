@@ -34,7 +34,18 @@ function translatedTitle(a){
 }
 function renderOfficial(){if(!officialList)return;officialList.replaceChildren();
  if(!officialItems.length){officialList.append(node('p','nbm-empty','현재 수집된 공식 감염병 발표가 없습니다. 공식 수집 작업을 확인해 주세요.'));return;}
- for(const a of officialItems.slice(0,30)){
+ // Collapse identical WHO report titles into one latest report, preserving original JSON and translations.
+ const byTitle=new Map();
+ for(const a of officialItems){
+  const key=String(a.title||'').normalize('NFKC').toLocaleLowerCase('en').replace(/\s+/g,' ').replace(/[–—]/g,'-').trim();
+  if(!key)continue;
+  const previous=byTitle.get(key);
+  const date=Date.parse(a.published||'')||0;
+  const oldDate=previous?(Date.parse(previous.published||'')||0):-1;
+  if(!previous||date>oldDate||(date===oldDate&&!previous.title_ko&&a.title_ko))byTitle.set(key,a);
+ }
+ const unique=[...byTitle.values()].sort((a,b)=>(Date.parse(b.published||'')||0)-(Date.parse(a.published||'')||0));
+ for(const a of unique.slice(0,30)){
   const item=node('div','nbm-item');let link=null;
   try{const url=new URL(String(a.url));if(url.protocol==='https:'||url.protocol==='http:'){link=node('a','',translatedTitle(a));link.href=url.href;link.target='_blank';link.rel='noopener noreferrer'}}catch{}
   item.append(link||node('span','',translatedTitle(a)));
