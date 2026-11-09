@@ -147,7 +147,12 @@ def publish(staged_path, audit_path):
     cap = 300
     published = published[:cap]
     waiting = waiting[:MAX_PENDING]
-    write(DATA / 'articles.json', {'updated': staged.get('updated'), 'articles': published})
+    # Avoid rewriting the public feed when only the collection timestamp changed.
+    # Cache/backlog updates are still committed independently by the workflow.
+    if published != current_items:
+        write(DATA / 'articles.json', {'updated': staged.get('updated'), 'articles': published})
+    else:
+        print('Public articles unchanged; preserving existing feed timestamp')
     write(QUEUE, {'updated': now.isoformat(), 'pending': waiting, 'excluded': [list(k) for k in sorted(excluded, key=str)]})
     if audit_path.exists():
         (DATA / 'news_quality_audit.json').write_bytes(audit_path.read_bytes())
