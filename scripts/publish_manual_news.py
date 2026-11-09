@@ -33,7 +33,7 @@ article = {
     'manual_issue': number, 'manual': True, 'important': priority == '중요',
     'title': title, 'title_ko': title, 'category': category,
     'summary': content[:240], 'body': content, 'image': image,
-    'url': url, 'source': 'NEXT BIO 직접 작성',
+    'url': f'./article.html?id={number}', 'issue_url': url, 'source': 'NEXT BIO 직접 작성',
     'published': old.get('published') if old else datetime.now(timezone.utc).isoformat(),
     'region': '해외', 'language': 'ko', 'countries': countries
 }
