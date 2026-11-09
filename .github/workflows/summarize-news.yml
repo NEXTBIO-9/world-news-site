@@ -10,7 +10,7 @@ permissions:
   contents: write
   actions: read
 concurrency:
-  group: nextbio-summary-cache
+  group: nextbio-news-pipeline
   cancel-in-progress: false
 jobs:
   titles:
