@@ -1,25 +1,74 @@
-/* NEXT BIO bio intelligence panel — visual-only indicators from real feed data. */
+/* NEXT BIO: move existing bookmark UI into the breaking-news panel; official WHO notices on the right. */
 (()=>{'use strict';
-const $=id=>document.getElementById(id), safeURL=v=>{try{const u=new URL(String(v));return /^https?:$/.test(u.protocol)?u.href:null}catch{return null}};
+const $=id=>document.getElementById(id);
 const css=document.createElement('style');css.textContent=`
-#nb-bookmarks>.nbn-tabs{display:flex;gap:9px;margin:0 0 14px}#nb-bookmarks>.nbn-tabs button{flex:1;min-width:0;background:#172b43;border:1px solid #466281;border-radius:9px;padding:13px 8px;color:#dcecff;font-size:14px;font-weight:800;cursor:pointer}#nb-bookmarks>.nbn-tabs button[aria-selected=true]{background:linear-gradient(180deg,#21558a,#123051);border-color:#63b7ff;box-shadow:0 0 13px #1a83e544}#nb-networks[hidden],#nbn-original-bookmarks[hidden]{display:none!important}
-#nb-networks{color:#e9f3ff;background:#0d1d30;border:1px solid #315273;border-radius:12px;padding:16px;max-height:650px;overflow:auto;font-size:13px}#nb-networks *{box-sizing:border-box}#nb-networks .nbn-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:13px}#nb-networks h2{margin:0 0 5px;color:#fff;font-size:21px}#nb-networks .nbn-muted{color:#a9bfd5;font-size:12px;line-height:1.5}#nb-networks .nbn-source{font-size:11px;color:#9eb8cf}#nb-networks .nbn-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:12px}#nb-networks .nbn-stat{border:1px solid #355676;background:linear-gradient(145deg,#1c324c,#122237);border-radius:10px;padding:12px}#nb-networks .nbn-stat strong{display:block;font-size:24px;margin:6px 0 2px;color:#e5f6ff}#nb-networks .nbn-stat span{font-size:12px;color:#bdd0e3}#nb-networks .nbn-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:12px;margin-bottom:12px}#nb-networks .nbn-card{border:1px solid #345775;border-radius:10px;background:linear-gradient(145deg,#122b44,#0b1c2f);padding:13px;min-width:0}#nb-networks .nbn-card h3{font-size:14px;margin:0 0 11px;color:#e7f3ff}#nb-networks .nbn-world{display:block;width:100%;height:auto;border-radius:7px;background:radial-gradient(ellipse at 50% 55%,#174566,#061424 72%)}#nb-networks .nbn-world text{fill:#a8c8de;font-size:12px}#nb-networks .nbn-entry{padding:10px 0;border-top:1px solid #294560;line-height:1.5}#nb-networks .nbn-entry:first-of-type{border-top:0}#nb-networks .nbn-entry a{color:#d6efff;text-decoration:none;font-weight:650}#nb-networks .nbn-entry a:hover{text-decoration:underline}#nb-networks .nbn-pill{display:inline-block;font-size:10px;font-weight:700;border-radius:5px;background:#145b55;color:#a5ffe6;padding:3px 6px;margin-right:7px}#nb-networks .nbn-pill.news{background:#264c70;color:#c5e7ff}#nb-networks .nbn-scroll{max-height:245px;overflow:auto;padding-right:4px}#nb-networks .nbn-bars{height:105px;display:flex;align-items:flex-end;gap:7px;border-bottom:1px solid #52718b;padding:8px 0 0}#nb-networks .nbn-barwrap{flex:1;min-width:0;text-align:center}#nb-networks .nbn-bar{display:block;width:75%;max-width:40px;margin:auto;background:linear-gradient(#40d5d4,#2168a8);border-radius:5px 5px 0 0;min-height:2px}#nb-networks .nbn-barwrap small{display:block;color:#9eb9ce;font-size:10px;margin-top:5px}#nb-networks .nbn-empty{padding:18px 4px;color:#a9bfd5;font-size:12px;line-height:1.6}#nb-networks .nbn-note{margin:12px 0 0;color:#a9bfd5;font-size:11px;line-height:1.6}#nb-networks button:focus-visible,#nb-networks a:focus-visible,#nb-bookmarks>.nbn-tabs button:focus-visible{outline:2px solid #83d5ff;outline-offset:2px}@media(max-width:650px){#nb-networks{padding:10px;max-height:580px}#nb-networks .nbn-grid{grid-template-columns:1fr}#nb-networks .nbn-stats{gap:5px}#nb-networks .nbn-stat{padding:9px}#nb-networks .nbn-stat strong{font-size:19px}#nb-bookmarks>.nbn-tabs button{font-size:12px}}
+/* Keep the original button node for nextbio-extras.js listeners, hide only its UI. */
+#nb-bookmark-open{display:none!important}
+
+#nb-intelligence .nbm-tabs{display:flex;align-items:center;gap:17px;margin:0 0 9px;border-bottom:1px solid #324760;flex-shrink:0}
+#nb-intelligence .nbm-tabs button{appearance:none;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:#91a9c4;font-size:13px;font-weight:650;line-height:1.4;padding:8px 2px 10px;cursor:pointer;box-shadow:none}
+#nb-intelligence .nbm-tabs button[aria-selected="true"]{color:#f0f8ff;border-bottom-color:#48cbbb}
+#nb-intelligence .nbm-tabs button:hover{color:#fff}
+#nb-intelligence .nbm-tabs button:focus-visible{outline:2px solid #70e0d3;outline-offset:2px}
+#nb-intelligence .nbm-alerts-panel>h3{display:none}
+#nb-intelligence .nbm-alerts-panel>#nb-alerts{flex:1;min-height:0;overflow-y:auto}
+#nb-intelligence .nbm-alerts-panel>#nb-bookmarks{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;margin:0;padding:0;border:0;background:transparent;max-height:none;height:auto}
+#nb-intelligence .nbm-alerts-panel>#nb-bookmarks[hidden],#nb-intelligence .nbm-alerts-panel>#nb-alerts[hidden]{display:none!important}
+#nb-intelligence .nbm-alerts-panel>#nb-bookmarks>h3{display:none}
+#nb-intelligence .nbm-alerts-panel #nb-saved-list{flex:1;min-height:0;overflow-y:auto;max-height:none;grid-template-columns:minmax(0,1fr)}
+#nb-intelligence .nbm-alerts-panel .nb-scrap-toolbar{min-width:0;flex-shrink:0}
+#nb-intelligence .nbm-alerts-panel .nb-scrap-toolbar>*{max-width:100%}
+#nb-intelligence .nbm-official{height:310px;max-height:310px;min-height:0;display:flex;flex-direction:column;overflow:hidden;padding:12px 14px;border:1px solid var(--border,#334155);border-radius:7px;box-sizing:border-box}
+#nb-intelligence .nbm-official h3{margin:0 0 6px;font-size:14px}
+#nb-intelligence .nbm-official .nbm-meta{font-size:11px;color:#91a9c4;margin-bottom:8px}
+#nb-intelligence .nbm-official .nbm-list{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin}
+#nb-intelligence .nbm-official .nbm-item{padding:10px 0;border-top:1px solid #324760;font-size:12px;line-height:1.55}
+#nb-intelligence .nbm-official .nbm-item a{color:#d9efff;text-decoration:none;font-weight:650}
+#nb-intelligence .nbm-official .nbm-item a:hover{text-decoration:underline}
+#nb-intelligence .nbm-official .nbm-source{display:block;margin-top:4px;color:#9db5ca;font-size:11px}
+#nb-intelligence .nbm-official .nbm-empty{padding:20px 2px;color:#aabed0;font-size:12px;line-height:1.7}
+@media(max-width:780px){#nb-intelligence .nb2-columns{grid-template-columns:minmax(0,1fr)!important}}
 `;document.head.append(css);
-let articles=[],official=[],tab='bio',updated=null;
-const bioRE=/감염병|전염병|바이러스|에볼라|콜레라|홍역|조류독감|독감|감염|뎅기|코로나|outbreak|virus|measles|cholera|ebola|avian flu|infectious|dengue|covid|influenza|h5n1/i;
-const el=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=String(text);return e};
-function dateValue(a){const v=a.published||a.pubDate||a.date;const d=new Date(v||'');return Number.isFinite(d.getTime())?d:null}
-function addLink(parent,a){const url=safeURL(a.url);const name=String(a.title_ko||a.title||'제목 없음');const link=el(url?'a':'span','',name);if(url){link.href=url;link.target='_blank';link.rel='noopener noreferrer'}parent.append(link)}
-function entry(parent,a,isOfficial){const row=el('div','nbn-entry');row.append(el('span','nbn-pill'+(isOfficial?'':' news'),isOfficial?'공식 발표':'언론 보도'));addLink(row,a);const dt=dateValue(a);row.append(el('div','nbn-muted',`${a.source||'출처 미상'} · ${dt?dt.toLocaleDateString('ko-KR'):'날짜 미상'}`));parent.append(row)}
-function makeCard(parent,title){const c=el('section','nbn-card');c.append(el('h3','',title));parent.append(c);return c}
-function mapGraphic(card){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 540 265');svg.setAttribute('class','nbn-world');svg.setAttribute('role','img');svg.setAttribute('aria-label','세계 대륙 장식 지도. 감염병 발생 위치를 나타내지 않습니다.');svg.innerHTML=`<defs><pattern id="nb-bio-grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#1b4563" stroke-width=".7"/></pattern></defs><rect width="540" height="265" fill="url(#nb-bio-grid)"/><g fill="#216181" stroke="#3689a3" stroke-width="1.1" opacity=".83"><path d="M36 52L83 25 132 31 163 55 150 83 123 95 112 123 88 113 75 89 45 85Z"/><path d="M118 133L151 138 171 165 162 198 141 235 124 212 118 184 102 156Z"/><path d="M218 53L252 35 288 40 306 52 337 43 373 53 405 43 451 60 488 72 469 95 430 91 402 108 373 103 347 127 317 109 296 91 276 96 254 81 229 89Z"/><path d="M255 108L304 115 324 151 309 192 289 218 265 201 247 166 239 133Z"/><path d="M416 172L457 160 490 179 482 209 448 218 416 202Z"/><path d="M203 40L214 32 226 39 222 50Z"/></g><text x="270" y="245" text-anchor="middle">발생 위치 데이터 미연동 · 대륙 배경만 표시</text>`;card.append(svg);card.append(el('p','nbn-muted','현재 공식 공지에 검증된 국가별 발생 좌표가 없어 위험 마커를 표시하지 않습니다.'))}
-function render(){const root=$('nbn-content');if(!root||tab!=='bio')return;root.replaceChildren();const related=articles.filter(a=>bioRE.test(String(a.title||'')+' '+String(a.title_ko||'')));const head=el('div','nbn-head');const title=el('div');title.append(el('h2','','☣ 바이오 위협 탐지망'));title.append(el('div','nbn-muted','공식 감염병 공지와 관련 뉴스를 모니터링합니다.'));head.append(title);head.append(el('div','nbn-source','WHO 공식 공지 · 수집된 뉴스 기준'));root.append(head);
-const stats=el('div','nbn-stats');[['공식 공지',official.length+'건','🏥'],['관련 뉴스',related.length+'건','📰'],['자료 갱신',updated?new Date(updated).toLocaleDateString('ko-KR'):'확인 안 됨','🔄']].forEach(([name,value,emoji])=>{const c=el('div','nbn-stat');c.append(el('span','',emoji+' '+name));c.append(el('strong','',value));stats.append(c)});root.append(stats);
-const top=el('div','nbn-grid');root.append(top);const map=makeCard(top,'🌍 세계 감염병 모니터링');mapGraphic(map);const status=makeCard(top,'🧬 공식 감염병 공지');const scroll=el('div','nbn-scroll');status.append(scroll);if(!official.length)scroll.append(el('div','nbn-empty','수집된 공식 공지가 아직 없습니다. 공식 수집 작업이 실행되면 이곳에 표시됩니다.'));else official.slice(0,10).forEach(a=>entry(scroll,a,true));
-const bottom=el('div','nbn-grid');root.append(bottom);const chart=makeCard(bottom,'📊 감염병 관련 기사량 · 최근 7일');const days=Array.from({length:7},(_,i)=>{const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()-6+i);return d});const counts=days.map(d=>related.filter(a=>{const p=dateValue(a);return p&&p.getFullYear()===d.getFullYear()&&p.getMonth()===d.getMonth()&&p.getDate()===d.getDate()}).length);const max=Math.max(1,...counts);const bars=el('div','nbn-bars');days.forEach((d,i)=>{const wrap=el('div','nbn-barwrap');const bar=el('span','nbn-bar');bar.style.height=(counts[i]?Math.max(5,counts[i]/max*87):2)+'px';bar.title=counts[i]+'건';wrap.append(bar);wrap.append(el('small','',`${d.getMonth()+1}/${d.getDate()}`));bars.append(wrap)});chart.append(bars);chart.append(el('p','nbn-muted','기사 발행일 기준 보도량이며 감염병 발생 건수가 아닙니다.'));
-const news=makeCard(bottom,'📰 감염병 관련 뉴스');const nscroll=el('div','nbn-scroll');news.append(nscroll);if(!related.length)nscroll.append(el('div','nbn-empty','관련 뉴스가 아직 없습니다.'));else related.slice(0,12).forEach(a=>entry(nscroll,a,false));root.append(el('p','nbn-note','※ 뉴스와 공식 공지의 개수는 감염 위험 수준을 의미하지 않습니다. 위험 등급, 환자 수, 발생 위치는 검증된 구조화 데이터가 확보되기 전까지 표시하지 않습니다.'))}
-function switchTab(next){tab=next;$('nbn-bio-tab').setAttribute('aria-selected',String(next==='bio'));$('nbn-bookmark-tab').setAttribute('aria-selected',String(next==='bookmark'));$('nb-networks').hidden=next!=='bio';$('nbn-original-bookmarks').hidden=next!=='bookmark';if(next==='bio')render()}
-function init(){const section=$('nb-bookmarks');if(!section)return;const original=el('div');original.id='nbn-original-bookmarks';while(section.firstChild)original.append(section.firstChild);const tabs=el('div','nbn-tabs');tabs.setAttribute('role','tablist');tabs.innerHTML='<button type="button" id="nbn-bio-tab" role="tab" aria-selected="true">🧬 바이오 위협 탐지망</button><button type="button" id="nbn-bookmark-tab" role="tab" aria-selected="false">☆ 북마크</button>';const panel=el('section');panel.id='nb-networks';const content=el('div');content.id='nbn-content';panel.append(content);section.append(tabs,panel,original);$('nbn-bio-tab').addEventListener('click',()=>switchTab('bio'));$('nbn-bookmark-tab').addEventListener('click',()=>switchTab('bookmark'));switchTab('bio')}
-async function load(){try{const r=await fetch('./data/articles.json?nbbio='+Math.floor(Date.now()/300000),{cache:'no-store'});if(r.ok){const d=await r.json();articles=Array.isArray(d)?d:Array.isArray(d.articles)?d.articles:[]}}catch{}try{const r=await fetch('./data/bio-official.json?nbbio='+Math.floor(Date.now()/300000),{cache:'no-store'});if(r.ok){const d=await r.json();official=Array.isArray(d.items)?d.items:[];updated=d.updated||null}}catch{}render()}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();document.addEventListener('nb-title-translation-changed',render);load();setInterval(load,300000);
+const node=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e};
+function init(){
+ const columns=document.querySelector('#nb-intelligence .nb2-columns'),alerts=$('nb-alerts'),bookmarks=$('nb-bookmarks');
+ if(!columns||!alerts||!bookmarks)return;
+ const left=alerts.closest('section');if(!left)return;
+ // Keep the original bookmark node, inputs and listeners: no data migration or deletion.
+ left.classList.add('nbm-alerts-panel');
+ const tabs=node('div','nbm-tabs');tabs.setAttribute('role','tablist');
+ const alertBtn=node('button','', '⚡ 신규·주요 뉴스'),bookBtn=node('button','', '☆ 북마크');
+ for(const b of [alertBtn,bookBtn]){b.type='button';b.setAttribute('role','tab');}
+ tabs.append(alertBtn,bookBtn);left.insertBefore(tabs,alerts);
+ left.append(bookmarks);
+ // Remove legacy right-side wrapper only after extracting the bookmark node.
+ for(const section of [...columns.children]){if(section!==left)section.remove()}
+ const right=node('section','nbm-official');right.id='nbm-official';
+ right.append(node('h3','', '🏥 공식 감염병 발표'));
+ const meta=node('div','nbm-meta','WHO 공식 발표 · 원문 연결');right.append(meta);
+ const list=node('div','nbm-list');list.id='nbm-official-list';right.append(list);columns.append(right);
+ function show(which){const isBookmark=which==='book';alerts.hidden=isBookmark;bookmarks.hidden=!isBookmark;alertBtn.setAttribute('aria-selected',String(!isBookmark));bookBtn.setAttribute('aria-selected',String(isBookmark));}
+ alertBtn.addEventListener('click',()=>show('alert'));bookBtn.addEventListener('click',()=>show('book'));
+ $('nb-bookmark-open')?.addEventListener('click',()=>show('book'),{capture:true});
+ show('alert');
+ load(list,meta);setInterval(()=>load(list,meta),300000);
+}
+async function load(list,meta){
+ try{
+  const r=await fetch('./data/bio-official.json?v='+Math.floor(Date.now()/300000),{cache:'no-store'});
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  const data=await r.json(),items=Array.isArray(data.items)?data.items:[];
+  list.replaceChildren();
+  if(!items.length){list.append(node('p','nbm-empty','현재 수집된 공식 감염병 발표가 없습니다. 공식 자료 수집이 완료되면 여기에 표시됩니다.'));return;}
+  for(const a of items.slice(0,30)){
+   const item=node('div','nbm-item');let link=null;
+   try{const url=new URL(String(a.url));if(url.protocol==='https:'||url.protocol==='http:'){link=node('a','',String(a.title||'제목 없음'));link.href=url.href;link.target='_blank';link.rel='noopener noreferrer'}}catch{}
+   item.append(link||node('span','',String(a.title||'제목 없음')));
+   const d=new Date(a.published||'');const date=Number.isFinite(d.getTime())?d.toLocaleDateString('ko-KR'):'날짜 미상';
+   item.append(node('span','nbm-source',String(a.source||'WHO')+' · '+date));list.append(item);
+  }
+  if(data.updated){const d=new Date(data.updated);if(Number.isFinite(d.getTime()))meta.textContent='WHO 공식 발표 · 마지막 수집 '+d.toLocaleString('ko-KR');}
+ }catch{list.replaceChildren(node('p','nbm-empty','공식 발표 데이터를 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.'));}
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
