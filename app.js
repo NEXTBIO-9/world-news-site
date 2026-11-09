@@ -711,7 +711,13 @@ window.addEventListener('resize',()=>map.invalidateSize());
 
   const data=await r.json();
 
-  all=(Array.isArray(data.articles)?data.articles:[])
+  // Manual news is stored separately so automated feed refreshes cannot erase it.
+  let manualArticles=[];
+  try {
+   const mr=await fetch('./data/manual-articles.json?t='+Date.now(),{cache:'no-store'});
+   if(mr.ok){const md=await mr.json();manualArticles=Array.isArray(md.articles)?md.articles:[];}
+  } catch(error){console.warn('Manual news unavailable',error);}
+  all=[...manualArticles,...(Array.isArray(data.articles)?data.articles:[])]
    .filter(a=>
     a&&a.title&&/^https?:\/\//i.test(a.url||'')
    )
