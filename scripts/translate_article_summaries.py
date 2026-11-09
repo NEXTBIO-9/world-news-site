@@ -21,7 +21,7 @@ def needs_translation(item):
     return bool(source) and not item.get('text_ko') and len(re.findall(r'[A-Za-z]', source)) > 45 and len(re.findall(r'[가-힣]', source)) < 10
 
 
-NUMBER_PATTERN = re.compile(r'(?<![\\w])\\d+(?:[.,]\\d+)*(?![\\w])')
+NUMBER_PATTERN = re.compile(r'(?<![\w])\d+(?:[.,]\d+)*(?![\w])')
 
 
 def numeric_facts(text):
@@ -29,7 +29,7 @@ def numeric_facts(text):
     facts = set()
     for match in NUMBER_PATTERN.finditer(text):
         token = match.group()
-        if re.fullmatch(r'\\d{1,3}(?:,\\d{3})+(?:\\.\\d+)?', token):
+        if re.fullmatch(r'\d{1,3}(?:,\d{3})+(?:\.\d+)?', token):
             token = token.replace(',', '')
         elif ',' in token:
             # A decimal comma or ambiguous mixed punctuation must remain exact.
