@@ -1,0 +1,55 @@
+name: "NEXT BIO 직접 뉴스 발행"
+description: "관리자 전용 수동 뉴스 발행 요청"
+title: "[직접뉴스] "
+body:
+  - type: input
+    id: title
+    attributes:
+      label: "기사 제목"
+      placeholder: "제목을 입력하세요"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: "카테고리"
+      options:
+        - 세계
+        - 정치
+        - 경제
+        - 분쟁·군사
+        - 감염병
+        - 미생물
+        - 기타
+    validations:
+      required: true
+  - type: input
+    id: countries
+    attributes:
+      label: "관련 국가"
+      description: "쉼표로 구분, 예: 대한민국, 미국"
+    validations:
+      required: false
+  - type: textarea
+    id: body
+    attributes:
+      label: "기사 본문"
+      description: "직접 작성한 기사 내용"
+    validations:
+      required: true
+  - type: input
+    id: image
+    attributes:
+      label: "대표 이미지 URL (선택)"
+      description: "https:// 로 시작하는 이미지 주소"
+    validations:
+      required: false
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "중요 뉴스"
+      options:
+        - 일반
+        - 중요
+    validations:
+      required: true

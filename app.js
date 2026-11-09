@@ -347,7 +347,7 @@ function nbRelativeTime(published){
 }
 function item(a,cls){
  const url=String(a.url||'');
- const href=/^https?:\/\//i.test(url)?safe(url):'#';
+ const href=a.manual && Number.isSafeInteger(a.manual_issue) ? './article.html?id='+a.manual_issue : (/^https?:\/\//i.test(url)?safe(url):'#');
 
  return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"><span class="category">${safe(a.category||'일반')}</span><strong>${safe(window.NBTitleTranslation?.title(a)||a.title||'제목 없음')}</strong>${cls==='latest-item'?`<p>${safe(a.summary||'').slice(0,150)}</p>`:''}<span class="meta">${safe(a.region||'')} ${safe(a.subcategory||'')} · ${safe(a.source||'원문')} · ${cls==='country-item'?nbRelativeTime(a.published):dateText(a.published)}</span></a>`;
 }
@@ -711,16 +711,23 @@ window.addEventListener('resize',()=>map.invalidateSize());
 
   const data=await r.json();
 
-  all=(Array.isArray(data.articles)?data.articles:[])
+  // Manual news is stored separately so automated feed refreshes cannot erase it.
+  let manualArticles=[];
+  try {
+   const mr=await fetch('./data/manual-articles.json?t='+Date.now(),{cache:'no-store'});
+   if(mr.ok){const md=await mr.json();manualArticles=Array.isArray(md.articles)?md.articles:[];}
+  } catch(error){console.warn('Manual news unavailable',error);}
+  all=[...manualArticles,...(Array.isArray(data.articles)?data.articles:[])]
    .filter(a=>
-    a&&a.title&&/^https?:\/\//i.test(a.url||'')
+    a&&a.title&&(a.manual===true && Number.isSafeInteger(a.manual_issue) || /^https?:\/\//i.test(a.url||''))
    )
    .map(a=>({
     ...a,
     countries:matchedCountries(a)
    }))
    .sort((a,b)=>
-    new Date(b.published)-new Date(a.published)
+    (Number(Boolean(b.manual&&b.important))-Number(Boolean(a.manual&&a.important))) ||
+    (new Date(b.published)-new Date(a.published))
    );
 
   if($('updated')){
