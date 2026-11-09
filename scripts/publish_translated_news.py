@@ -143,9 +143,9 @@ def publish(staged_path, audit_path):
         if korean_summary_ready(restored, summaries):
             published.append(restored)
             seen.add(key)
-    # Bound site feed and backlog independently.
-    cap = 300
-    published = published[:cap]
+    # Keep every previously published, still-valid article instead of replacing
+    # older stories when the feed reaches an arbitrary 300-item ceiling.
+    # Only the unpublished retry queue is bounded.
     waiting = waiting[:MAX_PENDING]
     # Avoid rewriting the public feed when only the collection timestamp changed.
     # Cache/backlog updates are still committed independently by the workflow.
