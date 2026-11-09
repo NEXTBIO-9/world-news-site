@@ -143,9 +143,21 @@ def publish(staged_path, audit_path):
         if korean_summary_ready(restored, summaries):
             published.append(restored)
             seen.add(key)
-    # Keep every previously published, still-valid article instead of replacing
-    # older stories when the feed reaches an arbitrary 300-item ceiling.
-    # Only the unpublished retry queue is bounded.
+    # Keep the 300 most recently published stories, not merely the latest
+    # collected/translated stories. Stable sorting preserves order on ties.
+    # Missing or malformed publication dates rank oldest.
+    def published_time(article):
+        raw = str(article.get('published') or '')
+        try:
+            dt = datetime.fromisoformat(raw.replace('Z', '+00:00'))
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+        except (ValueError, TypeError, OverflowError):
+            return datetime.min.replace(tzinfo=timezone.utc)
+
+    published.sort(key=published_time, reverse=True)
+    published = published[:300]
     waiting = waiting[:MAX_PENDING]
     # Avoid rewriting the public feed when only the collection timestamp changed.
     # Cache/backlog updates are still committed independently by the workflow.
