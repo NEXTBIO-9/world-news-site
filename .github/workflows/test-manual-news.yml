@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'scripts/publish_manual_news.py'
+      - 'scripts/translate_article_summaries.py'
+      - 'tests/test_summary_translation_validation.py'
       - 'scripts/fetch_news.py'
       - 'tests/test_news_fetch_concurrency.py'
       - 'scripts/merge_title_cache.py'
@@ -14,6 +16,8 @@ on:
   pull_request:
     paths:
       - 'scripts/publish_manual_news.py'
+      - 'scripts/translate_article_summaries.py'
+      - 'tests/test_summary_translation_validation.py'
       - 'scripts/fetch_news.py'
       - 'tests/test_news_fetch_concurrency.py'
       - 'scripts/merge_title_cache.py'

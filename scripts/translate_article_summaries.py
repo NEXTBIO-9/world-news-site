@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Translate cached, source-backed excerpts to Korean, without inventing content."""
 import json
+from collections import Counter
+from decimal import Decimal, InvalidOperation
 import os
 import re
 import time
@@ -19,17 +21,41 @@ def needs_translation(item):
     return bool(source) and not item.get('text_ko') and len(re.findall(r'[A-Za-z]', source)) > 45 and len(re.findall(r'[가-힣]', source)) < 10
 
 
-def acceptable(source, translated):
-    if not translated or len(translated) < 15 or len(translated) > max(800, len(source) * 3):
-        return False
-    if len(re.findall(r'[가-힣]', translated)) < 8:
-        return False
-    # Reject translations that drop numeric facts; keep source text available for review.
-    numbers = lambda s: set(re.findall(r'(?<!\w)\d+(?:[.,]\d+)*(?!\w)', s))
-    if not numbers(source).issubset(numbers(translated)):
-        return False
-    return True
+NUMBER_PATTERN = re.compile(r'(?<![A-Za-z0-9_])\d+(?:[.,]\d+)*(?![A-Za-z0-9_])')
 
+
+def numeric_facts(text):
+    """Normalize only unambiguous comma grouping; preserve actual numeric facts."""
+    facts = set()
+    for match in NUMBER_PATTERN.finditer(text):
+        token = match.group()
+        if re.fullmatch(r'\d{1,3}(?:,\d{3})+(?:\.\d+)?', token):
+            token = token.replace(',', '')
+        elif ',' in token:
+            # A decimal comma or ambiguous mixed punctuation must remain exact.
+            facts.add(token)
+            continue
+        try:
+            facts.add(str(Decimal(token).normalize()))
+        except InvalidOperation:
+            facts.add(token)
+    return facts
+
+
+def rejection_reason(source, translated):
+    if not translated or len(translated) < 15:
+        return 'too_short'
+    if len(translated) > max(800, len(source) * 3):
+        return 'too_long'
+    if len(re.findall(r'[가-힣]', translated)) < 8:
+        return 'insufficient_korean'
+    if not numeric_facts(source).issubset(numeric_facts(translated)):
+        return 'missing_numeric_facts'
+    return None
+
+
+def acceptable(source, translated):
+    return rejection_reason(source, translated) is None
 
 def main():
     if not PATH.exists():
@@ -40,7 +66,6 @@ def main():
     if not isinstance(summaries, dict):
         raise ValueError('Invalid summary cache')
     # Failed translations are retried after a cooldown, rather than consuming every run.
-    retry_before = time.time() - 3 * 3600
     pending = [(url, item) for url, item in summaries.items()
                if isinstance(item, dict) and needs_translation(item)
                and float(item.get('ko_retry_after', 0) or 0) <= time.time()]
@@ -67,6 +92,7 @@ def main():
     started = time.monotonic()
     successes = 0
     rejected = 0
+    rejection_counts = Counter()
     for url, item in pending:
         if time.monotonic() - started > BUDGET:
             break
@@ -76,21 +102,25 @@ def main():
             with torch.inference_mode():
                 tokens = model.generate(**inputs, max_new_tokens=400, num_beams=2, do_sample=False, forced_bos_token_id=target_lang_id)
             translated = tokenizer.batch_decode(tokens, skip_special_tokens=True)[0].strip()
-            if acceptable(source, translated):
+            reason = rejection_reason(source, translated)
+            if reason is None:
                 item['text_ko'] = translated
                 item['translated_at'] = datetime.now(timezone.utc).isoformat()
                 item.pop('ko_retry_after', None)
                 successes += 1
             else:
                 rejected += 1
+                rejection_counts[reason] += 1
                 item['ko_retry_after'] = time.time() + 3 * 3600
         except Exception as exc:
             rejected += 1
+            rejection_counts['exception_' + type(exc).__name__] += 1
             item['ko_retry_after'] = time.time() + 3 * 3600
             print('Translation error: ' + type(exc).__name__)
     data['updated'] = datetime.now(timezone.utc).isoformat()
     PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Korean summary translations: pending={len(pending)}, translated={successes}, rejected={rejected}, total_ko={sum(bool(v.get("text_ko")) for v in summaries.values() if isinstance(v, dict))}')
+    print('Korean summary rejection reasons: ' + json.dumps(dict(sorted(rejection_counts.items())), ensure_ascii=False))
 
 
 if __name__ == '__main__':
