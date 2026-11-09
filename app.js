@@ -713,10 +713,18 @@ window.addEventListener('resize',()=>map.invalidateSize());
 
   // Manual news is stored separately so automated feed refreshes cannot erase it.
   let manualArticles=[];
-  try {
-   const mr=await fetch('./data/manual-articles.json?t='+Date.now(),{cache:'no-store'});
-   if(mr.ok){const md=await mr.json();manualArticles=Array.isArray(md.articles)?md.articles:[];}
-  } catch(error){console.warn('Manual news unavailable',error);}
+  // Read the newest public main-branch file first, without waiting for Pages deployment.
+  for(const manualUrl of [
+   'https://raw.githubusercontent.com/NEXTBIO-9/world-news-site/main/data/manual-articles.json?t='+Date.now(),
+   './data/manual-articles.json?t='+Date.now()
+  ]){
+   try {
+    const mr=await fetch(manualUrl,{cache:'no-store'});
+    if(!mr.ok)continue;
+    const md=await mr.json();
+    if(Array.isArray(md.articles)){manualArticles=md.articles;break;}
+   } catch(error){console.warn('Manual news source unavailable',error);}
+  }
   all=[...manualArticles,...(Array.isArray(data.articles)?data.articles:[])]
    .filter(a=>
     a&&a.title&&(a.manual===true && Number.isSafeInteger(a.manual_issue) || /^https?:\/\//i.test(a.url||''))
