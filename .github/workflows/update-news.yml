@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: world-news-feed-update
+  group: nextbio-news-pipeline
   cancel-in-progress: false
 
 jobs:
