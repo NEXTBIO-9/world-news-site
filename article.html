@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><title>기사 | NEXT BIO</title>
+<style>body{margin:0;background:#101827;color:#edf4ff;font:16px/1.8 system-ui,-apple-system,sans-serif}main{max-width:800px;margin:0 auto;padding:32px 20px 80px}header{border-bottom:1px solid #34445d;padding:18px 20px}a{color:#a6d0ff}h1{font-size:clamp(26px,5vw,38px);line-height:1.4}#meta{color:#aebdd2;font-size:14px}#body{white-space:pre-wrap;overflow-wrap:anywhere;font-size:18px;margin-top:36px}#cover{max-width:100%;border-radius:12px;margin-top:22px;display:none}.tag{color:#86baff;font-weight:700}#error{color:#ffb8b8}</style></head>
+<body><header><a href="./">NEXT BIO · 세계뉴스</a></header><main><p class="tag" id="category">직접 작성 뉴스</p><h1 id="title">기사 불러오는 중...</h1><div id="meta"></div><img id="cover" alt="기사 대표 이미지" referrerpolicy="no-referrer"><article id="body"></article><p id="error" role="alert"></p><p style="margin-top:48px"><a href="./">← 뉴스 목록으로 돌아가기</a></p></main>
+<script>
+(async function(){
+ const id=Number(new URLSearchParams(location.search).get('id'));
+ const error=document.getElementById('error');
+ if(!Number.isSafeInteger(id)||id<1){document.getElementById('title').textContent='기사 번호가 올바르지 않습니다.';return;}
+ try{
+  const r=await fetch('./data/manual-articles.json',{cache:'no-store'});
+  if(!r.ok)throw Error('HTTP '+r.status);
+  const data=await r.json();
+  const a=(Array.isArray(data.articles)?data.articles:[]).find(x=>x.manual_issue===id);
+  if(!a){document.getElementById('title').textContent='기사를 찾을 수 없습니다.';return;}
+  document.title=a.title+' | NEXT BIO';
+  document.getElementById('title').textContent=a.title||'제목 없음';
+  document.getElementById('category').textContent=a.category||'직접 작성 뉴스';
+  document.getElementById('body').textContent=a.body||a.summary||'';
+  document.getElementById('meta').textContent='NEXT BIO 직접 작성 · '+(a.published?new Date(a.published).toLocaleString('ko-KR'):'');
+  if(typeof a.image==='string'&&/^https:\/\//i.test(a.image)){const img=document.getElementById('cover');img.src=a.image;img.style.display='block';img.onerror=()=>{img.style.display='none';};}
+ }catch(e){document.getElementById('title').textContent='기사를 불러올 수 없습니다.';error.textContent='잠시 후 다시 시도해 주세요.';console.error(e);}
+})();
+</script></body></html>
