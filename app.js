@@ -726,7 +726,8 @@ window.addEventListener('resize',()=>map.invalidateSize());
     countries:matchedCountries(a)
    }))
    .sort((a,b)=>
-    new Date(b.published)-new Date(a.published)
+    (Number(Boolean(b.manual&&b.important))-Number(Boolean(a.manual&&a.important))) ||
+    (new Date(b.published)-new Date(a.published))
    );
 
   if($('updated')){
