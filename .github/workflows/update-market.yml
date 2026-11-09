@@ -27,8 +27,14 @@ jobs:
           python-version: '3.11'
       - name: Install market data client
         run: python -m pip install 'yfinance>=0.2.54,<2'
-      - name: Fetch market quotes
-        run: python scripts/fetch_market.py
+      - name: Fetch market quotes (retry transient provider errors)
+        shell: bash
+        run: |
+          for attempt in 1 2 3; do
+            if python scripts/fetch_market.py; then exit 0; fi
+            if [ "$attempt" -lt 3 ]; then sleep 20; fi
+          done
+          exit 1
       - name: Commit updated quotes
         run: |
           git config user.name 'github-actions[bot]'
