@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'scripts/publish_manual_news.py'
+      - 'scripts/fetch_news.py'
+      - 'tests/test_news_fetch_concurrency.py'
       - 'scripts/merge_title_cache.py'
       - '.github/workflows/summarize-news.yml'
       - 'tests/test_title_cache_merge.py'
@@ -12,6 +14,8 @@ on:
   pull_request:
     paths:
       - 'scripts/publish_manual_news.py'
+      - 'scripts/fetch_news.py'
+      - 'tests/test_news_fetch_concurrency.py'
       - 'scripts/merge_title_cache.py'
       - '.github/workflows/summarize-news.yml'
       - 'tests/test_title_cache_merge.py'
