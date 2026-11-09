@@ -1,0 +1,42 @@
+name: Update official bio notices
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */3 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: nextbio-bio-notices
+  cancel-in-progress: false
+jobs:
+  notices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Collect official notices
+        run: python scripts/update_bio_official.py
+      - name: Publish only changed official data
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp data/bio-official.json /tmp/nextbio-bio-official.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/nextbio-bio-official.json data/bio-official.json
+            git add data/bio-official.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Update official bio notices'
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 4
+          done
+          exit 1
