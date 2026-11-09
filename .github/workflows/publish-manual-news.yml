@@ -1,7 +1,7 @@
 name: Publish manual NEXT BIO news
 on:
   issues:
-    types: [opened, edited, labeled]
+    types: [opened, edited]
 permissions:
   contents: write
 concurrency:
@@ -26,5 +26,10 @@ jobs:
           git add data/manual-articles.json
           if ! git diff --cached --quiet; then
             git commit -m "Publish manual news issue #${{ github.event.issue.number }}"
-            git push
+            for attempt in 1 2 3; do
+              if git push; then exit 0; fi
+              git fetch origin main
+              git rebase origin/main || exit 1
+            done
+            exit 1
           fi
