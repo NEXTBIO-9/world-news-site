@@ -1,116 +1,94 @@
 #!/usr/bin/env python3
-"""Collect WHO Disease Outbreak News announcements from the official WHO listing.
-
-Only WHO-origin links are accepted; no invented dates or risk classifications.
-"""
+"""Collect verified WHO Disease Outbreak News via WHO's own JSON API."""
 import json
 import re
 import sys
 from datetime import datetime, timezone
-from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urljoin, urlparse, unquote
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
-OUT = Path('data/bio-official.json')
-WHO = 'https://www.who.int'
-PAGES = [
-    WHO + '/emergencies/disease-outbreak-news',
-    WHO + '/emergencies/disease-outbreak-news/',
+OUT = Path("data/bio-official.json")
+ROOT = "https://www.who.int"
+ENDPOINTS = [
+    ROOT + "/api/news/diseaseoutbreaknews?$top=50&$orderby=PublicationDate%20desc",
+    ROOT + "/api/default/diseaseoutbreaknews?$top=50&$orderby=PublicationDate%20desc",
+    ROOT + "/api/emergencies/diseaseoutbreaknews?$top=50&$orderby=PublicationDate%20desc",
 ]
-# WHO Disease Outbreak News articles normally live under /emergencies/disease-outbreak-news/item/.
-ARTICLE = re.compile(r'^/emergencies/disease-outbreak-news/(?:item|don)/[^/?#]+/?$', re.I)
-DATE = re.compile(r'(20\d{2})[-/](\d{1,2})[-/](\d{1,2})')
+def get_json(url):
+    req = Request(url, headers={"User-Agent":"Mozilla/5.0 NEXTBIO/3.0",
+        "Accept":"application/json"})
+    with urlopen(req, timeout=25) as response:
+        return json.load(response)
 
-class Links(HTMLParser):
-    def __init__(self):
-        super().__init__(convert_charrefs=True)
-        self.current = None
-        self.links = []
-    def handle_starttag(self, tag, attrs):
-        if tag.lower() != 'a': return
-        attrs = dict(attrs)
-        self.current = {'href': attrs.get('href', ''), 'text': [], 'title': attrs.get('title', '')}
-    def handle_data(self, data):
-        if self.current is not None:
-            self.current['text'].append(data)
-    def handle_endtag(self, tag):
-        if tag.lower() == 'a' and self.current is not None:
-            self.links.append(self.current)
-            self.current = None
+def records(data):
+    if isinstance(data, list): return data
+    if isinstance(data, dict):
+        for key in ("value","items","Items","results","Results"):
+            if isinstance(data.get(key),list): return data[key]
+        if isinstance(data.get("d"),dict): return records(data["d"])
+    return []
 
-def fetch(url):
-    request = Request(url, headers={
-        'User-Agent': 'Mozilla/5.0 (compatible; NEXTBIO-OfficialNoticeMonitor/2.0)',
-        'Accept': 'text/html,application/xhtml+xml',
-    })
-    with urlopen(request, timeout=25) as response:
-        return response.read(5_000_000).decode('utf-8', 'replace')
+def text_field(obj, *keys):
+    for key in keys:
+        v=obj.get(key)
+        if isinstance(v,str) and v.strip(): return v.strip()
+        if isinstance(v,dict):
+            for k in ("Value","value","en","English"):
+                if isinstance(v.get(k),str) and v[k].strip(): return v[k].strip()
+    return ""
 
-def normalize(href):
-    url = urljoin(WHO + '/', href.strip())
-    parsed = urlparse(url)
-    if parsed.scheme != 'https' or parsed.hostname not in ('www.who.int', 'who.int'):
-        return None
-    path = unquote(parsed.path)
-    if not ARTICLE.match(path):
-        return None
-    return WHO + path.rstrip('/')
-
-def extract(html):
-    parser = Links()
-    parser.feed(html)
-    results = {}
-    for link in parser.links:
-        url = normalize(link['href'])
-        if not url: continue
-        title = re.sub(r'\s+', ' ', ''.join(link['text']).strip() or link['title'].strip())
-        # A link without a readable article title is not publishable.
-        if len(title) < 8: continue
-        # Avoid repeated site navigation / misleading placeholders.
-        if title.lower() in ('read more', 'learn more', 'more information', 'view details'): continue
-        date_match = DATE.search(url)
-        published = ''
-        if date_match:
-            try:
-                published = datetime(*map(int, date_match.groups()), tzinfo=timezone.utc).isoformat()
-            except ValueError:
-                pass
-        results[url] = {'title': title[:240], 'url': url,
-                        'source': 'WHO Disease Outbreak News', 'published': published}
-    return list(results.values())
+def parse(data):
+    found={}
+    for obj in records(data):
+        if not isinstance(obj,dict): continue
+        title=text_field(obj,"Title","title","Headline","headline")
+        slug=text_field(obj,"UrlName","urlName","urlname")
+        url=text_field(obj,"Url","url","ItemDefaultUrl","itemDefaultUrl")
+        if not url and slug:
+            url="/emergencies/disease-outbreak-news/item/"+slug
+        if url.startswith("/"): url=ROOT+url
+        if not url.startswith(ROOT+"/emergencies/disease-outbreak-news/item/"): continue
+        if not title or len(title)<6: continue
+        date=text_field(obj,"PublicationDate","publicationDate","DateCreated","dateCreated")
+        if date.startswith("/Date("):
+            match=re.search(r"\d{10,13}",date)
+            if match:
+                stamp=int(match.group())
+                date=datetime.fromtimestamp(stamp/(1000 if stamp>10**11 else 1),timezone.utc).isoformat()
+        found[url]={"title":re.sub(r"<[^>]+>","",title)[:240],"url":url,
+            "source":"WHO Disease Outbreak News","published":date}
+    return list(found.values())
 
 def main():
-    items = []
-    for url in PAGES:
+    new=[]
+    for url in ENDPOINTS:
         try:
-            html = fetch(url)
-            items = extract(html)
-            print(f'WHO page fetched: {url}; article links: {len(items)}')
-            if items: break
+            result=parse(get_json(url))
+            print("WHO API:",url,"articles:",len(result))
+            if result:
+                new=result
+                break
         except Exception as exc:
-            print(f'WHO page unavailable: {url}: {exc}', file=sys.stderr)
-    if not items:
-        print('ERROR: No WHO announcements parsed. Existing data preserved.', file=sys.stderr)
+            print("WHO API unavailable:",url,str(exc)[:180],file=sys.stderr)
+    if not new:
+        print("ERROR: WHO API returned no verified announcements. Existing data preserved.",file=sys.stderr)
         sys.exit(1)
-    # Keep older stored announcements as well, without mixing in non-WHO content.
-    old = []
+    old=[]
     if OUT.exists():
         try:
-            data = json.loads(OUT.read_text(encoding='utf-8'))
-            old = [x for x in data.get('items', []) if isinstance(x, dict)
-                   and normalize(str(x.get('url', ''))) and
-                   str(x.get('source', '')).startswith('WHO')]
-        except (ValueError, OSError):
-            pass
-    merged = {}
-    for item in old + items:
-        merged[item['url']] = item
-    unique = sorted(merged.values(), key=lambda a: a.get('published', ''), reverse=True)[:100]
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps({'updated': datetime.now(timezone.utc).isoformat(),
-                               'items': unique}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(f'WHO official announcements saved: {len(unique)}')
-
-if __name__ == '__main__':
-    main()
+            old=[x for x in json.loads(OUT.read_text(encoding="utf-8")).get("items",[])
+                 if isinstance(x,dict) and str(x.get("url","")).startswith(
+                     ROOT+"/emergencies/disease-outbreak-news/item/")]
+        except (ValueError,OSError): pass
+    merged={x["url"]:x for x in old}
+    for x in new:
+        if x["url"] in merged and merged[x["url"]].get("title")==x["title"] and merged[x["url"]].get("title_ko"):
+            x["title_ko"]=merged[x["url"]]["title_ko"]
+        merged[x["url"]]=x
+    items=sorted(merged.values(),key=lambda x:x.get("published",""),reverse=True)[:100]
+    OUT.parent.mkdir(parents=True,exist_ok=True)
+    OUT.write_text(json.dumps({"updated":datetime.now(timezone.utc).isoformat(),
+         "items":items},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    print("WHO official announcements saved:",len(items))
+if __name__=="__main__": main()
