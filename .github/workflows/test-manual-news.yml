@@ -4,11 +4,17 @@ on:
   push:
     paths:
       - 'scripts/publish_manual_news.py'
+      - 'scripts/merge_title_cache.py'
+      - '.github/workflows/summarize-news.yml'
+      - 'tests/test_title_cache_merge.py'
       - 'tests/test_manual_news.py'
       - '.github/workflows/test-manual-news.yml'
   pull_request:
     paths:
       - 'scripts/publish_manual_news.py'
+      - 'scripts/merge_title_cache.py'
+      - '.github/workflows/summarize-news.yml'
+      - 'tests/test_title_cache_merge.py'
       - 'tests/test_manual_news.py'
       - '.github/workflows/test-manual-news.yml'
 permissions:
@@ -22,4 +28,4 @@ jobs:
         with:
           python-version: '3.12'
       - name: Run isolated publishing tests
-        run: python -m unittest discover -s tests -p 'test_manual_news.py' -v
+        run: python -m unittest discover -s tests -p 'test_*.py' -v

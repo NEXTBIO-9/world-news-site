@@ -59,9 +59,11 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'],'a') as f:
               f.write('should_run='+('true' if count else 'false')+'\n')
           PY
-      - name: Install Korean model dependencies only if needed
+      - name: Install CPU-only translation dependencies if needed
         if: steps.title_gate.outputs.should_run == 'true'
-        run: pip install 'torch>=2.2,<3' 'transformers>=4.40,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
+        run: |
+          python -m pip install 'torch>=2.2,<3' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'transformers>=4.40,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
       - name: Translate English headlines to Korean with retry
         if: steps.title_gate.outputs.should_run == 'true'
         env:
@@ -71,26 +73,13 @@ jobs:
           TITLE_KO_ATTEMPT_LOG: /tmp/nextbio-title-attempts.json
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python scripts/translate_news_titles.py
-      - name: Commit translated headline cache without publishing articles
+      - name: Save translated headlines for single-commit publication
         shell: bash
         run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          if [ -f data/title-translations.json ]; then cp data/title-translations.json /tmp/nextbio-local-titles.json; fi
-          for attempt in 1 2 3 4 5; do
-            git fetch origin main
-            git reset --hard origin/main
-            if [ -f /tmp/nextbio-local-titles.json ]; then
-              python scripts/merge_title_cache.py data/title-translations.json /tmp/nextbio-local-titles.json
-            fi
-            git add data/title-translations.json
-            if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
-            git commit -m 'Cache translated headlines before news publication'
-            if git push origin HEAD:main; then exit 0; fi
-            sleep 5
-          done
-          exit 1
+          mkdir -p /tmp/nextbio-title-record
+          if [ -f data/title-translations.json ]; then
+            cp data/title-translations.json /tmp/nextbio-title-record/title-translations.json
+          fi
       - name: Save headline attempt record for summary publication
         if: always()
         shell: bash
@@ -106,8 +95,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: nextbio-headline-attempts
-          path: /tmp/nextbio-title-record/attempts.json
+          path: /tmp/nextbio-title-record/
           retention-days: 2
+          if-no-files-found: error
   summaries:
     needs: titles
     if: ${{ needs.titles.result == 'success' }}
@@ -141,6 +131,11 @@ jobs:
         with:
           name: nextbio-headline-attempts
           path: /tmp/nextbio-title-record
+      - name: Include latest translated headlines in summary processing
+        run: |
+          if [ -f /tmp/nextbio-title-record/title-translations.json ]; then
+            python scripts/merge_title_cache.py data/title-translations.json /tmp/nextbio-title-record/title-translations.json
+          fi
       - name: Prepare unpublished candidates for summary processing
         shell: bash
         run: |
@@ -161,9 +156,11 @@ jobs:
       - name: Check whether Korean summary translation is needed
         id: translate_gate
         run: python scripts/summary_work_gate.py translate
-      - name: Install Korean model dependencies only if needed
+      - name: Install CPU-only Korean summary translation dependencies
         if: steps.translate_gate.outputs.should_run == 'true'
-        run: pip install 'torch>=2.2,<3' 'transformers>=4.40,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
+        run: |
+          python -m pip install 'torch>=2.2,<3' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'transformers>=4.40,<5' 'sentencepiece>=0.2,<1' 'sacremoses>=0.1,<1'
       - name: Translate new and cached excerpts to Korean
         if: steps.translate_gate.outputs.should_run == 'true'
         env:
@@ -178,14 +175,18 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           if [ -f data/article-summaries.json ]; then cp data/article-summaries.json /tmp/nextbio-summaries.json; fi
+          if [ -f data/title-translations.json ]; then cp data/title-translations.json /tmp/nextbio-titles.json; fi
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
+            if [ -f /tmp/nextbio-titles.json ]; then
+              python scripts/merge_title_cache.py data/title-translations.json /tmp/nextbio-titles.json
+            fi
             if [ -f /tmp/nextbio-summaries.json ]; then
               python scripts/merge_summary_cache.py data/article-summaries.json /tmp/nextbio-summaries.json
             fi
             python scripts/publish_translated_news.py /tmp/nextbio-staged/articles.json /tmp/nextbio-staged/news_quality_audit.json /tmp/nextbio-title-record/attempts.json
-            git add data/articles.json data/article-summaries.json data/pending-title-news.json
+            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json
             if [ -f data/news_quality_audit.json ]; then git add data/news_quality_audit.json; fi
             if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
             git commit -m 'Publish only fully summarized Korean news'
