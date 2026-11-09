@@ -719,7 +719,7 @@ window.addEventListener('resize',()=>map.invalidateSize());
   } catch(error){console.warn('Manual news unavailable',error);}
   all=[...manualArticles,...(Array.isArray(data.articles)?data.articles:[])]
    .filter(a=>
-    a&&a.title&&/^https?:\/\//i.test(a.url||'')
+    a&&a.title&&(a.manual===true && Number.isSafeInteger(a.manual_issue) || /^https?:\/\//i.test(a.url||''))
    )
    .map(a=>({
     ...a,
