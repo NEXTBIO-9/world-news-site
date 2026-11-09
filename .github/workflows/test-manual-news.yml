@@ -1,5 +1,6 @@
 name: Test manual news publishing
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'scripts/publish_manual_news.py'
