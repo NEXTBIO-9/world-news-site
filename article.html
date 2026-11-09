@@ -9,10 +9,10 @@
  if(!Number.isSafeInteger(id)||id<1){document.getElementById('title').textContent='기사 번호가 올바르지 않습니다.';return;}
  try{
   // Pages deployment may lag behind the latest GitHub Actions commit.
-  // Prefer same-origin data; if stale, read the public main-branch JSON directly.
+  // Prefer the newest public main-branch data, then use Pages as fallback.
   const sources=[
-    './data/manual-articles.json?t='+Date.now(),
-    'https://raw.githubusercontent.com/NEXTBIO-9/world-news-site/main/data/manual-articles.json?t='+Date.now()
+    'https://raw.githubusercontent.com/NEXTBIO-9/world-news-site/main/data/manual-articles.json?t='+Date.now(),
+    './data/manual-articles.json?t='+Date.now()
   ];
   let a=null;
   for(const source of sources){
@@ -24,7 +24,7 @@
       if(a)break;
     }catch(fetchError){console.warn('Article source unavailable',fetchError);}
   }
-  if(!a){document.getElementById('title').textContent='아직 기사를 불러오지 못했습니다.';error.textContent='사이트 배포가 진행 중일 수 있습니다. 잠시 후 새로고침해 주세요.';return;}
+  if(!a){document.getElementById('title').textContent='아직 기사를 불러오지 못했습니다.';error.textContent='발행 처리 중일 수 있습니다. 15초 후 자동으로 다시 확인합니다.';setTimeout(()=>location.reload(),15000);return;}
   document.title=a.title+' | NEXT BIO';
   document.getElementById('title').textContent=a.title||'제목 없음';
   document.getElementById('category').textContent=a.category||'직접 작성 뉴스';
