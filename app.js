@@ -770,3 +770,44 @@ window.addEventListener('resize',()=>map.invalidateSize());
   console.error(e);
  }
 })();
+
+/* Live manual-news updates: refresh only manual entries, without resetting filters or map state. */
+let nbManualRefreshBusy=false;
+let nbManualRevision='';
+async function nbRefreshManualNews(){
+ if(nbManualRefreshBusy||document.hidden||!Array.isArray(all)||!all.length)return;
+ nbManualRefreshBusy=true;
+ try{
+  let data=null;
+  for(const url of [
+   'https://raw.githubusercontent.com/NEXTBIO-9/world-news-site/main/data/manual-articles.json?t='+Date.now(),
+   './data/manual-articles.json?t='+Date.now()
+  ]){
+   try{
+    const response=await fetch(url,{cache:'no-store'});
+    if(!response.ok)continue;
+    const result=await response.json();
+    if(Array.isArray(result.articles)){data=result;break;}
+   }catch(error){console.warn('Live manual news source unavailable',error);}
+  }
+  if(!data)return;
+  const revision=JSON.stringify(data.articles);
+  if(revision===nbManualRevision)return;
+  nbManualRevision=revision;
+  const manual=data.articles.filter(a=>a&&a.manual===true&&Number.isSafeInteger(a.manual_issue)&&a.title)
+   .map(a=>({...a,countries:matchedCountries(a)}));
+  const previous=all.filter(a=>!a.manual);
+  const next=[...manual,...previous].sort((a,b)=>
+   (Number(Boolean(b.manual&&b.important))-Number(Boolean(a.manual&&a.important)))||
+   (new Date(b.published)-new Date(a.published))
+  );
+  if(JSON.stringify(all.filter(a=>a.manual))===JSON.stringify(manual))return;
+  all=next;
+  render();
+ }catch(error){console.warn('Live manual news refresh failed',error);}
+ finally{nbManualRefreshBusy=false;}
+}
+setInterval(nbRefreshManualNews,30000);
+document.addEventListener('visibilitychange',()=>{
+ if(!document.hidden)nbRefreshManualNews();
+});
