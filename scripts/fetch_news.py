@@ -1,6 +1,7 @@
 
 import json
 import collections
+from concurrent.futures import ThreadPoolExecutor
 import re
 import html
 import time
@@ -680,20 +681,32 @@ def write_audit(payload):
     tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     tmp.replace(AUDIT_PATH)
 
-def main():
+def collect_feeds(feeds, workers=3, fetcher=fetch):
+    """Fetch independent RSS sources concurrently, then preserve source order."""
+    def collect_one(feed):
+        try:
+            return feed, fetcher(*feed), None
+        except Exception as exc:
+            return feed, [], exc
+        finally:
+            time.sleep(.15)
+
     candidates = []
     succeeded = 0
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        for feed, items, error in executor.map(collect_one, feeds):
+            category, _, _, language, region, _ = feed
+            if error is not None:
+                print(f'FAILED {category} [{language}/{region}]: {error}')
+            else:
+                candidates.extend(items)
+                succeeded += 1
+                print(f'OK {category} [{language}/{region}] {len(items)} items')
+    return candidates, succeeded
 
-    for category, subcategory, query, language, region, country_hint in FEEDS:
-        try:
-            items = fetch(category, subcategory, query, language, region, country_hint)
-            candidates.extend(items)
-            succeeded += 1
-            print(f'OK {category} [{language}/{region}] {len(items)} items')
-        except Exception as exc:
-            print(f'FAILED {category} [{language}/{region}]: {exc}')
 
-        time.sleep(.15)
+def main():
+    candidates, succeeded = collect_feeds(FEEDS)
 
     if not candidates:
         raise RuntimeError('No RSS articles retrieved; existing data preserved')
