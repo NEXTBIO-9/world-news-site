@@ -144,7 +144,7 @@ def publish(staged_path, audit_path):
             published.append(restored)
             seen.add(key)
     # Bound site feed and backlog independently.
-    cap = min(180, max(1, len(new_items)))
+    cap = min(300, max(1, len(new_items)))
     published = published[:cap]
     waiting = waiting[:MAX_PENDING]
     write(DATA / 'articles.json', {'updated': staged.get('updated'), 'articles': published})
