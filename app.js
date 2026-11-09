@@ -350,9 +350,9 @@ function nbDeduplicateArticles(articles){
  const seenUrls=new Set(),seenTitles=new Set();
  return articles.filter(a=>{
   if(a.manual)return true;
-  const url=String(a.url||'').trim().replace(/[#?].*$/,'').replace(/\\/$/,'').toLowerCase();
-  const title=String(a.title||'').normalize('NFKC').toLowerCase().replace(/[^\\p{L}\\p{N}]+/gu,' ').trim();
-  const translated=String(a.title_ko||'').normalize('NFKC').toLowerCase().replace(/[^\\p{L}\\p{N}]+/gu,' ').trim();
+  const url=String(a.url||'').trim().replace(/[#?].*$/,'').replace(/\/$/,'').toLowerCase();
+  const title=String(a.title||'').normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
+  const translated=String(a.title_ko||'').normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
   const keys=[title,translated].filter(x=>x.length>=18);
   if((url&&seenUrls.has(url))||keys.some(x=>seenTitles.has(x)))return false;
   if(url)seenUrls.add(url);
