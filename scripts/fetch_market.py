@@ -21,9 +21,11 @@ def fetch_market():
     for key, (symbol, name) in SYMBOLS.items():
         try:
             ticker = yf.Ticker(symbol)
+            # Use recent intraday 5-minute bars instead of daily closes.
+            # The latest available bar can lag the live exchange price.
             history = ticker.history(
                 period="5d",
-                interval="1d"
+                interval="5m"
             )
 
             if history.empty:
