@@ -27,7 +27,6 @@
 #${ROOT_ID} .nb-emergency-item{color:#f1f5f9;text-decoration:none;font-size:16px;font-weight:900;line-height:1.4}
 #${ROOT_ID} .nb-emergency-item:hover,#${ROOT_ID} .nb-emergency-item:focus-visible{text-decoration:underline;color:#fff}
 #${ROOT_ID} .nb-emergency-separator{color:#94a3b8;font-size:15px}
-#${ROOT_ID}:hover .nb-emergency-track,#${ROOT_ID}:focus-within .nb-emergency-track{animation-play-state:paused}
 @keyframes nbEmergencyMove{from{transform:translateX(0)}to{transform:translateX(-100%)}}
 @media(max-width:620px){#${ROOT_ID} .nb-emergency-label{font-size:14px;padding:0 10px}#${ROOT_ID} .nb-emergency-item{font-size:14px}}
 @media(prefers-reduced-motion:reduce){#${ROOT_ID} .nb-emergency-track{animation:none;padding:0 12px;overflow-x:auto;max-width:100%;width:100%}}
