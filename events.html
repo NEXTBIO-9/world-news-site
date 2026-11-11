@@ -54,7 +54,16 @@ li a{color:#135d9a;overflow-wrap:anywhere}time{display:block;font-size:12px;colo
         try{const url=new URL(t.url);if(!['https:','http:'].includes(url.protocol))continue;link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';}catch{continue;}
         li.append(link,node('div',t.source||'출처 미표시','meta'));list.append(li);
       }
-      article.append(list);eventsNode.append(article);
+      article.append(list);
+      if(Array.isArray(e.related_events)&&e.related_events.length){
+        article.append(node('h3','다른 국가의 유사 보도'));
+        article.append(node('p','제목의 유사성으로 연결한 참고 자료입니다. 인과관계나 사실 검증을 의미하지 않습니다.','note'));
+        for(const related of e.related_events){const link=node('a',(related.countries||[]).join(' · ')+' — '+(related.title||'관련 사건'));
+          if(!/^[a-f0-9]{16}$/.test(String(related.id||'')))continue;
+          link.href='#event-'+related.id;link.style.display='block';link.style.margin='8px 0';
+          link.addEventListener('click',()=>{search.value='';category.value='';render();});article.append(link)}
+      }
+      eventsNode.append(article);
     }
   }
   Promise.resolve().then(async()=>{
