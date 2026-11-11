@@ -21,6 +21,18 @@ class EventTimelineTests(unittest.TestCase):
         self.assertEqual(result['events'][0]['distinct_sources'], 2)
         self.assertEqual(result['events'][0]['verification'], 'not_independently_verified')
 
+    def test_same_publisher_not_counted_twice(self):
+        a = article('Ukraine missile attack damages major city power infrastructure', 'https://example.org/story-1')
+        b = article('Ukraine missile attack damages major city power infrastructure again', 'https://www.example.org/story-2')
+        result = build([a, b])
+        self.assertEqual(result['events'][0]['distinct_sources'], 1)
+
+    def test_event_id_stable_when_followup_arrives(self):
+        a = article('Ukraine missile attack damages major city power infrastructure', 'https://one.example/1')
+        b = article('Ukraine missile attack damages major city power infrastructure again', 'https://two.example/2')
+        c = article('Ukraine missile attack damages major city power infrastructure today', 'https://three.example/3')
+        self.assertEqual(build([a, b])['events'][0]['id'], build([a, b, c])['events'][0]['id'])
+
     def test_distinct_country_or_category_not_merged(self):
         a = article('Ukraine missile attack damages major city power infrastructure', 'https://one.example/1')
         b = article('Ukraine missile attack damages major city power infrastructure', 'https://two.example/2', country='일본')
