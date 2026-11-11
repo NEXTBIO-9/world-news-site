@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXT BIO | 뉴스 운영 현황</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;color:#1c344c;background:#f5f8fc}*{box-sizing:border-box}body{margin:0}
+header{padding:20px max(18px,calc((100vw - 1050px)/2));background:#123451}header a{color:#fff;text-decoration:none}
+main{max-width:1050px;margin:auto;padding:26px 18px}h1{font-size:clamp(23px,4vw,32px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.card{padding:18px;border:1px solid #dae4ee;border-radius:13px;background:#fff}
+.card strong{font-size:27px;display:block;margin-top:8px}.muted{color:#63798e;font-size:13px;line-height:1.6}
+section{background:#fff;padding:18px;border-radius:13px;border:1px solid #dae4ee;margin:14px 0}
+table{border-collapse:collapse;width:100%}th,td{padding:9px;text-align:left;border-bottom:1px solid #e7edf3}
+</style></head><body>
+<header><a href="./">← NEXT BIO 세계 뉴스로 돌아가기</a></header>
+<main><h1>뉴스 운영 현황</h1><p class="muted">최근 저장된 수집·게시 감사 데이터입니다. 실시간 서버 모니터링이 아니며, 갱신 시각을 확인하세요.</p>
+<p id="status" role="status">데이터를 불러오는 중입니다.</p><div id="cards" class="grid"></div><section><h2>수집·게시 상태</h2><table><tbody id="details"></tbody></table></section>
+<p class="muted">수집 실패나 미게시 기사가 존재할 수 있습니다. 이 화면의 수치는 저장된 감사 기록 기준입니다.</p></main>
+<script>
+(async()=>{
+const status=document.getElementById('status'),cards=document.getElementById('cards'),details=document.getElementById('details');
+const add=(parent,tag,value)=>{const n=document.createElement(tag);n.textContent=String(value??'정보 없음');parent.append(n);return n};
+try{
+const response=await fetch('./data/news_quality_audit.json',{cache:'no-store'});if(!response.ok)throw Error('감사 데이터가 아직 없습니다');
+const data=await response.json(),pub=data.publication||{};
+const metrics=[['게시 기사',pub.published],['중요 게시 기사',pub.important_published],['게시 대기',pub.pending],['중요 기사 대기',pub.important_pending],['대기열 초과',pub.pending_overflow],['수집 성공 피드',data.successful_feeds]];
+for(const [name,value] of metrics){const card=add(cards,'div','');card.className='card';add(card,'span',name);add(card,'strong',value??'—')}
+for(const [name,value] of [['수집 성공 / 전체',String(data.successful_feeds??'—')+' / '+String(data.attempted_feeds??'—')],['수집 성공률',data.feed_success_rate==null?'—':(data.feed_success_rate*100).toFixed(1)+'%'],['중복 병합',data.event_duplicates_merged],['제외 기사',data.excluded_total],['게시 감사 갱신',pub.updated],['수집 감사 갱신',data.updated]]){
+const tr=document.createElement('tr');add(tr,'th',name);add(tr,'td',value);details.append(tr)}
+status.textContent='감사 데이터 로드 완료. 실제 최신 상태는 GitHub Actions에서 확인하세요.';
+}catch(e){status.textContent='운영 현황을 불러올 수 없습니다: '+e.message}
+})();
+</script></body></html>
