@@ -28,7 +28,7 @@ jobs:
       - name: Validate news pipeline Python and priority rules
         run: |
           python -m compileall -q scripts
-          python -m unittest discover -s tests -p 'test_news_priority.py' -v
+          python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Download unpublished feed from successful collection
         if: github.event_name == 'workflow_run'
         uses: actions/download-artifact@v4
@@ -190,7 +190,8 @@ jobs:
               python scripts/merge_summary_cache.py data/article-summaries.json /tmp/nextbio-summaries.json
             fi
             python scripts/publish_translated_news.py /tmp/nextbio-staged/articles.json /tmp/nextbio-staged/news_quality_audit.json /tmp/nextbio-title-record/attempts.json
-            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json
+            python scripts/build_event_timelines.py
+            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json data/event-timelines.json
             if [ -f data/news_quality_audit.json ]; then git add data/news_quality_audit.json; fi
             if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
             git commit -m 'Publish only fully summarized Korean news'
