@@ -25,6 +25,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Validate news pipeline Python and priority rules
+        run: |
+          python -m compileall -q scripts
+          python -m unittest discover -s tests -p 'test_news_priority.py' -v
       - name: Download unpublished feed from successful collection
         if: github.event_name == 'workflow_run'
         uses: actions/download-artifact@v4
