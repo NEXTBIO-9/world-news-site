@@ -68,6 +68,37 @@ def publisher(article):
     return str(article.get('source') or '').strip().casefold()
 
 
+def cross_country_links(events):
+    """Suggest related coverage, never infer causality or shared actors."""
+    for event in events:
+        event['related_events'] = []
+    for i, left in enumerate(events):
+        left_countries = set(left.get('countries') or [])
+        if not left_countries:
+            continue
+        for right in events[i + 1:]:
+            right_countries = set(right.get('countries') or [])
+            if not right_countries or left_countries & right_countries:
+                continue
+            if left.get('category') != right.get('category'):
+                continue
+            a, b = tokens(left.get('original_title', '')), tokens(right.get('original_title', ''))
+            if len(a) < 5 or len(b) < 5:
+                continue
+            shared = a & b
+            if len(shared) < 4 or len(shared) / min(len(a), len(b)) < .75:
+                continue
+            left['related_events'].append({'id': right['id'], 'title': right['title'],
+                                           'countries': right_countries and sorted(right_countries),
+                                           'basis': 'headline_similarity_only'})
+            right['related_events'].append({'id': left['id'], 'title': left['title'],
+                                            'countries': sorted(left_countries),
+                                            'basis': 'headline_similarity_only'})
+    for event in events:
+        event['related_events'] = event['related_events'][:5]
+        event.pop('original_title', None)
+
+
 def build(articles):
     events = []
     for group in cluster(articles):
@@ -83,6 +114,7 @@ def build(articles):
         ]
         events.append({
             'id': event_id, 'title': first.get('title_ko') or first['title'],
+            'original_title': first['title'],
             'category': first.get('category', ''), 'countries': first.get('countries', []),
             'article_count': len(group), 'distinct_sources': len({publisher(a) for a in group if publisher(a)}),
             'verification': 'not_independently_verified',
@@ -91,8 +123,10 @@ def build(articles):
             'timeline': timeline
         })
     events.sort(key=lambda e: e['last_reported'], reverse=True)
+    events = events[:100]
+    cross_country_links(events)
     return {'updated': datetime.now(timezone.utc).isoformat(),
-            'note': 'Related headlines are grouped heuristically. Source count is not independent verification.',
+            'note': 'Related headlines are grouped heuristically. Cross-country links indicate headline similarity, not causation or independent verification.',
             'event_count': min(len(events), 100), 'events': events[:100]}
 
 
