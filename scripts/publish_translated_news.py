@@ -31,7 +31,15 @@ def priority(article):
 
 def prioritize(items):
     # Preserve relative order within each class; never discard routine items.
-    return [a for a in items if priority(a)] + [a for a in items if not priority(a)]
+    urgent = [a for a in items if priority(a)]
+    routine = [a for a in items if not priority(a)]
+    ordered = []
+    while urgent or routine:
+        ordered.extend(urgent[:2])
+        del urgent[:2]
+        if routine:
+            ordered.append(routine.pop(0))
+    return ordered
 
 
 def read(path):
