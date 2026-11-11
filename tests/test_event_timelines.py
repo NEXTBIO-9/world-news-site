@@ -21,6 +21,29 @@ class EventTimelineTests(unittest.TestCase):
         self.assertEqual(result['events'][0]['distinct_sources'], 2)
         self.assertEqual(result['events'][0]['verification'], 'not_independently_verified')
 
+    def test_cross_country_links_require_strong_similarity(self):
+        base = 'Major earthquake damages coastal power infrastructure today'
+        items = [
+            article(base, 'https://a.example/1', country='일본'),
+            article(base + ' update', 'https://b.example/2', country='일본'),
+            article(base, 'https://c.example/3', country='대만'),
+            article(base + ' update', 'https://d.example/4', country='대만'),
+        ]
+        result = build(items)
+        self.assertEqual(result['event_count'], 2)
+        self.assertEqual(len(result['events'][0]['related_events']), 1)
+        self.assertEqual(result['events'][0]['related_events'][0]['basis'], 'headline_similarity_only')
+
+    def test_unrelated_countries_not_linked(self):
+        items = [
+            article('Ukraine missile attack damages major city power infrastructure', 'https://a.example/1', country='일본'),
+            article('Ukraine missile attack damages major city power infrastructure again', 'https://b.example/2', country='일본'),
+            article('Global disease outbreak forces new hospital safety procedures', 'https://c.example/3', country='대만'),
+            article('Global disease outbreak forces new hospital safety procedures again', 'https://d.example/4', country='대만'),
+        ]
+        result = build(items)
+        self.assertTrue(all(not e['related_events'] for e in result['events']))
+
     def test_same_publisher_not_counted_twice(self):
         a = article('Ukraine missile attack damages major city power infrastructure', 'https://example.org/story-1')
         b = article('Ukraine missile attack damages major city power infrastructure again', 'https://www.example.org/story-2')
