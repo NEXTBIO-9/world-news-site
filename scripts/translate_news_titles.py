@@ -3,7 +3,6 @@
 import json, os, re, time
 from datetime import datetime, timezone
 from pathlib import Path
-from news_priority import ordered
 ROOT = Path(__file__).resolve().parents[1]
 FEED = Path(os.getenv('TITLE_KO_FEED', str(ROOT / 'data/articles.json')))
 CACHE = ROOT / 'data/title-translations.json'
@@ -38,6 +37,7 @@ def main():
     cache = data.get('translations') or {}
     if not isinstance(cache, dict):
         raise ValueError('Invalid title translation cache')
+    from news_priority import ordered
     todo = pending({'articles': ordered(feed.get('articles', []))}, cache)
     print('Title translations missing_before:', len(todo), flush=True)
     if not todo:
