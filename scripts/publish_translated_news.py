@@ -185,6 +185,7 @@ def publish(staged_path, audit_path):
     published.sort(key=published_time, reverse=True)
     published = published[:300]
     # A bounded queue must never sacrifice a critical item merely due to position.
+    pending_before_trim = len(waiting)
     waiting = prioritize(waiting)[:MAX_PENDING]
     # Avoid rewriting the public feed when only the collection timestamp changed.
     # Cache/backlog updates are still committed independently by the workflow.
@@ -202,7 +203,7 @@ def publish(staged_path, audit_path):
                 'pending': len(waiting),
                 'important_pending': sum(priority(e) for e in waiting),
                 'excluded_title_failures': len(excluded),
-                'pending_overflow': max(0, len(combined(staged)) - len(published) - len(waiting)),
+                'pending_overflow': pending_before_trim - len(waiting),
                 'updated': now.isoformat(),
             }
             write(DATA / 'news_quality_audit.json', audit)
