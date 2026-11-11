@@ -13,15 +13,22 @@ table{border-collapse:collapse;width:100%}th,td{padding:9px;text-align:left;bord
 </style></head><body>
 <header><a href="./">← NEXT BIO 세계 뉴스로 돌아가기</a></header>
 <main><h1>뉴스 운영 현황</h1><p class="muted">최근 저장된 수집·게시 감사 데이터입니다. 실시간 서버 모니터링이 아니며, 갱신 시각을 확인하세요.</p>
-<p id="status" role="status">데이터를 불러오는 중입니다.</p><div id="cards" class="grid"></div><section><h2>수집·게시 상태</h2><table><tbody id="details"></tbody></table></section>
+<p id="status" role="status">데이터를 불러오는 중입니다.</p><section id="alerts" aria-label="운영 경고" hidden></section><div id="cards" class="grid"></div><section><h2>수집·게시 상태</h2><table><tbody id="details"></tbody></table></section>
 <p class="muted">수집 실패나 미게시 기사가 존재할 수 있습니다. 이 화면의 수치는 저장된 감사 기록 기준입니다.</p></main>
 <script>
 (async()=>{
-const status=document.getElementById('status'),cards=document.getElementById('cards'),details=document.getElementById('details');
+const status=document.getElementById('status'),cards=document.getElementById('cards'),details=document.getElementById('details'),alerts=document.getElementById('alerts');
 const add=(parent,tag,value)=>{const n=document.createElement(tag);n.textContent=String(value??'정보 없음');parent.append(n);return n};
 try{
 const response=await fetch('./data/news_quality_audit.json',{cache:'no-store'});if(!response.ok)throw Error('감사 데이터가 아직 없습니다');
 const data=await response.json(),pub=data.publication||{};
+const warnings=[];
+if(Number(pub.pending_overflow)>0)warnings.push('대기열 초과로 보존하지 못한 기사가 있습니다.');
+if(Number(pub.important_pending)>0)warnings.push('중요 기사 '+pub.important_pending+'개가 게시 대기 중입니다.');
+if(Number(data.attempted_feeds)>0&&Number(data.feed_success_rate)<0.5)warnings.push('수집 피드 성공률이 50% 미만입니다.');
+const last=Date.parse(pub.updated||data.updated||'');
+if(Number.isFinite(last)&&Date.now()-last>3*3600000)warnings.push('마지막 감사 기록이 3시간 이상 지났습니다.');
+if(warnings.length){alerts.hidden=false;add(alerts,'h2','확인 필요');for(const warning of warnings)add(alerts,'p',warning)}
 const metrics=[['게시 기사',pub.published],['중요 게시 기사',pub.important_published],['게시 대기',pub.pending],['중요 기사 대기',pub.important_pending],['대기열 초과',pub.pending_overflow],['수집 성공 피드',data.successful_feeds]];
 for(const [name,value] of metrics){const card=add(cards,'div','');card.className='card';add(card,'span',name);add(card,'strong',value??'—')}
 for(const [name,value] of [['수집 성공 / 전체',String(data.successful_feeds??'—')+' / '+String(data.attempted_feeds??'—')],['수집 성공률',data.feed_success_rate==null?'—':(data.feed_success_rate*100).toFixed(1)+'%'],['중복 병합',data.event_duplicates_merged],['제외 기사',data.excluded_total],['게시 감사 갱신',pub.updated],['수집 감사 갱신',data.updated]]){
