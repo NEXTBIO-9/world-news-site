@@ -9,6 +9,7 @@ import os
 import re
 import sys
 import time
+from news_priority import important
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -58,7 +59,8 @@ def main():
                 last_failure = float(failures.get(url, 0) or 0)
             except (TypeError, ValueError):
                 last_failure = 0
-            if last_failure > now - 3 * 3600:
+            cooldown = 30 * 60 if important(article) else 3 * 3600
+            if last_failure > now - cooldown:
                 continue
             candidates += 1
         emit(candidates > 0, f'extraction candidates={candidates}; cached={len(summaries)}')
