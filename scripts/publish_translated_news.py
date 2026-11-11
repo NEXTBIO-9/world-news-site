@@ -15,10 +15,10 @@ MAX_PENDING = 600
 
 # Prioritize consequential developments while retaining a fair share of routine news.
 PRIORITY_TERMS = re.compile(
-    r'(?i)\\b(?:breaking|urgent|killed|deaths?|casualties|evacuat(?:ed|ion)|'
+    r'(?i)\b(?:breaking|urgent|killed|deaths?|casualties|evacuat(?:ed|ion)|'
     r'missile|airstrike|invasion|blockade|ceasefire|nuclear|earthquake|tsunami|'
     r'outbreak|pandemic|emergency|FDA approv(?:es|al|ed)|recall|'
-    r'central bank|interest rate)\\b|속보|긴급|사망|대피|미사일|공습|침공|봉쇄|'
+    r'central bank|interest rate)\b|속보|긴급|사망|대피|미사일|공습|침공|봉쇄|'
     r'휴전|핵실험|지진|쓰나미|감염병|확산|승인|리콜|기준금리'
 )
 
