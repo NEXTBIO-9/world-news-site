@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import re
 from pathlib import Path
 from translate_news_titles import english, valid
+from news_priority import important
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
@@ -26,7 +27,7 @@ PRIORITY_TERMS = re.compile(
 def priority(article):
     article = article.get('article', article)
     title = str(article.get('title') or '')
-    return bool(PRIORITY_TERMS.search(title))
+    return important(article) or bool(PRIORITY_TERMS.search(title))
 
 
 def prioritize(items):
@@ -193,8 +194,19 @@ def publish(staged_path, audit_path):
         print('Public articles unchanged; preserving existing feed timestamp')
     write(QUEUE, {'updated': now.isoformat(), 'pending': waiting, 'excluded': [list(k) for k in sorted(excluded, key=str)]})
     if audit_path.exists():
-        (DATA / 'news_quality_audit.json').write_bytes(audit_path.read_bytes())
-    print(f'Published={len(published)} pending_retry={len(waiting)} excluded_after_2_failures={sum(1 for a in combined(staged) if english(a["title"]) and a["title"] in attempted and failure_counts.get(identity(a), 0) + 1 >= MAX_FAILURES and not valid(a["title"], cache.get(a["title"]))) } staged={len(new_items)}')
+        audit = read(audit_path)
+        if isinstance(audit, dict):
+            audit['publication'] = {
+                'published': len(published),
+                'important_published': sum(priority(a) for a in published),
+                'pending': len(waiting),
+                'important_pending': sum(priority(e) for e in waiting),
+                'excluded_title_failures': len(excluded),
+                'pending_overflow': max(0, len(combined(staged)) - len(published) - len(waiting)),
+                'updated': now.isoformat(),
+            }
+            write(DATA / 'news_quality_audit.json', audit)
+    print(f'Published={len(published)} pending_retry={len(waiting)} exhausted_title_retries={sum(1 for a in combined(staged) if english(a["title"]) and a["title"] in attempted and failure_counts.get(identity(a), 0) + 1 >= MAX_FAILURES and not valid(a["title"], cache.get(a["title"]))) } staged={len(new_items)}')
 
 
 def main():
