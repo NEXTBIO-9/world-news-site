@@ -793,6 +793,20 @@ def main():
                 counts[c] = counts.get(c, 0) + 1
             current += 1
 
+    # Reserve capacity for consequential stories that diversity caps would otherwise hide.
+    # Keep the total cap; the existing country coverage pass runs first.
+    urgent_bypassed = []
+    for a in pool:
+        if len(accepted) >= MAX_TOTAL or len(urgent_bypassed) >= 40:
+            break
+        if id(a) in selected or not is_protected(a):
+            continue
+        selected.add(id(a))
+        accepted.append(a)
+        urgent_bypassed.append(a)
+        for c in a['countries']:
+            counts[c] = counts.get(c, 0) + 1
+    print('Important articles rescued from selection caps:', len(urgent_bypassed))
     general_count = sum(not a['countries'] for a in accepted)
     publisher_counts = collections.Counter(source_key(a) for a in accepted)
     deferred_by_source = []
@@ -869,6 +883,9 @@ def main():
         'saved': len(articles),
         'filter_reasons': dict(reasons),
         'protected_saved': sum(is_protected(a) for a in articles),
+        'important_rescued_from_caps': len(urgent_bypassed),
+        'important_eligible': sum(is_protected(a) for a in pool),
+        'important_unselected': [ {'title': a['title'], 'url': a.get('url', ''), 'reason': 'capacity_limit'} for a in pool if is_protected(a) and id(a) not in selected ][:100],
         'protected_candidates': sum(is_protected(a) for a in unique.values()),
         'excluded_review_priority_high': sum(
             protected_reason(a) not in ('통과', '핵심 사건 보호')
