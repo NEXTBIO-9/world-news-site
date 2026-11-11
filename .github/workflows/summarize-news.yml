@@ -191,7 +191,8 @@ jobs:
             fi
             python scripts/publish_translated_news.py /tmp/nextbio-staged/articles.json /tmp/nextbio-staged/news_quality_audit.json /tmp/nextbio-title-record/attempts.json
             python scripts/build_event_timelines.py
-            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json data/event-timelines.json
+            python scripts/build_topic_monitor.py
+            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json data/event-timelines.json data/topic-monitor.json
             if [ -f data/news_quality_audit.json ]; then git add data/news_quality_audit.json; fi
             if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
             git commit -m 'Publish only fully summarized Korean news'
