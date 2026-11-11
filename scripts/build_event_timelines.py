@@ -6,7 +6,7 @@ This is a navigation aid, not independent fact verification or a prediction.
 import hashlib
 import json
 import re
-from collections import defaultdict
+from urllib.parse import urlparse
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -57,6 +57,17 @@ def cluster(articles):
     return groups
 
 
+def publisher(article):
+    """Prefer the publisher's hostname over a potentially inconsistent source label."""
+    for value in (article.get('source_url'), article.get('publisher_url'), article.get('url')):
+        if not value:
+            continue
+        host = (urlparse(str(value)).hostname or '').lower().removeprefix('www.')
+        if host and not host.endswith('news.google.com'):
+            return host
+    return str(article.get('source') or '').strip().casefold()
+
+
 def build(articles):
     events = []
     for group in cluster(articles):
@@ -64,7 +75,7 @@ def build(articles):
             continue
         first = group[0]
         urls = sorted({a['url'] for a in group})
-        event_id = hashlib.sha256('\n'.join(urls).encode('utf-8')).hexdigest()[:16]
+        event_id = hashlib.sha256(str(first['url']).encode('utf-8')).hexdigest()[:16]
         timeline = [
             {'published': a.get('published', ''), 'title': a.get('title_ko') or a['title'],
              'source': a.get('source', ''), 'url': a['url']}
@@ -73,7 +84,7 @@ def build(articles):
         events.append({
             'id': event_id, 'title': first.get('title_ko') or first['title'],
             'category': first.get('category', ''), 'countries': first.get('countries', []),
-            'article_count': len(group), 'distinct_sources': len({a.get('source', '') for a in group if a.get('source')}),
+            'article_count': len(group), 'distinct_sources': len({publisher(a) for a in group if publisher(a)}),
             'verification': 'not_independently_verified',
             'first_reported': timeline[0]['published'],
             'last_reported': timeline[-1]['published'],
@@ -82,7 +93,7 @@ def build(articles):
     events.sort(key=lambda e: e['last_reported'], reverse=True)
     return {'updated': datetime.now(timezone.utc).isoformat(),
             'note': 'Related headlines are grouped heuristically. Source count is not independent verification.',
-            'event_count': len(events), 'events': events[:100]}
+            'event_count': min(len(events), 100), 'events': events[:100]}
 
 
 def main():
