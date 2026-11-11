@@ -10,8 +10,28 @@ from translate_news_titles import english, valid
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
 QUEUE = DATA / 'pending-title-news.json'
-MAX_FAILURES = 2
-MAX_PENDING = 250
+MAX_FAILURES = 5
+MAX_PENDING = 600
+
+# Prioritize consequential developments while retaining a fair share of routine news.
+PRIORITY_TERMS = re.compile(
+    r'(?i)\\b(?:breaking|urgent|killed|deaths?|casualties|evacuat(?:ed|ion)|'
+    r'missile|airstrike|invasion|blockade|ceasefire|nuclear|earthquake|tsunami|'
+    r'outbreak|pandemic|emergency|FDA approv(?:es|al|ed)|recall|'
+    r'central bank|interest rate)\\b|속보|긴급|사망|대피|미사일|공습|침공|봉쇄|'
+    r'휴전|핵실험|지진|쓰나미|감염병|확산|승인|리콜|기준금리'
+)
+
+
+def priority(article):
+    article = article.get('article', article)
+    title = str(article.get('title') or '')
+    return bool(PRIORITY_TERMS.search(title))
+
+
+def prioritize(items):
+    # Preserve relative order within each class; never discard routine items.
+    return [a for a in items if priority(a)] + [a for a in items if not priority(a)]
 
 
 def read(path):
@@ -48,7 +68,7 @@ def combined(staged):
         if isinstance(item, dict) and item.get('title') and identity(item) not in seen and identity(item) not in excluded:
             result.append(item)
             seen.add(identity(item))
-    return result
+    return prioritize(result)
 
 
 def prepare(staged_path, output_path):
@@ -117,7 +137,11 @@ def publish(staged_path, audit_path):
             if failures < MAX_FAILURES:
                 waiting.append({'failures': failures, 'article': a})
             else:
-                excluded.add(key)
+                # Keep unsuccessful important reports retryable instead of silently losing them.
+                if priority(a):
+                    waiting.append({'failures': MAX_FAILURES - 1, 'article': a})
+                else:
+                    excluded.add(key)
             continue
         item = dict(a)
         if translated:
@@ -158,7 +182,8 @@ def publish(staged_path, audit_path):
 
     published.sort(key=published_time, reverse=True)
     published = published[:300]
-    waiting = waiting[:MAX_PENDING]
+    # A bounded queue must never sacrifice a critical item merely due to position.
+    waiting = prioritize(waiting)[:MAX_PENDING]
     # Avoid rewriting the public feed when only the collection timestamp changed.
     # Cache/backlog updates are still committed independently by the workflow.
     if published != current_items:
