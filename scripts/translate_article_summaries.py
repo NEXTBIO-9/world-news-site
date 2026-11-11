@@ -8,6 +8,7 @@ import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from news_priority import important
 
 ROOT = Path(__file__).resolve().parents[1]
 PATH = ROOT / 'data/article-summaries.json'
@@ -69,11 +70,19 @@ def main():
     pending = [(url, item) for url, item in summaries.items()
                if isinstance(item, dict) and needs_translation(item)
                and float(item.get('ko_retry_after', 0) or 0) <= time.time()]
-    # Split the capacity between fresh stories and old untranslated backlog.
+    feed_path = ROOT / 'data/articles.json'
+    feed = json.loads(feed_path.read_text(encoding='utf-8')) if feed_path.exists() else {}
+    by_url = {a.get('url'): a for a in feed.get('articles', []) if isinstance(a, dict)}
+    urgent = sorted((pair for pair in pending if important(by_url.get(pair[0], {}))), key=lambda pair: pair[1].get('updated', ''), reverse=True)
+    pending = [pair for pair in pending if pair not in urgent]
+    # Urgent articles use available translation capacity before routine articles.
+    # Split the remaining capacity between fresh stories and old untranslated backlog.
     # Without this, a continuous stream of new articles can starve older summaries.
     newest = sorted(pending, key=lambda pair: pair[1].get('updated', ''), reverse=True)
     oldest = list(reversed(newest))
-    selected = newest[:(LIMIT + 1) // 2]
+    selected = urgent[:LIMIT]
+    remaining = LIMIT - len(selected)
+    selected += newest[:(remaining + 1) // 2]
     used = {url for url, _ in selected}
     selected += [(url, item) for url, item in oldest if url not in used][:LIMIT - len(selected)]
     pending = selected
@@ -111,7 +120,7 @@ def main():
             else:
                 rejected += 1
                 rejection_counts[reason] += 1
-                item['ko_retry_after'] = time.time() + 3 * 3600
+                item['ko_retry_after'] = time.time() + (30 * 60 if important(by_url.get(url, {})) else 3 * 3600)
         except Exception as exc:
             rejected += 1
             rejection_counts['exception_' + type(exc).__name__] += 1
