@@ -30,7 +30,7 @@ def report():
     pending = queue.get('pending', [])
     if not isinstance(published, list) or not isinstance(pending, list):
         raise ValueError('Invalid published or pending article array')
-    published_urls = {a.get('url') for a in published if isinstance(a, dict)}
+    published_urls = {a['url'] for a in published if isinstance(a, dict) and isinstance(a.get('url'), str)}
     reasons = Counter()
     waiting = []
     for entry in pending:
@@ -39,6 +39,9 @@ def report():
             continue
         article = entry['article']
         url = article.get('url')
+        if not isinstance(url, str) or not url:
+            reasons['invalid_url'] += 1
+            continue
         if url in published_urls:
             reasons['already_published_url'] += 1
             continue
