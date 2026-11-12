@@ -62,7 +62,7 @@ def build(articles, now=None):
             dates[date] += 1
     records.sort(key=lambda a: a['published'], reverse=True)
     def group(items):
-        return [{'name': name, 'articles': len(vals), 'latest': vals[0]['published'] if vals else ''}
+        return [{'name': name, 'articles': len(vals), 'latest': max((v['published'] for v in vals), default='')}
                 for name, vals in sorted(items.items(), key=lambda pair: -len(pair[1]))]
     return {'updated': now.isoformat(),
             'disclaimer': 'Coverage counts and keyword tags are descriptive only. Official-domain labels do not verify claims.',
@@ -76,7 +76,15 @@ def main():
     articles = feed.get('articles')
     if not isinstance(articles, list):
         raise ValueError('Invalid news feed')
-    OUT.write_text(json.dumps(build(articles), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    result = build(articles)
+    if OUT.exists():
+        try:
+            previous = json.loads(OUT.read_text(encoding='utf-8'))
+            if all(previous.get(key) == result[key] for key in ('articles', 'countries', 'categories', 'daily_counts')):
+                return
+        except (OSError, ValueError):
+            pass
+    OUT.write_text(json.dumps(result, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':
