@@ -31,13 +31,15 @@ def build(events):
         if not isinstance(event, dict):
             continue
         timeline = event.get('timeline') or []
+        if not isinstance(timeline, list):
+            timeline = []
         sources = defaultdict(set)
         for item in timeline:
             if not isinstance(item, dict):
                 continue
             host = publisher(item)
             url = item.get('url')
-            if host and url:
+            if host and isinstance(url, str) and url:
                 sources[host].add(url)
         results.append({'event_id': event.get('id') or '',
                         'event_title': event.get('title') or '',
