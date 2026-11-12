@@ -13,6 +13,7 @@ DATA = ROOT / 'data'
 QUEUE = DATA / 'pending-title-news.json'
 MAX_FAILURES = 5
 MAX_PENDING = 600
+MAX_PUBLISHED = 1000
 
 # Prioritize consequential developments while retaining a fair share of routine news.
 PRIORITY_TERMS = re.compile(
@@ -109,7 +110,7 @@ def prepare(staged_path, output_path):
     print('Translation candidates including retained backlog:', len(items))
 
 
-def unique_by_url(articles, limit=300):
+def unique_by_url(articles, limit=MAX_PUBLISHED):
     """Retain the first (newest) valid entry for each source URL."""
     result, urls = [], set()
     for article in articles:
@@ -214,8 +215,8 @@ def publish(staged_path, audit_path):
         if korean_summary_ready(restored, summaries):
             published.append(restored)
             seen.add(key)
-    # Keep the 300 most recently published stories, not merely the latest
-    # collected/translated stories. Stable sorting preserves order on ties.
+    # Keep up to 1,000 published stories. Prioritize important reports while
+    # preserving newest-first order within each priority class.
     # Missing or malformed publication dates rank oldest.
     def published_time(article):
         raw = str(article.get('published') or '')
@@ -227,9 +228,9 @@ def publish(staged_path, audit_path):
         except (ValueError, TypeError, OverflowError):
             return datetime.min.replace(tzinfo=timezone.utc)
 
-    published.sort(key=published_time, reverse=True)
+    published.sort(key=lambda a: (priority(a), published_time(a)), reverse=True)
     # Multiple titles can point to one source URL; publish only its newest entry.
-    published = unique_by_url(published, limit=300)
+    published = unique_by_url(published, limit=MAX_PUBLISHED)
     # A bounded queue must never sacrifice a critical item merely due to position.
     pending_before_trim = len(waiting)
     waiting = prioritize(waiting)[:MAX_PENDING]
