@@ -18,10 +18,11 @@ const nbPriorityRules=[
  {points:80,re:/(?:팬데믹|세계보건기구.{0,25}(?:비상|경보)|국제적\s*공중보건\s*비상|신종\s*(?:감염병|바이러스).{0,25}(?:확산|발생)|pandemic|public\s+health\s+emergency|who\s+declares?.{0,30}emergency|novel\s+(?:virus|pathogen).{0,30}(?:outbreak|spread))/i},
  {points:76,re:/(?:규모\s*[6-9](?:\.[0-9])?\s*지진|대지진|초강력\s*태풍|대형\s*(?:산불|홍수|재난)|수백\s*명\s*사망|earthquake.{0,30}magnitude\s*[6-9]|magnitude\s*[6-9].{0,30}earthquake|major\s+(?:earthquake|flood|wildfire)|catastrophic|hundreds\s+(?:dead|killed))/i},
  {points:72,re:/(?:국가비상사태|계엄령|국경\s*봉쇄|외교관계\s*단절|경제\s*제재|금융\s*위기|은행\s*파산|기준금리\s*(?:인상|인하)|긴급\s*금리|state\s+of\s+emergency|martial\s+law|border\s+closure|diplomatic\s+ties\s+severed|economic\s+sanctions|financial\s+crisis|bank\s+collapse|central\s+bank.{0,30}(?:rate\s+(?:cut|hike)|emergency))/i},
+ {points:74,re:/(?:실적\\s*(?:발표|급증|급감|쇼크)|어닝\\s*(?:서프라이즈|쇼크)|주가\\s*(?:급등|급락|폭락)|상장폐지|거래\\s*정지|대규모\\s*(?:인수|합병)|기업\\s*(?:파산|회생)|earnings\\s*(?:beat|miss|surprise)|profit\\s*(?:warning|plunges?|surges?)|shares?\\s*(?:plunge|surge|soar|tumble)|stock\\s*(?:plunge|surge|crash)|merger|acquisition|takeover|bankruptcy|delisting|trading\\s*halt)/i},
  {points:68,re:/(?:군사\s*충돌|미사일\s*발사|무력\s*충돌|휴전\s*붕괴|대규모\s*시위|국가\s*간\s*긴장|military\s+clash|missile\s+launch|armed\s+conflict|ceasefire\s+collapse|mass\s+protests|geopolitical\s+tensions)/i},
  {points:65,re:/(?:집단\s*감염|감염병\s*확산|확진자\s*급증|에볼라\s*확산|콜레라\s*확산|감염병\s*비상|outbreak.{0,35}(?:spreads?|surges?|deaths?|emergency)|surge\s+in\s+(?:cases|infections)|ebola\s+outbreak|cholera\s+outbreak)/i}
 ];
-const nbPriorityContext=/(?:전쟁|군사|분쟁|미사일|공습|폭격|외교|제재|관세|금리|중앙은행|금융|경제위기|지진|태풍|홍수|산불|재난|감염병|에볼라|콜레라|전염병|확진|pandemic|outbreak|military|war|missile|airstrike|sanctions|central bank|financial crisis|earthquake|typhoon|flood|wildfire|ebola|cholera)/i;
+const nbPriorityContext=/(?:기업|주식|주가|증시|실적|매출|영업이익|인수|합병|상장폐지|거래정지|파산|earnings|shares?|stocks?|equity|merger|acquisition|takeover|bankruptcy|delisting|trading halt|전쟁|군사|분쟁|미사일|공습|폭격|외교|제재|관세|금리|중앙은행|금융|경제위기|지진|태풍|홍수|산불|재난|감염병|에볼라|콜레라|전염병|확진|pandemic|outbreak|military|war|missile|airstrike|sanctions|central bank|financial crisis|earthquake|typhoon|flood|wildfire|ebola|cholera)/i;
 const nbPriorityNoise=/(?:연예|스포츠|축구|야구|콘서트|셀럽|할인|쇼핑|레시피|여행\s*추천|행사\s*안내|신제품\s*출시|광고|홍보|celebrity|football|soccer|baseball|concert|shopping|recipe|travel\s+tips|product\s+launch|sponsored|advertorial|promotion)/i;
 function nbPriorityScore(a){
  const title=String(a.title||'')+' '+String(a.title_ko||'');
@@ -49,6 +50,7 @@ function nbAlertIcon(a,score){
  if(/(?:국가\s*비상사태|비상사태\s*선포|계엄령|state\s+of\s+emergency|martial\s+law)/i.test(t))return '🚨';
  if(/(?:대규모\s*(?:전투|공습|폭격|미사일\s*공격)|massive\s+(?:battle|airstrike|bombardment|missile\s+attack)|major\s+(?:battle|airstrike))/i.test(t))return '🚀';
  if(/(?:전쟁\s*(?:발발|선포|확전)|전면전|침공|war\s+(?:breaks?\s+out|declared|escalat)|full.scale\s+war|invasion)/i.test(t))return '⚔️';
+ if(/(?:주가|주식|증시|실적|인수|합병|상장폐지|기업\\s*파산|earnings|shares?|stocks?|merger|acquisition|takeover|bankruptcy|delisting)/i.test(t))return '📈';
  if(/(?:대지진|규모\s*[7-9](?:\.\d+)?\s*지진|초강력\s*태풍|대규모\s*(?:홍수|산불|재난)|major\s+(?:earthquake|flood|wildfire)|catastrophic\s+(?:earthquake|flood|disaster)|magnitude\s*[7-9](?:\.\d+)?\s*earthquake)/i.test(t))return '🌋';
  return score>=70?'⚡':'📰';
 }
@@ -58,13 +60,17 @@ function alerts(list){
   .filter(x=>x.date&&x.date.getTime()<=now+3600000&&x.date.getTime()>=now-7*86400000)
   .sort((x,y)=>y.score-x.score||y.date-x.date);
  const seen=new Set(),chosen=[];
- // First show genuinely important recent stories; fill remaining slots with fresh news.
+ const add=x=>{const key=nbPriorityKey(x.a);if(seen.has(key)||chosen.length>=limit)return;seen.add(key);chosen.push(x)};
+ // Reserve up to two slots for consequential corporate/market developments,
+ // without displacing breaking events or fabricating missing stories.
+ const market=/기업|주식|주가|증시|실적|매출|영업이익|인수|합병|상장폐지|거래정지|파산|earnings|shares?|stocks?|merger|acquisition|takeover|bankruptcy|delisting|trading halt/i;
+ const urgent=ranked.filter(x=>x.score>=80&&x.date.getTime()>=now-48*3600000);
+ urgent.slice(0,3).forEach(add);
+ const corporate=ranked.filter(x=>x.score>=70&&market.test(String(x.a.title||'')+' '+String(x.a.title_ko||''))&&x.date.getTime()>=now-72*3600000);
+ corporate.slice(0,2).forEach(add);
  const priority=ranked.filter(x=>x.score>=70&&x.date.getTime()>=now-48*3600000);
  const recent=[...ranked].sort((x,y)=>y.date-x.date);
- for(const x of [...priority,...recent]){
-  const key=nbPriorityKey(x.a);if(seen.has(key))continue;
-  seen.add(key);chosen.push(x);if(chosen.length>=limit)break;
- }
+ [...priority,...recent].forEach(add);
  const root=$('nb-alerts');if(!root)return;
  root.innerHTML=chosen.length?chosen.map(({a,score})=>`<div class="nb2-row"><span class="nb2-tag">${nbAlertIcon(a,score)+' '}${lang==='ko'?(score>=85?'긴급':score>=70?'주요':'최신'):(score>=85?'Urgent':score>=70?'Priority':'Latest')}${score>=70?' · '+score:''}</span><a target="_blank" rel="noopener noreferrer" href="${safe(/^https?:\/\//i.test(a.url||'')?a.url:'#')}">${safe(window.NBTitleTranslation?.title(a)||(a.title_ko||a.title))}</a></div>`).join(''):`<p class="nb2-muted">${lang==='ko'?'최근 7일간 표시할 뉴스가 없습니다.':'No news available from the past 7 days.'}</p>`;
 }
