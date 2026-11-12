@@ -33,8 +33,9 @@ def build():
             status[filename] = {'present': True, 'valid_json': False}
     warnings = []
     now = datetime.now(timezone.utc)
-    freshness_targets = {'articles.json', 'event-timelines.json', 'daily-briefing.json',
-                         'weekly-report.json', 'intelligence.json', 'historical-index.json'}
+    # Derived datasets may intentionally preserve their timestamps when their content is unchanged.
+    # Only the published feed's timestamp is a useful stale-data signal.
+    freshness_targets = {'articles.json'}
     for name, record in status.items():
         if not record.get('present'):
             warnings.append({'dataset': name, 'reason': 'missing'})
