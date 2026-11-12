@@ -172,6 +172,17 @@ jobs:
           SUMMARY_KO_BUDGET: '1000'
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python scripts/translate_article_summaries.py
+      - name: Create recovery snapshot before publishing
+        run: python scripts/create_recovery_snapshot.py
+      - name: Retain recovery snapshot for manual restoration
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextbio-recovery-${{ github.run_id }}
+          path: |
+            nextbio-recovery.tar.gz
+            nextbio-recovery-manifest.json
+          retention-days: 30
+          if-no-files-found: error
       - name: Publish only articles with Korean titles and source-backed Korean summaries
         shell: bash
         run: |
