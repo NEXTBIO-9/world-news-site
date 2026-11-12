@@ -30,7 +30,7 @@ function create(id){
  const markers=document.createElement('div');markers.className='nb-native-markers';root.appendChild(markers);
  const controls=document.createElement('div');controls.className='nb-native-controls';
  for(const [symbol,delta,label] of [['+',1,'확대'],['−',-1,'축소']]){const b=document.createElement('button');b.type='button';b.textContent=symbol;b.title=label;b.setAttribute('aria-label',label);b.onclick=()=>zoomTo(zoom+delta,root.clientWidth/2,root.clientHeight/2);controls.appendChild(b);}root.appendChild(controls);
- const copies=[];for(let i=-1;i<=1;i++){const el=document.createElement('div');el.style.position='absolute';el.style.top='0';el.style.left='0';el.style.width='100%';el.style.height='100%';for(const [name,cls] of [['light','nb-light'],['dark','nb-dark']]){const img=document.createElement('img');img.className=cls;img.decoding='async';img.src=`./nextbio-world-map-${name}.svg`;img.alt='';img.draggable=false;el.appendChild(img);}world.appendChild(el);copies.push({el,i});}
+ const copies=[];for(let i=-2;i<=2;i++){const el=document.createElement('div');el.style.position='absolute';el.style.top='0';el.style.left='0';el.style.width='100%';el.style.height='100%';for(const [name,cls] of [['light','nb-light'],['dark','nb-dark']]){const img=document.createElement('img');img.className=cls;img.decoding='async';img.src=`./nextbio-world-map-${name}.svg`;img.alt='';img.draggable=false;el.appendChild(img);}world.appendChild(el);copies.push({el,i});}
  let zoom=2,center=[22,15],items=[],drag=null,handlers={},flight=null;
  const cancelFlight=()=>{if(flight!==null){cancelAnimationFrame(flight);flight=null;}};
  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
