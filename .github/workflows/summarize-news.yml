@@ -229,7 +229,6 @@ jobs:
             python scripts/build_event_timelines.py
             python scripts/build_event_changes.py
             python scripts/build_cross_source_coverage.py
-            python scripts/build_topic_monitor.py
             python scripts/build_intelligence.py
             python scripts/build_evidence_index.py
             python scripts/build_geo_coverage.py
@@ -246,7 +245,7 @@ jobs:
             python scripts/build_collection_publication_audit.py /tmp/nextbio-staged/articles.json
             python scripts/build_pipeline_health.py
             python scripts/validate_news_data.py
-            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json data/event-timelines.json data/event-changes.json data/topic-monitor.json data/intelligence.json data/weekly-report.json data/evidence-index.json data/geo-coverage.json data/coverage-profiles.json data/breaking-candidates.json data/historical-index.json data/country-coverage-trends.json data/specialized-indexes.json data/pipeline-health.json data/translation-quality.json data/source-provenance.json data/personalization-options.json data/publication-gaps.json data/collection-publication-audit.json data/cross-source-coverage.json
+            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json data/event-timelines.json data/event-changes.json data/intelligence.json data/weekly-report.json data/evidence-index.json data/geo-coverage.json data/coverage-profiles.json data/breaking-candidates.json data/historical-index.json data/country-coverage-trends.json data/specialized-indexes.json data/pipeline-health.json data/translation-quality.json data/source-provenance.json data/personalization-options.json data/publication-gaps.json data/collection-publication-audit.json data/cross-source-coverage.json
             if [ -f data/news_quality_audit.json ]; then git add data/news_quality_audit.json; fi
             if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
             git commit -m 'Publish only fully summarized Korean news'
