@@ -157,7 +157,7 @@ function riskSignals(list){
   const seen=new Set(),articles=[];
   for(const x of recent.sort((a,b)=>b.d-a.d)){const k=nbPriorityKey(x.a);if(seen.has(k))continue;seen.add(k);articles.push(x.a);if(articles.length>=5)break;}
   const links=articles.map(a=>'<div class="nb2-row"><a target="_blank" rel="noopener noreferrer" href="'+safe(String(a.url||'').startsWith('https://')||String(a.url||'').startsWith('http://')?a.url:'#')+'">'+safe(window.NBTitleTranslation?.title(a)||(a.title_ko||a.title))+'</a></div>').join('');
-  return '<details class="nb-risk-group"><summary><strong>'+g.label+'</strong> · '+trend+' <small>(24시간 '+recent.length+'건 / 이전 7일 '+prior.length+'건)</small></summary>'+ (links||'<p class="nb2-muted">최근 24시간 관련 기사가 없습니다.</p>')+'</details>';
+  return '<details class="nb-risk-group"><summary><strong>'+g.label+'</strong> · '+trend+'</summary>'+ (links||'<p class="nb2-muted">최근 24시간 관련 기사가 없습니다.</p>')+'</details>';
  }).join('');
  root.innerHTML='<p class="nb2-muted">수집 기사 제목 기준 자동 분류 · 보도량은 실제 위험도를 의미하지 않습니다.</p>'+html;
 }
