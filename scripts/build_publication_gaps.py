@@ -46,12 +46,16 @@ def report():
         if not title or not url:
             reasons['missing_title_or_url'] += 1
             continue
-        failures = max(0, int(entry.get('failures') or 0))
+        try:
+            failures = max(0, int(entry.get('failures') or 0))
+        except (ValueError, TypeError, OverflowError):
+            reasons['invalid_retry_counter'] += 1
+            failures = 0
         reasons['awaiting_translation_or_summary'] += 1
         waiting.append({'url': url, 'title': title, 'failures': failures,
                         'published': article.get('published') or '',
                         'category': article.get('category') or ''})
-    waiting.sort(key=lambda a: (-a['failures'], a['published'], a['url']))
+    waiting.sort(key=lambda a: (-a['failures'], str(a['published']), str(a['url'])))
     return {
         'updated': datetime.now(timezone.utc).isoformat(),
         'scope': 'local_published_feed_and_retained_pending_queue_only',
