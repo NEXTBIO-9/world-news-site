@@ -26,6 +26,7 @@ const style=document.createElement('style');style.textContent=`
 #nb-intelligence .nbm-official-tabs button[aria-selected=true]{color:#f0f8ff;border-bottom-color:#48cbbb}
 #nb-intelligence .nbm-border-panel{flex:1;min-height:0;overflow-y:auto;color:#d9e9fa;font-size:12px;line-height:1.65}
 #nb-intelligence #nbm-navy-panel[hidden],#nb-intelligence .nbm-border-panel[hidden],#nb-intelligence .nbm-official .nbm-list[hidden],#nb-intelligence .nbm-official .nbm-meta[hidden]{display:none!important}
+#nb-intelligence .nbm-section-heading{font-size:13px;font-weight:750;color:#e5f2ff;margin:0 0 8px;line-height:1.4}
 #nb-intelligence .nbm-border-panel .nbm-border-status{padding:11px;border:1px solid #3a536e;border-radius:9px;background:#26394f;margin:9px 0}
 #nb-intelligence .nbm-border-panel strong{display:block;color:#91c5ff;font-size:18px;margin:4px 0}
 #nb-intelligence .nbm-progress-track{height:9px;background:#3b506a;border-radius:99px;overflow:hidden;margin:8px 0}
@@ -82,7 +83,8 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  for(const b of [whoBtn,forecastBtn]){b.type='button';b.setAttribute('role','tab');rightTabs.append(b)}right.append(rightTabs);
  officialMeta=node('div','nbm-meta','WHO 공식 발표 · 제목 번역 ON/OFF 연동');right.append(officialMeta);
  officialList=node('div','nbm-list');right.append(officialList);
- const borderPanel=node('div','nbm-border-panel');borderPanel.id='nbm-border-panel';borderPanel.setAttribute('role','tabpanel');
+ const borderPanel=node('div','nbm-border-panel');borderPanel.id='nbm-border-panel';borderPanel.setAttribute('role','group');borderPanel.setAttribute('aria-label','북한 장벽 요새화 현황');
+ borderPanel.append(node('h3','nbm-section-heading','🧱 북한 장벽 요새화 현황'));
  borderPanel.append(node('div','nbm-meta','남북 접경지역 요새화 · 2026년 8월 기준 보도 추정치'));
  const addEstimate=(label,value,pct,note)=>{const wrap=node('div','nbm-border-status');wrap.append(node('span','',label+' · 추정치'));wrap.append(node('strong','',value));const track=node('div','nbm-progress-track');const fill=node('div','nbm-progress-fill');fill.style.width=pct+'%';track.append(fill);wrap.append(track);wrap.append(node('span','',note));borderPanel.append(wrap)};
  addEstimate('지면 정리 작업','약 90%',90,'남부 국경 관련 보도 추정 · 전체 장벽 완공률이 아님');
@@ -92,15 +94,15 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  const checkInfo=node('p','nbm-meta','공개 보도 자동 확인: 매일 1회 · 첫 실행 대기 중');borderPanel.append(checkInfo);
  async function updateBorderCheck(){try{const r=await fetch('./data/nk-border-status.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!r.ok)return;const d=await r.json();if(d.last_checked){const date=new Date(d.last_checked);checkInfo.textContent='공개 보도 자동 확인: 매일 1회 · 최근 확인 '+(Number.isNaN(date.getTime())?d.last_checked:date.toLocaleString('ko-KR'))+' · 추정치 자동 변경 없음';}}catch(e){}}
  updateBorderCheck();
- const source=node('a','','관련 공개 분석 검색 (38 North)');source.href='https://www.38north.org/?s=border+fence';source.target='_blank';source.rel='noopener noreferrer';borderPanel.append(source);borderPanel.style.cssText='padding:4px 0';
+ const source=node('a','','관련 공개 분석 검색 (38 North)');source.href='https://www.38north.org/?s=border+fence';source.target='_blank';source.rel='noopener noreferrer';borderPanel.append(source);borderPanel.style.cssText='padding:10px 0 4px;border-top:1px solid #3a536e;margin-top:8px';
  const forecastPanel=node('div','nbm-border-panel');forecastPanel.id='nbm-forecast-panel';forecastPanel.setAttribute('role','tabpanel');
  const nk=node('div','nbm-border-status');nk.style.cssText='padding:8px 10px;margin:0;min-height:0;display:flex;flex-direction:column;gap:2px';nk.append(node('div','','🧱 북한 국경 장벽'),node('div','nbm-meta','한국 합동참모본부 공식 전망'),node('strong','','2028년 하반기 완공 예상'),node('p','','2026년 10월 8일 합참 국정감사 발표 기준'));forecastPanel.append(nk);
  const cn=node('div','nbm-border-status');cn.style.cssText='padding:8px 10px;margin:0;min-height:0;display:flex;flex-direction:column;gap:2px';cn.append(node('div','','⚓ 중국 해군 동향'),node('div','nbm-meta','대만 전면 침공 위험 관찰 시점'),node('strong','','2028년 이후'),node('p','','미국 당국자 평가에 근거한 관찰 구간. 실제 침공 예정일은 확인되지 않음.'));forecastPanel.append(cn);
  for(const card of [nk,cn]){const strong=card.querySelector('strong');if(strong)strong.style.cssText='font-size:15px;line-height:1.25;margin:2px 0';const para=card.querySelector('p');if(para)para.style.cssText='margin:2px 0 0;font-size:11px;line-height:1.35'}
  forecastPanel.style.cssText='flex-direction:column;gap:6px;padding:6px 0';
  forecastPanel.append(borderPanel);right.append(forecastPanel);
- const navyPanel=node('div','nbm-border-panel');navyPanel.id='nbm-navy-panel';navyPanel.setAttribute('role','tabpanel');navyPanel.append(node('div','nbm-meta','중국 해군·해경 훈련, 항모 활동, 해상 기동, 합동훈련 · 매일 1회 공개 보도 확인'));
- const navyList=node('div','nbm-list');navyList.append(node('p','nbm-empty','중국 해군 동향 데이터를 불러오는 중입니다.'));navyPanel.append(navyList);navyPanel.style.cssText='padding:4px 0';forecastPanel.append(navyPanel);columns.append(right);
+ const navyPanel=node('div','nbm-border-panel');navyPanel.id='nbm-navy-panel';navyPanel.setAttribute('role','group');navyPanel.setAttribute('aria-label','중국 해군 최신 동향');navyPanel.append(node('h3','nbm-section-heading','⚓ 중국 해군 최신 동향'));navyPanel.append(node('div','nbm-meta','중국 해군·해경 훈련, 항모 활동, 해상 기동, 합동훈련 · 매일 1회 공개 보도 확인'));
+ const navyList=node('div','nbm-list');navyList.append(node('p','nbm-empty','중국 해군 동향 데이터를 불러오는 중입니다.'));navyPanel.append(navyList);navyPanel.style.cssText='padding:10px 0 4px;border-top:1px solid #3a536e;margin-top:8px';forecastPanel.append(navyPanel);columns.append(right);
  async function loadNavy(){try{const r=await fetch('./data/china-navy-news.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!r.ok)throw Error('아직 수집되지 않음');const d=await r.json();navyList.replaceChildren();const checked=d.last_checked?new Date(d.last_checked).toLocaleString('ko-KR'):'확인 전';navyList.append(node('p','nbm-meta','최근 확인 '+checked+' · 수집 기사 '+(d.items||[]).length+'건'));for(const a of (d.items||[]).slice(0,30)){const item=node('div','nbm-item');const title=node('span','',a.title_ko||a.title||'제목 없음');if(a.url&&/^https:\/\//.test(a.url)){const link=node('a','',title.textContent);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link)}else item.append(title);if(a.category)item.append(node('span','nbm-source',a.category));navyList.append(item)}if(!(d.items||[]).length)navyList.append(node('p','nbm-empty','현재 수집된 관련 보도가 없습니다.'))}catch(e){navyList.replaceChildren(node('p','nbm-empty','첫 수집 대기 중입니다. GitHub Actions 실행 후 표시됩니다.'))}}
  loadNavy();
  function showRight(tab){officialMeta.hidden=tab!=='who';officialList.hidden=tab!=='who';forecastPanel.hidden=tab!=='forecast';whoBtn.setAttribute('aria-selected',String(tab==='who'));forecastBtn.setAttribute('aria-selected',String(tab==='forecast'));}
