@@ -12,6 +12,7 @@
  function refresh(){
   if(typeof window.render==='function')window.render();
   document.dispatchEvent(new Event('nb-title-translation-changed'));
+  window.dispatchEvent(new Event('nextbio-translation-preference'));
  }
  function init(){
   if(document.getElementById('nb-title-translation-toggle'))return;
@@ -29,6 +30,7 @@
    update();refresh();
   });
   update();
+  window.addEventListener('storage',e=>{if(e.key===KEY){enabled=e.newValue!=='off';update();refresh();}});
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
  else init();
