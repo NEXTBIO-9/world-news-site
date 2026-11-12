@@ -12,13 +12,15 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
 OUT = DATA / 'cross-source-coverage.json'
+
+
 def publisher(article):
     for key in ('publisher_url', 'source_url', 'url'):
         try:
             host = (urlparse(str(article.get(key) or '')).hostname or '').lower().removeprefix('www.')
         except ValueError:
             host = ''
-        if host and host not in ('news.google.com', 'google.com'):
+        if host and host not in ('news.google.com', 'google.com') and not host.endswith('.google.com'):
             return host
     return ''
 
