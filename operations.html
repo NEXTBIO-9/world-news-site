@@ -107,7 +107,7 @@ const metrics=[['게시 기사',pub.published],['중요 게시 기사',pub.impor
 for(const [name,value] of metrics){const card=add(cards,'div','');card.className='card';add(card,'span',name);add(card,'strong',value??'—')}
 for(const [name,value] of [['수집 성공 / 전체',String(data.successful_feeds??'—')+' / '+String(data.attempted_feeds??'—')],['수집 성공률',data.feed_success_rate==null?'—':(data.feed_success_rate*100).toFixed(1)+'%'],['중복 병합',data.event_duplicates_merged],['제외 기사',data.excluded_total],['게시 감사 갱신',pub.updated],['수집 감사 갱신',data.updated]]){
 const tr=document.createElement('tr');add(tr,'th',name);add(tr,'td',value);details.append(tr)}
-status.textContent='감사 데이터 로드 완료. 실제 최신 상태는 GitHub Actions에서 확인하세요.';
+status.textContent='';
 }catch(e){status.textContent='운영 현황을 불러올 수 없습니다: '+e.message}
 })();
 </script></body></html>
