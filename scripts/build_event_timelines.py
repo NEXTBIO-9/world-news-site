@@ -7,7 +7,7 @@ import hashlib
 import json
 import re
 from urllib.parse import urlparse
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,10 +31,20 @@ def event_key(article):
     return terms
 
 
+def publication_time(article):
+    try:
+        return datetime.fromisoformat(str(article.get('published') or '').replace('Z', '+00:00')).astimezone(timezone.utc)
+    except (ValueError, TypeError, OverflowError):
+        return None
+
+
 def compatible(a, b):
     if a.get('category') != b.get('category'):
         return False
     if a.get('countries') and b.get('countries') and not set(a['countries']) & set(b['countries']):
+        return False
+    da, db = publication_time(a), publication_time(b)
+    if da and db and abs(da - db) > timedelta(days=14):
         return False
     ta, tb = event_key(a), event_key(b)
     if not ta or not tb:
@@ -46,13 +56,17 @@ def compatible(a, b):
 
 def cluster(articles):
     groups = []
+    seen_urls = set()
     for article in sorted(articles, key=lambda a: str(a.get('published') or '')):
         if not isinstance(article, dict) or not article.get('url') or not article.get('title'):
             continue
-        group = next((g for g in groups if compatible(g[0], article)), None)
+        if article['url'] in seen_urls:
+            continue
+        seen_urls.add(article['url'])
+        group = next((g for g in groups if all(compatible(existing, article) for existing in g)), None)
         if group is None:
             groups.append([article])
-        elif all(item.get('url') != article['url'] for item in group):
+        else:
             group.append(article)
     return groups
 
@@ -105,7 +119,6 @@ def build(articles):
         if len(group) < 2:
             continue
         first = group[0]
-        urls = sorted({a['url'] for a in group})
         event_id = hashlib.sha256(str(first['url']).encode('utf-8')).hexdigest()[:16]
         timeline = [
             {'published': a.get('published', ''), 'title': a.get('title_ko') or a['title'],
@@ -139,7 +152,16 @@ def main():
         raise ValueError('Invalid published feed')
     result = build(articles)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    payload = json.dumps(result, ensure_ascii=False, indent=2) + '\n'
+    if OUTPUT.exists():
+        try:
+            previous = json.loads(OUTPUT.read_text(encoding='utf-8'))
+            if previous.get('events') == result['events']:
+                print('Event timelines unchanged; keeping previous update time')
+                return
+        except (OSError, ValueError, AttributeError):
+            pass
+    OUTPUT.write_text(payload, encoding='utf-8')
     print('Event timelines generated:', result['event_count'])
 
 
