@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-12T11:54:52.485471+00:00",
+  "updated": "2026-11-12T12:05:14.736788+00:00",
   "version": "quality-10",
-  "total_candidates": 4759,
-  "unique_candidates": 3767,
-  "passed_after_dedupe": 413,
+  "total_candidates": 4758,
+  "unique_candidates": 3768,
+  "passed_after_dedupe": 409,
   "saved": 180,
   "filter_reasons": {
-    "통과": 413,
-    "중요도 미달": 3296,
-    "제목 길이": 37,
-    "미소지진·미확인 관측": 4,
-    "잡뉴스": 6,
+    "중요도 미달": 3297,
+    "통과": 410,
+    "잡뉴스": 7,
+    "제목 길이": 38,
+    "미소지진·미확인 관측": 5,
     "핵심 사건 보호": 10,
     "정보성·미확인 기록": 1
   },
   "protected_saved": 44,
-  "important_rescued_from_caps": 19,
+  "important_rescued_from_caps": 18,
   "important_eligible": 44,
   "important_unselected": [],
-  "protected_candidates": 50,
+  "protected_candidates": 51,
   "excluded_review_priority_high": 43,
   "category_counts": {
     "감염병": 13,
@@ -27,15 +27,15 @@
     "미생물": 9,
     "제약·신약": 5,
     "의료기기": 3,
-    "분쟁·군사": 31,
     "보건·의료": 3,
+    "분쟁·군사": 33,
     "경제·금융": 40,
     "과학·기술": 15,
     "일반": 16,
-    "정치": 28
+    "정치": 26
   },
-  "routine_quakes_rejected": 4,
-  "event_duplicates_merged": 10,
+  "routine_quakes_rejected": 5,
+  "event_duplicates_merged": 11,
   "low_value_records_rejected": 1,
   "distinct_publishers_saved": 162,
   "largest_publisher_share": 0.017,
@@ -45,12 +45,13 @@
   "successful_feeds": 449,
   "attempted_feeds": 449,
   "country_counts": {
-    "우크라이나": 6,
     "이스라엘": 6,
     "인도네시아": 5,
     "캐나다": 6,
+    "우크라이나": 6,
     "러시아": 7,
     "레바논": 1,
+    "호주": 2,
     "사우디아라비아": 4,
     "프랑스": 3,
     "중국": 5,
@@ -60,11 +61,11 @@
     "네덜란드": 3,
     "튀르키예": 7,
     "케냐": 6,
-    "스페인": 7,
+    "스페인": 5,
     "말레이시아": 3,
     "이란": 6,
     "인도": 2,
-    "일본": 6,
+    "일본": 5,
     "콜롬비아": 3,
     "대만": 4,
     "이집트": 3,
@@ -86,25 +87,25 @@
     "이라크": 2,
     "그리스": 2,
     "카타르": 2,
+    "페루": 1,
     "멕시코": 1,
     "스웨덴": 1,
     "몽골": 1,
-    "시리아": 1,
-    "포르투갈": 1,
-    "호주": 1
+    "시리아": 2,
+    "포르투갈": 1
   },
   "publisher_counts_top20": {
     "더바이오": 3,
     "south china morning post": 3,
     "facebook": 3,
-    "devdiscourse": 2,
     "biggo finance": 2,
+    "simply wall st": 2,
     "the jerusalem post": 2,
     "daily tribune": 2,
+    "the sofx report": 2,
     "bbc": 2,
     "global banking & finance review": 2,
     "reuters": 2,
-    "energynow.com": 2,
     "arabian business": 2,
     "ynetnews": 2,
     "businesstoday malaysia": 2,
@@ -113,10 +114,10 @@
     "newsner": 1,
     "로이슈": 1,
     "rri.co.id": 1,
-    "ssbcrack": 1
+    "devdiscourse": 1
   },
   "event_signature_coverage": 3,
-  "excluded_total": 3344,
+  "excluded_total": 3348,
   "excluded": [
     {
       "title": "Characterization of drug-resistant Streptococcus spp. from food and human",
@@ -471,6 +472,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "\"AI 투자 수익성 검증\"…신한투자증권, 2027년 투자전략 제시",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "메트로신문",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAtMlNyc1h0Q2tpRG9vQXpSR1NabVVMZWVSakRRSExpSVo4V1pKaWp1LS1RdXIxZk9xNGNMUFlqcFAyd2U3bHNCcHZEdENzUlVpN2s4SnZvQlhFVnlzMEVmRw?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "\"Any future arrangements must respect sovereignty\": US, Ukraine, European partners meet ahead of talks with Russia",
       "category": "분쟁·군사",
       "reason": "중요도 미달",
@@ -484,6 +493,22 @@
       "reason": "중요도 미달",
       "source": "SBS 뉴스",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5VMkFUdVNITHl5ZFl1X05aY0xHSjJYM2tiUXotbklQakY5UGZ1M3p5MTBGRnVaTXRveXF2b1lmYVdJX1RSaTNXZ0JzWEpvc3ZyM0JCMkR1X09uZ1VUYUtOWHF3alo4QdIBZkFVX3lxTE5VMkFUdVNITHl5ZFl1X05aY0xHSjJYM2tiUXotbklQakY5UGZ1M3p5MTBGRnVaTXRveXF2b1lmYVdJX1RSaTNXZ0JzWEpvc3ZyM0JCMkR1X09uZ1VUYUtOWHF3alo4QQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "\"Kenya is improving its investment environment through regulatory and administrative reforms. We seek greater European investment in manufacturing, infrastructure, agriculture, energy, and healthcare that expands local production, transfers technology, and",
+      "category": "경제·금융",
+      "reason": "제목 길이",
+      "source": "Facebook",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQY3Y0UHB6SWxneEhwd2NYa1l4LXhkd1RBM3B5UFlISTQxMXJ0VHFIdmFvWDJ3bXhuMDhiRnBfYXQxMnJhTjhlaE5idkpHZm9iN0RtVm8ySlMxMXBLNE5oU25YdUQtSHZKdmt3Ykp0a25oeDdfM05HV0ZnZXliVzBZbFNuY2QyQkNzTU1PdG1ZNV9QQlZLajgyczV1eEx2OHRpc0ZZdF96b19FUmJDT0xEWmNnVWRoMDJYZUEwQm8xclR0R3ZvLVRzS1p2a0hQU0FMbGdDZG1OY1pJbExfQmc?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "\"Kenya is the first African country to establish a structured Digital Dialogue with the EU, covering infrastructure, artificial intelligence, innovation, and digital public services. At its next session on the 23rd-24th of this month, we look forward to advancing fibre-opti",
+      "category": "경제·금융",
+      "reason": "제목 길이",
+      "source": "Facebook",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNVGwyWGN3Q051d0EyTEZkNlVodDI1MklTeHFNaGd4YXBCYUxla2dmUEl0aGsyYU9SOG5hWE1tUlUzZXQwOGdzNGFSX3YzS0JmdnhCOVZNXzBfUGhLY1ZUTzdlQXZpVXJjcWRlRHdXWXhGNENfSDFjVGR6MFhvN2tndHhwTjdOU1hybFFreFlZZW5Da2FEbEpVTk5qYlhtNXNUSW1XUUhrREszdmhzS1B0Y1pHZlkyd1NPdzFnT0t4ZGNoanNmMmgyVWwxZWtNVE9Td01WaFY1SDF3YXJSa0E?oc=5",
       "review_priority": "normal"
     },
     {
@@ -575,14 +600,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "'Europe not going anywhere': G7 summit a 'signal to Russians' that Europe is standing behind Ukraine",
-      "category": "정치",
-      "reason": "중요도 미달",
-      "source": "France 24",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNRUNNWklxRUFrcXJBM1RybVRlVEk4NTM5WDFkc2xhM0JrRUZnY05oRXJpRUdWaUtSVHk3WmxIcEYtYWtEN0o2RkJYREVsU3lCaUJ5LWdNYUVIcjBoNHlYUjFhZ2RDcXRhLUZKOVNHeGRKZFV3VDhDbDBKQzM4MjNTbDUxbl92Rlo2SUtvbGcwdnFwZmdhZGZfdjRuN2RnYW5PQUs0VWxJWnVZMl9IbHM1RTlKZG95X3NuRF9MT2lLQ0U?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "'France has some of the cleanest electricity in the world, but we're not using enough of it'",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -607,14 +624,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "'I think we're on the brink of a revolution': Google researcher hails AI agents after they found what looks like an ancient Maya site in Mexico",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "TechRadar",
-      "url": "https://news.google.com/rss/articles/CBMingJBVV95cUxOTVJMbDJzY2l2Y0xNa0VWZTMwYkNsbEp4Nk9fUGhQNGFadHhhOUFrOFJBVXpKVzRpOWZWbXYxVU1rbXRWYzVkN3dHU1M1dl9fdmstLXJaTGZTeFB1UjIwMjlOd0FYMHFkU0FIYW1mT3VFMlpNejExQjJnNHB0eUc5aVUxS3AtTTl0bjAtYWozRTBrd2hHRjc4QXVZa1dJNzBocmZmQ21tdTh0UEZ5czVFSFhuOTNxV3VEYUUtQjhrbVQxOFliaGdDSG0zWG0xUG82OGU3b29nWjJHTUcwLTA1UnNYS3BQaHRLRVNZRkRXQnl6SUQ3dUVpMWptNHJ4OV93U0R3aEdYang5ZzJxdmZ2QXh2QXhIVDBhX1VsSERR?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "'Indra Dev' Kunal Kapoor finds new fan-following in Thailand following cameo in Ramayana, fans write poems for his 'divine beauty' | Bollywood",
       "category": "일반",
       "reason": "중요도 미달",
@@ -623,11 +632,27 @@
       "review_priority": "normal"
     },
     {
+      "title": "'Leaving diplomacy to others is a colossal mistake by the EU': Albania",
+      "category": "과학·기술",
+      "reason": "중요도 미달",
+      "source": "ANSA",
+      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPNHNwY1MtZXRTeEpHMzRXNElrb2Vybnc4bFRYanpjNVY2anFsWUJYVnhHUnhtS0toc0RlTmktNzRCY3VDVldOZXA4NlFuMThCa2hzMDBoWHREb2R3WThXTlVaX3VObWJEVFlfZU5hbUpCLXBDY0Z2aEFqU2hWd1AzSksyRjZONV9WMWktSTR1MFlmNFU3QmxBWmtuRV9pVFFRaE5XU0E3NFV5UGd3Snl1RkNzaEFBTzFabGdpUzFYbkxKeWM0QTBwdW9UakZmbDM2TzVIcFNMd1dxZFN4aGJUS0hzdzhQU2VnejZ4OEFRM05GT2p1QzJhYmZqVmNsbHFEcU8wNGt5MDVIcGfSAZACQVVfeXFMT0NpZEtHZGIxQXc2TzZDdldPUlFjYmludndVRkpkODlSVFkxT0hYYjZVcUtrcTBOaXc5LTJXT0hoakN4TlB3UXB3dTdtTWJjZ3M3LVA3OWVrbFVsdUZoWXFRNlRabnh1UFJLVU1Va3BBN1hVcUdpT05XVVdJTGxBWFMtR3NhMVdSdG1XNlRCTmpiTlZIVHNfTFNpOEdjLWFtQVlBRUhtTFByeklPUU44dS1Qa1pERmNpR29XUW5fbkdCYWhLQlNTQkY2WGNLdTljN1o3T2drWkZiN0tIb2JQRUo5MzJ2OXVFQzM3Zms3ZHJGN3N4T2RTU0xOcXJWT3duQVBReGhRWmFSQ1RNclF2ZTA?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "'Losing patience': Coroner orders NZ Rugby to produce concussion evidence",
       "category": "일반",
       "reason": "중요도 미달",
       "source": "NZ Herald",
       "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPMlFBS08tZGFRbklQTkM4SkJRU042TndoRTU4RlFUb2FYQkxnWV8tNU1Wc0ZEc2V5MlEwQ0oxc3YwLUV4QmZROXB1WVdmblNoLW5ObWJMMGp3a3E4ZUNpSW90NU9pRzBaLTZUNFVaU1d4ZWhIa0stN2JtYjNJY0FCanA5ZUtDUmVzZXNpeTJ0X0M1TlIxWElQWTgzdWdhMi10WkVaZ25oV0xGU1l2U1h0TkRqT2hFOWtEWGg4R3Zjd2dyR25uZWM1UnJ5LWhQUUlvTmJEc0JMamFUaWlQUkJtNF9NTHFraVhmY3ltN05KNlVCU21HOUlJZ3ZTQQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "'Positive momentum' towards end to Iran war, Trump says",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Sky News",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQY1lnQXd4UHRweTlsa3dNd2h6QWM3QkpxWFJqc28yQl9ETlg4MlAyejE2WS0ya0tLSU54NXNrcDJZaVRVWEJMWHFUNm5yTzZjb3YzME9DTElTS2V4ak5qaURNOW5pdWVsa0ZVZUIwc0lta1NtYUMtOG9yZndmTW1nS283blhyNmd3OElMdXF2R0VNdw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -887,11 +912,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "42 training sessions reveal Donis's philosophy with Saudi Arabia: high pressing is the new watchword",
+      "title": "42 training sessions reveal Donis's philosophy with Saudi Arabia: high pressing the new password",
       "category": "일반",
       "reason": "중요도 미달",
-      "source": "LiveScore",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQdEhPQWVUVWV5c1hRMGpJMjN0RGVxRnkxby1ULXNEY2trTUIzdU1taGYwWUtlNUlLZlhfRDlPeWppbHJWWjJvYUlSSDJoSW9OVjhPNzk0ZW9BcE1VMXhDWG1jeU9LQk1TYThHUklJeDF6OW54bk1ldlgzd2QtOG50N0xUMjRfa18wZzBUa19BRzR4LTk5Z2g0Rlo2WVlrWWtoempBNkZqZXJZNDNYa0ZPdTdYWGQ0T1hCa0Y3RVFRVHZHSG4ySVlrWThlYzM5cloxdmk5UUl3d21idl9PcHZDYU1SRmlQWDg?oc=5",
+      "source": "Goal.com",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOUUNlOWhrV3VZYWdlc3RReXVlMHZKYXA0MmpkME5hZVpoVlZfdDBJUktxOWF0VDlWNnduNlZULUVJejZZOFpCMy1VRkN6aHJCU1RNM3RSRHItRkNFNVJSMk5WaVJuWElYemg1OWlvSHl3RFN3czNVaXVZWVByNWhmVUJ5M3hUVjJUNG0yNS1uZURwb2xxZ1dESG1SRFIxN3gxa29lbjRRb3BxOFBCQ3NSRGppakZIbC1KQ0w1aG1FSGpXeUZza1ZxaFNCcXhHNmxpZ0NoVnV2bE1OZ2dQUlNLTVFn?oc=5",
       "review_priority": "normal"
     },
     {
@@ -975,6 +1000,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "A Muslim NATO in the making? How Türkiye and Pakistan are building defence ties",
+      "category": "분쟁·군사",
+      "reason": "중요도 미달",
+      "source": "ThePrint",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPYkt0UzcxVjkxQ1hPR21GMW1QMEt4SmVPUEY3dWZqZHFpZC1uX0dsWEFqOWdUeTJWdE9WN01wUTdXeVpfX3JYN2tEb0QzYTFUQ2VTM1pJZkM3c2JER2Iwak82ZW5tUm0wTml3dmo3Y2ROd3ItajBLa3p6N1RlY0Z6VmVsdmstYjItLUHSAY8BQVVfeXFMUE1mMWtYR1lLWFJSY1NPbk92ZjBVZlRHMWdVRmxxcFU1bW1ZUEN1dWFEN3VsWHBtR2ZQVHF6UUk4WW9xRDZIamhMMGR3QTJDMWRSWmI3UHpkejdIVkRnbWpRRmdWeHV6R0hRTGxqeHFVWFc1UVdzNFU0aTZ4Z0VPTWZyXzJseFdidXRXT3ViRmc?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "A Patagonian sheep ranch that once held 40,535 sheep is now home to one of Argentina's main Magellanic penguin colonies, and the twist is that the birds were already nesting there while the flocks grazed down their cover - ECOticias.com",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -1031,6 +1064,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "A major catastrophe can shut down businesses that never took a scratch, HDI expert says",
+      "category": "재해·재난",
+      "reason": "중요도 미달",
+      "source": "Insurance Business",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPMjIyUWczNzMzbHBYenhSQ01qeUFybDY1RXpLc3NtVGs2RU95VTAyV25Na3hwTzh2Nl8zc1BCRTRVOWpPbTE3c1YyYm84eVpJcmd4bmtnWDFXd0tsSXRlUHctVlUyeWxjam1HUnJSNGdYUklCMGRwUERnemF3OGhmcE9hTnE1R3l1UmxWSEl3YW9BS1Fpa2ZVUk5NZF9LVUhtOF9VMFZac01uRzU4aHlNSnNTZ0xtV1REeEVFWURwYnRTQ2xrT2NmaTQ5SE1NUE1QRlFlNzN5MTBabl9DLUVuQ1BYMkl3aEo1S253?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "A major market is opening up – what opportunities does this create for your business?",
       "category": "경제·금융",
       "reason": "중요도 미달",
@@ -1055,14 +1096,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "A telescope in Chile captures Betelgeuse’s clearest companion image yet, revealing a possible star two to three times the Sun’s mass",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "EcoPortal.net",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxONkVTWm9wZUlQZ0h5OFlPOFZIQmJnX1lXeUMtOGlLLUpYcTZjUTg1V0JyRUk1YmJjX0lOemJjXzc0N2hKUURsVW1DTXhfMzRnanVvdWpDWmJXbXlraUl4c2ZlcHYxckJNNk56LUtEVkdmNFpmRUplanRkNmVZNXhoZw?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "A tiny poke gives molybdenum a new structure",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -1084,6 +1117,14 @@
       "reason": "중요도 미달",
       "source": "Inquirer.com",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRnI2Z2NIVy1xdnctc3E0TTktOUNpdXhUaUI4X1VxMzdXaXZ0M29GbnVQODJPSjJTRnlzWklJZzFmMUp4N2NUQWdDNXQ5V0xYMERKTG5ITzJRQ2N3ZUUzQ24xaHlLcmQxMFJleVlSczl4a2Q5NWtjUHFvMlp6amJoQXJZWHRMUU5uWU5jb1BlRGhCbjc4ZnN5clZuVV9yanlTQktiNGNXbG9IQ2NjQTRWUW9wRDJxZw?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "A wave of hospital mergers is changing healthcare in Minnesota. Why now?",
+      "category": "보건·의료",
+      "reason": "중요도 미달",
+      "source": "MinnPost",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQVnRlUTJDSzZpNm1NRm14MW05dS01ZmFHVXNsR1hsZGFSaEYyUHBXYW1jcC1aQVozTkM2QXJYNWhjX1ZEVENCbzZ0empGLXZjdW5rZlB2SHc1bDhobU9XU0VwWjZOaUtlNUhSMElaM1pLV3BjXy1vLXpuLVJsc1FmUlZ6b09CMzBVQUs4MFd5clVmSmViajdsNW1yVWRsQU9NZDF2VGVJYTN1S3AtbUttSjd5NUpTSjROdDMxZldR?oc=5",
       "review_priority": "normal"
     },
     {
@@ -1247,11 +1288,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "AIIB identifies up to $6B in potential infrastructure projects in Kazakhstan (Exclusive)",
+      "title": "AIPAC is losing its grip on Washington | Palestine This Week",
       "category": "일반",
       "reason": "중요도 미달",
-      "source": "Trend News Agency",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5rZnBRcklPX1lLX2ZHMW5VNjVEdHpMa1h2WUVacUo0ZHVBc2xXYWNKclpVeVFyZ2ZONTV6RWhjcFJ5NElFakVOOU5UVFk5dFlSeU8zc0U0bGxHWm1VY2Iw?oc=5",
+      "source": "Middle East Monitor",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNS0FoQkdfSnZOakFzRi1jcW1XQ0FXSk1CZkFhOVFtZ0Nqc2s2WWg0QVU0WXgxbWJnVGlPMlNWWUZXSnZvWVpOZ2E1UGhkSTEtU0EwRE5kOEowbW9NOVlfWlNpUlRYb1FKMV9YX0hrUHFNQUV3eFFfdk5EVG1fWUlLZC0zVVhQSFI1cWRtNkRCTG0tY012UElhaEhKcmlxdkJwd19tS9IBqgFBVV95cUxNcVItZm5CNEExVVVjNEdUYVRsN2g0OFQ1UlRWSWFkSmFudEdqU01RYWI3SERtakZ4Qi0zM3lNZnIzWkRnV052WW5qQi1FZWhTV2hDVjRnVWJKRWFxNURYdFNFY1Q1ZEZMNThvYVRPSGhRc19wclF2TlFNVVJqLTdkZnN4MjA3WUt3OWR1WDRsQjMwcmh6NmVMQ1JKNTFfTXQyRlBBRmJjbkRvUQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -1583,6 +1624,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Aeroméxico to launch six routes from Mexico City in 2027",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "UA.NEWS",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOb1dQSHFsMFlWdWdodUpCYjRfVWpGRHU4b2h6WEZMWkdJYkJ6Ym1UMllsSWVzRmhzV1VuOXdqaE1tYUU0RTBicDhaMmtKZU9zOHlTeUYxRFlUdzJLWUVVbTlDNkN5Qk14dEJLclhLc1lscjU2NjNQUDJleVNOUEVrZko2eVVnQ3dyZTZIMWY4OTBFVU9RNFBjRk5fRHcwemxLMHVpd2Rqa05Qb2JIbTFsajlrYm1vZ28?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "AfSNET 2026: Can Calabar turn investment promises into prosperity?",
       "category": "경제·금융",
       "reason": "중요도 미달",
@@ -1660,6 +1709,14 @@
       "reason": "중요도 미달",
       "source": "The Diplomat – Asia-Pacific Current Affairs Magazine",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdmhQVEtHaEd2SlBTdTdhX3JueklGTWkyTTlsWUdVYjE2ZXhfZDU2VHV1UDdWeGRvWFZzNzcwcnFjbm5TYzlGSTRJTTBrTGNsU3NVSWVlZ0tCeFdCWENkOTRyU2hBRE1Fd2tiMVIwTHozTnNad2J3ZERIOGs4N2NlOVoxM21adko2UmhkdjRmNFNKZXpqLTBN?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "After U.S. shuts Ukraine out of crucial Russia meeting, EU backlash erupts as Moscow and Kyiv strike new deal while Egypt makes a different demand",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Business Insider Africa",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPWTYtTFFDV0IwZnpzdVZLWXRmNDRVTU90QXRqRnFhd09XVVBGVWxlYVc1cjR6U2YwT3FPTEplTDNQS1NneUY5djBpeU41eUZwUENNRWZyOTd4dDN6TkRpLVBUdGkyMW10bEVndHlZSllvTlNNcjVkbW1LWHc0ZzRyT2VxSUR4ekw3V0FhSnBrd3owOGwwV2pYb1BnbHVkeUwybjFMNkVZc0tnSXBJN3hUQS1iOWV3bDVoTlRtTnRvUGhxc1oyNkJwTFR1OFVfeUFQdlplY29wa1RaZw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -1828,14 +1885,6 @@
       "reason": "중요도 미달",
       "source": "CBS News",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPQVpqVFo5ZWVIYlJHVFF2SjV4QllKTXVaLTBqbzZDakwyTUEtWEJhdm1URnA2U0MwbktKbDJRUVRDU2xuaXh3N1BndWtjRlZ6UDM1TVF0QnpvOE5SUXo0ckFTVXJSNkVpbUtDYWl6STJXWTNQVUVjNnhjdHMwbjNSN1JCZnNGRVJGT3dwbzc5Vmp4TFlkYnVfd3NB?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Allied Gold pours first gold at Ethiopia’s Kurmuk mine",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "MiningMX",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSHdhMGRiaExaV0o3OEpoaUw0d1pjZG5ic0tVWUhucklmZFhGeDlDVUtpdkhQeGlLWHdkMkMyUkRtZkxJR2xHMi1BUHpKMnNIQ0NwemlRSW94eUFDRWhYc1QwVW9jY0szVERaaXd5RFNWZGJuOGdvbjBNbm9vM19DM3pyZzBhbFgxVE5Vb2lHdlQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -2055,6 +2104,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Antibiotic use declines in Belgium, though some are still overprescribed",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Howl.Link",
+      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE9oNGNSVXlyMnlJOWtFeXRrTmJRRlhnVkZVU1AtcEVIZ0dsREdsTS03RHRWUTB2VG5pV3pN?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Antibody Titer Testing in Animal Shelters: An Additional Tool for Infectious Disease Management",
       "category": "감염병",
       "reason": "중요도 미달",
@@ -2140,6 +2197,14 @@
       "reason": "중요도 미달",
       "source": "High North News",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBIZFBDOU10SGJmMERHbndZWXlXWFV4N2p3WEQ0TUVncU5CY0V4bUhJaENUZFZreTJwRl82QVZaTllsVy1DMjFZVjlKSHNUbFJBTFViRUozaHNlQ1lPREtFOWxLWmNBT0lqNGQ0a3JR?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Arda Guler form gives Belgium warning ahead of decisive Nations League trip",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "GhanaSoccernet",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPSmhsT1Y2dC00akpOaG9oRDdvYlJjNUR6Um9Bd0hjX3d5S3kxbnhRV0NjVkdWZ3ZxUk1NeDNwSWMwWnF4TTlYRTNxZFpHclJlMXlrNUFRalU1eUhlMG9hd25ya1FlY2RwSjZ5dE15bm0yRndOTlFQN2FqbHlvMzlzMHBwT051X0czNlVxa1U0bGJaQ28tdllMZzZrb1FjZk1XcUNYSA?oc=5",
       "review_priority": "normal"
     },
     {
@@ -2319,14 +2384,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "At COP31, Turkey pledges to raise electricity share of global energy use to 35% by 2035",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "ThePrint",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxORU96VjhoUUlveWVtaFVUVjJxT0oxaDJERGVITkR6V3NDM0txVWt4OXFJR2V3djJ6cXR2Q0lla09XVDV5N1FjVHBqclNXeS1rdDhsY3g2VV9wWkZOUXlHN184WUs5LTZnNUk3MnFzb3lMQWEzLWMwQUJCUHF4OUQxUFk2NmpPTjg2R3o4a2JXWEFyd9IBlwFBVV95cUxNa21lWXI2WDVIVktqTm9BVnhqbVlaeDNtZ0lvQnpnN0pRdHlJb3BIaW9Nbl9rWkloSlFQNVJYVm1DTVBSUVJDNEpraXVqWUdZYWdJWWcxcXg5R0pCbjRFT3Y2OTdCRFFCanIwVDJGTUM1VExQcGE0OG95WWZraHEzblZ6Y0t5bThOOGlfTHRGaFVDb2lkNnFB?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "At COP31, Turkey pushes zero-waste plan to curb climate change",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -2431,6 +2488,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Australia's Pharmaceutical Industry: How Biotechnology Research Could Strengthen Medical Manufacturing",
+      "category": "보건·의료",
+      "reason": "중요도 미달",
+      "source": "businessnewsthisweek.com",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNQkQtOTFsdzd0VWJBbDFjUlpDblpWdUc4VzJWS1dYMHlra25MSkRGcHFpd25IbFhLZnNpelN2QWxJM3VuUEpoeTlVRTJoZkdqaHZHZ1U3WFdFS3FwOUw2ZFNtQ2RmSmUzaW12VTRMamRfYkFHenJLdFRrbl9YRExKTmZwWGVzbS1sTVlvZnNDdWNrVGt4Snh3QnF3aHJVQ2lCNno0TlEtaEZRdm00SDh3N2llT0tHTlhxUHNlTDdUYUpleGUxUjhhMHB2aUt6OUtJQW0zQzRYU1I?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Australia's climate credibility questioned at UN conference",
       "category": "일반",
       "reason": "중요도 미달",
@@ -2527,14 +2592,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Azerbaijan's European influence grows as Baku secures 2028 summit",
-      "category": "외교·국제",
-      "reason": "중요도 미달",
-      "source": "AzerNews",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE12WUNwRTE0bXhXOTE3Q2taem91d0xoVEJiRlFrcEdmcXlnNXgxaFdWZmF5MEtDV3p1UDhGNUlIcmY4Sm1xc05XbW5DaHF3RzBMNndCZTB4VQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Azerbaijani Foreign Ministry offers condolences to Poland",
       "category": "일반",
       "reason": "중요도 미달",
@@ -2564,6 +2621,14 @@
       "reason": "중요도 미달",
       "source": "The Guardian Nigeria News",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPWi1RX2RKWHhBQS1pRnA2MHZFM1o3RWJVMk5HYmxmVng2a1d4R244Qnh6WE5NLUNFOXluSEkxSkVvSzJwSTMxMUl3TGV6UFJ2WEU2dFVhYVg1a2syWVl6MjBkYkdMZUJlWE5uNDRSWHlBU3VwT2lJZkNXZUIwOWhfWmR6OTFKOEFQTnZmUDlpZHBtbmd0TVE?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "BIT - Net Asset Value as at 10 November 2026",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "BusinessDesk",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZ2JyREpYNHRBUWlUXzl2dVVIUnFhdDliSlY0N3dNMmR5Rk05M2txQmlVTjYzLXl3YjJodDA5ZWRkbnRpaS1YMVhfNVF4Q3JDSzZvUVo4dlQ1XzRqaTVUOFZ0QndwdGhlMjdzVkpwS3pVUmo3cVQ4VmFscFlZUldxUk5aSVZHWENpODBZMFV3?oc=5",
       "review_priority": "normal"
     },
     {
@@ -2684,22 +2749,6 @@
       "reason": "중요도 미달",
       "source": "Global Banking & Finance Review",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZjJkVXNhczhxOHJUZjRDQkVCeWlTTGROOXI2ZWM0SmFJZEhNeldPUG92bTVXUGlJNEl3NDE1cHgwSHFLaWVPcUtzemFNRHU3QTdQSktEeGw1dDg1Q2RjWTlCME1oSlE5ZF9vRlJiNXZDMk1fY0kzcS1CRmhMdnFRRHVJQXFhek9BUTJ1SXR1dXBSODY3cEFsRDJZMGFkUlE?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "BWX Technologies, Inc. (BWXT) Stock Price, News, Quote & History",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "Yahoo! Finance Canada",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9GLUp3Rlh5WTRhTEs3MWVOMlVUQXp5enRkUFFrS1NPZTU4QV9JM0VKRzQ3S0NKQ2JTQnBoVklXaVc2S2FndGZ2VkNXVzFsV0lYTWc?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "BYD considers building a battery factory in Portugal",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "electrive.com",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQOVprWVlBbFRZZ3JKbUdRb2s1M0J6LWQtUS0welhaUmVOajQ3SGRoVnByclRjMUNYUFI5aDJqRS05dVpDZ1dVVWZ5ckg4WTVQRUpKQXBJUnVyRFFOZVJNb1BRWU1IdlZZN2J5bHJZMnBwQ3ZKREVoTVpYdVF4S0s0QXVBaXNYT0htQ2J5X0tqZ2xBdDZZ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -3175,14 +3224,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Biopharma’s Portfolio Problem: Rebuilding Growth Before the Patent Cliff Arrives",
-      "category": "보건·의료",
-      "reason": "중요도 미달",
-      "source": "GeneOnline",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdEFtYUpYbl9tUk9Ld2ZMalBrVUdPdVBqenRkSnNpZ2F2aUJhWmE3b3Y0NEdkWjZQS3FEQzFuTXllY0wyVjlDQTAzbGFqb201TEtZeENHb3c3bXQxMXlnWUZVRjNOamltbU9PaFBnYjdHNkhjVDFEZzJoNHJ6eEpDdEd0VmxNVFNWNzg2NHc5Y29JOTBiY2JXRzZ0U2hnX1FkeFhFWHJCZ0JXQQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Biotech funding froze. Why has this lab instrument maker climbed 25% anyway?",
       "category": "보건·의료",
       "reason": "중요도 미달",
@@ -3423,6 +3464,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Breakingviews - COMMENTARY: FAB rights issue may suit UAE more than investors",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQUTQtUTh1NTMxSHotMk9MZmpwOTBxMG9EekFDODhfTHpwVFhGQlllNllqN3ZDZVl3RlBKaXo3cC1zME53MVBmaXRwVUZpU3lNUldWbXdEVm1oUExWSDdocTJMTXlDRlNEZGY4ck5tOElKTldLUktid1d1UXBuZTdtZTR4WXZNUS1iZ1l2dVJFanVHaXZieUVwSUpaQXNUTGt2d0FUendGTXYzU2FhaHM0?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Brett Randell earns maiden New Zealand call-up for India ODIs",
       "category": "일반",
       "reason": "중요도 미달",
@@ -3484,6 +3533,14 @@
       "reason": "중요도 미달",
       "source": "The Record from Recorded Future News",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQSE92SHE1X3RUcG5CcEFCbmxBRFZyX1hOal9VaW83TW1vTzVvN054SXQ4ZExSNXhZVFhOQnlON0tQcnFFa1hNWXlOLUktUWlPYUJRQWNWTlBfcmZCSHVtODh1MzBBOENhdkdWYTMtbmtCUGpZbk5SX3A1NkhSLVRKV2NMY2Rzb2ZEeXhUZThmWQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "British Business Bank Boosts UK SME Growth with £40m Harwood Private Capital Commitment",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "FF News",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeExaR2JiMUhkQVdFSlZYLThreE5RMGtzNEZRR3VhcVBYLVdseXhCZWJnVzdMZEUzLWI4V3NneHZKaHJyVzczWl9LUnFpNE5XdnhzM3g4UFc5Z0dSUnVPRnFPT1VVb1VJN1FKbnhTWm9XcGNPNUhZNS1sVDV3QkRNUmU2V1cxZmVWaXRxRE9fTmlpbjJlZ3J3bEh5SnhRejVkOU84YzB3aFBUMzZI?oc=5",
       "review_priority": "normal"
     },
     {
@@ -3563,7 +3620,7 @@
       "category": "경제·금융",
       "reason": "중요도 미달",
       "source": "Punch Newspapers",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE04V2lOQlBhS1RKQURoY0hUYUdzLVlNdmRRN2FZNUZtVHZMZV9zSzJtWkw3ODktR1g4b1gxS2d1Ym1lblJUZ2dnUFp0OEF2UV9hMEkzTC1OVENreVE3UWhsWWk5QVhoRVZfSHAwRzJVcnFCOWppQ0xZR3NGVQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQTWV0NEM5Yll5clNHTXFDa28tbVcyX281aXdwcUxQQktodm9ZSE8xUGVEaGIwVklmUXhVcHlEUmVlU1FPYk9HX2Q2NndiTFVWU2tzV1ZSSDZjM0Y3TGMzUjNzYzgxelRBbjV3bC13cE43S3BfMGxidlhIS0o2ZzZSZA?oc=5",
       "review_priority": "normal"
     },
     {
@@ -3607,19 +3664,19 @@
       "review_priority": "normal"
     },
     {
+      "title": "CDC Extends Entry Ban for Foreign Nationals Recently in DR Congo, Uganda, or South Sudan for Another 30 Days; U.S. Citizen Travel Restrictions Remain",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Fragomen",
+      "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxNN2poamJ0R1ZBQ1lMT2JVb0lDOVM1NGpBbDZzX0szV0hQc19QQXdYV0xVVVI4MlhFRWpLekhpV2huZkpfTXd0NGJwN0poUDRvVERjWXVrcjRGU3FJUnQ3Q0FhOWZrMm5kYW0yYmRWQW5pU3czYmRTb0l3cXNWWllKWlB5Yk8xcXk0cjVsOGtkd2J6MGJncnhHSmozaTNVVWlGenkzeXFxNjdDMXJWT2xlWFVDUjYtYmw2Rno1N0dyMDc0cUpuaWhsSmdad2JqVDd6aUlpeTU4eUh4WHoxNENKcnJjWW9LZlJsM0UzQzRNUGZHYVR1bUJPZ0hDdFNDR0Vqejc1eGQ2c0hOdGFTcUhIaA?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "CFE Fibra E Seeks US$867 Million to Expand Mexico’s Power Grid",
       "category": "경제·금융",
       "reason": "중요도 미달",
       "source": "Mexico Business News",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQemdkamVBV0JuLXNUdHcxX2w5dTNlQnFVSndNSEpLMFBKcTJLMzNBRjQ3X0dOWndGVldwSXBhajkxUTZiV3NSVVhlLTRiODRDVGE0cDd5YXRwU1NwcGVFSXZOdG1fbzc3bUREMDVJVkstRlFQb3YzNkRnZzQ0OWRjMV9PTUxOb0x6aVRtbExLazFob1RLOV9EdmpSRk12MGJFb0lvSzMxWWM0WjUzaVhaVA?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "CII Summit aims to link Andhra Pradesh industries globally: CM Naidu",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "The New Indian Express",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZXo0RkpFVlJ0aHp3R0Vpd1dVdUpwRFhCckRYSEc1d3VZUzNOUy1CQVROS1pkOG9TNjVNazdGNTg1d2JkWEJoWG9rTndpYXFob2lWMmpEa3VWVS1yREo1MVBQeDRrR3J1Zk5zeWVqN0p1aUo5eHNlSjdOd3JDS3BEd0o3REZTN3pLcUVBT2NmSDRkMXQ4UFVMNC1DVjllcS0tOVlqbEVIbktOdXN1RzVpRzBabFZ3S2RyeUFTV3hEdkhIa3RwZEVibnkzV3VINFHSAdwBQVVfeXFMTzJhcUdvR05hYjRZNkJmMkxuLUdfRnB4c0l3Nmk1cndjV0ZPVlp3WUlZSm9iNVMxR1V0UXh1alhOY3hVZC1RdUJ4RVA5Q2E4UnpBeFdvMU5HUDBkUTNzRzVEYWttZEgyb01PZGxBbnJyNF9hRlRmZlE2QS1FandfbkltV2FQeklETEhKM1lhaHB0TGY5bnN5ZHlRQmhBTTJnaEw1TG8tVTktLTZ0WWI1VEdMRllLSk1RM3BGZ3RyLXg3bVpiMXZxWHd2QzJqclRnRUlsandqTDk2aUFBdQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -3711,19 +3768,19 @@
       "review_priority": "normal"
     },
     {
+      "title": "COP31 Puts Energy Transition at Heart of Fossil Fuel Exit",
+      "category": "과학·기술",
+      "reason": "중요도 미달",
+      "source": "Mirage News",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPNUhTd3RraWRhQWQwRGZ2ZGFCWWNwcnk0UlV5OWU0MGpRNkFfS21vdkVtNXk4V0RwTHh5N0cxNVVwejhGQTU0SjFFeUJucWVsRWVyMUN3YlI3RzVjdEdZSU0xNnRmeFlHaDZXd0NSMHdGQlFXb2lSWldGOGNFRzRNSFU4TXJhS09ZNlNz?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "COP31 and the U.S. Retreat from Global Climate Leadership",
       "category": "정치",
       "reason": "중요도 미달",
       "source": "Just Security",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOUkdUVlBwSndWVm1ZUzZNUjZsa3c5dFhPM05qU3BiaU9GY24zT1RLYlNtZFpkWkNFM1RJUEx1WGdJdjRGUVF2eGx1WW1TamtGa2h4Mk0wZnV0RkxkZjBjNm1GaVBrNU5XRlVRS3BKN2ZudTdXaTBBdDhSRXZEenhyR0VRTW9kUQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "COP31 begins in Turkey as war and energy shortage looms large",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcmNiY054R3BxUllFOTdseFZMRlpSWmQ5WTBsNk95WGNEemlDdm9weFdMU29RR25oRDJzREE0d2dvME4zTjhFaXBjZjZidXBpYkJEeF8wOVppS1VNOURSY2JMX2cxVDZ5RE5kRjJ6QlhPX3RJcEdyelFmRkFVRlVISzBsXzZVOUNUZ1lXRkppbE4?oc=5",
       "review_priority": "normal"
     },
     {
@@ -3999,14 +4056,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Can Tehran survive a ‘zero oil’ budget, if US blockade on Iran persists?",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZk10RTdpWlBNQTRoZ0dtdDJXcng3SDYtODIzYlNab0VKRFhGRVJVUHZueUE4UXpiQXNhd2RkYlgtYzFzUUVtTEZ0YV9tTlBkdHhsdzBvTi1mbHNqa2JCT200ekM1b3VyaEZocE5KU0Y1TUhpQ0lZN2hSek5YOUJJSHhIZDJzWk85VThuYmlDQnZwRXJQa1pjOFRSenFJbkRBMURuY0ZKRTJ6VW1QMXRzZ2hDVdIBuAFBVV95cUxQZDF3Rm1YU09HcC1FWEpPU0VfQTZON3hXZ21TZVJfRUIxT2ZFV1VxREJ5cXZfN3oyTnR1ZFFQckZlRkFualZodDFvLVd0alNZd2RaSXhMMlR6WVRoUzg1UWxNdFhZUlFZS2xWTFB1ZG9sYjZzWjVMU2oyaHRiQ0Z6V0U1R3N1NDZ2SU9GMFB5SVNTX1dXU0ktWC1iTjlDYXJ6V3dHUTNJWTNlMmt1RndlS3BVTUNaRUFk?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Can Turkey Turn a Record $1.6 Billion AIIB Deal Into Faster Climate Action Ahead of COP31?",
       "category": "경제·금융",
       "reason": "중요도 미달",
@@ -4199,14 +4248,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Capital Group World Bond (Canada) A (0P0001CB9H.TO) Latest Stock News & Headlines",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Yahoo! Finance Canada",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE90emoxWTZsUXdDOE4yT1ZaN09LcHdteWF5VEtwZ3VVQWJNYnRrMVFEQUxMY1pKdjdkTXEtcV9rcG9yNTJ1Q2pVVmtrTXZVc0lYQkFOanNMYld1bkhSMnhDNVpUUDM?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Captain Kane and midfielder Bellingham speak about defeat to Argentina — BBC Sport",
       "category": "일반",
       "reason": "중요도 미달",
@@ -4268,14 +4309,6 @@
       "reason": "중요도 미달",
       "source": "FreshPlaza",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVTAyTEZ5Vy1jWFVSOS1fb09DOUl5ZGhTaVV0dzNBOFZ4MFNIbkJFZlAxamlMcFhXUFU2VUEwYkxRNk5jUURKeVZ4RXFYcGNScnU5M1hzZW1zWXd4LWx0MGZyT1hQNFRxcThVNUQwS0dmU0hlTGlzcXNUUFZtcU1hSml1eElzYVFxU1RtSU5TUWZ5Qm43YlBJVlgzWmtsNWxWZVdKWWF1TTY0S1BrYThOVTQ4MzRxSGxpb0ZCNA?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Cenovus Energy Inc. (CVE.TO) Stock Price, News, Quote & History",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "Yahoo! Finance Canada",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5oY3pIQzE4V3ZMemM0Vko4RmllMjVwOWJOQ2I3YlItd3pfT3drZDFaamxETmF5TFRJQTRaRHBuNFZxZ09ZT1F1T0c1dHlIUktQaUJZWQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -4439,14 +4472,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "China Has the Drugs, AI Has the Hype, and Big Pharma Has the Bill",
-      "category": "보건·의료",
-      "reason": "중요도 미달",
-      "source": "GeneOnline",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOenV4YzFjdy0taElrMkNONXFtaV9TM1NaNWs4U0k3Z2E4U0p5UG5mbmxmaEhPZjViRXFXdE05VmExbHBGRGx4OGJPUTI3WUo1OU5ienBadXRpeHVUdHdqU2Q3eXhjLWtRcmNwRlVUWGFCdllkZHNBWXJIU0FMR080RHZsWkgza2Y2azNtckV3RlEtMmQ3M1E?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "China Releases Clearest Look Yet at GJ-11 Stealth Combat Drone, Claims First Live-Fire Strike",
       "category": "분쟁·군사",
       "reason": "중요도 미달",
@@ -4524,6 +4549,14 @@
       "reason": "중요도 미달",
       "source": "Green Building Africa",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUHEzODJhaDlwTmlaSFkyNE5oMlRTSTlEekxnLVctVWlZd1RUdjVoNEdqdzgySzRhNFA2UVBTZE40ejhpREw3MkZvTlJzZ1IxSnNMdXRUeHhMSFRBRjFjdkJ0SWpkSWxESEVwTThYUjRqUmVRQTlRYWhRSkNHOVo0bWRtM3FRcG9WRDRmZ3Y3T3NuWU1Kem53SU04UW5qakRxUHJJ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "China hits $US1 trillion trade surplus as exports to US surge",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "ABC News & Headlines – Australian Broadcasting Corporation",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNRUNhaWdzOU1LWkJwYUZWaWN5QldFbVExaVF4SUR4dWZWTHdNMzdhUGlwdjNGbEJOaEtBZWpKaWNob3dsbmo4RENFWDBzVktvUy0xdENsX2hHVVpFMjBsQjQzVzRibXVpWkk5VHVxUVl5N1hYSkxvbU11aklIU2FaSENxNmtTNGJxb0dxckZ3bzdQWjIzcDJXcWZlV0hyMTJfOTVUX19Pc0FIQQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -4655,22 +4688,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "China’s Li Auto makes Asia-Pacific push announcing entry into Singapore, Hong Kong, Thailand, Vietnam",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "The Business Times",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNdFVfbXN4QmtaRFgtNG5xVUFuMWtaOW9DR01pejRBNkdfWnljMDVDeFFYNlFldDdhS3ZHYUEwRFJzaE5lRXFidUdwdVB2SUp0UlY1dWw2Sm1YTUtJdlhUaHFTSEJOUTJ5X1JuTXlXRUpUb1JLU01SbTYxdDRnaU1OaS0tRWxOUnd0bFdycGtUWVFONTVNVUdHZFdjQV90dWEtTkt4UEpHcEozM19zTGtkTWpjVDUyTWtQaXBiRWdFM0RWWjlXOHV1YlVWMEYtc3ZuZmpwTmZ6Wkg1cVZqcWc?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "China’s Push for Influence in the South Pacific Is Running Into Resistance",
-      "category": "정치",
-      "reason": "중요도 미달",
-      "source": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMVBZQWVNYzcycVgzTEswUU9KbXRLcjZ6VzN0bXhTa1B2aUc5Ym9tWl82NUhqYXdWZXBFTFVLWjNLQk5GcTJZekR0dlB3RmIySWZ5MVBEZGdiZDlJbWVxbUhtN1BGdkdibDZZUlo2T1FXSVRMOFF6eTl1REwyTDVlNHlfVDExZ2VOREhEZ2JuZ21aVzJ2clp6WlhXRmdubFNwc3JicFdQWEozbG1n?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "China’s Soft Power, Brazil’s Growing Place in Its Worldview",
       "category": "정치",
       "reason": "중요도 미달",
@@ -4716,6 +4733,14 @@
       "reason": "중요도 미달",
       "source": "Financial Times",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOcmpqbG1WMjVjVGtaTmdwR2hnbkJ0OWxiS2NZNXVWSklHZDNoZTR6eXZXTWhTZHdIeUg1elJYLUNaNGhMNHB4dGVUMnBJMlNTVVpmSVBoX3o2Z1JTTFZKa3VTVVlnQkNtZk54VVEwdWVQMjhkakJGbXpiYU94YVdPSmdzYl8?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "China’s trade surplus soars past US$1 trillion as AI boom powers exports",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "The Business Times",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQblg0UnpxUER0U3lSZ19BVDZzNl9UdjJZbXBsWERVanBzaEVoVXA5UzhkOUs1YnBrU3pxUmsyRnZXWGJPQ0RUMlJ0NmtHZm9EVVN5VktxOFJ5NWRHTks5Z05sbDZDZmN6R2VPRUZiZXdVWnVfREpSbFQ3S2YwdVQ5bUd5NUxNY1V2ay00N0FVR01aTkwyakM4dHpWOUZhWTlvUElSZDhpbVhsT0JQNG9jLTBwdlRhOFQwcGN3OGdn?oc=5",
       "review_priority": "normal"
     },
     {
@@ -4775,11 +4800,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "Civil protection mechanism: making the EU crisis-ready",
+      "title": "Civil protection mechanism: making the EU crisis-ready | Uudised | Euroopa Parlament",
       "category": "재해·재난",
       "reason": "중요도 미달",
       "source": "European Parliament",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9oN1BDeFVsMUJzYnhLSW01dERKMG1qM0Y3dV9tT1lNU0hubWlWYS0taEdRcjlWMkx6ZEdoa0QyODdUdVRYcTJtNXk0aTZFaFZrVnZ2dlRpSXBrcXBQQjU0NDZYcEFJcXlfcFlWbDd4Z2NlU3Rwa0E?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9KTzAwS1JkRy1ZTjZjSElzT1N2S1ZvQkJDQm5RSHU1bkV0bHVVNFJ4Tnd3bTRmcFMydkREY3JNejlBd192eGtmMnNUekliVlNNMDVfOThXQnBTWlpUMEFvWmlWX2hzTVI3Wngza2pOQklKdlQyRFE?oc=5",
       "review_priority": "normal"
     },
     {
@@ -4988,6 +5013,14 @@
       "reason": "중요도 미달",
       "source": "Yonhap News Agency",
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GQ1RHMzF1QTRSZktWdkRPcUt0ek11RWlJd084czdIYlJpVDViSlF2STRwd2lwSTRjOFBnQ2I5cnlCZHVUOGdKYXJsRlE3MHI0dEd1ZmdyTmROUQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Connor Hellebuyck tells media online death threats, family played roles in trade demand",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "CBC",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRWxyWkNTU010NC1HT1FDS1dRUFVtdzRDQmM5OS1VTUJqRHdSa1M1RnpWQ05uQXpRMEV0Yi1JZlNiNngwODdJUmo0TzJkczhzUjZWSGhjcktHNndsSUE1RWcyZnNEdTJ6bGdZS05IZFhSeTlFSTFYbkFEWjFsRVA2XzEyYlJYSHRBaHpZVUJLUQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -5207,11 +5240,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "CytoSorbents to Participate at the 2026 Jefferies Global Healthcare Conference in London",
-      "category": "보건·의료",
+      "title": "Czechia skips Poland military exercise as Okamura, Pavel clash",
+      "category": "분쟁·군사",
       "reason": "중요도 미달",
-      "source": "PR Newswire",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNczh4cnZldGUwTFRFbjFJV3hHSUZJLTR3cFJyTFRPVXRiTFRKR0F6VEV1bXFUYzVZcWxTUmJOUnBkQUxPRU1STG1pc0RORWJFRUZ1QVdDV3J0S0lROWRBTXpwdDF5ZTJSdW5QSUpiWGwtTzFfTFk1NmhHZVpkTjUzT2lHM28yQVU3LUV3Njg1bDNkOXJBcXR1TVFXdzZTU1l4UnY4RnpaNURyR01wa0RSX0U5dmk3T3JXeXozYldCeFB0RWVtMEk4cFdROWpMYUlJMHF0Y0d2TXg2cTVP?oc=5",
+      "source": "Around Prague",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOOXRLakdUX292RjZGVGQ4a3IyOGlqbHEtU0MwVXo1RzVzWWFDYUQwWHVXdWN6amQwMFRUX3Vjc0Z0RFRFNFZfLXBmaGJFZzd3QkFITXVwNUU5TmRqOE5OZGwzLUppYkszcjZiTmhQeGFJR0o3VkZTbFcwNzBCSVpCaEJOOWlQbi1lbVBBT1pCeG5kSkJqNjNsMEVOV002a2JiMG9PMTJ3VW9hMVhDSG8wOHZB?oc=5",
       "review_priority": "normal"
     },
     {
@@ -5244,6 +5277,14 @@
       "reason": "중요도 미달",
       "source": "The Guardian Nigeria News",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOV19nVkszZHNXWm96RHdId1Y1VFhQdk1uWjd0UVRidzVxZ0sxVlAwaklSSnFYQ291QTNzR25nSkJXOTlENnZvblN5YXd6WUJ4aWdLamVHdklaTDU4XzNIRHVPVTM1T3NiSGF0eGY4VkNMOWhQVU11YTVwVVU4QkFwX2FRZXRxbWYzVHZ2c1U3S2QwOWVaUmVFZ0dSQlVsWDM5S201Wk9DczNkcW1YdW10SmVwSmsydmhtcGhYZW5KRnE?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "DOE Explains...the Higgs Boson",
+      "category": "과학·기술",
+      "reason": "중요도 미달",
+      "source": "Department of Energy (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1YcWtVQlh3ZmlTazZoQ1hyRFRmOThyNDRNSEhXdWE1RzFkcldSTFRHdEktLTlzTG5UTjBZeWRXcjFtaVV1OE9XaC1XajAwWk94WE1YQXA4TWEyalBYSk16WlJ0RTZPX2dCdmc?oc=5",
       "review_priority": "normal"
     },
     {
@@ -5308,14 +5349,6 @@
       "reason": "중요도 미달",
       "source": "India Business Trade",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOSEMzbk9JcDFnTGUwbl94c1ZCWE5Eel9XSjh5b0N6MGV6OTRyVE1ZVmJRM2Z6d0xMdGFtU045d0dvTkZuTlprZkhETmN5bnZMV3pUN2x0bE5Cd01jWU1IY0x2anZLeWlRaVZETkZpNXJKUkhGZkFRZW1FN1dqZEtGVWRQbUlyTkgxUTh1d204cmlJZw?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Dairy Companies Belgium: Top 10 Buyer Guide 2026",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Grocery Trade News",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBkMHZuLVlIck0tZ2ZjQ01RWWFIYm5CWjE1Q3hnTEtCdnV3THJKWWcyN2RNcDJITjdzbWFidk5oRk0tT2d0M1VvVWNQa3A5bldTMnZQR2VyajA3Sl9idENiLVROV2dXbm5S?oc=5",
       "review_priority": "normal"
     },
     {
@@ -5396,14 +5429,6 @@
       "reason": "중요도 미달",
       "source": "Colombia Reports",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPMVZ1Ul9PTElVaHVMLVpHU0Nfd2RPYjRkT29GWkk1cjRkOERRd1NDVk4yeTIxZUpvbGtNNmhoQnZuTUhnTzVPOWZyc1pSLU5BbU5kV2xKbU5zcE1fUlVHV2M1VWJ3MmxwM3NwajMxbFhqWERWVzZscThQWW42S1dHcl9uMFdWNGw0RE1YN042VQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Deacero Casts First Billet at New Danieli-Supplied Minimill in Mexico",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Machine Maker",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYTlzRzFzZzJOYm9QUnFncDdjTHNUUnhGc2RaV2dXbWc0NG1NMHZBUnFQeUJXdWo2bGRiUC1wNnBQUlMtdGxPenNkNGxaQ0hpcllOYkxYUnZLTGh2SmpxdXN3ZVNRMzBEdE10S1NTLWlpODlaSDYxd0xQaXRYRS1HT04zZHNXSU4zMW1PODVpU25jT1U2YUxfY1ZURG1MZHc2WlVqNmtR?oc=5",
       "review_priority": "normal"
     },
     {
@@ -5716,6 +5741,14 @@
       "reason": "중요도 미달",
       "source": "IOL",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOXzhqWXhqMzJOMmQyYzktNjNmTkhvWWpfbHBsZHNlcnNnemVYVGZhdERFV0c3UFVSWU1obDM2VTBURWJnSEtLMk1QNnJGUGFBQTNNNUMyZkJ3d1BtV0thUGx2Q3ZhOTJNTXd3WDR6MDBPOUMwLTZSTURhWlYwbzYyUVZzNGtNTVFHNnhDcUEtcGRTTU8xX0ZXUFpUckZ4Q2RuZUt1SHoyV2k0NTdyWXcwY19qRFVGa21fWVd2V01ISTIzdVk?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Dominique de Villepin",
+      "category": "정치",
+      "reason": "중요도 미달",
+      "source": "Britannica",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9BUU96Q2ZBQ1lfVlZpSmNCQUNjTWhoSDdBN3VGdE9EdzFHdVB3YzlJcC04RXFRRmd1ODR0VENBWHphZkFhbVpILWZLazhHcVE4N0tPTThBRzAxWU1yV0ZZVGUtaTIzenVpalE?oc=5",
       "review_priority": "normal"
     },
     {
@@ -6216,10 +6249,10 @@
     },
     {
       "title": "Egypt targets growth of up to 6.8% by 2030 as it seeks to deepen US investment ties - Economy - Business",
-      "category": "과학·기술",
+      "category": "경제·금융",
       "reason": "중요도 미달",
       "source": "Ahram Online",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPWW5KWTU5ODZKenprdUQwbXU5Sm5NR2NzOTNQUWZXV183SnRmdjlXWlRIdUFhTkdXeFBsbE1hN0tEZGJOZE5HbS01SzROc3N0dTNEQWpqdUU1Z0tkSGxpRHFwa2hxa3FwUG9HOFJrRk8ybDZRM1pRTU5pSlhjam9ESHlyVVlwZHdCQXZBa25NOC1MTWFxOVNYZ1d5MWN0cDZtMlNqeUR0RTlGZW4wdkIyNGFaWTduNTQzb1k3SXM4QTZpVGM?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOZTh2U2E1b1hybDloUFF4c0gxdU41UXdXdXlsTE9mYmdsSko2OXVkdDIwVlU0NTkydlhoSnV3cWpkcXBPaWtUVTNObE8xUkJJenh6dTMtZFFpN1BpcFRESXBkMW1MRGp5QzFoeWQ0OGpwcnlmQTlXLVZacmRMZlUtS3Zzc3JkRDZ1YzlPekhlZS1FVklSUTNkYzhkZ3loWl93bDRyRWViUV8wYUZHS2F5SThfeXZaZw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -6951,14 +6984,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "FM BTG PACTUAL CHILE ACCION, SE (CFMCHAB0.SN) latest stock news and headlines",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Yahoo Finance Australia",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBhVUdudVVqMkMtVjhOUmV5bC1hZVdRRVlXb0RDc245RDY5aTRHNm5NbTg0SFcxemw0MlJXY01IXzRuNm1DMUJhaGdLTk0xbGFBcEZKN21NZEc4bG9lN2JVc3RR?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "FM Cho to meet China's Wang Yi ahead of APEC summit",
       "category": "외교·국제",
       "reason": "중요도 미달",
@@ -7076,6 +7101,14 @@
       "reason": "중요도 미달",
       "source": "ABC News & Headlines – Australian Broadcasting Corporation",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQZjE0TkVpWjJ1cWxVZEwtejBHTENVQlUxdk9xaWRDX1NLSHdVSm5yVHJXNWV3YmZFY3RDaUxFVW5Hd0RYdnM3bnVkNEVETmNxdWIxU2psckZHY2NXNzk0M2xNeGtRcWlhTHkwMUNXUDh6RWhDWE1qaTFxaWxKOGs1c19mWUxkWmVuSHJjNnBBb3RaRFV4SmFieDc0dUozZjFqZGRscWhYMGc?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Fierce Biotech Layoff Tracker 2026: Vertex trims 78 employees; Coherus lays off 30% of workforce",
+      "category": "제약·신약",
+      "reason": "중요도 미달",
+      "source": "Fierce Biotech",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE54YTd6U0Z6bkhSVmR3cEFEd2lESjRaQjRpZU1paTR6T1dmQjVJTFJETkd3UXNSaGdja1NQbDFocDVaZHV0M0NyRThZT2REM1RWYldvMTJQanRiYS00NzEzVTB1Njl1bEpOQ19ST0x6cmUzTlRKZ2pOZDQtNnI?oc=5",
       "review_priority": "normal"
     },
     {
@@ -7503,14 +7536,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Four parties in Sweden plan talks on forming a government — The Local Sweden",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "UA.NEWS",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZGNxdmhSM3poWWdxZXgtQmtLalg3aWxJS3ZFdVgyNHRlNU1IUl9NTWNZeHEzOEN0U0w2RWprd2k5NTZTaVE5NDk1UVN2WURjUm51a0JJNWhVSTdiQXcyS2Q5elV6RktlblVTVTc5SHplOVVxUFJPQzV5bnlVenl2dnlTVDJMdEVuQ3pGNkNGVFdNaUtTSHZPOGFKeGlLZVZILXNLeEdOSXJSY3gyX21VZlJzeWZLRTlFcExQQWg3YTV2dw?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Fractile Lands $720M to Challenge Nvidia in AI Chip Race",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -7524,14 +7549,6 @@
       "reason": "중요도 미달",
       "source": "Healthcare Asia Magazine",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQd1B1NW5vQ0xqMXlKZFZ1eGI0YXlQdURlQzlXX0ZEVjZLLUFvbHRuWG5YU2Z0WFUzYjBraEZEbElfSWIwRGxnemktSHJWdWdvQlBDXzc5dktnZWdTdkY1TDNRa0t0R0t2WUNiMzlqZ0p5aExXSmpYRV9ycEkwd3JOZVR2RXV4SnhuQW5JeURXZDR2cnA4REJKMUlnYm9MZWY2emptU0NQdzRzdw?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Frailty Predicts Hospital Admission Risk in Older Europeans",
-      "category": "보건·의료",
-      "reason": "중요도 미달",
-      "source": "Bioengineer.org",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNQm9mRFNqa0ZNT1pxdzVPUmVFZ1B5dHhVWjVKZG9wdkhzRVdYQkV5QnBCSTJOaDNCNGVKbmtLVFM0b29mMEZwZ1Y3Q29rMGtiZU9ldkRwdkttU0tRWjB5UUZLb0FoczhuSlZxMHZUSGtTallpaFVTYVZ6ZmdPa2hQcHZ3WU5oM0w5QmZkYw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -7596,14 +7613,6 @@
       "reason": "중요도 미달",
       "source": "PBS",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQTEE3QXNXdW8tRkVGQy00d1pmbEFXY2JXNjZKZGRpVWZ5OU5zeTA0ZlFuNmI2MWxUU3VuTDBXNG1qNmFqU050azVLd2NHZWRfXy1EQVYySWVWdk5MeUt1N3FNSFBfeV9iQmhDWnRBLTVUUW1weGJJTFZVci1kVmdveVpQT2VaWXJ4cC1wN1VETTBnS2c1R2F6X0R1U1Q3X2FEeDdYMFBwTDVFZ2pa0gGsAUFVX3lxTFBMQTdBc1d1by1GRUZDLTR3WmZsQVdjYlc2NkpkZGlVZnk5TnN5MDRmUW42YjYxbFRTdW5MMFc0bWo2YWpTTnRrNUt3Y0dlZF9fLURBVjJJZVZ2Tkx5S3U3cU1IUF95X2JCaENadEEtNVRRbXB4YklMVlVyLWRWZ295WlBPZVpZcnhwLXA3VURNMGdLZzVHYXpfRHVTVDdfYUR4N1gwUHBMNUVnalo?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "France blames Iran for massive cyber attack on supermarket fridges",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Sky News",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxORFE3a3RSV0Q5OUpONXRhWFc1bWlCVXg2OEYyR1RjY1lnam9FV0o3VTYwMjdFSmp3Wk8zQUg5WWhDa1V3OVRBemp2ZGVzU2RBSmwwTlBpWFg2Zk9ncDBuQ0hnbVdQYXlnMmVnSDVlM2czZDZJY0VKR3NwNm5WZ2xqTE5VTElFWDVwRWtrVWJLMFdzLWcya0NITk1UMjdBMkFEdHpRQm1KdEhqU3RacTVpU1hNaXZLUQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -7863,6 +7872,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "From the battlefields of Iraq to the streets of Jacksonville: One veteran’s story of service and resilience",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "News4JAX",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOUE50bGlRR09MMnNxZWFNME5SYjR0TGI1Y0hqQXEzclgxTXd2S29obmtfcWZITnp4bUFTQkxFWDByeXBOdWxpalpqVTRnYW8wMU5zMFRLYTFVdEpEdE1MWDVKSFRkN3MwSVh0VnhFbEsyOXh3TExyVUU0ZUZBcmVDTWh1cDRTMlBWRFk3NGZ5SkUwTU5WUm96Q09HaVl3Q21lWWIwdFB6emNrdFNwVnlrSE5FQnAwWnlMcFhlRVNWVHp1a01KVDVmSlZiUmU4OXNlTWRVNXl1UEljZ1pPdENOMGxRdGpQUkRS?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "From toxicology to electrocatalysis: Using (Q)SAR and international policies to accelerate clean technology innovation",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -8047,14 +8064,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "GE Vernova to Support India’s Energy Transition With 6-GW HVDC Transmission Project",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPOTlCeTZrc25UZElsVC1PeGFiMll4ckpmWXliUTJyNUNfelZ2SWF3TXd5clliOThBN1poM1lhaDd2ZkhsTTZhVm4tTHFfN1ZMZnRybHJxcTJJLUlxalotOWhwMWlOVEgza3ozQy1uR2loRTdXdXhlQlVLSUZ4ZU5EVzNJbTFWRXJjbEhJZ3k2aUViQQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "GEHLEE’s “Closer” Debuts On The Philippines Hot 100",
       "category": "일반",
       "reason": "중요도 미달",
@@ -8098,8 +8107,8 @@
       "title": "GTC Secures UAE Licence to Broker OTC Derivatives and Currencies",
       "category": "경제·금융",
       "reason": "중요도 미달",
-      "source": "Finance Magnates",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPcVdSdkRrTFBhUUE5bFVkX0ZtZmpjMjFLS0R3UWJyTVFtenczci1RaTdrS2hRUjl4RHZaZnB1ZW1jRnNfWEgzUEJnalZXWW9EcW5ISkxkYS1sdEFpVGFGYkxkY3Vxd0VhTVhQYldWOHVISWVFRVN0V182S0VoRFRZZXZULXNIWF9ScXBYUGpDdy1kSzliQkM5M3E1S2NsNXJON2lHRjRB?oc=5",
+      "source": "TradingView",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxORFU0S2FaRDdaaExpNFVyanFSUzRSNUd4YVlBbDQzWTdjX0VqTThIU0RWQWFlb1g5RjFMM1dsaFhidEs5STZnUmV3SWhPX29fMDBJWnYwbV9rMnA1UFdVOUNwVGJ5ZXBDMnlLbXZqWGtyNzJ3OU5fRkZ4VlhsUGo5SVRIY2xJTTVybTlXRXBGd19DZlBVd191R1Axd04xLThZZDJNZ0RsaVo3Y01tUmNGUDNmc0FzOUlFa2tUcm81N3E0al9SXzdCTnln?oc=5",
       "review_priority": "normal"
     },
     {
@@ -8148,14 +8157,6 @@
       "reason": "중요도 미달",
       "source": "New England Patriots",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9KNHRUNE56LW5KOGphSEIydEZwUDdzcUVMMEpqQ1I5d2s0Ym5NNGVWcmhNc1ZBNXlzR05MRUY1a3p6Z3RMZ0V5ZlNRYjNXdHpIMkpxdHQ2WmI1SlMzWVlXOTBxS0xIOElMQVh0RlFUc2lWRlREYzNQRnpRd24?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Gary El Gringo’s Journey From Connecticut to Colombia",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "ColombiaOne.com",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE44blUtWU1Fd2R1VW92cTc4VXU5aTAtVm56NFFhcW5PbkZIQXkwVGwxSjdqdUltWDZlZThLckMxR0dyRmdNR0NGcHBnN082ZkF0aUp5WGFLU283bmhzbXlkTFFfT1RaNGhBSnlwdQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -8351,6 +8352,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Germany's Merz complains about unfair burden sharing, calls EU to prioritize new Ukraine loan",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "The Kyiv Independent",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZy1aS2k1U3pyWVZYTU04MkRCT1preWhXeHd6VTB3R1o0RHJrN3BWSUpYNVoyWS1FdXd5Q3FZV1loWE5Pblh2OHNlS0tOVzBFNFcxbk8yVDlwVlJGWDFyQlRaVDY0QVpsMVR3QUYyUGxYaVZMODNqNUw2QUgwZHNwb2t3bkJGOEhxc0RoTW1WWDNTbXY4U1J6VWhqZ1BONHZEYzRhZzJlSVRiUm16NFVqNnhTRHhSNHRvMFppdQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Germany's New Antisemitism Czar Visits Israel Amid Scrutiny of Her EU Record",
       "category": "일반",
       "reason": "중요도 미달",
@@ -8396,14 +8405,6 @@
       "reason": "중요도 미달",
       "source": "MyJoyOnline",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQ0JMbUVGS29ReENCM3F0czNjdW90ejFlRXV3WGhqbUJMNTJrSG1oclpFd2xVaVB4NG9yR3JTZ3ZnTVZDaXNReEt0SVNIRVR0NDdyeWU2aGZvczZlY25pejNrYkVjc1RrUm8wSG54TGRIOGpIc2R4QW9oS0Z1d1BWd21JeEFrUGliWjdSS25oQTVtZURFRnhudUZ3YnB0UC1VaXVscjdjMDFUYVNLVEx3?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Ghana's Cocaine Scandal: Public Concern Grows After Latest Spain Interception | AM Newspaper Review",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Modern Ghana",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBMd0JJUGVTVlVGYndWQkx3bzFXbVdBaHdnamFJa195djZfRk1fOXA3RXRFMlo5WFF4SlBnVXkta2c4dTlKTmx5TWNNRTg0Vl9BWVpIWHNvMEllNWI0LU16cjRBN1bSAVxBVV95cUxOeVlBVE8ydXBQaGFpS2xVNmNkNDFMLW9hZHludTg1bUpEb3NoNDQ1SG1VUFF1RFBHS3J1a19VYm1DNlAwYUJjeUF2ZHFraVBsb0hDMExfWWN0dWVsTg?oc=5",
       "review_priority": "normal"
     },
     {
@@ -8535,6 +8536,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Gold price in Pakistan plunges by Rs10,900 per tola",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Investify",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNWkNPSENHdjNFSi1ZbE9fNXNBSUdYTmt3LXY4NzVZUWJMb2dvRXN0a2dYYUdHU3dnTlNoWUowNFF0bnk3VTdkY2M5WjMyQ2pkWjZMamF2Y2kwaFhfaV8xdkdVYlVUMnIxdlJhTmJWSXB2OVEyNEZ6SU9HeGdrS184bXcyMllVa0lGTlFtVDRtTGF0SGdmbFphREh3?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Gold prices dip in local and global markets",
       "category": "경제·금융",
       "reason": "중요도 미달",
@@ -8556,14 +8565,6 @@
       "reason": "중요도 미달",
       "source": "Investify",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNT1FFWGcyTUFzSnJneVJsOVdjM2llRVIxb2FyWDVUMHFqZWVCT0V0ZVRISTFONDNMMnZnUGh3OHJPaDBid0NmeVFLMml3ODNtcl9ONkRCMEtWVkdFWmFGNnZMSzFpLUNfNDZuTmZSMXB1anFuVmkwZlFXcGxXVXVialdkcnlsMlE1ampoeWFpNVlsY3Y2VDNWRThGeGxnSDdHeXRzbXJlRWthZFBKVkdn?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Gold rate in Pakistan today, Wednesday 11 November: Rs427,436 per tola",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Investify",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeWJwWmtTdXJrbWZkQy1JUVNscmRQT0twYXJ3U3RHTmRZeGhoUnVzYXhtbzNBSnVSc0pnSDIxaUNYbEM2WEdJQVlCRWFfMWVNR0x3dlNERGZES3pzTWlRclJpRXFMRURUOWYycWo4clR4a3hGeG5GNjh2VUM1a3ZXZmRFd0VnbGUxTi0yU2VQNkxFZldaRnBDNWZJczh2Q1pRTkREWkVGWHlpQnllNTc5cA?oc=5",
       "review_priority": "normal"
     },
     {
@@ -8839,6 +8840,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Grid constraints impacting Sweden’s clean power investment",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Sustainability Online",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWGJwVDB5R2p3RnVhenVvU0RVRmEyRnRTZkFWMjdnaGZvOWJKQkV2ck9FS1FNTDFHM0szU2lvcy1pdzNoRl8wcTNBODRwUEpFcVBnRW9XckVIOTJpTVczRi03SERnSjViVG5KRE1XRDg4Mk9CVmx6Y3VKZXp5REwwR0lfZFZWb2QyOURQTE5XVHpSWExBNmRrX1d5MDk?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Ground has shifted under Modi govt’s feet, regime not here to stay: Sonia Gandhi",
       "category": "정치",
       "reason": "중요도 미달",
@@ -8964,6 +8973,14 @@
       "reason": "중요도 미달",
       "source": "Media OutReach Newswire",
       "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPeUdQUm05UUE1bW1EU1lwbzVVdmU5ZlNCWTZRSlI5Mk4xZmwyYVF4MTlRc3RTTWF6d2hwQ3d0WEgtbUVOcngzZmQzV3pqY2xNZHczMmZBcWN1NHBqSFRSR0Fub3NOeHVFTVhvdUxuWllhRVNwWHBHMWF4cFYtb0lOck4yakpXNGlfRkRMdXVYaXdCclV5ZW8xeGVGTTVCSE1WRF84dUtRUERCUS1fVEFnOGl5a3lwQnlIbXhkdHZ5YlNuRk5fZzBzNzVRX29qX0hwRUo2U3BXbmEtWmFPQlhRTDM2aU1nSFc3S0hqc1NpMUZWVWM?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "HPR Secures Taiwan Offshore Wind Deal After High-Current ROV Trials",
+      "category": "과학·기술",
+      "reason": "중요도 미달",
+      "source": "Marine Technology News",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPYkdzZWc5bWd0YnJfTGJGcGZkVUxuYXdiTGh1QURZU1E3RWVkWEVJZTNhS3lnZWxtQnpnTl9GTHJWN3ZLcl9kbjF2Sy0tWVU5dDN0NjVrRGdmN1FCZjh2R3N1VHJkTVBzUUxzZjlPa0N2TkJPdmxhY3RMUWQwY1RYVGkzTmw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -9415,14 +9432,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "How Portugal’s investment outlook is evolving",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "The Portugal News",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPQTE4d1VwZ09CQUJCeTVlYm9QMGh2dVhTdEhsdEVWMEdqbml1YWxIQWpmV055SDhOWWRjanJyMUFNdEhOaG9XelhYaHRwTmY5X0UzS3A5T0g4ak9VX0FwZ2t4TFZrZW9ZRTQ2S3FiQ1FMUl9rUzdLTEdidExsekxhSE5IYldHdzU2UkROMjlVUUE2TGxzYUdMVk1LQlhMdVFqQ0E?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "How Raised Revenue Guidance At Vertex Pharmaceuticals (VRTX) Has Changed Its Investment Story",
       "category": "보건·의료",
       "reason": "중요도 미달",
@@ -9451,7 +9460,15 @@
       "category": "일반",
       "reason": "중요도 미달",
       "source": "The Local Sweden",
-      "url": "https://news.google.com/rss/articles/CBMirgNBVV95cUxPZGxQZms3LTFzOWppX1BsTEtTX1NUNmc2Y1JBZV9hMTAzVTFCb2RWdnU4S2xNcGk0NWxqLVdsT0ZFdmRDZzFaanNmamxlZ1RCZThQeUJRTWc5WDFiUTR4eTA2ZW5XYVlpcC1TZHlyREFvcnU4WnVDVVpZYXFEU3c1Uk9NbW9heFJodEtJZ0xoV01LVDdqNm5ub3VkYU1BVWJMb2FvY0J1OXZDanIzUEs0UmFOeXNrVUliWmRFa1Y3SUFicXhMNDlrNUh3Nkt6bHBSZkZVLUJuTnVEa2QwVjFqYUZyZ2R1UjdCS2JKRWFQVmxXSmlhMFlfbmNpdGR3dlkzeVYyVFZ3Sy1BYzNNUDZkdWxKdzBOUFVqMUxNeXlPdUVSd09XcWEzUktCbWdqTkVFQklNN3BLcTBFUVEwNkRJbHE3TEt6TldkSWlHZ1BWUHhaQWJ1WmxSZ0ktUWNESUJ2eVdQTmtaalE1YS1Xb1V6Y2Y5M0Zuci1XcG9GVU5Demh4MTljME9UbTZTZldvMHVjYUNwSjFZQWgyTEdXLUxUUGhOV2VBWlYxZk82Y2NR?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMirgNBVV95cUxPSTR5UWpMbGM1NzNvTFRKeHFEcloyRmxZWmtuM0JaOFlCcFlFWHhsZDRMa3FQdG5mcUpQU1dLbldFc3pCTy1CRlpLNFBtYUNSV0lUNnJxaFowSklBMVhVYndad2pwNWpEY0xPMlEya2VUWXFQaEoyYjVLeEVCTHYySXo2UF8xUVA1Y2hMUXFZU281al9DWDlleW1jQWxsdWZCamFseGthY0VWS2htUkllY1l6UnZWRC1uZlNoczBZVkJFMmswbVRNRDJPZkhBUC1iSm00S29wTEw1Uzd6ZnNqcUZzOGVIUHNzWFNiZW9LX2Vqa1h6VzYzaFdoNnRXLWJYTEtpNnhmOXBSYkVzNm4yWjFzSUM1WnlUNDNMNFdCdUhfNDhkOU1IcVM3ZDRLNXRmR21Ca1RZcF90T3VFa2xhUWNEc1dqeTJybkMzWk9GX0ZMQkl0VFRLdTdZb2dUZXZzMUFUUTRiT3hjVHhBN01qYXF3SFpPVUVjTEhyTEgyTXAyN2huVnJJbjRvZWs1ZjBteXB4V2Y2N1BJS3Fxdkg0cnpvUTNTcEFTOEw1anp3?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "How Ugandan students can seize higher education opportunities in Russia",
+      "category": "과학·기술",
+      "reason": "중요도 미달",
+      "source": "Uganda Observer",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQX1hfejFiLW5aRHVrSEozQ3RIVVdMaGUwbGpxWC1SUEN1TC1NTmR6ejZnSWJsV0VPVDA0WlFDZVBkMkp0TlF4al9sZEg4V1hEa2FWZHNTdTVmWlFnVzd5eTBJQzFoQmhQVEF1TnBJUG5mU001QnZOaTkyNi0xYUVlVnJTRG8wdk9XeGdwT0NrY3didXRlOThLcC1EWXBPOGhNeHlHVA?oc=5",
       "review_priority": "normal"
     },
     {
@@ -9668,22 +9685,6 @@
       "reason": "중요도 미달",
       "source": "The Jerusalem Post",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE40Zzhja25JdnVTb242NExwTHpzVV9SYVZQREhGNGdYdlc3WThreFdobjhpejc1eENtWkV2TkQtYWlLOGtxNnZQVHV6YlZvZWJJRTNsSmYyT3NZY0o0QlY2RnRXRWFaSlB5b0ZCNFZR?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "IKEA Malaysia & Xbox Launch YXSTABY Gaming Furniture Collection",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "SAYS",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNU3R5ZkNoS1BWcXNnYVh3Q1J6ZUphRUU1Sk9xbUVmMzh3RjkwZ0RMQWdEZWVXSjUyeGNQRnVTdF82ZkdjdE9RUzBxcDVRekdSLXVmZENmZFNGTW5IZlZiTk1XamM1M3phWnF6UGM5SVhiVkxPN0NMU1kzOEZ3WWlyYkdHRXJCTHdMaGRUeXIwOA?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "IMF Wants Kenya to Force Crypto Firms to Share Customer Data With Govt",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Money254",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSU9OZWhrMWNULTRaaE5xYjN1Uklmc2dFYlZVSGJQNGRkeFRUU1FIem9VdEpUWTgyZjhacE5Pb3ZCSFQwbkdEWDJoR1Vpc2ItbzhFc2FLQnA0X09zSG10ay1yUGJIdG5Sc3dKWVBnNkdQVVgwOWlCSmxSS2RVOWhnaHZuQWtvZlZxaUhjTlVUTQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -10036,6 +10037,14 @@
       "reason": "중요도 미달",
       "source": "NDTV",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNVEUtMDlnQjBITHJTYUVDMktiQTc5RFJxbEpjQUZ0RENucml4Z1ljbmxCU0RPM1k3WFpTYktMSjNSSmNiNC1jMjJPQTVicmdXRFozRllIYWhVaXhod3BfWktNdDBZTUp4OUlKdkdYLXhXdUdpQW5aRFBqRTJ5eV9hdHMxZmlmTE14Zm16Y1Q2M2NZUUVWcVB5MWdPWXUybGJRbUt3RXJfNHMtdVFFUjdYa9IBuAFBVV95cUxQT2cwdUQtTFZ6NHJrT1JNdWZ6eUNtQ2Rzbm1pajNSWVlBeEQ1X1gzU3hzdXQ2XzB6M2NYbklqVlZ5X0pKd3FLSTZ2WmJ6cnZDRXROYnZ4dWs0MEpvTXkwUWZCdFQxUEt4R1VMenpNSmpLSjBvWlFJdTFlVHNQc2k5emkyRFhkREFXamZlV0hieTA1cTY2SDBaUzBMMlVIblktTXZsNEhVZFRTcUZXOE9jRmtOeEtrR2hz?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "India's First Amrit Bharat 3.0 Rolls Out Between Delhi And Patna For Chhath Rush",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "NDTV",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNSGd3dk1NcGVIa0FVQjBGZlJNNDZWNExJckFoVlplZDc0b3R5NVYyajR1clhubEw5QkNwY3RpWF9UbXR5LTVCbklaNkF0V3dXdVAtbVpqMU5FRnRVcENLbDlIeE5Qb1UwM0Zlc3BtOVVHV21uTmRIZ0pEb1B2RDJYWDBCNGZOMFgyZWQzQVdUMGFwM0NHaFRQT3dzNDNHd1dzNERIdC1nM0dQYlBVZ1N6S0dxbmhBclXSAb8BQVVfeXFMT3BRelRBdGZZTkdsalhXcnlhMW56bUJvVzFNNjlYRi1xMlZUUHZ0SDFkc0VMMlVUQU5iYm9mUXo2NTZFd2tDOEVoU3g4QzFBVDUxVndDeVhJdTJ3SnNxbHIyd05VSmNtc0hCNW03bGFjZkg4N01rcG9yLVU2cTZqbjRnbGFxMW9IWnRCT1FSM3pHNm1hV2Y4VjdfMDVGVm1PVkhkMVRBSGZ3bUJHNkp2cER1ZzhUbUxYdGFsNG1tTkk?oc=5",
       "review_priority": "normal"
     },
     {
@@ -10559,6 +10568,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Inside The First India Lebanon Foreign Office Consultations And What They Mean For Trade",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "ИФЗ РАН",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdXFtMUl6NXBlbXN2SThKR3cwVFRVZVdNd1VzdXN6T3N6ajk1di1uTWZMNnFwN05jSjVrMGlRSmgwck5pZmZocmliR1U1QTdMTHdLSlJkM0NFdjdEelBvcXZlR0FoSzQ4d1I1ODkxdjNnWW5hVGRJeWRWM0lCS096a0RfOUJRbzVYLTJDZmp6YmpXUFhES0E?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Inside devastated front-line city that Russia wants Ukraine to give up",
       "category": "일반",
       "reason": "중요도 미달",
@@ -10572,14 +10589,6 @@
       "reason": "중요도 미달",
       "source": "EWTN News",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1BS2xSMldjdGRwYVR4UGlBbjFFMEFOVFF4U3E5Vmx0ejN6Zm5ENHdpNGk1M1gtR0ZqdnpSZ3JSVkZGSzR3UDQtU0phRkNXMGlWT2VF?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Inside the presidential mission - Russia...NNN pushes to turn Namibia-Russia relations into economic opportunities",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "New Era",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOVk9jZVZJR2Y4ajVkOC1XMFZQX2syVE43THNkclZzT2J1azhVVlpRdEpuOG1tYXJSeWtIS2Vod2hSQXRIakt4TWxjY0ZHeEdBYzBwMlJLOU4tVlJ0VWVQaDVkZHNUMjZzMWVWTnRzc0JxUV9NUk1UbjYyVUtVdDY5Q0czZE90VTQxcjRHdDgzZkhHX0RWbGtXTjVDS21IVEkxeGhLWGJqRE1VTGZRR3VBX1ZoaDNYWGZBS0R4ZnJMTlluNXNtRzJDVVJ6ODNxUQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -11023,27 +11032,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "Iraqi ambassador says suspicions center on people who accompanied former MP to apartment where he was killed",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "LBCI Lebanon",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMGhMVElycDlIMk5hYzJnejROc1RIR3ViTHdVcGJXWmVTUUZkYWJxM24tTU84RTdYdmJlTGk3TmtXRDlIcWpvaFp2ZXdUaHoyb0JEWHZLejdLLTJFV1BsLUdUOVN2aWxNZHBEQ1lZa0FpcTBrVURULWc2X3RFbS04cUtleTg2R2llV3FieVNfQlFYZ3d5N19YbGlWSGNBVnhWYjc5T2N3TmtvaW11YUFYaGdNdVN5UjQyeW5mMmFPWQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Iraq–US Hormuz Deal Shifts Crude Oil Risk Premium Lower",
       "category": "일반",
       "reason": "중요도 미달",
       "source": "CMB News",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUXEwbkRMZlVrd1AwbzhBaFlGZzNpNmdnR1RicU9YNkNOZnFsTWc2X1FRQ0ZBeHBleDJkcVlvSHVrWEVWQW9xYmN4cGlicF9kUG5yUk5XNXNWeDZDcTBVVGw1SU5DdEVnR0V1b1U5UFpxMHVTMWpyYnkzUVFwYk5qbEc0cWVwWTh3ZC0w?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Iraq’s Prime Minister’s Tehran Visit and Meeting with Ghalibaf Confirmed",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "WANA News Agency",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPN3RmTnhHTzdubGR5UnlBeE5DQWRNdmdGNlNyVktMVlNQSXhGN2dsQ1ZNaXpsTHhCSHVxM0ZCZkltSG1EV2M1bHFZVjd5Y2JSQTRVTWRmTU5jS1hmRWJGM19YeWNzYUx2bWhtM2ZIUzVrMVNzaWVJOHpCVnRhQjBUaS0wTXZuelRLa0twNV9IZ05PeUpZ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -11431,6 +11424,22 @@
       "review_priority": "normal"
     },
     {
+      "title": "Italy vs France UEFA Nations League prediction: Match preview, team news, current form & h2h",
+      "category": "일반",
+      "reason": "잡뉴스",
+      "source": "SportPesa Blog",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPcVltTHRleExnWW5vLXJiTjlFelU2eW1UZnlpNF94WkFXTnBveG52ZDFzRmxNcFBOWkNaWmRiMWFLaU9sMDg0LTh0UW1FOGVSelduU2xFck0wQU9uRWZQaHRTWnVGeGtfYk5vcVRJa0w1M2ZLOEVYTkpPWWJEcFRid0Y1QnhGVDFxbXEtd2NHczRRTTFkVDgwdnk5RDg5RmU5WGMyZEZDODFqb1BlZ2xHeUF5aGYweWxYUEJ1ZzJsOERnY3otWm1iOA?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Italy vs France: where to watch the Nations League on TV and live stream",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Goal.com",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPTXJHdUN5cHB2Z3ZBV3pLb3ZjdEdwX1NwQ3d2YlJfdmxLY1BYR2g1UndoVnhqa1gySFZ2cWlSRF9uWnYxV0l3ckpGREhMc0JPcVZfcERnbUQ0b0ZIanBpVmQ5dUpUdzhibUdUZzlvV01hR0tZbDViekRsSEEzaHFkQUFZRmczaGtTa0RjVDcwVW90cWVTRzhVSFB4TUFHYzhaSEhLN0c3MWNrQWVBOW93YkNpYlN4NVhYeVRUcUFMcl9Fa2k2OEVFYTFjdnl3bjNTVUxONmU4R1Jwdw?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Italy vs. France: Kick-off time, probable line-ups, team news, where to watch on TV",
       "category": "일반",
       "reason": "중요도 미달",
@@ -11522,8 +11531,8 @@
       "title": "JA Selected as Exclusive PV Module Supplier for Teraco's 120MW Sediba Solar Project",
       "category": "과학·기술",
       "reason": "중요도 미달",
-      "source": "PR Newswire UK",
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQUmtKU1dLVk5LNEVxUXdMRHdhNG1RZFJZaU5OMXZjUWZPNklhV2o4WVNMUVNoaFhFVkFRbGRPS1MxTkk5OW5OYlR1MVlCYWxWSEQ5MEtvUXlsSEEyREJNWmJPQ3lnUEliSk9rd1dUNHdFaUs5WW1FTkRBNGFOM050YmRjZ1ZhSG9UdmxGcllmdzJ6amZjVDVmRU13VVVBRW9oNFhnbFRfVnhwSzM3MGVTY0x5YnZzVHNtU3RQSkE4aWxSbDRfdm5VTUZUU3lWNnpMWTFNd1lCVQ?oc=5",
+      "source": "Thailand Business News",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNbThyZmZkd3ViX3l1WnRHU0hHWG5sMUtuMFpva1ZGRUZjZXduVU9fbThwcGw3ZkZCYTlTUUpCOWs5V2pPcDk2N0dDNWxfMnprWWF2WndocEF0QUZZaFhtZXlPSUtkUU95NDREZ05OdXRNbFU1d04yVkR6X0RRTHA3VFNjMXdrcXRBUUhCRDdxbVN1eGFkNUZLOTVPSk5Ra1NXcU9UTlpKRlpxbHBuUGZQOU8yVUpqT1Z3WjdabTRHSHlldlAxNV9KeA?oc=5",
       "review_priority": "normal"
     },
     {
@@ -12167,6 +12176,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Kenya Power and Lighting (NASE:KPLC) - Stock Analysis",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Simply Wall St",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNMmpuMHdKRG5zMG1LN01FUm1mOGQ0cWxPaXFlU2VrNk5JcGdEYWNtUnZ1NTVUVE1sWnpQMFhxSWZLV2lFbDlLbVpRSmZ1SnZoMy1QS19jeEc5S2V6azFPcXBVZk1wVDZYSHlsb2FhUk1EYkY4ZnB3ZlhhTTFVeE1sQUZ4SHQtN3NGMElr?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Kenya appoints Prof Dr Saw Htay Myint as Honorary Consul to Myanmar as trafficking crisis deepens",
       "category": "일반",
       "reason": "중요도 미달",
@@ -12351,14 +12368,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Kenya’s Sh2.6 Trillion Industrial Bet Faces Delivery Test",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "Serrari Group",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWHN0ZkhGNWtyOWJJTEJvSkc2bUN2U3FUckNNLV9xUjl1eXVZT0E0QWRiUTZxOHJFdnF0MWYyWTc4Y1liQmNJdnpSeG9abzhuTTRZTHVVeWV5ZExqeTlJc0o1WGN2WkdJYXJXNFM4WUt2X2dEbWJPaDd5QVBWVW1LTnJ0M1RFbXU2bnc?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Kenya’s ksh2.6T Investment Pipeline: Dangote, Devki Projects Take Centre Stage",
       "category": "경제·금융",
       "reason": "중요도 미달",
@@ -12492,6 +12501,14 @@
       "reason": "중요도 미달",
       "source": "Qatar news agency",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQ3NOX0Z2ZFVaZGlZQmtZN09vR0wyV3R4My1EelJrampOeDhVRlVoWlQyRFlVUzBOQXBfNjA5Wk9hVnBKUFFfaEo2c0FQMGc5T0VXNXFnSzU2S2pIR0c3aldIRk82b0x2RjIyWEExTU1waVZDNlhIajk0aExJd21iMHNFU0ZVSXZJLXAyTkZ3TTJ5WjlrcFJTVzFDT1JOZTRTTHZxdEJObS1LLXhMLXhxeThHMUM5Tm1Gekhn?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Kyoto business group eyes Philippine investment opportunities",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "Daily Guardian",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOREVJMjduY19faDl5SkI3X3FDYm81Uk03ZGpOX2NhZk5adkRyWXJHX1BhdEY5VTNlQWlGNlotRGV5X252TXk5VlFXaFI0SXVVeXhWeE54TURIRUJKM2tOWkhzZERNb1laMmtJdHVjeXRaNFQyb1IwWHBpNkZFenJ3alktdlNBMk43QlVScXVmS0l2N284U2lxaDM1eUlTTi0w?oc=5",
       "review_priority": "normal"
     },
     {
@@ -12719,6 +12736,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Lebanon Faces Economic ‘Catastrophe’ After War and Years of Mismanagement",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNOHJfTXVYZlRMcmFrTlhwc3AxeU9uOGFXUUZoSkZQVVhRTGRJUkZTcEEwM1lMMVhpWUdZM1hSekpyRG9oYUhoM3ZEcFlqMDdfZGcyMUE4NHlSSUpuMXR0VEtfRkhIYTlHRExaM0l4M3JLREZ2QWJVbWEzNkczdGRiS3ZYRXRhWnRPaU92cUJhQnplMjdHc0ZjdGpB?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Lebanon allocates $7m for farmers hit by Israeli attacks",
       "category": "일반",
       "reason": "중요도 미달",
@@ -12863,11 +12888,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "Light mag. 3.1 earthquake - South Pacific Ocean, 159 km northwest of La Serena, Provincia de Elqui, Region de Coquimbo, Chile, on Thursday, Nov 12, 2026, at 04:35 am (GMT -5)",
+      "title": "Light mag. 3.2 earthquake - 52 km northeast of Calama, Provincia de El Loa, Region de Antofagasta, Chile, on Thursday, Nov 12, 2026, at 06:11 am (GMT -3)",
       "category": "재해·재난",
       "reason": "미소지진·미확인 관측",
       "source": "Volcano Discovery",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQTm5EZEJFQ2pCc21JQ1NQQzNuV1YwS0RDWlN5U0VHTGFUbVc3bFJzd3BRLVlKNFJNLUNCSm5vRF9naFdFUFhPbE10cW9uSjhGMUFCQ0lfQ1FuRlFtbjJJWHoybmFBVktlMnMzMnA5M2VkSHJJc2F0T2I4VmlxSEdyd3VCVzRSeHR4VnY0UXF1U0dmanJvZzdhVlVGVTFSUUtYUV9obkZTRVZybmVUcmp1UTJ0T1V0ZkdQaHpR?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOc1VnV2RKdklJYS1KSUhocF9BWUJ5Y09qQWtmWDAwZlBMODlUNVNoUGdJdTFQWVlYMkhXek1fUm84RWY4WFk1b3FMLVFielpYR3JBell1Ul9jelhMZlB5X0xOTDYyOU1MTl9SUUxlQzNWbmlMQ0lhV0lNUHpzUTJUQW9WNjZpMFJHNVV5c29hbTJHWVpOTXhqdWtTZHdmNXNnbWpDczVja1ZyczJIWFE?oc=5",
       "review_priority": "normal"
     },
     {
@@ -12876,6 +12901,14 @@
       "reason": "미소지진·미확인 관측",
       "source": "Volcano Discovery",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUjZ5SmNBQVNnbTdqaDAzRldxWFc1Rk1EQ2U3MktyNUZDVUthWFBpcHgzT0pQRlFNR2hSelZ1MHNRUTF4TXJPNkItdnBSUUJxWmRtQWhaVmhuZzVvS0FIa2FqeUhVRXlIR2hTUWtaaG9TX2pOTmlZWTdjTFdRNzFmTk55c1RMdk8zeGZOWTNIN0hHejY5YXVCQjc4c1BVMzVpOVN2bjJ0bU44SGpkLUE?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Light mag. 3.9 earthquake - 27 km east of Calama, Provincia de El Loa, Region de Antofagasta, Chile, on Thursday, Nov 12, 2026, at 07:22 am (Santiago time)",
+      "category": "재해·재난",
+      "reason": "미소지진·미확인 관측",
+      "source": "Volcano Discovery",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVkd2d2pITnRSZUE3dWg5aUpkR0ZjUzA0NG1mWmFmc1FUN2hjSFc2bXA3VG1yRkYyeHhVdGZBSEs1aW5DZU1YaXpDWmtERzVtU1BzQkh6TjU0VlZiUEpnTmtXOGRaVTNTbUNkVHVHTW1FWEQxbE5RdmhIc0lXcDU1WnJ6aU1NNGE4T2IySkE3MDhhRXdwZnR4ZHFFYjZSTnFDZ29jNjdOLXgzTWVNZXc?oc=5",
       "review_priority": "normal"
     },
     {
@@ -12900,14 +12933,6 @@
       "reason": "중요도 미달",
       "source": "UkrMedia News",
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdlhHTF9McHE5Vnh6Q1MxU3pUX3luYm9hX2JDRUNuWGpTWlZ2RFh6YURkMU5nblVqODlEdlVYd25EVnF5a0ltZDVwV2dQT0EyU3haUDJBVzRVd3Btc2xocXdiVDFqX3MzaTlhZUlQazJ3RzZkT0JhMXNMTld0RFVFUGJoWWduQzlseEZFR1VMTnpHZklmS1RZQw?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Liverpool make decision on star’s future amid Saudi Arabia links",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQY0lSTEg0cDhDR0Y4cGRBLXJNc3h4MkpsRmRXQmh4clhMZTQ3NUxRQlVSX2pKb2ppX2k4M2lDbTR4dVlzdkNEZkhteVNNRUhhOE4xd1hVRmtzMTdESFpTSHVjX1BLWXpUek92MjlQNHZvV0JfUFBFRFJCaThLWENZTHRlM2RhQ0k1WVFIcg?oc=5",
       "review_priority": "normal"
     },
     {
@@ -12975,14 +13000,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Lucid says Saudi Arabia plant for Cosmos midsize crossover on track for 2027 despite Gulf conflicts",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Automotive News",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5xZDFuOE0xT05FLUxMdWhYcjg4TFQyV0FobGh1MGs0bU5JdE1oaEI2YWdkcElIenRDaFpibXFETHdZT0EzOXNxVFhsek1pNzZtLVlTcXlKbmRzMzljZnRsWkV5STVaSElEclJ2ZkNn?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Luda Technology Expands Mongolia-China Coal Commitments to 1.49 Million Tons",
       "category": "일반",
       "reason": "중요도 미달",
@@ -13028,14 +13045,6 @@
       "reason": "중요도 미달",
       "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPeDk3Z2kxT2NlVkxtZ3FMbksyU0ZlT2JzcERTTVBkeGFzUk5kaHhpazg4Mk5GSnZGTmNmbVVZakFyUHZOeGx5ZEt1N0pVZFRBcDlzMFU0dDc0RFh1ak1ndzZBVWNsN3NCVmliX040XzZHXzc3TFlCUWNTeXdyUkZ1S3B4WUhLSnNCWDVzeGd2NDZUZzBaTUNwemdVRWtqWGlzUnczR09yU09qaWwxZGRKaFBOUDdiR2lLa0VSa0tiWQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Luxon set for second term in New Zealand, but narrow majority could complicate coalition government",
-      "category": "정치",
-      "reason": "중요도 미달",
-      "source": "Firstpost",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPaWJrVkRuM1c3WXMydmtvYXlOaFVBd3V5bHJWS2lsSVpoZzk3SUhtYlFxbXNOTndvOE5FazFMTG1kbHhtLWxBYkJDcVczMVFjRWdsS3FGcEJ2Y0tNV3FhY2dDYjJtODdFdkJHd1lZYXpFRDFoYUNWMGtUUE5feGNjZlBrY241dlZHNnZNaDVZdEdhTnc5NDJBckpGeXAyUWRPWllycHV4d0VtMzFqSU42TFRncUd4SXdDeldBeWZLdklReUxmZ2pIN01LcWZyNk9WdVBTYkRIckUwRlFFNWFKMUZR0gHiAUFVX3lxTE9pYmtWRG4zVzdZczJ2a29heU5oVUF3dXlsclZLaWxJWmhnOTdJSG1iUXFtc05Od284TkVrMUxMbWRseG0tbEFiQkNxVzMxUWNFZ2xLcUZwQnZjS01XcWFjZ0NiMm04N0V2Qkd3WVlhekVEMWhhQ1Ywa1RQTl94Y2NmUGtjbjV2Vkc2dk1oNVl0R2FOdzk0MkFySkZ5cDJRZE9aWXJwdXh3RW0zMWpJTjZMVGdxR3hJd0N6V0F5Zkt2SVF5TGZnakg3TUtxZnI2T1Z1UFNiREhyRTBGUUU1YUoxRlE?oc=5",
       "review_priority": "normal"
     },
     {
@@ -13092,14 +13101,6 @@
       "reason": "중요도 미달",
       "source": "Mexico News Daily",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbEQ5TllqakM5WERjeXYtakZEVU15cm9ySXhLcTFJRjZ3dE1udWxxd000ZUlUVFBCd3cwTHdrbjd0SmhFWEMtR3FDLWdGb3dGZ1RLcEFuZEJmX1gySWFWenBpeWJMTWRyT0F6U2xYRmRFeWZKbE1yNmcwb29LanZpMGNLbUdNMlFpYmlrV1pQNDdURUQ0Umx3?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "MONEGA GERMANY I (M3AG.HM) Latest Stock News & Headlines",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Yahoo! Finance Canada",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9TRTBpNEVfclQwWmhOSTkyUG1XLWFvU0RXS04wSS1vVk03ZS1BMDlWN0NvblNULW1HeGg2c3RJQUpNRzVmdk1McVEtaVVVaG5kQU5YUmotaU9ibG8t?oc=5",
       "review_priority": "normal"
     },
     {
@@ -13316,6 +13317,14 @@
       "reason": "중요도 미달",
       "source": "KOHA JONË",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcF8tU1hvcElOREdVZWRGamprc1JNR1RoUlJhQ3BnS29SRFBfdm5WWDdpbjVoOFR0NlRCamdycy1hWEdJUFB4VmlidnduX2dZcGdqdS13SHV2VDNWbVg1aXVnempXaUJvWlI0eExVa2J1dGxfdzdYR1hjWnNXWDM5R2JJVlkyOFNaMjRONlI3UlYwZ212NG9ELV9aSXoybjJacGNwUEY1SQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Marcos urges newly promoted AFP generals to uphold integrity, public trust",
+      "category": "분쟁·군사",
+      "reason": "중요도 미달",
+      "source": "thechronicle.com.ph",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQk5aa1psRGMyUXNlbUd0N1RWbThSTk16eUROZFBsNEpibnl1MHNaMDYyd3J3QUdnc3F5V0ZlU05qLTRBTDUxaVRTbGZFU1N3REtqazlIMlh1SjQzOENWMFB2R29XdVA5TVMxQnRZRDdFSXRiWEo5d3NwX1N3U2F6M3pLWkpRQVN0ZlY3RHdMTHVnRWtTa2FVbjdqT041OVBfdWlodA?oc=5",
       "review_priority": "normal"
     },
     {
@@ -13679,6 +13688,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Middle East Hotel Pipeline Hits Record 188,960 Rooms as Saudi Arabia Leads Expansion",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Rus Tourism News",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdzJWQUZzcjBIbnppWUxNR0RwaHU5WkJHN3BmQnNqcWRQTmFBYUFZU29XU2VCNHNvN2c1d3BaYXFXQndLMExNYjB6NElyUi1uelptelExRnplVWRoVUZCUmhIQ0YyV3RVRDZKMG9pMkhUcFRfdmZsaEtkWl83NkpoeE1Pa1VOMDdrQ2xtZlFRMzA4MXd6dkhmRmM3UGNrQWF1d0lITWZXb01YZXY2SW1TQUtuQm5uODdCckxVV2phaFNOTU5t?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Middle East latest: Europeans upbeat after Qatari PM’s update on peace talks and Trump meeting",
       "category": "분쟁·군사",
       "reason": "중요도 미달",
@@ -13804,14 +13821,6 @@
       "reason": "중요도 미달",
       "source": "Tempo.co English",
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWnFialVXeVJGcDJOZVpHYjJreXNZOXJlZWtoS3RVYkJQZWFyNkdZUmc2ZXM5UDcwRzFBWU9vc0NIeVI1RXVqeHpLa1NwRWZqUE5DXzZZSXNQbHViY1pPT08xWHJINUdQNGFwZC11QS1FZHo3cFUxMnpkSTI0R3p0WmdmUE5hcnRZSDF2TkhWTXYzTEl1d0p2MA?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Mirzoyan and Ville Tavio discussed issues related to development of trade and economic cooperation between Armenia and Finland",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "1Lurer",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9GcGpRd2lfajdoX0s0SlRPZkVhM3h1WWNERDJ4N2xOdU1TMmk0Zy1YZnhManZBOE16UVU3U05ZREhnN2djT0ZOaQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -14039,6 +14048,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "More than one million in Lebanon face acute food insecurity, UN says",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Al Arabiya English",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWVRJYkE1TEN5bGVjTE9XUFltRTZ2WjR6U0xVZGxrVFJ1VWlBZkR1cGM4UVZNNEptLVpWUGVfUWY3bEVFN0VVUXZIYjNOZTdQVnNMM003VElhNnFfbzkxSzhtR29IdEpCeThaNUxVSkRKcWF2X1k2VnZhaTA3Z0d2aThNRGZ3eFN0SGhxamRsc3N2emllZUVEM2padEdkU3pOWVh4RWYxYmh2XzdkVmNzOEFkVHpCaW1mdjhWYWR3Z2IxZ0nSAcgBQVVfeXFMT1VFMUV1cE5NV1BQV01obncwR2R6eEpaWmFlYWRZV1dSWTZjbXRPY0FDNGF2MEJ3YUlmckZWRlotdVhyYlppZ05rQnQ5TGVCTlVEa3JhLVc2NF9HZnpQbWh0Q0oxMFM5RVZLUm91TFlaSUNPUUg2clVjRHcwalBCOFNKaGp2MG94aGJMWlNSLUlDcklHY3R2MEJrQXhENUpON0VLaG1KbllINXdZQTZvYWtmTnFxdFJwZzNGbkpIWkNUU0FiOEpTMnY?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "More than two million people attend Pope's final Mass in Argentina",
       "category": "일반",
       "reason": "중요도 미달",
@@ -14148,6 +14165,14 @@
       "reason": "중요도 미달",
       "source": "Zoom TV",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOaXRBZ1JRMXVTdGp5aG44OWVIRGx2emc4LW50V3dYMm0tY2thc3pHOGJoUFBLU3lSRWFIOWNmRk9VbnU5NFNxY1FrbC1WbElPMFp4aEdtX29uSHVFYlpXUTRuSjNjdmpLUkxOWkhrYjFTU1pmZmdXSHNtVl9saGwtdDFTRzBDT18tVUlfRHhPVU9QRHBubzB2TVYxdlNJQXVTTUNhVlROTnFaY2dNeEdtNlQtcURyOExJ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "My 10 Top AI Penny Stocks to Watch in November 2026",
+      "category": "과학·기술",
+      "reason": "중요도 미달",
+      "source": "Timothy Sykes",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBuSy1FSklyWnAxQk5Vb2JrbUxKRDBQMklqVG14cUl2OVdJSkZsR2NHaHliN3VKUjJldjQzR1hObHdZakIzVjdRQ05MU0Z2cmVHdUtoUDhsUmFXZw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -14308,14 +14333,6 @@
       "reason": "중요도 미달",
       "source": "The Guardian Nigeria News",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORFdHcWdyaHd4YTk5cTl5cWl4TjFDRDQyOC12emJzV25LUER4VDNCcjRRT2FzODZXYnFUb3FMNkRaWWgwalFPa2lEaVFuYmhOa3I5WnFETTlQN3puYzFXOU5Jd1JfdHpDWGpmS0RxMV9Hejk2NkgxRU5Edks3VlNXa1hIcEtfcGJJdnE2aHJiMA?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "NSCDC FCT Commandant Urges Youths To Promote Peace, Strengthen Communities",
-      "category": "분쟁·군사",
-      "reason": "중요도 미달",
-      "source": "Independent Newspaper Nigeria",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOWjFJOTJxMDVzRjQxQVZadzc5c1FFUkNpcjlUaXRFaVNtMVZ3VWRIcUJsNDVlOHZ2dU9wVGg3MVdmYnJVSTE0bE83QVBiU0ZLX05FTHY0b2stOXZvSTZxN1hwcUd2bTREdm1ORzF6QVRlRUZyd1R2cFl5eExCNzVoeVdQQWZyZm1Cb3ZCaG9BMGJFcUttTHBpdUV2YnpiZw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -14495,6 +14512,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Nautilus Marine expands NZ commercial cover to marinas and marine trades",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Insurance Business",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPZ09kaExRclktOXVyQXM2MG9rY3VxaFlBamRrTVdnTllQbGhWZFM2aFBGVXdwQ3FQS3VDMWtycFo1UnJnaUI1YnF1a21MTTZJY05vcm1Tb2E0aWNKSWNmMjFIYTR4RmEwSDhJc1dQa0lNUXNtVUtIZnY1OUw3Sjh5T0ZWcGl6eWNlVTBhelJsTG1pS0NZd3VhdFVpUmlwQng5YzdsRGNaQXd0WjMyWEgyeGdqczRDLUw3Q0h0T1hmR2l5TFdnc05jd29HUzFiOHJZVHc?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Naval sensors and weapons to equip Sweden’s new FDI frigates",
       "category": "일반",
       "reason": "중요도 미달",
@@ -14516,14 +14541,6 @@
       "reason": "중요도 미달",
       "source": "Focus Taiwan",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9YOGhDWHl6NWcyRVlqV3hYRUhTM2pINWYyUWF3U2E2ZmNYR3N1MnY2UWF2S2lCdko1TW5yMjVpelBBaFlHdzdnc1c0X25SdV9zSDFWVXJmQQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Net Asset Value(s)",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "BusinessDesk",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOLUFEeUYwbHBQVVVWQjJ0MXRUYUUxNkpDVmdmQ1RHVExkbjR4M1I2ZVRfX1p4NDdTbGp5TXhLcmJoejlxV0NFVjhRekxROHlxZXVSVDRmVm1rVnJfa08zbFloRUVBM0szckpHOGprQnluS1djNVhtZ05GUzlrQ3F0eEFmMmtiVzlrWHpR?oc=5",
       "review_priority": "normal"
     },
     {
@@ -14620,6 +14637,14 @@
       "reason": "중요도 미달",
       "source": "TopAuto.co.za",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOaWZQeDU2YkFfbjI1WkgxalAtOTE4S0VXNndqYlh6Wk1oOXg3bFVfM0I2WHJzRlg0ajlkWkN6TnVDMm1PX0x3aS1WVzlZRm9zbUFMU2V2QUNQU1Z6V2dGMW9WRjF5R2k1OTAta2U5SURfbFpWajUwcjlxRjRMcHBTTElXVTNCeThYVnlTdTZSOWw4S3phelRmVkd6RWF0djRzNWJydFN5cjR6aF8wUGQ2TA?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "New ASEAN Scam Hub Offers Free Training as Singapore Proposes Anti-Scam Code",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "TechRepublic",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQekE4V3NWTWkwbFJmWjFlazByUTN5VFA1RFdWUnJ2a2tKRXlXM3AybEVTdE9NNHV2RnRVWDhZQVVEekM4UzlXWEowX19YTTF2el9xbGxhR3F4ejV6NzNwSFpjaGtvM3BCYTdROEcwNEJTYW1HaWpPc2p4ZDhmRHhmOG91S2dqRldWOEZ6SEdVMEp2NnpCaG5V?oc=5",
       "review_priority": "normal"
     },
     {
@@ -14951,6 +14976,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "News: PM Abiy urges major emitters to step up, intensifies diplomatic outreach ahead of Ethiopia’s COP32",
+      "category": "외교·국제",
+      "reason": "중요도 미달",
+      "source": "Addis Standard",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPR0ZvZ0lwR3IwcWFwUkNzM28zc2NVN1BNNUFnc1laVDNUa05CSmlrNGpoS0tZcnZjZlZRVjRYSFBDdFpyTWN6dWdZWjRmRUhIRmp5TV9tSkpRZE5NN2lraHF0M2hwUEhOTGlzNGUyZ21CaGdBSmpvcGVWcUhSTUZOQkRKQjFhcy0tVkxaa1oySi1GaG8xZGJrM2V0b2VkOUVGbU9BT1RiUWxvdFBLOUZsWE13VnozRURoekM2ZzBBc3Y?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "News: U.S. senators send second letter to Rubio urging action to avert widening conflict in Ethiopia",
       "category": "분쟁·군사",
       "reason": "중요도 미달",
@@ -15064,7 +15097,7 @@
     },
     {
       "title": "Nigeria, Türkiye Target $5bn Trade As Tinubu, Erdoğan Deepen Defence, Investment Ties",
-      "category": "분쟁·군사",
+      "category": "경제·금융",
       "reason": "중요도 미달",
       "source": "Arise News",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQenVWQWllWUdsZE9uSVBFVEdjNWxmZm9wRzV2TTFVSVpabjNhOGJUend0YWNNTDZJRG5oX3duYzFQeXVyc1plV0RVeFBlU3lIUDJPdU9ieGpkQm84Wk51Q2Z5d2YxenpTODN4OXRnQ0pvYUdIaDJYSlFlV0tBTVdLNWhFSGYydkdld1VwU2MzZ1ExX05mV1dvT0ZBM0NHYjR1R1U4Z0V3?oc=5",
@@ -15175,14 +15208,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Nordic countries to work towards common defence deal, Norway says",
-      "category": "분쟁·군사",
-      "reason": "중요도 미달",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZ3l0WkhacFplemVmdldqMWxjWVZPVVFYaE94X0VtVEJfOGJXaEtTLW0zTGdyNk50a3NYeXJoYXpSUEpoVmx2MnRiUDhrM25rMHFTemE1U0piTUtwOGxhb1ZqYkVINW8xaTJDOXc4UnY1YXJNUV83WmNhOEY0Z1YwWFpvZlAwX3JxRTlObzVGakxmV1ZaVXpicVhfWmtUTTUyY2hRS1FSeF9QNWdxcXNyWjhFWU1nQUZzRDNJYmlydDFYQQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Nordics’ stability is attracting growing attention",
       "category": "경제·금융",
       "reason": "중요도 미달",
@@ -15236,6 +15261,14 @@
       "reason": "중요도 미달",
       "source": "The Defiant",
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNa3dnZU5aWEtDSU1sQUtRdm56RjZxSlBxMmhUaWxMYVY2Z3dnZm1tYmZWemZBTFJjaVJfRUdJclRoRENFbkl6U2treWhUMHV3ZVdzQ3MwcU5GQXNRNXJWMEhlaGJBQmlNcmwxS2xsV3N6Rl9BSTFha1dIUWVUNzd4SjloRkRMMFd2WURxNm53T3l6Y2FpT21Icw?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Norway and Indonesia sign huge carbon purchase agreement",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Scandasia",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPV2pfOWFkUzBvc0QzajkyVmU5VnFXZ0hVWlBfUE1wb0pOSkZUYjZaM0dVQVR2ektpaTBZMHotTk9STUptYVNwTkdVeHN5V3dtWllGT2xsSnd3c3FOQ0Z3NWtRQVZnMUlHOFNjSlh3TTN4VGUzamdjREFLRWUxa1BLeTZ6RlQtZw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -15300,14 +15333,6 @@
       "reason": "중요도 미달",
       "source": "Upper Michigan's Source",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdXNXaldUeTMycmhDZjl0Ylo0dlE1VXJxeTJJLXUwZlk4TmVRekNSRkdzd0hNQzFqODM3dFdwY3hvckRDS0VFZ2FWb1p2SEUwOG0tMFg0ZjlIRzc0aW5sSGlBU29KbERMTFZvRHlSbnl4MW96SVduekhfSVJGZDI4aGpodUNJZ3daVWdtZzZiX1NQWlp6LWdfbEVjcVpDclBUME1OMkRSRXM?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Norway’s century-old hydropower braces for new climate risks",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Montel News",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOREl0cDRVLXNWU1F1LWFGaHFrcXZBVFdwcUZMcUJrekMzcmhHUGIwemNva3JNVDM1VXM2TFE0Q25MdTBtRXpnS0FJdjkydlZRSnJ1blNZY0NFc2F4T2o5Y2JLSlpsNkRxVlJPNVp3NUkya1VyZWJYQzdiMnllLWVNUEdUOVJmN3QyUGVNMHJISUw4cTV3WGdLUnhXVEU4b2dtaU9HSXJEcFY1MmNDYnJRX0lfa3lOMEhhR3d4dndqM1pLdw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -15404,14 +15429,6 @@
       "reason": "중요도 미달",
       "source": "The New York Times",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBUWlBQbTI3NE1qbVR5d2g0V1NTQ1Jva1NlSFZ4ejRESy1qNFY3eFBFZUdnR1hOVm5FS0liOFo5SVk5NGhlLUk4clp2aGNOSmQ5bHNfM3ItdWpycGNza1FEQ0pPUFhfNzZUbWZ1aUpJTEs1cFRB?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Nvidia executive linked to Jensen Huang affair visited Taiwan in 2024",
-      "category": "보건·의료",
-      "reason": "중요도 미달",
-      "source": "Taiwan News",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBIajJfWnJYRUQxLTVkRDJIdWdfVzRURU9yaUZ3Sl8xeGVMVFJyNzctSW5obXBHT0o4TXk2X1V2YVdNTllkWHNwWktNVVlGS3BTOU91VA?oc=5",
       "review_priority": "normal"
     },
     {
@@ -15543,14 +15560,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Oil dependence is bad for the climate and the economy, UN chief tells COP31",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMHJhc2lnSmZLblJzdHJQRzQ4S1JCNURkMHFMM3pIQUFoUnBVVW40NjRrcm1GeUpXeHBzUFlvVmYwYi1jTk52WEZWcm9HeTZ4OVlzbnBaWE1LQXcxckRrUWRhSEtpWElWRWptQmpkSzdBbjdvekh1b1pPUjBJanprLTRHVTJEd0F4N0dLX3dzS3pCdw?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Oil membrane reduces energy in refining",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -15639,6 +15648,22 @@
       "review_priority": "normal"
     },
     {
+      "title": "One Year After Busan: Has China Kept Its Rare Earth Promises?",
+      "category": "분쟁·군사",
+      "reason": "중요도 미달",
+      "source": "CSIS | Center for Strategic and International Studies",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOV3BqWHBac0pVdnQwY2lRQVlXYndZVFU0YVZNQ3pqdlNSRDUtYmVhSkFHQzlnMk41NXlXM3RXdk1YaEYwWDBtdEdsLVo3aU1nekkyWDFBdzd5T1dyWnREeWFrdC1WWlpqQ2FUTC03OUJqRVpDWEhjcXhJSHVpdlR4d05YOFZNeG5mOGsydlVJOG9KVjg?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Open Access Government",
+      "category": "과학·기술",
+      "reason": "중요도 미달",
+      "source": "Open Access Government",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1PNE40TmtSLUxOanBRSXIxTHpBbzZKa1J5SEZuM2tiMWdBaXk2dU1wSTFnMzBCOEZyUVlUb0MxTEZxR2hmaG45dnA0ZUJuQlluWWlRNXlQdEhzSkZXZWVqbQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "OpenAI brings local AI processing to India for eligible API users",
       "category": "일반",
       "reason": "중요도 미달",
@@ -15676,6 +15701,14 @@
       "reason": "중요도 미달",
       "source": "Mexico Business News",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVHpDckFEa2RWUXZtUkVaLUQ2SEZCbWdUR1BORGU2X1pTdG9XU05GVkFWcmdVSWhTRmFtNTUxYnZJeUxlY2hNZGZoaFpobVZTTGdWSVlvR3RuaWt0dWR5aWplOE1qM0prQlBkVjZXMUw3N3h2VFVfdXBDM1ZCenRrMEQzejM3b1Z3dlVLcUc1V0xlaTNQcUNSMHlFWHB6UmFfS0VJOTFtenhaVDl5S1Bn?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Opeth cancel Colombia concert after Mikael Åkerfeldt falls ill: “Impossible to get through even a single song”",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Guitar Player",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQVTZURlp6LWJHLW1lTWRMZE1zQ1FOY2NzX0NOZUdhSF9rVWhOU2dHeVlYQnpndzlNWlhlZ09RQ1BTeERNeS1EazRza2dBVm5xNmowRVJ6eU41bkwzbW9BU3BKc2hzdnZlWlFuSi1mOWdYSGo0S0pBODhNT0ZjQTRpQ1d3b3UzYUdvVGdFZ1BSM1NDNlV0UVo3S1VCTEFiMzRKS3FHOHY4aURwVVlwa2haV2lEVWd1SWZQZVd6ekE5WVBZSnpmbndUcFVQYWV2QmoyU2lhM2djNVJ0blFRdzRyQw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -15727,15 +15760,7 @@
       "review_priority": "normal"
     },
     {
-      "title": "Osun park management dispute: NURTW heads to court, seeks restraint",
-      "category": "분쟁·군사",
-      "reason": "중요도 미달",
-      "source": "Tribune Online",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOYkFVYjlIQ2htTGFIejhMelF5WlhKLTFiSnRla3VndDBaMGRwRFJrSWZZRlpOeWhrdkx6OGtsMlBfNzBiX0dIbUNEdU1SeG9JNnJyQlNiZUh4dnVwUlZqLW1pRHRWeTE5cGx6ako4dV9JaVJjWlB5a0tTVVRNalhWVXNjN1JDZ0RJLURja3UzYmI2cExxemhQTWxB0gHzAkFVX3lxTE5lZGV2dkY1TnJwNkJsTmxINTRCODBtS1V0M1dtNFBZcHpPZmtKci1HNXJhYWxWc1h4Mm5na0didVh3UHNjWmZmR1Fna25odV82cEFPWlcxNWpKYVY4dG9BYXVtSmU3Q09pNnVIRHE5blJKYWRLLVlzNGtsS3lnWXVPcnFQTHptRWNmdWJKNXFhZmRJM2UwelBJQmlfbWw2bHcybV9KWlc4TUdhdWdGSV81WVAzaTVrRThLLWF0bVRzcnZSZDNCNDU5UGZnT0UwSUk1WERxOVdmMmJFRmpMVURtWDZ5dEtDREpTNlliVlctUDdIUTBDaXZ2aFFkRnloV0JieVRReUtfNktDRmxlUGFZVERtYkVUUWp3WktJQjFjZmhwU2VRN3kyZHFoWHZtaUw1MEhfSVVfRThNN2wteF9SUUY0YjVnc1pFV3hzUGRQUTRFQVFnSEtEcVVzNzdFdTljUlFoalY1WXJJUW5vbGdrNHJN?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Otzma Yehudit submits bill to repeal Oslo Accords, retake control of Areas A and B",
+      "title": "Otzma Yehudit MK submits bill to repeal Oslo Accords, take over West Bank",
       "category": "정치",
       "reason": "중요도 미달",
       "source": "The Jerusalem Post",
@@ -15892,6 +15917,14 @@
       "reason": "중요도 미달",
       "source": "The Express Tribune",
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPal9DbFNwZGlMZU1JUDlzbEk5TjBlc2hhd0xPbGEwUlVnbG1uRzBYYVJZTzliVkdsbGxqUGRNVE9jZ1QtTUt5VnV5U1RZZGtnYUE4YnBUN1NMX21xekJoUlBlYTJ4THBkVkJQaG5WODkxOHNlMGYtRXktdGp0N29SdDlOc9IBiwFBVV95cUxNLWlRUWRDRGZSY0hqSEN2MWd1YmFxSS1BZlRJZjRVTS10TGlzVGVTR2JKZXZ0NTN3OHNoWWVFOE5BOVJCQjJBdHY5ZGtXaWNwc205Uy1wX0hXTkVlSjF1SGYzYWdjZkxGSFhqNFlTX3VXVmV3M1B3dXB1a25rQnNMLWxqSVM5d0ZfYWJr?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "PM seeks Japan's support for investment, trade, Rohingya repatriation",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "The Business Standard",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOMkFBQmlOWGwxTFZlWE1yZTZZQWNZZW5EN1Z6QXBIY2hSOS16X1JQa1ZwNldmVlNHMGE2cFpKY3pmdXZWdjZscjlCX2dBcU1uV2d6YmtQX1pHQmxsbWJIX2JVTWI5Wm1nUFlzdkJIbzFyYmI5NHZfZ2RDeGNGUzkwTHFTUlFvbUJVRHFMM1pNVXZ2dC1ObTlGMnJBd2s0a3ZxVGxWMzh2WHVLa2lOTGc?oc=5",
       "review_priority": "normal"
     },
     {
@@ -16063,11 +16096,27 @@
       "review_priority": "normal"
     },
     {
+      "title": "Pakistan Minerals Forum highlights reforms and investment prospects, says petroleum secretary",
+      "category": "과학·기술",
+      "reason": "중요도 미달",
+      "source": "UrduPoint",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPbEVBSkdkeEZfTDVJUjltaHNzblFQLVBfQ1EyZzdONTlYcThDSFIxQ3J6dENjajIwU3JQSjVpMmloQVBLQTFvTHR1SWhOaXpEa0QxQkpOVjJhRk9WRnNZN0dhZlNSZWZvWXBvNTdoRTE5VkUzcHljLXZBRWllU1RheXl2dGJxSlUxT1NVRFpvTU9kdU1xSEJqcDR2cw?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Pakistan Minerals Investment Forum 2026 Begins in Islamabad, Puts Country’s Mineral Potential in Global Spotlight",
       "category": "일반",
       "reason": "중요도 미달",
       "source": "Energy Update",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPcXllZU16TUtud2FvYk5ac01qN3VVTHJHUksxZFNRa29yTFRwWDRxZWp6eXZxdWVBVWRFTDBLUnFVUVFlYnRjZ0ZfUHRGLUo0RXpXRU9KTTdHQmxZNUdfSHFacXhBZmFhaHg2OWFiZVhPZ2pGTlN0UklkSmstVmJEa2N2ZjVpVkptbno2bW5DYUJFWVNsS2Q4MnRNQ1dBY3VUNDhaUG5aS05xdTh2X3B5THpTSUlFZEpWYnBXMnNTM0gyc3VDUGMyT3JSVmtLbzMzSHJBcXU2R2NFa3hI?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Pakistan Petrol Price | Fuel Prices 2026 | Latest Petrol Update | 1PM HEADLINES 11 NOV 2026",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Aaj English TV",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE8zajBoTVczVnFja0dHQmZudXpYY1BzdUpic18wWFBwZjVWbXcxcWhYUjg1NW12MEpQYTBnVEw2ckFlVXFpM2Y3SXdfa1hTZw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -16175,11 +16224,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "Pakistan petrol prices fall nearly 11% in November after fresh Rs8 cut",
-      "category": "일반",
+      "title": "Pakistan pitches emerging opportunities to global investors at WIC 2026",
+      "category": "경제·금융",
       "reason": "중요도 미달",
-      "source": "Arab News PK",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZlJOODV2ZEd1aHZpN2FuVHREME1nNW1HckJSRWVkZkwtb09nYzQ1Um5raDY5V05lMGhXS3BuWVlGSWR5N2ZuRmp4ak9ha295aXVWU3FwYnRobGZNaFRQUzRVLUJPRDJQY28wQ0M5Ynd6SGhieXpydHVfN1htWWdhRUFFUkg4bFNRSi1nV0tLR092ckZCTUtCU0JoaTk5LWNfME5GbUtFczhNLVhwYmww?oc=5",
+      "source": "Daily Times",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQbzhNQ0JpQmtvRDFPUkJwSm9XWktMWGlpUHk4UXExWnhkYjh6VWJVMVNSSTBlWTlCUWszeE1zU2RHaVNJX0dzdVBkVTdmcUVEZWRydDdNc2FXUzZWRnk3M3k2Z1U5N1NYSmhBT3ctekRfaURza3loQ1NhMlNYczVIT0pHcVZ6Q0kxWGhiTk9rQS1za2ZCRFpVZTFRcWkycXlPb0diMXF1R0I0UQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -16348,14 +16397,6 @@
       "reason": "중요도 미달",
       "source": "ThePrint",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQOHZwVDM2RFc3dUFmSEg0MHBrZW1mVDFlMXdVWFRJSUV0TzlXRHNqUU5aemNPdEM4ZjNKQjZabE9fM2ZKU1pjMUZwdUJsbk1Td2dGanpQM3N4dFh6V2lQcWUtU1BpV3dZbUk2QklPcnFicjItbkJhUGRsTkc5dDFQbkpR0gGHAUFVX3lxTE9OTWdRa29vdjNyVUFiZU9KUWFfYnpjRWp6UWNSRmpmdy0wWUJvbmdfYXAxZUsyN1dnZHVFTWZ3bjg3aC14cUU3UGVTSnFua2NqZmczc0JESVUtVExQLUk3ZE1IMFdGc0JJU3RwdWFWQ1l0dUM0MHBja2lOakJjSlBlN09WVjlKdw?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Pakistan’s Arrow and Lightning Drones Signal a New Air Defence Challenge for India",
-      "category": "분쟁·군사",
-      "reason": "중요도 미달",
-      "source": "Defence Security Asia",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZkZOd3MzTEJCNHkySjEyVmY2azdiUW14VWdxVEgxZE8tcDM1V2dwbEZrYVQ4Qm03dnk4N0ZrMy0zalNiLXJwR2JIUXM4WTJyWEkxYnh0ZEwtWE1pZm1GQUIwTm1JdTZXNmRWU3ZaSnhXZnNnTGtBRk5NekltV0RDYTJGUWtMa2RJbUVFM1dR?oc=5",
       "review_priority": "normal"
     },
     {
@@ -16559,6 +16600,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Peter Obi Embodies Hope for a New Nigeria — NDC",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Nigerian Eye",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPTVVUMTRzaHRaUW9xelFHVHh6cmdQMHhWRDhsdG5YYWg4c0NWQVVZUXpMTnl6bFFpd29BdWdGQ1hYWjk3dzRkdmhWV3BrdlJOU2Y3YTJKdGpTWVlnU3pqYzhlN0xmYzIzWXM4elVScmFrME9XSjNkMk1BNlpJQWpBczEtbzd0T00?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Petrolimex steps up strategic cooperation with Japan’s ENEOS",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -16615,14 +16664,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Philippines improves in labor rights index",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "BusinessWorld Online",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOS3Y3WktreEFpZ19udGFjbDJ5Q2FLSWJyNUdBREFMN0JsUFlvdUtzaENqaHR5WW5rd2ZoQUM1WFQ3M1pMQkhqdVlNRzM2TUh1dnBwNVNhVlRGaXMtU1ZwOGNEUm5ab3lFajF6LUctMGJrQzdkSWlnbWZCYVJUZHJBaEQwLVEtOHc5WnltM3AtZ3ZJUEZydXRDRGNaak0tenFK?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Philippines lags Asia-Pacific in digital, AI ranking",
       "category": "일반",
       "reason": "중요도 미달",
@@ -16655,14 +16696,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Phl, Brazil mark 80 years with Lula visit",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "Daily Tribune",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcVpaUzJDeGVTd2x4MDYyNE5oeERybDJETzNJOEJPaHFSSi1NZEZTbFZEZEdhbkt3Rzc5N3NHUXZ2OEhfWlBtM0hoam11TVQwaGRGcVRKSy1DTWZFRTBqa0wxQTdHbHZrVXBTS1luZzBVb2p5cDE0VFdmWnVTNTlWWUFTZV92U0w2V3VVRA?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Phnom Penh prepares for 20th Francophonie Summit",
       "category": "외교·국제",
       "reason": "중요도 미달",
@@ -16676,14 +16709,6 @@
       "reason": "중요도 미달",
       "source": "Bioengineer.org",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQa2t0Y0dNd3VxeEpxLThTVVhWNzRnc2s5RVprZWtwTVhDNjIwQzZrMkhzNF9nOXpUMU1YNGJ1V0hQR2p6SWtwNVpIb181LVo5TFhzVEVvVExvajJaV25MNE9KdGctUlNZOVRhMHpKTHlvZDhNN3ZBYnRhSzBVRGdIcVlqUmNPS0VvMExTempsaGdxX3BES3U1SVB5Q2tjQm04WEN1UkJvZjgzV2xzNU56QWJvZl84SGM?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Pioneering the Next ‘Flow’ of Life Sciences: Insights from Cytiva Taiwan’s 6th Anniversary Salon",
-      "category": "보건·의료",
-      "reason": "중요도 미달",
-      "source": "GeneOnline",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOdmFidjNzUERvdnUwVF9CLU84RHNrdzJLWDRuMDhCal9oYkJibzk4dHRUUmxPU0RWVko0QUxMeWV2M0ZfaUt5SDlqVjJGcHU4Sm5xUS1mMFJMdHhHdm5ocmxtRkRidmNQelJyX2pkdE0tRTM2UGxxNV9YUk56S294VEZ2UDVsR1VfTHF5ZU9ZQUNVNlR1Tml0X2Rtdm9vWkNyd3lwN1dFcnktTFM0REZpX1Z5UUxfRUFLdEQ0NA?oc=5",
       "review_priority": "normal"
     },
     {
@@ -16756,14 +16781,6 @@
       "reason": "중요도 미달",
       "source": "REFORM.news",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1kMjhiU1ozWjQtOXduQnhrczcyNmtCVDBFM1BKejVwUWpLZTEyOVVxMHFIclBCXzBHazRfVHdtbk5OclkzbGNiX1YzbVlPZkk2Y25sUVJyQUs3d3BOX2FMNVc1Skl6LVNfYkt6eW55VUFoZ9IBd0FVX3lxTE01QXJ2UWJhOWtUdGFKNWxHcjZRRU9sMlpjVUZiUDRQNzNRMGNUVi1KNTlvcDZjTTZWeW9OenJDRDRDMlVMdmt3TFBXc05fb0poUnVSMUxQSGxVYjNWVnpfSXpxNG1QQnNiR1RpcXpneDlFenJ2eXo4?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Poland Halts Cyberattack on ePUAP as Work Continues to Restore Full Service",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "CEO Magazyn",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4xaXFEVnJENmJydHktdDNRZjhoa2hQVHgzSEpHQkE2QVpGaWw3b3M3bWFrc2NDNk4ydTE1YjlpOGVTd3ZDMk0yRU9SeFV2eG9OS1JCejBQRzdpbzhzaUxoeV9YQVg1R1VfQ0cwUVZn?oc=5",
       "review_priority": "normal"
     },
     {
@@ -16911,11 +16928,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "Police chief says illegal wiretapping of Indonesia's president extended to many others",
+      "title": "Police chief says illegal wiretapping of Indonesia's president extended to many others, Asia News",
       "category": "일반",
       "reason": "중요도 미달",
-      "source": "News4JAX",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPNEpvMHF0azduUU1KM1E2MUpZYjI3SGVDTFBHTUkzaWpkVm5nTlRnay11algyWVZJVDZseVVfTEtHdGhHV3dRcmhTbmdiV2xUaTVKSHgtUE1nVXBjRjVOLTNEN3ZCU1NSVDVjTF9YeDhvd0hWSFdITl9vX0RFN2R0YTRBTmZDWWZpMHZ6SmN5eFVfUVJlMldwV1gxWnZqcWsyeUE1QkpmM0ZNWDVMdWVkNjFSaHVWbmFKZy1GR0psV0ZDMWlxeGh2M0FMXzVQRGN5YXRCSmkxZU8?oc=5",
+      "source": "AsiaOne.com",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNU1JWaDVpVWpCRkdFY3JLYVNRUERsOEF4SEdjZjJzOVMtRjVnYmtkX19Ya09HeE9BZk5HNjhISmZQanlZbkV2M0RGNDNfTkllR2hWc002R3JHNDJrVnpsclhXS0Z5YWNxWm55YnZMUkdUaFpfM21lTVg5bHlrVGpkbFAwNDlDak85WWdBMl9EQ0k1Q244cUFHYklVdVZrVVlteFdodVZVWUZ4RzhY?oc=5",
       "review_priority": "normal"
     },
     {
@@ -16948,14 +16965,6 @@
       "reason": "중요도 미달",
       "source": "Fintech News Philippines",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNYmtsN0lZb25GMGV2LTJHQWxkUENCN3ZmM0doU3lxbkFWVWhheFNjTTg2ZHdKcTdwVzhtcHhPcWRhZ0Iyd2Nac1h1MHBsRGdkYl9MMWQ1bUJneEc5eWtIa0pNbkZ0SlZlaUJQOXUwc3ItbWFaWDNLa3VIYkg4aWNWM0dlZnNGMEZRb2FkVXgwNV9pSDQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Pope Leo XIV Goes Home to Peru, Meeting Ghosts of His Past",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPQm44ZVM4Vk1MSHNmM0VvczJzc1ltd0xIMWNpN0FSYjIybVlIVmpycEtxZGdmbElzMkxtNTliQ294LUJROWV2eWlFMThQR2dCOFBmSGJBelhIUTB5YjR3ZXlObmo0czh2V3FDc24zWFVNTGpOeHR5TUVUR0Vpd08yVG9UOA?oc=5",
       "review_priority": "normal"
     },
     {
@@ -16996,6 +17005,14 @@
       "reason": "중요도 미달",
       "source": "Daily Times",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOQWpmOWFSZHdJd1hmNWVLa2ZOWS1NaDVodmp5MGpNRW9GaGdNTG5hQ1F5UzRha3BKMzVlYUdrQjRjc3NaTklIakFiRk43dmhQZHJvZFdBYXZ3M2VsWGVXWGxpV3YyZE1ERUtveV8yWVhwWEpRX2J2WUVCZ3JfVV84TWl4cU92MEdKZzBXTjVDek53bHFJdFowVUl0YjNXVEFOWEdRcWJydEZwdw?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Pope Leo XIV welcomed by millions on return to his second home Peru",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Euronews.com",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRlRCamtzNndZUklKRWVuQTVqdDJwNXZaWlNmeUJjSkFsanNWd2JXdENwQ0E5cE14TjdyQVdHOHdYMjYtZm1xMkRQMDk2RGc5NnVnYUJrRG82UFJKSHdWN1YwbWc2VXp2bW9VaFhJakpvZm9JNTc4OGJBQmlEQnQ1V0llYU5zOXFRRERBNHhtTHI2OUcyQUtjNnp4THJ0eVJHN1ZWRHd3?oc=5",
       "review_priority": "normal"
     },
     {
@@ -17671,14 +17688,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Quality of funding important for SMEs to raise productivity – World Bank",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "NST Online",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQcWk5OWwyckxrMDdRNUd0Nzh4b3RRQmRwaHkyX01KU3Zfd0NwcmJDNFFfRDJmS0YxWjZ1LWRuUjBWZlFreFdvTzg2ejRLSGFTZWoyLU1ZU1hYMC1kdXdLMVpjQm5mUXR0SUgtZTZnX2hHUU40YkRySUtITEhqZ2h1cWh0WkQxZl9rWkFsMFFoVXdtZExNRi13NFlUYnB0aUdHbkFwT09DdFdwQ25Ud0JOWG1MM29JS05HV085by1jMDNyXzVTazNHRmZR0gHKAUFVX3lxTFBxaTk5bDJyTGswN1E1R3Q3OHhvdFFCZHBoeTJfTUpTdl93Q3ByYkM0UV9EMmZLRjFaNnUtZG5SMFZmUWt4V29PODZ6NEtIYVNlajItTVlTWFgwLWR1d0sxWmNCbmZRdHRJSC1lNmdfaEdRTjRiRHJJS0hMSGpnaHVxaHRaRDFmX2taQWwwUWhVd21kTE1GLXc0WVRicHRpR0duQXBPT0N0V3BDblR3Qk5YbUwzb0lLTkdXTzlvLWMwM3JfNVNrM0dGZlE?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Quantinuum to Participate in the Cantor Convergence 4th Annual Crypto, FinTech, AI & Energy Infrastructure Conference",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -17783,14 +17792,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Ramayana storms past 500 crore in India, global earnings near Rs 935 crore",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Business Standard",
-      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOdHNNMV8zWXhKMlRLeENuamlMX1ZBRF9FMnpVbjZISFMtNnJ1LWNtTkxoX2hka3NjWmM3YU9uX3o5TVdFNUZlY3owVmJnOEFpbTJZbHhNZGtEbTQwbktXNmd5QkNvWHBkUnlrMjNkR05EYmNudmRraWpwRmwtbE50X1N2T0ZMZ0ZSWkVWSnowOHItS2ZDaU43Z1Y0STlTdXhkMTVXb3Z2Y21od0FJNnVIbnduRU5WVGdmTWNQS003Rk5OQXhveFE5RTk3U3h6M2RHREhETkZlYXZ0dng5QUdCRk4wX3ZMQjVPYXJ3eUFSc0RZSWfSAfgBQVVfeXFMT0hTR1VLSEtHaWpmSS1TV3FnbUFzUnpsdk5XbU16RHpMZ0EwTEp1NHlQMlFiYW44T2FnS1FsQ0UzNDk3emdDYndEUmpWY3duUGF4TUIyOE5sQ21WMmQ0bE5Dck1jSVJQSC1aN0ZLQXJxLU5UVGg0QXZmQXd1OUxjbFNpei1Wc0c5VmF5SVBBYXNaczBQWHJKYjNfQmdPOGh3MWNrTVpxSkMtaWpwT2dDRjlPcFkzRHdfaXNIS1VDM0wtQ3JJbWxwajltdjhWQkQ5VmRiN0ZvODBCYlpfU1RQRGdrT2lpRXdBX2JrVGtFMktQaHkxV0ZBc2w?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Ramokgopa Calls for Shift From Energy Policy to Practical Execution",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -17812,14 +17813,6 @@
       "reason": "중요도 미달",
       "source": "The Daily Star",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNYngxVERGZGNKbktJTG1uUDJWQ0x3S2pMNWwyNHJiWmpkbkFwb0NUc0toQzVWQ1o5b04xTk1ta0I1eG1lbnF4ZnA2X3kwWkJ0WjJxZnpwaGVvVDN1NmZQYTc1aXplUnNLREtSZGJGRHV5emREYmNBM0NEbmcyRExYQXR3RVNpSEVYU1d3bWVfWnRIN3FuN2JadVFpYVBNUjVBZzExNmEwNllNSzMz?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Rappler. . COP31: Von der Leyen says EU will 'play its part' as climate overshoot looms WATCH: European Commission President Ursula von der Leyen on Wednesday, November 11, says the world is on course to overshoot the 1.5 degrees Celsius target an",
-      "category": "재해·재난",
-      "reason": "제목 길이",
-      "source": "Facebook",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOY1ZQQjhQQTV6UVJjWVdxVkhzVkstV1JTVE13WkJzNEh6TG9WRXJwTERhOWVIWHBSR3pfMU14dnRCY29xeXBaTDZrMDJ2SXJuWTFpUWl2dzU0SnpxZFpaZ3p3NUJXZXpheThnYXZHc21Bdml5MTJQbE56NnM5eWtzRnpxTV9TdWo2ZXFEUTBEalBwRExEQXp3LWJLbTE5NWFLX1ZDUDBDZVp1OWFscDdrZEdOZktaSWR2czctWDQwdGdDRVk5aDBWUm94dDFsYTcwVXJIRzhTM2VsWTBT?oc=5",
       "review_priority": "normal"
     },
     {
@@ -18159,14 +18152,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Rubio and Wang Yi Talk as Trump Prepares for APEC Summit Trip to China",
-      "category": "외교·국제",
-      "reason": "중요도 미달",
-      "source": "The Diplomatic Insight",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE82UFV1bGJlODJSR1lNeEpJTGZJOWk3dTl3WkoyNmRWMUpoTWUwcTJCbFdkX0Q5eW4zblBxQXB0LUFEeXJxZnBPaWt3Sks4aHp6ak5ZTHQwdS11dHBPS1YwTS1NcnZ3c0RXUWl0Xy1mVXpickJGZWY4OG5KNlFrcjA?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Rubio backs blockade, Vance wants deal: Is Trump’s team split on Iran war?",
       "category": "일반",
       "reason": "중요도 미달",
@@ -18364,14 +18349,6 @@
       "reason": "중요도 미달",
       "source": "The Kyiv Independent",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNanJqck5pbEpxaFEzUTRNdEhrQXZJbGFudFR4THE1YkJ2UGRDX180cFRwMDEwZXlqbEtyYlBCdFJaWWFfUGlrVHU2VmNyMjBPVnQ3QTBjNWttYWY4V1diMWxWUkd0UGJNNVBuczlCcC1iM1Q5V2l4ODBReWM1UEJMN1pCN0tHX2R5VWtuaVd3RGJIT1JhWkRnWFBhbGs4a0FGS2c?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Russia attacks energy facilities in eight Ukrainian regions, grid operator says",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "Devdiscourse",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNVXN1Q3AtRV9hYXF2cnVhZzM2c1h4b2hYSzZXbUVGQlVvODhnc1dGWmxuRXdiREZmejlQTDBNdUVKdzlGd05oQjJSNlhzTTdsSlhFMkFaZVpsdV9qRGx1NFNtQUVuYTlESXJOZUJxWGl4VW1XMzBjdTJSQXhlVjY2ZEtaZ1FwVWVWMUxZb2RLeEJjVkF1V2htaHcyc2g0aWs4Wkh0WnJNX3Mya1I5c011eTEyV29rR0VVZmZqekJ3cmstdEJ6WTc1MUxfSzE3UU51aDFNLXZoQTHSAdgBQVVfeXFMTVVzdUNwLUVfYWFxdnJ1YWczNnNYeG9oWEs2V21FRkJVbzg4Z3NXRlpsbkV3YkRGZno5UEwwTXVFSnc5RndOaEIyUjZYc003bEpYRTJBWmVabHVfakRsdTRTbUFFbmE5RElyTmVCcVhpeFVtVzMwY3UyUkF4ZVY2NmRLWmdRcFVlVjFMWW9kS3hCY1ZBdVdobWh3MnNoNGlrOFpIdFpyTV9zMmtSOXNNdXkxMldva0dFVWZmanpCd3JrLXRCelk3NTFMX0sxN1FOdWgxTS12aEEx?oc=5",
       "review_priority": "normal"
     },
     {
@@ -18639,14 +18616,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Ruto Courts European Powers On Election Observation As He Eyes Second Term",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "The Kenya Times",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZmNvdHVsNTNZSS02Y0VaTXpocG1Wa2xVcHdUbTdqMk9vY0p6VWNWaW1xSnNSZ04tLTZDNzMyUEplZ2w4X1ZFdmFiX2Y2cjVORFpLMFpGWnpZWUx0bTJmZVF5TS01bHU1R2ExUFNzTWlHWXFTcF8tbnZIeUhjYW1YN0dpemVpVnFTbEFpWW9ZN3Fha2Jva2ZPc01fbFlIYkNZczh4YWRvLXBfRkZYWnhVNXFzd3R6Q3c3aFlxY0IySzBLbjQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Ryanair invests €40 million in Portugal",
       "category": "일반",
       "reason": "중요도 미달",
@@ -18775,6 +18744,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "SOUTH KOREA PRESIDENTIAL OFFICE: EXPECT PROGRESS IN ISSUES WITH UKRAINE AFTER USEFUL TALKS IN PARIS",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "CGTN",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE45SGoxVU1tV1N1MGdUQnBvWU1VR0plU2FnVHVPejBFeGNiYW9Mb2tRelBlTmFzMGRiRjh1Y0J4RTl5TGhONjRXUzhBWjRURjQ4aUljSW5QdVlUc3lZeV9XU3BwRmZsdzZ0eVVYNkF3?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "SPGS International School (Singapore) Opens Harbour Drive Campus, Bringing a New Vision for Co-Educational British Education",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -18895,6 +18872,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Safari Classic Rally takes new look in 2027",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Mozzart Sport Kenya",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNNEs0OUdQSUFUWDB2aUhmV2JpZkdXbEpEV2ZEWGNMS2JUc3JrN1JOajhqWUZudnd6NXM3eWlSd2NNaTNyRWd6VXdzSnNUQklyUzBWUHdsUXhtSGJrRVlzSlNROG1Tb2MzbkxCTFFWd0luZmJsOE5NR19kcnJFTDI0ZDk1Q2VaeUhERW9aLVlnZW1hWlBSTGpKM2FCS0V6em8?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Sahayata Setu: IAF To Hold Jamnagar Disaster Drill In November - Newz Daddy",
       "category": "재해·재난",
       "reason": "중요도 미달",
@@ -18943,14 +18928,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Saudi Arabia and Türkiye agree to develop 3 GW of wind power",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Inspenet",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1nYkVidnYyaDBKd2g0dTlTTzNBd0E0TUpGN1kxVVctV2xxSzVpN0dPbDVxUU0yVHpDVWxOd29lT3BHTnV5b1g5RlgtTF82NEh2RkdJWnA4MVVRYWt1aEFvbTBlSk5ma1gwVEdRNGxrTmRraGU3dVE?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Saudi Arabia bets on AI economy with $667 million.. Why do energy and data centers top the investment map",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -18980,6 +18957,14 @@
       "reason": "중요도 미달",
       "source": "Al Jazeera",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPLUtUMTUxcHlqWWZsSmNOdkxic1NGY0VKejdJOHVMZWhRZzVWODZDOE1lcC1MQXFlYmZzQnZIQlUwWF9OdDg3UFZFQnBjYnhfZTQ1bVFiVWFGSkFGU3lNYmZQeEJhbGhwRDRHdGVXY3M5V1EtdVFCcUV2dlFiRDRLWG5SYmc2aHhVcGRsQnNYR2dFOVVvNUd0Zm9CY3JzemvSAaQBQVVfeXFMUFdBQWFtVTZqWlVBTXNERjlNVDBZZjI5bldxYU1sanBhNkluVk4tdHYza181cWNnODNhZnREWmpXS2RsdmROdi1UWmgxbk5FNWt0RFZTaXp6Ry0xdXVJZ2tYLUZVNkFCU1dhWmtXQ1AtUHk3X1F2Q1JMNjk4aEM2YmdWVEFUVy1ZTDkzd0FDYjVUWXpzV3A5RGstLUVIUUVfaktTMk8?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Saudi Arabia says debris from intercepted missiles falls in Makkah region",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "NST Online",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOdW1tWk1FMVpFOEhpNi04TlM5aHlRREs2UjlqSkxEQ1lGS2dYOUU3WVE1alhrWjlFQzI2c2JxVWlBaF9jSGRnclZzTDN4dTB0MlFGLUhsT1VyUmFFMWhpT1ZYbXAwSFR0Y3NEem93NEdGQUhlaE9JUUNiNG96ZnpROGx1eGk0dzJNei1IMGllX1JJbThEZ1pFcXRHTklHeXlZaGx3TjRQMS16Y1lrZ2djaDNwV1BSZGvSAbwBQVVfeXFMTUVYanl4WmJhVHRyaXNZQXhZU3FuWFgxVG9VckoyNkdibmFJY1Y3V1ZYV3dMQUJUYU16QjRjSlM4cTVTcV9fdUgwOElIaU5oT3R3T1B0bFJXWTdIb3JKZS1oWDNSYlpPS25BX0VhZDMycC1tcHBoS2ZzcDY2c3daWFdxdDFNNmxmOXdrSGxrYXhoQ1JlWW8wQ18tN2lUSnJCV2JLSDRXYnMwN1RBZnVlLW5kMUpTblpPTFppNUo?oc=5",
       "review_priority": "normal"
     },
     {
@@ -19111,6 +19096,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Schneider Electric South Africa celebrates 55 years",
+      "category": "과학·기술",
+      "reason": "중요도 미달",
+      "source": "SA Instrumentation & Control",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1ZcTlPZXdwZC0zLVlteHF3cWRXQktaU0JQazR2bGZ1Y0FHUUprT05WODJTbWRiYTU5TUM4VmY3cF9RSkZBdmJDeUVtV1BRUVkyakE?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Schneider Electric opens regional centre to build technical skills",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -19228,6 +19221,14 @@
       "reason": "중요도 미달",
       "source": "Agencia Andina",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNTFBVSUhVNHBiQ3ZRZVhKWDBMRXhQUHMwQnMxbDJfSWc5UHZhV2t3MkFaY2hSQmFZMERoeFczS2wxcktwekxkNnpWc3dwYURxRlRUSURQSkE0aHhPdHVwTUEwdTNTd0NqWHJHTDRGVGJVY1Z5VlFHRnhNQjVlODVnTEZwcW05SWlxMFVnMGpLV1FKMFEtc3ZkQVdjTFdQekdZYTNjbnFpRzMtYWJ6Nk5sR01rWlZTcWZlMVhvNldhdw?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Security Alert: U.S. Mission to Saudi Arabia – November 10, 2026",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "U.S. Embassy & Consulates in Saudi Arabia (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPRFFVN2Z5NFZ6MHhUTDBRejkzSFh5S1BOYVJaSWo4ZkZULUljUDZfOVFhSzFWemlUUEZuSl9BNFhFbEdGRFd0WU41WnZBb083dGswWld2Ry0wT213TkNob19WVzVETlhTXzQ4dzRQaWFUQW5sWlJGamx0QmRwdlhXM09MWGFIb3R1a2hWWWZB?oc=5",
       "review_priority": "normal"
     },
     {
@@ -19799,11 +19800,19 @@
       "review_priority": "normal"
     },
     {
-      "title": "South Africa warns of rising foot-and-mouth cases in wildlife",
+      "title": "South Africa's ANC spokesperson: leader Ramaphosa is not under pressure to resign",
       "category": "일반",
       "reason": "중요도 미달",
-      "source": "Moneyweb",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQU1dNVTJXTndVTWtPOVY0WWRHQnVhYWtYYUVPTjFrUHZ0UDAzNl9IOWNUUkFIb3EyOUNtSDh0WmU4elExUWJsX2pIeXhDcmFkcXJrVHZTR3RWRWlWVnZWTDltV2JadE5pWF80TGVPM3hQSFZLREoxT0JjQVNXT1hiMEg1VU9XdkpPdUdldk02c01uY1BjenhYTzR5TnBpNTJKUEtPcVJQb25DRUU?oc=5",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPQ21sYk0yNnV5aWdKRUNnVGE0MEtMd0ZodUJBOXQ1X2kwU1FWd05kU21idVV0V3FnN3hRc3B3UkpxdlBhcEpVMVc3V09NeEc5NGdwZmxfaEhHQ0lPS1Z1S3VhZDJ2aFdvUWhfV0x5dldmSG5MTlNVby1rbVhIc2o5SGVRZXhGT2tJREhnQWJvNWIwNk0taWYyM3p4U01xWFFCNEFtRW5Tdi03V0I1YWpfZkNRYjFleTR3Zms5UkxsUlVmMEk?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "South Africa's citrus exports hit hard by shipping constraints, demand factors",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Engineering News",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOTUhZa2s2OXBoZ3A4c3Uzb0Q2UEc1ZUw2MFBEeUk0RjNHRE1VTlNDZnpxc0czRFZPUW5pcDNsamlXaXlZRm9CYUtHMVVqVWVsQzlCY0JlcUttNmJfdkdLMEJ5LTNuWFdPenA4RkpuaUFkbXBob3RCNDNIZUgtTWNQa3FpMTk0bHBZVmJ6WkR0bkthTlBYWGRqWEZQdHQtLVZsWTJBZmRXdkZ1dzllTVJiSTMwNUxzNHpXbXZlbjZjNzVUWmdETTF1MQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -19820,14 +19829,6 @@
       "reason": "중요도 미달",
       "source": "Daily Investor",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOYXdQYkU2N1VXNmw0T3A4d3Z1ZnhOQnNPUDRWN0J0TGRXX0hZWDBVVUtjR2lvMkwwLTRaSkdiUnVEbWVSeHFLYkoxZ0FmVFpwd3JRTnRFTTN6Q1lXZ0xNYjhxaGMtVk9KcU1PQ05Ba1hEdzY2UkRybmdLb2hQdzk4bEREQmhadk5TZ3RBZDczQ3N6WGtOYnItOXFUb1Myc04wdXBIZ1VxV1VJVDRlWm5LSmpzSGNWUQ?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "South Africa’s auto industry has five years left, warns AA boss",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Financial Mail",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNHBqamJ6ZWRUOHRLYjI4ZGdsclh3M0JIUVlsQkFQOHVBdHdMcVNwMHB0MDRrOEJXNWxvTnhYV0g2a0hjSU1OUGxEeWZVcXhfY1AtVENFSENoUVFGVmZyNHRqc0NmaTVQOFZRRjVOSzFCN2l0ZFVWcVhqYU10YzB0SVVkZE9vcGNramVFSlNDTmwwa3daNGRKNmhZcHlHSjA0NlE?oc=5",
       "review_priority": "normal"
     },
     {
@@ -20055,14 +20056,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "South Sudan Envoy tells Security Council census is not a prerequisite for elections",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Eye Radio",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNSExEVTE5dzdrdjQwdnhENm9MSmdmWWhMY2lSTVVSWEdqaFRmZFFwdkVYeUE5cnN2Qm1nWTJxUHJuRVJvX2lJVm9ubGl5SWNCQ1hsUDJNMjd1aXUzR05BWk1lTkFFNVhUamVTMWJsaEgtSEI2a2VJc1gtR0lESDBWTFJ0YmNkQ1Y5aFpWNTcxUklBYzJfN1pscDN4TndLWEdhdWoyeEVQNGrSAa4BQVVfeXFMTWxOanZINUM0SDhvaWtxUHBUYVVWS3Q0UlhwQUtEZUpkeHQzNEJueUh4QTZ3eTdELVdFT3hfUmZmMnl1cWpLNGYyUWY2VzZzeE4xYVVVYXUwOHp6XzRORUFLenRkTmFBMDdGTm9vTWJVbFkyaTFkbVRDWVNQZnNBQzM4bko2THVpeTRVNThfNXhvclg3VnVsaXlndXRNSmFpN2VUQkJfZHR0N0RYR2dR?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "South Sudan gets new African Parks regional operations manager",
       "category": "일반",
       "reason": "중요도 미달",
@@ -20076,6 +20069,14 @@
       "reason": "중요도 미달",
       "source": "Eye Radio",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTEM2eks2LWdQZVozNW1QY0l3ZDkySzlEWWZXTmI2a3VZbG9wVklhUTZfdE0wanNNa2dIUmpHQVdUUWRpWjdJUlpiZ3BhOFc1eWNFZkt5WFZXQ0VkTC1GUjZBZk5ZNUhXdEo4LXNrc3QtY3V2UUZSb1RtdUxFazFsRtIBhgFBVV95cUxPZHZhSUI4bGVaYW9JN0FhaGdJYnpQclhBTGl5MnhrZ25zNktmSFpwVnhfazVBRDNYaW5wOG43bm5Jd1IwREhad3loam1zYUNSSTRVa29rT2JBc096MGZlblBGRk4xVFZrdWpPMWV2X3VqMS1YekJyZkNxczk1RnpzVTJJTzBTUQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "South Sudan joins Global Telecommunications Conference in Qatar",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Eye Radio",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbXhFWVdReGg3aTI4aUpoVXdrYl82SmJQTldGSlBYOUZiZXRVV0RlaWJEWGdQaUp5cmhyaGNvLXdoS1hZTDFncDVTWWdHNFdWMGRCMjJOQzFtX2ZEUnFlbURNbDhXMU50bElWZVR3bXZTbnVBbV93amoxdjhNSXBVblNLQmY1NEZRcFBIRlJB0gGTAUFVX3lxTE5zVGh4Q21lZzA4OUZnOFp0bTRFUVloekYzUG8zazRudlMwdnpKazlRdWk3RlVTVlBKd0w0MkxqdThFVnVINnlUOXhRVldnSEtPN3VQRDdQRldpYkFFQURyU2tQQjU3MGo1d1hTYi1JV0NTZlZaSVdvY0szMHNwenVmaEl2YmNrbEM1Sk5UdnRRUzZIcw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -20196,6 +20197,14 @@
       "reason": "중요도 미달",
       "source": "News18",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPWnBTMUxJQ2RvQVp6SEd1TXNzX0gwQ0FjTjFTQjNIZXRYaTQ4dmpOamU3X3ZyUFZUV2VmeGF1WXBsV1hEUjFpUGljSGliLVVaRzc2MklBQmhzMHZ5aVZMcXpLRFRJWEVsZlpsTlRSamtMTWl0R2JkbnJJbU0tZnFTWlBieFhBMVNGSWtaVVVhb245bURhTmhRQ2k3TmQzc2lVYVNlbGRESmxKb29IYTBVMlZ0aGZyOE1udGJnQjBXQzRTR1Rka2Mw0gHMAUFVX3lxTE9yZ0NLNEZQY1ZVUTdFY1dyRzJPLW0zU3NuaE1DUy1NSkNWMUhlNmhXYnNfVUQybWNqN2hGVEhkdjRjdVZqY1U2aFNmcVRuTXNUZ19aNUx0NE10Z0tpVXlvRlE1dGt0ZEpKeHVvbU41TmNVQnVsaWlTZDZVU3lSb2t3dmx1UEpWaU9JS2lyejFkdXV3eV8wWWFxVmRGdDdqX0hUdFJFQk9TR1daSEw2dVdtZnhNQmtNeGhTaExXR0UweExVUzdMU2RMMWhxMQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Spain Sees First Joint General Strike in 14 Years Over Housing Affordability Crisis",
+      "category": "정치",
+      "reason": "중요도 미달",
+      "source": "The Diplomatic Insight",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOS2FIcUk0MXF1MkFiVTFLRVhRMEh1eExxOFh5SjBDWVVHVDFsV1pVSW85Y1RjQjNsQ3NOWkFqRWFvcnJIdjlBNlhENE5sRE1JZFFQRDNHYlpoM1lEczNsbkwyQVR4aF9aa29PeFZMSmRWVkgxRDRYTXIxaXUzZjc0QXFGVEpJdTVZSnViV3FqeWhYV0ZR?oc=5",
       "review_priority": "normal"
     },
     {
@@ -20479,6 +20488,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Students shiver in classrooms as Iran government warns of gas cuts",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "Iran International",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9XRHhTOExmQmY3a3hZT3Z6RzBzNjZ3SmN1Zno2ZmNvLW9KZUFGZWpaZTVoUDczUDdMZll6OXV0dHRGanFrZHUtckFXdi1lTnprUHc?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Study Provides Insights into Impact of Cyberattacks on Hospital Care",
       "category": "보건·의료",
       "reason": "중요도 미달",
@@ -20543,11 +20560,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "Sunmax Brings Together Asia-Pacific Medical Experts for Deusaderm APAC Summit 2026, Celebrating 25 Years of Collagen Innovation",
-      "category": "보건·의료",
+      "title": "Sungrow launches New Energy Storage Systems for businesses",
+      "category": "일반",
       "reason": "중요도 미달",
-      "source": "KIPOST",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1OcEVWTmc5OVBySDJ6YmxWbU8xdXFDcjBhZDRyT1o5UWVJdV9tRGotbjB4Sk9oRDFKNl9iUXQyWGRrUUQ1MmhPVi1ZZmhFUGVzVGU1MkVoSGFzTEcwU1ZMWW1qNVNTdjdZZkVIVNIBbEFVX3lxTE1OcEVWTmc5OVBySDJ6YmxWbU8xdXFDcjBhZDRyT1o5UWVJdV9tRGotbjB4Sk9oRDFKNl9iUXQyWGRrUUQ1MmhPVi1ZZmhFUGVzVGU1MkVoSGFzTEcwU1ZMWW1qNVNTdjdZZkVIVA?oc=5",
+      "source": "YugaTech",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZ1lBQTk4WU05YzE3My1KMVQwejFIZkZtT2V4REhlZndHMjVyanRDOWlXNkJNZjl0bXhxUV9UY1FDOTR3NE4xWno0NElwSkhlMG83WmJjZTB4WklkZEd0MXZOeGRXMlNCQlVBTl92eF8yaVlQX3N5TEV2aVNNNDVlWlFtQTI2WWVGRkNLVUMzWWVHZDg?oc=5",
       "review_priority": "normal"
     },
     {
@@ -20620,6 +20637,14 @@
       "reason": "중요도 미달",
       "source": "Legit News",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOVEpXdHVOOExNdXZON1Iwc2lsa0p5a251MWlZTHVFck44OTdsZzU3M2o1OEVDWFFmWUQ5QklHdnM0djBUT0Rpb20yVU9zajdQSWMxNEtnUlNkYzl0aWxEQmRkRVdxX1NWZlFCUTlPenQ2UURqTzBFN1NXMFhUMTNhcmxpdGxlSDJQUUdkY0JWeVpRYk50d1pSRVo0OW1NcHlzRXZr?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Sweden Will Not Play Russia if Matched at World Juniors",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "RG.org",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQbEZnMkQ4YlVVbXYwX21UbURoR1E1X1dRVUQ4Z2F2Y1JOZjltRnFTTHp2SXQ2VkJiOTVCVzlZZ19DY05YNHFJb0Z1NkcxT1BScS1Kc1ZjWEpNMFJfOHYwMEhwRGxfYmVhZmUtTFZZcnVhQnpTQ0FTTlhadzJtVDFUd0FGT1hUTlMt?oc=5",
       "review_priority": "normal"
     },
     {
@@ -20991,14 +21016,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Taiwan Scientists Find a Way to Slow Tumor Growth Using Nanodiamonds",
-      "category": "보건·의료",
-      "reason": "중요도 미달",
-      "source": "Arab Times Kuwait News",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPLUJaWUdmbGJaVjVYdHNhUHgyWW1WZWUwRDRsNEhqUE1aMGVNakhOZGFKWVU4RzQ3S2wzY3dNYmFxTUdXT3l3YzlPLTlMX0RMTGp2VUhDOS1CVTVoY1ZMMURPWGU3eEx5ZmVNNUNqcHE0WTVtMlJhUGp2WTR3TFk2cU1RWmswUU9JQ01oQ29IRjZBLU9CdS1FcDJOSHkzR0xxTTItYUhvZFE?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Taiwan Unveils Red Falcon II Anti-Tank Rocket to Counter Chinese Armored Vehicle Threats",
       "category": "분쟁·군사",
       "reason": "중요도 미달",
@@ -21036,14 +21053,6 @@
       "reason": "중요도 미달",
       "source": "Taipei Times",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBzTnptd3pZcElNbVlsT3I1OEhnaXVhRUl2ZWtzRTAyb043Um5zWlFfd05INVZXMTFnOG5MUXdWVHUwbHpmOUVBeXNFY1NwR0F1dVZqZW5oakJHZkpTdGRDdERaYy1KTWpSTk5BcUd3SzY2bDB1SklSVHl3?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Taiwan is taking part in APEC China summit on an 'equal basis', president says, Asia News",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "AsiaOne.com",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOQ00yUGdOMTNHblBybE9mMC1HS1Z2ZDN1MFp4S0tJUXhsYnZNQW9WQ2dITGt6aFJQV3VZcHdlTkVKSlRGWnNZZnFPLVV0Yk1lYzhaRW9wdjBnRWxjLUE3YlF6YlY3UV9kZ1R4d1ZXSV9ackg0dWdOdEtQUEVMTzZyREhsS29pVExWUlF0TzdRQ3VoSmFZbmZR?oc=5",
       "review_priority": "normal"
     },
     {
@@ -21100,6 +21109,14 @@
       "reason": "중요도 미달",
       "source": "NST Online",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZGRqWlA2dG5RN2pSczdTRVQ1UjIxdVZNX0g3dFExeXNkdWh0bHlrTE44czVEQkRuLVJBNDV2cm53OE1zR3BwZVJCT2dkZWctQVkyZ1ZXTUwzMVQtR0FtMkpwc25Dek13SGt4clF3X2dqc0tYVGk4VmY2Z2JlMGJFUjJkUFZkNHRJdEFDdnQtZ291dnllcEtjREh1UXBvWUJ3QzZfX0xnb2ttMXVKYS1ORDBB0gG3AUFVX3lxTE12TGt4bW4xN2lTWXA2clQ4M0VGdkM5UkcyRWFsZ3hUcDZKX1k2Y2dfeUJfQzFza1ZSWTZCS3BpNmdOQ1o4b3pfcjMxLUNNeDJ6QUE5SHliT2tyZjhhbjhuREVST3pvVnBOSzhKLTE1Wmp4djNSamt2SGhuT2tkVEYzV2tINllZOVlyeUNmd2RRTlVwT09mZU43SGo5S0JaSG1yekp0YUpTTlpxZi04SFRMRzIxcFdqSQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Taiwan to ban heated tobacco products on flights — Taipei Times",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "UA.NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNXRwcGUyZjZsTnZ2cnc4VHpNbXFOamZBbnlmM0ZnVjhoa2htNHRqeFU2Q3Y1blJRM210WnpSM0o4RkRaeGxZSjhQYmVwYms5X1NhZVh3T0QxSWI5MUFFMHQwUTc4eTJjZnpHdUpXLUswS1c1SGtSSDdhMTFNNVBMY3Q3TXcwd0lkR0xmcXd6Q1hzZFhGdGVFaDNaNVZoSGFWeE5jLTJGUlo4Zw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -21383,14 +21400,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "Thailand joins COP31 climate talks in Türkiye to advance net-zero goals",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "Pattaya Mail",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNV3ZNOUdJZWxSUDVCV3k5eVBGZTNiM2RiVnRfd0pYeVNuVU5Zc19MOThYV3dacVpyQzM3UGZTR0tRaUQyeXROcmFYZnc4ajVPbDVaVk50M0ZKSEZ6Nm9VeGZzdFlkYndKeGkxMkhHMFJZaUZRN25HbHNxRnF0TDVaeDFGby0wb3NvYVN2R3JTR1RKUF82X2dNZTA4eXRPM29tNWVNWXJBYXFnQ0RCSkxGM3c0WDBFUUh1RFI0?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Thailand officials meet Apple over mercenary spyware alerts sent to politicians",
       "category": "일반",
       "reason": "중요도 미달",
@@ -21428,14 +21437,6 @@
       "reason": "중요도 미달",
       "source": "Thaiger",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE50d2EyVDVFY2FkaVo1M0pkUjAzOGxyX1NXb205U3pnQ29RTlJ1WjJ0X3N5bXRjbGJPUllhVHJ4VTh3U0JGMlRhLXlZVmtnSjRfMDlFMWpSWmtrMENpaDZReFFDUDJlZWtKaE9Vd253cW9xY1p1VlNR?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Thales says Belgium’s Blue Dome will use GM200 MM/C radars to track drones and missiles",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Defence Industry Europe",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWV5R1JHSTVCR2d5NVc0YlRNYWt3UGxUVE1nTkptWXNpdUdCZEhPa2FJSDdQRE9mbWh3OEpUZXBkUC1Od2tiVDViMFJNZTBpMktEYjNiU0dYQnp2ODhWOWxadnU2N0E5eW5WaDl4cXNTYllEUm0ydDdVNWF0OXV4LWJjUkVGLVg3N2Vhd2laZ0I4ZHFOZzduRndBck44LXNzTXNaOHVWQjU3ZHRYajlleno5OHl0Zw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -21559,19 +21560,19 @@
       "review_priority": "normal"
     },
     {
+      "title": "The Gulf market’s strategic decisions",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "The Arab Weekly",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBwTTA4RHJGU2tIX0tmSWpaeHpTSGZqQkphVjRzc2VjZzdMRjdGbWg1Q2x3S3JjYjQ5QjBnN05jaWdfbll6T2d0NmZCMHhZOU4zczlsVGFVcF8xakt2bkhWSTNWSnEwUFNlQ2c?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "The Gulf of Finland’s Forgotten Islands",
       "category": "분쟁·군사",
       "reason": "중요도 미달",
       "source": "RealClearDefense",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQTg3Yy1FZk5zMFNBSVVYbzJEc3poejlhVGI3a2MtQkl4M01ubzdqZ1g1SURITVkyYldPT1FyeUExbEI0YTVCbDlPVHIybVVGREh4NXBSYXNQbGc4LTh5N1MwQXhMWFlMdTBfcFJjMDJXUkhlZnNzbW5IU09IWllBQXVWbzJaamJnQ091NWJmQ1VabHNYY2V5TElILVN2b0U?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "The Israel Aid Deception: How Trump and Netanyahu Plan to Fool America",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Palestine Chronicle",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNaEhQUFVJSm9JNmd2U0JNTmMxVEhiNVpRbGVMR0FrekVCMTFhckxQMEw3amtVY0owZmh0czZqS2tUbERFM1lHSmFKa25uTmFrQUhtRU1YVzhnVmpNNUlHN1VyZDhMeWs0M00zU1hNVTJjTXJtTlBrOFlqbHZDRk5ESUVLcV9iX3ZjWkU0NERFZmpPcUZuRW9NM0VWWjNocjNlMzNReWkzMm4?oc=5",
       "review_priority": "normal"
     },
     {
@@ -21588,14 +21589,6 @@
       "reason": "중요도 미달",
       "source": "9DashLine",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQS1RTRU9CX1ZLTW9sYWIycFhmS25RTmtiWmRKbHNvNlVWQ0FTbFlZU1RDcDU5TnNIZDNTYk1BdDg1bkN4YWlWMkxNbHBfTno1WnpXUUhqRkdRTUVHREY3d0tTYzNtSERST2hMV0RCdzZFLXJvWFdVc1hhY3QxbFprT3RrYVdqRFA2SmxrX0ZETDMzRmczVUFYYmtjajdKM1RvNV9CRkk4N3NqUjF0Y3ZWTEFENzFfcC1uSW1r?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "The Man Who Helped the C.I.A. Secretly Operate in Mexico",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdS1GbzltMHFZb0VRZ3dOSVdsWS1IY3cwVkJOd0lrTUVSOTZxRy16bHFqSFFQa1IxUlU0RjhtZlk3RlJqU2JSVVpxZHh1NGVXS2FVbDNCTEFDWnp1VGxFUlJLNGJyVlpmU3VnRDF5TXZBYlkyWDdIV0pjSjNZMktlLQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -21764,6 +21757,14 @@
       "reason": "중요도 미달",
       "source": "Saxo",
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZFFsUGdWLUZQSWR4YXN4ZmxVZUczU1hXX1NNWmhjNVFDeWlyaFcyaVZteVU3dW9ndWZIVUhHZFdjWGJRdkZXdXcwcHBZX21aZXFJd0xfWUJsSlFBdzR5d3hoTEVrZHNrc0dzbFg5REVVTE5zbzNlUUExODZwYkhDdG5kMThjQzc5dTVqNUhOdUpiNmd0YktEbnpaUlE?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "The historic SS United States has sunk off the coast of Florida",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "CBS News",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTTltUkFUUVZrN1ZNZXVQc3QxZy02NWpWZEdqeU1Ua1pCbFBXbG55bmttMm52M2Z6SkZfeng3WHJpc05kSmkxR2NXMDNPT3FUZVdfbXZEUzBoVkxYOENrbVZQYXBFWWl5UC1ETERES1hpUnBNTEZoM19qMUZtZmE0UFE1b3lvcXU4LS1maUt5aTJJYUlOWHlLRTRaY1VxVGFCN1VTdE4zdHd6TkE?oc=5",
       "review_priority": "normal"
     },
     {
@@ -22139,7 +22140,7 @@
       "category": "일반",
       "reason": "중요도 미달",
       "source": "The Local Sweden",
-      "url": "https://news.google.com/rss/articles/CBMiuwNBVV95cUxOLWE2NjZNTVBOSHBNcGpBNkM3VGs0OXFwcGlxRTRVZGFTWWtCZ0JEbFRCWVBfYTNvNVdhMTNBQ1AzeGRRWXFpcFlSZ0tKNlIyaGk1WTFZMXp6Wi1MY0NBRS1VM2c0RG9UaG1HZ2pqamE4U29BeDlVTi10ZEVDSkU3djVFR3JURjdxWVVrb2FWeW1YOTFrQ1RPcW02ZUhJWmpsV0xDbnVnZVlkSzd3VFFIbGp4S1E5X0JHUk1CcDNoY0tYRHl6RWRQdFBINXJhY0hjTmZXT2ZQWjdwQm50VDNwUWFVNmVKbTdwbkFnS21weU56WkJseUp6SzdvUExscTY5b3dIMnNjRTU0Mk1EVGZNMm1WdDBvaWZKOHpPNXdJRjBadHBxSWRNTDVualRJWUZhOGp1R2NiTWVoRkdPbEdDUmtNbWw0eUNXYWlwUnQ0VHlwb3lKcWV3S3puWjg2VmgyY3Z5QklQMGRic3cwTnVOVG1QUmdyUWU0eXA5VzZFMHFkQm5TNEZUc29OaWZsNDlxSDRYMUJaTDFzeVQ5UWVzTFZPbk85X0VJUVlIMFRIYldkaTd6NDVVRnFCTQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiuwNBVV95cUxNM1k0OVlyRmRUUUNTc0hzclFUMHFmam9takl1MXhDSUQta2hXYzFPRzZWb1B4eFQ1NUtncFBXcXkxdnVCRGZocDh6d3d6blJjN0xmZnVSRUJXOVhXMTRHUEhhdTJOa2xoY0ZCemZOS0pZV2o1NTlXWVlZLTFqZG0tQjB5YTYyNnh0akZPSHBMM1BPWXRaVGlqR2tCUGg5aXdZX3ZvYlJ4WEpQVWRjc0JUSHNfZF9hVWlPdUM2QTJaZ3pTR3BJaTRZTGF4SnFJUTdOTWcyVXlzUXRXMXZVbzg4emctNGpMNFppNDlnZWR0c2VoS3R1Q3JUc1NjZWo0WUNqc0NpRTVhTE52OUlWNmZWUG4wYi1HN2dYZm96Zy0xTG1CSUVWMUs3RXdZX1FldmFpWDUwUEZ4QmRqWW8xNGNCWGhFcHpWZldlamt0WlFiLXB4cm5IN2lETHl0TUI0WHViZ1diU3NwSXhDUzNBc1JHREM5RUszY3U3V3NHbWRjWFdEU2VFNGhWTnp6cUtQN2xBM1FyMFhWYjRQNHRHZ3k3S0Y4TndfaEZpcHlwbWZHSHlqSHFyU3V3NTdCaw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -22359,6 +22360,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Transport Fares Decreased After Latest Petroleum Prices in Pakistan",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "ProPakistani",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUlEwRmlQck1MdWhmMEN2aDg5NVl4cUdWY0FKSkFYdnZrbFlYU1gxS09leG9ybTRHWEp2UnNvNndOQWVLaG5xMjRMRVM1aXJrUS1yMHZnb3pqQUY1ZlUxOVNFUmRRN0NlY01CMU1UWlU4ZHZWOVRMYzhZeE95QmlwSmQxdW5sa2htRlRfSjF5enJ2WjZESktXUzZSOVNtdTNSWm5yNXBn0gGrAUFVX3lxTFB1N2t1NDN2cl9KT3RWWDNvMTdfRkhwdVlfSE40a3h1VGo1VXVMdGh6MzdlLWJ4bDNmWU5vX0l3NUNFbkxVcW5ZZTl2amVXeDRQbGRPd2lKcDJpazJVeHdIZTluZXRMZ1JlcVdwV0NQVlhYenZEMVByeGY0RDhIVERHekhTQnlKZU5lWEstaV9FVGVwcDFPQU54TWJ3ZGt3SmRvZENLOXBZOS1lMA?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Transport Ministry introduces nine new metrolink routes in 2026",
       "category": "일반",
       "reason": "중요도 미달",
@@ -22420,6 +22429,14 @@
       "reason": "중요도 미달",
       "source": "Vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNnVYME9VNUJSZFlKdFR0LVpQRUtKc2p2dGlCbFNUTHVVeUhqS3pxeWVlclZhOTBHdWJISW5neUx4ZldibGpRcXVUVUZpYjVyMlZYbjR0TWMzUHlQYWpodEs5NG1nVjlKd2dQdV9oNzJCLXg0TThUZzlVUmlaRDh3UFY0M3Mwc0UzV2doajZ6SQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Trilateral talks on Ukraine begin",
+      "category": "분쟁·군사",
+      "reason": "중요도 미달",
+      "source": "chinadailyhk",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9FUUtWSGthN0dwTF9xT3pnbjhUTy1PWEZiRDlrNXRCbnJfX1F0ZDZNek9Fd3R1YTBlLVdURDNhS1Jxblp2MHVkU1NTZ1dSaWRUNGVhVFc1TkFIdw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -22564,6 +22581,14 @@
       "reason": "중요도 미달",
       "source": "News24",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNY1RxNEFrbktHY1JZN0I0OWNoZC1qMWVoM1Q3b2NtTGZ0dzVZUWdobEdhY1FzcUY1djEwVkg4enZibWVQX0xLUEFVSGdURTlOUlFxdzVsblJoSV9lN2x4MkQzdEk2YUtpZ19QQ09lMG5TM19hRThWWTVjcWNLeXFqV0pxRzdONm1yTmRlbzJvN0t2X0JZSE00NEVqTEVMQVNhMlE?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Trump says he’s keeping ‘status quo’ with Iran, with no need for new strikes",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZENobzk1VURRa2N5VkZGWHBnaHllTVoyNk9aTEJEU3p3bWU2ZFNOVmNCcHpkVGctVklLb18ya3piM2dfTkhKNHJjWGlDMzJyWnVGNnZFOEQ5Sy1NbGlEUE0xNmZzeUNYMjhXcWt1SXFTS0QtMHpkbjFwanRlNFRxYXZOQk5HSmpnc0kyWXVvb1BUQnVzQ01DQ1lZZVRMOTNfeTY4ZGhKckZKb1FwYUxYYUF3?oc=5",
       "review_priority": "normal"
     },
     {
@@ -22904,7 +22929,7 @@
     },
     {
       "title": "U.S. DoD Removes WuXi AppTec From Military List, Clouding Outlook for K-Bio",
-      "category": "제약·신약",
+      "category": "보건·의료",
       "reason": "중요도 미달",
       "source": "Businesskorea",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE51VzhZYXMwOWFSODlLdWpYSmZyd2Q2YS12YklTMGhNOVlja1d6QXpNb3FXZS1YY1FNU1AzYl9kZlg4RndhNWZwSVNEQTR1SHpUcUZQUDNET25FbUdYNk1hampaNGN2UTNiT2dTQXcyOWdyOVV1?oc=5",
@@ -23023,14 +23048,6 @@
       "review_priority": "normal"
     },
     {
-      "title": "UAE Encouraged to Invest in Andhra Pradesh’s Food Processing Industry",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "UPPERNEWS",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOVVdEd1hsMW5RcWJUT2l1d2lwZjZQNlBMaWxmNllhZDBIclhhYU5JTEZ0UkJNdUhqUmZSeXFWN2JHa2RNYnEwaTdXbHdYd2g4aTdQX1BzRV95d1paVHpTLXNNdTU2M3pjOHBGdXd4NU5MMjc2clhwVjVUSzkzN3pJMVNzSlBHZE1QbnZfenVzVVItWWtGRDVYQjZRRnhFZw?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "UAE investment drives Middle East biopharma transformation as precision medicine set for double-digit growth",
       "category": "보건·의료",
       "reason": "중요도 미달",
@@ -23068,14 +23085,6 @@
       "reason": "중요도 미달",
       "source": "Finimize",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPY2loVno1Sm83R0JyN0VxVS1rZHJlZ0pGaFM1S3hwVTNxdXFreTJXUVpleFJSTV9JUy1DX2k3YzdxTDc1WTlZcERtSkotNDZYWEZXV1JZSzJTU1UtcURLb2hyQ0N5S3lpM2RuMjlyQWhBRElDUTJKd1JXYk5FZUpSVnF5c0drZzVqSTh1SEZUYXhNdw?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "UCC delegation heads to Turkey for major UN climate summit",
-      "category": "과학·기술",
-      "reason": "중요도 미달",
-      "source": "echo live",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9PS2FBcUlFTmROUzQ2S1lkeEpsVWdpbW1sWGRqWGNOa09EXzR5Y3M5SlVfaUhhVDFkeXZOZWc0cWt4aG9fMnE2blRpMHJEWWRPMEREcldYcmdTXzY3U2VzSw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -23359,6 +23368,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "US Soccer withdraws from FIFA U-17 World Cup in Qatar, citing security risks and travel advisory | Football News",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Hindustan Times",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNTnhENEExUEprbjQta1RGOTY0ZWJPUmhiY3JRV0hIVmxPX21zeVU3LTE5WlI1MGtvZzdIYXJYVW9GdVdhZEhlM21taGpZbzFiQlUwUVQ4VGdCNVNqWWo5M0lMc2I3dHFsZzlNa1VlZzNMempFS080TmpHQVhDSFczemRLcU1tSUtBRm1zUHZYOHJRNGlIeVBHU3c3RmFTTGN5Rm5TeXBQS1dQaXVscTBrY09lTjM0NHl4RWE5aXRqVDNwUk1KbkZSb29tWS1aN0VTWUlwYldFVnUwdndad3dGLW9JWjhvYW1oazE5Z2JwcGdLcUxjc1HSAfsBQVVfeXFMT1Rud0VORm50TjdhVV9PTFVCcDdLLXRjT3NsRktwa2JWZ3ppVUNZVmVQM01aZXgyczg2R2JkY05sY3NOdy1jRG1uQ0ZXUmdtYmVnM253aVQ3U1NCbDBIUGwxTTBuV0k2cmZYQzJHRkU4WURwTUl4UXFreEN4V0xIMkRtTmEyMmJERGJuVHhHcm42cG9hT2d0UDBicTkzcDBtZUdUbENnRzBrRG1MQUE4QS1jSjBZaVIzQnBVSXFkeDRrcC1fd1F6YXFiYi1NRkJzQWs3VlJIOGxmZ3dJRVlLM3FJWER4SFRuaTNGSlpwY2VwSktNNTJsUUV4MjQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "US Supreme Court Ruling Makes Upcoming CUSMA Review Even More Critical for Canada",
       "category": "일반",
       "reason": "중요도 미달",
@@ -23503,11 +23520,19 @@
       "review_priority": "normal"
     },
     {
+      "title": "US envoys arrive in Moscow for latest round of Ukrainian peace talks with Putin",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "The Standard (HK)",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPTGU1empVMFJ2QkxFMTJ0enVOV3lQeHVWQkZFUENLZkNIY2NKTDdlRm5GbkVUaFpOQlRfV3JJUU5XZl9vZ2ZQOVF5RmF1cktWLXdDSGNVdkdZbm9ENy0xclc4ejI1Q2hnOFhiQjZfd1hEb3dvNlRHN2dJdnI2RVRIRm1Qa0dqVndJckxJM3V2dng5RC1VbzlPUWZrVlVTMVlwbEpDRzYtV1BGeEJYZ2llRDU5c2tEQTVfUHM2ZENrZXV2UHU5YnN4M1hKYw?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "US envoys in Moscow for meeting with Putin following talks in Abu Dhabi",
       "category": "일반",
       "reason": "중요도 미달",
-      "source": "Click2Houston",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMzJjYzI0R3BLY1k5VXJveGdSLU9NRnZxSUlFU2p2cG80VUx5d241U01OVUZKblBpZlptMURwc2pIb2s3MGJQTWhUa0lQSkZyQzlKd2lkRC1feDVVbElMMTA5T0RJUktZX2ZFVXQyLWNjQWhmVzRYS1NuRGFTMG44ZFFqWk8zdVh3Z2hrelliN3JfZVpWNmVtX1Y0Q1VVMXRQZ2s1dlRwbTEyWG9ybzY0bHpmNHc0Q0s4Znp4UmVYUFFUdw?oc=5",
+      "source": "WKMG",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQbEtlcnQxOHUzak5QVlhiam5Ra2tUWk8wbXlseGxyOVhVM3FwaERSV003VVR0UjMwUEprcC1fdVpWUGtGbXNJb25WQXp0NGUyaGVuN2hDUUg2TzliekdKODlHV0VrY1BGVkxKVGROa1hpdXpQUVVtc0QxbXpKbXdNSTVXNnZkMkp2dmlKYUF1bXpnQUlsZDR3bXRxUjE4UzBMbi1vbDdESm94aS1DX1Z3ZEtMaEQwVTV5ZEJxTFRIYU0?oc=5",
       "review_priority": "normal"
     },
     {
@@ -23647,27 +23672,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "US withdraws from U17 World Cup in Qatar over security fears",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Vanguard News",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNYU1VUmFpa1FFcmxMQm5UcnJvUHM5Uy1SaDZZOFgtTURPbDVDalh0cTVLVk4xX3dFcVRESmY0WUxjYzVxSWVhb2R6N2xTdXV5aUJabG9DMUNHSFdKOXczRDJWem56S2NhVHZJNEVOeXR5c3dCMHdzMThQUlYyV1UtVXBMeGdvUGgxcVNXb2dhVXpKNXJtSjdWRm5aMVJ1UdIBowFBVV95cUxNTTVGR3g2cF9OYVVrWFkzOHZ6NEZ6NHFEaDhmbTdYOXFid0d0TTQwWWlSek8yaF9OM1JBUlNtVFlkbjN2QXk2cUsyZmVsRWtBTjEzMWZweGNCXzFabC1rR25vRzdrUHBIOFYxY3kyeDFxZ3k5QTVENEVUVTJTS1diRTBQNkEtd0M3QTU1WkVPVlE0N2kySkFSRUNYVnNTU2tEVWdR?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "US withdraws team from Under-17 World Cup in Qatar over safety concerns",
       "category": "일반",
       "reason": "중요도 미달",
       "source": "The Daily Star",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNd0pzMzhzS3FvWDFSdlhFWUQxTHhMVEJUQnhlYkw3UnRhWHg4bG51YWhUNV9iSlJ0ZDZPY1d3LVZkek1rN0xJXzZfSzd2Wklxd3FWOW02NWFwbmpFbGNPaDRCazEtdE9DdmFWemxGZ3dFdjl0RzRJR3VucVBOU05BeVdnQ3N2Z3pwSU9kWDJuZk00eHRVdWNOZ01EMVRqaktzNEs4ckltcVNYbXd3THBDcE5vNmswbXkzbnlKM3l3?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "US, Russia, France Visit Nigeria House In New York As Jimoh Ibrahim Seeks Support For Security Council Bid",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "THISDAYLIVE",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNZVNkSURVZWxfemRZS1k3WnoxUE5XeVRpY2tST3R3Q0doMm5TcUY2d3ZDZ3I0VlUyZGlHUTE2cE5lc1NGcHozSkJlRFNtVUxmTVBEWHpLYlZiZDNQZ0syal9ib01QRmQ1TEIzRERGbzZXVFRtN2dyNktHeG94ck9HcFBuWEZmb3lZRVgyZ0htdWJtNVlhQ2t2MEppLWhaU19NVW85eDFDRm8zVW5OYnYzQklDT2drVDdTT2VDNlFOaHFPY0dkVldoU0ZZcjYwN0NrNEd0bWhxNjhJUGNzRmcw?oc=5",
       "review_priority": "normal"
     },
     {
@@ -23684,6 +23693,14 @@
       "reason": "중요도 미달",
       "source": "BBC",
       "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1jaFRKYWFVQWxWSVF0bDFUUG40V0RYMXZaelNOWTBfX3AyZmE3UkFhaHduOU4zaDJIakhUOEo2R1dFZFZyTmpXS3ZLYnlEbTM2U19QT25VQjVSRTYxNkE?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "US-brokered Russia-Ukraine talks in Abu Dhabi last nearly 4 hours",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "WTVC",
+      "url": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxOczRrdVNjTkhKVk1HQ0FfMDlEZ3pKQy1LLVVNMGtTU0xSMm0xOGV1dThPS3VZeS0yNjdKT1lZd3RrRUp0YW9LRW9lUHR6NjU5ckxEanNiQkZucnh2d3JMQVBsc2dxcXl4bjdjc1pVT2lva3FmclI4c3Zxc24wUXVmMk9UZkU1Njg3aE03SGZmV0gwSHRrWlBZTXlvSnR3azRLV3hzM3NWMUdwWFJMbmtpTjcyMlZ3ZkFGdDJSc2lteWl3ZnZidGRjTTRVSENIQXRRUzdjN1U1SHN1TDVoZzc4WUNaRzhlS3hEelpmNFlveWxHclBjNW5wQXA2cFdreEtaNHR6Zm9oc3lLbWdsaFVUaXZpZ1p6UzBJcERIV2ZDS254blc1TUhmeVd5eENzN014b25yNW5lczlFenJNN1NkX0E5R21JMUxFYWRnd2Z0WWZDSjZz?oc=5",
       "review_priority": "normal"
     },
     {
@@ -23735,27 +23752,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "Ukraine Energy Support Fund on track for record year",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "EU NEIGHBOURS east",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQVkd4a2plb2Vvb2o5ZlVMZjBmcGdKd2ZtRU5VOFJaQThTNzFnZk5GS1M5OENrWUdEa25ScEY3Y0pfOFBBUHB1RzYxanVrMmZxMXN4a0U4Mk05VUxickdUenU5bFhUVFhwRmFMY040MndLblgwbGlEQlFkcHFQcUxncnNCWVlSb01YVDM5bkxRZ1pSTVFHbzZVNVMzbVVHbk0?oc=5",
-      "review_priority": "normal"
-    },
-    {
       "title": "Ukraine Hit By New ‘Systematic’ Starshield Restrictions, Says Zelensky",
       "category": "일반",
       "reason": "중요도 미달",
       "source": "Newsweek",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQnhLTkJ2QjR5cHNYb2FBeUVELUU4TnBTYy00NkdmN1BkcDU0VHlCWDAtckdEZlprcklKMVBlTU5Kci00NXE4b1h2cTVLNl9lakt3NktSdE9KUnVkaG1DZks5UzNneU9abUwybXZyRER5Sk05YmVvXzZkYU0yOVhha2IxOHJSNGZXZURlbU9SbF9Tc2dlYUZJYU5lT1JCSFAyeVdj?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Ukraine Is Preparing New Humanitarian Missions to Evacuate Citizens With the Support of Melania Trump — Lubinets",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "UA.NEWS",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNVS1zXzFFT1VBaEIxcEVTYUdCNmFtZ2F0ZHdtT2FhdmwteE55d19fcEk5NkRQclB6NTVqbmpjR1k0UjlMNjFrQWdPTnJJQ3RWTTExMUc2VXoxWkg1TlhqRzZLZnRtTEt4cGpXaEtBWVlnMzF4TVJvcUlOU291b0NwdFVMeWNFZzdsalZXY2Z2LXBSS1ZudWRBd0ZieGV3U0dPRlB4eHpITko4Q1ZrczNPRGdMaWpLN29uRk5rSFRId3hKMHVuUWN0TVpSY1Q?oc=5",
       "review_priority": "normal"
     },
     {
@@ -23900,6 +23901,14 @@
       "reason": "중요도 미달",
       "source": "EU NEIGHBOURS east",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTWNhWWdjeF9GeTJLWll5Zy13UHdZZ1RodTFKYXVlNjdKUjkyZDdlQl9ieHo3dUFocExTMlFYLWktX2VlY2FIZ0owc2VTZEhXaUhfYmI4OUhZWW1fZXFjWkQtaFMyWkFzMDU4Y0FULS0zYlFHRE1VX05tSkxCTHFiRWVRMUF2aUZqMXFoem43WThHdGFhZFF2WnNJREg0eHhYUE5zdGdTLVhBWUViYUhmQlJTclo?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Ukraine’s drone barrage sparks fire at another Russian export hub",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "www.engine.online",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNZ0pRZ29KcVdRQTBWVWh6UlBrNUNsajhyZktoS3JsSEtLVlJSbTJvYkJ6N1FPSlg1a2hMSHdvVjNXazU1cWJHOVdiZGcyWFVYaDdWYXJ5RVlWZVR0dFBfQUhqZjlTNDE3dlhxeHNkZnNWWDNpYVFiRWJyNXNyTlFmX2dOSWZQMmM3U0pGRDRZT3czZ29wdGYtMmVfZy12X3NXQ1E?oc=5",
       "review_priority": "normal"
     },
     {
@@ -24367,6 +24376,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Vietnam must ensure tax policy stability to retain and attract foreign investors: officials",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "VnExpress International",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOeFlTeF9CNE9MZDZRa2VoY0l0LUY3bXVpMDU1c1JPR3BkM1p2eUNIWDZBbVRjSGJTVTE3c3ZlRmNYQ0tsa1A4MklMTlFfbk1JXzRvTWxCSk9mMExQamdDeFQzSHNTeTlaZkx5SHY1RFBTNHRYSXdiSUktT3FGUHpUZE5ydWxXbGVFTl9Pa3JRTlJtMjc5UFY4eVNoTEpqcXNobU5sVjdxZ0NXRlNZUDlGRG80Tm4wMXE2Q2d1QnNxNHZDMGVpdzB0T1NCdW85Mnc4WVVSM3FVdGIxbDhrNnhqX0hHMA?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Vietnam promotes cooperation with leading Japanese corporations.",
       "category": "경제·금융",
       "reason": "중요도 미달",
@@ -24391,6 +24408,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "Vietnam veteran seeks help caring for St. Matthew Cemetery in New Iberia",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMGZYREZpNlBGdGpwWWZqWmRPVHI2bGh1MXZ2eV9xQ2ZiR2d5VnFqUHBtLWRVTWxGbjVtRHlLQ3RDV0xNbm1NMmZrRlJSdWVTdkxXMURrQ2lyME1pdWZkV2ctTE41Zk8wV2NiaHFfQ2Z3RkV6T0hYYVYySDFMeUhYQUpLNFJBZGFjbVZ6VQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "Vietnam's Energy Security Report 2026 Announced",
       "category": "과학·기술",
       "reason": "중요도 미달",
@@ -24404,14 +24429,6 @@
       "reason": "중요도 미달",
       "source": "Tuoi Tre News | The News Gateway to Vietnam",
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPcl84R3dOTUJNdW9jODFWbTZXQk9EWEdvY1liUVNETWxtMVdzN1ZIbVEwZThUb2Q4UlQzUUZZbWM3LXFMcERnXzhhQmFjSmRtSzRtV1ZZN25Rb2pocTJiNVhveUhTV29PYXZtczdSUndDXzNJMHRYbFNEUGNMckl3VGxJdlJqQndKNHpiajEtTVlWOFN5RExhMnFFWnFVN1JsdlBTbGUxZHMzRWlnX1pLWkJaWDNFaE5zaGFwejNoVm5RcDBTZllScDJ2YUY1dw?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Vietnam, Japan issue Joint Vision Statement",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "Vietnam Economic Times",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBUSDVEQUt6emR6U3FnblhHd1l6dEpnS1hXRHdrNnMxSmktUWlNdFRFNzFmS29rZlZvcFFYMzU0d09tWFJjc09vN1VJcXoxb3JCcEtiem9yT2xEdWVUMThuVTY0YXN0V3ZQc0JmRTFNX1lrSWtLZEJnODF3?oc=5",
       "review_priority": "normal"
     },
     {
@@ -24447,11 +24464,11 @@
       "review_priority": "normal"
     },
     {
-      "title": "Viktor Gyokeres called 'chubby' by team-mates as Arsenal star ridiculed on international duty",
+      "title": "Viktor Gyokeres called 'chubby' by Sweden team-mates as Arsenal star ridiculed on international duty",
       "category": "일반",
       "reason": "중요도 미달",
-      "source": "Football London",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPUU1Id2pOUFhzYVRtWHpQMTFKdVEwZWktc2tEZEUxdkdneVRIbHpQazFtLUhlekVtbE5aOHg5dThQbXR1c3FQNk9ZeHhDQlNMNzZlbTNNSWRMMDFZY3BnVUpQYlR2SnNaSjJ1VkRlMzFJeGw2d1FZSHNnd19HdkFuYUpNcFgxa3hNdmttMWp3WlliTTjSAZgBQVVfeXFMUHBTdHBrN0xEdFpuN3JmeDFBQUw0eGlZVVJrZ0VaeEppOEpwQXNxUS15ZjZDRXhSYWo0U1Jwekk3d1VjNG1Pd3pyNVV0aVNtQlFGeUczXzlObFFCR3VnZlNHWGFQblhDMzVUNWYyNG9JOGUwY2ZMUUFEUGw4VDFxR2M0c2JGNEF6a2o0VC1aRmg1dVpLRVJWdXQ?oc=5",
+      "source": "AOL.co.uk",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPU3RZSV9fUEFpazU2NGs5bmV0ZjU0RERLWFhsTFJNcmpoZW9TSm42NmdnVDZDUmpEaFhucXFkR3lTdy1xWDlGS2VJeDVscVo2ZC1OLWdkTGdXcUZHeU1Yb0drUVVyeDVhcXRGZzZjV19lUlVUNHd4d1dkWWdZeHFEZ0FRbEltcVZhdWc?oc=5",
       "review_priority": "normal"
     },
     {
@@ -24532,6 +24549,14 @@
       "reason": "중요도 미달",
       "source": "Yahoo Sports",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNcUE5NWR5M0RaTEk0OHZ4ejdRWV90YWpmbHVuLUhKUlR5RWJEeGZGUGtiSWJtTzFhWGFGYmEydkotcVJFYUdxRWlYdWpnTDhOTXpPRG1qT0V3MzBaYkRKaTJqN0lMcWh5RF9UN1BBdGYtYXBETXc4ZjRWSm1fa1dJZFNQUkxwM1k?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "Vivo Y31e 4G gets Thailand’s NBTC certification: here’s what we know",
+      "category": "일반",
+      "reason": "중요도 미달",
+      "source": "91Mobiles",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE45TjNGb0JVdnA0Z0Q0Y1poWTBSQjRHdkszd1BCRVI4UjkwdUtkdWlzTW5USDR4RDl6N3NvYi1pVkpJSkM1VGRSSkVmRFd5TWNuTTNWS0d6OG56N2o4c1F4TEdhQTY4WmRPbURqOEVtZXExV3VERWI4cDIxb9IBgAFBVV95cUxQWUVROFJOVGp1ZmdHczZxTjdiMkhHTUROZG1kSTd4TkZOVXFQUmxvaE9rQ01XSXpnMTM5dDlRcWdfZkE3WDhyN19xX2VQeEs0b1Zoc212MDlwOEJDVUFzSU91MFJfRW1xSWQwUUc2ZnpMeHdWUGk1cGxuMkQ1ME5mbA?oc=5",
       "review_priority": "normal"
     },
     {
@@ -24619,7 +24644,7 @@
       "category": "경제·금융",
       "reason": "중요도 미달",
       "source": "Punch Newspapers",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNa1gtN1psd2x6cWZRR0Y0M0tfUDdvYm84QWkyOGdUdEIwME14ODZhR0hVQmxtbG1ERzliMVpiQl9wMUdzTUhaeWhZak9VTzFNZGN0ejhBeEQ1SHprWkxBcGFnN0NqSzFnZTRDVFFPY19HQXFnaU85THhULVFuZFVsWlVRSQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUWN3eTBZaHlnQjFoLW5mTVcxR0Iydkp2N3Nfekk2RmFEcHYtRmc3WXJVUEkxanFRbGtLd3ZidWROc3FMVjh5Q0NaLWNXN3VObTdQTURJTVhTT3hUQmthNm5qQ2FobGpZbjBTSGRpaHRHYzdGWEh3Q2U4dDZQMnd1Yzk0dUdzdVVrQUxsQWtJNWVUXzdOTE5WRVFZUEpudThKT3pEUjBCRTFiZnZ2aTZvdDllZGJwNGNBcDBmeXpPZGM?oc=5",
       "review_priority": "normal"
     },
     {
@@ -24807,6 +24832,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "What Tempus AI (TEM)'s Military Cancer Care Partnership Means For Shareholders",
+      "category": "보건·의료",
+      "reason": "중요도 미달",
+      "source": "Simply Wall St",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNcGRORkV5N0RUQzBObFYzQi1jSXhmRWF1Q0lOeUhXVHlpb1J4OXlYd053XzhqQjRhM0M4WFBaSG4zTE8wc1lMY2xqc0pQMDZlZlVXdXZhamgxdEZNSVRfS1V5UjJ2VGNkb0VLVkNjcjNxWEFIOHRlX0xfQVdvVE1aS3FoRVVDWHdFSFMzNE92WkdtcXFpRUJra3hoaFdwVmQyOVlCTDU3VmNId282SC1uNlh1RHRiRlFPdGRYUFp4NmJWOFo4a3Z2VEs4NVpzMXRkcjFZdlpndFZUd9IB3wFBVV95cUxPa3pvV1RlaFlIUFBrM2JPZWxBTi1jcEgyMzVudkJCeFV1RkZsUXlURFpEUndrV2dSa2tCYXNJd1l6Y3JiejY1aGpnOWVJV0RkTEZEV2tVXzd1TkR0VFpLMjRXTUtZc3Y1NzY1b0pRSDMzLURxVTFkTDlWeEQwWm8wY2RHbXEwMnZHSkR0Y0NSNTh5eEk4Ujk0aWF3WDJESjNqcTE2VF9DWUJXYktXSjM2ZkcyeGdtTWFuOENiVF9rWFMwZUdOdHhOWjlla0JxVlJ4blZDOHdfOEJEeVJSaFFr?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "What can Bangladesh bring home?",
       "category": "일반",
       "reason": "중요도 미달",
@@ -24844,6 +24877,14 @@
       "reason": "중요도 미달",
       "source": "The New Arab",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOXzd2bktDYlBTLW9RUENKczI1VXVYTWVrMHVFWlZHdE82Q043MVRQRmlfVFUzUGdJVWl5UE9WR1puVzJxQzlBWVdteTRKYWFmMU1RdDJDVlhQQV8ya29pMk9RTjNDVi1EZWJGZWpfWEU2dHRMdGw4VjQ3WDZ4WEhndzRzNE9DMFJVVG02T3A3WjdnUQ?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "What is Volformer? A closer look at the non-invasive skin-tightening treatment",
+      "category": "과학·기술",
+      "reason": "중요도 미달",
+      "source": "Harper's Bazaar India",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQelM3LVJ2bmowTk1Kc3FUSDZabnJnZ1lzU3FjU2ZIbGdrNkx2b0NlM204cHdTU3RXN3ZkQ1NIWGNEWmF0VGl2OU4ycWxFenlCZ2RvOEJwZkRadFRkd3c5Z256NWlWMnZOemJGNjQzVjIzNlNjMlItRUYwbkpDcmd2TUlyTy1iWXBmNDJiZklBZmRiMEFKSzRxdEREb09JcWprQ2FIeXQ4UmxaR0JFNmpWQWxja0NZVVlyYTZyUnhvX0hJTnU4Q2d5emxWYTIxbFFvTnJxWWszYUtFUdIB2gFBVV95cUxQelM3LVJ2bmowTk1Kc3FUSDZabnJnZ1lzU3FjU2ZIbGdrNkx2b0NlM204cHdTU3RXN3ZkQ1NIWGNEWmF0VGl2OU4ycWxFenlCZ2RvOEJwZkRadFRkd3c5Z256NWlWMnZOemJGNjQzVjIzNlNjMlItRUYwbkpDcmd2TUlyTy1iWXBmNDJiZklBZmRiMEFKSzRxdEREb09JcWprQ2FIeXQ4UmxaR0JFNmpWQWxja0NZVVlyYTZyUnhvX0hJTnU4Q2d5emxWYTIxbFFvTnJxWWszYUtFUQ?oc=5",
       "review_priority": "normal"
     },
     {
@@ -24911,6 +24952,14 @@
       "review_priority": "normal"
     },
     {
+      "title": "What’s happening this week in economics?",
+      "category": "경제·금융",
+      "reason": "중요도 미달",
+      "source": "Deloitte",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNcV9VYnV0R0RPcWN0d2g1SHJIVlNmaVA1TV9nXzRKdVlFcWtSMjQ1T1B0djE4dDNRanZvSVFGX0ZBNUd6cnZkVnAtenFuMnFzdU9zYzg5cFdkTVRxU1F5YVVXVFhVWGdhd2RsTDBkNS1Xcm9ub1FnMFp5NnB3WVBYa3JJa1FVbG5IT0ZRRHphTUhtNThkenVJS1ZrdWNDdw?oc=5",
+      "review_priority": "normal"
+    },
+    {
       "title": "What’s the Falklands oil project at the heart of latest UK-Argentina spat?",
       "category": "일반",
       "reason": "중요도 미달",
@@ -24948,14 +24997,6 @@
       "reason": "중요도 미달",
       "source": "Green Central Banking",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdzFEQ2lVNkI4WmM3a3QzWWhuSVhBeTdncV9kVDBQUjFUMEpTUWw1bmRVVXA0Y2ZJSVlKODgyclBxc1NpWl94WUdLdEtfRHFzUnlXRlRfTnVySTg5S2ZnSTFSRjlZc1QwcXdrNy01NEE4NzgzWUliZXY1dVJ4dXhvdVVmT1BkQXdQSEJrWUhjUFpoTk9xb0dGdmV6R2xWeXpzU0N5djFDcFI2a28zOTF0Q1hWLTgyQlRT?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Where to watch Italy v France live: TV channel and live stream, date, kick-off time and line-ups",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Goal.com",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxONFQxQnk5N01BU1BEVGgtVDlaNFZIOC02V253X0p2Y2ZYMVItX182MGVVWDU3eVhIRWRPTy1TRDExVzhEaTUyTG03dDVDYVpsY2dibWV3V1pKdF81WVNvdTRmRl85SmY4UUhkWEx3bVZ6ajAwQWNTTGFEVF9tX3FaZE5jbXYzNGlGUTZEUzhiandmanJJaUtTSzV5YVdlb0Q0NktSczEwSTFhZlZEQ0NEdGJsWXdzWFdmOHd2clQyUFM5VVotSXQzMXUzeXZFRTV6dUJjOVhqZE9DRHI5WVE?oc=5",
       "review_priority": "normal"
     },
     {
@@ -25210,8 +25251,8 @@
       "title": "Will China’s military shake-up undermine its combat readiness?",
       "category": "분쟁·군사",
       "reason": "중요도 미달",
-      "source": "联合早报",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdF94dVZkSktwLXlWQ2N5cFQ3N01zSEFWRk1JUlV4LTZkTW04YWxRYVY4UWR6RVhMd1c1SUJvekpPTWdFS0Q1Qld4U29vZWppSVRnSTVnVkZILXNrXzdOSkdhQXQyUDJfRk1zbkVjLVc0cGxWVUNLYXZzZHZNdmtPdmJleWNQWDBGVXpzdmgzYzZJVHZRTU1wWVg2YzMxdw?oc=5",
+      "source": "ThinkChina",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUjRwbXdQcWVrMFhuMXRtemdScXJkVWZXOUF1MGlSODNkM3AySWdNUEV5UWM2QmkzMEZXZ0lGeEVNNVU3SmtpNUhVczRsS2MzVzFrRmNLNjdQN05tbnROVjN5andHNC1xRW9oSHo3bk9rMG9wN0FZRXJUaXppTFR3ME9lY1JFaTVicnlIOXh0c1EyOW9FV21n?oc=5",
       "review_priority": "normal"
     },
     {
@@ -25236,14 +25277,6 @@
       "reason": "중요도 미달",
       "source": "ABC News - Breaking News, Latest News and Videos",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPT2pCZXZaTE5Kb1FndUYtNlQyaG14YkV5YXBna2JxaE43bzNvOFozSFhvMm5MZkNPTnFJLVVwMXRGWnotWEZTRkZfYWxCZldsMk45OHpscTBoajVQWHVQU1ZfOTh5R2hFMklMZTYzTDhzTzhPMXVzYWRnUGU1S1l6MlpXNmg4M0XSAYwBQVVfeXFMTVhwb1BidmEwS1JMUWM1c2JXLU15Nld5RHlDdHhFMDhqMDhhdThoZkxpd2tMLUZPSjdESWZGem5sLThDZzdQbE9fc20yVzRzSHNQdWd4TlhuZEVJTGJvZklIc0NtaDVGMzJiNVEzZGsyNVBtd0RueUVtV0REY09uT0oxVHNUMGFhc2JJTTI?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "Will the GCC’s new military command in Kuwait strengthen Gulf defenses against Iran?",
-      "category": "일반",
-      "reason": "중요도 미달",
-      "source": "Arab News",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOVnlaS1F2Nmw2UklCSDJqUEZKNFhPVnlManRxakJaODRMbklZNWd1dUNXb1RYWU80YldhSzRmalJqOVJnT1JUd0lrT0JRdmZCdWdZOHRiLTY1a3dnWno1UjNTM0dmb3UtLVVVWUdkbVQ2NEhNSU5jQ1BObk9SWU50ZUNTdFhhcFRGN3JsVVFzV1E5YkdXcGx3TmptRS1sVVhtRnRxcGxNNFJPdU5oLUk0R0dVVXZjWmQzSFJON3puSHk0STFNX1E?oc=5",
       "review_priority": "normal"
     },
     {
@@ -25332,14 +25365,6 @@
       "reason": "중요도 미달",
       "source": "THISAGE",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5CN2VuZTJISWFuZTZ6T2V3VkluNGJBMjNvX2o5VHRxQWtBNG0wZy1xZElTWVNJcUx1NVM1MEdYUFRabU1FaExYVFZadWlRSjZ1ekZFZG1QUmRrUXZyNUdBTEFlVFJnUXl4Wk5Fd0xn?oc=5",
-      "review_priority": "normal"
-    },
-    {
-      "title": "World Economic Forum Set to Host Country Strategy Meeting on Egypt – Economy",
-      "category": "경제·금융",
-      "reason": "중요도 미달",
-      "source": "New Business Ethiopia",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPd0tIcFc2T0lLcmF4c09Ob1p0NUVuNjFiTWl2aUtNQjRpM3dVQU9iSVdCRHIzb08wcG5CUzloWXl2WVltendIcUw5LVJEcGFBQmxSbFI2dTVhTUNHazZxLUhDMHVFdmdMTmg3OVB1bHFTay1fa2NvNE96dXNaNUhKU0U3dmsyQzNaV3loNmxONG9BaUllTVNqZmZ4aTE3MmxGWjFoaTFtN3JvM1U?oc=5",
       "review_priority": "normal"
     },
     {
@@ -26355,7 +26380,7 @@
       "category": "제약·신약",
       "reason": "중요도 미달",
       "source": "메디소비자뉴스",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE4tejJPcWwtVno0aHpGdTU5Vk9WUzM4aUZueHZaU0JDRUFMcHZ0eDFtdHljdFNETGJkR2VpdGhJWEFmU0xtQ0I3WlpjLU5nMmRucGtMM3lCSnQ4ZkZaTmt5SXhLdDNDNjZ3aWtYMHZXaXJoUdIBdkFVX3lxTFA5NVFsTXg2NU44NHJXcTR1WmNIOXFobVRpVG15eE1BbkE0WkQ4cU9zUTVndURLaXZqaXF4TGo5WHQ3QWY0aE9qTlpJdndwdkJHdkNlN0dUeF9oR1BHVGtoek9NSjIwdFpuc3Q2MkdWWmtiYjRhekE?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAtc2lndDJ5SHBpUjdQeWNrcnR2QWp5cWhxLUg3MTBLcXIzbjlwTDVzMG11SElKRFlpYjVYc1V6VTZzeWRqVW9wRTN5b28tcjF2Yjduc1l6eTdINVIxWFJ0NTgyU19GNjEtTzRGQ1hpalR5TVnSAXZBVV95cUxQOTVRbE14NjVOODRyV3E0dVpjSDlxaG1UaVRteXhNQW5BNFpEOHFPc1E1Z3VES2l2amlxeExqOVh0N0FmNGhPak5aSXZ3cHZCR3ZDZTdHVHhfaEdQR1RraHpPTUoyMHRabnN0NjJHVlprYmI0YXpB?oc=5",
       "review_priority": "normal"
     },
     {
@@ -26372,6 +26397,14 @@
       "reason": "중요도 미달",
       "source": "법률방송뉴스",
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9XTHNmYkRaUzNtVW5rcjBfUTdnMzlkVXhqOEU0YzFtYzdod1l0UXZKT29qeEp0R0pnWXRfaHhPY2szMXV3dUxnLWFWWFVfazdtQTl2dHBaekpRSnNWSEJRMzd0bEg?oc=5",
+      "review_priority": "normal"
+    },
+    {
+      "title": "기능성 소재부터 정밀영양까지…식품연, 국제학술대회서 연구성과 공개",
+      "category": "미생물",
+      "reason": "중요도 미달",
+      "source": "한국농업신문",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5iMEhwRWs3VlIyVTRqUkRPcmtRSnEyZFNqckY3UkNLczFkalFsWnpHLXJ1VjZ2WGlhVDIxY1JEcVZUV0hJQkhGRlQzTUJocEhXVEFNRW0zSzFucFA1S0VBU0ZDeEQzQTROYjRkZNIBcEFVX3lxTE5QdE1SQ1hBaW5NV0E1azRyMU16dUJBUFNHcjg4SVhKTzRDQkZmNk5vNExLamZvOWVpYzlkOUhKYnFMYWJEazRtcG4yVkhoV19SMktKTVBDMkpvckNxUTNma3VFU2RGLUd3WHZzb0FlSUk?oc=5",
       "review_priority": "normal"
     },
     {
@@ -26913,6 +26946,11 @@
       "reason": "유사 사건"
     },
     {
+      "title": "Fossil fuel emissions fall due to Iran war, renewables: Research",
+      "kept_title": "Fossil fuel emissions fall due to Iran war and renewables, research shows",
+      "reason": "유사 사건"
+    },
+    {
       "title": "Vietnam is gaining access to MBIR reactor research capabilities and gradually mastering nuclear technology.",
       "kept_title": "Vietnam is gaining access to MBIR reactor research capabilities, gradually mastering nuclear technology.",
       "reason": "유사 사건"
@@ -27016,8 +27054,8 @@
       "caution": false
     },
     {
-      "title": "Ukraine, Russia, US trilateral talks end without ceasefire deal",
-      "source": "Daily Finland",
+      "title": "Mirum Pharmaceuticals (MIRM) Phase 3 Win Sets Up FDA Plans, Is It Still 38% Below Fair Value?",
+      "source": "Simply Wall St",
       "source_type": "unassessed",
       "independent_verification": "not_checked",
       "caution": false
@@ -27074,6 +27112,13 @@
     {
       "title": "Equine Probiotic Candidates Harbor Mobile Antibiotic Resistance and Virulence Genes",
       "source": "Bioengineer.org",
+      "source_type": "unassessed",
+      "independent_verification": "not_checked",
+      "caution": false
+    },
+    {
+      "title": "Top G7 diplomats affirm Ukraine support, seek complete ceasefire: Japan",
+      "source": "Japan Wire by Kyodo News",
       "source_type": "unassessed",
       "independent_verification": "not_checked",
       "caution": false
@@ -27212,6 +27257,13 @@
       "caution": false
     },
     {
+      "title": "Australia is testing a wildfire jacket made with mycelium leather grown on farm waste, and the material has cleared a screen for over 1,000 harmful substances, but the fire test numbers are still not public - ECOticias.com",
+      "source": "ECOticias.com - El Periódico Verde",
+      "source_type": "unassessed",
+      "independent_verification": "not_checked",
+      "caution": false
+    },
+    {
       "title": "Saudi reports missile debris in Makkah region",
       "source": "Daily Times",
       "source_type": "unassessed",
@@ -27249,13 +27301,6 @@
     {
       "title": "China, U.S. Still Negotiating '300-Billion-for-300-Billion' Tariff Cut, China's Commerce Ministry Urges Swift Implementation",
       "source": "finance.biggo.com",
-      "source_type": "unassessed",
-      "independent_verification": "not_checked",
-      "caution": false
-    },
-    {
-      "title": "Pakistan to Access $500M in Disaster Funds After Floods and Earthquakes Strike",
-      "source": "Devdiscourse",
       "source_type": "unassessed",
       "independent_verification": "not_checked",
       "caution": false
@@ -27394,13 +27439,6 @@
       "caution": false
     },
     {
-      "title": "Will US and International Sanctions on Iran be Lifted? - Energy News, Top Headlines, Commentaries, Features & Events",
-      "source": "EnergyNow.com",
-      "source_type": "unassessed",
-      "independent_verification": "not_checked",
-      "caution": false
-    },
-    {
       "title": "Top Japan, US diplomats exchange views on US sanctions on ICC",
       "source": "毎日新聞",
       "source_type": "unassessed",
@@ -27527,6 +27565,13 @@
       "caution": false
     },
     {
+      "title": "Iran Vows to Keep Enriched Uranium for Nuclear Fleet, Bypassing IAEA Inspection Rules",
+      "source": "The SOFX Report",
+      "source_type": "unassessed",
+      "independent_verification": "not_checked",
+      "caution": false
+    },
+    {
       "title": "United Kingdom inflation: Deutsche Bank sees further upside",
       "source": "FXStreet",
       "source_type": "unassessed",
@@ -27634,13 +27679,6 @@
     {
       "title": "Edesa Biotech partners with Kyorin Pharma to develop and commercialise Paridiprubart in Japan",
       "source": "BioSpectrum Asia",
-      "source_type": "unassessed",
-      "independent_verification": "not_checked",
-      "caution": false
-    },
-    {
-      "title": "Edesa Biotech Signs Japan Licensing Agreement With Kyorin for Paridiprubart Worth Up to $146 Million",
-      "source": "Yahoo Finance",
       "source_type": "unassessed",
       "independent_verification": "not_checked",
       "caution": false
@@ -27772,13 +27810,6 @@
       "caution": false
     },
     {
-      "title": "Space Security and Missile Defense : Japan's Quest for Autonomy and Indispensability",
-      "source": "l'Institut français des relations internationales (IFRI)",
-      "source_type": "unassessed",
-      "independent_verification": "not_checked",
-      "caution": false
-    },
-    {
       "title": "Gibran Rakabuming Raka: Indonesia's vice president resigns amid signs ruling alliance is fraying",
       "source": "BBC",
       "source_type": "known_news",
@@ -27884,6 +27915,13 @@
       "caution": false
     },
     {
+      "title": "Space Security and Missile Defense : Japan's Quest for Autonomy and Indispensability",
+      "source": "l'Institut français des relations internationales (IFRI)",
+      "source_type": "unassessed",
+      "independent_verification": "not_checked",
+      "caution": false
+    },
+    {
       "title": "Canada Seeks Tariff Relief on Steel and Autos After Democrats Sweep US Midterm Elections",
       "source": "https://streamlinefeed.co.ke/",
       "source_type": "unassessed",
@@ -27947,6 +27985,13 @@
       "caution": false
     },
     {
+      "title": "Peru: President Fujimori requests congressional permission to travel to China and Japan",
+      "source": "Agencia Andina",
+      "source_type": "unassessed",
+      "independent_verification": "not_checked",
+      "caution": false
+    },
+    {
       "title": "US Democratic Congress offers Mexico new channel, not quick tariff relief",
       "source": "BNamericas",
       "source_type": "unassessed",
@@ -28003,8 +28048,15 @@
       "caution": false
     },
     {
+      "title": "Iowa Veterans Home benches honor Iowa soldiers killed in Syria last year",
+      "source": "Radio Iowa",
+      "source_type": "unassessed",
+      "independent_verification": "not_checked",
+      "caution": false
+    },
+    {
       "title": "Turkey and AIIB Strike Record $1.6 Billion Climate Deal at COP31",
-      "source": "www.businesstimes-bd.com",
+      "source": "https://www.businesstimes-bd.com/",
       "source_type": "unassessed",
       "independent_verification": "not_checked",
       "caution": false
@@ -28040,13 +28092,6 @@
     {
       "title": "Malaysia-Taiwan Economic Relations Remain Strong Despite Recent Reports, Anwar Says",
       "source": "BusinessToday Malaysia",
-      "source_type": "unassessed",
-      "independent_verification": "not_checked",
-      "caution": false
-    },
-    {
-      "title": "The U.S. Embassy maintained an alert regarding the strike and demonstrations in Spain",
-      "source": "thediplomatinspain.com",
       "source_type": "unassessed",
       "independent_verification": "not_checked",
       "caution": false
@@ -28129,13 +28174,6 @@
       "caution": false
     },
     {
-      "title": "Spain Sees First Joint General Strike in 14 Years Over Housing Affordability Crisis",
-      "source": "The Diplomatic Insight",
-      "source_type": "unassessed",
-      "independent_verification": "not_checked",
-      "caution": false
-    },
-    {
       "title": "Chery Omoda 5 recall to fix detaching rear axle expands to Australia",
       "source": "CarExpert",
       "source_type": "unassessed",
@@ -28187,12 +28225,12 @@
   ],
   "note": "Publisher signals are not independent fact checking; article bodies were not verified.",
   "publication": {
-    "published": 349,
-    "important_published": 115,
-    "pending": 358,
-    "important_pending": 94,
+    "published": 374,
+    "important_published": 119,
+    "pending": 336,
+    "important_pending": 93,
     "excluded_title_failures": 1,
     "pending_overflow": 0,
-    "updated": "2026-11-12T12:03:19.842740+00:00"
+    "updated": "2026-11-12T12:19:34.966207+00:00"
   }
 }
