@@ -85,6 +85,9 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  addEstimate('철책·지뢰지대 구축','약 30~60%',60,'구간별 추정 범위 · 막대는 상한 60%를 나타냄');
  borderPanel.append(node('p','','※ 남북 접경지역 추정치입니다. 중국·러시아 접경지역 전체 진행률과는 다르며, 공식 확정 수치가 아닙니다.'));
  borderPanel.append(node('p','','2026년 8월 기준 추정치로 보도된 값이며, 이후 공정률을 실시간 반영하지 않습니다.'));
+ const checkInfo=node('p','nbm-meta','공개 보도 자동 확인: 매일 1회 · 첫 실행 대기 중');borderPanel.append(checkInfo);
+ async function updateBorderCheck(){try{const r=await fetch('./data/nk-border-status.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!r.ok)return;const d=await r.json();if(d.last_checked){const date=new Date(d.last_checked);checkInfo.textContent='공개 보도 자동 확인: 매일 1회 · 최근 확인 '+(Number.isNaN(date.getTime())?d.last_checked:date.toLocaleString('ko-KR'))+' · 추정치 자동 변경 없음';}}catch(e){}}
+ updateBorderCheck();
  const source=node('a','','관련 공개 분석 검색 (38 North)');source.href='https://www.38north.org/?s=border+fence';source.target='_blank';source.rel='noopener noreferrer';borderPanel.append(source);right.append(borderPanel);columns.append(right);
  function showRight(border){officialMeta.hidden=border;officialList.hidden=border;borderPanel.hidden=!border;whoBtn.setAttribute('aria-selected',String(!border));borderBtn.setAttribute('aria-selected',String(border));}
  whoBtn.addEventListener('click',()=>showRight(false));borderBtn.addEventListener('click',()=>showRight(true));showRight(false);
