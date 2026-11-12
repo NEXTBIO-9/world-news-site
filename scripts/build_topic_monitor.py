@@ -39,7 +39,7 @@ def build(articles):
             'label': label, 'article_count': len(matches),
             'countries': [{'name': name, 'articles': count} for name, count in country_counts.most_common(15)],
             'latest': [
-                {'title': a.get('title_ko') or a.get('title'), 'url': a['url'],
+                {'title': a.get('title_ko') or a.get('title'), 'title_ko': a.get('title_ko', ''),\n                 'original_title': a.get('original_title') or a.get('title', ''),\n                 'summary_ko': a.get('summary_ko', ''), 'summary': a.get('summary', ''), 'url': a['url'],
                  'published': a.get('published', ''), 'source': a.get('source', '')}
                 for a in matches[:15]
             ]
