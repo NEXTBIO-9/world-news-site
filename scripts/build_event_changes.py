@@ -33,9 +33,13 @@ def predecessor(current, old, used):
             continue
         before = set(previous.get('article_urls') or [])
         overlap = len(urls & before)
-        if overlap and overlap / min(len(urls), len(before)) >= 0.6:
+        if overlap >= 2 and overlap / min(len(urls), len(before)) >= 0.6:
             candidates.append((overlap, key))
-    return max(candidates)[1] if candidates else None
+    if not candidates:
+        return None
+    candidates.sort(reverse=True)
+    # A tie is ambiguous: do not attach an event to an arbitrary predecessor.
+    return candidates[0][1] if len(candidates) == 1 or candidates[0][0] > candidates[1][0] else None
 
 
 def compare(old, new):
