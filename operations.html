@@ -105,7 +105,7 @@ if(Number.isFinite(last)&&Date.now()-last>3*3600000)warnings.push('마지막 감
 if(warnings.length){alerts.hidden=false;add(alerts,'h2','확인 필요');for(const warning of warnings)add(alerts,'p',warning)}
 const metrics=[['게시 기사',pub.published],['중요 게시 기사',pub.important_published],['게시 대기',pub.pending],['중요 기사 대기',pub.important_pending],['대기열 초과',pub.pending_overflow],['수집 성공 피드',data.successful_feeds]];
 for(const [name,value] of metrics){const card=add(cards,'div','');card.className='card';add(card,'span',name);add(card,'strong',value??'—')}
-for(const [name,value] of [['수집 성공 / 전체',String(data.successful_feeds??'—')+' / '+String(data.attempted_feeds??'—')],['수집 성공률',data.feed_success_rate==null?'—':(data.feed_success_rate*100).toFixed(1)+'%'],['중복 병합',data.event_duplicates_merged],['제외 기사',data.excluded_total],['게시 감사 갱신',pub.updated],['수집 감사 갱신',data.updated]]){
+for(const [name,value] of [['수집 성공 / 전체',String(data.successful_feeds??'—')+' / '+String(data.attempted_feeds??'—')],['수집 성공률',data.feed_success_rate==null?'—':(data.feed_success_rate*100).toFixed(1)+'%'],['중복 병합',data.event_duplicates_merged],['제외 기사',data.excluded_total]]){
 const tr=document.createElement('tr');add(tr,'th',name);add(tr,'td',value);details.append(tr)}
 status.textContent='';
 }catch(e){status.textContent='운영 현황을 불러올 수 없습니다: '+e.message}
