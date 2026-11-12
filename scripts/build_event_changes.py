@@ -85,7 +85,7 @@ def main():
             raise ValueError('Cannot safely compare events against corrupt prior snapshot') from exc
     # An existing empty snapshot is valid: subsequent clusters are genuinely new.
     changes = compare(old, new) if OUT.exists() else []
-    if old == new:
+    if OUT.exists() and old == new:
         return
     output = {'updated': datetime.now(timezone.utc).isoformat(),
               'note': 'Changes describe published coverage only, not confirmed real-world event changes.',
