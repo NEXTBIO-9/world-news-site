@@ -73,18 +73,16 @@ def main():
     feed_path = ROOT / 'data/articles.json'
     feed = json.loads(feed_path.read_text(encoding='utf-8')) if feed_path.exists() else {}
     by_url = {a.get('url'): a for a in feed.get('articles', []) if isinstance(a, dict)}
-    urgent = sorted((pair for pair in pending if important(by_url.get(pair[0], {}))), key=lambda pair: pair[1].get('updated', ''), reverse=True)
-    pending = [pair for pair in pending if pair not in urgent]
-    # Urgent articles use available translation capacity before routine articles.
-    # Split the remaining capacity between fresh stories and old untranslated backlog.
-    # Without this, a continuous stream of new articles can starve older summaries.
-    newest = sorted(pending, key=lambda pair: pair[1].get('updated', ''), reverse=True)
-    oldest = list(reversed(newest))
-    selected = urgent[:LIMIT]
-    remaining = LIMIT - len(selected)
-    selected += newest[:(remaining + 1) // 2]
+    # Fresh publication time takes precedence; keep a quarter of capacity for
+    # older eligible excerpts so the backlog also makes forward progress.
+    def published_time(pair):
+        article = by_url.get(pair[0], {})
+        return str(article.get('published') or pair[1].get('updated') or '')
+    newest = sorted(pending, key=lambda pair: (published_time(pair), important(by_url.get(pair[0], {}))), reverse=True)
+    fresh_limit = max(1, LIMIT - max(1, LIMIT // 4))
+    selected = newest[:fresh_limit]
     used = {url for url, _ in selected}
-    selected += [(url, item) for url, item in oldest if url not in used][:LIMIT - len(selected)]
+    selected += [pair for pair in reversed(newest) if pair[0] not in used][:LIMIT - len(selected)]
     pending = selected
     if not pending:
         print('Korean summary translations: pending=0, translated=0')
