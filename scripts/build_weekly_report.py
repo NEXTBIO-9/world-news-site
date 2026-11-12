@@ -40,11 +40,21 @@ def build(articles, now=None):
 
 
 def main():
-    feed = json.loads((DATA / 'articles.json').read_text(encoding='utf-8'))
+    archive = DATA / 'historical-index.json'
+    feed = json.loads((archive if archive.exists() else DATA / 'articles.json').read_text(encoding='utf-8'))
     articles = feed.get('articles')
     if not isinstance(articles, list):
         raise ValueError('Invalid published feed')
-    (DATA / 'weekly-report.json').write_text(json.dumps(build(articles), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    output = DATA / 'weekly-report.json'
+    result = build(articles)
+    if output.exists():
+        try:
+            old = json.loads(output.read_text(encoding='utf-8'))
+            if all(old.get(k) == result[k] for k in ('article_count', 'categories', 'countries', 'headlines')):
+                return
+        except (OSError, ValueError):
+            pass
+    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':
