@@ -48,6 +48,34 @@ def build():
                     warnings.append({'dataset': name, 'reason': 'stale_over_48_hours'})
             except (ValueError, TypeError, OverflowError):
                 warnings.append({'dataset': name, 'reason': 'invalid_update_timestamp'})
+    # Cross-check publication quality without modifying or deleting articles.
+    try:
+        feed = json.loads((DATA / 'articles.json').read_text(encoding='utf-8'))
+        articles = feed.get('articles')
+        if isinstance(articles, list):
+            urls = [a.get('url') for a in articles if isinstance(a, dict) and a.get('url')]
+            if len(urls) != len(set(urls)):
+                warnings.append({'dataset': 'articles.json', 'reason': 'duplicate_published_urls'})
+            if len(articles) > 300:
+                warnings.append({'dataset': 'articles.json', 'reason': 'published_feed_over_capacity'})
+    except (OSError, ValueError, TypeError, AttributeError):
+        pass
+    try:
+        gaps = json.loads((DATA / 'publication-gaps.json').read_text(encoding='utf-8'))
+        if isinstance(gaps, dict) and int(gaps.get('pending_at_retry_limit') or 0) > 0:
+            warnings.append({'dataset': 'publication-gaps.json', 'reason': 'translation_retry_pressure',
+                             'count': int(gaps['pending_at_retry_limit'])})
+    except (OSError, ValueError, TypeError, OverflowError):
+        pass
+    try:
+        audit = json.loads((DATA / 'collection-publication-audit.json').read_text(encoding='utf-8'))
+        if isinstance(audit, dict):
+            count = int((audit.get('counts') or {}).get('important_unpublished') or 0)
+            if count > 0:
+                warnings.append({'dataset': 'collection-publication-audit.json',
+                                 'reason': 'important_collected_articles_unpublished', 'count': count})
+    except (OSError, ValueError, TypeError, OverflowError, AttributeError):
+        pass
     return {'updated': now.isoformat(),
             'scope': 'data_file_presence_json_syntax_and_nonblocking_warnings',
             'dataset_count': len(status), 'warning_count': len(warnings),
