@@ -129,7 +129,18 @@ async function scrapImport(file){
 function syncBookmarkStars(){document.querySelectorAll('.nb2-bookmark').forEach(b=>{b.textContent=bookmarks[b.dataset.url]?'★':'☆';b.setAttribute('aria-pressed',String(!!bookmarks[b.dataset.url]))})}
 
 function heatmap(groups){if(heatLayer){heatLayer.remove();heatLayer=null}if(!$('nb-heat')?.checked)return;heatLayer=L.layerGroup().addTo(map);const max=Math.max(1,...[...groups.values()].map(a=>a.length));for(const c of countries){const n=groups.get(c[0])?.length||0;if(!n)continue;const intensity=n/max;const circle=L.circleMarker([c[1],c[2]],{radius:16+Math.sqrt(intensity)*28,color:'#ef6b37',weight:2,fillColor:'#f48b37',fillOpacity:.13+intensity*.4,interactive:false});circle.addTo(heatLayer)}}
-function afterRender(list,all){lastList=list;lastAll=all;bio(list);alerts(list);saveButtons();if(showSaved)saved()}
+function marketIssues(list){
+ const root=$('nb-market-issues');if(!root)return;
+ const now=Date.now();
+ const event=/(?:실적|어닝|매출|영업이익|순이익|주가|증시|주식|급등|급락|폭락|상장폐지|인수합병|기업\\s*인수|기업\\s*합병|금리\\s*(?:인상|인하|동결)|earnings|revenue|profit|shares?|stocks?|stock market|stock exchange|nasdaq|s&p 500|dow jones|ipo|merger|acquisition|takeover|delisting|rate\\s*(?:cut|hike))/i;
+ const noise=/(?:광고|홍보|협찬|쇼핑|할인|스포츠|연예|sponsored|advertorial|promotion|shopping|celebrity|soccer)/i;
+ const rows=list.filter(a=>{const t=String(a.title||'')+' '+String(a.title_ko||'');const d=validDate(a);return d&&d.getTime()<=now+3600000&&d.getTime()>=now-7*86400000&&event.test(t)&&!noise.test(t);})
+  .sort((a,b)=>validDate(b)-validDate(a));
+ const seen=new Set(),picked=[];
+ for(const a of rows){const key=nbPriorityKey(a);if(seen.has(key))continue;seen.add(key);picked.push(a);if(picked.length>=5)break;}
+ root.innerHTML=picked.length?picked.map(a=>'<div class="nb2-row"><span class="nb2-tag">📈 '+(lang==='ko'?'증시·기업':'Markets')+'</span><a target="_blank" rel="noopener noreferrer" href="'+safe(/^https?:\\/\\//i.test(a.url||'')?a.url:'#')+'">'+safe(window.NBTitleTranslation?.title(a)||(a.title_ko||a.title))+'</a></div>').join(''):'<p class="nb2-muted">'+(lang==='ko'?'최근 7일간 수집된 주요 증시·기업 뉴스가 없습니다.':'No qualifying market news in the past 7 days.')+'</p>';
+}
+function afterRender(list,all){lastList=list;lastAll=all;bio(list);alerts(list);marketIssues(list);saveButtons();if(showSaved)saved()}
 function translate(){document.querySelectorAll('[data-nb]').forEach(el=>{el.textContent=tr(el.dataset.nb)});$('nb-lang').textContent=lang==='ko'?'EN':'한국어';$('nb-clear').textContent=tr('clear');const sel=$('nb-date');if(sel){[...sel.options].forEach(o=>{const key=({'1':'hours','3':'days3','7':'days7','30':'days30','all':'all'})[o.value];if(key)o.textContent=tr(key)})}$('nb-notice').textContent=tr('notice');document.documentElement.lang=lang;afterRender(lastList,lastAll)}
 window.NB2={dateOK,heatmap,afterRender};
 $('nb-date').addEventListener('change',()=>{document.getElementById('nb-tour-toggle')?.checked&&document.getElementById('nb-tour-toggle').click();render()});$('nb-from')?.addEventListener('change',()=>render());$('nb-to')?.addEventListener('change',()=>render());$('nb-heat')?.addEventListener('change',()=>render());$('nb-clear').addEventListener('click',()=>{$('nb-date').value='all';if($('nb-from'))$('nb-from').value='';if($('nb-to'))$('nb-to').value='';render()});
