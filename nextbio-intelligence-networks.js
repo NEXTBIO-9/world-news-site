@@ -24,6 +24,8 @@ const style=document.createElement('style');style.textContent=`
 #nb-intelligence .nbm-border-panel[hidden],#nb-intelligence .nbm-official .nbm-list[hidden],#nb-intelligence .nbm-official .nbm-meta[hidden]{display:none!important}
 #nb-intelligence .nbm-border-panel .nbm-border-status{padding:11px;border:1px solid #3a536e;border-radius:9px;background:#26394f;margin:9px 0}
 #nb-intelligence .nbm-border-panel strong{display:block;color:#91c5ff;font-size:18px;margin:4px 0}
+#nb-intelligence .nbm-progress-track{height:9px;background:#3b506a;border-radius:99px;overflow:hidden;margin:8px 0}
+#nb-intelligence .nbm-progress-fill{height:100%;background:#3195f5;border-radius:99px}
 #nb-intelligence .nbm-border-panel a{color:#91c5ff}
 #nb-intelligence .nbm-official .nbm-meta{font-size:11px;color:#91a9c4;margin-bottom:8px}
 #nb-intelligence .nbm-official .nbm-list{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin}
@@ -77,10 +79,12 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  officialMeta=node('div','nbm-meta','WHO 공식 발표 · 제목 번역 ON/OFF 연동');right.append(officialMeta);
  officialList=node('div','nbm-list');right.append(officialList);
  const borderPanel=node('div','nbm-border-panel');borderPanel.id='nbm-border-panel';borderPanel.setAttribute('role','tabpanel');
- borderPanel.append(node('div','nbm-meta','북한·중국 및 북한·러시아 접경지역의 장벽·철조망·차단시설 관측'));
- const status=node('div','nbm-border-status');status.append(node('span','','전체 건설 진행률'));status.append(node('strong','','검증된 수치 없음'));status.append(node('span','','공개자료만으로 전체 공정률(%)을 산정할 수 없습니다.'));borderPanel.append(status);
- borderPanel.append(node('p','','확인 가능한 항목: 공개 위성영상에 포착된 시설 구간, 건설 시기 및 시설 유형. 구간별 관측 범위와 전체 국경 건설률은 구분해야 합니다.'));
- borderPanel.append(node('p','','현재 자동 갱신되는 검증 데이터가 연결되어 있지 않아 추정 진행률이나 최근 증감치를 표시하지 않습니다.'));
+ borderPanel.append(node('div','nbm-meta','남북 접경지역 요새화 · 2026년 8월 기준 보도 추정치 (자동 갱신 아님)'));
+ const addEstimate=(label,value,pct,note)=>{const wrap=node('div','nbm-border-status');wrap.append(node('span','',label+' · 추정치'));wrap.append(node('strong','',value));const track=node('div','nbm-progress-track');const fill=node('div','nbm-progress-fill');fill.style.width=pct+'%';track.append(fill);wrap.append(track);wrap.append(node('span','',note));borderPanel.append(wrap)};
+ addEstimate('지면 정리 작업','약 90%',90,'남부 국경 관련 보도 추정 · 전체 장벽 완공률이 아님');
+ addEstimate('철책·지뢰지대 구축','약 30~60%',60,'구간별 추정 범위 · 막대는 상한 60%를 나타냄');
+ borderPanel.append(node('p','','※ 남북 접경지역 추정치입니다. 중국·러시아 접경지역 전체 진행률과는 다르며, 공식 확정 수치가 아닙니다.'));
+ borderPanel.append(node('p','','2026년 8월 기준 추정치로 보도된 값이며, 이후 공정률을 실시간 반영하지 않습니다.'));
  const source=node('a','','관련 공개 분석 검색 (38 North)');source.href='https://www.38north.org/?s=border+fence';source.target='_blank';source.rel='noopener noreferrer';borderPanel.append(source);right.append(borderPanel);columns.append(right);
  function showRight(border){officialMeta.hidden=border;officialList.hidden=border;borderPanel.hidden=!border;whoBtn.setAttribute('aria-selected',String(!border));borderBtn.setAttribute('aria-selected',String(border));}
  whoBtn.addEventListener('click',()=>showRight(false));borderBtn.addEventListener('click',()=>showRight(true));showRight(false);
