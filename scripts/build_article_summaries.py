@@ -199,12 +199,11 @@ def main():
     # Prefer the newest unprocessed articles while reserving ~1/3 of attempts for backlog.
     # Stable URL cache prevents duplicate fetching and existing translated text is preserved.
     fresh_limit = max(1, MAX_ATTEMPTS * 2 // 3)
-    fresh_order = sorted(range(len(articles)), key=lambda i: (important(articles[i]), str(articles[i].get('published') or '')), reverse=True)
+    fresh_order = sorted(range(len(articles)), key=lambda i: (str(articles[i].get('published') or ''), important(articles[i])), reverse=True)
     session = requests.Session()
     session.headers.update(HEADERS)
     # Phase A: new-first (only entries not yet cached). Phase B: rotating backlog.
-    urgent_order = [i for i in fresh_order if important(articles[i])]
-    queue = [(i, True) for i in urgent_order] + [(i, True) for i in fresh_order[:min(len(articles), 120)]] + [((cursor + i) % len(articles), False) for i in range(len(articles))]
+    queue = [(i, True) for i in fresh_order] + [((cursor + i) % len(articles), False) for i in range(len(articles))]
     seen_indices = set()
     backlog_scanned = 0
     for index, is_fresh in queue:
