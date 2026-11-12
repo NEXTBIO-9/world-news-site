@@ -199,8 +199,9 @@ jobs:
             python scripts/build_evidence_index.py
             python scripts/build_geo_coverage.py
             python scripts/build_coverage_profiles.py
+            python scripts/build_breaking_candidates.py
             python scripts/validate_news_data.py
-            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json data/event-timelines.json data/event-changes.json data/topic-monitor.json data/daily-briefing.json data/intelligence.json data/weekly-report.json data/evidence-index.json data/geo-coverage.json data/coverage-profiles.json
+            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json data/event-timelines.json data/event-changes.json data/topic-monitor.json data/daily-briefing.json data/intelligence.json data/weekly-report.json data/evidence-index.json data/geo-coverage.json data/coverage-profiles.json data/breaking-candidates.json
             if [ -f data/news_quality_audit.json ]; then git add data/news_quality_audit.json; fi
             if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
             git commit -m 'Publish only fully summarized Korean news'
