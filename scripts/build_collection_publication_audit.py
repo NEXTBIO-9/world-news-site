@@ -21,12 +21,12 @@ def load(path):
 
 
 def build(staged, published, pending):
-    staged_by_url = {a['url']: a for a in staged if isinstance(a, dict) and a.get('url')}
-    published_urls = {a['url'] for a in published if isinstance(a, dict) and a.get('url')}
+    staged_by_url = {a['url']: a for a in staged if isinstance(a, dict) and isinstance(a.get('url'), str) and a['url']}
+    published_urls = {a['url'] for a in published if isinstance(a, dict) and isinstance(a.get('url'), str) and a['url']}
     pending = pending if isinstance(pending, list) else []
     pending_urls = {entry['article']['url'] for entry in pending
                     if isinstance(entry, dict) and isinstance(entry.get('article'), dict)
-                    and entry['article'].get('url')}
+                    and isinstance(entry['article'].get('url'), str) and entry['article']['url']}
     unpublished = []
     counts = Counter()
     for url, article in staged_by_url.items():
@@ -51,8 +51,11 @@ def build(staged, published, pending):
 def main():
     if len(sys.argv) != 2:
         raise SystemExit('Usage: build_collection_publication_audit.py STAGED_ARTICLES_JSON')
-    result = build(load(sys.argv[1]), load(DATA / 'articles.json'),
-                   json.loads((DATA / 'pending-title-news.json').read_text(encoding='utf-8')).get('pending', []))
+    pending_path = DATA / 'pending-title-news.json'
+    pending_data = json.loads(pending_path.read_text(encoding='utf-8')) if pending_path.exists() else {}
+    if not isinstance(pending_data, dict):
+        pending_data = {}
+    result = build(load(sys.argv[1]), load(DATA / 'articles.json'), pending_data.get('pending', []))
     if OUT.exists():
         try:
             previous = json.loads(OUT.read_text(encoding='utf-8'))
