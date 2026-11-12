@@ -14,7 +14,7 @@ FILES = ['articles.json', 'event-timelines.json', 'event-changes.json',
          'historical-index.json', 'country-coverage-trends.json',
          'specialized-indexes.json', 'translation-quality.json',
          'source-provenance.json', 'personalization-options.json',
-         'publication-gaps.json']
+         'publication-gaps.json', 'collection-publication-audit.json']
 
 
 def build():
