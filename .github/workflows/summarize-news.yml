@@ -218,8 +218,10 @@ jobs:
             python scripts/build_specialized_indexes.py
             python scripts/build_pipeline_health.py
             python scripts/build_translation_quality.py
+            python scripts/build_source_provenance.py
+            python scripts/build_personalization_options.py
             python scripts/validate_news_data.py
-            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json data/event-timelines.json data/event-changes.json data/topic-monitor.json data/daily-briefing.json data/intelligence.json data/weekly-report.json data/evidence-index.json data/geo-coverage.json data/coverage-profiles.json data/breaking-candidates.json data/historical-index.json data/country-coverage-trends.json data/specialized-indexes.json data/pipeline-health.json data/translation-quality.json
+            git add data/articles.json data/article-summaries.json data/pending-title-news.json data/title-translations.json data/event-timelines.json data/event-changes.json data/topic-monitor.json data/daily-briefing.json data/intelligence.json data/weekly-report.json data/evidence-index.json data/geo-coverage.json data/coverage-profiles.json data/breaking-candidates.json data/historical-index.json data/country-coverage-trends.json data/specialized-indexes.json data/pipeline-health.json data/translation-quality.json data/source-provenance.json data/personalization-options.json
             if [ -f data/news_quality_audit.json ]; then git add data/news_quality_audit.json; fi
             if git diff --cached --quiet; then echo 'No changes'; exit 0; fi
             git commit -m 'Publish only fully summarized Korean news'
