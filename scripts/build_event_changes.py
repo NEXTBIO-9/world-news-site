@@ -15,10 +15,17 @@ def snapshot(events):
     for e in events:
         if not isinstance(e, dict) or not e.get('id'):
             continue
-        result[e['id']] = {'title': e.get('title', ''), 'article_count': e.get('article_count', 0),
-                           'last_reported': e.get('last_reported', ''),
-                           'countries': sorted(e.get('countries') or []),
-                           'article_urls': sorted({t.get('url') for t in e.get('timeline', []) if isinstance(t, dict) and t.get('url')})}
+        timeline = e.get('timeline')
+        if not isinstance(timeline, list):
+            timeline = []
+        countries = e.get('countries')
+        if not isinstance(countries, list):
+            countries = []
+        result[str(e['id'])] = {'title': e.get('title', ''), 'article_count': e.get('article_count', 0),
+                               'last_reported': e.get('last_reported', ''),
+                               'countries': sorted(c for c in countries if isinstance(c, str)),
+                               'article_urls': sorted({t['url'] for t in timeline if isinstance(t, dict)
+                                                       and isinstance(t.get('url'), str) and t['url']})}
     return result
 
 
