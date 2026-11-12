@@ -46,7 +46,11 @@ def write(path, data):
 
 
 def identity(article):
-    return (article.get('url'), article.get('title'))
+    """Return a hashable article key even when upstream metadata is malformed."""
+    url = article.get('url')
+    title = article.get('title')
+    return (url if isinstance(url, str) else '',
+            title if isinstance(title, str) else '')
 
 
 def retry_count(value):
