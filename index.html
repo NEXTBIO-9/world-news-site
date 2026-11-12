@@ -320,7 +320,7 @@ body:not(.dark-mode) #country-feed .nb-news-row:hover {
 <script>
 (function(){
   try{
-    if(localStorage.getItem("nextbio-theme")!=="light"){
+    if(true){
       document.documentElement.classList.add("theme-preload-dark");
     }
   }catch(error){}
@@ -373,15 +373,7 @@ html.theme-preload-dark body{
 
     <div class="head-right">
 
-      <button
-        id="theme-toggle"
-        class="theme-toggle"
-        type="button"
-        aria-label="다크 모드로 전환"
-        aria-pressed="false"
-      >
-        🌙 다크 모드
-      </button>
+      
 
     </div>
 
@@ -601,54 +593,8 @@ html.theme-preload-dark body{
 
 <script src="nextbio-map-layout-fix.js?v=25"></script>
 
-<!-- NEXT BIO 테마 전환 기능 -->
-<script>
-(function(){
-  const button = document.getElementById("theme-toggle");
-  if(!button) return;
-
-  let savedTheme = "dark";
-
-  try{
-    savedTheme = localStorage.getItem("nextbio-theme") || "dark";
-  }catch(error){}
-
-  function applyTheme(theme){
-    const isDark = theme === "dark";
-
-    document.body.classList.toggle("dark-mode", isDark);
-    if(typeof window.NEXTBIO_setMapTheme === "function") {
-      window.NEXTBIO_setMapTheme(isDark);
-    }
-    document.documentElement.classList.remove("theme-preload-dark");
-
-    button.textContent = isDark
-      ? "☀️ 화이트 모드"
-      : "🌙 다크 모드";
-
-    button.setAttribute(
-      "aria-label",
-      isDark ? "화이트 모드로 전환" : "다크 모드로 전환"
-    );
-
-    button.setAttribute("aria-pressed", String(isDark));
-  }
-
-  applyTheme(savedTheme);
-
-  button.addEventListener("click", function(){
-    const nextTheme = document.body.classList.contains("dark-mode")
-      ? "light"
-      : "dark";
-
-    applyTheme(nextTheme);
-
-    try{
-      localStorage.setItem("nextbio-theme", nextTheme);
-    }catch(error){}
-  });
-})();
-</script>
+<!-- NEXT BIO: dark-only theme -->
+<script>(function(){document.body.classList.add('dark-mode');document.documentElement.classList.remove('theme-preload-dark','nb-light');try{localStorage.setItem('nextbio-theme','dark')}catch(e){}if(typeof window.NEXTBIO_setMapTheme==='function')window.NEXTBIO_setMapTheme(true);})();</script>
 <script src="./market-ticker.js?v=1" defer></script>
 <script src="./nextbio-tour-sound.js?v=2" defer></script>
 <script src="./nextbio-atmosphere.js?v=2" defer></script>
