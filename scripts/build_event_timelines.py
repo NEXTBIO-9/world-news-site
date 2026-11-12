@@ -121,7 +121,9 @@ def build(articles):
         event_id = hashlib.sha256(str(first['url']).encode('utf-8')).hexdigest()[:16]
         timeline = [
             {'published': a.get('published', ''), 'title': a.get('title_ko') or a['title'],
-             'source': a.get('source', ''), 'url': a['url']}
+             'source': a.get('source', ''), 'url': a['url'],
+             'source_url': a.get('source_url') or '',
+             'publisher_url': a.get('publisher_url') or ''}
             for a in group
         ]
         events.append({
