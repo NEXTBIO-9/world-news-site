@@ -30,16 +30,24 @@ def build():
                                 'updated': parsed.get('updated') if isinstance(parsed, dict) else None}
         except (OSError, ValueError, TypeError):
             status[filename] = {'present': True, 'valid_json': False}
+    warnings = []
+    for name, record in status.items():
+        if not record.get('present'):
+            warnings.append({'dataset': name, 'reason': 'missing'})
+        elif not record.get('valid_json'):
+            warnings.append({'dataset': name, 'reason': 'invalid_json'})
     return {'updated': datetime.now(timezone.utc).isoformat(),
-            'scope': 'data_file_presence_and_json_syntax_only',
-            'datasets': status}
+            'scope': 'data_file_presence_json_syntax_and_nonblocking_warnings',
+            'dataset_count': len(status), 'warning_count': len(warnings),
+            'warnings': warnings, 'datasets': status}
 
 
 def main():
     result = build()
     if OUT.exists():
         try:
-            if json.loads(OUT.read_text(encoding='utf-8')).get('datasets') == result['datasets']:
+            if all(json.loads(OUT.read_text(encoding='utf-8')).get(k) == result[k]
+                   for k in ('datasets', 'warnings')):
                 return
         except (OSError, ValueError):
             pass
