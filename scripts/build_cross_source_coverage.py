@@ -41,8 +41,8 @@ def build(events):
             url = item.get('url')
             if host and isinstance(url, str) and url:
                 sources[host].add(url)
-        results.append({'event_id': event.get('id') or '',
-                        'event_title': event.get('title') or '',
+        results.append({'event_id': str(event.get('id') or ''),
+                        'event_title': str(event.get('title') or ''),
                         'publisher_domains': sorted(sources),
                         'distinct_publisher_domains': len(sources),
                         'multiple_domains_observed': len(sources) >= 2,
