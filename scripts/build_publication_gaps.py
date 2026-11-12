@@ -58,6 +58,17 @@ def report():
         waiting.append({'url': url, 'title': title, 'failures': failures,
                         'published': article.get('published') or '',
                         'category': article.get('category') or ''})
+    # Do not report the same URL multiple times when the retained queue has duplicates.
+    unique_waiting = {}
+    for article in waiting:
+        key = article['url']
+        if key in unique_waiting:
+            reasons['duplicate_pending_url'] += 1
+            if article['failures'] > unique_waiting[key]['failures']:
+                unique_waiting[key] = article
+        else:
+            unique_waiting[key] = article
+    waiting = list(unique_waiting.values())
     waiting.sort(key=lambda a: (-a['failures'], str(a['published']), str(a['url'])))
     return {
         'updated': datetime.now(timezone.utc).isoformat(),
