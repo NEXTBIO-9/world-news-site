@@ -53,7 +53,7 @@ def build(articles, now=None):
                 'published': published, 'category': cat, 'countries': countries,
                 'source': str(a.get('source') or host), 'publisher_domain': host,
                 'source_type': 'official_domain' if official else 'media_or_other',
-                'topics': matched}
+                'topics': matched, 'title_ko': str(a.get('title_ko') or ''),\n                'summary_ko': str(a.get('summary_ko') or ''), 'summary': str(a.get('summary') or '')}
         records.append(item)
         for c in countries:
             country[c].append(item)
@@ -68,7 +68,7 @@ def build(articles, now=None):
             'disclaimer': 'Coverage counts and keyword tags are descriptive only. Official-domain labels do not verify claims.',
             'total_articles': len(records), 'countries': group(country), 'categories': group(category),
             'daily_counts': [{'date': day, 'articles': count} for day, count in sorted(dates.items())],
-            'articles': records[:300]}
+            'articles': records[:1000]}
 
 
 def main():
