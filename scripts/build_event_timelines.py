@@ -72,14 +72,14 @@ def cluster(articles):
 
 def publisher(article):
     """Prefer the publisher's hostname over a potentially inconsistent source label."""
-    for value in (article.get('source_url'), article.get('publisher_url'), article.get('url')):
+    for value in (article.get('publisher_url'), article.get('source_url'), article.get('url')):
         if not value:
             continue
         try:
             host = (urlparse(str(value)).hostname or '').lower().removeprefix('www.')
         except ValueError:
             continue
-        if host and not host.endswith('news.google.com'):
+        if host and host != 'news.google.com' and not host.endswith('.google.com'):
             return host
     return str(article.get('source') or '').strip().casefold()
 
