@@ -23,6 +23,7 @@ def load(path):
 def build(staged, published, pending):
     staged_by_url = {a['url']: a for a in staged if isinstance(a, dict) and a.get('url')}
     published_urls = {a['url'] for a in published if isinstance(a, dict) and a.get('url')}
+    pending = pending if isinstance(pending, list) else []
     pending_urls = {entry['article']['url'] for entry in pending
                     if isinstance(entry, dict) and isinstance(entry.get('article'), dict)
                     and entry['article'].get('url')}
@@ -38,7 +39,7 @@ def build(staged, published, pending):
             counts['important_unpublished'] += 1
         unpublished.append({'url': url, 'title': article.get('title') or '',
                             'important': important(article), 'state': state})
-    unpublished.sort(key=lambda a: (not a['important'], a['state'], a['url']))
+    unpublished.sort(key=lambda a: (not a['important'], a['state'], str(a['url'])))
     return {'updated': datetime.now(timezone.utc).isoformat(),
             'scope': 'latest_collected_batch_compared_to_published_and_pending_urls',
             'disclaimer': 'Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.',
