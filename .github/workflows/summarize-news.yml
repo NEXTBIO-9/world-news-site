@@ -138,6 +138,21 @@ jobs:
           else
             printf '{"updated":null,"scope":"manual_backfill_no_collection_audit"}\n' > /tmp/nextbio-staged/news_quality_audit.json
           fi
+      - name: Validate staged news before summary processing
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('/tmp/nextbio-staged')
+          feed = json.loads((root / 'articles.json').read_text(encoding='utf-8'))
+          if not isinstance(feed, dict) or not isinstance(feed.get('articles'), list):
+              raise SystemExit('Staged news feed is missing a valid articles list')
+          audit = json.loads((root / 'news_quality_audit.json').read_text(encoding='utf-8'))
+          if not isinstance(audit, dict):
+              raise SystemExit('Staged news audit must be a JSON object')
+          print('Validated staged news articles:', len(feed['articles']))
+          PY
       - name: Download headline attempt record
         uses: actions/download-artifact@v4
         with:
