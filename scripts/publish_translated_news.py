@@ -49,6 +49,14 @@ def identity(article):
     return (article.get('url'), article.get('title'))
 
 
+def retry_count(value):
+    """Treat malformed retry counters as zero rather than aborting publication."""
+    try:
+        return max(0, int(value or 0))
+    except (TypeError, ValueError, OverflowError):
+        return 0
+
+
 def combined(staged):
     """Current feed first; then still-fresh queued items not in this collection."""
     queue = read(QUEUE)
@@ -63,7 +71,7 @@ def combined(staged):
         if not isinstance(entry, dict) or not isinstance(entry.get('article'), dict):
             continue
         item = entry['article']
-        if int(entry.get('failures', 0)) < MAX_FAILURES and item.get('title') and identity(item) not in seen and identity(item) not in excluded:
+        if retry_count(entry.get('failures')) < MAX_FAILURES and item.get('title') and identity(item) not in seen and identity(item) not in excluded:
             result.append(item)
             seen.add(identity(item))
     for item in staged['articles']:
@@ -121,7 +129,7 @@ def publish(staged_path, audit_path):
     if not isinstance(existing, list):
         raise ValueError('Invalid pending-title queue')
     excluded = {tuple(x) for x in read(QUEUE).get('excluded', []) if isinstance(x, list) and len(x) == 2}
-    failure_counts = {identity(e['article']): int(e.get('failures', 0)) for e in existing
+    failure_counts = {identity(e['article']): retry_count(e.get('failures')) for e in existing
                       if isinstance(e, dict) and isinstance(e.get('article'), dict)}
     attempted_path = Path(sys.argv[3]) if len(sys.argv) > 3 else None
     attempted = set(read(attempted_path).get('attempted', [])) if attempted_path and attempted_path.exists() else set()
