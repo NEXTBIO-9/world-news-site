@@ -30,7 +30,7 @@ function create(id){
  const markers=document.createElement('div');markers.className='nb-native-markers';root.appendChild(markers);
  const controls=document.createElement('div');controls.className='nb-native-controls';
  for(const [symbol,delta,label] of [['+',1,'확대'],['−',-1,'축소']]){const b=document.createElement('button');b.type='button';b.textContent=symbol;b.title=label;b.setAttribute('aria-label',label);b.onclick=()=>zoomTo(zoom+delta,root.clientWidth/2,root.clientHeight/2);controls.appendChild(b);}root.appendChild(controls);
- const copies=[];for(let i=-2;i<=2;i++){const el=document.createElement('div');el.style.position='absolute';el.style.top='0';el.style.left='0';el.style.width='100%';el.style.height='100%';for(const [name,cls] of [['light','nb-light'],['dark','nb-dark']]){const img=document.createElement('img');img.className=cls;img.src=`./nextbio-world-map-${name}.svg`;img.alt='';img.draggable=false;el.appendChild(img);}world.appendChild(el);copies.push({el,i});}
+ const copies=[];for(let i=-1;i<=1;i++){const el=document.createElement('div');el.style.position='absolute';el.style.top='0';el.style.left='0';el.style.width='100%';el.style.height='100%';for(const [name,cls] of [['light','nb-light'],['dark','nb-dark']]){const img=document.createElement('img');img.className=cls;img.decoding='async';img.src=`./nextbio-world-map-${name}.svg`;img.alt='';img.draggable=false;el.appendChild(img);}world.appendChild(el);copies.push({el,i});}
  let zoom=2,center=[22,15],items=[],drag=null,handlers={},flight=null;
  const cancelFlight=()=>{if(flight!==null){cancelAnimationFrame(flight);flight=null;}};
  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
@@ -40,8 +40,8 @@ function create(id){
  function xy(lat,lon){const [cx,cy]=centerXY();return [root.clientWidth/2+(lonX(lon)*size()-cx),root.clientHeight/2+(latY(lat)*size()/2-cy)]}
  function repaint(){const s=size(),[cx,cy]=centerXY();world.style.width=s+'px';world.style.height=(s/2)+'px';world.style.left=(root.clientWidth/2-cx)+'px';world.style.top=(root.clientHeight/2-cy)+'px';for(const c of copies)c.el.style.transform=`translateX(${c.i*100}%)`;
   for(const item of items){let [x,y]=xy(item.lat,item.lon);while(x< -15)x+=s;while(x>root.clientWidth+15)x-=s;item.el.style.left=x+'px';item.el.style.top=y+'px';item.el.style.display=(y< -20||y>root.clientHeight+20||x< -20||x>root.clientWidth+20)?'none':'';}}
- function setView(latlon,z){cancelFlight();center=[clamp(+latlon[0],-MAX,MAX),+latlon[1]];zoom=clamp(+z,2,7);repaint();return api;}
- function zoomTo(z,px,py){cancelFlight();const old=size(),wx=lonX(center[1])+(px-root.clientWidth/2)/old,wy=latY(center[0])+(py-root.clientHeight/2)/(old/2);zoom=clamp(z,2,7);const ns=size(),nx=wx-(px-root.clientWidth/2)/ns,ny=wy-(py-root.clientHeight/2)/(ns/2);center=[mercLat(ny),((nx-0.02)/0.96)*360-180];center[0]=clamp(center[0],-MAX,MAX);repaint();}
+ function setView(latlon,z){cancelFlight();center=[clamp(+latlon[0],-MAX,MAX),+latlon[1]];zoom=clamp(+z,2,4);repaint();return api;}
+ function zoomTo(z,px,py){cancelFlight();const old=size(),wx=lonX(center[1])+(px-root.clientWidth/2)/old,wy=latY(center[0])+(py-root.clientHeight/2)/(old/2);zoom=clamp(z,2,4);const ns=size(),nx=wx-(px-root.clientWidth/2)/ns,ny=wy-(py-root.clientHeight/2)/(ns/2);center=[mercLat(ny),((nx-0.02)/0.96)*360-180];center[0]=clamp(center[0],-MAX,MAX);repaint();}
  root.addEventListener('wheel',e=>{e.preventDefault();zoomTo(zoom+(e.deltaY<0?.5:-.5),e.offsetX,e.offsetY);},{passive:false});
  root.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;cancelFlight();drag={x:e.clientX,y:e.clientY,lat:center[0],lon:center[1]};root.setPointerCapture(e.pointerId);});
  root.addEventListener('pointermove',e=>{if(!drag)return;const s=size(),dx=e.clientX-drag.x,dy=e.clientY-drag.y;const ny=latY(drag.lat)-dy/(s/2);center=[clamp(mercLat(ny),-MAX,MAX),drag.lon-dx/s*(360/0.96)];repaint();if(Math.abs(dx)+Math.abs(dy)>5&&handlers.dragstart&&!drag.fired){drag.fired=true;handlers.dragstart.forEach(fn=>fn());}});
@@ -53,7 +53,7 @@ function create(id){
   const fromLon=center[1];
   // Use the shortest east/west path, including across the date line.
   const lonDelta=((+loc[1]-fromLon+540)%360+360)%360-180;
-  const fromZoom=zoom,toZoom=clamp(Number(z)||zoom,2,7);
+  const fromZoom=zoom,toZoom=clamp(Number(z)||zoom,2,4);
   function tick(now){
    const t=clamp((now-start)/duration,0,1),p=ease(t);
    center=[clamp(mercLat(fromLat+(toLat-fromLat)*p),-MAX,MAX),fromLon+lonDelta*p];
