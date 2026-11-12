@@ -133,7 +133,11 @@ jobs:
         run: |
           mkdir -p /tmp/nextbio-staged
           cp data/articles.json /tmp/nextbio-staged/articles.json
-          if [ -f data/news_quality_audit.json ]; then cp data/news_quality_audit.json /tmp/nextbio-staged/news_quality_audit.json; fi
+          if [ -f data/news_quality_audit.json ]; then
+            cp data/news_quality_audit.json /tmp/nextbio-staged/news_quality_audit.json
+          else
+            printf '{"updated":null,"scope":"manual_backfill_no_collection_audit"}\n' > /tmp/nextbio-staged/news_quality_audit.json
+          fi
       - name: Download headline attempt record
         uses: actions/download-artifact@v4
         with:
