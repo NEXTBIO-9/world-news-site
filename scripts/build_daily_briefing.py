@@ -61,7 +61,16 @@ def main():
     feed = json.loads(FEED.read_text(encoding='utf-8'))
     if not isinstance(feed.get('articles'), list):
         raise ValueError('Invalid feed')
-    OUT.write_text(json.dumps(build(feed['articles']), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    result = build(feed['articles'])
+    if OUT.exists():
+        try:
+            old = json.loads(OUT.read_text(encoding='utf-8'))
+            keys = ('article_count', 'top_categories', 'top_countries', 'headlines')
+            if all(old.get(k) == result[k] for k in keys):
+                return
+        except (OSError, ValueError):
+            pass
+    OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':
