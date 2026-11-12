@@ -43,7 +43,11 @@ jobs:
         run: |
           mkdir -p /tmp/nextbio-staged
           cp data/articles.json /tmp/nextbio-staged/articles.json
-          if [ -f data/news_quality_audit.json ]; then cp data/news_quality_audit.json /tmp/nextbio-staged/news_quality_audit.json; fi
+          if [ -f data/news_quality_audit.json ]; then
+            cp data/news_quality_audit.json /tmp/nextbio-staged/news_quality_audit.json
+          else
+            printf '{"updated":null,"scope":"manual_backfill_no_collection_audit"}\n' > /tmp/nextbio-staged/news_quality_audit.json
+          fi
       - name: Add retained untranslated headlines to translation candidates
         run: python scripts/publish_translated_news.py prepare /tmp/nextbio-staged/articles.json /tmp/nextbio-translation-candidates.json
       - name: Check whether Korean headline translation is needed
