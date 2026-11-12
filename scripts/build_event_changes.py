@@ -77,9 +77,12 @@ def main():
     old = {}
     if OUT.exists():
         try:
-            old = json.loads(OUT.read_text(encoding='utf-8')).get('snapshot') or {}
-        except (OSError, ValueError):
-            pass
+            previous_data = json.loads(OUT.read_text(encoding='utf-8'))
+            if not isinstance(previous_data, dict) or not isinstance(previous_data.get('snapshot'), dict):
+                raise ValueError('Invalid prior event snapshot')
+            old = previous_data['snapshot']
+        except (OSError, ValueError) as exc:
+            raise ValueError('Cannot safely compare events against corrupt prior snapshot') from exc
     changes = compare(old, new) if old else []
     if old == new:
         return
