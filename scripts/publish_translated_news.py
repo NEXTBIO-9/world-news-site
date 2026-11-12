@@ -228,8 +228,8 @@ def publish(staged_path, audit_path):
         if korean_summary_ready(restored, summaries):
             published.append(restored)
             seen.add(key)
-    # Keep up to 1,000 published stories. Prioritize important reports while
-    # preserving newest-first order within each priority class.
+    # Keep up to 1,000 published stories in publication-time order.
+    # Old important stories must not bury newly published reports.
     # Missing or malformed publication dates rank oldest.
     def published_time(article):
         raw = str(article.get('published') or '')
@@ -241,7 +241,7 @@ def publish(staged_path, audit_path):
         except (ValueError, TypeError, OverflowError):
             return datetime.min.replace(tzinfo=timezone.utc)
 
-    published.sort(key=lambda a: (priority(a), published_time(a)), reverse=True)
+    published.sort(key=lambda a: (published_time(a), priority(a)), reverse=True)
     # Multiple titles can point to one source URL; publish only its newest entry.
     published = unique_by_url(published, limit=MAX_PUBLISHED)
     # A bounded queue must never sacrifice a critical item merely due to position.
