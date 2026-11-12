@@ -29,7 +29,7 @@ def build(articles, now=None):
             unique[url] = a
     records = sorted(unique.values(), key=lambda a: str(a.get('published') or ''), reverse=True)
     categories = Counter(str(a.get('category') or '미분류') for a in records)
-    countries = Counter(c for a in records for c in (a.get('countries') or []) if isinstance(c, str))
+    countries = Counter(c for a in records for c in set(v for v in (a.get('countries') or []) if isinstance(v, str)))
     return {'updated': now.isoformat(), 'window_days': 7, 'article_count': len(records),
             'disclaimer': 'Published article counts do not indicate real-world incident totals or risk.',
             'categories': [{'name': k, 'articles': v} for k, v in categories.most_common(20)],
