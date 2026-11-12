@@ -34,7 +34,7 @@ def build(articles, now=None):
             'disclaimer': 'Published article counts do not indicate real-world incident totals or risk.',
             'categories': [{'name': k, 'articles': v} for k, v in categories.most_common(20)],
             'countries': [{'name': k, 'articles': v} for k, v in countries.most_common(20)],
-            'headlines': [{'title': a.get('title_ko') or a.get('title'), 'url': a['url'],
+            'headlines': [{'title': a.get('title_ko') or a.get('title'), 'title_ko': a.get('title_ko', ''),\n                           'original_title': a.get('original_title') or a.get('title', ''),\n                           'summary_ko': a.get('summary_ko', ''), 'summary': a.get('summary', ''), 'url': a['url'],
                            'published': a.get('published', ''), 'source': a.get('source', '')}
                           for a in records[:60]]}
 
