@@ -140,7 +140,28 @@ function marketIssues(list){
  for(const a of rows){const key=nbPriorityKey(a);if(seen.has(key))continue;seen.add(key);picked.push(a);if(picked.length>=5)break;}
  root.innerHTML=picked.length?picked.map(a=>'<div class="nb2-row"><span class="nb2-tag">📈 '+(lang==='ko'?'증시·기업':'Markets')+'</span><a target="_blank" rel="noopener noreferrer" href="'+safe(String(a.url||'').startsWith('https://')||String(a.url||'').startsWith('http://')?a.url:'#')+'">'+safe(window.NBTitleTranslation?.title(a)||(a.title_ko||a.title))+'</a></div>').join(''):'<p class="nb2-muted">'+(lang==='ko'?'최근 7일간 수집된 주요 증시·기업 뉴스가 없습니다.':'No qualifying market news in the past 7 days.')+'</p>';
 }
-function afterRender(list,all){lastList=list;lastAll=all;bio(list);alerts(list);marketIssues(list);saveButtons();if(showSaved)saved()}
+function riskSignals(list){
+ const root=$('nb-risk-signals');if(!root)return;
+ const groups=[
+  {label:'⚔️ 군사·안보',re:/(?:전쟁|교전|공습|미사일\\s*발사|무력\\s*충돌|군사\\s*공격|침공|war|airstrike|missile launch|armed conflict|invasion|military attack)/i},
+  {label:'🦠 감염병',re:/(?:감염병|전염병|집단\\s*감염|확진자\\s*급증|팬데믹|outbreak|epidemic|pandemic|disease spread)/i},
+  {label:'📉 금융·경제',re:/(?:증시\\s*폭락|주가\\s*폭락|금융\\s*위기|국가\\s*부도|은행\\s*파산|stock market crash|financial crisis|sovereign default|bank collapse)/i},
+  {label:'🌋 재난·기후',re:/(?:대형\\s*지진|강진|대홍수|산불\\s*확산|초강력\\s*태풍|earthquake|major flood|wildfire|super typhoon|hurricane)/i}
+ ];
+ const now=Date.now(),day=86400000;
+ const dated=list.map(a=>({a,d:validDate(a),t:String(a.title||'')+' '+String(a.title_ko||'')})).filter(x=>x.d&&x.d.getTime()<=now+3600000&&x.d.getTime()>=now-8*day);
+ const html=groups.map(g=>{
+  const matches=dated.filter(x=>g.re.test(x.t)),recent=matches.filter(x=>x.d.getTime()>=now-day),prior=matches.filter(x=>x.d.getTime()<now-day);
+  const base=prior.length/7,ratio=base?recent.length/base:null;
+  const trend=recent.length>=3&&ratio!==null&&ratio>=2?'보도 급증':recent.length?'관련 보도 있음':'최근 24시간 보도 없음';
+  const seen=new Set(),articles=[];
+  for(const x of recent.sort((a,b)=>b.d-a.d)){const k=nbPriorityKey(x.a);if(seen.has(k))continue;seen.add(k);articles.push(x.a);if(articles.length>=5)break;}
+  const links=articles.map(a=>'<div class="nb2-row"><a target="_blank" rel="noopener noreferrer" href="'+safe(String(a.url||'').startsWith('https://')||String(a.url||'').startsWith('http://')?a.url:'#')+'">'+safe(window.NBTitleTranslation?.title(a)||(a.title_ko||a.title))+'</a></div>').join('');
+  return '<details class="nb-risk-group"><summary><strong>'+g.label+'</strong> · '+trend+' <small>(24시간 '+recent.length+'건 / 이전 7일 '+prior.length+'건)</small></summary>'+ (links||'<p class="nb2-muted">최근 24시간 관련 기사가 없습니다.</p>')+'</details>';
+ }).join('');
+ root.innerHTML='<p class="nb2-muted">수집 기사 제목 기준 자동 분류 · 보도량은 실제 위험도를 의미하지 않습니다.</p>'+html;
+}
+function afterRender(list,all){lastList=list;lastAll=all;bio(list);alerts(list);marketIssues(list);riskSignals(all?.length?all:list);saveButtons();if(showSaved)saved()}
 function translate(){document.querySelectorAll('[data-nb]').forEach(el=>{el.textContent=tr(el.dataset.nb)});$('nb-lang').textContent=lang==='ko'?'EN':'한국어';$('nb-clear').textContent=tr('clear');const sel=$('nb-date');if(sel){[...sel.options].forEach(o=>{const key=({'1':'hours','3':'days3','7':'days7','30':'days30','all':'all'})[o.value];if(key)o.textContent=tr(key)})}$('nb-notice').textContent=tr('notice');document.documentElement.lang=lang;afterRender(lastList,lastAll)}
 window.NB2={dateOK,heatmap,afterRender};
 $('nb-date').addEventListener('change',()=>{document.getElementById('nb-tour-toggle')?.checked&&document.getElementById('nb-tour-toggle').click();render()});$('nb-from')?.addEventListener('change',()=>render());$('nb-to')?.addEventListener('change',()=>render());$('nb-heat')?.addEventListener('change',()=>render());$('nb-clear').addEventListener('click',()=>{$('nb-date').value='all';if($('nb-from'))$('nb-from').value='';if($('nb-to'))$('nb-to').value='';render()});
