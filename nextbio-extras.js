@@ -145,7 +145,7 @@ function riskSignals(list){
  const groups=[
   {label:'⚔️ 군사·안보',re:/(?:전쟁|교전|공습|미사일\\s*발사|무력\\s*충돌|군사\\s*공격|침공|war|airstrike|missile launch|armed conflict|invasion|military attack)/i},
   {label:'🦠 감염병',re:/(?:감염병|전염병|집단\\s*감염|확진자\\s*급증|팬데믹|outbreak|epidemic|pandemic|disease spread)/i},
-  {label:'📉 금융·경제',re:/(?:증시\\s*폭락|주가\\s*폭락|금융\\s*위기|국가\\s*부도|은행\\s*파산|stock market crash|financial crisis|sovereign default|bank collapse)/i},
+  {label:'📉 금융·경제',re:/(?:증시\\s*(?:폭락|급락)|주가\\s*(?:폭락|급락)|금융\\s*(?:위기|제재)|국가\\s*부도|은행\\s*파산|기업\\s*파산|관세\\s*(?:충격|폭탄|인상|위협)|금리\\s*(?:급등|급락|급변)|stock market (?:crash|plunge|selloff)|stocks? (?:plunge|tumble|crash)|shares? (?:plunge|tumble|crash)|financial crisis|financial sanctions|sovereign default|bank (?:collapse|failure)|bankruptcy|tariff (?:shock|hike|threat)|threatens? to (?:double|raise|impose) tariffs?|interest rate (?:shock|surge|plunge))/i},
   {label:'🌋 재난·기후',re:/(?:대형\\s*지진|강진|대홍수|산불\\s*확산|초강력\\s*태풍|earthquake|major flood|wildfire|super typhoon|hurricane)/i}
  ];
  const now=Date.now(),day=86400000;
