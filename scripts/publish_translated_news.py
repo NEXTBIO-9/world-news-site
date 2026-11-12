@@ -32,9 +32,22 @@ def priority(article):
 
 
 def prioritize(items):
-    # Preserve relative order within each class; never discard routine items.
-    # Important reports are processed before routine news, without interleaving.
-    return [a for a in items if priority(a)] + [a for a in items if not priority(a)]
+    """Process recent reports first, breaking ties in favor of important news.
+
+    An old high-priority backlog must not starve today's ordinary headlines.
+    Malformed or missing publication dates rank last.
+    """
+    def timestamp(entry):
+        article = entry.get('article', entry)
+        raw = str(article.get('published') or '')
+        try:
+            dt = datetime.fromisoformat(raw.replace('Z', '+00:00'))
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc).timestamp()
+        except (ValueError, TypeError, OverflowError, OSError):
+            return float('-inf')
+    return sorted(items, key=lambda a: (timestamp(a), priority(a)), reverse=True)
 
 
 def read(path):
@@ -81,7 +94,7 @@ def combined(staged):
         raise ValueError('Invalid pending-title queue')
     result = []
     seen = set()
-    # Retry existing backlog first, so the 60-title batch cannot starve it.
+    # Merge backlog with fresh collection, then rank by article publication time.
     for entry in entries:
         if not isinstance(entry, dict) or not isinstance(entry.get('article'), dict):
             continue
