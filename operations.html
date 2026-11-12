@@ -26,6 +26,19 @@ main{max-width:1280px;margin:auto;padding:34px 24px 72px}h1{font-size:clamp(27px
 a{color:#9bccff;overflow-wrap:anywhere}a:hover{color:#d7ebff}li{margin:13px 0;line-height:1.7}p{line-height:1.65}table{width:100%;border-collapse:collapse}th,td{padding:12px 10px;text-align:left;border-bottom:1px solid #344963;color:#c8d8eb}th{color:#e7f2ff}#alerts{border-color:#946a48;background:#302b30}#alerts h2{color:#ffcd95}
 @media(max-width:620px){header{padding:0 16px}.header-inner{min-height:72px}.brand{font-size:21px}.back-link{font-size:11px;padding:8px}main{padding:24px 14px 50px}.grid{grid-template-columns:1fr 1fr}.card,section:not(.card){padding:16px}.card strong,.count{font-size:25px}table{font-size:12px}th,td{padding:9px 5px}}
 @media(max-width:390px){.grid{grid-template-columns:1fr}}
+
+/* Compact operations layout: less unused space in status cards */
+#cards.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 18px}
+#cards .card{padding:13px 16px;min-height:0;box-shadow:none}
+#cards .card span{display:block;font-size:13px;line-height:1.4}
+#cards .card strong{font-size:26px;line-height:1.2;margin-top:5px}
+#alerts{padding:15px 18px;margin:12px 0}
+#alerts h2{margin:0 0 7px;font-size:17px}
+#alerts p{margin:5px 0;font-size:13px}
+main>section:not(#alerts){padding:17px 20px;margin:12px 0}
+main>section:not(#alerts) h2{margin-bottom:10px}
+@media(max-width:760px){#cards.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){#cards .card{padding:12px}#cards .card strong{font-size:24px}}
 </style></head><body>
 <header><div class="header-inner"><a class="brand" href="./">NEXT<span>BIO</span><small>GLOBAL BIO & NEWS NETWORK</small></a><a class="back-link" href="./">← 세계 뉴스로 돌아가기</a></div></header>
 <main><h1>뉴스 운영 현황</h1><p class="muted">최근 저장된 수집·게시 감사 데이터입니다. 실시간 서버 모니터링이 아니며, 갱신 시각을 확인하세요.</p>
