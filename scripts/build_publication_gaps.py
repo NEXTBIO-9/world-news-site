@@ -54,7 +54,6 @@ def report():
         except (ValueError, TypeError, OverflowError):
             reasons['invalid_retry_counter'] += 1
             failures = 0
-        reasons['awaiting_translation_or_summary'] += 1
         waiting.append({'url': url, 'title': title, 'failures': failures,
                         'published': article.get('published') or '',
                         'category': article.get('category') or ''})
@@ -69,6 +68,7 @@ def report():
         else:
             unique_waiting[key] = article
     waiting = list(unique_waiting.values())
+    reasons['awaiting_translation_or_summary'] = len(waiting)
     waiting.sort(key=lambda a: (-a['failures'], str(a['published']), str(a['url'])))
     return {
         'updated': datetime.now(timezone.utc).isoformat(),
