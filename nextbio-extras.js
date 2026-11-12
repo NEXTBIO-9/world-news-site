@@ -161,7 +161,27 @@ function riskSignals(list){
  }).join('');
  root.innerHTML='<p class="nb2-muted">수집 기사 제목 기준 자동 분류 · 보도량은 실제 위험도를 의미하지 않습니다.</p>'+html;
 }
-function afterRender(list,all){lastList=list;lastAll=all;bio(list);alerts(list);marketIssues(list);riskSignals(all?.length?all:list);saveButtons();if(showSaved)saved()}
+function globalCalendar(){
+ const root=$('nb-global-calendar');if(!root)return;
+ const sources=[
+ ['🏦 미국 금리 결정 · FOMC','https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm'],
+ ['📊 미국 물가·고용 발표 · BLS','https://www.bls.gov/schedule/'],
+ ['📈 미국 GDP·PCE 발표 · BEA','https://www.bea.gov/news/schedule'],
+ ['🏦 유럽중앙은행 통화정책 일정','https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html'],
+ ['🏢 미국 기업 실적 공시 · SEC','https://www.sec.gov/edgar/search/']
+ ];
+ root.innerHTML='<p class="nb2-muted">공식 발표 일정 확인 링크입니다. 날짜는 각 기관에서 확인하세요. 실시간 일정 자동 수집은 아직 연결되지 않았습니다.</p>'+sources.map(x=>'<div class="nb2-row"><a href="'+safe(x[1])+'" target="_blank" rel="noopener noreferrer">'+safe(x[0])+'</a></div>').join('');
+}
+function countryAnomalies(list){
+ const root=$('nb-country-anomaly');if(!root)return;
+ const now=Date.now(),day=86400000;
+ const rows=list.map(a=>({a,date:validDate(a),country:String(a.country||a.country_name||a.countryName||'').trim()})).filter(x=>x.date&&x.date.getTime()>=now-8*day&&x.date.getTime()<=now+3600000&&x.country&&x.country!=='기타'&&x.country!=='Unknown');
+ const map=new Map();
+ for(const x of rows){const k=x.country;if(!map.has(k))map.set(k,{country:k,recent:[],prior:[]});map.get(k)[x.date.getTime()>=now-day?'recent':'prior'].push(x);}
+ const ranked=[...map.values()].map(x=>({...x,baseline:x.prior.length/7})).filter(x=>x.recent.length>=3&&x.baseline>0&&x.recent.length>=2*x.baseline).sort((a,b)=>(b.recent.length/(b.baseline||1))-(a.recent.length/(a.baseline||1))).slice(0,5);
+ root.innerHTML='<p class="nb2-muted">최근 24시간 국가별 보도량을 이전 7일 일평균과 비교합니다. 보도 급증은 실제 위험을 뜻하지 않습니다.</p>'+(ranked.length?ranked.map(x=>'<details class="nb-risk-group"><summary><strong>📡 '+safe(x.country)+'</strong> · 보도 증가</summary>'+x.recent.sort((a,b)=>b.date-a.date).slice(0,3).map(y=>'<div class="nb2-row"><a target="_blank" rel="noopener noreferrer" href="'+safe(y.a.url||'#')+'">'+safe(window.NBTitleTranslation?.title(y.a)||(y.a.title_ko||y.a.title))+'</a></div>').join('')+'</details>').join(''):'<p class="nb2-muted">현재 기준을 충족하는 국가별 보도 급증이 없습니다.</p>');
+}
+function afterRender(list,all){lastList=list;lastAll=all;bio(list);alerts(list);marketIssues(list);riskSignals(all?.length?all:list);globalCalendar();countryAnomalies(all?.length?all:list);saveButtons();if(showSaved)saved()}
 function translate(){document.querySelectorAll('[data-nb]').forEach(el=>{el.textContent=tr(el.dataset.nb)});$('nb-lang').textContent=lang==='ko'?'EN':'한국어';$('nb-clear').textContent=tr('clear');const sel=$('nb-date');if(sel){[...sel.options].forEach(o=>{const key=({'1':'hours','3':'days3','7':'days7','30':'days30','all':'all'})[o.value];if(key)o.textContent=tr(key)})}$('nb-notice').textContent=tr('notice');document.documentElement.lang=lang;afterRender(lastList,lastAll)}
 window.NB2={dateOK,heatmap,afterRender};
 $('nb-date').addEventListener('change',()=>{document.getElementById('nb-tour-toggle')?.checked&&document.getElementById('nb-tour-toggle').click();render()});$('nb-from')?.addEventListener('change',()=>render());$('nb-to')?.addEventListener('change',()=>render());$('nb-heat')?.addEventListener('change',()=>render());$('nb-clear').addEventListener('click',()=>{$('nb-date').value='all';if($('nb-from'))$('nb-from').value='';if($('nb-to'))$('nb-to').value='';render()});
