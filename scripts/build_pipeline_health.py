@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
 OUT = DATA / 'pipeline-health.json'
 FILES = ['articles.json', 'event-timelines.json', 'event-changes.json',
-         'topic-monitor.json', 'weekly-report.json',
+         'weekly-report.json',
          'intelligence.json', 'evidence-index.json', 'geo-coverage.json',
          'coverage-profiles.json', 'breaking-candidates.json',
          'historical-index.json', 'country-coverage-trends.json',
