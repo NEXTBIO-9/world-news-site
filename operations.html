@@ -79,7 +79,7 @@ html:not(.nb-light) body #alerts p{color:#f0c6a1}
 /* Preferences are shared with the home page; keep original news data intact. */
 (function(){
  const root=document.documentElement;
- function theme(){let light=false;try{light=localStorage.getItem('nextbio-theme')==='light'}catch(e){}root.classList.toggle('nb-light',light);}
+ function theme(){root.classList.remove('nb-light');}
  theme();window.addEventListener('storage',e=>{if(e.key==='nextbio-theme')theme();if(e.key==='nextbio-title-translation')window.dispatchEvent(new Event('nextbio-translation-preference'))});
  window.NEXTBIO_translationOn=function(){try{return localStorage.getItem('nextbio-title-translation')!=='off'}catch(e){return true}};
  window.NEXTBIO_displayTitle=function(a){return window.NEXTBIO_translationOn()?(a.title_ko||a.title||a.original_title||'제목 없음'):(a.original_title||a.title||'제목 없음')};
