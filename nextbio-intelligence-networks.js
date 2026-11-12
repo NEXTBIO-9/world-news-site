@@ -79,7 +79,7 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  officialMeta=node('div','nbm-meta','WHO 공식 발표 · 제목 번역 ON/OFF 연동');right.append(officialMeta);
  officialList=node('div','nbm-list');right.append(officialList);
  const borderPanel=node('div','nbm-border-panel');borderPanel.id='nbm-border-panel';borderPanel.setAttribute('role','tabpanel');
- borderPanel.append(node('div','nbm-meta','남북 접경지역 요새화 · 2026년 8월 기준 보도 추정치 (자동 갱신 아님)'));
+ borderPanel.append(node('div','nbm-meta','남북 접경지역 요새화 · 2026년 8월 기준 보도 추정치'));
  const addEstimate=(label,value,pct,note)=>{const wrap=node('div','nbm-border-status');wrap.append(node('span','',label+' · 추정치'));wrap.append(node('strong','',value));const track=node('div','nbm-progress-track');const fill=node('div','nbm-progress-fill');fill.style.width=pct+'%';track.append(fill);wrap.append(track);wrap.append(node('span','',note));borderPanel.append(wrap)};
  addEstimate('지면 정리 작업','약 90%',90,'남부 국경 관련 보도 추정 · 전체 장벽 완공률이 아님');
  addEstimate('철책·지뢰지대 구축','약 30~60%',60,'구간별 추정 범위 · 막대는 상한 60%를 나타냄');
