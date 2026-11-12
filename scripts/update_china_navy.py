@@ -1,4 +1,4 @@
-"""Collect public reports of Chinese naval exercises and deployments daily."""
+"""Collect Korean-language reporting on Chinese naval exercises and deployments daily."""
 import datetime as dt
 import json
 import re
@@ -9,21 +9,20 @@ from pathlib import Path
 
 OUT = Path("data/china-navy-news.json")
 SEARCHES = [
-    ('항공모함', '"Chinese aircraft carrier" naval exercise'),
-    ('대만해협', '"China navy" Taiwan drills'),
-    ('남중국해', '"PLA Navy" South China Sea exercise'),
-    ('서태평양', '"Chinese navy" western Pacific deployment'),
-    ('합동훈련', '"China navy" joint naval exercise'),
-    ('해경', '"China coast guard" maritime exercise'),
-    ('함정·전력', '"PLA Navy" destroyer submarine sea trials'),
-    ('중국어 보도', '中国海军 演习 航母'),
+    ('항공모함', '중국 해군 항공모함 훈련'),
+    ('대만해협', '중국 해군 대만해협 군사훈련'),
+    ('남중국해', '중국 해군 남중국해 훈련'),
+    ('서태평양', '중국 해군 서태평양 진출'),
+    ('합동훈련', '중국 해군 합동훈련'),
+    ('해경', '중국 해경 해상 훈련'),
+    ('함정·전력', '중국 해군 구축함 잠수함 훈련'),
 ]
 def collect():
     items = {}
     ok = 0
     for category, query in SEARCHES:
         url = 'https://news.google.com/rss/search?' + urllib.parse.urlencode(
-            {'q': query + ' when:30d', 'hl': 'en-US', 'gl': 'US', 'ceid': 'US:en'})
+            {'q': query + ' when:30d', 'hl': 'ko', 'gl': 'KR', 'ceid': 'KR:ko'})
         try:
             req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 NEXTBIO-News-Monitor'})
             with urllib.request.urlopen(req, timeout=25) as res:
@@ -33,7 +32,7 @@ def collect():
                 title = (entry.findtext('title') or '').strip()
                 link = (entry.findtext('link') or '').strip()
                 date = (entry.findtext('pubDate') or '').strip()
-                if not title or not link.startswith('https://'):
+                if not title or not link.startswith('https://') or len(re.findall(r'[가-힣]', title)) < 5:
                     continue
                 key = re.sub(r'[^a-z0-9\u4e00-\u9fff\uac00-\ud7a3]', '', title.casefold())
                 if key not in items:
@@ -52,14 +51,6 @@ def main():
         try: return parsedate_to_datetime(a['published']).timestamp()
         except (ValueError, TypeError): return 0
     items.sort(key=stamp, reverse=True)
-    previous = {}
-    if OUT.exists():
-        try: previous = json.loads(OUT.read_text(encoding='utf-8'))
-        except (OSError, ValueError): pass
-    # Preserve existing Korean editorial titles only when the exact URL still matches.
-    translated = {x.get('url'): x.get('title_ko') for x in previous.get('items', []) if x.get('title_ko')}
-    for item in items:
-        if item['url'] in translated: item['title_ko'] = translated[item['url']]
     payload = {'last_checked': dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'),
                'successful_queries': ok, 'items': items[:100]}
     OUT.parent.mkdir(parents=True, exist_ok=True)
