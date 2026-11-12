@@ -22,10 +22,30 @@ def snapshot(events):
     return result
 
 
+def predecessor(current, old, used):
+    """Find a likely renamed cluster by shared source URLs, never by title alone."""
+    urls = set(current.get('article_urls') or [])
+    if not urls:
+        return None
+    candidates = []
+    for key, previous in old.items():
+        if key in used:
+            continue
+        before = set(previous.get('article_urls') or [])
+        overlap = len(urls & before)
+        if overlap and overlap / min(len(urls), len(before)) >= 0.6:
+            candidates.append((overlap, key))
+    return max(candidates)[1] if candidates else None
+
+
 def compare(old, new):
     changes = []
+    used = set()
     for key, event in new.items():
-        before = old.get(key)
+        previous_key = key if key in old else predecessor(event, old, used)
+        before = old.get(previous_key) if previous_key else None
+        if previous_key:
+            used.add(previous_key)
         if before is None:
             changes.append({'id': key, 'change': 'new_cluster', 'title': event['title'],
                             'new_articles': event['article_urls']})
@@ -33,6 +53,7 @@ def compare(old, new):
             additions = sorted(set(event['article_urls']) - set(before.get('article_urls') or []))
             if additions:
                 changes.append({'id': key, 'change': 'new_coverage', 'title': event['title'],
+                                'previous_id': previous_key if previous_key != key else None,
                                 'new_articles': additions})
     return changes[:100]
 
@@ -46,7 +67,7 @@ def main():
             old = json.loads(OUT.read_text(encoding='utf-8')).get('snapshot') or {}
         except (OSError, ValueError):
             pass
-    changes = compare(old, new)
+    changes = compare(old, new) if old else []
     if old == new:
         return
     if not old and OUT.exists():
