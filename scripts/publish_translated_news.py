@@ -151,7 +151,9 @@ def publish(staged_path, audit_path):
     failure_counts = {identity(e['article']): retry_count(e.get('failures')) for e in existing
                       if isinstance(e, dict) and isinstance(e.get('article'), dict)}
     attempted_path = Path(sys.argv[3]) if len(sys.argv) > 3 else None
-    attempted = set(read(attempted_path).get('attempted', [])) if attempted_path and attempted_path.exists() else set()
+    attempts_data = read(attempted_path) if attempted_path and attempted_path.exists() else {}
+    attempts_list = attempts_data.get('attempted', []) if isinstance(attempts_data, dict) else []
+    attempted = {title for title in attempts_list if isinstance(title, str)} if isinstance(attempts_list, list) else set()
     now = datetime.now(timezone.utc)
     published, seen, waiting = [], set(), []
     for a in combined(staged):
