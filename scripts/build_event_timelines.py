@@ -75,7 +75,10 @@ def publisher(article):
     for value in (article.get('source_url'), article.get('publisher_url'), article.get('url')):
         if not value:
             continue
-        host = (urlparse(str(value)).hostname or '').lower().removeprefix('www.')
+        try:
+            host = (urlparse(str(value)).hostname or '').lower().removeprefix('www.')
+        except ValueError:
+            continue
         if host and not host.endswith('news.google.com'):
             return host
     return str(article.get('source') or '').strip().casefold()
