@@ -60,6 +60,21 @@ html.nb-light #alerts{background:#fff8ef;border-color:#dfbd8b}html.nb-light #ale
 html.nb-light input,html.nb-light select,html.nb-light button{background:#fff;color:#17344e;border-color:#b9cad9}
 html.nb-light button{background:#e8f1fa}html.nb-light button:hover{background:#d7e8f7}
 html.nb-light article details,html.nb-light section h2:not(:first-child),html.nb-light li{border-color:#e1eaf3}
+
+/* Operations palette: explicitly cover every visible dashboard surface */
+html.nb-light body #cards .card,html.nb-light body main>section:not(#alerts){background:#fff;border-color:#dbe5ee;color:#17344e}
+html.nb-light body #cards .card strong{color:#17344e}
+html.nb-light body #cards .card span{color:#526b83}
+html.nb-light body #alerts{background:#fff8ef;border-color:#dfbd8b;color:#75471d}
+html.nb-light body #alerts h2{color:#9c5b15}
+html.nb-light body #alerts p{color:#75471d}
+html.nb-light body #details td,html.nb-light body #details th{color:#25435f;border-bottom-color:#e2eaf2}
+html.nb-light body #details tr:last-child td{border-bottom-color:transparent}
+html:not(.nb-light) body #cards .card{background:#1d2a3d;color:#e5edf7;border-color:#334963}
+html:not(.nb-light) body #cards .card strong{color:#f4f8ff}
+html:not(.nb-light) body #cards .card span{color:#b5c9df}
+html:not(.nb-light) body #alerts{background:#302b30;color:#f0c6a1;border-color:#946a48}
+html:not(.nb-light) body #alerts p{color:#f0c6a1}
 </style><script>
 /* Preferences are shared with the home page; keep original news data intact. */
 (function(){
