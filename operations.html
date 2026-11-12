@@ -10,8 +10,24 @@ main{max-width:1050px;margin:auto;padding:26px 18px}h1{font-size:clamp(23px,4vw,
 .card strong{font-size:27px;display:block;margin-top:8px}.muted{color:#63798e;font-size:13px;line-height:1.6}
 section{background:#fff;padding:18px;border-radius:13px;border:1px solid #dae4ee;margin:14px 0}
 table{border-collapse:collapse;width:100%}th,td{padding:9px;text-align:left;border-bottom:1px solid #e7edf3}
+</style><style>
+/* NEXT BIO shared dark command-center design */
+:root{color-scheme:dark;font-family:system-ui,-apple-system,'Noto Sans KR',sans-serif;background:#101827;color:#e5edf7}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#203c5b 0%,#101827 52%);min-height:100vh;color:#e5edf7}
+header{background:#0a1220;border-bottom:1px solid #33445c;padding:0 24px;box-shadow:0 6px 25px #0002}
+.header-inner{max-width:1280px;margin:auto;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{font-size:25px;font-weight:850;letter-spacing:-1px;text-decoration:none!important;color:#f1f5fb}.brand span{color:#69b9ff}.brand small{display:block;color:#9db4ce;font-size:10px;letter-spacing:1.7px;font-weight:600}
+.back-link{border:1px solid #49617d;padding:10px 14px;border-radius:9px;color:#d7e9ff;text-decoration:none;font-size:13px}.back-link:hover{background:#233951}
+main{max-width:1280px;margin:auto;padding:34px 24px 72px}h1{font-size:clamp(27px,3.3vw,38px);margin:0 0 12px;letter-spacing:-.7px;color:#f4f8ff}h2{font-size:19px;color:#eaf3ff;margin:0 0 17px}
+.notice,.muted,main>p:not(#status){color:#a9bdd7;line-height:1.7;font-size:14px}#status{color:#91c5ff;font-size:13px;margin:12px 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px;margin:22px 0}
+.card,section:not(.card){background:#1d2a3d;border:1px solid #334963;border-radius:14px;box-shadow:0 10px 28px #050c1829;padding:22px}
+.card{transition:border-color .2s,background .2s}.card:hover{border-color:#5d84b0;background:#24364d}.card strong,.count{color:#f4f8ff;font-size:30px;line-height:1.4;font-variant-numeric:tabular-nums}.meta,small{color:#a9bdd7;font-size:13px}
+a{color:#9bccff;overflow-wrap:anywhere}a:hover{color:#d7ebff}li{margin:13px 0;line-height:1.7}p{line-height:1.65}table{width:100%;border-collapse:collapse}th,td{padding:12px 10px;text-align:left;border-bottom:1px solid #344963;color:#c8d8eb}th{color:#e7f2ff}#alerts{border-color:#946a48;background:#302b30}#alerts h2{color:#ffcd95}
+@media(max-width:620px){header{padding:0 16px}.header-inner{min-height:72px}.brand{font-size:21px}.back-link{font-size:11px;padding:8px}main{padding:24px 14px 50px}.grid{grid-template-columns:1fr 1fr}.card,section:not(.card){padding:16px}.card strong,.count{font-size:25px}table{font-size:12px}th,td{padding:9px 5px}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}}
 </style></head><body>
-<header><a href="./">← NEXT BIO 세계 뉴스로 돌아가기</a></header>
+<header><div class="header-inner"><a class="brand" href="./">NEXT<span>BIO</span><small>GLOBAL BIO & NEWS NETWORK</small></a><a class="back-link" href="./">← 세계 뉴스로 돌아가기</a></div></header>
 <main><h1>뉴스 운영 현황</h1><p class="muted">최근 저장된 수집·게시 감사 데이터입니다. 실시간 서버 모니터링이 아니며, 갱신 시각을 확인하세요.</p>
 <p id="status" role="status">데이터를 불러오는 중입니다.</p><section id="alerts" aria-label="운영 경고" hidden></section><div id="cards" class="grid"></div><section><h2>수집·게시 상태</h2><table><tbody id="details"></tbody></table></section>
 <p class="muted">수집 실패나 미게시 기사가 존재할 수 있습니다. 이 화면의 수치는 저장된 감사 기록 기준입니다.</p></main>
