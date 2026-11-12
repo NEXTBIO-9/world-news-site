@@ -71,7 +71,9 @@ def compare(old, new):
 
 def main():
     data = json.loads(EVENTS.read_text(encoding='utf-8'))
-    new = snapshot(data.get('events') or [])
+    if not isinstance(data, dict) or not isinstance(data.get('events'), list):
+        raise ValueError('Invalid event timeline feed: expected events list')
+    new = snapshot(data['events'])
     old = {}
     if OUT.exists():
         try:
