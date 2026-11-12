@@ -49,7 +49,7 @@ def build(articles, now=None):
         'top_categories': [{'name': k, 'count': v} for k, v in categories.most_common(10)],
         'top_countries': [{'name': k, 'count': v} for k, v in countries.most_common(10)],
         'headlines': [{'title': a.get('title_ko') or a.get('title') or '제목 없음',
-                       'url': a['url'], 'published': a.get('published', ''),
+                       'title_ko': a.get('title_ko', ''), 'original_title': a.get('original_title') or a.get('title', ''), 'summary_ko': a.get('summary_ko', ''), 'summary': a.get('summary', ''),\n                       'url': a['url'], 'published': a.get('published', ''),
                        'source': a.get('source', ''), 'category': a.get('category', '')}
                       for a in selected[:40]]
     }
