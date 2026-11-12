@@ -57,9 +57,8 @@ def compatible(a, b):
 def cluster(articles):
     groups = []
     seen_urls = set()
-    for article in sorted(articles, key=lambda a: str(a.get('published') or '')):
-        if not isinstance(article, dict) or not article.get('url') or not article.get('title'):
-            continue
+    valid_articles = (a for a in articles if isinstance(a, dict) and a.get('url') and a.get('title'))
+    for article in sorted(valid_articles, key=lambda a: (str(a.get('published') or ''), str(a['url']))):
         if article['url'] in seen_urls:
             continue
         seen_urls.add(article['url'])
@@ -128,7 +127,8 @@ def build(articles):
         events.append({
             'id': event_id, 'title': first.get('title_ko') or first['title'],
             'original_title': first['title'],
-            'category': first.get('category', ''), 'countries': first.get('countries', []),
+            'category': first.get('category', ''),
+            'countries': sorted({c for a in group for c in (a.get('countries') or []) if isinstance(c, str)}),
             'article_count': len(group), 'distinct_sources': len({publisher(a) for a in group if publisher(a)}),
             'verification': 'not_independently_verified',
             'first_reported': timeline[0]['published'],
