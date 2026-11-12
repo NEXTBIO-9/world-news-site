@@ -40,7 +40,7 @@ def build(articles, now=None):
         seen.add(a['url'])
         selected.append(a)
     selected.sort(key=lambda a: str(a.get('published') or ''), reverse=True)
-    countries = Counter(c for a in selected for c in (a.get('countries') or []) if isinstance(c, str))
+    countries = Counter(c for a in selected for c in set(v for v in (a.get('countries') or []) if isinstance(v, str)))
     categories = Counter(str(a.get('category') or '미분류') for a in selected)
     return {
         'updated': now.isoformat(), 'window_hours': 24,
