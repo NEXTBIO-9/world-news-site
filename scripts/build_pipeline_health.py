@@ -56,7 +56,7 @@ def build():
         feed = json.loads((DATA / 'articles.json').read_text(encoding='utf-8'))
         articles = feed.get('articles')
         if isinstance(articles, list):
-            urls = [a.get('url') for a in articles if isinstance(a, dict) and a.get('url')]
+            urls = [a.get('url') for a in articles if isinstance(a, dict) and isinstance(a.get('url'), str) and a.get('url')]
             if len(urls) != len(set(urls)):
                 warnings.append({'dataset': 'articles.json', 'reason': 'duplicate_published_urls'})
             if len(articles) > 300:
