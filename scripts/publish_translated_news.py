@@ -109,6 +109,22 @@ def prepare(staged_path, output_path):
     print('Translation candidates including retained backlog:', len(items))
 
 
+def unique_by_url(articles, limit=300):
+    """Retain the first (newest) valid entry for each source URL."""
+    result, urls = [], set()
+    for article in articles:
+        if not isinstance(article, dict):
+            continue
+        url = article.get('url')
+        if not isinstance(url, str) or not url.strip() or url in urls:
+            continue
+        urls.add(url)
+        result.append(article)
+        if len(result) >= limit:
+            break
+    return result
+
+
 def korean_summary_ready(article, summaries):
     """Require source-backed Korean excerpt; never accept a title-only placeholder."""
     entry = summaries.get(article.get('url'))
@@ -213,17 +229,7 @@ def publish(staged_path, audit_path):
 
     published.sort(key=published_time, reverse=True)
     # Multiple titles can point to one source URL; publish only its newest entry.
-    unique_published = []
-    published_urls = set()
-    for article in published:
-        url = article.get('url')
-        if not isinstance(url, str) or not url.strip() or url in published_urls:
-            continue
-        published_urls.add(url)
-        unique_published.append(article)
-        if len(unique_published) >= 300:
-            break
-    published = unique_published
+    published = unique_by_url(published, limit=300)
     # A bounded queue must never sacrifice a critical item merely due to position.
     pending_before_trim = len(waiting)
     waiting = prioritize(waiting)[:MAX_PENDING]
