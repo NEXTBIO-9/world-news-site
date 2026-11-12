@@ -53,7 +53,7 @@ def compare(old, new):
     changes = []
     used = set()
     for key, event in new.items():
-        previous_key = key if key in old else predecessor(event, old, used)
+        previous_key = key if key in old and key not in used else predecessor(event, old, used)
         before = old.get(previous_key) if previous_key else None
         if previous_key:
             used.add(previous_key)
