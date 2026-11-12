@@ -75,7 +75,10 @@ def combined(staged):
         if not isinstance(entry, dict) or not isinstance(entry.get('article'), dict):
             continue
         item = entry['article']
-        if retry_count(entry.get('failures')) < MAX_FAILURES and item.get('title') and identity(item) not in seen and identity(item) not in excluded:
+        if (retry_count(entry.get('failures')) < MAX_FAILURES
+                and isinstance(item.get('title'), str) and item['title'].strip()
+                and isinstance(item.get('url'), str) and item['url'].strip()
+                and identity(item) not in seen and identity(item) not in excluded):
             result.append(item)
             seen.add(identity(item))
     for item in staged['articles']:
