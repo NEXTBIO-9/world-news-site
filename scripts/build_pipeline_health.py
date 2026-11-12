@@ -47,7 +47,9 @@ def build():
                 if stamp.tzinfo is None:
                     stamp = stamp.replace(tzinfo=timezone.utc)
                 stamp = stamp.astimezone(timezone.utc)
-                if stamp < now - timedelta(hours=48):
+                if stamp > now + timedelta(hours=1):
+                    warnings.append({'dataset': name, 'reason': 'future_update_timestamp'})
+                elif stamp < now - timedelta(hours=48):
                     warnings.append({'dataset': name, 'reason': 'stale_over_48_hours'})
             except (ValueError, TypeError, OverflowError):
                 warnings.append({'dataset': name, 'reason': 'invalid_update_timestamp'})
