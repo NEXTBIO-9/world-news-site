@@ -26,6 +26,17 @@ const style=document.createElement('style');style.textContent=`
 #nb-intelligence .nbm-official-tabs button[aria-selected=true]{color:#f0f8ff;border-bottom-color:#48cbbb}
 #nb-intelligence .nbm-border-panel{flex:1;min-height:0;overflow-y:auto;color:#d9e9fa;font-size:12px;line-height:1.65}
 #nb-intelligence #nbm-navy-panel[hidden],#nb-intelligence .nbm-border-panel[hidden],#nb-intelligence .nbm-official .nbm-list[hidden],#nb-intelligence .nbm-official .nbm-meta[hidden]{display:none!important}
+#nb-intelligence .nbm-forecast-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
+#nb-intelligence .nbm-forecast-summary .nbm-border-status{margin:0;min-width:0}
+#nb-intelligence .nbm-forecast-details{border-top:1px solid #3a536e;padding:8px 0}
+#nb-intelligence .nbm-forecast-details>summary{cursor:pointer;font-size:12px;font-weight:750;color:#e5f2ff;list-style-position:inside;padding:3px 0}
+#nb-intelligence .nbm-forecast-details[open]>summary{margin-bottom:8px}
+#nb-intelligence .nbm-forecast-details .nbm-border-panel{overflow:visible;border:0!important;margin:0!important;padding:0!important}
+#nb-intelligence .nbm-forecast-details .nbm-section-heading{display:none}
+#nb-intelligence .nbm-forecast-details .nbm-border-status{padding:7px 9px;margin:6px 0}
+#nb-intelligence .nbm-forecast-details .nbm-border-panel p{margin:6px 0}
+#nb-intelligence .nbm-forecast-details .nbm-progress-track{margin:4px 0;height:6px}
+@media(max-width:560px){#nb-intelligence .nbm-forecast-summary{grid-template-columns:minmax(0,1fr)}}
 #nb-intelligence .nbm-section-heading{font-size:13px;font-weight:750;color:#e5f2ff;margin:0 0 8px;line-height:1.4}
 #nb-intelligence .nbm-border-panel .nbm-border-status{padding:11px;border:1px solid #3a536e;border-radius:9px;background:#26394f;margin:9px 0}
 #nb-intelligence .nbm-border-panel strong{display:block;color:#91c5ff;font-size:18px;margin:4px 0}
@@ -98,11 +109,12 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  const forecastPanel=node('div','nbm-border-panel');forecastPanel.id='nbm-forecast-panel';forecastPanel.setAttribute('role','tabpanel');
  const nk=node('div','nbm-border-status');nk.style.cssText='padding:8px 10px;margin:0;min-height:0;display:flex;flex-direction:column;gap:2px';nk.append(node('div','','🧱 북한 국경 장벽'),node('div','nbm-meta','한국 합동참모본부 공식 전망'),node('strong','','2028년 하반기 완공 예상'),node('p','','2026년 10월 8일 합참 국정감사 발표 기준'));forecastPanel.append(nk);
  const cn=node('div','nbm-border-status');cn.style.cssText='padding:8px 10px;margin:0;min-height:0;display:flex;flex-direction:column;gap:2px';cn.append(node('div','','⚓ 중국 해군 동향'),node('div','nbm-meta','대만 전면 침공 위험 관찰 시점'),node('strong','','2028년 이후'),node('p','','미국 당국자 평가에 근거한 관찰 구간. 실제 침공 예정일은 확인되지 않음.'));forecastPanel.append(cn);
+ const forecastSummary=node('div','nbm-forecast-summary');forecastSummary.append(nk,cn);forecastPanel.prepend(forecastSummary);
  for(const card of [nk,cn]){const strong=card.querySelector('strong');if(strong)strong.style.cssText='font-size:15px;line-height:1.25;margin:2px 0';const para=card.querySelector('p');if(para)para.style.cssText='margin:2px 0 0;font-size:11px;line-height:1.35'}
- forecastPanel.style.cssText='flex-direction:column;gap:6px;padding:6px 0';
- forecastPanel.append(borderPanel);right.append(forecastPanel);
+ forecastPanel.style.cssText='padding:6px 0';
+ const borderDetails=node('details','nbm-forecast-details');borderDetails.append(node('summary','','🧱 북한 장벽 요새화 현황 · 자세히 보기'),borderPanel);forecastPanel.append(borderDetails);right.append(forecastPanel);
  const navyPanel=node('div','nbm-border-panel');navyPanel.id='nbm-navy-panel';navyPanel.setAttribute('role','group');navyPanel.setAttribute('aria-label','중국 해군 최신 동향');navyPanel.append(node('h3','nbm-section-heading','⚓ 중국 해군 최신 동향'));navyPanel.append(node('div','nbm-meta','중국 해군·해경 훈련, 항모 활동, 해상 기동, 합동훈련 · 매일 1회 공개 보도 확인'));
- const navyList=node('div','nbm-list');navyList.append(node('p','nbm-empty','중국 해군 동향 데이터를 불러오는 중입니다.'));navyPanel.append(navyList);navyPanel.style.cssText='padding:10px 0 4px;border-top:1px solid #3a536e;margin-top:8px';forecastPanel.append(navyPanel);columns.append(right);
+ const navyList=node('div','nbm-list');navyList.append(node('p','nbm-empty','중국 해군 동향 데이터를 불러오는 중입니다.'));navyPanel.append(navyList);navyPanel.style.cssText='padding:10px 0 4px;border-top:1px solid #3a536e;margin-top:8px';const navyDetails=node('details','nbm-forecast-details');navyDetails.append(node('summary','','⚓ 중국 해군 최신 동향 · 최대 10건'),navyPanel);forecastPanel.append(navyDetails);columns.append(right);
  async function loadNavy(){try{const r=await fetch('./data/china-navy-news.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!r.ok)throw Error('아직 수집되지 않음');const d=await r.json();navyList.replaceChildren();const checked=d.last_checked?new Date(d.last_checked).toLocaleString('ko-KR'):'확인 전';navyList.append(node('p','nbm-meta','최근 확인 '+checked+' · 최신 최대 10건 표시 (수집 '+(d.items||[]).length+'건)'));for(const a of (d.items||[]).slice(0,10)){const item=node('div','nbm-item');const title=node('span','',a.title_ko||a.title||'제목 없음');if(a.url&&/^https:\/\//.test(a.url)){const link=node('a','',title.textContent);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link)}else item.append(title);if(a.category)item.append(node('span','nbm-source',a.category));navyList.append(item)}if(!(d.items||[]).length)navyList.append(node('p','nbm-empty','현재 수집된 관련 보도가 없습니다.'))}catch(e){navyList.replaceChildren(node('p','nbm-empty','첫 수집 대기 중입니다. GitHub Actions 실행 후 표시됩니다.'))}}
  loadNavy();
  function showRight(tab){officialMeta.hidden=tab!=='who';officialList.hidden=tab!=='who';forecastPanel.hidden=tab!=='forecast';whoBtn.setAttribute('aria-selected',String(tab==='who'));forecastBtn.setAttribute('aria-selected',String(tab==='forecast'));}
