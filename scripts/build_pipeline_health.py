@@ -9,7 +9,7 @@ DATA = ROOT / 'data'
 OUT = DATA / 'pipeline-health.json'
 FILES = ['articles.json', 'event-timelines.json', 'event-changes.json',
          'weekly-report.json',
-         'intelligence.json', 'evidence-index.json', 'geo-coverage.json',
+         'evidence-index.json', 'geo-coverage.json',
          'coverage-profiles.json', 'breaking-candidates.json',
          'historical-index.json', 'country-coverage-trends.json',
          'specialized-indexes.json', 'translation-quality.json',
