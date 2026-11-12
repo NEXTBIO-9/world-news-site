@@ -12,7 +12,8 @@ FILES = ['articles.json', 'event-timelines.json', 'event-changes.json',
          'intelligence.json', 'evidence-index.json', 'geo-coverage.json',
          'coverage-profiles.json', 'breaking-candidates.json',
          'historical-index.json', 'country-coverage-trends.json',
-         'specialized-indexes.json']
+         'specialized-indexes.json', 'translation-quality.json',
+         'source-provenance.json', 'personalization-options.json']
 
 
 def build():
@@ -27,7 +28,7 @@ def build():
             status[filename] = {'present': True, 'valid_json': True,
                                 'bytes': path.stat().st_size,
                                 'updated': parsed.get('updated') if isinstance(parsed, dict) else None}
-        except (OSError, ValueError):
+        except (OSError, ValueError, TypeError):
             status[filename] = {'present': True, 'valid_json': False}
     return {'updated': datetime.now(timezone.utc).isoformat(),
             'scope': 'data_file_presence_and_json_syntax_only',
