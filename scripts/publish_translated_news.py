@@ -79,7 +79,9 @@ def combined(staged):
             result.append(item)
             seen.add(identity(item))
     for item in staged['articles']:
-        if isinstance(item, dict) and item.get('title') and identity(item) not in seen and identity(item) not in excluded:
+        if (isinstance(item, dict) and isinstance(item.get('title'), str) and item['title'].strip()
+                and isinstance(item.get('url'), str) and item['url'].strip()
+                and identity(item) not in seen and identity(item) not in excluded):
             result.append(item)
             seen.add(identity(item))
     return prioritize(result)
