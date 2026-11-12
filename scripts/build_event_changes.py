@@ -49,6 +49,9 @@ def main():
     changes = compare(old, new)
     if old == new:
         return
+    if not old and OUT.exists():
+        # A missing or corrupt snapshot must not turn all existing events into alerts.
+        changes = []
     output = {'updated': datetime.now(timezone.utc).isoformat(),
               'note': 'Changes describe published coverage only, not confirmed real-world event changes.',
               'changes': changes, 'snapshot': new}
