@@ -37,8 +37,9 @@ def main():
     cache = data.get('translations') or {}
     if not isinstance(cache, dict):
         raise ValueError('Invalid title translation cache')
-    from news_priority import ordered
-    todo = pending({'articles': ordered(feed.get('articles', []))}, cache)
+    # Candidate feed is already ranked newest-first by publish_translated_news.py.
+    # Do not move old high-impact headlines ahead of fresh reports again.
+    todo = pending(feed, cache)
     print('Title translations missing_before:', len(todo), flush=True)
     if not todo:
         return
