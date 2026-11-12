@@ -173,7 +173,9 @@ jobs:
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python scripts/translate_article_summaries.py
       - name: Create recovery snapshot before publishing
-        run: python scripts/create_recovery_snapshot.py
+        run: |
+          python scripts/create_recovery_snapshot.py
+          python scripts/verify_recovery_snapshot.py nextbio-recovery.tar.gz nextbio-recovery-manifest.json
       - name: Retain recovery snapshot for manual restoration
         uses: actions/upload-artifact@v4
         with:
