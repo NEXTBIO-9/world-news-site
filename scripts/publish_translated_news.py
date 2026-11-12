@@ -193,7 +193,13 @@ def publish(staged_path, audit_path):
         write(DATA / 'articles.json', {'updated': staged.get('updated'), 'articles': published})
     else:
         print('Public articles unchanged; preserving existing feed timestamp')
-    write(QUEUE, {'updated': now.isoformat(), 'pending': waiting, 'excluded': [list(k) for k in sorted(excluded, key=str)]})
+    queue_payload = {'updated': now.isoformat(), 'pending': waiting,
+                     'excluded': [list(k) for k in sorted(excluded, key=str)]}
+    prior_queue = read(QUEUE)
+    if prior_queue.get('pending') != queue_payload['pending'] or prior_queue.get('excluded') != queue_payload['excluded']:
+        write(QUEUE, queue_payload)
+    else:
+        print('Pending queue unchanged; preserving queue timestamp')
     if audit_path.exists():
         audit = read(audit_path)
         if isinstance(audit, dict):
