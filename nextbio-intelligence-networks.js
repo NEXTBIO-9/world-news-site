@@ -12,9 +12,9 @@ const style=document.createElement('style');style.textContent=`
 #nb-intelligence .nbm-alerts-panel>#nb-alerts{display:block;scrollbar-width:thin}
 #nb-intelligence .nbm-alerts-panel .nb2-row{padding:7px 0}
 #nb-intelligence .nbm-alerts-panel>h3{display:none}
-#nb-intelligence .nbm-alerts-panel>#nb-alerts{flex:1;min-height:0;overflow-y:auto}
+#nb-intelligence .nbm-alerts-panel>#nb-alerts,#nb-intelligence .nbm-alerts-panel>#nb-market-issues{flex:1;min-height:0;overflow-y:auto}
 #nb-intelligence .nbm-alerts-panel>#nb-bookmarks{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;margin:0;padding:0;border:0;background:transparent;max-height:none;height:auto}
-#nb-intelligence .nbm-alerts-panel>#nb-bookmarks[hidden],#nb-intelligence .nbm-alerts-panel>#nb-alerts[hidden]{display:none!important}
+#nb-intelligence .nbm-alerts-panel>#nb-market-issues[hidden],#nb-intelligence .nbm-alerts-panel>#nb-bookmarks[hidden],#nb-intelligence .nbm-alerts-panel>#nb-alerts[hidden]{display:none!important}
 #nb-intelligence .nbm-alerts-panel>#nb-bookmarks>h3{display:none}
 #nb-intelligence .nbm-alerts-panel #nb-saved-list{flex:1;min-height:0;overflow-y:auto;max-height:none;grid-template-columns:minmax(0,1fr)}
 #nb-intelligence .nbm-alerts-panel .nb-scrap-toolbar{min-width:0;flex-shrink:0}
@@ -84,9 +84,9 @@ async function load(){try{const r=await fetch('./data/bio-official.json?v='+Math
 function init(){const columns=document.querySelector('#nb-intelligence .nb2-columns'),alerts=$('nb-alerts'),bookmarks=$('nb-bookmarks');if(!columns||!alerts||!bookmarks)return;
  const left=alerts.closest('section');if(!left)return;left.classList.add('nbm-alerts-panel');
  const tabs=node('div','nbm-tabs');tabs.setAttribute('role','tablist');
- const alertBtn=node('button','','⚡ 신규·주요 뉴스'),bookBtn=node('button','','☆ 북마크');
- for(const b of [alertBtn,bookBtn]){b.type='button';b.setAttribute('role','tab')}
- tabs.append(alertBtn,bookBtn);left.insertBefore(tabs,alerts);left.append(bookmarks);
+ const alertBtn=node('button','','⚡ 신규·주요 뉴스'),marketBtn=node('button','','📈 글로벌 증시 주요 이슈');
+ for(const b of [alertBtn,marketBtn]){b.type='button';b.setAttribute('role','tab')}
+ tabs.append(alertBtn,marketBtn);left.insertBefore(tabs,alerts);const marketList=node('div','nb2-list');marketList.id='nb-market-issues';marketList.hidden=true;left.append(marketList);bookmarks.hidden=true;bookmarks.style.display='none';
  for(const s of [...columns.children])if(s!==left)s.remove();
  const right=node('section','nbm-official');right.id='nbm-official';
  const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 발표 및 동아시아 안보 동향');
@@ -119,8 +119,8 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  loadNavy();
  function showRight(tab){officialMeta.hidden=tab!=='who';officialList.hidden=tab!=='who';forecastPanel.hidden=tab!=='forecast';whoBtn.setAttribute('aria-selected',String(tab==='who'));forecastBtn.setAttribute('aria-selected',String(tab==='forecast'));}
  whoBtn.addEventListener('click',()=>showRight('who'));forecastBtn.addEventListener('click',()=>showRight('forecast'));showRight('who');
- function show(book){alerts.hidden=book;bookmarks.hidden=!book;alertBtn.setAttribute('aria-selected',String(!book));bookBtn.setAttribute('aria-selected',String(book))}
- alertBtn.addEventListener('click',()=>show(false));bookBtn.addEventListener('click',()=>show(true));$('nb-bookmark-open')?.addEventListener('click',()=>show(true),{capture:true});show(false);
+ function show(market){alerts.hidden=market;marketList.hidden=!market;alertBtn.setAttribute('aria-selected',String(!market));marketBtn.setAttribute('aria-selected',String(market))}
+ alertBtn.addEventListener('click',()=>show(false));marketBtn.addEventListener('click',()=>show(true));show(false);
  document.addEventListener('nb-title-translation-changed',renderOfficial);load();setInterval(load,300000);
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
