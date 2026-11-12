@@ -4,7 +4,6 @@
 Publisher agreement is not fact verification. Exact event grouping is conservative.
 """
 import json
-import re
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -13,13 +12,6 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
 OUT = DATA / 'cross-source-coverage.json'
-STOP = {'the', 'and', 'for', 'from', 'with', 'after', 'amid', 'says', 'said', 'news', 'latest'}
-
-
-def terms(title):
-    return {t for t in re.findall(r'[a-z0-9]{4,}|[가-힣]{2,}', str(title).lower()) if t not in STOP}
-
-
 def publisher(article):
     for key in ('publisher_url', 'source_url', 'url'):
         try:
@@ -54,7 +46,7 @@ def build(events):
     results.sort(key=lambda r: (-r['distinct_publisher_domains'], r['event_id']))
     return {'updated': datetime.now(timezone.utc).isoformat(),
             'method': 'event_cluster_publisher_domain_count',
-            'disclaimer': 'Multiple publisher domains can republish the same wire story; this is not independent verification.',
+            'disclaimer': 'Unknown publisher domains are excluded. Multiple domains can republish one wire story; this is not independent verification.',
             'events': results}
 
 
