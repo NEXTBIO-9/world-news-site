@@ -7,6 +7,10 @@ const style=document.createElement('style');style.textContent=`
 #nb-intelligence .nbm-tabs button{appearance:none;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:#91a9c4;font-size:13px;font-weight:650;padding:8px 2px 10px;cursor:pointer;box-shadow:none}
 #nb-intelligence .nbm-tabs button[aria-selected=true]{color:#f0f8ff;border-bottom-color:#48cbbb}
 #nb-intelligence .nbm-tabs button:hover{color:#fff}
+#nb-intelligence .nb2-columns{align-items:stretch}
+#nb-intelligence .nbm-alerts-panel{height:310px;max-height:310px;min-height:0;box-sizing:border-box;display:flex;flex-direction:column;overflow:hidden}
+#nb-intelligence .nbm-alerts-panel>#nb-alerts{display:block;scrollbar-width:thin}
+#nb-intelligence .nbm-alerts-panel .nb2-row{padding:7px 0}
 #nb-intelligence .nbm-alerts-panel>h3{display:none}
 #nb-intelligence .nbm-alerts-panel>#nb-alerts{flex:1;min-height:0;overflow-y:auto}
 #nb-intelligence .nbm-alerts-panel>#nb-bookmarks{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;margin:0;padding:0;border:0;background:transparent;max-height:none;height:auto}
