@@ -17,8 +17,8 @@ def validate(feed, events):
     articles = feed.get('articles')
     if not isinstance(articles, list):
         return ['Published feed must contain an articles array']
-    if len(articles) > 300:
-        errors.append('Published feed exceeds 300 articles')
+    if len(articles) > 1000:
+        errors.append('Published feed exceeds 1000 articles')
     urls = set()
     for a in articles:
         if not isinstance(a, dict):
