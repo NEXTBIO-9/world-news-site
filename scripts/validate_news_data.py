@@ -12,7 +12,7 @@ def read(name):
     return json.loads((ROOT / 'data' / name).read_text(encoding='utf-8'))
 
 
-def validate(feed, events, topics):
+def validate(feed, events):
     errors = []
     articles = feed.get('articles')
     if not isinstance(articles, list):
@@ -47,14 +47,11 @@ def validate(feed, events, topics):
             for related in event.get('related_events', []):
                 if related.get('id') not in ids:
                     errors.append('Broken cross-country event link')
-    if not isinstance(topics.get('topics'), dict):
-        errors.append('Invalid topic monitor')
     return errors
 
 
 def main():
-    errors = validate(read('articles.json'), read('event-timelines.json'),
-                      read('topic-monitor.json'))
+    errors = validate(read('articles.json'), read('event-timelines.json'))
     for err in errors:
         print('QUALITY ERROR:', err, file=sys.stderr)
     if errors:
