@@ -212,7 +212,18 @@ def publish(staged_path, audit_path):
             return datetime.min.replace(tzinfo=timezone.utc)
 
     published.sort(key=published_time, reverse=True)
-    published = published[:300]
+    # Multiple titles can point to one source URL; publish only its newest entry.
+    unique_published = []
+    published_urls = set()
+    for article in published:
+        url = article.get('url')
+        if not isinstance(url, str) or not url.strip() or url in published_urls:
+            continue
+        published_urls.add(url)
+        unique_published.append(article)
+        if len(unique_published) >= 300:
+            break
+    published = unique_published
     # A bounded queue must never sacrifice a critical item merely due to position.
     pending_before_trim = len(waiting)
     waiting = prioritize(waiting)[:MAX_PENDING]
