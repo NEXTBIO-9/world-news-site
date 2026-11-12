@@ -43,7 +43,10 @@ def build():
             warnings.append({'dataset': name, 'reason': 'invalid_json'})
         elif name in freshness_targets and record.get('updated'):
             try:
-                stamp = datetime.fromisoformat(str(record['updated']).replace('Z', '+00:00')).astimezone(timezone.utc)
+                stamp = datetime.fromisoformat(str(record['updated']).replace('Z', '+00:00'))
+                if stamp.tzinfo is None:
+                    stamp = stamp.replace(tzinfo=timezone.utc)
+                stamp = stamp.astimezone(timezone.utc)
                 if stamp < now - timedelta(hours=48):
                     warnings.append({'dataset': name, 'reason': 'stale_over_48_hours'})
             except (ValueError, TypeError, OverflowError):
