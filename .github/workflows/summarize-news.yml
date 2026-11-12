@@ -110,7 +110,7 @@ jobs:
     needs: titles
     if: ${{ needs.titles.result == 'success' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -177,8 +177,8 @@ jobs:
       - name: Extract new-first excerpts and rotate backlog
         if: steps.extract_gate.outputs.should_run == 'true'
         env:
-          SUMMARY_MAX_NEW: '50'
-          SUMMARY_TIME_BUDGET: '360'
+          SUMMARY_MAX_NEW: '80'
+          SUMMARY_TIME_BUDGET: '540'
         run: python scripts/build_article_summaries.py
       - name: Check whether Korean summary translation is needed
         id: translate_gate
@@ -191,8 +191,8 @@ jobs:
       - name: Translate new and cached excerpts to Korean
         if: steps.translate_gate.outputs.should_run == 'true'
         env:
-          SUMMARY_KO_LIMIT: '50'
-          SUMMARY_KO_BUDGET: '1000'
+          SUMMARY_KO_LIMIT: '70'
+          SUMMARY_KO_BUDGET: '1200'
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: python scripts/translate_article_summaries.py
       - name: Create recovery snapshot before publishing
