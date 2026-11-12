@@ -39,12 +39,13 @@ def build(articles, now=None):
                        'risk_score': None})
     result.sort(key=lambda x: (-x['articles_last_7_days'], x['country']))
     return {'updated': now.isoformat(),
-            'disclaimer': 'Media coverage change is not a risk score. The 300-article live feed may undercount earlier days.',
+            'disclaimer': 'Media coverage change is not a risk score. The incremental archive may not cover the full previous 14 days.',
             'countries': result}
 
 
 def main():
-    feed = json.loads((DATA / 'articles.json').read_text(encoding='utf-8'))
+    archive = DATA / 'historical-index.json'
+    feed = json.loads((archive if archive.exists() else DATA / 'articles.json').read_text(encoding='utf-8'))
     if not isinstance(feed.get('articles'), list):
         raise ValueError('Invalid feed')
     result = build(feed['articles'])
