@@ -13,7 +13,8 @@ FILES = ['articles.json', 'event-timelines.json', 'event-changes.json',
          'coverage-profiles.json', 'breaking-candidates.json',
          'historical-index.json', 'country-coverage-trends.json',
          'specialized-indexes.json', 'translation-quality.json',
-         'source-provenance.json', 'personalization-options.json']
+         'source-provenance.json', 'personalization-options.json',
+         'publication-gaps.json']
 
 
 def build():
