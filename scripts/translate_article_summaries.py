@@ -78,11 +78,18 @@ def main():
     def published_time(pair):
         article = by_url.get(pair[0], {})
         return str(article.get('published') or pair[1].get('updated') or '')
-    newest = sorted(pending, key=lambda pair: (published_time(pair), important(by_url.get(pair[0], {}))), reverse=True)
+    # Translate articles in the current publication queue before orphaned cache
+    # entries; otherwise stale cached excerpts can consume the entire budget.
+    active = [pair for pair in pending if pair[0] in by_url]
+    inactive = [pair for pair in pending if pair[0] not in by_url]
+    newest = sorted(active, key=lambda pair: (published_time(pair), important(by_url.get(pair[0], {}))), reverse=True)
     fresh_limit = max(1, LIMIT - max(1, LIMIT // 4))
     selected = newest[:fresh_limit]
     used = {url for url, _ in selected}
     selected += [pair for pair in reversed(newest) if pair[0] not in used][:LIMIT - len(selected)]
+    # Only use spare capacity for summaries no longer in the active queue.
+    if len(selected) < LIMIT:
+        selected += sorted(inactive, key=published_time, reverse=True)[:LIMIT - len(selected)]
     pending = selected
     if not pending:
         print('Korean summary translations: pending=0, translated=0')
