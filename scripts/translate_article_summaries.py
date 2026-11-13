@@ -58,6 +58,30 @@ def rejection_reason(source, translated):
 def acceptable(source, translated):
     return rejection_reason(source, translated) is None
 
+
+def translate_preserving_facts(source, tokenizer, model, target_lang_id):
+    """Translate short source sentences separately to reduce numeric omissions.
+
+    Only return a result when every numeric fact survives the full translation.
+    """
+    import torch
+    parts = [p.strip() for p in re.split(r'(?<=[.!?。！？])\\s+', source) if p.strip()]
+    if len(parts) < 2 or len(parts) > 6:
+        return ''
+    translated_parts = []
+    for part in parts:
+        inputs = tokenizer([part], return_tensors='pt', truncation=True, max_length=384)
+        with torch.inference_mode():
+            tokens = model.generate(**inputs, max_new_tokens=400, num_beams=2,
+                                    do_sample=False, forced_bos_token_id=target_lang_id)
+        result = tokenizer.batch_decode(tokens, skip_special_tokens=True)[0].strip()
+        if not result or not numeric_facts(part).issubset(numeric_facts(result)):
+            return ''
+        translated_parts.append(result)
+    combined = ' '.join(translated_parts)
+    return combined if acceptable(source, combined) else ''
+
+
 def main():
     if not PATH.exists():
         print('No summary cache; skipping Korean translation.')
@@ -117,6 +141,13 @@ def main():
                 tokens = model.generate(**inputs, max_new_tokens=400, num_beams=2, do_sample=False, forced_bos_token_id=target_lang_id)
             translated = tokenizer.batch_decode(tokens, skip_special_tokens=True)[0].strip()
             reason = rejection_reason(source, translated)
+            if reason == 'missing_numeric_facts':
+                # A full-excerpt translation may omit a number. Retry in
+                # sentence-sized pieces, never inventing or inserting figures.
+                fallback = translate_preserving_facts(source, tokenizer, model, target_lang_id)
+                if fallback:
+                    translated = fallback
+                    reason = None
             if reason is None:
                 item['text_ko'] = translated
                 item['translated_at'] = datetime.now(timezone.utc).isoformat()
