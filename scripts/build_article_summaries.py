@@ -191,6 +191,10 @@ def main():
     start = time.monotonic()
     reasons = Counter()
     new_count = attempts = rss_count = 0
+    # A Google News 503 outage is shared across URLs. Stop hammering the
+    # endpoint after repeated failures and preserve retries for the next run.
+    google_503_streak = 0
+    google_circuit_open = False
     # Preserve cursor-based backfill, but give newly published articles priority.
     # The priority queue is bounded so older articles still receive coverage.
     cursor = int(previous.get('next_index', 0) or 0) % max(1, len(articles))
@@ -230,6 +234,9 @@ def main():
         if text:
             rss_count += 1
         else:
+            if google_circuit_open and urlparse(url).hostname == 'news.google.com':
+                reasons['google_503_circuit_skipped'] += 1
+                continue
             if attempts >= MAX_ATTEMPTS:
                 if not is_fresh:
                     backlog_scanned -= 1
@@ -239,6 +246,13 @@ def main():
                 fresh_count += 1
             text, reason = get_article(url, title, session)
             reasons[reason] += 1
+            if reason == 'google_http_503':
+                google_503_streak += 1
+                if google_503_streak >= 3:
+                    google_circuit_open = True
+                    print('Google News HTTP 503 circuit opened after 3 consecutive failures; deferring remaining Google URLs.', flush=True)
+            else:
+                google_503_streak = 0
             if not text:
                 failures[url] = time.time()
             kind = 'source_excerpt'
