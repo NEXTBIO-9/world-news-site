@@ -186,7 +186,16 @@ def publish(staged_path, audit_path):
         raise ValueError('Invalid pending-title queue')
     excluded = excluded_keys(read(QUEUE))
     blocked = read(DATA / 'article-summaries.json').get('blocked_urls', {})
-    blocked_urls = set(blocked) if isinstance(blocked, dict) else set()
+    # HTTP 401/402/403 means the publisher restricts access. Permanently
+    # exclude these items from the unpublished queue, including old entries.
+    blocked_urls = {u for u, info in blocked.items()
+                    if isinstance(info, dict) and info.get('reason') in ('http_401', 'http_402', 'http_403')}
+    restricted_removed = sum(1 for e in existing
+                             if isinstance(e, dict) and isinstance(e.get('article'), dict)
+                             and e['article'].get('url') in blocked_urls)
+    excluded.update(identity(e['article']) for e in existing
+                    if isinstance(e, dict) and isinstance(e.get('article'), dict)
+                    and e['article'].get('url') in blocked_urls)
     failure_counts = {identity(e['article']): retry_count(e.get('failures')) for e in existing
                       if isinstance(e, dict) and isinstance(e.get('article'), dict)}
     attempted_path = Path(sys.argv[3]) if len(sys.argv) > 3 else None
@@ -280,10 +289,11 @@ def publish(staged_path, audit_path):
                 'excluded_title_failures': len(excluded),
                 'pending_overflow': pending_before_trim - len(waiting),
                 'blocked_source_urls': len(blocked_urls),
+                'restricted_pending_removed': restricted_removed,
                 'updated': now.isoformat(),
             }
             write(DATA / 'news_quality_audit.json', audit)
-    print(f'Access-restricted source URLs excluded from pending queue: {len(blocked_urls)}')
+    print(f'Access-restricted source URLs excluded from pending queue: {len(blocked_urls)}; removed from previous pending: {restricted_removed}')
     print(f'Published={len(published)} pending_retry={len(waiting)} exhausted_title_retries={sum(1 for a in combined(staged) if english(a["title"]) and a["title"] in attempted and failure_counts.get(identity(a), 0) + 1 >= MAX_FAILURES and not valid(a["title"], cache.get(a["title"]))) } staged={len(new_items)}')
 
 
