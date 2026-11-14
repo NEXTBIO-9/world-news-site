@@ -40,11 +40,16 @@ def build(staged, published, pending):
         unpublished.append({'url': url, 'title': article.get('title') or '',
                             'important': important(article), 'state': state})
     unpublished.sort(key=lambda a: (not a['important'], a['state'], str(a['url'])))
+    important_states = dict(Counter(a['state'] for a in unpublished if a['important']))
+    # Distinguish queued priority reports from those requiring manual diagnosis.
+    # A missing queue entry alone is not proof of a dropped article.
     return {'updated': datetime.now(timezone.utc).isoformat(),
             'scope': 'latest_collected_batch_compared_to_published_and_pending_urls',
             'disclaimer': 'Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.',
             'collected_unique_urls': len(staged_by_url),
             'counts': dict(sorted(counts.items())),
+            'important_unpublished_by_state': important_states,
+            'important_requires_review': [a for a in unpublished if a['important'] and a['state'] == 'not_in_current_queue'][:100],
             'unpublished': unpublished[:500]}
 
 
@@ -59,7 +64,7 @@ def main():
     if OUT.exists():
         try:
             previous = json.loads(OUT.read_text(encoding='utf-8'))
-            if previous.get('counts') == result['counts'] and previous.get('unpublished') == result['unpublished']:
+            if all(previous.get(k) == result[k] for k in ('counts', 'important_unpublished_by_state', 'important_requires_review', 'unpublished')):
                 return
         except (OSError, ValueError):
             pass
