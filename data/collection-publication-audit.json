@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-14T03:52:58.977939+00:00",
+  "updated": "2026-11-14T04:09:26.050774+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 17,
-    "not_in_current_queue": 10,
-    "pending": 61,
-    "published": 109
+    "important_unpublished": 18,
+    "not_in_current_queue": 11,
+    "pending": 59,
+    "published": 110
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 9,
+    "not_in_current_queue": 10,
     "pending": 8
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 9,
+    "source_blocked": 10,
     "in_retry_queue": 8
   },
   "blocked_important_rss_candidates": 0,
@@ -90,6 +90,14 @@
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaHhPajF0ZVJyM252UDE2Z0xyMU5iOG1QeDBTUk9Kc0J4ZG03YU1hRVh2ajZ6QktiWmE1UEk2YndYUXIxM056THRXT1RQTGJEcjhfZl9lYlVrSFJweV9Dd0pwd1BJX00tUzlGUVhCckxwNWFSb0NwUFhxQldnakQ0emdheGxJMHBldUY4dWhPTlo2UHo3TjlLOW1oSnJrTlZidWJfWm56eEZTakhqR2JYSFptSGVMM3QzcElpMEEwWEdlOFNFOS1hStIBzgFBVV95cUxOckZLNmJIX09kbEVMWURFc0VIR2hJYkEyRV9GbnE5ZGk5c3dQcnpQeG1oUlBPV3JjQzVHT1lHd1FPcVdQODNLN0tKQXl5MUJIR0hSVlRVNE9zSkY5S3lNZFVDaUJFSzZrb0k5d3lWNk9LeTM0b21MNnZxTTBieW45TGZNVHVTc0VHbEE5TzM4ekNpem93dmlQSklKSWVLdXhGTWVlQkNoSEZaUzk3Mm9xS242TjROQzdUelZ0UzhKVXZkcFdaaXJsT0E5NEV3Zw?oc=5",
+      "title": "Extension | Four soldiers die and two are injured in a drone attack in northern Colombia",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
     }
   ],
   "unpublished": [
@@ -160,6 +168,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTmEzelh0cThsbWNobk9zSGh1SlhoY0puS1E5dndnTzRsOTNBa0lCYnRDR0E3bkx2WUJuVFJCSnlZd0hKYTVDaUpQYlMyQXBEVUc4ZEpMUEV0RFRDSkZhZldickFWbWIzR1pRUndGR2dzbkRfdHk2a1ZnVkYtT2RRT3l6UnRNbFF4WngtUExvREEzWEw0VDZJUXNmQUxOZTZfR2tEZWNibGwxRnB1UVlELVVPWmh0dHUxN2xoWC1R?oc=5",
       "title": "Lane County faces billions in damage from a Cascadia earthquake",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaHhPajF0ZVJyM252UDE2Z0xyMU5iOG1QeDBTUk9Kc0J4ZG03YU1hRVh2ajZ6QktiWmE1UEk2YndYUXIxM056THRXT1RQTGJEcjhfZl9lYlVrSFJweV9Dd0pwd1BJX00tUzlGUVhCckxwNWFSb0NwUFhxQldnakQ0emdheGxJMHBldUY4dWhPTlo2UHo3TjlLOW1oSnJrTlZidWJfWm56eEZTakhqR2JYSFptSGVMM3QzcElpMEEwWEdlOFNFOS1hStIBzgFBVV95cUxOckZLNmJIX09kbEVMWURFc0VIR2hJYkEyRV9GbnE5ZGk5c3dQcnpQeG1oUlBPV3JjQzVHT1lHd1FPcVdQODNLN0tKQXl5MUJIR0hSVlRVNE9zSkY5S3lNZFVDaUJFSzZrb0k5d3lWNk9LeTM0b21MNnZxTTBieW45TGZNVHVTc0VHbEE5TzM4ekNpem93dmlQSklKSWVLdXhGTWVlQkNoSEZaUzk3Mm9xS242TjROQzdUelZ0UzhKVXZkcFdaaXJsT0E5NEV3Zw?oc=5",
+      "title": "Extension | Four soldiers die and two are injured in a drone attack in northern Colombia",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -392,14 +408,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBZQW1FQ3BuTEpGVVl0MHJ6d08wdWxBdUNicElWRllGX1RPdnNKTWFGTVdmUmo1RmZyWkJWWGhPTEp3MUxVcjhycGZpb2dTNUU5aWhxMl9TLTNzdDI5YlhlSEl1NTR3U01vRU4yeA?oc=5",
       "title": "연구를 신약 자산으로…KAIST·KIST 아태 기술이전 2·3위",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9GMU54SnZyRFRIa0JwNnM3SVNLUXRwX0ljUGp6UjQ2OXRLODZtd2JqQ3BablVqUHZJT1JCWWxSX0tYNHpxVE45c1BKRi00LUZCYUkza3VSQzlJVGhUZHhQM2w5eEE5TjZ1WUtPbm5sN3E0Z1hxcnFrQmN3?oc=5",
-      "title": "Fatih Birol: The Energy World Will Never Be the Same As Before the Iran War",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -640,14 +648,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMizAJBVV95cUxPR2Q0NXRCdHNydFVta3BzLTE4RGpoZG44SlNBdXowWkk1clZoZkZUN1J4T1E5REtPYjR3d0xrSkJMUV9lTUIyVmd1SXRfSktQc29EVVhWWkRiOW1udVFXUkxrRVpjUFVZM0ZUN2h6LTRyWTVhZE1CTlB6M2IxbXN5UVRZd04tQlBRUUs2WHNNcXdVY3BfNTNKdVJBWXR5UG1XYVM4UVFuakZLSERxcXRQdUJnN2g5eWZGZ3BCQnJvRjhxSmtpVGlLNURXTDNqZUE3OENsUzFJRS01MTRqam1VbVF0MXc1Z1BCTHFxc3ItVE90bk5tUmMzQzE4Y1ZTeElMbGpDQnBOVmVXaFJRcFJFMmx6T0VsXzdmQlJBYUN4NTVESWdHVmJ4VVBYSmJkS3h3QkxnaU5McGNUTlFHTmlKQ3VxYlBlTW5jejZBMA?oc=5",
       "title": "EDF shut down two nuclear reactors in France as a precaution after jellyfish swarmed the seawater filters at Gravelines, and it came just 16 days after the same animals took three units offline - ECOticias.com",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNa0VablB0SWViZWpCRFg4bC0yX2ZTM19HNmFFVUdqVVlwbWRuRjdpSnNXZ3liU04zeTYyZWJPSlhLeEVRTUlMS0N2SnlPdEpINzVHUTJjRXJjd3RKdEZMLS14czdZSlpjcWlJWm95bFpTNHgxblNSVlFyLWhsQ0JncVFZRGRmQ0p6cDZQRGRtNlh6LWxnVXlLRkJyelFzdTFoM285d2tQZTJvS1BkYkRzLVZwUERKc2pHbVBqOUZDSmFRbGJ4TmpmQVExbnEzOTQ?oc=5",
-      "title": "Saudi Arabia intercepts Houthi missiles, drones; group denies targeting Mecca",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
