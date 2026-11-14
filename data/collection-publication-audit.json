@@ -1,36 +1,28 @@
 {
-  "updated": "2026-11-14T09:52:41.577733+00:00",
+  "updated": "2026-11-14T10:50:17.103104+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
     "important_unpublished": 16,
-    "not_in_current_queue": 41,
-    "pending": 23,
-    "published": 116
+    "not_in_current_queue": 42,
+    "pending": 24,
+    "published": 114
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 13,
-    "pending": 3
+    "not_in_current_queue": 12,
+    "pending": 4
   },
   "important_unpublished_by_reason": {
-    "repeated_extraction_failure": 4,
+    "repeated_extraction_failure": 3,
     "source_blocked": 9,
-    "in_retry_queue": 3
+    "in_retry_queue": 4
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
     {
       "url": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNd2x1RExEbU9XX0REdTV4bDlFNm1qR0V5bzVEeWJNQzFyQUVZUFVWeXNrbzg3MlNRMzJHMWxmZlRYa3M0Y3luWGhQTGFPRmJNQ3kwWldGaFFFY2F4X3RhY3N1OTkzRlNhYmt3UTJ3Q2UzenRmTkNESjRjd0pqLTVENGNDVllHbFd0SWJWN3pmNVRHSktzU0o5Z2JYdkJSOGRzVnRCS25ndHBBWDQ0OWh1MTROWk9EcUpSNlBqN3JDTU5nRFBTNzdOSUZYOUtQYXdybHRFOExsUVBZTXotdWtuektwREVtVEc2ZDVpUWV5azhjX1loZnh3dlRGN0doSVFFOXhjclBtcnVSQ013UWdwT2h1ck9UMWhveGFRZWlxZEFZamtJVEduT2dVYnlKaWtwdkdlMzh4SUQ5cVVIRHJKS2tKeWxhWmVSU1VnTVBGZHhVdw?oc=5",
       "title": "Australia is testing a wildfire jacket made with mycelium leather grown on farm waste, and the material has cleared a screen for over 1,000 harmful substances, but the fire test numbers are still not public - ECOticias.com",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTFA2Y05abHdLZkxlZFZBd0JUR1AyNzVXZm02bGhzeUVDb2w0VG5ZN2FGdU9FcjA4NmI1bjlZSG96QTl2QUk?oc=5",
-      "title": "학교 감염병 예방교육 확대…손 씻기·예방접종 실천은 얼마나 달라졌나",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -129,14 +121,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNd2x1RExEbU9XX0REdTV4bDlFNm1qR0V5bzVEeWJNQzFyQUVZUFVWeXNrbzg3MlNRMzJHMWxmZlRYa3M0Y3luWGhQTGFPRmJNQ3kwWldGaFFFY2F4X3RhY3N1OTkzRlNhYmt3UTJ3Q2UzenRmTkNESjRjd0pqLTVENGNDVllHbFd0SWJWN3pmNVRHSktzU0o5Z2JYdkJSOGRzVnRCS25ndHBBWDQ0OWh1MTROWk9EcUpSNlBqN3JDTU5nRFBTNzdOSUZYOUtQYXdybHRFOExsUVBZTXotdWtuektwREVtVEc2ZDVpUWV5azhjX1loZnh3dlRGN0doSVFFOXhjclBtcnVSQ013UWdwT2h1ck9UMWhveGFRZWlxZEFZamtJVEduT2dVYnlKaWtwdkdlMzh4SUQ5cVVIRHJKS2tKeWxhWmVSU1VnTVBGZHhVdw?oc=5",
       "title": "Australia is testing a wildfire jacket made with mycelium leather grown on farm waste, and the material has cleared a screen for over 1,000 harmful substances, but the fire test numbers are still not public - ECOticias.com",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTFA2Y05abHdLZkxlZFZBd0JUR1AyNzVXZm02bGhzeUVDb2w0VG5ZN2FGdU9FcjA4NmI1bjlZSG96QTl2QUk?oc=5",
-      "title": "학교 감염병 예방교육 확대…손 씻기·예방접종 실천은 얼마나 달라졌나",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -247,11 +231,27 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5zV0JJbldtb3FnZlR5TVF6Mm41dnpnaXFUWjdka19UNDl2WUl3YUxMbXdsTG5LM0J0UEc1MnktTWZOOWx5YUo4Zm1LT2tiQUtseHVrR2JlUUZMYXZnZUx1emJmckg2V3BUT1d0YjRGeDJpY3N6SzQtUQ?oc=5",
+      "title": "M4 Earthquake Hits Japan’s Kyushu; No Tsunami Expected",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPTExaYVNhVWlfUzMzZHk0MWVlYVRBOWhfZmhfN1A5aF9XTnJaVno1TENnNE1zTElnYjg2eEp5NUkzcC12dnRZNGxpR3A1Vml1bm1xbWh6S2EzNWJEcXNHMXEtaTBtM3FiRGRVRmRMYjkwQjQzbEhjWkhDYzdyNnhsbGMzUQ?oc=5",
       "title": "US Measles Outbreaks Cost Nearly $83 Million in 2026",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQaDc1a0IzdG9PN0xRMFJrZ0xZZXB4emVEZ1N1eXVtYXNTQmdmU1BzR2hpSktObTVxWHpoci1tb1VCblJHeGNHdUY1cnhnN0tWSXM2cFQxUDh3OEFya1k3RWNzTWFVNHpsOU9FMmJXaEdpVWdhVnV0Y3g5SzZPVFh0UWVGQlhZcEZfT2tPVjZvTzNyYVpPVGx2SHo3VHQ1SnlHRVYzVng2Tm0tZzJ1U3lEZE5Td3NyWTd6UGszRmhIV19TbnRxZEVrMUVPaEZGQ21TRTEtcWtkdU1Jbzdxa1hzZ1hRQ19nenpZeHY0T2xhLXhxSHJiUXQ3SGhn0gH_AUFVX3lxTE5iTU04cGxfT2lOdEh5Y2h5N2ZzanlvUGtRREYySE51emhubHRjcS1BYzRybk5rcmplOGY0Vk9WOWN5U1JRV2o5c0NKc2dnRWpxQ3RmNi1ERDRPUWZScGxjZVBKMnlRVkZHendjQ2s0dmkydEl3aHplWnpIRWVUc2k4VW1IMlg4dGxfTWFwNmRKd2Z4bmRWWFVqNjBqZjIwT0ltNW8wNjVDZC12Y05Lc1BxcE44UGNpNzh1SmJkVkp0NURuOU5WTVZhY3pWUjlkNWtMd1B2djl6QUlWbmtINzU3VDd3bWdVVFRxLWZQS0dSWUMtZGhiaTBBQUpZT2IwUQ?oc=5",
+      "title": "US President Trump sidelines Vance on Iran as war strategy rift widens after Republican midterm election defeat",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -308,6 +308,14 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOckFUdDZCZjZjS281VE1ybklFa1Rsb2ptdUtTRFlCbm5QLU9WaHdxbEVKZnlqRFhmelVpU2pwU0labVZQNEQ3YWpwM3lTOXBEbF9taHotWnp0cmNRSnU3YUtPZHRmZzRiQVJUYTVobmNzREE2RENacmJYdzlIb0J1TkREWTU?oc=5",
+      "title": "Ukraine Strikes Russian Warship in Baltic Sea",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -391,14 +399,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbUVZckZzaEtoaDRoTDRIOEhwa1Y1eWNURS1MYW1Xc19IY0ZFQkE4N0dTZDh3UWV4eXFxQVY4TS1mRzR0dmJzSTZDNzJhdGEzYk1wMFp0NDBzcGRHbVZmNGY4TFFtS1J0VlVDSXJfUlF0R2lOaFBLSFk4SWIzamd0X2ZaTFIyNExRMEhOU0R6eDF4NFlXY3Y1VVUxa3NhU1VkRE1pTTZ4WFVzZHJkQ3E5MjlQUQ?oc=5",
-      "title": "PAVmed Provides Business Update and Reports Preliminary Third Quarter 2026 Financial Results",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQkhEbGVvVElIaV9qZ1lLQmctYVZRb1FqcFVpNFYyeTlzdkZES2lEVHl1bkkzN25UdklveEdJbG1SX21ma0c5dWNRa01sVnBsZTRsN2Qya3RqM1NRbTBGc0tnOU5SR3ZFb2k2OHNIN0pXQUNYVVBsTHhnWmFaS0xYaEJjLW5DbUMyVmpGSVZ1RFVWSE1qaHFEQ2FxYXhnWFpNSkdPc0JTTTdqOHJ5ekhXQU5Hbl8?oc=5",
       "title": "Germany says Ukraine war must end before broader security talks with Russia",
       "important": false,
@@ -417,6 +417,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOamdDSE9ObG1wbDJxQU1yWFRlZTdDWDZyVDNlVDhJM1NYRS1LZjdwUmRFVXJ5b1l4REI4SW50TzUzYUt6SVo3b2ItRDVBSGZRbkZqMjcyWTlXeE5HODJsZVUzY2ZfUEVMTFVyaTYzS0RkaWtncVdZVXBmZko3UVlkSlJMWFZMVHpfQXhQX243TUNBR0JoNUVLMjJjT2VyZ0FrdVhSNFNtY3BEcUpOU3AtdFN5eTlwdHJR?oc=5",
       "title": "Slovakia offers nuclear expertise as Philippines advances energy transition",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWWRGVjhBYXVpelpVMG9oaFZPSDZnak9WZUkza1RrX2c1blFhcEVfY2xMelpEbzlNVXVLZVFnU1RoTVVaeXFZT2t0UXE5aEM0OGlzRVhYcWNhbXU4NWNMSTZwSUdoM2szVWN3VmRFTWtLeE9MYTNCLWtxOW1TUWplekhCdWtSc2dvMnNUNEVRX2FqaEVDdVFPYnZDSkl2aEw5bkhVaG5nY0VmeGRteW95RHBvVU96NGZC?oc=5",
+      "title": "Canada Bond Yields Face a New Test as Inflation and Rate Hike Expectations Rise",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
