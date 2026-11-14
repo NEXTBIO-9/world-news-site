@@ -131,3 +131,12 @@ body:not(.dark-mode) #nb-risk-signals .nb-risk-group>summary .nb-risk-status{col
 body:not(.dark-mode) #nb-risk-signals .nb-risk-card{background:#f4f8fc;border-color:#d5e1ee}
 body:not(.dark-mode) #nb-risk-signals .nb-risk-card .nb-risk-status{color:#536b83}
 @media(max-width:480px){#nb-risk-signals .nb-risk-card>.nb-risk-toggle{padding:12px 10px!important;gap:7px!important}#nb-risk-signals .nb-risk-card .nb-risk-status{font-size:10px}}
+
+
+/* Explicitly restore text visibility, independent of site-wide button rules. */
+#nb-risk-signals .nb-risk-card>.nb-risk-toggle{display:flex!important;min-height:56px!important;height:auto!important;padding:15px 14px!important;align-items:center!important;opacity:1!important;visibility:visible!important;font-size:13px!important;color:#e9f3ff!important}
+#nb-risk-signals .nb-risk-card>.nb-risk-toggle .nb-risk-name{display:block!important;visibility:visible!important;opacity:1!important;color:#e9f3ff!important;font-size:13px!important;font-weight:700!important}
+#nb-risk-signals .nb-risk-card>.nb-risk-toggle .nb-risk-status{display:block!important;visibility:visible!important;opacity:1!important;color:#b4c8df!important;font-size:11px!important}
+#nb-risk-signals .nb-risk-card>.nb-risk-toggle .nb-risk-chevron{display:block!important;visibility:visible!important;opacity:1!important}
+body:not(.dark-mode) #nb-risk-signals .nb-risk-card>.nb-risk-toggle,body:not(.dark-mode) #nb-risk-signals .nb-risk-card>.nb-risk-toggle .nb-risk-name{color:#203650!important}
+body:not(.dark-mode) #nb-risk-signals .nb-risk-card>.nb-risk-toggle .nb-risk-status{color:#536b83!important}
