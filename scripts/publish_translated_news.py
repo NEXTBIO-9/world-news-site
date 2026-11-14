@@ -89,6 +89,8 @@ def combined(staged):
     """Current feed first; then still-fresh queued items not in this collection."""
     queue = read(QUEUE)
     excluded = excluded_keys(queue)
+    blocked = read(DATA / 'article-summaries.json').get('blocked_urls', {})
+    blocked_urls = set(blocked) if isinstance(blocked, dict) else set()
     entries = queue.get('pending', [])
     if not isinstance(entries, list):
         raise ValueError('Invalid pending-title queue')
@@ -102,7 +104,8 @@ def combined(staged):
         if (retry_count(entry.get('failures')) < MAX_FAILURES
                 and isinstance(item.get('title'), str) and item['title'].strip()
                 and isinstance(item.get('url'), str) and item['url'].strip()
-                and identity(item) not in seen and identity(item) not in excluded):
+                and identity(item) not in seen and identity(item) not in excluded
+                and item['url'] not in blocked_urls):
             result.append(item)
             seen.add(identity(item))
     for item in staged['articles']:
@@ -178,6 +181,8 @@ def publish(staged_path, audit_path):
     if not isinstance(existing, list):
         raise ValueError('Invalid pending-title queue')
     excluded = excluded_keys(read(QUEUE))
+    blocked = read(DATA / 'article-summaries.json').get('blocked_urls', {})
+    blocked_urls = set(blocked) if isinstance(blocked, dict) else set()
     failure_counts = {identity(e['article']): retry_count(e.get('failures')) for e in existing
                       if isinstance(e, dict) and isinstance(e.get('article'), dict)}
     attempted_path = Path(sys.argv[3]) if len(sys.argv) > 3 else None
@@ -270,9 +275,11 @@ def publish(staged_path, audit_path):
                 'important_pending': sum(priority(e) for e in waiting),
                 'excluded_title_failures': len(excluded),
                 'pending_overflow': pending_before_trim - len(waiting),
+                'blocked_source_urls': len(blocked_urls),
                 'updated': now.isoformat(),
             }
             write(DATA / 'news_quality_audit.json', audit)
+    print(f'Access-restricted source URLs excluded from pending queue: {len(blocked_urls)}')
     print(f'Published={len(published)} pending_retry={len(waiting)} exhausted_title_retries={sum(1 for a in combined(staged) if english(a["title"]) and a["title"] in attempted and failure_counts.get(identity(a), 0) + 1 >= MAX_FAILURES and not valid(a["title"], cache.get(a["title"]))) } staged={len(new_items)}')
 
 
