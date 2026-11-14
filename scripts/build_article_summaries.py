@@ -231,6 +231,10 @@ def main():
     retry_after = time.time() - 3 * 3600
     start = time.monotonic()
     reasons = Counter()
+    skip_reasons = Counter()
+    failure_reasons_by_url = previous.get('failure_reasons_by_url', {})
+    if not isinstance(failure_reasons_by_url, dict):
+        failure_reasons_by_url = {}
     new_count = attempts = rss_count = 0
     # A Google News 503 outage is shared across URLs. Stop hammering the
     # endpoint after repeated failures and preserve retries for the next run.
@@ -273,12 +277,21 @@ def main():
         scanned += 1
         article = articles[index]
         url, title = article.get('url', ''), article.get('title', '')
-        if not url or not title or url in cache or url in blocked:
+        if not url or not title:
+            skip_reasons['missing_url_or_title'] += 1
+            continue
+        if url in cache:
+            skip_reasons['already_cached'] += 1
+            continue
+        if url in blocked:
+            skip_reasons['access_blocked'] += 1
             continue
         if int(nonextractable.get(url, 0) or 0) >= 3:
+            skip_reasons['three_content_failures'] += 1
             continue
         cooldown = 30 * 60 if important(article) else 3 * 3600
         if float(failures.get(url, 0) or 0) > time.time() - cooldown:
+            skip_reasons['retry_cooldown'] += 1
             continue
         rss = clean(article.get('summary_ko') or article.get('summary'))
         text = rss_excerpt(rss, title)
@@ -288,6 +301,7 @@ def main():
         else:
             if google_circuit_open and urlparse(url).hostname == 'news.google.com':
                 reasons['google_503_circuit_skipped'] += 1
+                skip_reasons['google_503_circuit_skipped'] += 1
                 continue
             if attempts >= MAX_ATTEMPTS:
                 if not is_fresh:
@@ -307,6 +321,7 @@ def main():
                 google_503_streak = 0
             if not text:
                 failures[url] = time.time()
+                failure_reasons_by_url[url] = {'reason': reason, 'at': now}
                 if reason in ('http_401', 'http_402', 'http_403'):
                     blocked[url] = {'reason': reason, 'at': now}
                 elif reason in ('body_too_short_or_title_only', 'no_body_extracted', 'not_html', 'http_404'):
@@ -316,6 +331,7 @@ def main():
             cache[url] = {'text': text, 'kind': kind, 'updated': now}
             new_count += 1
             failures.pop(url, None)
+            failure_reasons_by_url.pop(url, None)
     next_index = (cursor + backlog_scanned) % max(1, len(articles))
     # Retain prior successful summaries; bound stale cache without deleting current articles.
     if len(cache) > 2400:
@@ -328,10 +344,13 @@ def main():
     failures = {u: t for u, t in failures.items() if u in current_urls and float(t or 0) > time.time() - 3 * 86400}
     blocked = {u: v for u, v in blocked.items() if u in current_urls and u not in cache}
     nonextractable = {u: n for u, n in nonextractable.items() if u in current_urls and u not in cache}
-    OUT.write_text(json.dumps({'updated': now, 'next_index': next_index, 'failed_urls': failures, 'blocked_urls': blocked, 'nonextractable_counts': nonextractable, 'summaries': cache}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    failure_reasons_by_url = {u: v for u, v in failure_reasons_by_url.items() if u in current_urls and u not in cache}
+    OUT.write_text(json.dumps({'updated': now, 'next_index': next_index, 'failed_urls': failures, 'blocked_urls': blocked, 'nonextractable_counts': nonextractable, 'failure_reasons_by_url': failure_reasons_by_url, 'summaries': cache}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Articles={len(articles)}, cached={len(cache)}, new_summaries={new_count}, rss_summaries={rss_count}, fetch_attempts={attempts}')
     print(f'cursor_start={cursor}, cursor_next={next_index}, scanned={scanned}, fresh_attempts={fresh_count}, elapsed_seconds={int(time.monotonic()-start)}')
+    print('Skipped article reasons: ' + json.dumps(dict(skip_reasons.most_common()), ensure_ascii=False))
     print('Failure reasons: ' + json.dumps(dict(reasons.most_common()), ensure_ascii=False))
+    print('Recorded URL failure reasons: ' + json.dumps(dict(Counter(v.get('reason', 'unknown') for v in failure_reasons_by_url.values() if isinstance(v, dict)).most_common()), ensure_ascii=False))
     print(f'Blocked source URLs excluded from future extraction: {len(blocked)}')
     print(f'Nonextractable URLs after 3 content failures: {sum(int(n) >= 3 for n in nonextractable.values())}')
     print('NOTE: Google News URLs may not reveal publisher links; failures cannot be solved by retries alone.')
