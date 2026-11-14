@@ -1,21 +1,21 @@
 {
-  "updated": "2026-11-14T08:59:16.156978+00:00",
+  "updated": "2026-11-14T09:52:41.577733+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 15,
-    "not_in_current_queue": 37,
-    "pending": 24,
-    "published": 119
+    "important_unpublished": 16,
+    "not_in_current_queue": 41,
+    "pending": 23,
+    "published": 116
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 12,
+    "not_in_current_queue": 13,
     "pending": 3
   },
   "important_unpublished_by_reason": {
     "repeated_extraction_failure": 4,
-    "source_blocked": 8,
+    "source_blocked": 9,
     "in_retry_queue": 3
   },
   "blocked_important_rss_candidates": 0,
@@ -79,6 +79,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObEowc1ZEWmk5UmJEZUZJSHZ0VW9RRlJIZzlJcXJJTlE5bkplM2ZLTmFxbVhWSGk5alFVRmFZNHBSbm1HeUZMaEFPTTdvYlRxQ1JWODNqY1M5eEs4UzdxamtoMGhXbTJndWV0UGlJRTVsQUFRYkFjQ211ZmxLWXozRTlYRTVlTlBIakRhY1NxWm40UmkzOG5LNGp1Yzdqdw?oc=5",
       "title": "Indonesia's BMKG Releases Megathrust Earthquake Mitigation Guides",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOOFR4cExqSkJkMUFiVmlJTTFvN3lQeUZKT1ZYRWlGTldSQ19Zc3pjU2pSeXZUZGQwb3JfaFZyWXFteU03aTRtaUY5aVhkLXBiTXdLMU9EaWpZU1Z4ekRLck1QTVRvdE95Ml9ramNEVTlWUW9MVEFtR3BTakRCRzlEd2tRNXJ1LVJtSnBHT05oSUdWeVpuYm1aSFJrc2JTZTJaSUUtcQ?oc=5",
+      "title": "Oil Touches Two-Week High After Drone Attack on UAE Nuclear Power Plant",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -183,6 +191,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOOFR4cExqSkJkMUFiVmlJTTFvN3lQeUZKT1ZYRWlGTldSQ19Zc3pjU2pSeXZUZGQwb3JfaFZyWXFteU03aTRtaUY5aVhkLXBiTXdLMU9EaWpZU1Z4ekRLck1QTVRvdE95Ml9ramNEVTlWUW9MVEFtR3BTakRCRzlEd2tRNXJ1LVJtSnBHT05oSUdWeVpuYm1aSFJrc2JTZTJaSUUtcQ?oc=5",
+      "title": "Oil Touches Two-Week High After Drone Attack on UAE Nuclear Power Plant",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdGE1N0ZoUHpkdXV4LTJXblotUnJiZE5sR3FfdFRhendsTldhdUpDSTBOUlN2Z0g1TEhFaGVaeTJ0Q2JlcXQ1WDl6dnlxR0RHSmpuQ3k3eTNBRUloUWZKQmxxWFVKQlRELVEzSDkxTWhOVTJaNzNDMFN2dVh2SFA5eGZkdFNIZ29heFhZTTEwMENlOUI1SG1feHBFLWRncGxrSEt5YU9kREs?oc=5",
       "title": "New pandemic fears sweep Russia as second mystery virus takes hold – symptoms revealed",
       "important": true,
@@ -263,6 +279,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE90alR1VjVlZV9ITFpjMmtVNEhjLXBoSUZrbGl4ZExKY3NPb2c3eUJoRm4xR3hUX1VxSmZaWTlzemhQcjdFcWZUcFcxZ01EREZveG02NWlWYnZUN3ZCVjNPX0VOUWlRMlJKV3N2RHJaTdIBb0FVX3lxTE90alR1VjVlZV9ITFpjMmtVNEhjLXBoSUZrbGl4ZExKY3NPb2c3eUJoRm4xR3hUX1VxSmZaWTlzemhQcjdFcWZUcFcxZ01EREZveG02NWlWYnZUN3ZCVjNPX0VOUWlRMlJKV3N2RHJaTQ?oc=5",
+      "title": "건국대 연구팀, 슈퍼박테리아 2종 동시 공격하는 항생제 후보물질 개발",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBmMjFERnZlRjF3V2hfTDZqXzZfcnVIc01vWXFjS2JpOHgyN3RweE9WUjVONURqQ0dDLUZlank5eGRQRW9WS0hXd3NJSTdXSlhNbkFWU1h4OWVieGhlUkdGdTRybm9xUjdmSnNtZWdJUkRUa2RUekdB?oc=5",
       "title": "Polish Bond Yield Reaches 6.34% After US Inflation Data",
       "important": false,
@@ -295,8 +319,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQYjdZXzN5bmR3RnFFdlZObEVJV3VuZVU4LV9RWVJjR0VIUEhEUkpabGdaVGdSMFpFNWFYbUZlNlh4RGJ4NXFaa0ZhYndQMXE0YVhGbGxfeE9wNkVieXk0eWU5M01ENG95SVJ3WDd3RVhZeHgySWtXejBvbTd0MzlxOVFaajFDdw?oc=5",
+      "title": "Inside the Ring: China developing laser weapons to attack U.S. satellites, Defense Intelligence Agency report says",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNWHlLeUpGNmxYYno5YklZSkpUVmRLVjNEbk9aYUdUZEJMdU5rOW9WQXNJeUtfYUwtdG5laGhtenp0VmRmY1FhYjExUlVDNldnVFRCd3JqSExzRi00LWxxRnVxazdoNmE0RlhlYWFzc3lUdTJDWHlsQkNaTWNkQ1p1Y2o2ZlhZVzk1UGVwNmRidHlDQ0J5bjRQQWlEVQ?oc=5",
       "title": "Japan defence budget faces possible cuts amid squeeze",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNb2E5OUdvNktidzdxOXpkVHVxYmpCTHNkZldCdjRxQVFTaG51eUhnbS03YjZwYnFnNHVYSk1iSUhMUlNNSHl3bUk1ZGl5QTVLX25NNnF6eF9GV1FlYk0tYm53NEhiNnZFeHFselRJbXBZLXpIS21fdUo4TUxoQWk5LTA2dS1HMjZpZkV0bVRLZWdENzNYeUZTR0p2dw?oc=5",
+      "title": "PIPELINES AND PORTS: Iran War Spurs Gulf Infrastructure Investment",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -375,6 +415,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOamdDSE9ObG1wbDJxQU1yWFRlZTdDWDZyVDNlVDhJM1NYRS1LZjdwUmRFVXJ5b1l4REI4SW50TzUzYUt6SVo3b2ItRDVBSGZRbkZqMjcyWTlXeE5HODJsZVUzY2ZfUEVMTFVyaTYzS0RkaWtncVdZVXBmZko3UVlkSlJMWFZMVHpfQXhQX243TUNBR0JoNUVLMjJjT2VyZ0FrdVhSNFNtY3BEcUpOU3AtdFN5eTlwdHJR?oc=5",
+      "title": "Slovakia offers nuclear expertise as Philippines advances energy transition",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNbHc2Y3M0N2JMX09vdU14LTVUU1JFNTEwaUhNSEJvXzQ0ZnREdDM2MVVLMUczNlBDMU9pUG14VjhqcXpSMXpFalhtQzVSOUZSc0hnU09uRHRMZkhEcVAxSl9mVjU0dERjTjRWU09UZkcyTWtCZ1g3NDJHZ3ZQbTQ3eXFMZG1saEp3TTJlLWRuZnZDSkl4cUgwWTd3SElidUtkM2pfOXdGUUdMN2hBT2FUeE44cndpSVJmRUE?oc=5",
       "title": "Kenya protests Timothy Nderi detention as it backs South Sudan election",
       "important": false,
@@ -401,14 +449,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTGE3d2YwNy1ONlliXzNCVDNiZU01WlB3YUdPMEZwOHJpNS1UWEtvZ3hhM1hWOGN2REsxbEw1SzNERlk3eTVfUTdlOEFJYVAwNXVjT25jczJDRE9iTE5DYjlxNnQ3UlJRVDlRdU1UeHhNZ1NUWnBVU2w2TjZLWTg5emhUZ2RVVXowVWZuMnBiTlhtWlhxUDkxODkzNVlfeGlGbVlYV0todlRQc1JZSXIyVXpsVU1WRDFFU2QxTA?oc=5",
       "title": "Turkey, Qatar sign mutual defence agreement, pledge unified stance against attack",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWGl4M3I4cEx4Q1pteUwtd3I3OFBYWWFUU096V1Y3X2oxdl9KOFprODJXTEoxallGdk8tXzNuMzlWSXdjTTBFNjUxUHFwWmdVZTFHeTh0TEVYcWtNSXI2aUJkRFdKVFgtNmpWS01zTlhMS21ndThYQjY2bDhXSFpnV2c0Sl8wSzdBWnJzNmZVR05iUGdxU3BCUnBIYlcteEQtRkNMbDBQRF82QXVESmZSRGNvZG9yaGtfbm5QNHBTUE1jNjA?oc=5",
-      "title": "Bessent, Fed's Goolsbee divided on role of energy shock in inflation",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -487,14 +527,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE12MkRyZTRfaFRVU0tMY2tLSmRoT1EtMng2LXQxcnEyQ2hGZEJ5NmQ4N3JITTU4UzF6YktiVDBsdlR6Y0tBOXJIb2hWYVVIeVJkNFotY2tR?oc=5",
-      "title": "AI 투자 고점 피로감에 … 바이오에 다시 돈 몰려",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE84ZHR1VTM1Y25UaDh5NFh5dHduZmpFaWIyZG40MURiTUs3SFE3VkM5WnA4aXZVOHhIajZtU2puSVFiZDNJYndtNFJWamRQNG5GYVdrNkVxLXhHRkw4NmowOFpB?oc=5",
       "title": "337호 세계경제) AI·관세·전쟁·에너지…2027 세계경제를 흔들 4대 변수",
       "important": false,
@@ -527,14 +559,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE90alR1VjVlZV9ITFpjMmtVNEhjLXBoSUZrbGl4ZExKY3NPb2c3eUJoRm4xR3hUX1VxSmZaWTlzemhQcjdFcWZUcFcxZ01EREZveG02NWlWYnZUN3ZCVjNPX0VOUWlRMlJKV3N2RHJaTdIBb0FVX3lxTE90alR1VjVlZV9ITFpjMmtVNEhjLXBoSUZrbGl4ZExKY3NPb2c3eUJoRm4xR3hUX1VxSmZaWTlzemhQcjdFcWZUcFcxZ01EREZveG02NWlWYnZUN3ZCVjNPX0VOUWlRMlJKV3N2RHJaTQ?oc=5",
-      "title": "건국대 연구팀, 슈퍼박테리아 2종 동시 공격하는 항생제 후보물질 개발",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBZQW1FQ3BuTEpGVVl0MHJ6d08wdWxBdUNicElWRllGX1RPdnNKTWFGTVdmUmo1RmZyWkJWWGhPTEp3MUxVcjhycGZpb2dTNUU5aWhxMl9TLTNzdDI5YlhlSEl1NTR3U01vRU4yeA?oc=5",
       "title": "연구를 신약 자산으로…KAIST·KIST 아태 기술이전 2·3위",
       "important": false,
@@ -545,6 +569,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOamMzb1pKa3o5bGpMY1A3UkF1OEkxaDZYMFQwOEhfdHd2bTlqTlEzQnVJWG1pQXpQcTdjeUZrWklSNkpUbWNKdDFRcGlTOFpuZGNWNEoyOVllVldqU01DM2FBLWFxTTgxa1FMbnpJeVdEaFZPWElIb3RnOTRJc2hLRFVsWXp6SloxRHZrZUEyMVhwOHdhREZieGVB?oc=5",
       "title": "France fears Germany's future deep-strike weapons could push Russia toward the nuclear threshold by mistake",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQenBwNkc0NWdtMjNObUJhTGhHRzVIcHV0aldTX2xNYmdFMTFiQlRFdDgxTktTbFZWZk00VFdTZXQxSi1lTE9ERWRFLUd0elVBb1lpb1UweURZd2RTS0RMUmRHTkE3MEg5d05nQmVtSmJvTHJmUlNaSE9TUHNpa0ItZmpWS3N0X004YU1ybU01UmtoYWhjQWVPT21VYw?oc=5",
+      "title": "Hot US Inflation Drags the Yen Close to 160. Will Japan Step In Again?",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
