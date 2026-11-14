@@ -293,6 +293,27 @@ def publish(staged_path, audit_path):
                 'updated': now.isoformat(),
             }
             write(DATA / 'news_quality_audit.json', audit)
+    # Diagnose the *actual remaining queue*, not just the latest extraction batch.
+    # Distinguish cooldown, missing source text and missing Korean translation.
+    from collections import Counter
+    summary_data = read(DATA / 'article-summaries.json')
+    summary_items = summary_data.get('summaries', {})
+    failed_reasons = summary_data.get('failure_reasons_by_url', {})
+    failed_times = summary_data.get('failed_urls', {})
+    pending_source_reasons = Counter()
+    for entry in waiting:
+        article = entry.get('article', {})
+        url = article.get('url', '')
+        summary = summary_items.get(url, {}) if isinstance(summary_items, dict) else {}
+        if isinstance(summary, dict) and summary.get('text') and not summary.get('text_ko'):
+            pending_source_reasons['source_ready_korean_missing'] += 1
+        elif isinstance(summary, dict) and summary.get('text'):
+            pending_source_reasons['source_ready_other'] += 1
+        else:
+            failure = failed_reasons.get(url, {}) if isinstance(failed_reasons, dict) else {}
+            reason = failure.get('reason') if isinstance(failure, dict) else None
+            pending_source_reasons['source_missing_' + (reason or 'not_attempted_or_expired')] += 1
+    print('PENDING SOURCE DIAGNOSIS: ' + json.dumps(dict(sorted(pending_source_reasons.items())), ensure_ascii=False))
     print(f'Access-restricted source URLs excluded from pending queue: {len(blocked_urls)}; removed from previous pending: {restricted_removed}')
     print(f'Published={len(published)} pending_retry={len(waiting)} exhausted_title_retries={sum(1 for a in combined(staged) if english(a["title"]) and a["title"] in attempted and failure_counts.get(identity(a), 0) + 1 >= MAX_FAILURES and not valid(a["title"], cache.get(a["title"]))) } staged={len(new_items)}')
 
