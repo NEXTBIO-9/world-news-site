@@ -30,6 +30,10 @@ merged['failed_urls'] = {**(remote.get('failed_urls') or {}), **(local.get('fail
 # Preserve blocked-source decisions across the workflow's git reset/merge.
 merged['blocked_urls'] = {**(remote.get('blocked_urls') or {}), **(local.get('blocked_urls') or {})}
 merged['blocked_urls'] = {u: info for u, info in merged['blocked_urls'].items() if u not in merged['summaries']}
+merged['nonextractable_counts'] = dict(remote.get('nonextractable_counts') or {})
+for url, count in (local.get('nonextractable_counts') or {}).items():
+    merged['nonextractable_counts'][url] = max(int(count), int(merged['nonextractable_counts'].get(url, 0)))
+merged['nonextractable_counts'] = {u: n for u, n in merged['nonextractable_counts'].items() if u not in merged['summaries']}
 merged['next_index'] = local.get('next_index', remote.get('next_index', 0))
 merged['updated'] = local.get('updated', remote.get('updated'))
 remote_path.parent.mkdir(parents=True, exist_ok=True)
