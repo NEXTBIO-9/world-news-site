@@ -87,3 +87,22 @@ body.dark-mode .nb-tour-controls{background:#24354b}
 /* 2.4: intelligence panel sits directly under latest feed heading. */
 #latest #nb-intelligence{margin:8px 0 20px}
 #latest .nb2-panel .nb2-filters{gap:8px}
+
+
+/* Risk signals: full-width accessible accordion cards */
+#nb-risk-signals .nb-risk-group{margin:8px 0;border:1px solid rgba(137,167,207,.24);border-radius:10px;background:rgba(27,45,69,.46);overflow:hidden;transition:border-color .18s,background .18s}
+#nb-risk-signals .nb-risk-group:hover{border-color:rgba(137,190,244,.55);background:rgba(45,68,98,.55)}
+#nb-risk-signals .nb-risk-group[open]{border-color:rgba(117,176,238,.6);background:rgba(32,53,78,.68)}
+#nb-risk-signals .nb-risk-group>summary{display:flex;align-items:center;gap:9px;cursor:pointer;list-style:none;padding:13px 14px;min-height:46px;user-select:none;line-height:1.4}
+#nb-risk-signals .nb-risk-group>summary::-webkit-details-marker{display:none}
+#nb-risk-signals .nb-risk-group>summary:focus-visible{outline:2px solid #79baff;outline-offset:-3px;border-radius:9px}
+#nb-risk-signals .nb-risk-group>summary .nb-risk-name{flex:1;min-width:0;font-weight:700}
+#nb-risk-signals .nb-risk-group>summary .nb-risk-status{font-size:11px;font-weight:500;color:#a8bed6;text-align:right}
+#nb-risk-signals .nb-risk-group>summary .nb-risk-chevron{flex:none;width:8px;height:8px;border-right:2px solid #9eb8d5;border-bottom:2px solid #9eb8d5;transform:rotate(45deg);transition:transform .18s;margin:0 3px 4px 2px}
+#nb-risk-signals .nb-risk-group[open]>summary .nb-risk-chevron{transform:rotate(225deg);margin-top:6px;margin-bottom:0}
+#nb-risk-signals .nb-risk-content{padding:2px 14px 12px;border-top:1px solid rgba(137,167,207,.15)}
+#nb-risk-signals .nb-risk-content .nb2-row{padding:9px 0}
+#nb-risk-signals .nb-risk-content .nb2-muted{margin:11px 0 2px}
+body:not(.dark-mode) #nb-risk-signals .nb-risk-group{background:#f4f8fc;border-color:#d5e1ee}
+body:not(.dark-mode) #nb-risk-signals .nb-risk-group>summary .nb-risk-status{color:#536b83}
+@media(max-width:480px){#nb-risk-signals .nb-risk-group>summary{padding:12px 10px;gap:7px}#nb-risk-signals .nb-risk-group>summary .nb-risk-status{font-size:10px}}
