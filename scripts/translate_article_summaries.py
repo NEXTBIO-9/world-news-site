@@ -154,6 +154,8 @@ def main():
     successes = 0
     rejected = 0
     rejection_counts = Counter()
+    numeric_fallback_attempts = 0
+    numeric_fallback_successes = 0
     for url, item in pending:
         if time.monotonic() - started > BUDGET:
             break
@@ -165,10 +167,12 @@ def main():
             translated = tokenizer.batch_decode(tokens, skip_special_tokens=True)[0].strip()
             reason = rejection_reason(source, translated)
             if reason == 'missing_numeric_facts':
+                numeric_fallback_attempts += 1
                 # A full-excerpt translation may omit a number. Retry in
                 # sentence-sized pieces, never inventing or inserting figures.
                 fallback = translate_preserving_facts(source, tokenizer, model, target_lang_id)
                 if fallback:
+                    numeric_fallback_successes += 1
                     translated = fallback
                     reason = None
             if reason is None:
@@ -189,6 +193,7 @@ def main():
     PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Korean summary translations: pending={len(pending)}, translated={successes}, rejected={rejected}, total_ko={sum(bool(v.get("text_ko")) for v in summaries.values() if isinstance(v, dict))}')
     print('Korean summary rejection reasons: ' + json.dumps(dict(sorted(rejection_counts.items())), ensure_ascii=False))
+    print(f'Numeric fact fallback: attempts={numeric_fallback_attempts}, successes={numeric_fallback_successes}, remaining_failures={rejection_counts.get("missing_numeric_facts", 0)}')
 
 
 if __name__ == '__main__':
