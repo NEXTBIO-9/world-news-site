@@ -1,14 +1,68 @@
 {
-  "updated": "2026-11-14T03:11:12.868824+00:00",
+  "updated": "2026-11-14T03:21:24.474708+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 16,
+    "important_unpublished": 17,
     "not_in_current_queue": 8,
-    "pending": 61,
-    "published": 111
+    "pending": 66,
+    "published": 106
   },
+  "important_unpublished_by_state": {
+    "not_in_current_queue": 8,
+    "pending": 9
+  },
+  "important_requires_review": [
+    {
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9FRERha3gtVzdldVJNU2dZRTh4RV9jbTA4dTk5S2ZXMXdKLWNHazFHRW4wZXdSUUhRem5jN1Zwd3lsZFQwUW9EOEhuQ19pTWdLWGc?oc=5",
+      "title": "Daily_Brief: Six embassies warn of high #Ebola outbreak risk in #South_Sudan, urge increased health funding",
+      "important": true,
+      "state": "not_in_current_queue"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aZTdJNm5VOU9ONWFTLVJwQ0xINTV1UUJVSDljR29sNFNBdTJnclZ1TlNvMFQ0RGVLSFpYSHZWNUM5YjBheU5mQkp5SXFxSHJTVTFRMUREV3FQQ0VEZjY2VmhjRUQ?oc=5",
+      "title": "UAE says 14 killed in Fujairah traffic accident",
+      "important": true,
+      "state": "not_in_current_queue"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeXNoNlQ4VWFFTUFsem01RU8xdHpZLVdLQ3VWZjA4WGRONmZ4QW5HcjkyRzlmdG9Xam52NWx4XzJtS2g4c25hVG5JaDBzR1NRMTA1dUpQYVBnVEI4c25qS2FNNzUzQlVfUkR1c1FuQkJMaDZ3Z2RVcGpWWjRuN2ZRVmR3bUg?oc=5",
+      "title": "My First Memory Is an Earthquake: Growing Up in Indonesia",
+      "important": true,
+      "state": "not_in_current_queue"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNR0RNMDlWczFzdjRoTXVMUnJCQXhETzgxQ195dDRDbGdETjhSeEdGUl9Qcm5xVGpoMlhPQlFDNVdiNkxmQWtFTmJGMW52LV9TTFNzZF9MNUkxN1lpZlhNbHN2MjA5emRSUUxueDRPX3lybGV6QXNHTzJJNHZYSFcxMG1feDFsaVZCOFV6ZmFBeFRJbFpYTGhMV2Nn?oc=5",
+      "title": "Good news about interest rate cuts in South Africa",
+      "important": true,
+      "state": "not_in_current_queue"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPdWZwOEdIME9DRUFUaGcyOXh0Z0h1MjN5Ny1sR3hRUkFBU1JiNkRyZk45eTRfUzNGYk9mTjlTUHpJSlA0dlZkZndFLWVxMHZuNVZJWE93WjJGcWQ2dDY5cmJjVDFUeHVINTNNWmp2ZzQ0SUxTNUdhT3pmUC1KZ2J3X1Nqb3FVU0ZmelRrdGxKNjNZTGxVRDJ2TklzVmg?oc=5",
+      "title": "Indonesia's BMKG Releases Megathrust Earthquake Mitigation Guides",
+      "important": true,
+      "state": "not_in_current_queue"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcVhJZnhreUJHQXAyMFlCODQwMng5aHFOVExUMUw2OFZLd0NDc2pMMG9qR19RQUdXZWhGX3JIbVpiRDBnNkc1NG8wVUNFdUxPcGlzeVN6SUhfVFl2cGJWOV9sZTlxWURTRVlNOUdFZUJxYkwtcEZ5bzd2djNSMlpTSjQwYXJwdjE4LWFrbzN3OUYydVRZaU4wU1htdlJzZGE2OUFWWUFIYjdFR1pRaExXVnI4aw?oc=5",
+      "title": "BNPB, BMKG Launch Five Publications to Strengthen Earthquake Preparedness",
+      "important": true,
+      "state": "not_in_current_queue"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOTzVFd3YzTHRIdVNJYW11QVFnV0JOVUZib1FLNFRiNmhrX0Uya3h1SERlZ1lEWXBHMTFrVUNTc0ptWWFob3JKdlNGSjRrMGFFSDVGUUVWTEttMnhNX2lySVNDSlpRMU41U0pvVFU5RnhMVVY5Tmt3UzhXMjZoWlFyWmE1MVI4T0szcnFDejZNMXJ6VE1UN1RKaFJISVlKUmVDUk9hSkZXdmdnU2dVUDFETU5YMEtQZ9IBvgFBVV95cUxORnUyX1lBelQtMktKMHoybElyU1NVTEFqZ0FIb3hRNEd1X2txeTAwRmx0UWtzQUgyN3l0NHRISTdwZXlsVjQ3R0xpLWx5YjFnQm5menRfNllBLVVuSHNZcXpEUXFlT0N3dGpUbXB2WU9RX2wySk5JaTVQUENoQkpEbW1DdVd5LTl1SG1OblB4WDZaTm5oaml5c1VyOF9kb3Q4LW5ESW1XUEZnOG9RUnV6eTVoUGs1YUxqcjZfU2NR?oc=5",
+      "title": "24 Killed, Several Injured In Truck-Bus Collision In Assam's Kaziranga",
+      "important": true,
+      "state": "not_in_current_queue"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTmEzelh0cThsbWNobk9zSGh1SlhoY0puS1E5dndnTzRsOTNBa0lCYnRDR0E3bkx2WUJuVFJCSnlZd0hKYTVDaUpQYlMyQXBEVUc4ZEpMUEV0RFRDSkZhZldickFWbWIzR1pRUndGR2dzbkRfdHk2a1ZnVkYtT2RRT3l6UnRNbFF4WngtUExvREEzWEw0VDZJUXNmQUxOZTZfR2tEZWNibGwxRnB1UVlELVVPWmh0dHUxN2xoWC1R?oc=5",
+      "title": "Lane County faces billions in damage from a Cascadia earthquake",
+      "important": true,
+      "state": "not_in_current_queue"
+    }
+  ],
   "unpublished": [
     {
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9FRERha3gtVzdldVJNU2dZRTh4RV9jbTA4dTk5S2ZXMXdKLWNHazFHRW4wZXdSUUhRem5jN1Zwd3lsZFQwUW9EOEhuQ19pTWdLWGc?oc=5",
@@ -101,6 +155,12 @@
       "state": "pending"
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUWFUd3BwaVNHaklDOG9ucWF1RWExX0FEUHlYdnZHRzlsSHIzaFMyRVdZQWtPdi1mTXZ6eWRfcm5PSkc5Y0sxamZvMUxLczlOZk1oR0txemlnVDNwTDAzSXNrSkZCQk1TX3JmRWJta1hGZmZkczJHMm9fT0Y1UnZDVGxSbDJHM1p1MTVVSXF1TUc1Wnp4akE?oc=5",
+      "title": "FDA Approval for KLYGEFA issued to ALEXION PHARM",
+      "important": true,
+      "state": "pending"
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQV3BBR1JrVGw0ZHR0SE0za01SaDhlYllOdktHdWNaQklXOVdDNjRydDdrcDJEck9sb25ya1VrVWd6eDFfUi13czB2Z2pDX0swZzhTM3JSdnBOWVhXZUphSjV4dkxXZkVwaFpUUEdxbkFETjExMVhWa0J1OXQyMnI0VmpjWGdyd2FkUGhTeDlQenlpTjczYlR6bHROV2U0emRyT3hpVlNMUjN1SG5RWUo0Y3B2aFliTW8?oc=5",
       "title": "Why Canada is budgeting for extreme earthquake preparedness",
       "important": true,
@@ -109,6 +169,12 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQaDc1a0IzdG9PN0xRMFJrZ0xZZXB4emVEZ1N1eXVtYXNTQmdmU1BzR2hpSktObTVxWHpoci1tb1VCblJHeGNHdUY1cnhnN0tWSXM2cFQxUDh3OEFya1k3RWNzTWFVNHpsOU9FMmJXaEdpVWdhVnV0Y3g5SzZPVFh0UWVGQlhZcEZfT2tPVjZvTzNyYVpPVGx2SHo3VHQ1SnlHRVYzVng2Tm0tZzJ1U3lEZE5Td3NyWTd6UGszRmhIV19TbnRxZEVrMUVPaEZGQ21TRTEtcWtkdU1Jbzdxa1hzZ1hRQ19nenpZeHY0T2xhLXhxSHJiUXQ3SGhn0gH_AUFVX3lxTE5iTU04cGxfT2lOdEh5Y2h5N2ZzanlvUGtRREYySE51emhubHRjcS1BYzRybk5rcmplOGY0Vk9WOWN5U1JRV2o5c0NKc2dnRWpxQ3RmNi1ERDRPUWZScGxjZVBKMnlRVkZHendjQ2s0dmkydEl3aHplWnpIRWVUc2k4VW1IMlg4dGxfTWFwNmRKd2Z4bmRWWFVqNjBqZjIwT0ltNW8wNjVDZC12Y05Lc1BxcE44UGNpNzh1SmJkVkp0NURuOU5WTVZhY3pWUjlkNWtMd1B2djl6QUlWbmtINzU3VDd3bWdVVFRxLWZQS0dSWUMtZGhiaTBBQUpZT2IwUQ?oc=5",
       "title": "US President Trump sidelines Vance on Iran as war strategy rift widens after Republican midterm election defeat",
+      "important": false,
+      "state": "pending"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPNVV3QmYxNVgybmVOdG9ReUJpaVB0UmxhU3NiQlhFQjlaRGdZcDZ6dEt4UG5vcjRDMWdlaHU1dFZlUFZfNGY4cDV1N293aW9UVk5vNVRKSC1OODhWQ2hCc3o0dUx4VHdvMExZWFBMaHFpOWZ4bzk1U3dBR1VubllLZXdMaW95VDVxYnUtbm1XRlZoZnVhRU5OZ3YtNVZab0FRS1BHZE5RX290a0RJQkh4d0s2cW1xMkhuUUZrd1JPSHY2SWt0ckM4bzdWZ0VkRWJFQ3c?oc=5",
+      "title": "German auto giant starts production of Africa-focused SUV in South Africa after $241 million investment, even as it plans 50,000 global job cuts in biggest-ever overhaul",
       "important": false,
       "state": "pending"
     },
@@ -233,14 +299,32 @@
       "state": "pending"
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5XTVlmWngwVmFkd0Rrc21qUUtydnhVQlNqQnhOYm9rVk85MVg3UG1uWi1xZXgyZmFTMEdib0ptMGdjTjJYVEpKWWRDdnp2bEZxemprYm9Fc3hSOURkeUZNVFZRRXQxeE5GMEJzaNIBbEFVX3lxTE5XTVlmWngwVmFkd0Rrc21qUUtydnhVQlNqQnhOYm9rVk85MVg3UG1uWi1xZXgyZmFTMEdib0ptMGdjTjJYVEpKWWRDdnp2bEZxemprYm9Fc3hSOURkeUZNVFZRRXQxeE5GMEJzaA?oc=5",
+      "title": "HTL Biotechnology launches HTL8, a production unit dedicated to pharmaceutical-grade polynucleotides (DNA)",
+      "important": false,
+      "state": "pending"
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBZQW1FQ3BuTEpGVVl0MHJ6d08wdWxBdUNicElWRllGX1RPdnNKTWFGTVdmUmo1RmZyWkJWWGhPTEp3MUxVcjhycGZpb2dTNUU5aWhxMl9TLTNzdDI5YlhlSEl1NTR3U01vRU4yeA?oc=5",
       "title": "연구를 신약 자산으로…KAIST·KIST 아태 기술이전 2·3위",
       "important": false,
       "state": "pending"
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9GMU54SnZyRFRIa0JwNnM3SVNLUXRwX0ljUGp6UjQ2OXRLODZtd2JqQ3BablVqUHZJT1JCWWxSX0tYNHpxVE45c1BKRi00LUZCYUkza3VSQzlJVGhUZHhQM2w5eEE5TjZ1WUtPbm5sN3E0Z1hxcnFrQmN3?oc=5",
+      "title": "Fatih Birol: The Energy World Will Never Be the Same As Before the Iran War",
+      "important": false,
+      "state": "pending"
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPTG5CTTZBVmI1RGhTaUYyUkZEVTlZRmFsSlZhSUF0d1JwV3AwYU1GLTlsZE5BMk9uejdBZDZNWlFOM3NsdlBLMldOSENySHVBeUJ4VERZTmVPMzlaVUR1ZkVrLVA4T2tldkxUWWg5c3hWZERjQmFHaTVtd3A0MGtMeUdSRFJxQ242T0lqaHdoVG5rOWQtSk5GM3NKVVVaU3AtaDJXVTRLOUphOV9xS00zeUtRZjl2WDFkMVY1eVZ4c2x1NWxxdVVxQ3dEZjlfMXdLLXFkaERnV0xSRW41WXJ2TER0dHNUbEIycVpxZmZyeDVyekVYblp0UDFsOEtjdU5l?oc=5",
       "title": "IEU-CEPA tariff cuts could support German investment in Indonesia’s critical minerals and renewables sectors",
+      "important": false,
+      "state": "pending"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeGVzSjhrbUhOTTctX0ViTkJTRnFEZnkwNTJQR3gySTJRQlk3aXNwenJ2Qk1DejVYcF84dmF4WDFPd2xKRzEwazEtOEdOb05OOFhJaXZQVTd3R2lDRHdGbTgtM1JSSEMxeFN5OTlLc0tLNE55MHlHRDZNU3lOVFBDaTJwQQ?oc=5",
+      "title": "Iran war live: Trump says US does not need Iran deal as Vance told to focus on domestic issues",
       "important": false,
       "state": "pending"
     },
@@ -329,6 +413,12 @@
       "state": "pending"
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWXQzWXdUNzVzeHYxWDg5UEkycHVzdF9WRGJTZlRqelF2bXVpNGVnRXZoZ2ZKZ2tuUlJxY2RnUWJyeV9nS0ticXJJbnJpVFo4UzBDa0NZaXhLWm15YVpIdkJ1LUNSMXRwRFc2eXMyR01lMzVzSVUyZGNwbGtDTjVCMmpTOVZaWUstTzh1dXoxOW5STXJGbHkyU1JaZE10MUhnMzFieUJBV2ZjczBRNFoyY2J3?oc=5",
+      "title": "Novo Holdings-Backed Windward Bio Raises $175m in US IPO as Biotech Listings Gather Pace",
+      "important": false,
+      "state": "pending"
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbUVZckZzaEtoaDRoTDRIOEhwa1Y1eWNURS1MYW1Xc19IY0ZFQkE4N0dTZDh3UWV4eXFxQVY4TS1mRzR0dmJzSTZDNzJhdGEzYk1wMFp0NDBzcGRHbVZmNGY4TFFtS1J0VlVDSXJfUlF0R2lOaFBLSFk4SWIzamd0X2ZaTFIyNExRMEhOU0R6eDF4NFlXY3Y1VVUxa3NhU1VkRE1pTTZ4WFVzZHJkQ3E5MjlQUQ?oc=5",
       "title": "PAVmed Provides Business Update and Reports Preliminary Third Quarter 2026 Financial Results",
       "important": false,
@@ -409,12 +499,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMizAJBVV95cUxPR2Q0NXRCdHNydFVta3BzLTE4RGpoZG44SlNBdXowWkk1clZoZkZUN1J4T1E5REtPYjR3d0xrSkJMUV9lTUIyVmd1SXRfSktQc29EVVhWWkRiOW1udVFXUkxrRVpjUFVZM0ZUN2h6LTRyWTVhZE1CTlB6M2IxbXN5UVRZd04tQlBRUUs2WHNNcXdVY3BfNTNKdVJBWXR5UG1XYVM4UVFuakZLSERxcXRQdUJnN2g5eWZGZ3BCQnJvRjhxSmtpVGlLNURXTDNqZUE3OENsUzFJRS01MTRqam1VbVF0MXc1Z1BCTHFxc3ItVE90bk5tUmMzQzE4Y1ZTeElMbGpDQnBOVmVXaFJRcFJFMmx6T0VsXzdmQlJBYUN4NTVESWdHVmJ4VVBYSmJkS3h3QkxnaU5McGNUTlFHTmlKQ3VxYlBlTW5jejZBMA?oc=5",
       "title": "EDF shut down two nuclear reactors in France as a precaution after jellyfish swarmed the seawater filters at Gravelines, and it came just 16 days after the same animals took three units offline - ECOticias.com",
-      "important": false,
-      "state": "pending"
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNa0VablB0SWViZWpCRFg4bC0yX2ZTM19HNmFFVUdqVVlwbWRuRjdpSnNXZ3liU04zeTYyZWJPSlhLeEVRTUlMS0N2SnlPdEpINzVHUTJjRXJjd3RKdEZMLS14czdZSlpjcWlJWm95bFpTNHgxblNSVlFyLWhsQ0JncVFZRGRmQ0p6cDZQRGRtNlh6LWxnVXlLRkJyelFzdTFoM285d2tQZTJvS1BkYkRzLVZwUERKc2pHbVBqOUZDSmFRbGJ4TmpmQVExbnEzOTQ?oc=5",
-      "title": "Saudi Arabia intercepts Houthi missiles, drones; group denies targeting Mecca",
       "important": false,
       "state": "pending"
     },

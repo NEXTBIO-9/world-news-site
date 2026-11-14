@@ -1,17 +1,13 @@
 {
-  "updated": "2026-11-14T03:11:12.919945+00:00",
+  "updated": "2026-11-14T03:21:24.508182+00:00",
   "scope": "data_file_presence_json_syntax_and_nonblocking_warnings",
   "dataset_count": 17,
-  "warning_count": 2,
+  "warning_count": 1,
   "warnings": [
-    {
-      "dataset": "articles.json",
-      "reason": "published_feed_over_capacity"
-    },
     {
       "dataset": "collection-publication-audit.json",
       "reason": "important_collected_articles_unpublished",
-      "count": 16
+      "count": 17
     }
   ],
   "datasets": {
@@ -54,8 +50,8 @@
     "coverage-profiles.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 337707,
-      "updated": "2026-11-14T03:11:12.480307+00:00"
+      "bytes": 337695,
+      "updated": "2026-11-14T03:21:24.229937+00:00"
     },
     "breaking-candidates.json": {
       "present": true,
@@ -102,20 +98,32 @@
     "publication-gaps.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 203559,
-      "updated": "2026-11-14T03:11:12.825522+00:00"
+      "bytes": 205697,
+      "updated": "2026-11-14T03:21:24.442827+00:00"
     },
     "collection-publication-audit.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 34368,
-      "updated": "2026-11-14T03:11:12.868824+00:00"
+      "bytes": 40453,
+      "updated": "2026-11-14T03:21:24.474708+00:00"
     },
     "cross-source-coverage.json": {
       "present": true,
       "valid_json": true,
       "bytes": 17456,
       "updated": "2026-11-14T02:22:30.234173+00:00"
+    }
+  },
+  "publication_metrics": {
+    "published_total": 561,
+    "pending_total": 384,
+    "pending_important": 53,
+    "latest_collection": {
+      "collected": 180,
+      "published": 106,
+      "pending": 66,
+      "not_in_current_queue": 8,
+      "important_unpublished": 17
     }
   }
 }
