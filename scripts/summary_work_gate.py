@@ -48,12 +48,15 @@ def main():
         failures = cache.get('failed_urls') or {}
         if not isinstance(failures, dict):
             failures = {}
+        blocked = cache.get('blocked_urls') or {}
+        if not isinstance(blocked, dict):
+            blocked = {}
         candidates = 0
         for article in articles:
             if not isinstance(article, dict):
                 continue
             url, title = article.get('url'), article.get('title')
-            if not url or not title or url in summaries:
+            if not url or not title or url in summaries or url in blocked:
                 continue
             try:
                 last_failure = float(failures.get(url, 0) or 0)
@@ -63,7 +66,7 @@ def main():
             if last_failure > now - cooldown:
                 continue
             candidates += 1
-        emit(candidates > 0, f'extraction candidates={candidates}; cached={len(summaries)}')
+        emit(candidates > 0, f'extraction candidates={candidates}; cached={len(summaries)}; blocked={len(blocked)}')
     else:
         pending = 0
         for item in summaries.values():
