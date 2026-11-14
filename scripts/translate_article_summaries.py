@@ -78,7 +78,7 @@ def translate_preserving_facts(source, tokenizer, model, target_lang_id):
         if not result or not numeric_facts(part).issubset(numeric_facts(result)):
             # Long single sentences can omit figures. Retry bounded clauses,
             # but never append missing numbers without their source context.
-            clauses = [c.strip() for c in re.split(r'(?<=[;:])\\s+|;\\s*', part) if c.strip()]
+            clauses = [c.strip() for c in re.split(r'(?<=[;:])\s+|;\s*', part) if c.strip()]
             if len(clauses) < 2 or len(clauses) > 5:
                 return ''
             clause_results = []
