@@ -27,6 +27,9 @@ for url, entry in (local.get('summaries') or {}).items():
     else:
         merged['summaries'][url] = entry
 merged['failed_urls'] = {**(remote.get('failed_urls') or {}), **(local.get('failed_urls') or {})}
+# Preserve blocked-source decisions across the workflow's git reset/merge.
+merged['blocked_urls'] = {**(remote.get('blocked_urls') or {}), **(local.get('blocked_urls') or {})}
+merged['blocked_urls'] = {u: info for u, info in merged['blocked_urls'].items() if u not in merged['summaries']}
 merged['next_index'] = local.get('next_index', remote.get('next_index', 0))
 merged['updated'] = local.get('updated', remote.get('updated'))
 remote_path.parent.mkdir(parents=True, exist_ok=True)
