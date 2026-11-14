@@ -65,7 +65,7 @@ def translate_preserving_facts(source, tokenizer, model, target_lang_id):
     Only return a result when every numeric fact survives the full translation.
     """
     import torch
-    parts = [p.strip() for p in re.split(r'(?<=[.!?。！？])\\s+', source) if p.strip()]
+    parts = [p.strip() for p in re.split(r'(?<=[.!?。！？])\s+', source) if p.strip()]
     if len(parts) < 2 or len(parts) > 6:
         return ''
     translated_parts = []
