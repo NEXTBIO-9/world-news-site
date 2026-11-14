@@ -1,20 +1,14 @@
 {
-  "updated": "2026-11-14T04:35:11.011714+00:00",
+  "updated": "2026-11-14T04:45:06.478030+00:00",
   "scope": "data_file_presence_json_syntax_and_nonblocking_warnings",
   "dataset_count": 17,
-  "warning_count": 1,
-  "warnings": [
-    {
-      "dataset": "collection-publication-audit.json",
-      "reason": "important_collected_articles_unpublished",
-      "count": 17
-    }
-  ],
+  "warning_count": 0,
+  "warnings": [],
   "datasets": {
     "articles.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 534019,
+      "bytes": 545848,
       "updated": "2026-11-14T04:22:22.497583+00:00"
     },
     "event-timelines.json": {
@@ -33,25 +27,25 @@
       "present": true,
       "valid_json": true,
       "bytes": 45983,
-      "updated": "2026-11-14T04:35:10.715560+00:00"
+      "updated": "2026-11-14T04:45:06.215628+00:00"
     },
     "evidence-index.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 607097,
-      "updated": "2026-11-14T04:35:10.547098+00:00"
+      "bytes": 620424,
+      "updated": "2026-11-14T04:45:06.064444+00:00"
     },
     "geo-coverage.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 128483,
-      "updated": "2026-11-14T04:35:10.586993+00:00"
+      "bytes": 129913,
+      "updated": "2026-11-14T04:45:06.101646+00:00"
     },
     "coverage-profiles.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 342624,
-      "updated": "2026-11-14T04:35:10.616560+00:00"
+      "bytes": 346522,
+      "updated": "2026-11-14T04:45:06.128117+00:00"
     },
     "breaking-candidates.json": {
       "present": true,
@@ -62,32 +56,32 @@
     "historical-index.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 370271,
-      "updated": "2026-11-14T04:35:10.685027+00:00"
+      "bytes": 378385,
+      "updated": "2026-11-14T04:45:06.188348+00:00"
     },
     "country-coverage-trends.json": {
       "present": true,
       "valid_json": true,
       "bytes": 9541,
-      "updated": "2026-11-14T04:35:10.745599+00:00"
+      "updated": "2026-11-14T04:45:06.245059+00:00"
     },
     "specialized-indexes.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 89281,
-      "updated": "2026-11-14T04:35:10.780968+00:00"
+      "bytes": 90472,
+      "updated": "2026-11-14T04:45:06.283114+00:00"
     },
     "translation-quality.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 404625,
-      "updated": "2026-11-14T04:35:10.811307+00:00"
+      "bytes": 413612,
+      "updated": "2026-11-14T04:45:06.309276+00:00"
     },
     "source-provenance.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 330279,
-      "updated": "2026-11-14T04:35:10.849881+00:00"
+      "bytes": 337489,
+      "updated": "2026-11-14T04:45:06.342308+00:00"
     },
     "personalization-options.json": {
       "present": true,
@@ -98,14 +92,14 @@
     "publication-gaps.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 171294,
-      "updated": "2026-11-14T04:35:10.905679+00:00"
+      "bytes": 163966,
+      "updated": "2026-11-14T04:45:06.389874+00:00"
     },
     "collection-publication-audit.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 45345,
-      "updated": "2026-11-14T04:35:10.966104+00:00"
+      "bytes": 531,
+      "updated": "2026-11-14T04:45:06.441804+00:00"
     },
     "cross-source-coverage.json": {
       "present": true,
@@ -115,15 +109,15 @@
     }
   },
   "publication_metrics": {
-    "published_total": 575,
-    "pending_total": 320,
-    "pending_important": 37,
+    "published_total": 588,
+    "pending_total": 306,
+    "pending_important": 36,
     "latest_collection": {
-      "collected": 180,
-      "published": 112,
-      "pending": 49,
-      "not_in_current_queue": 19,
-      "important_unpublished": 17
+      "collected": 575,
+      "published": 575,
+      "pending": 0,
+      "not_in_current_queue": 0,
+      "important_unpublished": 0
     }
   }
 }
