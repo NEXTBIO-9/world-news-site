@@ -79,6 +79,12 @@ def translate_preserving_facts(source, tokenizer, model, target_lang_id):
             # Long single sentences can omit figures. Retry bounded clauses,
             # but never append missing numbers without their source context.
             clauses = [c.strip() for c in re.split(r'(?<=[;:])\s+|;\s*', part) if c.strip()]
+            if len(clauses) < 2:
+                # Many wire excerpts put multiple numeric claims in one
+                # comma-separated sentence. Split only at comma+space (not
+                # thousands separators or decimal commas), then validate
+                # every source clause against its own translation.
+                clauses = [c.strip() for c in re.split(r',\s+(?=[A-Za-z(])', part) if c.strip()]
             if len(clauses) < 2 or len(clauses) > 5:
                 return ''
             clause_results = []
