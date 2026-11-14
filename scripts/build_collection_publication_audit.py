@@ -20,7 +20,12 @@ def load(path):
     return result['articles']
 
 
-def build(staged, published, pending):
+def build(staged, published, pending, summary_cache=None, excluded=None):
+    summary_cache = summary_cache if isinstance(summary_cache, dict) else {}
+    blocked = summary_cache.get('blocked_urls') or {}
+    nonextractable = summary_cache.get('nonextractable_counts') or {}
+    excluded = excluded if isinstance(excluded, list) else []
+    excluded_urls = {item[0] for item in excluded if isinstance(item, list) and len(item) == 2 and isinstance(item[0], str)}
     staged_by_url = {a['url']: a for a in staged if isinstance(a, dict) and isinstance(a.get('url'), str) and a['url']}
     published_urls = {a['url'] for a in published if isinstance(a, dict) and isinstance(a.get('url'), str) and a['url']}
     pending = pending if isinstance(pending, list) else []
@@ -37,10 +42,19 @@ def build(staged, published, pending):
         counts[state] += 1
         if important(article):
             counts['important_unpublished'] += 1
+        reason = 'in_retry_queue' if state == 'pending' else 'unexplained_not_queued'
+        if state != 'pending':
+            if url in blocked:
+                reason = 'source_blocked'
+            elif int(nonextractable.get(url, 0) or 0) >= 3:
+                reason = 'repeated_extraction_failure'
+            elif url in excluded_urls:
+                reason = 'title_retry_excluded'
         unpublished.append({'url': url, 'title': article.get('title') or '',
-                            'important': important(article), 'state': state})
+                            'important': important(article), 'state': state, 'reason': reason})
     unpublished.sort(key=lambda a: (not a['important'], a['state'], str(a['url'])))
     important_states = dict(Counter(a['state'] for a in unpublished if a['important']))
+    important_reasons = dict(Counter(a['reason'] for a in unpublished if a['important']))
     # Distinguish queued priority reports from those requiring manual diagnosis.
     # A missing queue entry alone is not proof of a dropped article.
     return {'updated': datetime.now(timezone.utc).isoformat(),
@@ -49,6 +63,7 @@ def build(staged, published, pending):
             'collected_unique_urls': len(staged_by_url),
             'counts': dict(sorted(counts.items())),
             'important_unpublished_by_state': important_states,
+            'important_unpublished_by_reason': important_reasons,
             'important_requires_review': [a for a in unpublished if a['important'] and a['state'] == 'not_in_current_queue'][:100],
             'unpublished': unpublished[:500]}
 
@@ -60,11 +75,14 @@ def main():
     pending_data = json.loads(pending_path.read_text(encoding='utf-8')) if pending_path.exists() else {}
     if not isinstance(pending_data, dict):
         pending_data = {}
-    result = build(load(sys.argv[1]), load(DATA / 'articles.json'), pending_data.get('pending', []))
+    cache_path = DATA / 'article-summaries.json'
+    summary_cache = json.loads(cache_path.read_text(encoding='utf-8')) if cache_path.exists() else {}
+    result = build(load(sys.argv[1]), load(DATA / 'articles.json'), pending_data.get('pending', []),
+                   summary_cache, pending_data.get('excluded', []))
     if OUT.exists():
         try:
             previous = json.loads(OUT.read_text(encoding='utf-8'))
-            if all(previous.get(k) == result[k] for k in ('counts', 'important_unpublished_by_state', 'important_requires_review', 'unpublished')):
+            if all(previous.get(k) == result[k] for k in ('counts', 'important_unpublished_by_state', 'important_unpublished_by_reason', 'important_requires_review', 'unpublished')):
                 return
         except (OSError, ValueError):
             pass
