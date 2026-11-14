@@ -1,21 +1,21 @@
 {
-  "updated": "2026-11-14T11:58:24.570681+00:00",
+  "updated": "2026-11-14T13:05:45.727641+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 14,
-    "not_in_current_queue": 49,
-    "pending": 18,
+    "important_unpublished": 12,
+    "not_in_current_queue": 47,
+    "pending": 20,
     "published": 113
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 12,
+    "not_in_current_queue": 10,
     "pending": 2
   },
   "important_unpublished_by_reason": {
-    "repeated_extraction_failure": 4,
-    "source_blocked": 8,
+    "repeated_extraction_failure": 3,
+    "source_blocked": 7,
     "in_retry_queue": 2
   },
   "blocked_important_rss_candidates": 0,
@@ -37,27 +37,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9FRERha3gtVzdldVJNU2dZRTh4RV9jbTA4dTk5S2ZXMXdKLWNHazFHRW4wZXdSUUhRem5jN1Zwd3lsZFQwUW9EOEhuQ19pTWdLWGc?oc=5",
-      "title": "Daily_Brief: Six embassies warn of high #Ebola outbreak risk in #South_Sudan, urge increased health funding",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aZTdJNm5VOU9ONWFTLVJwQ0xINTV1UUJVSDljR29sNFNBdTJnclZ1TlNvMFQ0RGVLSFpYSHZWNUM5YjBheU5mQkp5SXFxSHJTVTFRMUREV3FQQ0VEZjY2VmhjRUQ?oc=5",
       "title": "UAE says 14 killed in Fujairah traffic accident",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE4wa3dnRlZLbFlvelFjaVRhVURDWDZfSlBsZnpfS2FsYkVmUkxwc1NzNFpwQWttYzBSYkt6QWhRU2k4ME9wWGJQOE8xaGp0QXViR1ZseEdxeWUxbGxxZ0U2amN0UHN4eXNzelE?oc=5",
-      "title": "영유아 감염병이라더니… 호흡기세포융합바이러스 감염증, 입원환자 절반이 고령층",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -135,27 +119,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9FRERha3gtVzdldVJNU2dZRTh4RV9jbTA4dTk5S2ZXMXdKLWNHazFHRW4wZXdSUUhRem5jN1Zwd3lsZFQwUW9EOEhuQ19pTWdLWGc?oc=5",
-      "title": "Daily_Brief: Six embassies warn of high #Ebola outbreak risk in #South_Sudan, urge increased health funding",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aZTdJNm5VOU9ONWFTLVJwQ0xINTV1UUJVSDljR29sNFNBdTJnclZ1TlNvMFQ0RGVLSFpYSHZWNUM5YjBheU5mQkp5SXFxSHJTVTFRMUREV3FQQ0VEZjY2VmhjRUQ?oc=5",
       "title": "UAE says 14 killed in Fujairah traffic accident",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE4wa3dnRlZLbFlvelFjaVRhVURDWDZfSlBsZnpfS2FsYkVmUkxwc1NzNFpwQWttYzBSYkt6QWhRU2k4ME9wWGJQOE8xaGp0QXViR1ZseEdxeWUxbGxxZ0U2amN0UHN4eXNzelE?oc=5",
-      "title": "영유아 감염병이라더니… 호흡기세포융합바이러스 감염증, 입원환자 절반이 고령층",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -327,6 +295,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQYjdZXzN5bmR3RnFFdlZObEVJV3VuZVU4LV9RWVJjR0VIUEhEUkpabGdaVGdSMFpFNWFYbUZlNlh4RGJ4NXFaa0ZhYndQMXE0YVhGbGxfeE9wNkVieXk0eWU5M01ENG95SVJ3WDd3RVhZeHgySWtXejBvbTd0MzlxOVFaajFDdw?oc=5",
+      "title": "Inside the Ring: China developing laser weapons to attack U.S. satellites, Defense Intelligence Agency report says",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNWHlLeUpGNmxYYno5YklZSkpUVmRLVjNEbk9aYUdUZEJMdU5rOW9WQXNJeUtfYUwtdG5laGhtenp0VmRmY1FhYjExUlVDNldnVFRCd3JqSExzRi00LWxxRnVxazdoNmE0RlhlYWFzc3lUdTJDWHlsQkNaTWNkQ1p1Y2o2ZlhZVzk1UGVwNmRidHlDQ0J5bjRQQWlEVQ?oc=5",
       "title": "Japan defence budget faces possible cuts amid squeeze",
       "important": false,
@@ -367,6 +343,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPN205c1daa1JiYVI0OW00Q3Flcm10ejJURTFIUTJ5RnpURDNiVFBidmgzbWlDRUUwRi02RE5OMjlGaEpqcHo2YzNyOV9FV1RkQjF3TTVuMXZtSHFuYi0xTHp4ckx2YnJOZ0tMN2llcEhPR0x5THJLcHZKNGkwLUFPQWhqWDNpSTNBUmpILW5Pczl3X0p6bkJ1eDB1UmdVNkFKSVREdHpfTQ?oc=5",
+      "title": "Philippines reaches major trade agreement with Canada that could triple exports",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPM0R4b0JUbjRqWFJEN19VY3BJVGJ3UFl3UF9YcGQycjhaaVlOTG5yTjBxQ1hiZWNMZGZWM2haakRTenh4a25vd1ZIcHdDZDU1TTI2NW00VHg3NGY3QVZqeXZFdXh6dExjRkdVNWJzYlZxZzRPaHZMNVZRYW9iWUxMMXpvTWVYODlaODhqa0d5bHJWLWVKcGQzT2Q3MmFOYV9VUkRzcHpyRlA?oc=5",
       "title": "Egypt’s Strategic Pivot: The Nile, Sudan’s War and a New Route Into Africa",
       "important": false,
@@ -401,14 +385,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQkhEbGVvVElIaV9qZ1lLQmctYVZRb1FqcFVpNFYyeTlzdkZES2lEVHl1bkkzN25UdklveEdJbG1SX21ma0c5dWNRa01sVnBsZTRsN2Qya3RqM1NRbTBGc0tnOU5SR3ZFb2k2OHNIN0pXQUNYVVBsTHhnWmFaS0xYaEJjLW5DbUMyVmpGSVZ1RFVWSE1qaHFEQ2FxYXhnWFpNSkdPc0JTTTdqOHJ5ekhXQU5Hbl8?oc=5",
       "title": "Germany says Ukraine war must end before broader security talks with Russia",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMnhYS2hsVENzOW9lbGxhZHNXZGptazRlOW5IUk1MRThqUi02N3N6VklkTDVnMk9DT3lKWVNJVzBacW5zVUNEamw5TzhtTWluRVNheC1pcDZFUGVEREZHMG5aVGxXT1RQVEQ0Q1dnT3BWMHNQMkFUWWZZeTZaWkQydWtvVEctbnpnZWV0MExYa29fTEZjcFJjemNHSEpjdHM5Y2tsZkpUYkhrX0xRRU5ybTNxTDM?oc=5",
-      "title": "Charting the Global Economy: Inflation in US Exceeds Projections",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -487,27 +463,19 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWGl4M3I4cEx4Q1pteUwtd3I3OFBYWWFUU096V1Y3X2oxdl9KOFprODJXTEoxallGdk8tXzNuMzlWSXdjTTBFNjUxUHFwWmdVZTFHeTh0TEVYcWtNSXI2aUJkRFdKVFgtNmpWS01zTlhMS21ndThYQjY2bDhXSFpnV2c0Sl8wSzdBWnJzNmZVR05iUGdxU3BCUnBIYlcteEQtRkNMbDBQRF82QXVESmZSRGNvZG9yaGtfbm5QNHBTUE1jNjA?oc=5",
-      "title": "Bessent, Fed's Goolsbee divided on role of energy shock in inflation",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNdGRoYnhoNmZMUTVFODRONTJZQmhGTEphQ3NpaVVpMXlGeXR3N05MblVRZU4tRUtsM3Z6czJUbDJfNktJamFJOExMS2V2VVl2ZDN0N2lLdDdzMllzT1NBOXhrc0JsUGg1LS04OTI4Y3I1bE5YM1JSRE9oWVkwTnFuRmZtaXI5VnU5VEVzTXQybndSd0lBTlRPWjNWZVo5ZWFlak9tQ0lTUVFfWS1SUzJCVDl4S01RSXpYNllEWTFscVhfcjZt?oc=5",
-      "title": "Rate Hike Fears Set to Test India’s Stock Rally as Inflation Rises",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZGVoSlB2R21OOEs1YWFTUk4ydEhRVlBHSTh0c0hpQ3hCMkF5Rm95TDNtVEJ0UEZaNlhmM0pTTS1LUmZKZ3FRMmhwZDRBQWx5RHp2LUhHRzlad3RuTnROQ18xSHB6Z3JoR3R0aXllOV9MSk5YWDdpc09NbmpnS1VyMUViR282c3hWVm9DdGo0dUNpM19wRFB3UHhleHdtY2tHeVFfZFdNZ0JWbHpLRzVMYW9EcEVyeUMwbmxQSUgtNkJRUTR6RS13OTRXb9IB0AFBVV95cUxPcnJOUnVMVnd5LWFjT3FFaHNZaXZhN05ZMVZ0c0dvVXNweVdIQUVLSnQ1WVF5c2FlVTB1cFA2TTB5RnNkRllaOG9CaGhadW5GN0lfQ2g4blQ5alRsRjg1SXhqSEpCaUhEb2FIVldhWHpFVzBRbDU4WmVySEtySndrS28xbE5uV00xZzItVzYzV1h0ZDJ5NUtiZE1QZ3VPYzVXUWRmWkxVcnhVbjBHa2x3OWFvbXJPV2MxUXJLamFMT1kzOU4yS29RSGNzWEtqNjd2?oc=5",
       "title": "At least 14 dead and 30 injured in a multiple collision in Fujairah (United Arab Emirates)",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMizAJBVV95cUxPR2Q0NXRCdHNydFVta3BzLTE4RGpoZG44SlNBdXowWkk1clZoZkZUN1J4T1E5REtPYjR3d0xrSkJMUV9lTUIyVmd1SXRfSktQc29EVVhWWkRiOW1udVFXUkxrRVpjUFVZM0ZUN2h6LTRyWTVhZE1CTlB6M2IxbXN5UVRZd04tQlBRUUs2WHNNcXdVY3BfNTNKdVJBWXR5UG1XYVM4UVFuakZLSERxcXRQdUJnN2g5eWZGZ3BCQnJvRjhxSmtpVGlLNURXTDNqZUE3OENsUzFJRS01MTRqam1VbVF0MXc1Z1BCTHFxc3ItVE90bk5tUmMzQzE4Y1ZTeElMbGpDQnBOVmVXaFJRcFJFMmx6T0VsXzdmQlJBYUN4NTVESWdHVmJ4VVBYSmJkS3h3QkxnaU5McGNUTlFHTmlKQ3VxYlBlTW5jejZBMA?oc=5",
+      "title": "EDF shut down two nuclear reactors in France as a precaution after jellyfish swarmed the seawater filters at Gravelines, and it came just 16 days after the same animals took three units offline - ECOticias.com",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -524,6 +492,14 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQLTBZX2hSYVl0dU8zQ29BVDd5SFozWlMwYm1wLTJRSWpVM0VnY1lJQlBlZWt1d2h4SDJBNHdYNWgxdk1zVFRJLWdGRmptLXBnLV9JMm1Pa0duR1Y0ZEp6XzYyOHhtRVlmOVJZSWZUVjZuRExLYXViQzBwMjlic0VBaWczbTdfQ295M0xSdEtuQ3RpN0ZsVkZaQktPYWE5VklSTVo2Z1dnTGN2d0VnVVFESkYyTVZjZFhBX0lpV1FaSERaVm9YRnk0M1dJcGRZZjNzUDlTSw?oc=5",
+      "title": "GMA News. . WATCH: Prime Minister of Lao People's Democratic Republic Saleumxay Kommasith, has arrived in the Philippines on Saturday, Nov. 14, for the #ASEAN2026. Courtesy: ASEAN Philippines 2026 Watch the livestream: bit.ly/ASEAN2026Nov14",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
@@ -567,16 +543,24 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTFBKcjdxZXJkOFRwZFVLS05vNy03S3pVRk13czhQWFVNZUxrenM3ZUJZVHQtQUFyMnQtSFc0?oc=5",
-      "title": "Qatar and Türkiye Pledge Unified Stance Against Armed Attacks · Clash Report",
+      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE9GcGZ3SG1IaUM1OS1tTnlidkVycDVZcFNSd0RUSlNwLVhXb3k1RnloanhHOHlDdEVURTVv?oc=5",
+      "title": "May the relationship between the people of Pakistan and the United Kingdom grow stronger with each succeeding generation, Prime Minister",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE12MkRyZTRfaFRVU0tMY2tLSmRoT1EtMng2LXQxcnEyQ2hGZEJ5NmQ4N3JITTU4UzF6YktiVDBsdlR6Y0tBOXJIb2hWYVVIeVJkNFotY2tR?oc=5",
-      "title": "AI 투자 고점 피로감에 … 바이오에 다시 돈 몰려",
+      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE9VLTlQVU5mdm5ic3h6LU5GalNwVEZwdkR4S2g4SkZzZ3VQMnVDMnZFWkpLaW1sckdaaVNJ?oc=5",
+      "title": "US Army launches 18-drone swarm attack from UGV in Germany exercise under new warfighting strategy",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTFBKcjdxZXJkOFRwZFVLS05vNy03S3pVRk13czhQWFVNZUxrenM3ZUJZVHQtQUFyMnQtSFc0?oc=5",
+      "title": "Qatar and Türkiye Pledge Unified Stance Against Armed Attacks · Clash Report",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
