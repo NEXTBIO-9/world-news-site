@@ -183,6 +183,9 @@ def main():
     if not isinstance(cache, dict):
         cache = {}
     now = datetime.now(timezone.utc).isoformat()
+    blocked = previous.get('blocked_urls', {})
+    if not isinstance(blocked, dict):
+        blocked = {}
     failures = previous.get('failed_urls', {})
     if not isinstance(failures, dict):
         failures = {}
@@ -223,7 +226,7 @@ def main():
         scanned += 1
         article = articles[index]
         url, title = article.get('url', ''), article.get('title', '')
-        if not url or not title or url in cache:
+        if not url or not title or url in cache or url in blocked:
             continue
         cooldown = 30 * 60 if important(article) else 3 * 3600
         if float(failures.get(url, 0) or 0) > time.time() - cooldown:
@@ -255,6 +258,8 @@ def main():
                 google_503_streak = 0
             if not text:
                 failures[url] = time.time()
+                if reason in ('http_401', 'http_402', 'http_403'):
+                    blocked[url] = {'reason': reason, 'at': now}
             kind = 'source_excerpt'
         if text:
             cache[url] = {'text': text, 'kind': kind, 'updated': now}
@@ -270,10 +275,12 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     current_urls = {a.get('url') for a in articles}
     failures = {u: t for u, t in failures.items() if u in current_urls and float(t or 0) > time.time() - 3 * 86400}
-    OUT.write_text(json.dumps({'updated': now, 'next_index': next_index, 'failed_urls': failures, 'summaries': cache}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    blocked = {u: v for u, v in blocked.items() if u in current_urls and u not in cache}
+    OUT.write_text(json.dumps({'updated': now, 'next_index': next_index, 'failed_urls': failures, 'blocked_urls': blocked, 'summaries': cache}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Articles={len(articles)}, cached={len(cache)}, new_summaries={new_count}, rss_summaries={rss_count}, fetch_attempts={attempts}')
     print(f'cursor_start={cursor}, cursor_next={next_index}, scanned={scanned}, fresh_attempts={fresh_count}, elapsed_seconds={int(time.monotonic()-start)}')
     print('Failure reasons: ' + json.dumps(dict(reasons.most_common()), ensure_ascii=False))
+    print(f'Blocked source URLs excluded from future extraction: {len(blocked)}')
     print('NOTE: Google News URLs may not reveal publisher links; failures cannot be solved by retries alone.')
     if not new_count:
         print('WARNING: zero summaries. Check failure reasons. Do not mistake a successful workflow for successful extraction.')
