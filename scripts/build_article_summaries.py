@@ -248,7 +248,13 @@ def main():
     session = requests.Session()
     session.headers.update(HEADERS)
     # Phase A: new-first (only entries not yet cached). Phase B: rotating backlog.
-    queue = [(i, True) for i in fresh_order] + [((cursor + i) % len(articles), False) for i in range(len(articles))]
+    # Bound the new-first scan: visiting every article in Phase A marks all
+    # indices as seen and prevents the rotating backlog phase from running.
+    # Scan up to 3x the fresh attempt quota to skip cached/cooldown items,
+    # then let Phase B cover the remaining articles from the saved cursor.
+    fresh_scan_limit = min(len(articles), fresh_limit * 3)
+    queue = ([(i, True) for i in fresh_order[:fresh_scan_limit]]
+             + [((cursor + i) % len(articles), False) for i in range(len(articles))])
     seen_indices = set()
     backlog_scanned = 0
     for index, is_fresh in queue:
