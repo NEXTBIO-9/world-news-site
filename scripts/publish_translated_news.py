@@ -91,6 +91,9 @@ def combined(staged):
     excluded = excluded_keys(queue)
     blocked = read(DATA / 'article-summaries.json').get('blocked_urls', {})
     blocked_urls = set(blocked) if isinstance(blocked, dict) else set()
+    counts = read(DATA / 'article-summaries.json').get('nonextractable_counts', {})
+    if isinstance(counts, dict):
+        blocked_urls.update(u for u, n in counts.items() if int(n or 0) >= 3)
     entries = queue.get('pending', [])
     if not isinstance(entries, list):
         raise ValueError('Invalid pending-title queue')
