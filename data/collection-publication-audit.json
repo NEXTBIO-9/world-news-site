@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-14T16:58:47.060198+00:00",
+  "updated": "2026-11-14T17:48:18.800225+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
     "important_unpublished": 11,
-    "not_in_current_queue": 43,
-    "pending": 18,
-    "published": 119
+    "not_in_current_queue": 42,
+    "pending": 20,
+    "published": 118
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 10,
-    "pending": 1
+    "not_in_current_queue": 9,
+    "pending": 2
   },
   "important_unpublished_by_reason": {
     "repeated_extraction_failure": 2,
-    "source_blocked": 8,
-    "in_retry_queue": 1
+    "source_blocked": 7,
+    "in_retry_queue": 2
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -63,14 +63,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObEowc1ZEWmk5UmJEZUZJSHZ0VW9RRlJIZzlJcXJJTlE5bkplM2ZLTmFxbVhWSGk5alFVRmFZNHBSbm1HeUZMaEFPTTdvYlRxQ1JWODNqY1M5eEs4UzdxamtoMGhXbTJndWV0UGlJRTVsQUFRYkFjQ211ZmxLWXozRTlYRTVlTlBIakRhY1NxWm40UmkzOG5LNGp1Yzdqdw?oc=5",
       "title": "Indonesia's BMKG Releases Megathrust Earthquake Mitigation Guides",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOOFR4cExqSkJkMUFiVmlJTTFvN3lQeUZKT1ZYRWlGTldSQ19Zc3pjU2pSeXZUZGQwb3JfaFZyWXFteU03aTRtaUY5aVhkLXBiTXdLMU9EaWpZU1Z4ekRLck1QTVRvdE95Ml9ramNEVTlWUW9MVEFtR3BTakRCRzlEd2tRNXJ1LVJtSnBHT05oSUdWeVpuYm1aSFJrc2JTZTJaSUUtcQ?oc=5",
-      "title": "Oil Touches Two-Week High After Drone Attack on UAE Nuclear Power Plant",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -151,14 +143,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOOFR4cExqSkJkMUFiVmlJTTFvN3lQeUZKT1ZYRWlGTldSQ19Zc3pjU2pSeXZUZGQwb3JfaFZyWXFteU03aTRtaUY5aVhkLXBiTXdLMU9EaWpZU1Z4ekRLck1QTVRvdE95Ml9ramNEVTlWUW9MVEFtR3BTakRCRzlEd2tRNXJ1LVJtSnBHT05oSUdWeVpuYm1aSFJrc2JTZTJaSUUtcQ?oc=5",
-      "title": "Oil Touches Two-Week High After Drone Attack on UAE Nuclear Power Plant",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdGE1N0ZoUHpkdXV4LTJXblotUnJiZE5sR3FfdFRhendsTldhdUpDSTBOUlN2Z0g1TEhFaGVaeTJ0Q2JlcXQ1WDl6dnlxR0RHSmpuQ3k3eTNBRUloUWZKQmxxWFVKQlRELVEzSDkxTWhOVTJaNzNDMFN2dVh2SFA5eGZkdFNIZ29heFhZTTEwMENlOUI1SG1feHBFLWRncGxrSEt5YU9kREs?oc=5",
       "title": "New pandemic fears sweep Russia as second mystery virus takes hold – symptoms revealed",
       "important": true,
@@ -185,6 +169,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1hTFlMWHdkc3NjOUVvNVZ4RExzY3ZzYjllcmdKVlE0WHlmM1BFY1kxNkVZeGhpMGxLZG82UlVMeEhrSmdxbmxTcnpVdlhmX1JVWG1FSGZackZmSVVoUUFRSHBR?oc=5",
       "title": "'전국 병원체 감시기관 한자리에 모인다' 감염병 대응 성과와 개선 방안 논의(11.5.목)",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQM3J6N05pX2pZSy1SWWEzWjNWbHhFQWhqQmNqUzJFOVIxdXhYakExbVRYNmNLWVNkOWk3elBvRkxIYjRma0JacHVUM3RjRXJzcFV5cHp2XzZVUVNQb0FGRS1PTjBLOFJJc1BZb0tHRHY4UjJzdzRmd0VMTEhXVFozVmpLUVByMUgwQWVxVVdfNDVENWFodEpGTTZEbXZNRkU?oc=5",
+      "title": "‘I've run out of money’: 87-year-old California wildfire survivor says contractor went $90K over budget and wants another $51K to finish his home",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -423,16 +415,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNS1hDMjR3WTBrbHI5RV9iUWExdkRzVU9jUmlqQmtjZXZlVkFRZHVfZ0dkS0YtNzlndlFmb1VvUk9qUzVDRVU4V1h3ajk5MkJRdUhxZ1JQSnN6OTZqeExYbnpXYm9PdlZUa1pjMElWWl93RnIza3cwc1NLb0pMbEZVMURJQXZjczk1aDVhUTFsT1NtSS1PRzB6WFppaG1WSy01aUNjR3RyRjJ3X3M2TjMwQ1hJNnd3dDRaRmVVdA?oc=5",
-      "title": "Lula to travel to Spain on Monday to join Pedro Sánchez’s election campaign",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTGE3d2YwNy1ONlliXzNCVDNiZU01WlB3YUdPMEZwOHJpNS1UWEtvZ3hhM1hWOGN2REsxbEw1SzNERlk3eTVfUTdlOEFJYVAwNXVjT25jczJDRE9iTE5DYjlxNnQ3UlJRVDlRdU1UeHhNZ1NUWnBVU2w2TjZLWTg5emhUZ2RVVXowVWZuMnBiTlhtWlhxUDkxODkzNVlfeGlGbVlYV0todlRQc1JZSXIyVXpsVU1WRDFFU2QxTA?oc=5",
+      "title": "Turkey, Qatar sign mutual defence agreement, pledge unified stance against attack",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTGE3d2YwNy1ONlliXzNCVDNiZU01WlB3YUdPMEZwOHJpNS1UWEtvZ3hhM1hWOGN2REsxbEw1SzNERlk3eTVfUTdlOEFJYVAwNXVjT25jczJDRE9iTE5DYjlxNnQ3UlJRVDlRdU1UeHhNZ1NUWnBVU2w2TjZLWTg5emhUZ2RVVXowVWZuMnBiTlhtWlhxUDkxODkzNVlfeGlGbVlYV0todlRQc1JZSXIyVXpsVU1WRDFFU2QxTA?oc=5",
-      "title": "Turkey, Qatar sign mutual defence agreement, pledge unified stance against attack",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQemRSQWdKaC1oejVqWW53ZEZDcGQ0MFpSekhfeDRoX3A0YjA1M1RNVS1JaGtZcEV5WGxOZnp1Ukl5endJN1BUVUw5Tk5aZjh4Vl94R01YdjktMi1EZ1B6aFZpMVpKd0dubmo3d0xyZmhMcTNrc1BwY2ptY2RoS0x0elJKa0p0enlpYmdvLUJZdHV3MXNFQkwxVXBvd3JFdURPa2VqOW5TNUZWUVh1ZXZuUGw1ZHJBOU05Rm1Vdg?oc=5",
+      "title": "Lula to travel to Spain on Monday to join Pedro Sánchez’s election campaign",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -561,6 +553,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOamMzb1pKa3o5bGpMY1A3UkF1OEkxaDZYMFQwOEhfdHd2bTlqTlEzQnVJWG1pQXpQcTdjeUZrWklSNkpUbWNKdDFRcGlTOFpuZGNWNEoyOVllVldqU01DM2FBLWFxTTgxa1FMbnpJeVdEaFZPWElIb3RnOTRJc2hLRFVsWXp6SloxRHZrZUEyMVhwOHdhREZieGVB?oc=5",
       "title": "France fears Germany's future deep-strike weapons could push Russia toward the nuclear threshold by mistake",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQWDQyNVpOOEo0VUc2LUswbUV2Q3g1MnlwcDkyQ3ZrTmZOY0RWWjFqZDVzSVU2RjdFckwwQUFZRDFZSWtVREs2MG1HNnVUWVgzandXR0Vkanpya25CUkgySmEtc1VQOUtQQXhHekhFbkRUVDF3dHZuYVlOQURTRlVkRUtNNWxJSEVxemNMeVpfLXBUMTd6NlRDMEV2dHc2Z016TGlkUnRoaFBXd3JqRGNBS1J4QkpOS2M?oc=5",
+      "title": "Algeria’s New Economic Map: How Five Powers Are Gaining Ground as France Retreats - Report",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
