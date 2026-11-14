@@ -229,8 +229,10 @@ jobs:
             python - <<'PY'
           import json
           from pathlib import Path
-          from scripts.translate_news_titles import english, valid
-          from scripts.publish_translated_news import korean_summary_ready
+          import sys
+          sys.path.insert(0, str(Path('scripts').resolve()))
+          from translate_news_titles import english, valid
+          from publish_translated_news import korean_summary_ready
           data = Path('data')
           queue = json.loads((data / 'pending-title-news.json').read_text(encoding='utf-8')).get('pending', [])
           titles = json.loads((data / 'title-translations.json').read_text(encoding='utf-8')).get('translations', {})
