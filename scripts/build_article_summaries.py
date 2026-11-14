@@ -254,6 +254,9 @@ def main():
     for index, is_fresh in queue:
         if time.monotonic() - start >= BUDGET:
             break
+        # Once the fresh attempt quota is exhausted, leave remaining indices
+        # unseen so Phase B can actually revisit them in rotating backlog order.
+        # Otherwise Phase A marks every article as seen and starves Phase B.
         if is_fresh and fresh_count >= fresh_limit:
             continue
         if index in seen_indices:
