@@ -51,12 +51,15 @@ def main():
         blocked = cache.get('blocked_urls') or {}
         if not isinstance(blocked, dict):
             blocked = {}
+        nonextractable = cache.get('nonextractable_counts') or {}
+        if not isinstance(nonextractable, dict):
+            nonextractable = {}
         candidates = 0
         for article in articles:
             if not isinstance(article, dict):
                 continue
             url, title = article.get('url'), article.get('title')
-            if not url or not title or url in summaries or url in blocked:
+            if not url or not title or url in summaries or url in blocked or int(nonextractable.get(url, 0) or 0) >= 3:
                 continue
             try:
                 last_failure = float(failures.get(url, 0) or 0)
