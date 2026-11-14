@@ -153,7 +153,7 @@ def structured_article_body(raw):
     try:
         page = raw.decode('utf-8', 'replace') if isinstance(raw, bytes) else str(raw)
         scripts = re.findall(
-            r'<script\\b[^>]*type\\s*=\\s*["\\']application/ld\\+json["\\'][^>]*>(.*?)</script\\s*>',
+            r"<script\b[^>]*type\s*=\s*['\"]application/ld\+json['\"][^>]*>(.*?)</script\s*>",
             page, flags=re.IGNORECASE | re.DOTALL)
         def walk(node):
             if isinstance(node, list):
