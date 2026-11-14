@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T14:50:25.560140+00:00",
+  "updated": "2026-11-14T15:52:37.149916+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
@@ -14,8 +14,8 @@
     "pending": 1
   },
   "important_unpublished_by_reason": {
-    "repeated_extraction_failure": 3,
-    "source_blocked": 7,
+    "repeated_extraction_failure": 2,
+    "source_blocked": 8,
     "in_retry_queue": 1
   },
   "blocked_important_rss_candidates": 0,
@@ -29,11 +29,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTFA2Y05abHdLZkxlZFZBd0JUR1AyNzVXZm02bGhzeUVDb2w0VG5ZN2FGdU9FcjA4NmI1bjlZSG96QTl2QUk?oc=5",
-      "title": "학교 감염병 예방교육 확대…손 씻기·예방접종 실천은 얼마나 달라졌나",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBwbkw2Qm1NMEUwdWNnZVRJNDh3QXlxQUI3dFpnWHpRcWJsUlRYeGpVT0cxcGljNFdvUFhnMl94Z1NMWjY2d1B0cVd6XzZRNTNpZjN1NEo1WmtBbG5lLVVj?oc=5",
+      "title": "Hurricane Katrina | Deaths, Damage, & Facts",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -111,11 +111,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTFA2Y05abHdLZkxlZFZBd0JUR1AyNzVXZm02bGhzeUVDb2w0VG5ZN2FGdU9FcjA4NmI1bjlZSG96QTl2QUk?oc=5",
-      "title": "학교 감염병 예방교육 확대…손 씻기·예방접종 실천은 얼마나 달라졌나",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBwbkw2Qm1NMEUwdWNnZVRJNDh3QXlxQUI3dFpnWHpRcWJsUlRYeGpVT0cxcGljNFdvUFhnMl94Z1NMWjY2d1B0cVd6XzZRNTNpZjN1NEo1WmtBbG5lLVVj?oc=5",
+      "title": "Hurricane Katrina | Deaths, Damage, & Facts",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -319,6 +319,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQTVYTmhSWUdGNEJUeG1jSEVOSlNjd0VJRkJ6ZkFIR1l5MzdCZENWTWJSOW1qZzN1cFNWdnJTbnpVZTdIMkNzNnhhS3BuVGxWUXJQXzJRVGdRWERTNGdRV1F4Z2plSTBBQW5RempjdFRfUUpFWDBacV9pcWcweWJ4R0dtMHdYbmRUSHNwUm1adzJRN3BiQVhvRkdMZ0F2WThSNWZCRmV2cw?oc=5",
+      "title": "Joint Defense Industry Projects Can Strengthen Ukrainian-Polish Relations – Kyrylo Budanov in His Address to Participants of the Business Forum in Warsaw — Official website of the President of Ukraine",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPN205c1daa1JiYVI0OW00Q3Flcm10ejJURTFIUTJ5RnpURDNiVFBidmgzbWlDRUUwRi02RE5OMjlGaEpqcHo2YzNyOV9FV1RkQjF3TTVuMXZtSHFuYi0xTHp4ckx2YnJOZ0tMN2llcEhPR0x5THJLcHZKNGkwLUFPQWhqWDNpSTNBUmpILW5Pczl3X0p6bkJ1eDB1UmdVNkFKSVREdHpfTQ?oc=5",
       "title": "Philippines reaches major trade agreement with Canada that could triple exports",
       "important": false,
@@ -372,14 +380,6 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWWRGVjhBYXVpelpVMG9oaFZPSDZnak9WZUkza1RrX2c1blFhcEVfY2xMelpEbzlNVXVLZVFnU1RoTVVaeXFZT2t0UXE5aEM0OGlzRVhYcWNhbXU4NWNMSTZwSUdoM2szVWN3VmRFTWtLeE9MYTNCLWtxOW1TUWplekhCdWtSc2dvMnNUNEVRX2FqaEVDdVFPYnZDSkl2aEw5bkhVaG5nY0VmeGRteW95RHBvVU96NGZC?oc=5",
-      "title": "Canada Bond Yields Face a New Test as Inflation and Rate Hike Expectations Rise",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -559,6 +559,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8xR3p2YTBZa25WSGRCdnBUVlVFR1B1aVVsRkg5XzRucHFOUGNDMkQxbEdQdUxGM241cDJheG9HcUszLXVFM25QM3FVZXFQd1lNdm9KTFFQRWJhdVhSNUNLanBpZ1VORnp3VFhPN1lmZ1RNSlnSAXdBVV95cUxQZ3dsejZTQkdLSVJNakdUU0VKNVJnazg4allyb3VHaGFScHJXMkZjUG5RNkZRbFM5VDVkaEhSOXpFTnpxVW8wMkhNRU9aajhURnc5UjU5dWpCRll2UFFDLTBhUE9CbFBVQnJlMjVkQl9iX3llMUw2Zw?oc=5",
+      "title": "[AM크립토] 미국 물가 발표가 코인 가격에도 영향을 줄까요?",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdlkzclBpLTBKSWpjTS1mdlY0MldCb1E1SlNoRVFwLWs0dGVHSElqS0c5TEF1SEN3a2RIUFZ4VjZjRlB6QktyY3lQQldBNklPcjVTaEE4b2hlOVctUkJJXzZOSXpLTWJJYTNSLTJPcXZoX2JKcnQtR3RmZ2ZvVDdyQw?oc=5",
       "title": "건국대, 두 종류 슈퍼박테리아 동시 공격하는 항생제 물질 개발",
       "important": false,
@@ -569,14 +577,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOamMzb1pKa3o5bGpMY1A3UkF1OEkxaDZYMFQwOEhfdHd2bTlqTlEzQnVJWG1pQXpQcTdjeUZrWklSNkpUbWNKdDFRcGlTOFpuZGNWNEoyOVllVldqU01DM2FBLWFxTTgxa1FMbnpJeVdEaFZPWElIb3RnOTRJc2hLRFVsWXp6SloxRHZrZUEyMVhwOHdhREZieGVB?oc=5",
       "title": "France fears Germany's future deep-strike weapons could push Russia toward the nuclear threshold by mistake",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNTmdTMkdjakR6c1ZaczctcHpCQlBsWVJ3TUlBbUJiRTJWRV9tRXNLMHByc3hMSEtBSjY1OGtmX1JheE1hY1p2SkNrY3MxQnZmY3pjclRuX1I4WDkxT0U0TXlHZDdZRk5EbS1uTmN3UkczcFdTamtGTkx1M0w1NHh0UlZ1SGtBNjhONDg0XzREOTVXV2ktX0l1Y2ROOHdHSkdzeTF3?oc=5",
-      "title": "Türkiye, Qatar sign 5 agreements, including mutual defense pact",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
