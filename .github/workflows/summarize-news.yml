@@ -227,32 +227,32 @@ jobs:
             fi
             python scripts/publish_translated_news.py /tmp/nextbio-staged/articles.json /tmp/nextbio-staged/news_quality_audit.json /tmp/nextbio-title-record/attempts.json
             python - <<'PY'
-            import json
-            from pathlib import Path
-            from scripts.translate_news_titles import english, valid
-            from scripts.publish_translated_news import korean_summary_ready
-            data = Path('data')
-            queue = json.loads((data / 'pending-title-news.json').read_text(encoding='utf-8')).get('pending', [])
-            titles = json.loads((data / 'title-translations.json').read_text(encoding='utf-8')).get('translations', {})
-            cache = json.loads((data / 'article-summaries.json').read_text(encoding='utf-8'))
-            summaries = cache.get('summaries', {})
-            failures = cache.get('failed_urls', {})
-            counts = dict(title_missing=0, excerpt_missing=0, summary_ko_missing=0, other=0, extraction_failed=0)
-            for entry in queue:
-                a = entry.get('article', {})
-                title = a.get('title', '')
-                if english(title) and not valid(title, titles.get(title)):
-                    counts['title_missing'] += 1
-                elif a.get('url') not in summaries:
-                    counts['excerpt_missing'] += 1
-                    if a.get('url') in failures:
-                        counts['extraction_failed'] += 1
-                elif not korean_summary_ready(dict(a, title_ko=titles.get(title, a.get('title_ko'))), summaries):
-                    counts['summary_ko_missing'] += 1
-                else:
-                    counts['other'] += 1
-            print('PENDING DIAGNOSIS total=', len(queue), 'breakdown=', json.dumps(counts, ensure_ascii=False), flush=True)
-            PY
+          import json
+          from pathlib import Path
+          from scripts.translate_news_titles import english, valid
+          from scripts.publish_translated_news import korean_summary_ready
+          data = Path('data')
+          queue = json.loads((data / 'pending-title-news.json').read_text(encoding='utf-8')).get('pending', [])
+          titles = json.loads((data / 'title-translations.json').read_text(encoding='utf-8')).get('translations', {})
+          cache = json.loads((data / 'article-summaries.json').read_text(encoding='utf-8'))
+          summaries = cache.get('summaries', {})
+          failures = cache.get('failed_urls', {})
+          counts = dict(title_missing=0, excerpt_missing=0, summary_ko_missing=0, other=0, extraction_failed=0)
+          for entry in queue:
+              a = entry.get('article', {})
+              title = a.get('title', '')
+              if english(title) and not valid(title, titles.get(title)):
+                  counts['title_missing'] += 1
+              elif a.get('url') not in summaries:
+                  counts['excerpt_missing'] += 1
+                  if a.get('url') in failures:
+                      counts['extraction_failed'] += 1
+              elif not korean_summary_ready(dict(a, title_ko=titles.get(title, a.get('title_ko'))), summaries):
+                  counts['summary_ko_missing'] += 1
+              else:
+                  counts['other'] += 1
+          print('PENDING DIAGNOSIS total=', len(queue), 'breakdown=', json.dumps(counts, ensure_ascii=False), flush=True)
+          PY
             python scripts/build_event_timelines.py
             python scripts/build_event_changes.py
             python scripts/build_cross_source_coverage.py
