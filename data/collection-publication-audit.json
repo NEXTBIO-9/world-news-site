@@ -1,21 +1,21 @@
 {
-  "updated": "2026-11-14T18:23:24.912257+00:00",
+  "updated": "2026-11-14T19:41:53.442714+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 11,
-    "not_in_current_queue": 43,
-    "pending": 21,
-    "published": 116
+    "important_unpublished": 12,
+    "not_in_current_queue": 42,
+    "pending": 23,
+    "published": 115
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 9,
+    "not_in_current_queue": 10,
     "pending": 2
   },
   "important_unpublished_by_reason": {
     "repeated_extraction_failure": 2,
-    "source_blocked": 7,
+    "source_blocked": 8,
     "in_retry_queue": 2
   },
   "blocked_important_rss_candidates": 0,
@@ -91,6 +91,14 @@
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaHhPajF0ZVJyM252UDE2Z0xyMU5iOG1QeDBTUk9Kc0J4ZG03YU1hRVh2ajZ6QktiWmE1UEk2YndYUXIxM056THRXT1RQTGJEcjhfZl9lYlVrSFJweV9Dd0pwd1BJX00tUzlGUVhCckxwNWFSb0NwUFhxQldnakQ0emdheGxJMHBldUY4dWhPTlo2UHo3TjlLOW1oSnJrTlZidWJfWm56eEZTakhqR2JYSFptSGVMM3QzcElpMEEwWEdlOFNFOS1hStIBzgFBVV95cUxOckZLNmJIX09kbEVMWURFc0VIR2hJYkEyRV9GbnE5ZGk5c3dQcnpQeG1oUlBPV3JjQzVHT1lHd1FPcVdQODNLN0tKQXl5MUJIR0hSVlRVNE9zSkY5S3lNZFVDaUJFSzZrb0k5d3lWNk9LeTM0b21MNnZxTTBieW45TGZNVHVTc0VHbEE5TzM4ekNpem93dmlQSklKSWVLdXhGTWVlQkNoSEZaUzk3Mm9xS242TjROQzdUelZ0UzhKVXZkcFdaaXJsT0E5NEV3Zw?oc=5",
+      "title": "Extension | Four soldiers die and two are injured in a drone attack in northern Colombia",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
     }
   ],
   "unpublished": [
@@ -161,6 +169,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTmEzelh0cThsbWNobk9zSGh1SlhoY0puS1E5dndnTzRsOTNBa0lCYnRDR0E3bkx2WUJuVFJCSnlZd0hKYTVDaUpQYlMyQXBEVUc4ZEpMUEV0RFRDSkZhZldickFWbWIzR1pRUndGR2dzbkRfdHk2a1ZnVkYtT2RRT3l6UnRNbFF4WngtUExvREEzWEw0VDZJUXNmQUxOZTZfR2tEZWNibGwxRnB1UVlELVVPWmh0dHUxN2xoWC1R?oc=5",
       "title": "Lane County faces billions in damage from a Cascadia earthquake",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaHhPajF0ZVJyM252UDE2Z0xyMU5iOG1QeDBTUk9Kc0J4ZG03YU1hRVh2ajZ6QktiWmE1UEk2YndYUXIxM056THRXT1RQTGJEcjhfZl9lYlVrSFJweV9Dd0pwd1BJX00tUzlGUVhCckxwNWFSb0NwUFhxQldnakQ0emdheGxJMHBldUY4dWhPTlo2UHo3TjlLOW1oSnJrTlZidWJfWm56eEZTakhqR2JYSFptSGVMM3QzcElpMEEwWEdlOFNFOS1hStIBzgFBVV95cUxOckZLNmJIX09kbEVMWURFc0VIR2hJYkEyRV9GbnE5ZGk5c3dQcnpQeG1oUlBPV3JjQzVHT1lHd1FPcVdQODNLN0tKQXl5MUJIR0hSVlRVNE9zSkY5S3lNZFVDaUJFSzZrb0k5d3lWNk9LeTM0b21MNnZxTTBieW45TGZNVHVTc0VHbEE5TzM4ekNpem93dmlQSklKSWVLdXhGTWVlQkNoSEZaUzk3Mm9xS242TjROQzdUelZ0UzhKVXZkcFdaaXJsT0E5NEV3Zw?oc=5",
+      "title": "Extension | Four soldiers die and two are injured in a drone attack in northern Colombia",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -249,14 +265,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBmMjFERnZlRjF3V2hfTDZqXzZfcnVIc01vWXFjS2JpOHgyN3RweE9WUjVONURqQ0dDLUZlank5eGRQRW9WS0hXd3NJSTdXSlhNbkFWU1h4OWVieGhlUkdGdTRybm9xUjdmSnNtZWdJUkRUa2RUekdB?oc=5",
       "title": "Polish Bond Yield Reaches 6.34% After US Inflation Data",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBjcXJOMXpCVmhJbEtRNlFyS2tKeFE5R3dEenprRnZ6QmdWVVdibzBXTHFxbW5zVk9GSHhDSi0za3VVZ1k1bHNzcHd5endYR3I4aDgzdnE0QmlQRlVYNzcxN1N4S2g0WjZkVnYwSURNMFFERVowTE40Q3Racng?oc=5",
-      "title": "United Nations Security Council - Peacekeeping, Resolutions, Sanctions",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -423,14 +431,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTGE3d2YwNy1ONlliXzNCVDNiZU01WlB3YUdPMEZwOHJpNS1UWEtvZ3hhM1hWOGN2REsxbEw1SzNERlk3eTVfUTdlOEFJYVAwNXVjT25jczJDRE9iTE5DYjlxNnQ3UlJRVDlRdU1UeHhNZ1NUWnBVU2w2TjZLWTg5emhUZ2RVVXowVWZuMnBiTlhtWlhxUDkxODkzNVlfeGlGbVlYV0todlRQc1JZSXIyVXpsVU1WRDFFU2QxTA?oc=5",
-      "title": "Turkey, Qatar sign mutual defence agreement, pledge unified stance against attack",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQemRSQWdKaC1oejVqWW53ZEZDcGQ0MFpSekhfeDRoX3A0YjA1M1RNVS1JaGtZcEV5WGxOZnp1Ukl5endJN1BUVUw5Tk5aZjh4Vl94R01YdjktMi1EZ1B6aFZpMVpKd0dubmo3d0xyZmhMcTNrc1BwY2ptY2RoS0x0elJKa0p0enlpYmdvLUJZdHV3MXNFQkwxVXBvd3JFdURPa2VqOW5TNUZWUVh1ZXZuUGw1ZHJBOU05Rm1Vdg?oc=5",
       "title": "Lula to travel to Spain on Monday to join Pedro Sánchez’s election campaign",
       "important": false,
@@ -559,8 +559,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9RcEpjblM1N0xNVW1hQlBSWUlFZlRsSExqMTNXOEx5TjAzdDU4YVhNWTlhS0xab2VrQ3piUW1JczI3T3NTRy10QTItY1dUNEtnbDl5RXdNaWh0MXZjR19MZkJHc1A2MzlxZlhOeFVB?oc=5",
+      "title": "두 종류의 슈퍼박테리아 동시 공격하는 ‘듀얼 타겟’ 항생제 후보물질 개발",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdlkzclBpLTBKSWpjTS1mdlY0MldCb1E1SlNoRVFwLWs0dGVHSElqS0c5TEF1SEN3a2RIUFZ4VjZjRlB6QktyY3lQQldBNklPcjVTaEE4b2hlOVctUkJJXzZOSXpLTWJJYTNSLTJPcXZoX2JKcnQtR3RmZ2ZvVDdyQw?oc=5",
       "title": "건국대, 두 종류 슈퍼박테리아 동시 공격하는 항생제 물질 개발",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRC05bmgyUml3SXJlLWE3V01yOGh2UzQ4RDZjcFhhamN5SmVIYTNXYmpGWjRiczlRemFFMDFmUkF1RzItZl8xT3JOSVRkNTZYVjFWZU10UEZmaWVwb252RmtqVDVXV0o3cUVud3BKbURYNjJyay05R0NuRUxBdkRMY3pmTnN6cWJLYVZsY3dWOXI?oc=5",
+      "title": "UAE, Mozambique conclude CEPA negotiations as non-oil trade reaches around $2.6 bn",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
