@@ -85,6 +85,13 @@ def translate_preserving_facts(source, tokenizer, model, target_lang_id):
                 # thousands separators or decimal commas), then validate
                 # every source clause against its own translation.
                 clauses = [c.strip() for c in re.split(r',\s+(?=[A-Za-z(])', part) if c.strip()]
+            if len(clauses) < 2:
+                # Split compound news sentences at explicit conjunctions.
+                # Keep every source span and verify its numbers independently;
+                # never synthesize or append numeric facts to a translation.
+                clauses = [c.strip() for c in re.split(
+                    r'\\s+(?:and|but|while|whereas)\\s+(?=(?:[A-Za-z]|\\d))',
+                    part, flags=re.IGNORECASE) if c.strip()]
             if len(clauses) < 2 or len(clauses) > 5:
                 return ''
             clause_results = []
