@@ -862,8 +862,12 @@ def main():
     if previous_path.exists():
         try:
             previous_articles = json.loads(previous_path.read_text(encoding='utf-8')).get('articles', [])
-            if len(previous_articles) >= 80 and len(articles) < max(30, int(len(previous_articles) * .35)):
-                raise RuntimeError('Severe feed coverage drop; previous articles preserved')
+            # Published history may exceed this run's MAX_TOTAL collection cap.
+            # Compare against the achievable collection size, not all retained history.
+            baseline = min(len(previous_articles), MAX_TOTAL)
+            minimum = max(30, int(baseline * .35))
+            if baseline >= 80 and len(articles) < minimum:
+                raise RuntimeError(f'Severe feed coverage drop ({len(articles)} < {minimum}); previous articles preserved')
         except (OSError, ValueError, TypeError, AttributeError):
             pass
 
