@@ -51,6 +51,11 @@
 .micro-label{display:none}
 .map-toolbar:has(#micro-filter[style*="inline-block"]) .micro-label{display:inline}
 
+/* Unified navigation highlight: rounded turquoise underline (style 2). */
+.header .nav a{position:relative;border-bottom:0!important;text-decoration:none!important}
+.header .nav a::after{content:"";position:absolute;left:8px;right:8px;bottom:3px;height:2px;background:#48d5d0;border-radius:0 0 9px 9px;opacity:0;pointer-events:none;transition:opacity .15s ease}
+.header .nav a:hover::after,.header .nav a:focus-visible::after,.header .nav a.active::after,.header .nav a[aria-current="page"]::after{opacity:1}
+
 /* NEXT BIO 화이트/다크 모드 전환 버튼 */
 .theme-toggle{
   display:inline-flex;
