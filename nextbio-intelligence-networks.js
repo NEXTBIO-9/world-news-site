@@ -5,7 +5,9 @@ const style=document.createElement('style');style.textContent=`
 #nb-bookmark-open{display:none!important}
 #nb-intelligence .nbm-tabs{display:flex;gap:12px;overflow-x:auto;scrollbar-width:thin;margin:0 0 9px;border-bottom:1px solid #324760;flex-shrink:0}
 #nb-intelligence .nbm-tabs button{appearance:none;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:#91a9c4;font-size:12px;font-weight:650;padding:8px 2px 10px;white-space:nowrap;flex-shrink:0;cursor:pointer;box-shadow:none}
-#nb-intelligence .nbm-tabs button[aria-selected=true]{color:#f0f8ff;border-bottom-color:#48cbbb}
+#nb-intelligence .nbm-tabs button[aria-selected=true]{color:#f0f8ff;border-bottom-color:transparent}
+#nb-intelligence .nbm-tabs button{position:relative}
+#nb-intelligence .nbm-tabs button[aria-selected=true]::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:#48cbbb;border-radius:0 0 9px 9px;pointer-events:none}
 #nb-intelligence .nbm-tabs button:hover{color:#fff}
 #nb-intelligence .nb2-columns{align-items:stretch}
 #nb-intelligence .nbm-alerts-panel{height:310px;max-height:310px;min-height:0;box-sizing:border-box;display:flex;flex-direction:column;overflow:hidden}
@@ -23,7 +25,9 @@ const style=document.createElement('style');style.textContent=`
 #nb-intelligence .nbm-official h3{margin:0 0 6px;font-size:14px}
 #nb-intelligence .nbm-official-tabs{display:flex;gap:12px;flex-wrap:wrap;border-bottom:1px solid #324760;margin-bottom:9px;flex-shrink:0}
 #nb-intelligence .nbm-official-tabs button{background:transparent;border:0;border-bottom:2px solid transparent;color:#91a9c4;padding:5px 0 9px;cursor:pointer;font-size:12px;font-weight:700}
-#nb-intelligence .nbm-official-tabs button[aria-selected=true]{color:#f0f8ff;border-bottom-color:#48cbbb}
+#nb-intelligence .nbm-official-tabs button[aria-selected=true]{color:#f0f8ff;border-bottom-color:transparent}
+#nb-intelligence .nbm-official-tabs button{position:relative}
+#nb-intelligence .nbm-official-tabs button[aria-selected=true]::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:#48cbbb;border-radius:0 0 9px 9px;pointer-events:none}
 #nb-intelligence .nbm-border-panel{flex:1;min-height:0;overflow-y:auto;color:#d9e9fa;font-size:12px;line-height:1.65}
 #nb-intelligence #nbm-navy-panel[hidden],#nb-intelligence .nbm-border-panel[hidden],#nb-intelligence .nbm-official .nbm-list[hidden],#nb-intelligence .nbm-official .nbm-meta[hidden]{display:none!important}
 #nb-intelligence .nbm-forecast-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
