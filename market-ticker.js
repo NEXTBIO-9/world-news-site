@@ -83,9 +83,13 @@
     drawSparkline(q.sparkline || q.history,pct);
     const time=Date.parse(q.as_of || quotes.__updated_at || '');
     const mins=Number.isFinite(time)?Math.max(0,Math.floor((Date.now()-time)/60000)):null;
-    const quoteAge=mins===null?'갱신 시각 미상':mins<60?`${mins}분 전 시세`:`${Math.floor(mins/60)}시간 전 시세`;
-    age.textContent=fetchFailed?'연결 실패 · 이전 시세':q.stale?'이전 시세':quoteAge;
-    age.title=lastChecked?`마지막 데이터 확인: ${formatter.format(new Date(lastChecked))} KST`:'아직 데이터 확인 전';
+    // The JSON timestamp is the file collection time, not the exchange trade time.
+    const kstDay=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Seoul',weekday:'short'}).format(new Date());
+    const usDay=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short'}).format(new Date());
+    const isWeekend=m.id==='kospi'?['Sat','Sun'].includes(kstDay):m.id==='nasdaq'?['Sat','Sun'].includes(usDay):false;
+    const updatedLabel=mins===null?'갱신 시각 미상':mins<60?`데이터 갱신 ${mins}분 전`:`데이터 갱신 ${Math.floor(mins/60)}시간 전`;
+    age.textContent=fetchFailed?'연결 실패 · 이전 시세':q.stale?'이전 시세':isWeekend?`${m.name} 휴장 · 최근 종가`:updatedLabel;
+    age.title=`${updatedLabel} (거래 체결 시각 아님)`+(lastChecked?` · 파일 확인: ${formatter.format(new Date(lastChecked))} KST`:'');
     link.title=`${m.name} 시세 보기 (지연 가능)`;
   }
   async function fetchQuotes(){
