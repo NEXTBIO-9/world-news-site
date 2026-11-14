@@ -148,6 +148,37 @@ def resolve_google(url, session):
         return '', 'google_parse_' + type(exc).__name__
     return '', 'google_unresolved'
 
+def structured_article_body(raw):
+    """Use publisher-provided JSON-LD articleBody when main-text extraction fails."""
+    try:
+        page = raw.decode('utf-8', 'replace') if isinstance(raw, bytes) else str(raw)
+        scripts = re.findall(
+            r'<script\\b[^>]*type\\s*=\\s*["\\']application/ld\\+json["\\'][^>]*>(.*?)</script\\s*>',
+            page, flags=re.IGNORECASE | re.DOTALL)
+        def walk(node):
+            if isinstance(node, list):
+                for child in node:
+                    yield from walk(child)
+            elif isinstance(node, dict):
+                kind = node.get('@type', '')
+                types = kind if isinstance(kind, list) else [kind]
+                if any(isinstance(t, str) and t.lower().endswith(('article', 'newsarticle', 'reportage')) for t in types):
+                    body = node.get('articleBody')
+                    if isinstance(body, str) and len(clean(body)) >= 100:
+                        yield body
+                for child in node.values():
+                    if isinstance(child, (dict, list)):
+                        yield from walk(child)
+        for script in scripts[:12]:
+            try:
+                for body in walk(json.loads(html.unescape(script))):
+                    yield body
+            except (ValueError, TypeError):
+                continue
+    except Exception:
+        return
+
+
 def get_article(url, title, session):
     parsed = urlparse(url)
     if parsed.scheme not in ('http', 'https') or not parsed.hostname:
@@ -167,10 +198,14 @@ def get_article(url, title, session):
                 return '', 'not_html'
             raw = response.raw.read(1_200_000, decode_content=True)
         body = trafilatura.extract(raw, include_comments=False, include_tables=False, favor_recall=True)
-        if not body:
-            return '', 'no_body_extracted'
-        result = excerpt(body, title)
-        return (result, 'ok') if result else ('', 'body_too_short_or_title_only')
+        result = excerpt(body, title) if body else ''
+        if result:
+            return result, 'ok'
+        for structured_body in structured_article_body(raw):
+            result = excerpt(structured_body, title)
+            if result:
+                return result, 'ok_jsonld'
+        return '', 'body_too_short_or_title_only' if body else 'no_body_extracted'
     except requests.RequestException as exc:
         return '', 'request_' + type(exc).__name__
     except Exception as exc:
