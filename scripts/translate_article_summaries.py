@@ -163,6 +163,8 @@ def main():
     rejection_counts = Counter()
     numeric_fallback_attempts = 0
     numeric_fallback_successes = 0
+    numeric_diagnostic_samples = 0
+    numeric_source_token_lengths = Counter()
     for url, item in pending:
         if time.monotonic() - started > BUDGET:
             break
@@ -175,6 +177,20 @@ def main():
             reason = rejection_reason(source, translated)
             if reason == 'missing_numeric_facts':
                 numeric_fallback_attempts += 1
+                # Log bounded numeric-only diagnostics; no article text or URL.
+                source_tokens = len(tokenizer(source, add_special_tokens=True)['input_ids'])
+                numeric_source_token_lengths['over_384' if source_tokens > 384 else 'within_384'] += 1
+                if numeric_diagnostic_samples < 5:
+                    missing = sorted(numeric_facts(source) - numeric_facts(translated))
+                    extra = sorted(numeric_facts(translated) - numeric_facts(source))
+                    print('NUMERIC MISMATCH SAMPLE: ' + json.dumps({
+                        'source_tokens': source_tokens,
+                        'missing_source_numbers': missing[:12],
+                        'extra_translation_numbers': extra[:12],
+                        'source_number_count': len(numeric_facts(source)),
+                        'translation_number_count': len(numeric_facts(translated)),
+                    }, ensure_ascii=False), flush=True)
+                    numeric_diagnostic_samples += 1
                 # A full-excerpt translation may omit a number. Retry in
                 # sentence-sized pieces, never inventing or inserting figures.
                 fallback = translate_preserving_facts(source, tokenizer, model, target_lang_id)
@@ -201,6 +217,7 @@ def main():
     print(f'Korean summary translations: pending={len(pending)}, translated={successes}, rejected={rejected}, total_ko={sum(bool(v.get("text_ko")) for v in summaries.values() if isinstance(v, dict))}')
     print('Korean summary rejection reasons: ' + json.dumps(dict(sorted(rejection_counts.items())), ensure_ascii=False))
     print(f'Numeric fact fallback: attempts={numeric_fallback_attempts}, successes={numeric_fallback_successes}, remaining_failures={rejection_counts.get("missing_numeric_facts", 0)}')
+    print('Numeric mismatch source length: ' + json.dumps(dict(numeric_source_token_lengths), ensure_ascii=False))
 
 
 if __name__ == '__main__':
