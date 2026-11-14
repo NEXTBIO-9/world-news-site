@@ -3,6 +3,7 @@
 import json
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from news_priority import important
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
@@ -61,7 +62,8 @@ def build():
             urls = [a.get('url') for a in articles if isinstance(a, dict) and isinstance(a.get('url'), str) and a.get('url')]
             if len(urls) != len(set(urls)):
                 warnings.append({'dataset': 'articles.json', 'reason': 'duplicate_published_urls'})
-            if len(articles) > 300:
+            # Publication is capped at 1,000 in publish_translated_news.py.
+            if len(articles) > 1000:
                 warnings.append({'dataset': 'articles.json', 'reason': 'published_feed_over_capacity'})
     except (OSError, ValueError, TypeError, AttributeError):
         pass
@@ -81,10 +83,33 @@ def build():
                                  'reason': 'important_collected_articles_unpublished', 'count': count})
     except (OSError, ValueError, TypeError, OverflowError, AttributeError):
         pass
+    # Operational metrics are observational only: never change the publishing queue.
+    publication_metrics = {}
+    try:
+        feed = json.loads((DATA / 'articles.json').read_text(encoding='utf-8'))
+        publication_metrics['published_total'] = len(feed.get('articles') or [])
+        queue = json.loads((DATA / 'pending-title-news.json').read_text(encoding='utf-8'))
+        pending = queue.get('pending') or []
+        publication_metrics['pending_total'] = len(pending)
+        publication_metrics['pending_important'] = sum(
+            1 for entry in pending if isinstance(entry, dict)
+            and isinstance(entry.get('article'), dict)
+            and important(entry['article']))
+        audit = json.loads((DATA / 'collection-publication-audit.json').read_text(encoding='utf-8'))
+        publication_metrics['latest_collection'] = {
+            'collected': audit.get('collected_unique_urls'),
+            'published': (audit.get('counts') or {}).get('published', 0),
+            'pending': (audit.get('counts') or {}).get('pending', 0),
+            'not_in_current_queue': (audit.get('counts') or {}).get('not_in_current_queue', 0),
+            'important_unpublished': (audit.get('counts') or {}).get('important_unpublished', 0),
+        }
+    except (OSError, ValueError, TypeError, AttributeError):
+        publication_metrics['available'] = False
     return {'updated': now.isoformat(),
             'scope': 'data_file_presence_json_syntax_and_nonblocking_warnings',
             'dataset_count': len(status), 'warning_count': len(warnings),
-            'warnings': warnings, 'datasets': status}
+            'warnings': warnings, 'datasets': status,
+            'publication_metrics': publication_metrics}
 
 
 def main():
@@ -92,7 +117,7 @@ def main():
     if OUT.exists():
         try:
             previous = json.loads(OUT.read_text(encoding='utf-8'))
-            if all(previous.get(k) == result[k] for k in ('datasets', 'warnings')):
+            if all(previous.get(k) == result[k] for k in ('datasets', 'warnings', 'publication_metrics')):
                 return
         except (OSError, ValueError):
             pass
