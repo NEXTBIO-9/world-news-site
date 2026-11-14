@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Audit collection-to-publication coverage without guessing about external news."""
 import json
+import re
+import html
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -18,6 +20,17 @@ def load(path):
     if not isinstance(result, dict) or not isinstance(result.get('articles'), list):
         raise ValueError('Expected article feed')
     return result['articles']
+
+
+def rss_fallback_candidate(article):
+    """Diagnostic only: a substantive RSS description, never automatic publication."""
+    title = str(article.get('title') or '').strip()
+    raw = html.unescape(str(article.get('summary') or '')).strip()
+    raw = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', raw)).strip()
+    normalized = lambda value: re.sub(r'[^\w]+', '', value.casefold())
+    body, heading = normalized(raw), normalized(title)
+    return bool(title and len(raw) >= 85 and len(body) >= max(65, int(len(heading) * 1.25))
+                and body != heading and not (body.startswith(heading) and len(body) < len(heading) * 1.6))
 
 
 def build(staged, published, pending, summary_cache=None, excluded=None):
@@ -51,7 +64,8 @@ def build(staged, published, pending, summary_cache=None, excluded=None):
             elif url in excluded_urls:
                 reason = 'title_retry_excluded'
         unpublished.append({'url': url, 'title': article.get('title') or '',
-                            'important': important(article), 'state': state, 'reason': reason})
+                            'important': important(article), 'state': state, 'reason': reason,
+                            'rss_fallback_candidate': rss_fallback_candidate(article) if reason == 'source_blocked' else False})
     unpublished.sort(key=lambda a: (not a['important'], a['state'], str(a['url'])))
     important_states = dict(Counter(a['state'] for a in unpublished if a['important']))
     important_reasons = dict(Counter(a['reason'] for a in unpublished if a['important']))
@@ -64,6 +78,7 @@ def build(staged, published, pending, summary_cache=None, excluded=None):
             'counts': dict(sorted(counts.items())),
             'important_unpublished_by_state': important_states,
             'important_unpublished_by_reason': important_reasons,
+            'blocked_important_rss_candidates': sum(a['rss_fallback_candidate'] for a in unpublished if a['important'] and a['reason'] == 'source_blocked'),
             'important_requires_review': [a for a in unpublished if a['important'] and a['state'] == 'not_in_current_queue'][:100],
             'unpublished': unpublished[:500]}
 
@@ -82,7 +97,7 @@ def main():
     if OUT.exists():
         try:
             previous = json.loads(OUT.read_text(encoding='utf-8'))
-            if all(previous.get(k) == result[k] for k in ('counts', 'important_unpublished_by_state', 'important_unpublished_by_reason', 'important_requires_review', 'unpublished')):
+            if all(previous.get(k) == result[k] for k in ('counts', 'important_unpublished_by_state', 'important_unpublished_by_reason', 'blocked_important_rss_candidates', 'important_requires_review', 'unpublished')):
                 return
         except (OSError, ValueError):
             pass
