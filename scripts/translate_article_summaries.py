@@ -66,7 +66,7 @@ def translate_preserving_facts(source, tokenizer, model, target_lang_id):
     """
     import torch
     parts = [p.strip() for p in re.split(r'(?<=[.!?。！？])\s+', source) if p.strip()]
-    if len(parts) < 2 or len(parts) > 6:
+    if not parts or len(parts) > 8:
         return ''
     translated_parts = []
     for part in parts:
@@ -76,7 +76,22 @@ def translate_preserving_facts(source, tokenizer, model, target_lang_id):
                                     do_sample=False, forced_bos_token_id=target_lang_id)
         result = tokenizer.batch_decode(tokens, skip_special_tokens=True)[0].strip()
         if not result or not numeric_facts(part).issubset(numeric_facts(result)):
-            return ''
+            # Long single sentences can omit figures. Retry bounded clauses,
+            # but never append missing numbers without their source context.
+            clauses = [c.strip() for c in re.split(r'(?<=[;:])\\s+|;\\s*', part) if c.strip()]
+            if len(clauses) < 2 or len(clauses) > 5:
+                return ''
+            clause_results = []
+            for clause in clauses:
+                clause_inputs = tokenizer([clause], return_tensors='pt', truncation=True, max_length=384)
+                with torch.inference_mode():
+                    clause_tokens = model.generate(**clause_inputs, max_new_tokens=400, num_beams=2,
+                                                   do_sample=False, forced_bos_token_id=target_lang_id)
+                clause_result = tokenizer.batch_decode(clause_tokens, skip_special_tokens=True)[0].strip()
+                if not clause_result or not numeric_facts(clause).issubset(numeric_facts(clause_result)):
+                    return ''
+                clause_results.append(clause_result)
+            result = ' '.join(clause_results)
         translated_parts.append(result)
     combined = ' '.join(translated_parts)
     return combined if acceptable(source, combined) else ''
