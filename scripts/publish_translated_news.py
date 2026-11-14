@@ -111,7 +111,8 @@ def combined(staged):
     for item in staged['articles']:
         if (isinstance(item, dict) and isinstance(item.get('title'), str) and item['title'].strip()
                 and isinstance(item.get('url'), str) and item['url'].strip()
-                and identity(item) not in seen and identity(item) not in excluded):
+                and identity(item) not in seen and identity(item) not in excluded
+                and item['url'] not in blocked_urls):
             result.append(item)
             seen.add(identity(item))
     return prioritize(result)
