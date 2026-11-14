@@ -121,7 +121,9 @@ def main():
     # entries; otherwise stale cached excerpts can consume the entire budget.
     active = [pair for pair in pending if pair[0] in by_url]
     inactive = [pair for pair in pending if pair[0] not in by_url]
-    newest = sorted(active, key=lambda pair: (published_time(pair), important(by_url.get(pair[0], {}))), reverse=True)
+    # Within the fresh quota, translate important news before ordinary news.
+    # The separate oldest-first quota below still prevents backlog starvation.
+    newest = sorted(active, key=lambda pair: (important(by_url.get(pair[0], {})), published_time(pair)), reverse=True)
     fresh_limit = max(1, LIMIT - max(1, LIMIT // 4))
     selected = newest[:fresh_limit]
     used = {url for url, _ in selected}
