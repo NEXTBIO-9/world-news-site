@@ -121,6 +121,8 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  whoBtn.addEventListener('click',()=>showRight('who'));forecastBtn.addEventListener('click',()=>showRight('forecast'));showRight('who');
  function show(tab){alerts.hidden=tab!=='alerts';marketList.hidden=tab!=='market';riskList.hidden=tab!=='risk';calendarList.hidden=tab!=='calendar';anomalyList.hidden=tab!=='anomaly';alertBtn.setAttribute('aria-selected',String(tab==='alerts'));marketBtn.setAttribute('aria-selected',String(tab==='market'));riskBtn.setAttribute('aria-selected',String(tab==='risk'));calendarBtn.setAttribute('aria-selected',String(tab==='calendar'));anomalyBtn.setAttribute('aria-selected',String(tab==='anomaly'))}
  alertBtn.addEventListener('click',()=>show('alerts'));marketBtn.addEventListener('click',()=>show('market'));riskBtn.addEventListener('click',()=>show('risk'));calendarBtn.addEventListener('click',()=>show('calendar'));anomalyBtn.addEventListener('click',()=>show('anomaly'));show('alerts');
+ // Repaint after creating the tab containers; the news feed may have rendered earlier.
+ window.NB2?.refresh?.();
  document.addEventListener('nb-title-translation-changed',renderOfficial);load();setInterval(load,300000);
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
