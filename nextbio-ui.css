@@ -90,8 +90,11 @@ body.dark-mode .nb-tour-controls{background:#24354b}
 
 
 /* Simple native risk accordion: avoid inherited layout and clipping rules. */
-#nb-risk-signals details.nb-risk-group{display:block;box-sizing:border-box;margin:10px 0;padding:0;border:1px solid rgba(137,167,207,.3);border-radius:8px;background:rgba(27,45,69,.45);overflow:visible}
-#nb-risk-signals details.nb-risk-group>summary{display:list-item;box-sizing:border-box;position:static;height:auto;min-height:0;max-height:none;padding:13px 14px;line-height:1.6;font-size:13px;color:#e9f3ff;white-space:normal;overflow:visible;cursor:pointer}
+#nb-risk-signals details.nb-risk-group{display:block;box-sizing:border-box;margin:2px 0;padding:0;border:1px solid rgba(137,167,207,.3);border-radius:8px;background:rgba(27,45,69,.45);overflow:visible}
+#nb-risk-signals details.nb-risk-group>summary{display:list-item;box-sizing:border-box;position:static;height:auto;min-height:0;max-height:none;padding:8px 12px;line-height:1.45;font-size:13px;color:#e9f3ff;white-space:normal;overflow:visible;cursor:pointer}
 #nb-risk-signals details.nb-risk-group>summary:focus-visible{outline:2px solid #79baff;outline-offset:2px}
 #nb-risk-signals details.nb-risk-group>.nb2-row,#nb-risk-signals details.nb-risk-group>.nb2-muted{margin:0 14px}
 #nb-risk-signals details.nb-risk-group>.nb2-muted{padding:12px 0}
+
+/* Tighter spacing for the four risk categories only. */
+#nb-risk-signals{gap:3px!important}
