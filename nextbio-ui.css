@@ -106,3 +106,12 @@ body.dark-mode .nb-tour-controls{background:#24354b}
 body:not(.dark-mode) #nb-risk-signals .nb-risk-group{background:#f4f8fc;border-color:#d5e1ee}
 body:not(.dark-mode) #nb-risk-signals .nb-risk-group>summary .nb-risk-status{color:#536b83}
 @media(max-width:480px){#nb-risk-signals .nb-risk-group>summary{padding:12px 10px;gap:7px}#nb-risk-signals .nb-risk-group>summary .nb-risk-status{font-size:10px}}
+
+
+/* Fix inherited accordion height clipping: keep the entire label visible. */
+#nb-risk-signals details.nb-risk-group{height:auto!important;min-height:0!important;max-height:none!important;overflow:hidden}
+#nb-risk-signals details.nb-risk-group>summary{box-sizing:border-box!important;position:relative;height:auto!important;min-height:50px!important;max-height:none!important;overflow:visible!important;padding:12px 14px!important;line-height:1.5!important;white-space:normal!important;display:flex!important;align-items:center!important}
+#nb-risk-signals details.nb-risk-group>summary .nb-risk-name,
+#nb-risk-signals details.nb-risk-group>summary .nb-risk-status{position:static!important;transform:none!important;line-height:1.5!important;white-space:normal!important;overflow:visible!important}
+#nb-risk-signals details.nb-risk-group>summary .nb-risk-status{flex:0 1 auto}
+@media(max-width:480px){#nb-risk-signals details.nb-risk-group>summary{min-height:52px!important;padding:12px 10px!important}}
