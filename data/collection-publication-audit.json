@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-15T18:56:32.008333+00:00",
+  "updated": "2026-11-15T19:54:50.865798+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
-  "collected_unique_urls": 167,
+  "collected_unique_urls": 166,
   "counts": {
-    "important_unpublished": 7,
+    "important_unpublished": 8,
     "not_in_current_queue": 37,
-    "pending": 14,
-    "published": 116
+    "pending": 12,
+    "published": 117
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 5,
+    "not_in_current_queue": 6,
     "pending": 2
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 4,
+    "source_blocked": 5,
     "repeated_extraction_failure": 1,
     "in_retry_queue": 2
   },
@@ -39,6 +39,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWFM3WjZMenp3MzNWUTcwU25PSUhfd3NUZUkxd1FZYlVMTmNhTlM2WlkzM1ZKc1QtbGtVVktJdFljcG1uU0VBQ0tTU3NiaVI1OTBveEo4TnF4RjVMeUNPai1BcTJpVTdEX1IyLS1DeFI5Znc1RHFiUXU3Q1oybExEeXNGQmg5eXhRd3VkcjVHUExWUTdBeFd5ZmRxVy1BRjRQcEHSAaoBQVVfeXFMT2hfRG5GaXNydXE4eURxbDBqM3c4SU04R2ZPUFZpam4xSGZIYUNZUG5tMjUweEVyTi1tZms5SWVuSFdNa21YTHkzM1pJeVQ0Q1MtbFg1bmZ4U21iaVZjZS1ZYXNXaVFGbVhTMDFQYzU0aHdDTTVLWU9Yd1lWUk4zSU1tcF9jeWthU2x4NlAxY05ZTzRKU3c1dlpYcjlQU2RQV0E0WktGVG9vS0E?oc=5",
       "title": "Indonesia President conveys apology to Singapore, Malaysia over wildfire haze",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQc1c4aEZGVWxpWDlYajhJZXFCbTBRa0NTTlZDWEpBMWNacEw5aEFOUnZGLTVGMXVlZkFVOEwzSEFFZXo4SW1nc0E5dUQzYzVqZmx5WXpBNlRERy10Uk1WdFd3S1VkOXFvUXg3VlF0ZFBlM1ZXMU53WXdVT2VKZG14ckNoVF9mWXdRckdxc1N2SWNETmo0Nzd3alA2YzNsRnNwVFdv?oc=5",
+      "title": "Iran claims drone attack on US military airbase in Bahrain",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -81,6 +89,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWFM3WjZMenp3MzNWUTcwU25PSUhfd3NUZUkxd1FZYlVMTmNhTlM2WlkzM1ZKc1QtbGtVVktJdFljcG1uU0VBQ0tTU3NiaVI1OTBveEo4TnF4RjVMeUNPai1BcTJpVTdEX1IyLS1DeFI5Znc1RHFiUXU3Q1oybExEeXNGQmg5eXhRd3VkcjVHUExWUTdBeFd5ZmRxVy1BRjRQcEHSAaoBQVVfeXFMT2hfRG5GaXNydXE4eURxbDBqM3c4SU04R2ZPUFZpam4xSGZIYUNZUG5tMjUweEVyTi1tZms5SWVuSFdNa21YTHkzM1pJeVQ0Q1MtbFg1bmZ4U21iaVZjZS1ZYXNXaVFGbVhTMDFQYzU0aHdDTTVLWU9Yd1lWUk4zSU1tcF9jeWthU2x4NlAxY05ZTzRKU3c1dlpYcjlQU2RQV0E0WktGVG9vS0E?oc=5",
       "title": "Indonesia President conveys apology to Singapore, Malaysia over wildfire haze",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQc1c4aEZGVWxpWDlYajhJZXFCbTBRa0NTTlZDWEpBMWNacEw5aEFOUnZGLTVGMXVlZkFVOEwzSEFFZXo4SW1nc0E5dUQzYzVqZmx5WXpBNlRERy10Uk1WdFd3S1VkOXFvUXg3VlF0ZFBlM1ZXMU53WXdVT2VKZG14ckNoVF9mWXdRckdxc1N2SWNETmo0Nzd3alA2YzNsRnNwVFdv?oc=5",
+      "title": "Iran claims drone attack on US military airbase in Bahrain",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -199,14 +215,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQeG5TemhWTm11cmF6TmRpdmxtQ1NneFFJRVlORl9hU3ZpT3ViZWRqcldvalZJSlA2SGJLZVRCR29XaTlYZFlsR01JNy1WNUk5a0JpQlhFaWJuTjFKUmQxODB2eDdlWUFQZHJMR19hTk1aZVZva1F2UmhPTGdhejdZMXFlVGF5WG9Fcm5nd3UwOEU0NjM1TDVuMVp4SG5tSjA1WnExdUtJb2JTOTlYbU5CTDg0eHZwa2htekFSTUJkZXFQSkRwTDc0SFliSWxoWHFXUHFkRTZZXzZXcEZad3I4SFZBcDZpS0llWXhHcG9Tc3RWQk85dlRQVG9UNzlYZ3M?oc=5",
-      "title": "Gold, Silver Prices This Week: Inflation Data, West Asia Tensions To Keep Bullion Markets Volatile",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9QQ2N2ckVKbjV5b0UzRGZMRTdZSlpoYzBLNTIzVFpxUS1hTTBENXQwTkVNWkRjcEJ1VF9SdE1oOEJGZXhlc3VSTzd2VzJ6djVZd2tsaHdTS09hUDEybFI5VlczZFJBdkhPd2pr?oc=5",
       "title": "국가 지원 신약, 기술이전·사업화 길 찾는다…KDDF, 글로벌 협력 확대",
       "important": false,
@@ -284,6 +292,14 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaVdBSzdtc2J2a1FFNF9peHN0aUtTRnZ5RzNqYjV2SVhQdUt2OWNUT0liUEE3ZEdXRkZfcElfWVQzVjh1MzlPbGNUWnBFaUw5MkQxcndsdGNIcjZjd2FXWmYxSW5PQUhveXd2NXVuNVZhSWt1Zjlpc25IaktPaXpRenFURGZHWFNLcjZ2SkMyb1NsSENJRkt1YllhNlU?oc=5",
+      "title": "인공지능 경쟁과 공공 부채가 세계 부동산 시장에 압력을 가하고 있습니다.",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -367,14 +383,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNcFdRXy1PVHJGcDZvaWU2ZUY1OUZQSnVhTHJUSUc2bXJmc2FhTG5TZl9mU1RwWFB6T0IwVy16SFloSzNKSl9rVS1hVGVhWDNZYTRKRTNXT01VMklsTVNQaURIXzdaUVFldGFyVF94cW9UZkt5RElPS1VWM0V2MDBVVnBOTEZ3aENHV3JxZWkxSlQ4eUhpXzU0UDhWcURxZ1JfWHZpRGxyWlp1czNZQ1ctejY2bDl1dnRHMERxWUNWdDNsMlFR?oc=5",
-      "title": "Houthi attacks on Saudi Arabia threaten regional, global economic stability: Masood Khan",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOMGtYTVhaWGRsVlVUMDJDTUV1VXJ4QXFoRkxvMlZucU9EczNDTkcwSlBQRDZEUFJiZWJBQU1fSUFuOHlnNUx0MEpZSFk2eHh4Rm1NRGFBTjlaX3RMZ2dkd081ZGZlTG9aOF9oQ2JGUXdFaE51cW9xd0VOdUlqVzdMSVplRzQ4TWRNUTd3UzJfVmg0ckdtX1dnRmJZMTFucEtWYkV0TE9aV0ZfNXNXRHgwTkdFQTFsbFhISDNiaFdNRDNzUnJmWUxWOWxwbjZFaGty?oc=5",
       "title": "PBBM WELCOMES CANADA-BRAZIL PARTNERSHIP, CONGRATULATES LULA AND IMF CHIEF GEORGIEVA LOOK: President Ferdinand R. Marcos Jr. welcomed partnership with Canada and Brazil in broadening opportunities for their peoples and econo",
       "important": false,
@@ -409,22 +417,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeGVzSjhrbUhOTTctX0ViTkJTRnFEZnkwNTJQR3gySTJRQlk3aXNwenJ2Qk1DejVYcF84dmF4WDFPd2xKRzEwazEtOEdOb05OOFhJaXZQVTd3R2lDRHdGbTgtM1JSSEMxeFN5OTlLc0tLNE55MHlHRDZNU3lOVFBDaTJwQQ?oc=5",
       "title": "Iran war live: Tehran targets air base in Bahrain in first direct strike on Gulf state in weeks",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOamMzb1pKa3o5bGpMY1A3UkF1OEkxaDZYMFQwOEhfdHd2bTlqTlEzQnVJWG1pQXpQcTdjeUZrWklSNkpUbWNKdDFRcGlTOFpuZGNWNEoyOVllVldqU01DM2FBLWFxTTgxa1FMbnpJeVdEaFZPWElIb3RnOTRJc2hLRFVsWXp6SloxRHZrZUEyMVhwOHdhREZieGVB?oc=5",
-      "title": "France fears Germany's future deep-strike weapons could push Russia toward the nuclear threshold by mistake",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaVdBSzdtc2J2a1FFNF9peHN0aUtTRnZ5RzNqYjV2SVhQdUt2OWNUT0liUEE3ZEdXRkZfcElfWVQzVjh1MzlPbGNUWnBFaUw5MkQxcndsdGNIcjZjd2FXWmYxSW5PQUhveXd2NXVuNVZhSWt1Zjlpc25IaktPaXpRenFURGZHWFNLcjZ2SkMyb1NsSENJRkt1YllhNlU?oc=5",
-      "title": "인공지능 경쟁과 공공 부채가 세계 부동산 시장에 압력을 가하고 있습니다.",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
