@@ -1,21 +1,21 @@
 {
-  "updated": "2026-11-15T02:07:37.912054+00:00",
+  "updated": "2026-11-15T03:10:07.014563+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
     "important_unpublished": 12,
-    "not_in_current_queue": 48,
+    "not_in_current_queue": 43,
     "pending": 16,
-    "published": 116
+    "published": 121
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 11,
     "pending": 1
   },
   "important_unpublished_by_reason": {
-    "repeated_extraction_failure": 3,
-    "source_blocked": 8,
+    "repeated_extraction_failure": 2,
+    "source_blocked": 9,
     "in_retry_queue": 1
   },
   "blocked_important_rss_candidates": 0,
@@ -45,11 +45,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBybk5SZ1l5c0tJVlNfaXpCNE9Ic1pGSDB4SVdxS1FzYVlTREV5Wm1oSnBfanU4ZFllV0lCMEs1QU5vaU1BVGotSmxxTkFyMHlCZ2Vva0ZNcnEzT2lOd1d2M0F5Qnh3LWptYzQ2Yg?oc=5",
-      "title": "국가임상시험지원재단, 국내 임상시험 산업 실태조사 결과 공개…CRO 매출 1조 원 돌파",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE56UWI1anU1M2xycENLblpjVG10X3EtYnpqbEhyT2ZzMGhXcUd5dXFMdmoxRnoybjBJVUlXeElZTkNUaW51bkYzNGl6VUdDMkNBVklwV0xFOTFqYmUxVHY2cnJadW02b3hSUzV4QkhSX29hZzFTN3Zr?oc=5",
+      "title": "New World Screwworm Outbreak",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -135,11 +135,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBybk5SZ1l5c0tJVlNfaXpCNE9Ic1pGSDB4SVdxS1FzYVlTREV5Wm1oSnBfanU4ZFllV0lCMEs1QU5vaU1BVGotSmxxTkFyMHlCZ2Vva0ZNcnEzT2lOd1d2M0F5Qnh3LWptYzQ2Yg?oc=5",
-      "title": "국가임상시험지원재단, 국내 임상시험 산업 실태조사 결과 공개…CRO 매출 1조 원 돌파",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE56UWI1anU1M2xycENLblpjVG10X3EtYnpqbEhyT2ZzMGhXcUd5dXFMdmoxRnoybjBJVUlXeElZTkNUaW51bkYzNGl6VUdDMkNBVklwV0xFOTFqYmUxVHY2cnJadW02b3hSUzV4QkhSX29hZzFTN3Zr?oc=5",
+      "title": "New World Screwworm Outbreak",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -295,24 +295,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBZQW1FQ3BuTEpGVVl0MHJ6d08wdWxBdUNicElWRllGX1RPdnNKTWFGTVdmUmo1RmZyWkJWWGhPTEp3MUxVcjhycGZpb2dTNUU5aWhxMl9TLTNzdDI5YlhlSEl1NTR3U01vRU4yeA?oc=5",
-      "title": "연구를 신약 자산으로…KAIST·KIST 아태 기술이전 2·3위",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBaY3JTSHd6Z2drRW1CLU5OQlRsRzM3cmJWVkU4LVNnMWszV2JiSXdVUzl5VFFkMXp4TEY0VzUyR2l2T2NEeHpPMXo3UUpqUDR4eUs2RjNtWU0wbHdYSUVKRzNCcE5aVnl6MXNEZg?oc=5",
       "title": "지씨씨엘, 차세대 면역세포 분석장비 도입해 신약개발 지원",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8xR3p2YTBZa25WSGRCdnBUVlVFR1B1aVVsRkg5XzRucHFOUGNDMkQxbEdQdUxGM241cDJheG9HcUszLXVFM25QM3FVZXFQd1lNdm9KTFFQRWJhdVhSNUNLanBpZ1VORnp3VFhPN1lmZ1RNSlnSAXdBVV95cUxQZ3dsejZTQkdLSVJNakdUU0VKNVJnazg4allyb3VHaGFScHJXMkZjUG5RNkZRbFM5VDVkaEhSOXpFTnpxVW8wMkhNRU9aajhURnc5UjU5dWpCRll2UFFDLTBhUE9CbFBVQnJlMjVkQl9iX3llMUw2Zw?oc=5",
-      "title": "[AM크립토] 미국 물가 발표가 코인 가격에도 영향을 줄까요?",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -351,14 +335,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxObXVWT1RUSGhCb3Q4RnJUZ2JrbTFZQjU4Y2ZDSUdxTlp5SDhMUFIwYzJ5QWRUc0N4eHB1bGVFamQ1SjdoeWdSTVBOZEJmeWdMenFvU2ZfN0pJY2lNQlM5UmVNN09PdWFQSnR4U2RKS2pCcjl6ZXlEYjVfWWJKaEJ6ZXdTQQ?oc=5",
-      "title": "Phantom energy: New report exposes empty promises behind nuclear power and data centers",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQT0VhcExRUnVkVVZRYXp5d0ZBNDFoYjlReUkxRGFkb252b2xwM3p0bG5CQmw1Y2ZaMjZ1RUlmQWRUTHg5TExseDlabkl5S2FYampUQUp2SGJHa1plenlVZGdENzVSdGdENDY4NWRUeTIzMUFVTGJ1Vk10SFlpdGlGRUFJZTNVZw?oc=5",
       "title": "Indonesia’s Citizens In Russia’s War – OpEd",
       "important": false,
@@ -385,14 +361,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOY25GTllSNjBjOTlEeWpaMTI1Wk9VZENGN21JWk5KdWV0bndkUjhWWjY3am45VWVENGNwb09oaXRlTnJRN1d0bno1QnlFOVVRTmdXZGxwZHdkeDFjaEJjQ29UN2djTU9fb21LTEU4UVNxcGoxQi1sRzNpRE5Sa2VkMncwUkNYMG5mclI2ckxoRHU2THRwaFJVSzdRVXhjUQ?oc=5",
       "title": "North Atlantic Treaty Organization - Military Alliance, Post-Cold War, Global Security",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOamZHNUpHOUJfdktJUzlHSEFHMTZ1ZGh0akdjcFlIdk8xeFdiU3ppX0RkZ0gzRWdaZG5INDZZcjAtWGlILS1qWk9yei1DMk9NcUJ0TkVKSkJaOUFwa1ZoQ1Z2NDNON0N6ZWpqaUZGbkMyczBRbkl5X2RkYUpMdlAtZldaZ2xoTHh0ZkYxeTRSODF0ZU5wdzltNVRVZ0hqTEx4eGs3Qk1R?oc=5",
-      "title": "United Kingdom inflation: Deutsche Bank sees further upside",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -481,14 +449,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQemRSQWdKaC1oejVqWW53ZEZDcGQ0MFpSekhfeDRoX3A0YjA1M1RNVS1JaGtZcEV5WGxOZnp1Ukl5endJN1BUVUw5Tk5aZjh4Vl94R01YdjktMi1EZ1B6aFZpMVpKd0dubmo3d0xyZmhMcTNrc1BwY2ptY2RoS0x0elJKa0p0enlpYmdvLUJZdHV3MXNFQkwxVXBvd3JFdURPa2VqOW5TNUZWUVh1ZXZuUGw1ZHJBOU05Rm1Vdg?oc=5",
       "title": "Lula to travel to Spain on Monday to join Pedro Sánchez’s election campaign",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNdGRoYnhoNmZMUTVFODRONTJZQmhGTEphQ3NpaVVpMXlGeXR3N05MblVRZU4tRUtsM3Z6czJUbDJfNktJamFJOExMS2V2VVl2ZDN0N2lLdDdzMllzT1NBOXhrc0JsUGg1LS04OTI4Y3I1bE5YM1JSRE9oWVkwTnFuRmZtaXI5VnU5VEVzTXQybndSd0lBTlRPWjNWZVo5ZWFlak9tQ0lTUVFfWS1SUzJCVDl4S01RSXpYNllEWTFscVhfcjZt?oc=5",
-      "title": "Rate Hike Fears Set to Test India’s Stock Rally as Inflation Rises",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
