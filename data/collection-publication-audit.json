@@ -1,21 +1,21 @@
 {
-  "updated": "2026-11-15T08:24:40.240153+00:00",
+  "updated": "2026-11-15T09:08:13.950923+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
-  "collected_unique_urls": 179,
+  "collected_unique_urls": 176,
   "counts": {
-    "important_unpublished": 11,
-    "not_in_current_queue": 42,
+    "important_unpublished": 7,
+    "not_in_current_queue": 33,
     "pending": 14,
-    "published": 123
+    "published": 129
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 10,
+    "not_in_current_queue": 6,
     "pending": 1
   },
   "important_unpublished_by_reason": {
     "repeated_extraction_failure": 2,
-    "source_blocked": 8,
+    "source_blocked": 4,
     "in_retry_queue": 1
   },
   "blocked_important_rss_candidates": 0,
@@ -26,22 +26,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBwbkw2Qm1NMEUwdWNnZVRJNDh3QXlxQUI3dFpnWHpRcWJsUlRYeGpVT0cxcGljNFdvUFhnMl94Z1NMWjY2d1B0cVd6XzZRNTNpZjN1NEo1WmtBbG5lLVVj?oc=5",
-      "title": "Hurricane Katrina | Deaths, Damage, & Facts",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE56UWI1anU1M2xycENLblpjVG10X3EtYnpqbEhyT2ZzMGhXcUd5dXFMdmoxRnoybjBJVUlXeElZTkNUaW51bkYzNGl6VUdDMkNBVklwV0xFOTFqYmUxVHY2cnJadW02b3hSUzV4QkhSX29hZzFTN3Zr?oc=5",
-      "title": "New World Screwworm Outbreak",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -61,14 +45,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOd2cyVktrSnlXRmg4VTg0bUJ1azB0RENCSFIxTXd4cmU4alMwdmVxcW00VWtrRmNRbUN1bDlXV1JORkRXbFJpcXZ1U3ByaUhhM2hWczQ1S1l0dVVrNmlUMFl4ZlMzQ21CTEMzMXBaTXZGTTFDVnV3YVNIMWRjTWtRYTVnTmZ2TWhnZnJxMHZLemtQZm05UnlBZWFTdTY?oc=5",
-      "title": "Global Measles Outbreaks",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObEowc1ZEWmk5UmJEZUZJSHZ0VW9RRlJIZzlJcXJJTlE5bkplM2ZLTmFxbVhWSGk5alFVRmFZNHBSbm1HeUZMaEFPTTdvYlRxQ1JWODNqY1M5eEs4UzdxamtoMGhXbTJndWV0UGlJRTVsQUFRYkFjQ211ZmxLWXozRTlYRTVlTlBIakRhY1NxWm40UmkzOG5LNGp1Yzdqdw?oc=5",
       "title": "Indonesia's BMKG Releases Megathrust Earthquake Mitigation Guides",
       "important": true,
@@ -82,14 +58,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcVhJZnhreUJHQXAyMFlCODQwMng5aHFOVExUMUw2OFZLd0NDc2pMMG9qR19RQUdXZWhGX3JIbVpiRDBnNkc1NG8wVUNFdUxPcGlzeVN6SUhfVFl2cGJWOV9sZTlxWURTRVlNOUdFZUJxYkwtcEZ5bzd2djNSMlpTSjQwYXJwdjE4LWFrbzN3OUYydVRZaU4wU1htdlJzZGE2OUFWWUFIYjdFR1pRaExXVnI4aw?oc=5",
-      "title": "BNPB, BMKG Launch Five Publications to Strengthen Earthquake Preparedness",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -111,22 +79,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBwbkw2Qm1NMEUwdWNnZVRJNDh3QXlxQUI3dFpnWHpRcWJsUlRYeGpVT0cxcGljNFdvUFhnMl94Z1NMWjY2d1B0cVd6XzZRNTNpZjN1NEo1WmtBbG5lLVVj?oc=5",
-      "title": "Hurricane Katrina | Deaths, Damage, & Facts",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE56UWI1anU1M2xycENLblpjVG10X3EtYnpqbEhyT2ZzMGhXcUd5dXFMdmoxRnoybjBJVUlXeElZTkNUaW51bkYzNGl6VUdDMkNBVklwV0xFOTFqYmUxVHY2cnJadW02b3hSUzV4QkhSX29hZzFTN3Zr?oc=5",
-      "title": "New World Screwworm Outbreak",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUWFUd3BwaVNHaklDOG9ucWF1RWExX0FEUHlYdnZHRzlsSHIzaFMyRVdZQWtPdi1mTXZ6eWRfcm5PSkc5Y0sxamZvMUxLczlOZk1oR0txemlnVDNwTDAzSXNrSkZCQk1TX3JmRWJta1hGZmZkczJHMm9fT0Y1UnZDVGxSbDJHM1p1MTVVSXF1TUc1Wnp4akE?oc=5",
       "title": "FDA Approval for KLYGEFA issued to ALEXION PHARM",
       "important": true,
@@ -137,14 +89,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNR0RNMDlWczFzdjRoTXVMUnJCQXhETzgxQ195dDRDbGdETjhSeEdGUl9Qcm5xVGpoMlhPQlFDNVdiNkxmQWtFTmJGMW52LV9TTFNzZF9MNUkxN1lpZlhNbHN2MjA5emRSUUxueDRPX3lybGV6QXNHTzJJNHZYSFcxMG1feDFsaVZCOFV6ZmFBeFRJbFpYTGhMV2Nn?oc=5",
       "title": "Good news about interest rate cuts in South Africa",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOd2cyVktrSnlXRmg4VTg0bUJ1azB0RENCSFIxTXd4cmU4alMwdmVxcW00VWtrRmNRbUN1bDlXV1JORkRXbFJpcXZ1U3ByaUhhM2hWczQ1S1l0dVVrNmlUMFl4ZlMzQ21CTEMzMXBaTXZGTTFDVnV3YVNIMWRjTWtRYTVnTmZ2TWhnZnJxMHZLemtQZm05UnlBZWFTdTY?oc=5",
-      "title": "Global Measles Outbreaks",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -164,14 +108,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcVhJZnhreUJHQXAyMFlCODQwMng5aHFOVExUMUw2OFZLd0NDc2pMMG9qR19RQUdXZWhGX3JIbVpiRDBnNkc1NG8wVUNFdUxPcGlzeVN6SUhfVFl2cGJWOV9sZTlxWURTRVlNOUdFZUJxYkwtcEZ5bzd2djNSMlpTSjQwYXJwdjE4LWFrbzN3OUYydVRZaU4wU1htdlJzZGE2OUFWWUFIYjdFR1pRaExXVnI4aw?oc=5",
-      "title": "BNPB, BMKG Launch Five Publications to Strengthen Earthquake Preparedness",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -223,14 +159,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE12MkRyZTRfaFRVU0tMY2tLSmRoT1EtMng2LXQxcnEyQ2hGZEJ5NmQ4N3JITTU4UzF6YktiVDBsdlR6Y0tBOXJIb2hWYVVIeVJkNFotY2tR?oc=5",
-      "title": "AI 투자 고점 피로감에 … 바이오에 다시 돈 몰려",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1MdFdYbDBCajJtdHZTRjYtcFdkbkhPdWFJcnBlaXBpcHZ1Rjg3bkFRaDEwcVo0c3dBT3AyM25MdWtHeXoxOXg3U1MtNnJIVHU0WVdrc3kwYldPR0ZpVUNr?oc=5",
       "title": "[판으로 읽는 경제] 美 금리·AI 불안에 흔들리는 韓 수출 호황",
       "important": false,
@@ -239,27 +167,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1WNkZUbkdFLXk4ajdoOFd3YkhpSmhxMVhGVDhUNFRkT0lmc1lqNTFmUFBFcU9EQmxzTGVhYWdvZ0t0X05HSUp0RElpTzF0NXdrTGdGTEhzVEI2RVplWVE?oc=5",
-      "title": "Pete Hegseth | Military Career, Marriages, Boat Strike, Iran War, & Facts",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBnSkJKbVBZNU5xY3UwQ2ZyUHRySjYycjhwR2RjVzI5U3RMaVh1ZWh4QjhVSE9fOXhwczVQMXYzRWdTMXVrcTM1NWlvWmZYTVZvSnhkY2Y1VTBUTGxzRWc?oc=5",
       "title": "Andy Burnham | Labour, Prime Minister, Mayor of Greater Manchester, & ‘King of the North’",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE84ZHR1VTM1Y25UaDh5NFh5dHduZmpFaWIyZG40MURiTUs3SFE3VkM5WnA4aXZVOHhIajZtU2puSVFiZDNJYndtNFJWamRQNG5GYVdrNkVxLXhHRkw4NmowOFpB?oc=5",
-      "title": "337호 세계경제) AI·관세·전쟁·에너지…2027 세계경제를 흔들 4대 변수",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -295,14 +207,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBjcXJOMXpCVmhJbEtRNlFyS2tKeFE5R3dEenprRnZ6QmdWVVdibzBXTHFxbW5zVk9GSHhDSi0za3VVZ1k1bHNzcHd5endYR3I4aDgzdnE0QmlQRlVYNzcxN1N4S2g0WjZkVnYwSURNMFFERVowTE40Q3Racng?oc=5",
-      "title": "United Nations Security Council - Peacekeeping, Resolutions, Sanctions",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSVNZbjB3dnptVVYtWWVQMHBpZmZqX3lmTXVrdnloalBCZXczUTFiaEswUXN2a1o4Z2VpNVFxdVdFN3Btd3c0N2NFMHpwZ2k5bFNyWlc5elBwb0ZUaUJaemUyeDBRMmdzMC1fUTRWakFKVGY2RW9fMUd0amM0b1dlUNIBhgFBVV95cUxPVzdXcGJYNncwNXZzYWhOV29tS0dSTjNabHVBWFhaVlV6SEZhVmdVX2hXZGM0RnBxbE41RkFWXzR4QkpDMUVURGZ3VjdyeW5pRXF4VXRkdkQzZ0hsNTA0eVBEYzdGWTVyZ2c2eGZ4aWszSHRPRDJTenBzbmVJMndidDdObFVvZw?oc=5",
       "title": "Trump says the Iran war ‘effectively over.’ It’s still costing the US billions",
       "important": false,
@@ -327,24 +231,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNRlJzOTF2ZThSem9JTmk3QmtuZWh2UjZGNEttS2FMZjRPSE53bXIyWDVhdWlXV3pXR3hxQ3FSWC02QktDTTBlblgyaTFzblJnMlJaZ0JoRHhDVk1CRm1jRzEwZjU1SlA2aXZQVzVfald5SUJnMnJ5REllOU1XZ3BrU2c5Zkplb2R2MEdpcA?oc=5",
-      "title": "Will US and International Sanctions on Iran be Lifted? - Energy News, Top Headlines, Commentaries, Features & Events",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOY25GTllSNjBjOTlEeWpaMTI1Wk9VZENGN21JWk5KdWV0bndkUjhWWjY3am45VWVENGNwb09oaXRlTnJRN1d0bno1QnlFOVVRTmdXZGxwZHdkeDFjaEJjQ29UN2djTU9fb21LTEU4UVNxcGoxQi1sRzNpRE5Sa2VkMncwUkNYMG5mclI2ckxoRHU2THRwaFJVSzdRVXhjUQ?oc=5",
       "title": "North Atlantic Treaty Organization - Military Alliance, Post-Cold War, Global Security",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQTVYTmhSWUdGNEJUeG1jSEVOSlNjd0VJRkJ6ZkFIR1l5MzdCZENWTWJSOW1qZzN1cFNWdnJTbnpVZTdIMkNzNnhhS3BuVGxWUXJQXzJRVGdRWERTNGdRV1F4Z2plSTBBQW5RempjdFRfUUpFWDBacV9pcWcweWJ4R0dtMHdYbmRUSHNwUm1adzJRN3BiQVhvRkdMZ0F2WThSNWZCRmV2cw?oc=5",
-      "title": "Joint Defense Industry Projects Can Strengthen Ukrainian-Polish Relations – Kyrylo Budanov in His Address to Participants of the Business Forum in Warsaw — Official website of the President of Ukraine",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -385,6 +273,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOVVc0dTR0R0d5aEplQUZYamtUQzFRMkpaek5tamtfMWJRQi1LOXluRVBmWGc5aEJnOTkzVkZnLURqT3ZSRElVeWVmcDZrUVVIZWg3OF9acnVJYnM2VTNiQzVRQWNNUk9laHFzWUMyQjR1NjI1MDhMVXc4YTRKVDJQa04zWXI5WkxHdFRyaS1aS3BNazl5SDJPendjTVBhSWNfM0pOUDJIeDVXaXE5YWtEYUlENmVZcTA?oc=5",
       "title": "Canadian nuclear firm signs deal to study six-reactor power plant in Turkey",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOdFJvckNBcWxMN3JNRnFoSkFzSzdPbnF2bVJHNXZiTU5tZDlYdjJDbkFBRFh5LUp2SnVNSzNNUVlkY3pVZ1hTT1pnQnZwclJiaDJ0Ul9rcVl4bkMyZXpTVFRyZTlEM19zZUE1VDRpcVp0SHFkd21Ed3phcE5TRHNIU25OeVFwM0w0UnJuQWhHcFUzRllXOUZRWGJ6UjZIbFVaV1A3NnVoRFdHamFQTWdaVG1xNU0yY0k?oc=5",
+      "title": "China turning to 'hostage diplomacy' to pressure foreign governments: Report",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -455,14 +351,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQbjlWOS1BYWRZeDZJc1BsdW9rajNSY20zZU5pMXhJZ0N3SkNzbFpwM3BuZHhYTmpCRUE4OVZFMHltVXNmR2FBc3lQMUd6NndSaC1peERja1U2bnBuVWR4NEExUDRzZlIyRG5FcG5qZUUyaWxrMF9JQy1xZFFJODlzd21RUXFRVTVKc01Wb3pjNWFzTVdPejlUanpXTE05b1NRM2FrQnJoTVdCQktCaWl3RENPYnVybVZ6Y19tQTRiVDFlN2hGdjBoVkxPUlpDRG5qMHV5d1F6Vks4QnFZbUE?oc=5",
-      "title": "\"As we mark 50 years of Kenya–EU diplomatic relations, our partnership now spans trade, investment, development cooperation, governance, climate action, digital transformation, and peace and security,\" said President William Samoei Ruto",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQekI4VGdNeDlPU1YwdlNPZWV0em5OSTFXajNUM2Z0X1B6WXpnT185REpmSldlOTcyY2RHa1Z3Y1hrNTl2c2YyM2FabWFRN2pybmJrMXdsNkZCcS05VmVHVUpKTzRaWlppVzVUejJWLUpNYUZPeWRuZ0JSWUdfaWdqam5KMlZiMlpKTGx4alR0cWNYVTJIb0FWb0VyaVhMeHdyaFh2RkdaRzQ0UFZjM0xxb2ptaXA2cG1BbHpJck43eDdwQXJydlFSb0hXazdxMHZONWJGMjdFYmtRbS1Pd1E?oc=5",
       "title": "President William Samoei Ruto: Kenya stands ready to advance a partnership with the EU",
       "important": false,
@@ -479,14 +367,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQckt4SEF2VVRrMnFfYVFlX1BLcF9HSTkydEtRanV1ckVkYUZIY3h3YTJpbjJLMXUzT1l6N21MUm0wbGpDMFV0N3lrOFpjQUI4aHV4TTFES2cxM0FFZ245OFZLcEQ3cTRiRS1WMnRqaTRZdHpVNXBqSFJpdTFDY2Zzc00xd2ZkdWxHc3pPRHN5elRGa3JLSDg4dXU4WWdiNlVZaWhlTElheVBUdjliQmlPNTdxNG16NzRwSzNKc1VPbk9EeXR1WXJmSWNSMWpzcEM1U3V6Y0VBRkFvbXQ1SFhV?oc=5",
-      "title": "Kenya News Agency - KNA. . President Ruto: Kenya appreciates the EU’s long-standing support for the Africa-led mission; we welcome consultations on an EU Observer mission on our upcoming elections in August 2027",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPSHpBV2pUNDBwTm9qUHRiaDRHNTI0cG1ibVlOZFdxN21RVmJzMUxLSGtJUl9PNmF1dzFxaHJLN1NUWUlpVHpNaE1STTJzcjBIZTZubkE4UEJpdi15MktLa1RKR2dnQUJDTi1DejByY3ZWMXQzd3RkT0dkTmtEY1ZYdDdKSHRRcVV2WWZ6Q2txb09rNWxUMXhTWlFVR1VDSHduSTluTENGWENYajNWMnByUXh4WWpPMVo3eXlTVGdVWkRYMXR5NVN6dTUwalAxRVJMbVA5TmNaT2Z2dUZwTXBkWQ?oc=5",
       "title": "#Video_News :-More than 64, 000 #Ethiopian refugees, asylum-seekers remain in war-hit #Sudan, #UN data shows watch",
       "important": false,
@@ -495,16 +375,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5jR1FFSFpoWWhHWjZTajNNNFJDUWljVVVUT0xOTGZCXzdsYVJFaTEtR0JoVHRKZHhUZy1Dbkt3Y1pZZ2JpRktIanhEZDRvVU9XenJ5Q1VWM0xMTXhjSFZKUmtrVndNN253UEQ4?oc=5",
-      "title": "유한양행, 만성신장병 신약 'YH34180' 국내 1상 승인받아",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1BYmxFWXlDYVNUakFVRmNiSW9rUmFnbEhlMDl2TXNJOWVYQkgzWGVzYm9MTVZ4aVRlbHFEbFlEWGN4emVablh1VURuTWYzUUNSMk9uTS1kQ015dm9rVW53bFdpVU1vRHc?oc=5",
+      "title": "李대통령, 16일부터 아세안·APEC 정상회의 순방",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBCV3F5V2xVRTF0VUQ3V0pIOG9QOERWMjZxQXdqdkxlU0ZDNTV1NXBSMzJIS3kxaTl1Ym45SDF6NWJmUmZ6Zmk3QVNoYjRRV2laZU9ubVBhOWU4M1ppMHZPSWZ0b1VJRk1fNXFN0gFvQVVfeXFMTl9kbEtPYzk1UXp5WTEyd3MxRnBkX1ZjQlg3dHBjNm1uOEhPd0RZSWZsLTA1ZENWRjM2eUZxRXB1RWhwcV9jYXJoNGlqNVRNSWptRkNLQ2RScThvbDlDQ2V1YW5tMFhINVFfTUEzX1RZ?oc=5",
-      "title": "유한양행, 만성신장병 신약 개발 본격화…국내 임상 1상 승인",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5jR1FFSFpoWWhHWjZTajNNNFJDUWljVVVUT0xOTGZCXzdsYVJFaTEtR0JoVHRKZHhUZy1Dbkt3Y1pZZ2JpRktIanhEZDRvVU9XenJ5Q1VWM0xMTXhjSFZKUmtrVndNN253UEQ4?oc=5",
+      "title": "유한양행, 만성신장병 신약 'YH34180' 국내 1상 승인받아",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -527,8 +407,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE8yNy12X1RGbUo2c1BDOU1UT3FSMVF6TnZVVkhGRWtNUDQzZllrRW9WQUY5T1hOVno5RkJaQm5uMjVrV3NSd05xQlcyWlI3ZTR2OVdPR01SZ0xqeThfQ1dmZmMtVGQxXzU3TE9iQ0o2SdIBc0FVX3lxTE84YWt4N0xfRUNOdXBfME15VTd4S1dyYzFueWFQTlhfSFZXckxGaVo4eFNUMWNlVUpRTkdYX1M1dlJ6aTJEMWVYZFBxYWZzZDExcFFOdjFUcExRWW9pWTFHUlRjYnZKdUNscHY3WkpwanJWcTA?oc=5",
+      "title": "유한양행, 만성신장병 신약 개발 본격화…국내 임상 1상 승인",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOamMzb1pKa3o5bGpMY1A3UkF1OEkxaDZYMFQwOEhfdHd2bTlqTlEzQnVJWG1pQXpQcTdjeUZrWklSNkpUbWNKdDFRcGlTOFpuZGNWNEoyOVllVldqU01DM2FBLWFxTTgxa1FMbnpJeVdEaFZPWElIb3RnOTRJc2hLRFVsWXp6SloxRHZrZUEyMVhwOHdhREZieGVB?oc=5",
       "title": "France fears Germany's future deep-strike weapons could push Russia toward the nuclear threshold by mistake",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOamxMN2I2SmY2OHJJYXJYam4xVGNrdkE2S3NnQ2ZMSXdCTlVaYmd3UVdFUlZ0N1NHaWo2Z2JPczlqM3o3UjlTSWJvWEZyMWNlX1BIMTRnYS1kU1FyV3hhOXhjUWxQNVZwSGhPcHhldVZYR0ZnZkVEaUR1OFVWN0FBdXZpRHZXQlp0OFZDZG9vakY4Z2hTanduMk5SNEtlakRWSWdEMjFBUnR0MjNDenB4X2MzTDdLU1Fk?oc=5",
+      "title": "US biotech raises $23M for testing of gel treatment for fragile skin",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
