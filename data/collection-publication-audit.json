@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-15T09:08:13.950923+00:00",
+  "updated": "2026-11-15T10:06:02.966195+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
-  "collected_unique_urls": 176,
+  "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 7,
-    "not_in_current_queue": 33,
+    "important_unpublished": 9,
+    "not_in_current_queue": 34,
     "pending": 14,
-    "published": 129
+    "published": 132
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 6,
-    "pending": 1
+    "not_in_current_queue": 7,
+    "pending": 2
   },
   "important_unpublished_by_reason": {
     "repeated_extraction_failure": 2,
-    "source_blocked": 4,
-    "in_retry_queue": 1
+    "source_blocked": 5,
+    "in_retry_queue": 2
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -26,6 +26,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aZTdJNm5VOU9ONWFTLVJwQ0xINTV1UUJVSDljR29sNFNBdTJnclZ1TlNvMFQ0RGVLSFpYSHZWNUM5YjBheU5mQkp5SXFxSHJTVTFRMUREV3FQQ0VEZjY2VmhjRUQ?oc=5",
+      "title": "UAE says 14 killed in Fujairah traffic accident",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -79,6 +87,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aZTdJNm5VOU9ONWFTLVJwQ0xINTV1UUJVSDljR29sNFNBdTJnclZ1TlNvMFQ0RGVLSFpYSHZWNUM5YjBheU5mQkp5SXFxSHJTVTFRMUREV3FQQ0VEZjY2VmhjRUQ?oc=5",
+      "title": "UAE says 14 killed in Fujairah traffic accident",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUWFUd3BwaVNHaklDOG9ucWF1RWExX0FEUHlYdnZHRzlsSHIzaFMyRVdZQWtPdi1mTXZ6eWRfcm5PSkc5Y0sxamZvMUxLczlOZk1oR0txemlnVDNwTDAzSXNrSkZCQk1TX3JmRWJta1hGZmZkczJHMm9fT0Y1UnZDVGxSbDJHM1p1MTVVSXF1TUc1Wnp4akE?oc=5",
       "title": "FDA Approval for KLYGEFA issued to ALEXION PHARM",
       "important": true,
@@ -121,6 +137,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1hTFlMWHdkc3NjOUVvNVZ4RExzY3ZzYjllcmdKVlE0WHlmM1BFY1kxNkVZeGhpMGxLZG82UlVMeEhrSmdxbmxTcnpVdlhmX1JVWG1FSGZackZmSVVoUUFRSHBR?oc=5",
       "title": "'전국 병원체 감시기관 한자리에 모인다' 감염병 대응 성과와 개선 방안 논의(11.5.목)",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQM3J6N05pX2pZSy1SWWEzWjNWbHhFQWhqQmNqUzJFOVIxdXhYakExbVRYNmNLWVNkOWk3elBvRkxIYjRma0JacHVUM3RjRXJzcFV5cHp2XzZVUVNQb0FGRS1PTjBLOFJJc1BZb0tHRHY4UjJzdzRmd0VMTEhXVFozVmpLUVByMUgwQWVxVVdfNDVENWFodEpGTTZEbXZNRkU?oc=5",
+      "title": "‘I've run out of money’: 87-year-old California wildfire survivor says contractor went $90K over budget and wants another $51K to finish his home",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -207,14 +231,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSVNZbjB3dnptVVYtWWVQMHBpZmZqX3lmTXVrdnloalBCZXczUTFiaEswUXN2a1o4Z2VpNVFxdVdFN3Btd3c0N2NFMHpwZ2k5bFNyWlc5elBwb0ZUaUJaemUyeDBRMmdzMC1fUTRWakFKVGY2RW9fMUd0amM0b1dlUNIBhgFBVV95cUxPVzdXcGJYNncwNXZzYWhOV29tS0dSTjNabHVBWFhaVlV6SEZhVmdVX2hXZGM0RnBxbE41RkFWXzR4QkpDMUVURGZ3VjdyeW5pRXF4VXRkdkQzZ0hsNTA0eVBEYzdGWTVyZ2c2eGZ4aWszSHRPRDJTenBzbmVJMndidDdObFVvZw?oc=5",
-      "title": "Trump says the Iran war ‘effectively over.’ It’s still costing the US billions",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQT0VhcExRUnVkVVZRYXp5d0ZBNDFoYjlReUkxRGFkb252b2xwM3p0bG5CQmw1Y2ZaMjZ1RUlmQWRUTHg5TExseDlabkl5S2FYampUQUp2SGJHa1plenlVZGdENzVSdGdENDY4NWRUeTIzMUFVTGJ1Vk10SFlpdGlGRUFJZTNVZw?oc=5",
       "title": "Indonesia’s Citizens In Russia’s War – OpEd",
       "important": false,
@@ -231,6 +247,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNRlJzOTF2ZThSem9JTmk3QmtuZWh2UjZGNEttS2FMZjRPSE53bXIyWDVhdWlXV3pXR3hxQ3FSWC02QktDTTBlblgyaTFzblJnMlJaZ0JoRHhDVk1CRm1jRzEwZjU1SlA2aXZQVzVfald5SUJnMnJ5REllOU1XZ3BrU2c5Zkplb2R2MEdpcA?oc=5",
+      "title": "Will US and International Sanctions on Iran be Lifted? - Energy News, Top Headlines, Commentaries, Features & Events",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOY25GTllSNjBjOTlEeWpaMTI1Wk9VZENGN21JWk5KdWV0bndkUjhWWjY3am45VWVENGNwb09oaXRlTnJRN1d0bno1QnlFOVVRTmdXZGxwZHdkeDFjaEJjQ29UN2djTU9fb21LTEU4UVNxcGoxQi1sRzNpRE5Sa2VkMncwUkNYMG5mclI2ckxoRHU2THRwaFJVSzdRVXhjUQ?oc=5",
       "title": "North Atlantic Treaty Organization - Military Alliance, Post-Cold War, Global Security",
       "important": false,
@@ -241,6 +265,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPN205c1daa1JiYVI0OW00Q3Flcm10ejJURTFIUTJ5RnpURDNiVFBidmgzbWlDRUUwRi02RE5OMjlGaEpqcHo2YzNyOV9FV1RkQjF3TTVuMXZtSHFuYi0xTHp4ckx2YnJOZ0tMN2llcEhPR0x5THJLcHZKNGkwLUFPQWhqWDNpSTNBUmpILW5Pczl3X0p6bkJ1eDB1UmdVNkFKSVREdHpfTQ?oc=5",
       "title": "Philippines reaches major trade agreement with Canada that could triple exports",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSFZ0Q25KUkc1dmRLZlBsZWNtRm5DUVp5dWlDOVp0VGdyTjd4M2xzQWFZVHpFbjNaa3NNODBndDNXZDNHVXJrUnozbHM4LTQ1Wm9lX2VIbmtRcEhBSGk3SjJ4TFk3Z3FaQjVWazhDZzN0SWV4ajB3VWJCQ3RxMVJXMW0ydm1OejdobHBsU2xuNUhDTENOMGpLcHBfdzJxOHFDODRuU0lXaTVoS1piTnZZ?oc=5",
+      "title": "Cape Verde could make election history with first female president",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -335,14 +367,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWxfbWdEWEdvOTJkRlEtWXlwVnhPa1FOQzRCVHVJSHFfUDQyOVV4dFRYYk41Unk0VmZrVDBmbkpvS2FJUmFxTzg2ejVVRVVqanZmN053X2lCcXJMaDl6QmtHQ3ZHR091MkdIdUpWTGs2T1FCalZleng2aVV1Q1ZZWW9kY2VFeHlhSklIbk9yX0NvdWRleDNaaTBzNzFKSFdpT3pZaDVFWXB2MGZNa0RfMmZVWElURnAtWkYtajBpaVd2WTlRM1pkLWR2d1FRb1k?oc=5",
-      "title": "Canada-U.S. Trade Tensions Keep Carney Government Under Pressure as Tariff Talks Enter a New Phase",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQZGkxczBlNjhnQmNGOXM2c0RRV0cwMzBod3RLem9nOGJ3eG4zR3FTdjhRTmFFSE43RlU0S041d0lFeXBpTkV5V1RGYVZFaXVXblo2SjR3c19xN2N4elN3S3VLVURNRUwyVFZsMlExb3VRZGQyTGM4cm9KQXZTekpNSnVTVEVORDRONlZrN1U3a2NaU2FEX2JIanNRdndGVWhMLU11cmVYSW1sbXJkS3dxUHVqQWQ0Y1pfQ2pad0dBeFNMSEhJZzZaSVRJblNCRjh3aWVMaw?oc=5",
       "title": "GMA News. . WATCH: President Bongbong Marcos highlighted the concrete cooperation between ASEAN nations as he lead the 49th ASEAN Summit Plenary on Sunday, Nov. 15. #ASEAN2026 Courtesy: ASEAN Philippines 2026/Youtube Watch the livestrea",
       "important": false,
@@ -383,14 +407,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5jR1FFSFpoWWhHWjZTajNNNFJDUWljVVVUT0xOTGZCXzdsYVJFaTEtR0JoVHRKZHhUZy1Dbkt3Y1pZZ2JpRktIanhEZDRvVU9XenJ5Q1VWM0xMTXhjSFZKUmtrVndNN253UEQ4?oc=5",
-      "title": "유한양행, 만성신장병 신약 'YH34180' 국내 1상 승인받아",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9uRWtyaERyN2RkckNsZ3NHREdySWFQUkJhdVZadHdkWGRjVU40SW9EM1VGTU9lalVIWVBKOTlSbnY4V3ZxdEd0U3hUWTQtS3k3SDhFNWZHcVoybUNNQ0h2a0cwRjFWdVVC?oc=5",
       "title": "Ethiopia War Security Review, November 13, 2026",
       "important": false,
@@ -407,16 +423,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE8yNy12X1RGbUo2c1BDOU1UT3FSMVF6TnZVVkhGRWtNUDQzZllrRW9WQUY5T1hOVno5RkJaQm5uMjVrV3NSd05xQlcyWlI3ZTR2OVdPR01SZ0xqeThfQ1dmZmMtVGQxXzU3TE9iQ0o2SdIBc0FVX3lxTE84YWt4N0xfRUNOdXBfME15VTd4S1dyYzFueWFQTlhfSFZXckxGaVo4eFNUMWNlVUpRTkdYX1M1dlJ6aTJEMWVYZFBxYWZzZDExcFFOdjFUcExRWW9pWTFHUlRjYnZKdUNscHY3WkpwanJWcTA?oc=5",
-      "title": "유한양행, 만성신장병 신약 개발 본격화…국내 임상 1상 승인",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOamMzb1pKa3o5bGpMY1A3UkF1OEkxaDZYMFQwOEhfdHd2bTlqTlEzQnVJWG1pQXpQcTdjeUZrWklSNkpUbWNKdDFRcGlTOFpuZGNWNEoyOVllVldqU01DM2FBLWFxTTgxa1FMbnpJeVdEaFZPWElIb3RnOTRJc2hLRFVsWXp6SloxRHZrZUEyMVhwOHdhREZieGVB?oc=5",
+      "title": "France fears Germany's future deep-strike weapons could push Russia toward the nuclear threshold by mistake",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOamMzb1pKa3o5bGpMY1A3UkF1OEkxaDZYMFQwOEhfdHd2bTlqTlEzQnVJWG1pQXpQcTdjeUZrWklSNkpUbWNKdDFRcGlTOFpuZGNWNEoyOVllVldqU01DM2FBLWFxTTgxa1FMbnpJeVdEaFZPWElIb3RnOTRJc2hLRFVsWXp6SloxRHZrZUEyMVhwOHdhREZieGVB?oc=5",
-      "title": "France fears Germany's future deep-strike weapons could push Russia toward the nuclear threshold by mistake",
+      "url": "https://news.google.com/rss/articles/CBMitAlBVV95cUxQRXRMTGhtOEN1TlI1aXhJclNZOV8wZnVmeHo1TGhYNy13a3RPSUc4cDlHN3kwaDhsOERKdWtMVjl3cFplYXVLQl9uMl9DRGtyVDhzUWtRV2RnNGNZaFYxX3pTWmdBOVg5Q0VCbUkxYk12V2lRY0w2UEFqOGd0LXJ0YmRUYTc1TnU5czVUYWUxcjdtX1JUNjk5MjdZaDM4d05TdEVUbWRwbWpPamJpSUsxUlZYeW5Ua2p0SG5SVjhTWkJLUzFqampoNzg1SnZ0dk1DUXNOY0ZERnlRMzB1TWhrazJNUUJITzQ3RFlReS1IWGg2T1FNNllLQjB3bkR1WktiWWNJdnVNM0tfUC1KaWo5WmNhQkdGbmNDQzV1U3U1NUNCbExNbmN4dUp1Rk1mclo0RVU2XzZaZmNGUGk0MTJNbE1DUmdPOWF3Qm9WMlVlcHZ3NWJvTmpfMDdWTkVUVW9nT2pFTjE4NFhLT2N1OFJXLVRiSXk4TUF5VDBmcTZXNld2c21QNHNEN1dPQzFBUF8ybmlJMFhuT09Cd3M0OTd3YzE3SWNKRHZTbkQ0eVQ2ZGd4c1hsbWtOUTZLRWtCbHVpc1lBX3Zya3F6d2l3bjFuZEtIN0h3TWVacnl3UklwRWJ2d0FrbU9CLTFUNFVFdS1rMkdmY2QtZmw0R3FmSC1zYmNHa0FFZGJPOHNKdndoc3MzRnFyR2NCbmNkVE1VSDYxS2xXeGZFYW1KeWdtSzhoRE16bGJQSHlucXB3VjFIb0lYbFB6LW1QN0M5RExrbjNiZU9MNmtaeVpRTkE4SFZ0cWNzVFAxMmJ0SlRpNjcwRGQ3dDdleG5PcDljSGlzTkNreHJHNlZVSVhWZFJuWTYxSURZS0c1ajFxTFVDNDQxeHBhQ3FQOTNrN1dqY1d5MHVxOWpPMlRQeW5LbS1PUGl4ZGhLMTJiRkJ3NUlrWXVYMElRTVEtWF9pUk1fOTY1X2dJVGQzd2RENDRxTEFkVk1DbnhEb25nNk5mcmxlSWM5U1FfYU82UWdhWUtsM3RlRlRvbE1TcGxtZHJySEQ1YVlsX3NjSVQtV0gweGNpX1BoeHZ5eGhoQnNsU3FuX1RUWHJvdW1rS2JkSUo4aUlzX3k0bndOWHl5MHF3RHA5bVdKcGdWcWprbElJaTlDSUpBVGRnUUJOUnJjVm5UUndLOWNyUDdwM0tOMXBXUExBamF3eUNGRWIwTzlmclF1RmkyRWt3dDFBUTk1ZlFCQy1hMjhkZXpkMU5sVVRpcmppb0pVT2JVY1lkWHgyQmMyNU1YZDBVZHl3c2dXV2Rmd1Jvd0dzQVhjdi1KQjF3NnY3ZFRlaF9MUHV6MUt1Q2Itd3BPMHNPRkREelVsNS02TWFRTlk5eTU1OXJ6b0pyR0k3VElSdE9WLUJMMV9SZkY4SzZNenU4TUhEUzZFdktHOXMtb1I2V1FPZkpKd1RJMUd0d0EyeF93eGRqRW5iVV9CWFc2VGFveTRtODkyTW81SkphSmJGa3pRdDBtQnlzQVVILXpTWFZMYmlHSE9NcDloWG9hcy1GbXNyWUliYjNobC1BWWZkRVhxTHVOWFZERVdFeXpuZ1NKR050?oc=5",
+      "title": "𝐊𝐞𝐧𝐲𝐚, 𝐓𝐚𝐧𝐳𝐚𝐧𝐢𝐚 𝐥𝐞𝐠𝐢𝐬𝐥𝐚𝐭𝐨𝐫𝐬 𝐬𝐞𝐞𝐤 𝐣𝐨𝐢𝐧𝐭 𝐚𝐜𝐭𝐢𝐨𝐧 𝐭𝐨 𝐬𝐭𝐫𝐞𝐚𝐦𝐥𝐢𝐧𝐞 𝐛𝐨𝐫𝐝𝐞𝐫 𝐨𝐩𝐞𝐫𝐚𝐭𝐢𝐨𝐧𝐬 Members of Parliament (MPs) from Kenya and Tanzania have called for stronger regional cooperation and joint Parliamentary oversight to ad",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
