@@ -1,13 +1,13 @@
 {
-  "updated": "2026-11-15T20:48:47.717387+00:00",
+  "updated": "2026-11-15T21:52:15.824480+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
-  "collected_unique_urls": 165,
+  "collected_unique_urls": 162,
   "counts": {
     "important_unpublished": 7,
-    "not_in_current_queue": 38,
-    "pending": 13,
-    "published": 114
+    "not_in_current_queue": 39,
+    "pending": 15,
+    "published": 108
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 5,
@@ -21,6 +21,14 @@
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
     {
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aZTdJNm5VOU9ONWFTLVJwQ0xINTV1UUJVSDljR29sNFNBdTJnclZ1TlNvMFQ0RGVLSFpYSHZWNUM5YjBheU5mQkp5SXFxSHJTVTFRMUREV3FQQ0VEZjY2VmhjRUQ?oc=5",
+      "title": "UAE says 14 killed in Fujairah traffic accident",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNR0RNMDlWczFzdjRoTXVMUnJCQXhETzgxQ195dDRDbGdETjhSeEdGUl9Qcm5xVGpoMlhPQlFDNVdiNkxmQWtFTmJGMW52LV9TTFNzZF9MNUkxN1lpZlhNbHN2MjA5emRSUUxueDRPX3lybGV6QXNHTzJJNHZYSFcxMG1feDFsaVZCOFV6ZmFBeFRJbFpYTGhMV2Nn?oc=5",
       "title": "Good news about interest rate cuts in South Africa",
       "important": true,
@@ -31,14 +39,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObEowc1ZEWmk5UmJEZUZJSHZ0VW9RRlJIZzlJcXJJTlE5bkplM2ZLTmFxbVhWSGk5alFVRmFZNHBSbm1HeUZMaEFPTTdvYlRxQ1JWODNqY1M5eEs4UzdxamtoMGhXbTJndWV0UGlJRTVsQUFRYkFjQ211ZmxLWXozRTlYRTVlTlBIakRhY1NxWm40UmkzOG5LNGp1Yzdqdw?oc=5",
       "title": "Indonesia's BMKG Releases Megathrust Earthquake Mitigation Guides",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWFM3WjZMenp3MzNWUTcwU25PSUhfd3NUZUkxd1FZYlVMTmNhTlM2WlkzM1ZKc1QtbGtVVktJdFljcG1uU0VBQ0tTU3NiaVI1OTBveEo4TnF4RjVMeUNPai1BcTJpVTdEX1IyLS1DeFI5Znc1RHFiUXU3Q1oybExEeXNGQmg5eXhRd3VkcjVHUExWUTdBeFd5ZmRxVy1BRjRQcEHSAaoBQVVfeXFMT2hfRG5GaXNydXE4eURxbDBqM3c4SU04R2ZPUFZpam4xSGZIYUNZUG5tMjUweEVyTi1tZms5SWVuSFdNa21YTHkzM1pJeVQ0Q1MtbFg1bmZ4U21iaVZjZS1ZYXNXaVFGbVhTMDFQYzU0aHdDTTVLWU9Yd1lWUk4zSU1tcF9jeWthU2x4NlAxY05ZTzRKU3c1dlpYcjlQU2RQV0E0WktGVG9vS0E?oc=5",
-      "title": "Indonesia President conveys apology to Singapore, Malaysia over wildfire haze",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -63,6 +63,14 @@
   ],
   "unpublished": [
     {
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aZTdJNm5VOU9ONWFTLVJwQ0xINTV1UUJVSDljR29sNFNBdTJnclZ1TlNvMFQ0RGVLSFpYSHZWNUM5YjBheU5mQkp5SXFxSHJTVTFRMUREV3FQQ0VEZjY2VmhjRUQ?oc=5",
+      "title": "UAE says 14 killed in Fujairah traffic accident",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNR0RNMDlWczFzdjRoTXVMUnJCQXhETzgxQ195dDRDbGdETjhSeEdGUl9Qcm5xVGpoMlhPQlFDNVdiNkxmQWtFTmJGMW52LV9TTFNzZF9MNUkxN1lpZlhNbHN2MjA5emRSUUxueDRPX3lybGV6QXNHTzJJNHZYSFcxMG1feDFsaVZCOFV6ZmFBeFRJbFpYTGhMV2Nn?oc=5",
       "title": "Good news about interest rate cuts in South Africa",
       "important": true,
@@ -73,14 +81,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObEowc1ZEWmk5UmJEZUZJSHZ0VW9RRlJIZzlJcXJJTlE5bkplM2ZLTmFxbVhWSGk5alFVRmFZNHBSbm1HeUZMaEFPTTdvYlRxQ1JWODNqY1M5eEs4UzdxamtoMGhXbTJndWV0UGlJRTVsQUFRYkFjQ211ZmxLWXozRTlYRTVlTlBIakRhY1NxWm40UmkzOG5LNGp1Yzdqdw?oc=5",
       "title": "Indonesia's BMKG Releases Megathrust Earthquake Mitigation Guides",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWFM3WjZMenp3MzNWUTcwU25PSUhfd3NUZUkxd1FZYlVMTmNhTlM2WlkzM1ZKc1QtbGtVVktJdFljcG1uU0VBQ0tTU3NiaVI1OTBveEo4TnF4RjVMeUNPai1BcTJpVTdEX1IyLS1DeFI5Znc1RHFiUXU3Q1oybExEeXNGQmg5eXhRd3VkcjVHUExWUTdBeFd5ZmRxVy1BRjRQcEHSAaoBQVVfeXFMT2hfRG5GaXNydXE4eURxbDBqM3c4SU04R2ZPUFZpam4xSGZIYUNZUG5tMjUweEVyTi1tZms5SWVuSFdNa21YTHkzM1pJeVQ0Q1MtbFg1bmZ4U21iaVZjZS1ZYXNXaVFGbVhTMDFQYzU0aHdDTTVLWU9Yd1lWUk4zSU1tcF9jeWthU2x4NlAxY05ZTzRKU3c1dlpYcjlQU2RQV0E0WktGVG9vS0E?oc=5",
-      "title": "Indonesia President conveys apology to Singapore, Malaysia over wildfire haze",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -239,6 +239,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5QVDFQREl3VERRVDc2TTEtMEFpRkNGcU5YWEE2S1gwN194STk0aTVHcW53QkhhTnd3aU9zdnB1RThzLWZPYjdscFVQaHJ3UEVYTlJDWWRJdHoyZEdXMm84Y1l5RmFHLVNxcmdWcE5KTklWMEtL?oc=5",
+      "title": "Islamic Revolutionary Guard Corps (IRGC) | History, Growth, Foundation, Leadership, & Sanctions",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQT0VhcExRUnVkVVZRYXp5d0ZBNDFoYjlReUkxRGFkb252b2xwM3p0bG5CQmw1Y2ZaMjZ1RUlmQWRUTHg5TExseDlabkl5S2FYampUQUp2SGJHa1plenlVZGdENzVSdGdENDY4NWRUeTIzMUFVTGJ1Vk10SFlpdGlGRUFJZTNVZw?oc=5",
       "title": "Indonesia’s Citizens In Russia’s War – OpEd",
       "important": false,
@@ -255,8 +263,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNN2hnN2NoMUY0eWUxUmRueVg2TGFYQzFBSXh3ZzkzV195QTJJSzZZSm5fblYxOVNNWVJINGJHNm5MQXpOaG1CQ0VlcHdtMzROQWNubktsRHczTUV3cXhLVHk0RV9UXzJkN2hwUU5MMlVYWndwaFVHLWZETjRrRUtaT0Y3VDUydGh5cmN4UA?oc=5",
+      "title": "Football’s cold war against Russia is showing no sign of thawing",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNRlJzOTF2ZThSem9JTmk3QmtuZWh2UjZGNEttS2FMZjRPSE53bXIyWDVhdWlXV3pXR3hxQ3FSWC02QktDTTBlblgyaTFzblJnMlJaZ0JoRHhDVk1CRm1jRzEwZjU1SlA2aXZQVzVfald5SUJnMnJ5REllOU1XZ3BrU2c5Zkplb2R2MEdpcA?oc=5",
       "title": "Will US and International Sanctions on Iran be Lifted? - Energy News, Top Headlines, Commentaries, Features & Events",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNdVhEdFFpY04yNVJwNkgtdGtWeTk1bjVHc0s0dU8xUmhybXFrblBLUjlSYkFNMUZHZ0J6U1Q1TUpQTWdleUNiME1tREY3Um1NV3N1T1ItczZnazJNX1RCX2NuTXY3ZjZ2ODRndVRZakpHcGp1NzRJZExjQkNhdXBSUVZNSTNnRTZQUTUzeE9ZUnE?oc=5",
+      "title": "What the Iraq War Foretold About How the Iran War Will End",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -303,14 +327,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZk03QWF0SkhOYmVUN0pteEtQTHZmRDJZbVd1TjdJUTlrR3JTcmVJTTBYSGdvNHN0Z2w0XzZmNVlIQW14OUctWTlua0FZSDZndTNwYy0yc2ZoblRTOTRYMDRKTVpkVmhJWC03YV81NFpBTml1VFFMdXk0SnBDM296UGMxaG9ROW4tb0kwVk5fazhPd0xOd0dYLWEzMGkwYXdMVWMxMmNEc0Y2bW5XU0dYam13?oc=5",
-      "title": "India, Egypt set to explore preferential trade agreement or an FTA: Piyush Goyal",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa0JqQ3k0WGk0NVoxbHRNTHBTeDZxaVkyYmdzdGptNVB2MUVjb3lmcG1OTXRrWGs0U016Vi0tWTU5UmdYbk5IWHJfSTV0UEpEUkZvM0s1WjkwT3E1NFVfMzdGb3pyZ0J3cmhGWXMzVWJnSmpTTVh0MU1VcUJUcFZBamRua0kyOFVWSGUtQ243M2lITElJbmRRS3ZhNTNTenJJcXJTbFZiU0hJVFl1SHl5MnVB?oc=5",
       "title": "Yemen’s Long War, Saudi Arabia’s Security Dilemma, and the Shifting Middle East",
       "important": false,
@@ -321,14 +337,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPT3Bjb0VxRmd2NkwwUzdFYzJDbjN6TWpBLVYzd1FOX0x6YzMxQmdhMnZRR3pvR1RTMF93b3N6cktCY0plTmQxcDdINVBCRjZic3Z0NlZHNEljMDJYbnljbXNTRVByLXlEcEFGblpYakdEeDhjbHhIUzYtaV9fbXd1M2dzc0lOck5lSnVXY1VYUUNJUnhralJrR1RDbnI3X3BoNmUyQ19sUURXMjJVNktfRGZ3?oc=5",
       "title": "PERSPECTIVE: The Trade War With Canada Many Americans May Not Even Know They Are In",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOVVc0dTR0R0d5aEplQUZYamtUQzFRMkpaek5tamtfMWJRQi1LOXluRVBmWGc5aEJnOTkzVkZnLURqT3ZSRElVeWVmcDZrUVVIZWg3OF9acnVJYnM2VTNiQzVRQWNNUk9laHFzWUMyQjR1NjI1MDhMVXc4YTRKVDJQa04zWXI5WkxHdFRyaS1aS3BNazl5SDJPendjTVBhSWNfM0pOUDJIeDVXaXE5YWtEYUlENmVZcTA?oc=5",
-      "title": "Canadian nuclear firm signs deal to study six-reactor power plant in Turkey",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -391,8 +399,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE44bEdWZ0Q0S1Y1YkVaM2s0Wi1vV3d6ckFlcF9rTkJtNFUzZTA4VGg3bGJ0aktCc3U2LXlYZkZDS0drdVZvWnI40gFCQVVfeXFMTkV5V1R1Z2RhZjBfTFdQaC1oNkdiS0VtUVhqUWFzcnhjMV9TRUUtdDBMRko5VVhhckF2UElEYl9fYUtR?oc=5",
-      "title": "Indonesia-Canada Trade Agreement Takes Effect December 1, Indonesian Exports Still Lose to Imports",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQM3BoMlVrbVdQcU43UFBOTUlGWkU0NW1pT1dMT2lrbWxEQTBGRnkxV3BVcUMtSHdCUlhNZjZPZDU1NlJKd2g4bko2YjdHdExpeHhMUlVMU1FsLTQ5OUFfY0dtYlBZb2h3WTFJRXhfdU9kekluR1pmdnlGRlJaMUQ5b1J3VEllSlpncm9YUGdHdGYwS1cwajkwT2t6Vlp1YkZZcjJaRFBZWlhLVFdnZ3B3OV9UTGZ0T1hOUGhxdEtDYUhEZXcyZVc0WjVWRmpTN1JDckRQSmpBb0RRYzhhbHBLLWFQTGJSSU1PaXQ1bXozcw?oc=5",
+      "title": "Donald Trump Broke His Promise to America: He Campaigned Against Wars Like Iraq and His War in Iran Is Now in Its 8th Month",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -407,8 +415,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5tS29ucnlBWG9Hb0hUaVpmc3p1ZXVadnpVWUE2Y2tDNzIwT1V4ajcxYWxyaHdIWlRyMXZiWTZLUW1DWTU3UE03dUk3Qkk2cUZqVk56VEQzaUxGRkM5ckFYNFhlN0k2RDg?oc=5",
+      "title": "미·중, 600억달러 관세 인하 협상 재가동…세계 무역질서 다시 시험대",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9uRWtyaERyN2RkckNsZ3NHREdySWFQUkJhdVZadHdkWGRjVU40SW9EM1VGTU9lalVIWVBKOTlSbnY4V3ZxdEd0U3hUWTQtS3k3SDhFNWZHcVoybUNNQ0h2a0cwRjFWdVVC?oc=5",
       "title": "Ethiopia War Security Review, November 13, 2026",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1YQmpQenRUMVk1WUFUN3h2eTRLSWJvZUtBTkpZcGJRZUhaTzNNWi1ZbWlkUk5mc05yNWFmMG9DWjFGTzVfMGhtQ2pwOFoycV9fU1JvNXdpaWZXbkwwcHBKWW5zd1l1ai1MQjl6MWF1LWJWZGc?oc=5",
+      "title": "Japan nuclear policy — 59-Year Taboo Broken Over Security Concerns",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
