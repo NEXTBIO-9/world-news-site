@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-16T18:21:28.034570+00:00",
+  "updated": "2026-11-16T19:11:08.431184+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 18,
+    "important_unpublished": 17,
     "not_in_current_queue": 44,
-    "pending": 20,
-    "published": 116
+    "pending": 14,
+    "published": 122
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 13,
+    "not_in_current_queue": 12,
     "pending": 5
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 10,
+    "source_blocked": 9,
     "repeated_extraction_failure": 3,
     "in_retry_queue": 5
   },
@@ -71,14 +71,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNd2ZocWx0VkRxMGh5N25RcDZMQnQ1LS1HU0RMVHg5U3dOWDlGRTlkcHdaRHVCLTRfR3hUYXE4a3BVV0ZncERjU2RuVXlnR2dBcUhMTUc3UVR0RG1tNW9sV1FVX2FBLTNhRXE1WkJ5WmwxR2pQVHZHV3ZxSVdHVnpUWWFjNjgyX0tSZWtz?oc=5",
       "title": "Iran claims drone attack on US military base in Bahrain",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSktsWjQta09TRnFzTDlldWJ5Qi1wYmZoMjZYd1d5ZmxuSWl0Y3h1bHhhYjhkZ3F6R1Y5QlF0ZDVrT0p0dmpPQzdZN0N5T29oalZXcmFaWHNjcGZFYlVSRE9NcWRIaXpqWDhRUXdVeHRBVmdrNXJVeEdscUkwbkU1UUlqOHdGZVdETG4ybzI2VS15OGRpLVlkZ1BLVnZMUQ?oc=5",
-      "title": "Toronto police arrest suspect in Bridle Path home invasion investigation",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -177,14 +169,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNd2ZocWx0VkRxMGh5N25RcDZMQnQ1LS1HU0RMVHg5U3dOWDlGRTlkcHdaRHVCLTRfR3hUYXE4a3BVV0ZncERjU2RuVXlnR2dBcUhMTUc3UVR0RG1tNW9sV1FVX2FBLTNhRXE1WkJ5WmwxR2pQVHZHV3ZxSVdHVnpUWWFjNjgyX0tSZWtz?oc=5",
       "title": "Iran claims drone attack on US military base in Bahrain",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSktsWjQta09TRnFzTDlldWJ5Qi1wYmZoMjZYd1d5ZmxuSWl0Y3h1bHhhYjhkZ3F6R1Y5QlF0ZDVrT0p0dmpPQzdZN0N5T29oalZXcmFaWHNjcGZFYlVSRE9NcWRIaXpqWDhRUXdVeHRBVmdrNXJVeEdscUkwbkU1UUlqOHdGZVdETG4ybzI2VS15OGRpLVlkZ1BLVnZMUQ?oc=5",
-      "title": "Toronto police arrest suspect in Bridle Path home invasion investigation",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -319,6 +303,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1veThiRWt6OGZCY0s0VFZxaFlZcEJUUERqbk5sM3U5YXBSc0JQSEQ0RVhiOGhXY1ZuNTQ1c3BnS1ZRSHFmRlh0NmRwWmhIY2VZZXVwWEJiSU1HcUZZbWNMc9IBYEFVX3lxTE1veThiRWt6OGZCY0s0VFZxaFlZcEJUUERqbk5sM3U5YXBSc0JQSEQ0RVhiOGhXY1ZuNTQ1c3BnS1ZRSHFmRlh0NmRwWmhIY2VZZXVwWEJiSU1HcUZZbWNMcw?oc=5",
+      "title": "미 FDA, 중국산 유망 폐암 치료제 '이보네시맙' 승인 거부",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4zaXVyaTAzYU0zYmRyZm44SDZaU0lhMmVFZndtVTktdk9INVBMTG1JRmRUUW9Jbmlka1ZjVldXQ2NPbXI2dTNrUjl1X0pyR0FCOFZqbTd3aHBhS3NCNnRsYjl0Z2Y?oc=5",
       "title": "미·중, 600억달러 관세 인하 협상 재가동…세계 무역질서 다시 시험대",
       "important": false,
@@ -359,19 +351,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQT0VhcExRUnVkVVZRYXp5d0ZBNDFoYjlReUkxRGFkb252b2xwM3p0bG5CQmw1Y2ZaMjZ1RUlmQWRUTHg5TExseDlabkl5S2FYampUQUp2SGJHa1plenlVZGdENzVSdGdENDY4NWRUeTIzMUFVTGJ1Vk10SFlpdGlGRUFJZTNVZw?oc=5",
-      "title": "Indonesia’s Citizens In Russia’s War – OpEd",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZElfOFpBcXJHc0dUV3FYaGd6dV9DdHpxTmloQjRKUTd2d2ppc0ZfRzhIbnZ1ZVNQazBGX3Bsb3JOWEl4ZHdiemJfSEZrdUVRZnk2TVhzNUpzU2hZbDZRazdKdDBfNEk1VXpIZmJwRzR3MzF0TnVTS2lfT1FGdkVzbjF5RWo?oc=5",
+      "title": "Japan's Prime Minister's Office, Military GPS Data Traded Overseas",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPU3JtLU1MZ3l4TmRCTmdsV183S2oxT0dVNXVwbmZkVEktZkdkeUh1QmJ4YU45U1h3dkxjaXVPeXN0ZGpJSzY3MFJROU5oOTl5azlFSUJfamVnNExkVXNBdm01VVEtdVFHdkJ0MDVvbFZVajZvaW5ZdW1JWXNESGJQOWc0WXRMTGZZ?oc=5",
-      "title": "Saudi intercepts missiles as Houthis widen strikes on kingdom",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -385,6 +369,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNLWtwcGo1LWgzWGRMUHhRSlc5ZS1sLXBmampxdVYxUjBsbzhNVzl6SGZHWTJWbVlmYTVHY0N2SDZxMlMyZHJacmNTck40YWRxclhxTTFTLVF5N3YzNnJuMjlOOWp5Tm11dzNRZ0FpMDhRUnQyek1STE96LUV4bHVaQUItX0p4M01jN0oweF9pV2hJMVBUQy1F?oc=5",
       "title": "Indonesia Postpones Vice Presidential Election to December 9",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbnRuY0ppTW5IMEFYYVpNVW5BVER2c19JdEllallLY1RBdFppQ25fOTZpRy1SRERib2JvR1RpYkZDSGR4T2VUUWk0SzNOZXItSjNWZ2liUDlmYXp3SkpoSEszdlVkcGJFcllINlJ1Z1A1WkJBbzhiTW5JVjl2WWJNdWptLWgtSDRYb004LXYxcmlxdkxmeWtCR3RjWQ?oc=5",
+      "title": "Indonesia to Sign IEU-CEPA and Investment Protection Pact",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -487,6 +479,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSTAyd3JXSE9QTnNubmM2cEVsaGdjb0NvUlIweEV6bWNFVjB3RmFoeEFCR25aakM4Zktfa2pSd3lzOVp0Y0VSbjJzQ0xHZ2wxT2xlTXVHbHFySFBzTjg0elZvWUdqdTdPTzF0Q2lRazItUE5vWF9ubVZJWm9mREh5cW9Zb1B2dzRuV0RuY1VuSFVMUlRpQ19uM3RNQWpNN1VEb3NpVG5zUW82Z3JYNno1bi1CWlBxNlBBSGZyMzRR?oc=5",
+      "title": "One heart attack away from an election: How a likely one-seat Government could play out",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTGthcVpMQmtfTlp1V1ViN3liS0N2UE5KZUhSam5WOFlESjFtSHZmVmNFbFJ6bVdiTndzOXVyT1ZtclRwYnluaWl0eXVUZmM0S29wc2I0UG5paE1sSEZkZzNjV1YtY3lneE93QURSUEpEOW9DWWpFeGtSelU5UnVhcFJrUURPNE5LWGJkNkV1VXQ0TnhyZ3BoRVo2c1ZkeEc5N2dsTVJwUGwwaUJ3XzhDNE9vQ2wxQmRQUGhqTE1B?oc=5",
       "title": "In Focus | From cinemas to markets, Hong Kong-UAE ties deepen despite war",
       "important": false,
@@ -497,14 +497,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZXRzLVpZYXhYWG5KWlNpVjZQbUtVNXBIeTdjTThFV3RSTnJ3bFZpNzJhcVo2bUFnOEE3Mm45cFd5MDM2eS1SM2RfSGZmelR5RXQwSVI2U3BFQ2Y0UU9taDJoM3VOV2lTd1VtdGtBZWpnQTlMNVVfZU1IRlNHbEJKbUNCYi1lbzk3Vkdhay12eWR3Q19ZaU50Mm1TMUVyZExFVXVRenRyNEE5QUNIR29HaHdIaUg0UUN4NXVja0d2QVU?oc=5",
       "title": "South Africa’s Messy Local Election Fallout Rattles Investors",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSnNrblJ4ZGpaR1ItSi1kMVNhamFTNlVnRUNwck1LSlg5SG5Xb0c5THBFWnowMm5tUFdLZjJsenNkQlNYZ2M4eC1pMU1WN3hjZERNeEhKN2hIZ0VTSUY1VVJLVGNITHJNRG1kbUZ0WHpEcm9XNzhPT2JSak1ON2ZjM2ZwRjljUl8ydjlDVEd6SF84QWZBUEpLMkVlUHpSODhDNHN5cktFTzRReV85bWNKT2NhM0k1a0ZDazZDUU9NSXFmUQ?oc=5",
-      "title": "Macron backs peaceful border resolution as Cambodia, France sign record 29 agreements",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -535,8 +527,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPQ3IydXlEQkw2aVE1X2VmcmJndTBKT1lKNGtPWi1Ubm13MW55UkQwY0ZQTlQ2RmJMR0x4RDI5dzk5TGhkbzBKQUIyQ29tYnBnN3dLaVVtRXctZjJLblhlQUtGUzctNHFiaHRaemRwQUgzMDAzNkQ1aGdMUHFiOUtqOFNPX3BvdmI4VDFETkJ1REdWV2p4UzZONC1rMHphd1ZySlVvUUY4aTlxeTliRm1UZXF0Z2hSUXV5S2k0MXZsa2t4Zi1iWV9VaUx2eU41UFZoa25fS0VOdXZqQzA?oc=5",
-      "title": "South Korean President Lee Jae Myung arrives in Manila on Monday, November 16, 2026, for the 49th ASEAN Summit and Related Summits. Photos by Jam Sta Rosa/Pool via Reuters",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQaEplcVU5UFhDM1VEYnk4OVBtWEU4cDJ3dFB0Z2I4TldEQXZmSEpKUURFcTRPMFZqMzk2ZXJqY2U4VzlWQU1WbU5XcUVmbU5VMVdCblp3TnVwUzAtVUtmWGZWQk9mR1ZMVzlad3NMX1hMZ2M1aGJ6MG5uVWZqcVNSeTQ5cUs2clFIdkJYdlhrY2lBSllvTTNrSnd5MTFmaUd0UkxfWjNhQ2hMY1lrcW5FTjV6b0tsOWZFUVU4aFU0QTVhbG1adzhBVm56MFpLN2JhUHRaZTllSdIB3gFBVV95cUxQZ2JTYlBMYUZNUTAtN3NrUVlKMkRuYV9uVzR6c2xHWVJmLUxWcFRGdll2a0xtRkhzSUJFcElCRC1jVXloTm5FWmlDMXlYU3dxUVpjS3hoeGpMM1B5Z3JUbzV0bS1RS1RmaE0wbHNjUXFnY1ZYNWdHU05kVU5fbW1fTjIyYkhSLXZnUG9HTUVYYldnNmVkbmlEZ3U1dWxBbEtXTU9ZM2hfLWlIRVp1dEhNQlF0UlpSZzlwMmFMZWZOSXhTNngxT1lLaGhkVGwzSlNLSjY5QUl5OXJXZG43Tmc?oc=5",
+      "title": "India-Thailand trade reaches $21.49 billion; UPI-PromptPay link discussed",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -551,14 +543,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1veThiRWt6OGZCY0s0VFZxaFlZcEJUUERqbk5sM3U5YXBSc0JQSEQ0RVhiOGhXY1ZuNTQ1c3BnS1ZRSHFmRlh0NmRwWmhIY2VZZXVwWEJiSU1HcUZZbWNMc9IBYEFVX3lxTE1veThiRWt6OGZCY0s0VFZxaFlZcEJUUERqbk5sM3U5YXBSc0JQSEQ0RVhiOGhXY1ZuNTQ1c3BnS1ZRSHFmRlh0NmRwWmhIY2VZZXVwWEJiSU1HcUZZbWNMcw?oc=5",
-      "title": "미 FDA, 중국산 유망 폐암 치료제 '이보네시맙' 승인 거부",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9uRWtyaERyN2RkckNsZ3NHREdySWFQUkJhdVZadHdkWGRjVU40SW9EM1VGTU9lalVIWVBKOTlSbnY4V3ZxdEd0U3hUWTQtS3k3SDhFNWZHcVoybUNNQ0h2a0cwRjFWdVVC?oc=5",
       "title": "Ethiopia War Security Review, November 13, 2026",
       "important": false,
@@ -567,24 +551,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE03eVlHQWVOMVROUE4tN09BNjR2VTM2Wm0zVklNbXFLcy1aUXJTS1AtaTRMR25oVHhKTm9nQkxPSW1fMzVoU0xpYVQ0RE9Dc3M0SEd1MlR3ZUFFa1o1ZkRGZG9kZlRpVWJ6S2tfTE1wV2Z6RzZsYm0zT2Zn?oc=5",
-      "title": "Japan’s Economy Unexpectedly Shrinks as Inflation Squeezes Households",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNzhfZExXUkVvQkEtSElMMHQzazFIU3JHeUVERU5wb2dqQ3VpZVJOampRNVk1aF9uY1FTT2FzdXFrRVBYTi0tcVUxSVN3QWJWdmx0RFVrSm9uRkxBRkUxTkhJbFZpVmR1Tl80cHhVa1ByYVcybV9oa21nOUVSTjQxSEowOWw?oc=5",
       "title": "Nigeria’s inflation rate drops to 14.06%",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZElfOFpBcXJHc0dUV3FYaGd6dV9DdHpxTmloQjRKUTd2d2ppc0ZfRzhIbnZ1ZVNQazBGX3Bsb3JOWEl4ZHdiemJfSEZrdUVRZnk2TVhzNUpzU2hZbDZRazdKdDBfNEk1VXpIZmJwRzR3MzF0TnVTS2lfT1FGdkVzbjF5RWo?oc=5",
-      "title": "Japan's Prime Minister's Office, Military GPS Data Traded Overseas",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -609,30 +577,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVjFHY0lvTThVblBtWl9Eb25GSGd2N19wLTgzdldjR1J6Z1BNM3NuNGg3ZUNwX1FVQWV3ckJ1NzgzMGxGTmUtYmM5d0RnS3p1OEI4NW5Ya1VfT1lRODM1ZUI5aGMwMldQVkRGeWRJWGhDMG9Qb21aZ0JLblJNMk0zREdzNG4tUnYwamFyVjhMYW1DRjlqU3FqYw?oc=5",
       "title": "GMA News. . WATCH: #ASEAN2026 leaders attend the 6th ASEAN-Australia Summit on Monday, Nov. 16, with Australian Prime Minister Anthony Albanese. Courtesy: ASEAN 2026 PH/YouTube Watch the livestream: bit.ly/ASEAN2026Nov16 Read: bit.ly/ASE",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNUp4YWhKejlTVC1GMUg2SXVydVFmSW54OXZHU3BaVmpxM28wd0g1N0dyTjdId204alAwWWktQ3dJT1pYMWpGSXl5YkhZWXBtak95MUFFLUF6Sy00QzNZOTVUUHJaS24xWHlwdC1hSjd0TkZBSFcxUlE3eGtkU1FqWHQyNzVSRV9QVEZHLW40M2N6MlViS20tSjBlZERacERCVE5Ec290ejJkZHR1RThCeEN6cw?oc=5",
-      "title": "Portugal’s economy more resilient than many EU partners report shows",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNb3lmYldMRGtIbk8xZ0tqU1V0S1JNQ2NuX3JsVlRpalhqOGotVDZrck9Cd0VXZXpnMGpUcDEyZjZYUFZzZ3RVdlQ0MG1OT2pLR1pLeHAwWUJsdVNmNmU5ZUxfTHRSY0tYcmJVTUMyWFQxR2NLVXg2RnlrMWFTTEFvckkxNjBkbnlaS01LOE5aOVNaTXluRHZJWFhubDhzT2ZHaVExdHRtcERiUXBpazd2LTVvb2RqTXZYdlhJVA?oc=5",
-      "title": "Piyush Goyal hails India-UK Comprehensive Economic and Trade Agreement coming into force today",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSTAyd3JXSE9QTnNubmM2cEVsaGdjb0NvUlIweEV6bWNFVjB3RmFoeEFCR25aakM4Zktfa2pSd3lzOVp0Y0VSbjJzQ0xHZ2wxT2xlTXVHbHFySFBzTjg0elZvWUdqdTdPTzF0Q2lRazItUE5vWF9ubVZJWm9mREh5cW9Zb1B2dzRuV0RuY1VuSFVMUlRpQ19uM3RNQWpNN1VEb3NpVG5zUW82Z3JYNno1bi1CWlBxNlBBSGZyMzRR?oc=5",
-      "title": "One heart attack away from an election: How a likely one-seat Government could play out",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
