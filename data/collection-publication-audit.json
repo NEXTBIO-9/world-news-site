@@ -1,25 +1,33 @@
 {
-  "updated": "2026-11-16T10:52:03.538250+00:00",
+  "updated": "2026-11-16T12:10:58.426752+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
-  "collected_unique_urls": 177,
+  "collected_unique_urls": 175,
   "counts": {
     "important_unpublished": 12,
-    "not_in_current_queue": 39,
-    "pending": 27,
-    "published": 111
+    "not_in_current_queue": 41,
+    "pending": 24,
+    "published": 110
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 8,
-    "pending": 4
+    "not_in_current_queue": 9,
+    "pending": 3
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 7,
+    "source_blocked": 8,
     "repeated_extraction_failure": 1,
-    "in_retry_queue": 4
+    "in_retry_queue": 3
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
+    {
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTndmSjAtVkZldVMtNEpCYWxuaHNWOXNSaXFfT3dsUndnMzhJQXExU3p6bUNjY29aWXRrVndsQXpqU1FUdDVnVDl4NUNMeWFSQ0dRS2tuamc1OEJ1NzRVU0FETFdja0VGamw4UGxWNURsNk1jMGxpbGZkWTdnQ1d0TDlVZW8yS09C?oc=5",
+      "title": "WHO sounds the alarm on antimicrobial resistance threat",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
     {
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNd2ZocWx0VkRxMGh5N25RcDZMQnQ1LS1HU0RMVHg5U3dOWDlGRTlkcHdaRHVCLTRfR3hUYXE4a3BVV0ZncERjU2RuVXlnR2dBcUhMTUc3UVR0RG1tNW9sV1FVX2FBLTNhRXE1WkJ5WmwxR2pQVHZHV3ZxSVdHVnpUWWFjNjgyX0tSZWtz?oc=5",
       "title": "Iran claims drone attack on US military base in Bahrain",
@@ -86,6 +94,14 @@
     }
   ],
   "unpublished": [
+    {
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTndmSjAtVkZldVMtNEpCYWxuaHNWOXNSaXFfT3dsUndnMzhJQXExU3p6bUNjY29aWXRrVndsQXpqU1FUdDVnVDl4NUNMeWFSQ0dRS2tuamc1OEJ1NzRVU0FETFdja0VGamw4UGxWNURsNk1jMGxpbGZkWTdnQ1d0TDlVZW8yS09C?oc=5",
+      "title": "WHO sounds the alarm on antimicrobial resistance threat",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
     {
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNd2ZocWx0VkRxMGh5N25RcDZMQnQ1LS1HU0RMVHg5U3dOWDlGRTlkcHdaRHVCLTRfR3hUYXE4a3BVV0ZncERjU2RuVXlnR2dBcUhMTUc3UVR0RG1tNW9sV1FVX2FBLTNhRXE1WkJ5WmwxR2pQVHZHV3ZxSVdHVnpUWWFjNjgyX0tSZWtz?oc=5",
       "title": "Iran claims drone attack on US military base in Bahrain",
@@ -175,14 +191,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPd2RPcjNKVi1OUEJFUkU4Z1NfUWk3MTZSZWRlMVVkXzVucFZET25jNF80WFpwUzN2QzVVUkJBanM0cENqOW51VWpNWkhxVlZxVG9sYl92V0RHR1FLa1NXaEpYejl2LUN5YUM2YmloTm9GaU4tSXY5c3NYbFZrR3pnSHdOVmZHXy1fNmlrRl9uUXNhdUYwYmpncFdRSzZMM193WFFGem9jS1M0TlF2TzFN0gG0AUFVX3lxTE1nb0lQdFlLa0plY0FMYmcwTVQwc3pIbkxyYW9PQkQ4OXNMQ3FsWXdybktqNWZ4YW5Pb0JWT0tUdWs5dnNPZVBHYXRnaEs3Yi1SR3BlWTlUT2ZhOG5YQXpuZS1tNUk0T29oNWltU2wwRUJYRmtDVnpQMVl4N2hxRGgxOUVjNzFsVXVabnBWVnMtb1o2QzY0Skd1d0VDeFhib3Bua3RFSlFUR3N5WWg2aHJDbUVFdA?oc=5",
-      "title": "Blinken warns US ground invasion of Iran would be 'absolute disaster' as Tehran escalates attacks",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNS1ljcmFXRnMwYW9vNzBhUU1tbnhLU2RBX3RMSnVkNThyYTRnU3V6U1RFVHpLT19xT0V6NFpZeXB0cmVteHFkVGwxSnJGQ19lOUlxUWRpc0ZUQ1BBd1VReTJYZW9TLTBmSms2blBWeDA3cG9Qc2JlbmFzV0h6MFZCWE1KS3prOXpwWDBpaHBWZEZJSDhWY0hPSEl2REdFZnBlc1B5TUFzWFJ6Z2Mwa2N5R2VHeVdadlZpQVo3Rmp5OS1iaWV6bVBvYzZIMGJHNXdzeE5SSFhySDhLc2d6dTlMbDNUQ2NLTUtPU0NJ?oc=5",
       "title": "Faihan Discusses Strengthening Parliamentary Cooperation with Austrian Parliament, Invites Companies to Invest in Iraq » Iraqi News Agency",
       "important": false,
@@ -247,6 +255,22 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1OY1JmRlVjWTdHU0hKYll3U3dJQU1DNkxrMnozU3NNcDg0SnZKSW1HMmpsS1NFTnhjT2tXOC15WUM1NTRUZ2JsQ0xQWXZONm1JSmVlMGo2a1VNN3BjMFpZZWVqdXdwRmc?oc=5",
+      "title": "엔비디아 쇼크에 美 반도체주 급락…고물가·고금리까지 글로벌 금융시장 압박",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4zaXVyaTAzYU0zYmRyZm44SDZaU0lhMmVFZndtVTktdk9INVBMTG1JRmRUUW9Jbmlka1ZjVldXQ2NPbXI2dTNrUjl1X0pyR0FCOFZqbTd3aHBhS3NCNnRsYjl0Z2Y?oc=5",
+      "title": "미·중, 600억달러 관세 인하 협상 재가동…세계 무역질서 다시 시험대",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9QQ2N2ckVKbjV5b0UzRGZMRTdZSlpoYzBLNTIzVFpxUS1hTTBENXQwTkVNWkRjcEJ1VF9SdE1oOEJGZXhlc3VSTzd2VzJ6djVZd2tsaHdTS09hUDEybFI5VlczZFJBdkhPd2pr?oc=5",
       "title": "국가 지원 신약, 기술이전·사업화 길 찾는다…KDDF, 글로벌 협력 확대",
       "important": false,
@@ -287,6 +311,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPU3JtLU1MZ3l4TmRCTmdsV183S2oxT0dVNXVwbmZkVEktZkdkeUh1QmJ4YU45U1h3dkxjaXVPeXN0ZGpJSzY3MFJROU5oOTl5azlFSUJfamVnNExkVXNBdm01VVEtdVFHdkJ0MDVvbFZVajZvaW5ZdW1JWXNESGJQOWc0WXRMTGZZ?oc=5",
+      "title": "Saudi intercepts missiles as Houthis widen strikes on kingdom",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNRlJzOTF2ZThSem9JTmk3QmtuZWh2UjZGNEttS2FMZjRPSE53bXIyWDVhdWlXV3pXR3hxQ3FSWC02QktDTTBlblgyaTFzblJnMlJaZ0JoRHhDVk1CRm1jRzEwZjU1SlA2aXZQVzVfald5SUJnMnJ5REllOU1XZ3BrU2c5Zkplb2R2MEdpcA?oc=5",
       "title": "Will US and International Sanctions on Iran be Lifted? - Energy News, Top Headlines, Commentaries, Features & Events",
       "important": false,
@@ -311,8 +343,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPOTZCYmwwajlmSXIyWWx2WXhZaE81VjdHTS1vc0wtdUpBNG01WnFDdVF1bXlmNXNwalQ2N2lKT1hXODMydGtUY25fcDgxQW5jVnFTVUNXQ09NN2twb1hiNE9kVHowRUZhenVIY2dDUzhPTkFaTzBqaUF5emNlaHdLc3JEcWhrTlBuemFxR01HNUNJV1FjVnlxYTJ0bWpIcks0YUFv?oc=5",
-      "title": "India's wholesale inflation accelerates to 12.29% in October on fuel price surge",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWmhxbG10RTR6TVFuLS05QzZFTHRJMW44aWVnT2tMOGZhUkUzWk5GS0d2OG12R2N2MmR5RW8wQzRHOVJNU2VJQ2M5aFd6ZGlzd2VFdXRnTmZIckNlV3l2UWdEemJiTVRnWEozZVRPdHFWYzNRUnFuSGRjM0RRdDNkb2RQN1Rnc0ZKM0tlcXd5ZHFpTjJ6NzhWanZZcGM3akVOM2hnT25ZRnltREZ3djdiedIBsAFBVV95cUxNWmhxbG10RTR6TVFuLS05QzZFTHRJMW44aWVnT2tMOGZhUkUzWk5GS0d2OG12R2N2MmR5RW8wQzRHOVJNU2VJQ2M5aFd6ZGlzd2VFdXRnTmZIckNlV3l2UWdEemJiTVRnWEozZVRPdHFWYzNRUnFuSGRjM0RRdDNkb2RQN1Rnc0ZKM0tlcXd5ZHFpTjJ6NzhWanZZcGM3akVOM2hnT25ZRnltREZ3djdieQ?oc=5",
+      "title": "Israel targets arms shipment in rare strike in Lebanon’s eastern Beqaa Valley",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -375,14 +407,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNbHc2Y3M0N2JMX09vdU14LTVUU1JFNTEwaUhNSEJvXzQ0ZnREdDM2MVVLMUczNlBDMU9pUG14VjhqcXpSMXpFalhtQzVSOUZSc0hnU09uRHRMZkhEcVAxSl9mVjU0dERjTjRWU09UZkcyTWtCZ1g3NDJHZ3ZQbTQ3eXFMZG1saEp3TTJlLWRuZnZDSkl4cUgwWTd3SElidUtkM2pfOXdGUUdMN2hBT2FUeE44cndpSVJmRUE?oc=5",
-      "title": "Kenya protests Timothy Nderi detention as it backs South Sudan election",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQemRSQWdKaC1oejVqWW53ZEZDcGQ0MFpSekhfeDRoX3A0YjA1M1RNVS1JaGtZcEV5WGxOZnp1Ukl5endJN1BUVUw5Tk5aZjh4Vl94R01YdjktMi1EZ1B6aFZpMVpKd0dubmo3d0xyZmhMcTNrc1BwY2ptY2RoS0x0elJKa0p0enlpYmdvLUJZdHV3MXNFQkwxVXBvd3JFdURPa2VqOW5TNUZWUVh1ZXZuUGw1ZHJBOU05Rm1Vdg?oc=5",
       "title": "Lula to travel to Spain on Monday to join Pedro Sánchez’s election campaign",
       "important": false,
@@ -423,14 +447,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPS0NZRW1WeWkxRTZWeWtwenhyM1k5WWxCVWk0bzNqQjBReVdFeHF5eENHMEVoOFJWMkx6YnVWTWRSNUdPVnA1ZGdTVVlUQUJOVm1EZnNRaG5GS1NGTHJFN1NEMTNzUWJ3bVRlU05MNWJ3V0pWRXpFVVpFQTliTFM2eTFzdzNzUVB1RmFkQlR0cE1HTDU1QVB1NG9jNE1BSzlPOThaUVpFdlMtTmppYmFtNlppdmpHQnR6bl9ZcXoyTDZHbEVNVXc?oc=5",
-      "title": "Japan’s economy unexpectedly shrinks as inflation squeezes households By Reuters",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQamZhVFZWWHhRLXJqbW5sQmt4ZVFwMUI2bmUtbUUtajZ4eHZzT2tmZkxZekN6Q25oLWF1bDRLVVp0V2ZVanNheWwyU3cya2dOWjVwYi13S0lHcmMzRTUyWVp6ckg0RkNkQS15NXFxR1ZfSVV0Q2d2d0l1OUdlVFFLbFFWbTJZTDFmT1dqRGxpUkd6SjhLVTNxb2x5NGtHaUptQ1NVczVtQmdjTWR2el9zeUV1ck5IeExkdHBhRFRvVXFldXNaMFk2cE5MZG51SnAwMWc?oc=5",
       "title": "Ukraine war: latest news. EU Council approves a further 8 billion payment to Ukraine",
       "important": false,
@@ -465,22 +481,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1veThiRWt6OGZCY0s0VFZxaFlZcEJUUERqbk5sM3U5YXBSc0JQSEQ0RVhiOGhXY1ZuNTQ1c3BnS1ZRSHFmRlh0NmRwWmhIY2VZZXVwWEJiSU1HcUZZbWNMc9IBYEFVX3lxTE1veThiRWt6OGZCY0s0VFZxaFlZcEJUUERqbk5sM3U5YXBSc0JQSEQ0RVhiOGhXY1ZuNTQ1c3BnS1ZRSHFmRlh0NmRwWmhIY2VZZXVwWEJiSU1HcUZZbWNMcw?oc=5",
       "title": "미 FDA, 중국산 유망 폐암 치료제 '이보네시맙' 승인 거부",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4zaXVyaTAzYU0zYmRyZm44SDZaU0lhMmVFZndtVTktdk9INVBMTG1JRmRUUW9Jbmlka1ZjVldXQ2NPbXI2dTNrUjl1X0pyR0FCOFZqbTd3aHBhS3NCNnRsYjl0Z2Y?oc=5",
-      "title": "미·중, 600억달러 관세 인하 협상 재가동…세계 무역질서 다시 시험대",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5ORGJIb1NmaHFldGRiLUQtSUprd2ZiLW80MjlOa1JEeUQyeXVJRDFzOXk4dEs5V0xsZTBkZmRyNG5RZWNhTGd5bm91T3hsQUx5YUlMOW56YldzVEhfNktiR3lvRXJvWFNxNW80?oc=5",
-      "title": "세계 비만약 전쟁, 다음 승부는?…美 학회에 글로벌 제약사 총집결",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -543,6 +543,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5DYS1yRDNqWVJ6LU5MVGY0R21LSndXY0R1cVNvVW8xZWYzd0hxUGRmbTk2WFpNZmVjdmYzcF9ZbldiZ3dRT25HQi1Gbk12VTI4NUY5QTFOV040Q2d1TTVkckg1X3pRZFBUYUtDWVhR?oc=5",
+      "title": "알약에서 시럽으로…대원제약, 펠루비 성분 소아용 제형 개발",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBGLVAzcWYwNjY0TXNxa3ZUZWNqeTk4NVlBVjNJQk5ySjF4ZjVmcHBvNzNrNXhsamVYVlBhbXhidEdrV1hxdHRPYmU5dWpGRXdGbFhlUjlST3cwUnlaWUh2b2NCdm1sa09aVE50SWQxd2JLQdIBdkFVX3lxTFAydW9TaURRTjZhR0lZZFM0bTZFTG0tazFxRUNnY0ptSE5zM0l6cUFiSW5VMXhCMG1ETG9nWEhYc2paSldBQmRCNWtmTjAwaWp0UU5zd0d0akg2aUcyMy0zc3R6dDNDY3d5MnJUR2ZnTXhVcGZyVGc?oc=5",
       "title": "국가신약개발사업 힘 실린다 … 1ㆍ2상 실탄 지원 대폭 증액",
       "important": false,
@@ -585,14 +593,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVjFHY0lvTThVblBtWl9Eb25GSGd2N19wLTgzdldjR1J6Z1BNM3NuNGg3ZUNwX1FVQWV3ckJ1NzgzMGxGTmUtYmM5d0RnS3p1OEI4NW5Ya1VfT1lRODM1ZUI5aGMwMldQVkRGeWRJWGhDMG9Qb21aZ0JLblJNMk0zREdzNG4tUnYwamFyVjhMYW1DRjlqU3FqYw?oc=5",
       "title": "GMA News. . WATCH: #ASEAN2026 leaders attend the 6th ASEAN-Australia Summit on Monday, Nov. 16, with Australian Prime Minister Anthony Albanese. Courtesy: ASEAN 2026 PH/YouTube Watch the livestream: bit.ly/ASEAN2026Nov16 Read: bit.ly/ASE",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitAlBVV95cUxQRXRMTGhtOEN1TlI1aXhJclNZOV8wZnVmeHo1TGhYNy13a3RPSUc4cDlHN3kwaDhsOERKdWtMVjl3cFplYXVLQl9uMl9DRGtyVDhzUWtRV2RnNGNZaFYxX3pTWmdBOVg5Q0VCbUkxYk12V2lRY0w2UEFqOGd0LXJ0YmRUYTc1TnU5czVUYWUxcjdtX1JUNjk5MjdZaDM4d05TdEVUbWRwbWpPamJpSUsxUlZYeW5Ua2p0SG5SVjhTWkJLUzFqampoNzg1SnZ0dk1DUXNOY0ZERnlRMzB1TWhrazJNUUJITzQ3RFlReS1IWGg2T1FNNllLQjB3bkR1WktiWWNJdnVNM0tfUC1KaWo5WmNhQkdGbmNDQzV1U3U1NUNCbExNbmN4dUp1Rk1mclo0RVU2XzZaZmNGUGk0MTJNbE1DUmdPOWF3Qm9WMlVlcHZ3NWJvTmpfMDdWTkVUVW9nT2pFTjE4NFhLT2N1OFJXLVRiSXk4TUF5VDBmcTZXNld2c21QNHNEN1dPQzFBUF8ybmlJMFhuT09Cd3M0OTd3YzE3SWNKRHZTbkQ0eVQ2ZGd4c1hsbWtOUTZLRWtCbHVpc1lBX3Zya3F6d2l3bjFuZEtIN0h3TWVacnl3UklwRWJ2d0FrbU9CLTFUNFVFdS1rMkdmY2QtZmw0R3FmSC1zYmNHa0FFZGJPOHNKdndoc3MzRnFyR2NCbmNkVE1VSDYxS2xXeGZFYW1KeWdtSzhoRE16bGJQSHlucXB3VjFIb0lYbFB6LW1QN0M5RExrbjNiZU9MNmtaeVpRTkE4SFZ0cWNzVFAxMmJ0SlRpNjcwRGQ3dDdleG5PcDljSGlzTkNreHJHNlZVSVhWZFJuWTYxSURZS0c1ajFxTFVDNDQxeHBhQ3FQOTNrN1dqY1d5MHVxOWpPMlRQeW5LbS1PUGl4ZGhLMTJiRkJ3NUlrWXVYMElRTVEtWF9pUk1fOTY1X2dJVGQzd2RENDRxTEFkVk1DbnhEb25nNk5mcmxlSWM5U1FfYU82UWdhWUtsM3RlRlRvbE1TcGxtZHJySEQ1YVlsX3NjSVQtV0gweGNpX1BoeHZ5eGhoQnNsU3FuX1RUWHJvdW1rS2JkSUo4aUlzX3k0bndOWHl5MHF3RHA5bVdKcGdWcWprbElJaTlDSUpBVGRnUUJOUnJjVm5UUndLOWNyUDdwM0tOMXBXUExBamF3eUNGRWIwTzlmclF1RmkyRWt3dDFBUTk1ZlFCQy1hMjhkZXpkMU5sVVRpcmppb0pVT2JVY1lkWHgyQmMyNU1YZDBVZHl3c2dXV2Rmd1Jvd0dzQVhjdi1KQjF3NnY3ZFRlaF9MUHV6MUt1Q2Itd3BPMHNPRkREelVsNS02TWFRTlk5eTU1OXJ6b0pyR0k3VElSdE9WLUJMMV9SZkY4SzZNenU4TUhEUzZFdktHOXMtb1I2V1FPZkpKd1RJMUd0d0EyeF93eGRqRW5iVV9CWFc2VGFveTRtODkyTW81SkphSmJGa3pRdDBtQnlzQVVILXpTWFZMYmlHSE9NcDloWG9hcy1GbXNyWUliYjNobC1BWWZkRVhxTHVOWFZERVdFeXpuZ1NKR050?oc=5",
-      "title": "𝐊𝐞𝐧𝐲𝐚, 𝐓𝐚𝐧𝐳𝐚𝐧𝐢𝐚 𝐥𝐞𝐠𝐢𝐬𝐥𝐚𝐭𝐨𝐫𝐬 𝐬𝐞𝐞𝐤 𝐣𝐨𝐢𝐧𝐭 𝐚𝐜𝐭𝐢𝐨𝐧 𝐭𝐨 𝐬𝐭𝐫𝐞𝐚𝐦𝐥𝐢𝐧𝐞 𝐛𝐨𝐫𝐝𝐞𝐫 𝐨𝐩𝐞𝐫𝐚𝐭𝐢𝐨𝐧𝐬 Members of Parliament (MPs) from Kenya and Tanzania have called for stronger regional cooperation and joint Parliamentary oversight to ad",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
