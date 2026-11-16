@@ -1,13 +1,13 @@
 {
-  "updated": "2026-11-16T04:28:22.716993+00:00",
+  "updated": "2026-11-16T06:15:23.385328+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
-  "collected_unique_urls": 156,
+  "collected_unique_urls": 159,
   "counts": {
     "important_unpublished": 10,
-    "not_in_current_queue": 31,
-    "pending": 25,
-    "published": 100
+    "not_in_current_queue": 37,
+    "pending": 19,
+    "published": 103
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 8,
@@ -21,22 +21,6 @@
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
     {
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNd2ZocWx0VkRxMGh5N25RcDZMQnQ1LS1HU0RMVHg5U3dOWDlGRTlkcHdaRHVCLTRfR3hUYXE4a3BVV0ZncERjU2RuVXlnR2dBcUhMTUc3UVR0RG1tNW9sV1FVX2FBLTNhRXE1WkJ5WmwxR2pQVHZHV3ZxSVdHVnpUWWFjNjgyX0tSZWtz?oc=5",
-      "title": "Iran claims drone attack on US military base in Bahrain",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNR0RNMDlWczFzdjRoTXVMUnJCQXhETzgxQ195dDRDbGdETjhSeEdGUl9Qcm5xVGpoMlhPQlFDNVdiNkxmQWtFTmJGMW52LV9TTFNzZF9MNUkxN1lpZlhNbHN2MjA5emRSUUxueDRPX3lybGV6QXNHTzJJNHZYSFcxMG1feDFsaVZCOFV6ZmFBeFRJbFpYTGhMV2Nn?oc=5",
-      "title": "Good news about interest rate cuts in South Africa",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQV2VOak5XTFpWdXhqcVBIZFc0dTBYczhwNTRlb0UtelFiZHljUEpOUzFTVnRuWTFBSzN5ZFhuUXhpSnVZblJ2TVdMbEZNZ0x0WW9oUnp5VG01WDBKSjQ3dTU4RVpTd3pDX1ZEWmlLZjlxdlpadVE5RlVybm42T3pJM2J6dVNVck56X0xNWjRQdE1iUHVRYkRsOEhR?oc=5",
       "title": "FDA Approval for LAZCLUZE issued to JANSSEN BIOTECH",
       "important": true,
@@ -61,6 +45,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNWkFRQjVvM19UWEl5cEUtTHZwS1FyUURhVFU1U2tTTHJsT0prRnZ0eHVYTjNka19Jb2dDZGNRZlRVVkd3RU8tZE00RTVaU0c1d3FiR2wxN2htWTFidWJWaG1Qc241Y280bGcyZXNiai0ycmlLY2JIbFdySHl3ckdGN3RTcTI5OVk3SDNrNzVPdjlNSnM5clhhc1Z6TmkwOGRkMTQ5bHdn0gGrAUFVX3lxTE9NSEVUTDB6V2pvUnhxck9IVk0zUThkOHdJRXNWTTJlSnhFVUMxT1RRU2tqaDk3RjBFUHpYaGpER2hZNDhkWFVVVjc4RW1Ud25ILVdweGhnSkRCT1diMFUwdDMxckNVX1M2aTVUSlF4bVZDbGtyMDA2MGlKQzcxSllWMk1LOURTUmVkaDlvOFoxMjFuN3hzdTdRQUNhbmZBakJvWFF0MDhrTlZTOA?oc=5",
+      "title": "Indonesia apologizes to Malaysia, Singapore over wildfire haze",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORnk0TWY4ZzBFZ3VkeThFTlMzOEIyVHVDQ3pDNWxGTUxlX3dTejlkbktyd3JrQTF5dnFaazlab01mZnF0aDJRbUE2ZmxFTkptUU10TDlCWGVweFZ6ZmNFZmsxSFNVNDdpVnRmcEktdnMzYzMtU09Sdi1Sc0MtQTBOZU5vMGx1MkFUVlM2ZmFsU2lmeXVabDZyMGhKaG1xR0NBUzMzQXpfcw?oc=5",
       "title": "Helus Pharma to Present Topline Results from Phase 3 APPROACH Study...",
       "important": true,
@@ -79,6 +71,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNVmU3QzhfOG4xT1lLc1B1MGE3QzZuYU9FZ2k0RXFVbHFhNkZ2emlhNzZ6cExQRElNMWxtMDQ3WUdwdGNGaWd0RDljc3BBaVQwWmctdnFaTnp6UndQeHJuVlRTc1JzRkd6dDFmblhHSFVWdVNXcnFtR1gyV0pVT0pLM05FaGJ5czVFNnBpSmpGbG1IcE1rYlZtRDlITTlsM3F1TU5zakVXb2ZvTmN0U1pxdA?oc=5",
       "title": "Bangladesh measles outbreak claims eight more lives, death toll crosses 1,310",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOEtJcnl2eXRPYnloamVJUzVvekRRdnhBS0dVZjU3V0d0NTJId2tzZGgtaVBwNTVqdEFMcDIwTWRROGxYY2twbTdOZWh0bUVCdEVnY04teS1jaHZ6UFdWRFZiMl83N2NZYy1qaDNsazhVNXhaa2JMejFXdlRKNWo2bnJoOXhDNTUwSHp1TlB4V1ZrUDM4Nmw4VjFxTkJ5T0g4OHNVM2RRcnFjTHMwdnBBU3c1M2Y1S3NWMUwxaHB0ek5pUXJGUlE?oc=5",
+      "title": "What to know about antimicrobial resistance in pet treatment | The Straits Times - newspaper",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -87,22 +87,6 @@
   ],
   "unpublished": [
     {
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNd2ZocWx0VkRxMGh5N25RcDZMQnQ1LS1HU0RMVHg5U3dOWDlGRTlkcHdaRHVCLTRfR3hUYXE4a3BVV0ZncERjU2RuVXlnR2dBcUhMTUc3UVR0RG1tNW9sV1FVX2FBLTNhRXE1WkJ5WmwxR2pQVHZHV3ZxSVdHVnpUWWFjNjgyX0tSZWtz?oc=5",
-      "title": "Iran claims drone attack on US military base in Bahrain",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNR0RNMDlWczFzdjRoTXVMUnJCQXhETzgxQ195dDRDbGdETjhSeEdGUl9Qcm5xVGpoMlhPQlFDNVdiNkxmQWtFTmJGMW52LV9TTFNzZF9MNUkxN1lpZlhNbHN2MjA5emRSUUxueDRPX3lybGV6QXNHTzJJNHZYSFcxMG1feDFsaVZCOFV6ZmFBeFRJbFpYTGhMV2Nn?oc=5",
-      "title": "Good news about interest rate cuts in South Africa",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQV2VOak5XTFpWdXhqcVBIZFc0dTBYczhwNTRlb0UtelFiZHljUEpOUzFTVnRuWTFBSzN5ZFhuUXhpSnVZblJ2TVdMbEZNZ0x0WW9oUnp5VG01WDBKSjQ3dTU4RVpTd3pDX1ZEWmlLZjlxdlpadVE5RlVybm42T3pJM2J6dVNVck56X0xNWjRQdE1iUHVRYkRsOEhR?oc=5",
       "title": "FDA Approval for LAZCLUZE issued to JANSSEN BIOTECH",
       "important": true,
@@ -127,6 +111,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNWkFRQjVvM19UWEl5cEUtTHZwS1FyUURhVFU1U2tTTHJsT0prRnZ0eHVYTjNka19Jb2dDZGNRZlRVVkd3RU8tZE00RTVaU0c1d3FiR2wxN2htWTFidWJWaG1Qc241Y280bGcyZXNiai0ycmlLY2JIbFdySHl3ckdGN3RTcTI5OVk3SDNrNzVPdjlNSnM5clhhc1Z6TmkwOGRkMTQ5bHdn0gGrAUFVX3lxTE9NSEVUTDB6V2pvUnhxck9IVk0zUThkOHdJRXNWTTJlSnhFVUMxT1RRU2tqaDk3RjBFUHpYaGpER2hZNDhkWFVVVjc4RW1Ud25ILVdweGhnSkRCT1diMFUwdDMxckNVX1M2aTVUSlF4bVZDbGtyMDA2MGlKQzcxSllWMk1LOURTUmVkaDlvOFoxMjFuN3hzdTdRQUNhbmZBakJvWFF0MDhrTlZTOA?oc=5",
+      "title": "Indonesia apologizes to Malaysia, Singapore over wildfire haze",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORnk0TWY4ZzBFZ3VkeThFTlMzOEIyVHVDQ3pDNWxGTUxlX3dTejlkbktyd3JrQTF5dnFaazlab01mZnF0aDJRbUE2ZmxFTkptUU10TDlCWGVweFZ6ZmNFZmsxSFNVNDdpVnRmcEktdnMzYzMtU09Sdi1Sc0MtQTBOZU5vMGx1MkFUVlM2ZmFsU2lmeXVabDZyMGhKaG1xR0NBUzMzQXpfcw?oc=5",
       "title": "Helus Pharma to Present Topline Results from Phase 3 APPROACH Study...",
       "important": true,
@@ -145,6 +137,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNVmU3QzhfOG4xT1lLc1B1MGE3QzZuYU9FZ2k0RXFVbHFhNkZ2emlhNzZ6cExQRElNMWxtMDQ3WUdwdGNGaWd0RDljc3BBaVQwWmctdnFaTnp6UndQeHJuVlRTc1JzRkd6dDFmblhHSFVWdVNXcnFtR1gyV0pVT0pLM05FaGJ5czVFNnBpSmpGbG1IcE1rYlZtRDlITTlsM3F1TU5zakVXb2ZvTmN0U1pxdA?oc=5",
       "title": "Bangladesh measles outbreak claims eight more lives, death toll crosses 1,310",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOEtJcnl2eXRPYnloamVJUzVvekRRdnhBS0dVZjU3V0d0NTJId2tzZGgtaVBwNTVqdEFMcDIwTWRROGxYY2twbTdOZWh0bUVCdEVnY04teS1jaHZ6UFdWRFZiMl83N2NZYy1qaDNsazhVNXhaa2JMejFXdlRKNWo2bnJoOXhDNTUwSHp1TlB4V1ZrUDM4Nmw4VjFxTkJ5T0g4OHNVM2RRcnFjTHMwdnBBU3c1M2Y1S3NWMUwxaHB0ek5pUXJGUlE?oc=5",
+      "title": "What to know about antimicrobial resistance in pet treatment | The Straits Times - newspaper",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -185,6 +185,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1yWTBrMjlLcWYzdC1jUExSaHZBbmtreFM5d0llSDFQLTRhdjIzWWpLMVgwV0Z5LUxzdC1Nazc4Z1NIN2NicmxxbHlYcXo3YWxsdmc?oc=5",
       "title": "Daily_Brief: #Kenya seeks #EU election observers, financial reforms and continued support for #Somalia mission",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5JNWoyTnNYMER4U0dQb1YxbTdvaklOREdMWmZHeUNtSU9nTF9BUXNPVXAyZlR6dzFZdVNKMlROTzJWWDZVb0RaMGJmS0JDR2NvQ1E?oc=5",
+      "title": "Daily_Brief: #Sudan war, #Red_Sea tensions and ‘water security’ feature in #Egypt-#US-#UAE talks",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -271,8 +279,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNN2J1TTN5TWRXZXBQOFlsMFNZX3ZXd0hHQ2c0aDQtWmFDeTBSMklMYkRNR1ZQaHdWeFR6OThCdHVRejdyeHlNQXh6bXZFT2xjbktacExqRm5kZWprYlBNWHF6NmpVNjhyZlItUnNtUk9XZmc0N1N5dTlqX0VBcGExSllySENpcWJSV1g0QjRTOXVId00?oc=5",
-      "title": "Eisenkot says Netanyahu ‘cannot remain’ after alleged election interference by aide",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZmkxOEtTU21UaXZvbTVpaUtjaWhrYWZ6ZzBKcVdBNjJQWUN0dWVlRzFHNTZFSmVrUk1CbUg5eWJXSmFIdFBzN0JoQURHdmtZUVVEUnJqMWNfVjN3RE9jYUI3MkRpSnlGN0M2R1o0ZUZjdlB4S3NMT0JZZ0t3YlMxYmpxWERGWkZUV1lRNHozTdIBlAFBVV95cUxNVzdTSTdFTVlhUFFjMmRSWGRtZU1CZW1QNXd2LUsyRUFvdGZ3cXpyMjFpYmNsWGp6S2NMdlpqU296VWVLem1WV1BDaXJ4WURRYVJHSnNXTFg0VVBxWHgzb0N4dmRNY1pLb3pZSlRqR0dmSFBQbFJXVnMxWnNoUnpMeEd0dFJxSXNUTnZzUEl0NVpEN0po?oc=5",
+      "title": "Iran War ‘energy shock’ keeping inflation running hot, economist says",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTGpQYzF5ay1sbkVFVWptV2hxTFVlUDJlSTVTbUdER0Qwb19ZMFM5R3F3aU01S21wQkpXRzZTMEszSTRzcFFTLWxHYlF5SkxETFhJYnVuWGQxQWVMWXZNTXIxZ1lveWE1cXFJVVZ5TUpSZlYtZF9KcFE3dUhyNHYzcVhRY1JmcXRjeVBSWkFhSHE5S2s?oc=5",
+      "title": "Iran Announces New Breakthrough in Nuclear Fusion Technology",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -289,6 +305,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQTVYTmhSWUdGNEJUeG1jSEVOSlNjd0VJRkJ6ZkFIR1l5MzdCZENWTWJSOW1qZzN1cFNWdnJTbnpVZTdIMkNzNnhhS3BuVGxWUXJQXzJRVGdRWERTNGdRV1F4Z2plSTBBQW5RempjdFRfUUpFWDBacV9pcWcweWJ4R0dtMHdYbmRUSHNwUm1adzJRN3BiQVhvRkdMZ0F2WThSNWZCRmV2cw?oc=5",
       "title": "Joint Defense Industry Projects Can Strengthen Ukrainian-Polish Relations – Kyrylo Budanov in His Address to Participants of the Business Forum in Warsaw — Official website of the President of Ukraine",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQc0hiVjJXTXBPbzllUFZhcVRzZ3RQX1JfNlllelBnV3BKVHltWmIyS1JKelNpaGFGQUhfQnZqamRDcjhUZnlZT0JKOVJPNEJaWGlNY2FGWUlHRl9lSl9taUptVXpydVp0Y0dWQllEd0g4RGpDWU84b2hycWRUa2J1aDY4ZW9WNnNpZnBoZHN1cDBvTW5uREhNaUpWbk5Pa3NaU1Ryd0VIX1U3OWhISWc?oc=5",
+      "title": "India Faces a More Painful Return to Higher Interest Rates",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -319,6 +343,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQeXFYOEg3cHpDTUFrTU9IRlQyWDlvRGVMVVN3VmxOelY3WnhCREJNdElKcEY5ZWpBSmhoalMzWDdaM0Y5Z0VXbkxVemg3YmdhSUg5UmYybnhFOHhWbVhXdjdoT1BUUGNQUFVtX2o1SkJRSnBJNEdLX081amJyUll6WHFpUk5SaWlkd2JGN0VnRFZKYi1WT1B0NzFUOUVKdkFfcTQ5RmdFeHdvcWI5c2pRaXF6MFBydw?oc=5",
+      "title": "Japan's economy unexpectedly shrinks as inflation squeezes households",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPUFVBR1RpTU9Ddi0tRVFMRTVJMDM4bXZnbEhSdTZsSGNCTE5sSXRYR1UxZWNjNmFsbmc0eEdPWkVFb3B5eFdhR3ZraDRYWWMtQmNvbXpRT0h6c0FlSnB4VmowSnFGWktUQ2N1cDBkYVdZbDNpeWJZZVlTRkpZR0djeURBdWFqdFBKWGRBb2lrYzRNU1RMVjBieGtqQlEtTTJ3NlVVX09MLTZ2b25BckxrNU1CTS1hTzgw?oc=5",
       "title": "INTERVIEW| Egypt well-positioned to become regional hub for trade, investment: WEF president - Economy - Business",
       "important": false,
@@ -343,6 +375,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTGthcVpMQmtfTlp1V1ViN3liS0N2UE5KZUhSam5WOFlESjFtSHZmVmNFbFJ6bVdiTndzOXVyT1ZtclRwYnluaWl0eXVUZmM0S29wc2I0UG5paE1sSEZkZzNjV1YtY3lneE93QURSUEpEOW9DWWpFeGtSelU5UnVhcFJrUURPNE5LWGJkNkV1VXQ0TnhyZ3BoRVo2c1ZkeEc5N2dsTVJwUGwwaUJ3XzhDNE9vQ2wxQmRQUGhqTE1B?oc=5",
+      "title": "In Focus | From cinemas to markets, Hong Kong-UAE ties deepen despite war",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObkhCQk1PYjhrVTNCS0M2YUJnelVoaTUxdW9zUExzUXFlYmZ4S3QxZ3c0QlNkYnZJSUpMS3FjV3RlT3NtN2lYOFFXY2lNNWNhODhhYUlOT3JDcU9SUVY0cG00bElYTzVmSlpPZVVaUHBZQnlrRGFBVVJhQm8zcGZxdzdpT29sbEhhOUZDV1RuTjR2dEllRXY0ZEdVZGpNOUgzZy1yWFkwa0p2YjN6Yk5UTWRSanFmOWxxVDFiMUFwTU9BUdIBwgFBVV95cUxObkhCQk1PYjhrVTNCS0M2YUJnelVoaTUxdW9zUExzUXFlYmZ4S3QxZ3c0QlNkYnZJSUpMS3FjV3RlT3NtN2lYOFFXY2lNNWNhODhhYUlOT3JDcU9SUVY0cG00bElYTzVmSlpPZVVaUHBZQnlrRGFBVVJhQm8zcGZxdzdpT29sbEhhOUZDV1RuTjR2dEllRXY0ZEdVZGpNOUgzZy1yWFkwa0p2YjN6Yk5UTWRSanFmOWxxVDFiMUFwTU9BUQ?oc=5",
       "title": "After getting pass in run-up to election, Israel back in hot seat over winter aid for Gaza",
       "important": false,
@@ -351,11 +391,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOMGtYTVhaWGRsVlVUMDJDTUV1VXJ4QXFoRkxvMlZucU9EczNDTkcwSlBQRDZEUFJiZWJBQU1fSUFuOHlnNUx0MEpZSFk2eHh4Rm1NRGFBTjlaX3RMZ2dkd081ZGZlTG9aOF9oQ2JGUXdFaE51cW9xd0VOdUlqVzdMSVplRzQ4TWRNUTd3UzJfVmg0ckdtX1dnRmJZMTFucEtWYkV0TE9aV0ZfNXNXRHgwTkdFQTFsbFhISDNiaFdNRDNzUnJmWUxWOWxwbjZFaGty?oc=5",
-      "title": "PBBM WELCOMES CANADA-BRAZIL PARTNERSHIP, CONGRATULATES LULA AND IMF CHIEF GEORGIEVA LOOK: President Ferdinand R. Marcos Jr. welcomed partnership with Canada and Brazil in broadening opportunities for their peoples and econo",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNcFdRXy1PVHJGcDZvaWU2ZUY1OUZQSnVhTHJUSUc2bXJmc2FhTG5TZl9mU1RwWFB6T0IwVy16SFloSzNKSl9rVS1hVGVhWDNZYTRKRTNXT01VMklsTVNQaURIXzdaUVFldGFyVF94cW9UZkt5RElPS1VWM0V2MDBVVnBOTEZ3aENHV3JxZWkxSlQ4eUhpXzU0UDhWcURxZ1JfWHZpRGxyWlp1czNZQ1ctejY2bDl1dnRHMERxWUNWdDNsMlFR?oc=5",
+      "title": "Houthi attacks on Saudi Arabia threaten regional, global economic stability: Masood Khan",
       "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -383,24 +423,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1vNEdZU01lOFdNVGRMVF9aSnJtRFZTYi1UQlZ2ZWZfUVJ3a1owdDNQR1puQkRnbEJJZDUtUHFVMmFLQzRiSV9XV2xyYTR6STNvWlZTNXRFYnBxLWNxejVLWQ?oc=5",
-      "title": "최형두 \"이 대통령, 본인 후련하자고 정치하나...트럼프-박근혜보다 안 좋아, SNS 적당히, 걱정\"[KBC-지방자치TV특별대담]",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4zaXVyaTAzYU0zYmRyZm44SDZaU0lhMmVFZndtVTktdk9INVBMTG1JRmRUUW9Jbmlka1ZjVldXQ2NPbXI2dTNrUjl1X0pyR0FCOFZqbTd3aHBhS3NCNnRsYjl0Z2Y?oc=5",
       "title": "미·중, 600억달러 관세 인하 협상 재가동…세계 무역질서 다시 시험대",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5qSThHSzFLTTkxbjlkXzZsQkZkNF84MjEyRHp4Q1gybXJhYVY3Z05GZ2x0UW5yYmM4ejZ3ZzVxdFNwa0E0eng3aFc1aF9HYVBIdHc3VV94N3NLLXFtRFVPZzlHcTVaSGdfaDZz?oc=5",
-      "title": "이재명 대통령, 필리핀 아세안 정상회의 출국…중국 APEC서 외교 행보 이어간다",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -439,16 +463,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAwdVNPdkx5Tk1ieHVwNUtDcng5Q2RQQW1GbTh4dEUxU2NGbE4zd0tGRVJvZFliZW9WczFjQTljTDFpTGQ4RUpIbldMeFp6cWFMcUFOMnFiZjFEMVFrRXMtdWFyN192QTI1aUJDbTJR0gFmQVVfeXFMTVZVR1VNMWtwWUpsTTg1S0JxVDN3S1lDcVhPSTN2MXY5dlp5djBrbmRVd2FscmtJWXo4bTFnckFvcmJTOS1XNUJOcTRLczFIV2ZhamhQRF9nSXVxcllrZkUtWHZnQkZ3?oc=5",
-      "title": "President Lee Departs for Multilateral Diplomacy; Eyes on US-China-Russia Summit",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBibHQ2YnRJZTVITUlFZm5tOHR5MVQxZWRMRlhLWkpKSmp2U3AxMTlKN0t4Q2RqUzh1SjJkRGlaZ3B3T29DTHo1YUljdVlLdWlvdlFvSzdvRk84WGtDYWV6QVpmWTM5TjVlS3A4NlI5NzM?oc=5",
-      "title": "李대통령, 17일 필리핀서 '한일 정상회담'…지역·국제 정세 논의",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1rbGMtY3dlYTNjUEhjU3RNLWhmWmdKVEE1ZWZrNVdKUE5Cb19TcE5QWHBWRFc2SzRreE1rOWI4MUV0blpwTEFhMmRsRERtY0dCSFVldzRMT2Y1Y29GYWVtU0dBcldjZU1HT2Jfcw?oc=5",
+      "title": "대원제약, '펠루비' 소아용 해열제 개발 임상 2상 진입",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -463,8 +479,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE90dDRCRzVZQjRmX05ZdWg1MlQxS0Vvak5nUVd0cWlJRHlWSmVPV25OOGphVHhpTm5wUnNPTVRkS2tEVmZiQmpPNkdzSEJrdnEwMG4wZlNGaVBkelEtUlZzakdISEktczlCMk0waENrUjc3U3VPUVHSAXZBVV95cUxPdHQ0Qkc1WUI0Zl9OWXVoNTJUMUtFb2pOZ1FXdHFpSUR5VkplT1duTjhqYVR4aU5ucFJzT01UZEtrRFZmYkJqTzZHc0hCa3ZxMDBuMGZTRmlQZHpRLVJWc2pHSEhJLXM5QjJNMGhDa1I3N1N1T1FR?oc=5",
-      "title": "물가 쇼크에 미국 12월 빅스텝 우려와 한은의 추가 인상 압박 - 미국 빅스텝 현실화 시 한국 경제와 증시 덮칠 복합 위기",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPa0t5eTlaTDhBMDljem1jZ1hoSnVUSVFvZ0VNWWNwenhUMDFWTjlYMVJNVlFlb1dVcDJtdHYwaGlyZmFpX0JqUFp2enNTZ3cxZmFIR3hTNDhuN2g0TFpudU1VLWdfdFJEUW50U1Y1eGdRNlFNNFZtWmZJam5kMTdGNg?oc=5",
+      "title": "대원제약, ‘펠루비’ 소아 해열제로 개발…임상 2상 승인",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -495,14 +511,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPNmhIX0t4YzhOaVcxUWtSOUZLajV0R0hPRjZHcFdMRFZBb3J5NkFWSWN3X1ozVHVvVFUwM0NEaEExVFV1bGM0M2VEUkNKRzFUcm5pZ3Z2SldVRWVGLXZORzgtZ1htNVphU185NkJhM1lfVlRCUkNTd2MyaE1XVHpZaTNYanU3TjZxb3V1TXFDUkRXV21aQWZaUW1yVW1Cblk5dzl0X25mYUE?oc=5",
-      "title": "Latest News: His Highness the Aga Khan announces visit to Singapore and Australia; received by President Macron of France at the Paris Peace Forum; and more",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOamxMN2I2SmY2OHJJYXJYam4xVGNrdkE2S3NnQ2ZMSXdCTlVaYmd3UVdFUlZ0N1NHaWo2Z2JPczlqM3o3UjlTSWJvWEZyMWNlX1BIMTRnYS1kU1FyV3hhOXhjUWxQNVZwSGhPcHhldVZYR0ZnZkVEaUR1OFVWN0FBdXZpRHZXQlp0OFZDZG9vakY4Z2hTanduMk5SNEtlakRWSWdEMjFBUnR0MjNDenB4X2MzTDdLU1Fk?oc=5",
       "title": "US biotech raises $23M for testing of gel treatment for fragile skin",
       "important": false,
@@ -521,14 +529,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxQYjZMNmlKU3VFcTVJYXFOYW01QUU1Szk3T19wUzJMbWU0S3RLY21hcXBVRm52TkVjX0xyQkFVSUk4aDFTNzA3SUxkZi1QbThfd0NoZHVsN2p2TEx5R01rRU9WSmZXUzFWajR4UnVCWnJlMUdkQ29CVzkwbDRDV3A1MVZudUtUM3JGc0FtbWhTeXpXbkxpTkN0R1AwNEo4bURtMVN5RXh2TC1Od084S0g5SEkzMk1GVHZpVUpaRTFOenc2QnA0VFJnRGNKMjdtRnF6R2REWkhwNE1aODZsaWZzMWpoOUhCa283M1dKbGt0eDBReUtaenZScHc3azJVUlBZbE12dUR1ZFRldlU0Ty1IeEo2VXh1bkZNU1JyN2pnVUVoX2tJeFBGQmNxN2RfSURiSXhCSkJjVHdLdkxJV0tZZE5n?oc=5",
       "title": "Minister Olszewski highlights the positive impact Budget 2026 will have for Alberta businesses and announces new investments to help Calgary-area businesses overcome tariff-related challenges",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNcHdlTURmX1ljel9JMk1kR3M1dHQzUWpfTXMyWVB3alhkTS1ZOXFJWWV5Q0hIcDVQbk5KMG1zWXJPMm43Wkp1dzZtQUxYcWVMa2o5V1hJY2d5NUk1dEVsUm4zTmZmeThQMmI4ZTlKZjUzSEVqZWQzelhxdVpoMjdtTGFwU1FaTVBSVHh0aUxCNG1yb2NlellkQU82VWtvSVlCdFVneEtTSVFqendMRk55bHRkaC1yemRJVzdFOHNCX1d6Y1oybVBmdGxDZHhJbzDSAdQBQVVfeXFMTTZhUU5LNFk0OG1TLVBtcEZmVnZrZUFSQlRSM05yRGhwOGlHal91aW5qdTdhLWFYT2NsVVVTVGNNaHVDemZFQzd3SVM1ZVI3Nm5vUnBkbERMS2Z1akF1blJhOG9PNnYxSnZwQjdma2JhYVR6NDZpUDhlVldLbEZURnhhTksycFZDVkFqVXpHZUxUWEwzUzJMb2htY0J0eXE0ckpVUVRYaV91SmIyVmVHQk9yWE1JdjZJQmsxNE5VTkdUNEFxQmJyaVF6azFNeDRMRjJOMzI?oc=5",
-      "title": "India braces for higher interest rates as inflation, oil prices rise",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
