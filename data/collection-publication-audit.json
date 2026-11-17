@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-17T22:05:36.050443+00:00",
+  "updated": "2026-11-17T23:05:14.775900+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 15,
+    "important_unpublished": 16,
     "not_in_current_queue": 47,
-    "pending": 17,
-    "published": 116
+    "pending": 18,
+    "published": 115
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 13,
-    "pending": 2
+    "pending": 3
   },
   "important_unpublished_by_reason": {
     "source_blocked": 9,
     "repeated_extraction_failure": 4,
-    "in_retry_queue": 2
+    "in_retry_queue": 3
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -53,15 +53,7 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWDFEZm00Z1hPc0ZFOWFlbnVocWxZRGFEMzAwVzU1enFDOTZMcEFYQmo4NGNicU8wMDYzMmZrZmYzVmg1TFh3enZnWFNJSnJyd0I0RUp4RWNCX1AwYUZzMWdaYlZrZThUQWg2bDJnamhUZGdRd2c5QjZ0WG50aWNOdA?oc=5",
-      "title": "Colombia Earthquake LIVE: Strong 7.4-Magnitude Earthquake Hits Colombia, Tremors Felt In Venezuela Robert Irwin (jxLL3xsd6A)",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTndmSjAtVkZldVMtNEpCYWxuaHNWOXNSaXFfT3dsUndnMzhJQXExU3p6bUNjY29aWXRrVndsQXpqU1FUdDVnVDl4NUNMeWFSQ0dRS2tuamc1OEJ1NzRVU0FETFdja0VGamw4UGxWNURsNk1jMGxpbGZkWTdnQ1d0TDlVZW8yS09C?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUVFUbjFQUGk5c1h4MFdBUTlONlRmWGlCV0syR0U5UF9ISmJBTkd4WktvVVozTGNoa2lVTkhCWDl0dzV0bnViUFY2MTdQWHE3N0VwdjdoQnFZYVZETVJMV0t5OTJESlYyTzNmNEt0d015Y0c1UlBxeGYtckxJaFM2em41bDBtVkdCbS1Z?oc=5",
       "title": "WHO sounds the alarm on antimicrobial resistance threat",
       "important": true,
       "state": "not_in_current_queue",
@@ -114,6 +106,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTEtGeEpGMG92bHd4akpaREVwYXdrMmEzdXppQzFsOG9CZ2hGX3QyaXZpRmtVN0lLakFFMWIxc2w3RFlmZ3haNS1POEpRcGE0Q2NlMWxoa3RFOTZPM2xUcVotM0ctVGxRVTJ5R0Etc19NWnZjSVowVVFoVWhINmc5eEFXWk01c2RnTWhsOXVDcnh1WUJEN1FCejB1Qk1KVVNpX25DakI3Rld4d3A1T29R?oc=5",
+      "title": "A propos - WHO sounds the alarm on antimicrobial resistance threat",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -159,15 +159,7 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWDFEZm00Z1hPc0ZFOWFlbnVocWxZRGFEMzAwVzU1enFDOTZMcEFYQmo4NGNicU8wMDYzMmZrZmYzVmg1TFh3enZnWFNJSnJyd0I0RUp4RWNCX1AwYUZzMWdaYlZrZThUQWg2bDJnamhUZGdRd2c5QjZ0WG50aWNOdA?oc=5",
-      "title": "Colombia Earthquake LIVE: Strong 7.4-Magnitude Earthquake Hits Colombia, Tremors Felt In Venezuela Robert Irwin (jxLL3xsd6A)",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTndmSjAtVkZldVMtNEpCYWxuaHNWOXNSaXFfT3dsUndnMzhJQXExU3p6bUNjY29aWXRrVndsQXpqU1FUdDVnVDl4NUNMeWFSQ0dRS2tuamc1OEJ1NzRVU0FETFdja0VGamw4UGxWNURsNk1jMGxpbGZkWTdnQ1d0TDlVZW8yS09C?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUVFUbjFQUGk5c1h4MFdBUTlONlRmWGlCV0syR0U5UF9ISmJBTkd4WktvVVozTGNoa2lVTkhCWDl0dzV0bnViUFY2MTdQWHE3N0VwdjdoQnFZYVZETVJMV0t5OTJESlYyTzNmNEt0d015Y0c1UlBxeGYtckxJaFM2em41bDBtVkdCbS1Z?oc=5",
       "title": "WHO sounds the alarm on antimicrobial resistance threat",
       "important": true,
       "state": "not_in_current_queue",
@@ -223,11 +215,27 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTEtGeEpGMG92bHd4akpaREVwYXdrMmEzdXppQzFsOG9CZ2hGX3QyaXZpRmtVN0lLakFFMWIxc2w3RFlmZ3haNS1POEpRcGE0Q2NlMWxoa3RFOTZPM2xUcVotM0ctVGxRVTJ5R0Etc19NWnZjSVowVVFoVWhINmc5eEFXWk01c2RnTWhsOXVDcnh1WUJEN1FCejB1Qk1KVVNpX25DakI3Rld4d3A1T29R?oc=5",
+      "title": "A propos - WHO sounds the alarm on antimicrobial resistance threat",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNOGh3X0NwX3p1d0dvNFNuY0J6b2dSMWpub09FODVOUnljMUZQaXJodUUwdXQtOGNxZlZLaElZNU9TN3d0VjRkN2VtdW5GWndadGFtdm56MUtxZnRhWlJOMFpxVDdoZjQ3dk01VDFfRzJ0aWRFV3lHZXN2bVdoTnBYR2dmZWtWT1hsNEVuUHpvREZ1WnlLSFVGV2paM1dLRl8xYkJ5NnlLeXdsT3hQVXBGYUIxWURHYTg?oc=5",
       "title": "Trump's Latin America allies recalibrate after US election earthquake",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitwZBVV95cUxNcl9mNkdrZXVkQ1g0VmowZzg0WTcxN2JmM1JVUVJTbE51QmhPOUIycEhKcDQ3d2Q3QnhSX1MxS0dsSVZXSUI5d0pKWTRMNWU1YjA4RGI4MTkxZ3NZZ05JQ1VxVWRRODBUUTN2d25feWZyT3p3bHFGN0dDWEJ1aGV4TktmM0JOVWs4X2tSYXR1aTNWYm80aGxhTGhsZlE3ekZlTGRQcEZoOHppS2RJcEVYT0hOOGZndVd5eWxNZ2tzbjhDeG4zaEdpMXktRlFYYzMxTWxnR0FHUjVBdHJFYnVqWlJEcmpaa25yX3RJWV9pSEppOG90TF9qZmxCUk5YdXRVM003UlNRN1cyYnNFbXY3eWNaYVJfUE5UNnJyLUxtYUFTTUJhYlRYZDh5TnpreXNXbzZrMEU0eGpwU0syT3B2aEh6MnA1UnJoVE1nc1F3UFlSZEJzb21QRmdIbFBrLXBHWFVUeFpTcEpZNVp2d0RuTGFKWWNMME1VZFdxZ2dqSEVXV0pOdWdBT0hNNFhtS3dxanNBVmxXR3lpSG9EMldmVjdEUkk0SGFtMWVMSzNOMTY0cFVtc1h6eXVyWnVHaXA2UkliUl9Ud0Y4dVpCajNmLVVLeXFhZ3V4bVg4MFh5WWpFYjhnZnBWNWk5VlJkZTVFWWszNEFhMlRVSUhOZlNWaGNkbno3YzJhM1BqOHRpZC01MnNQVzhCemNBQ09nbkl6MjlnenJmZmJ4QzMyc2xDTjZNSkVnQUVPNzBPdUU1SHJackYwSGo4TGVHN21zdEFxYm1mUzF2RWRvWGtsOE11YUJCa2k3cEpVSnc2TlQ5MF9YblRKVXNIb2JwbzJadWxrem1aN2dzenFxNl9HOFY1X0Jvak5vemV6OUFNSTFsZElSa05kUm1yNm42ZFJSSmFnNE1EaXJ3WkxKazU4Y1ltVFA4bEt3YURYSmtUanBTUlVFY0NaYnVHU1NkR3FDenpBTEFUQnhWY3V1WmU2a3RZdGZWQUJoYU8zalFlcDEwZENUVl96akdlcWxEQmVXMWVMSUNXaWtLZVAtX3QyNjEzVk80TGFfOWpUbXNFWnpxSDhHZThqd2dN?oc=5",
+      "title": "𝗦𝘁𝗿𝗮𝘁𝗲𝗴𝗶𝗲𝘀 𝘁𝗼 𝗰𝗼𝗺𝗯𝗮𝘁 𝗮𝗻𝘁𝗶𝗺𝗶𝗰𝗿𝗼𝗯𝗶𝗮𝗹 𝗿𝗲𝘀𝗶𝘀𝘁𝗮𝗻𝗰𝗲 More countries are developing strategies to combat antimicrobial resistance (AMR), but inadequate diagnostic testing, treatment guidelines and funding continue to expose patients to drug-",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
@@ -375,6 +383,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdGdrMlJHd05TY2ZOcHVPU1JNWUVoam9WbFdBV1hnRnhKb2xMWmRJTWlnZ1dfTkJLamJzUGd2ZWxzTlRjWWplTC1WYzBIZ2NtLW9PelMwNnNPLW9mSEt4bVZaeXRVNUFrRWRGSFUwcUIxN3NPNmVIaWFLYWNGSmdqa3dEeGJqWkdBWnAtWg?oc=5",
+      "title": "First successful human challenge model for dengue serotype 4 could speed vaccine and drug testing",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOWFBlbEJuZWM0V0NHd1UwQ1E5aFBnRGRZemtSeTdKX0N2ZzZidWZLU0Z5eHhmcm8zUGtiMnd2QnI5VzdaVk9uY2VMRXRnRExjcVZqdEJSa09VcmVWQzNVNG9GX1ZibnAtYzI4NE1XOG1yUFY0TDVjOXJFa0E0ZWtILWUyT2lRcU1RVk4wYQ?oc=5",
       "title": "Russia Seeks Stronger Nuclear Energy Ties with ASEAN",
       "important": false,
@@ -431,11 +447,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqgNBVV95cUxPSHNkNG9PV0k1Yk52X3JkQVQxRVdIcm5HeDJobVNYb1BFNFZlNC1sVWNlN3ZBME51NzJMT0h6R1lqd2lYNHJBb3UyV1NIZ1FnY2Z2SkVzNzdQbVVhV1owYm1mMW9Xc1BCTWdSd0xvalVoVTNTdU9sOHROTW1JbTc0QUpTUXB5ZHVNRzcwQXZFdVJhOHhrRFBkUnEwTDJRZEdtZ3ZMY3BiZHVIX0l6cjZmUV9qN1VoNnlvM3VxcVJQdTBuTFpZd3FRTjZYUlk1VGhGSkk5ZE5CTDd3NkFHRjZaVFpscDlYUlNEMGxkR0phbHdmeGxKeVJVXzh2ZkVwX0VKYTMwWXNrN2xvT2dCRkFrT3ZMVFBDa0hiazItQXhPcTBXZ3pJQXJSR1QxUkhIMmZtQVA1RkowYU9sUjBuRGdBTE1uTC1LcFA2aHBrdms5bmYyZWZXVWt5TFNhc1VaWUFPYXpTUGc2WFBjMDVtUHd0ck5FeE1MYVJ6WlM2YnpleG1DZUp1X2FTVTVDNEpZSlJMU251Z2MxdXR0SUx2dFhoSjhoZGlURkZpeXc?oc=5",
-      "title": "[속보] '조작기소특검법' 한 총리 주재 국무회의 통과…李대통령 재가 뒤 시행",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYThBTm04bTF0WUEyN2pXcU9PWEtrWTNpaXVpeU5hOU42eUlpVnQzWnJCbDl4NHBmVFhQMWlWVUk5eXUtaUZ2MFhfWXlORU9jS1BxYkhqRzNQM1g2Y2M4aXlHV09QN3NXdjVUSEtJT0RvNXRlaVZSMFdXSy1MQ1NLQUQtZXM0M2pMcTFzSGNXbFEtdDFtempUMzVIRXpJSGF5b0VlUlBhQWlrcEwzNmhJ?oc=5",
+      "title": "Israel parliament elects Eisenkot ally as speaker in blow for Netanyahu",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -495,14 +511,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNV0EydThySFhQME9xM0hKZDUtSVZ1NWlhYXpnSGk3YXVXb0RXMkdUU0FyTU93UzlXRDVTM2hYMVJuQzRNVzhDVzVfQXBBbmhxUjIycjJJWHo5TFN0a1B5S1RkdjNLLWZlYmpvRjJxaVdLU1IwTlJma0M3V0NUYk83b3d4aVllNzhyMUhTV1NZZlEza1FjcHdFbEhjV0kzTlVhVWxTME5jS2xMZUgtWmcwZHo3cFFuUmRKcHc3V1BCZ08wQm92?oc=5",
-      "title": "First Successful Human Dengue Challenge Model Could Support Vaccine Research",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNRjlIbUpKS3NfVi1Oai13Y213OWJ4S0FkU0RIa1hDU1o2ZHBBN05zUXRKQnFZUDlXZ1hhbUxGS2wwUUJIbEVRSmNsSXFRNk10dEhIS0NuWVFHSHBPRFNxUUluT0ZZRlByUVhGajRMcWUxQlBkazFwU0hvYUthYlZGRzdEQTdrNnl4cDJWeEIzZWtaYnc0UUFMTk03QldsOHZiZGNTRTlmRWNrcVpIWHg5UGMzcDRINkF4cG1ZTExsZktQSjlTNm91Vg?oc=5",
       "title": "EXCLUSIVE: Risk of nuclear accident in Ukraine increasing this winter, atomic safety regulators say",
       "important": false,
@@ -535,14 +543,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNYkNNTGNqZzBPcjlCRUpyTVZSM1NYdEl3UGR5OGlaM1ZRUTBCQXZ0RGdvOXNOc3M2XzVZdjJ1UEIzTnYwWDJNdFl4OHpoenkwVVcyQXlRRk1WZnctM3RXZUZucFgwN05vbVotMXFkR0JpS2MyUzN5Ty1GWTlhdmlkajVSV2dHNUxkR2VhNVRjVnYxbmJlZDZUMnJHOUVoZWRkbDJkNHJqaTJmRXlCbDQ0U2VWd1V6VlFlR05nRmR6c1pOQU9iVEdGTzlhdjBfWnU5SFg1ZGcwSm1MOHVMUDVqVk80dDZ3UUlsMzF4cg?oc=5",
-      "title": "3G Capital starts position Nu, adds to Taiwan Semiconductor, cuts stake in Intel among Q3 moves",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPSmEwOFphMnZLSWh6aG4taks5OXVDU2VfVlBadldhSlFVaFFIU0xGVHhNYnByV0YwZUJmTW1xS2dYVFFUdlFYU1FBLV9wLVd2V0U1LTNJTXZHYW1OX0FSZDUxTzVWUGhwU2REMmVtSUpMVlBjVjNTNVVUeHJic2xGLVVLVk1Tby1INzliN09fNVVOWGd3VEFpQk0tMjFueExxVmJla2ZyS2pJc1pTNzRJeTZJU0R4UE1BdXVaaDNlZ1NYbG9Wc0dWSE9oSXhBbFFsTEVMVVZWUUZud0lkcENuSGdpZE5wNDZfS2I5SEh1WnJ1TFBZYUE?oc=5",
       "title": "UK Markets Brief: Housebuilder Stocks Fall as House Prices Slide, UK Inflation Expected to Rise, and Trusts With Anthropic Exposure",
       "important": false,
@@ -553,6 +553,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBxMmVZTmhHdXM5N0t1X29nV3NNalF0S2RzOEVNUmx6TjdSTU5XWTczZlBfZzhlTFlfTXltVnZYVjY4THV5LXUwekE3bUFMUnA0VTdJNA?oc=5",
       "title": "Azerbaijan and Vietnam eye new era of cooperation ahead of President Aliyev's visit",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBsWVNnT0M4ZjRyRnFnN3V0RURrQ2xPWVY3YXFUZV9Ea0x6d3JyM0RmalJMT3FLdVd4amFKTS1CX09kWmYwUHAxSndBcHRpZlgtYVdnb3l6V2M3UTh3d1h2UXlVeHl0VXRWb2k3ag?oc=5",
+      "title": "[특집 기획 I 국회 외교 안보의 대전환 ②] K-방산 수출, 국회가 뛴다…폴란드에서 크로아티아까지 ‘의회 방산외교’의 성과와 한계",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
