@@ -1,33 +1,25 @@
 {
-  "updated": "2026-11-17T19:19:23.652198+00:00",
+  "updated": "2026-11-17T20:23:36.354807+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 15,
-    "not_in_current_queue": 52,
-    "pending": 12,
-    "published": 116
+    "important_unpublished": 17,
+    "not_in_current_queue": 50,
+    "pending": 15,
+    "published": 115
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 13,
+    "not_in_current_queue": 15,
     "pending": 2
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 9,
-    "repeated_extraction_failure": 4,
+    "source_blocked": 10,
+    "repeated_extraction_failure": 5,
     "in_retry_queue": 2
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
-    {
-      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQcGM3RDd5dU9hQkdMV0tXWW81bkw5bkZGMG9lam15NUNXOW9FUEtBMlViemhxVnltZVVDbnJXZjR4eHZuaFVXMzBhYXZKaUZvWkxfNTBkVUJ0eXlYV1duNWtJVy00Y0lXeGwxdmRaY0JhVm9HdjlBNmFnVTRWeEViRlp2blFtcGpsaERsalQyRG5LRlpOU2phLWkxUk4xSFhjeE05azgyRV9uZDZTbmNFcVU0MHZmOVF6WGFEaDBEZ3poeTJYTXptcFFWaE9uVVNOVTZ1Rk1zNWVXZm1hQ3prREc2ZWVJWkZrMXkyR2E0Q3ZnZm9TOXB2cg?oc=5",
-      "title": "Ukraine missile strike severs Russia’s Crimean bridge",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
     {
       "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQQ2tBTy10NE5XanhKOFJvbklobjZmakJrLTh6U1ZBU1MzWmpFZklEeVROWVNGenJCRXp5YTJvZE0wdVliWTE4Rl84aDZUYUZ1UEM2QUdhM0R1QjhYWlp1NlBmV21xZ0dmWnY2Ym9LTHd6VHY2ZFVQbFlaWjNQYlZUZDkzUTVvUzYwbWd5azNrWnZHSDNhWlJtVFdyOVp1VjVpbE02aXBKMkZDNDRDVThFZ2FkdUptUG44X1VidC1UYmJtN0xlY2p2cUVCZlRSeXV6cjFYRzA3WlhLZ0dZLTUyb28tU3hrWGxvc1E?oc=5",
       "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
@@ -63,6 +55,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1YY3lla05RNFpOcDRNaS11SkhjSDhhSlhYWFJVT0JnN3pNNjdYOW5GaF8tZXNKaEtOTFl4czVHUEE5ZXU5SlFKREMyakh6TXFieTV4ZFlSWDJwT29Bc3hYZDc2M2QwWE5IVThNVXpjcWVFNzItREtZ?oc=5",
       "title": "Federal Emergency Management Agency| FEMA, Hurricane Katrina, History, & Controversies",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWDFEZm00Z1hPc0ZFOWFlbnVocWxZRGFEMzAwVzU1enFDOTZMcEFYQmo4NGNicU8wMDYzMmZrZmYzVmg1TFh3enZnWFNJSnJyd0I0RUp4RWNCX1AwYUZzMWdaYlZrZThUQWg2bDJnamhUZGdRd2c5QjZ0WG50aWNOdA?oc=5",
+      "title": "Colombia Earthquake LIVE: Strong 7.4-Magnitude Earthquake Hits Colombia, Tremors Felt In Venezuela Robert Irwin (jxLL3xsd6A)",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -114,6 +114,22 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOWjBfNXcyeXlqSF9JeE0tTVl4azJZdkpHZkl6R1pVT2oyTFdfbms2dmJ4SjBFS0M4NmVndjl1d3IwNGdiVkxWckRBWUJYOEpvQlptaHhGdzF3M0QwT2xac0RvYzVRYzh3WWZVdWtINUtIUnJRc18xY3NjYzdVUkFBRVVUOHpOLXRoOGZIbDlhTkJxLU5KV0l6bFVlUzZIeFZPVVk4Mk9QUjZYSFVHWnhLNG9PczNaUWhUM3BQSEdQMFl0clcwV1ZyOXMtRjVlZDJvcXRTeTAwdlVCUEJNcHp1Nm9QeUZaUVRhTmtsZklzQkt2QmpuWFpsX0c1dkNIdVhqM2FvN1ZNUzM2clRHVy1wZUNiRGFtMm90RTVJUWRLTTM4ZnQxNXZSdkN0aw?oc=5",
+      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQ2x2eDVRWllNeG5SelE2ajFkTWNFVXNrZkxsSEVtZDhfNGNVWVVCeDRueEM4QjJtNUdFM05KS1QweUJDVU00OVZpWGFhbkhNUUZCZHJnRkRSWjZYY3FDejNJVk94NUJGUzJrWnRzZ2pteC0za25CSUxsMFM2Y1RuWjdxNWE1NDdLZk9sUnZzZ1ZsUUx3Skt5SUtGUDVFRmZKQjdTcWRjVU9oTzdP?oc=5",
+      "title": "Russia's missile attack damages two large bridges in Kiev",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -127,14 +143,6 @@
   ],
   "unpublished": [
     {
-      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQcGM3RDd5dU9hQkdMV0tXWW81bkw5bkZGMG9lam15NUNXOW9FUEtBMlViemhxVnltZVVDbnJXZjR4eHZuaFVXMzBhYXZKaUZvWkxfNTBkVUJ0eXlYV1duNWtJVy00Y0lXeGwxdmRaY0JhVm9HdjlBNmFnVTRWeEViRlp2blFtcGpsaERsalQyRG5LRlpOU2phLWkxUk4xSFhjeE05azgyRV9uZDZTbmNFcVU0MHZmOVF6WGFEaDBEZ3poeTJYTXptcFFWaE9uVVNOVTZ1Rk1zNWVXZm1hQ3prREc2ZWVJWkZrMXkyR2E0Q3ZnZm9TOXB2cg?oc=5",
-      "title": "Ukraine missile strike severs Russia’s Crimean bridge",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQQ2tBTy10NE5XanhKOFJvbklobjZmakJrLTh6U1ZBU1MzWmpFZklEeVROWVNGenJCRXp5YTJvZE0wdVliWTE4Rl84aDZUYUZ1UEM2QUdhM0R1QjhYWlp1NlBmV21xZ0dmWnY2Ym9LTHd6VHY2ZFVQbFlaWjNQYlZUZDkzUTVvUzYwbWd5azNrWnZHSDNhWlJtVFdyOVp1VjVpbE02aXBKMkZDNDRDVThFZ2FkdUptUG44X1VidC1UYmJtN0xlY2p2cUVCZlRSeXV6cjFYRzA3WlhLZ0dZLTUyb28tU3hrWGxvc1E?oc=5",
       "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
       "important": true,
@@ -169,6 +177,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1YY3lla05RNFpOcDRNaS11SkhjSDhhSlhYWFJVT0JnN3pNNjdYOW5GaF8tZXNKaEtOTFl4czVHUEE5ZXU5SlFKREMyakh6TXFieTV4ZFlSWDJwT29Bc3hYZDc2M2QwWE5IVThNVXpjcWVFNzItREtZ?oc=5",
       "title": "Federal Emergency Management Agency| FEMA, Hurricane Katrina, History, & Controversies",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWDFEZm00Z1hPc0ZFOWFlbnVocWxZRGFEMzAwVzU1enFDOTZMcEFYQmo4NGNicU8wMDYzMmZrZmYzVmg1TFh3enZnWFNJSnJyd0I0RUp4RWNCX1AwYUZzMWdaYlZrZThUQWg2bDJnamhUZGdRd2c5QjZ0WG50aWNOdA?oc=5",
+      "title": "Colombia Earthquake LIVE: Strong 7.4-Magnitude Earthquake Hits Colombia, Tremors Felt In Venezuela Robert Irwin (jxLL3xsd6A)",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -220,6 +236,22 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOWjBfNXcyeXlqSF9JeE0tTVl4azJZdkpHZkl6R1pVT2oyTFdfbms2dmJ4SjBFS0M4NmVndjl1d3IwNGdiVkxWckRBWUJYOEpvQlptaHhGdzF3M0QwT2xac0RvYzVRYzh3WWZVdWtINUtIUnJRc18xY3NjYzdVUkFBRVVUOHpOLXRoOGZIbDlhTkJxLU5KV0l6bFVlUzZIeFZPVVk4Mk9QUjZYSFVHWnhLNG9PczNaUWhUM3BQSEdQMFl0clcwV1ZyOXMtRjVlZDJvcXRTeTAwdlVCUEJNcHp1Nm9QeUZaUVRhTmtsZklzQkt2QmpuWFpsX0c1dkNIdVhqM2FvN1ZNUzM2clRHVy1wZUNiRGFtMm90RTVJUWRLTTM4ZnQxNXZSdkN0aw?oc=5",
+      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQ2x2eDVRWllNeG5SelE2ajFkTWNFVXNrZkxsSEVtZDhfNGNVWVVCeDRueEM4QjJtNUdFM05KS1QweUJDVU00OVZpWGFhbkhNUUZCZHJnRkRSWjZYY3FDejNJVk94NUJGUzJrWnRzZ2pteC0za25CSUxsMFM2Y1RuWjdxNWE1NDdLZk9sUnZzZ1ZsUUx3Skt5SUtGUDVFRmZKQjdTcWRjVU9oTzdP?oc=5",
+      "title": "Russia's missile attack damages two large bridges in Kiev",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -244,14 +276,6 @@
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZWxuOVYzRzhhWFprdk1NeHlLMDZyUFVObUhvbDNPVFN4MWM1cUM4cVhKWU9UOVdiVlhIWURudEF0VWEwQnlwYXVINjFieFpqSnZCd3Frenh4U0pkcXkyTE5MUHNVZ2RUcDgtYm9weXhLYmJRV2RwTUFscHhoNFd4d1R2dHpBWUl4dGd3VU1sOHAxY2U2dko2WUlNOEtVSk5GbHRIQkVrUHF1VURLdWU5TkQ1UjBkNlpqRXh6TWVSQnFDYVEtMWVFSEdmZ08wbTVCb3ZuR1BZUmgta3dmdUE?oc=5",
-      "title": "Australia under attack as COP fossil fuel war flares",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -327,14 +351,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9LU3NENlltY3NPNGozbU5UeDlkb1JZWVF4VG85NUFEOHByelV6UjZtalFQSWxZb2d2QTl2by14OEczcEI4S1BGbXBfY0szYzh0RU14eU1adjRTSXZ6WkQ1aVh3S0JBZWxGanJ3?oc=5",
-      "title": "\"인공지능(AI)이라는 이름표가 신약의 가치를 결정해서는 안 된다\"",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE15d0JHa2pRV1F6cm5ibEw3bDFsbnR6T3hLUWlDdVpsWjdQV1ZmRXNSamZ2QkU2Tk56SlNzaVJUX2ZFSUpzM01Rcko1V2NKX3VRTXltUGg2LXFfVDdxN2NlZ21ZZzZuNHJqNXc?oc=5",
       "title": "염증 억제 넘어 장 점막 회복으로…대웅제약, 최대 6625억 신약 개발 승부수",
       "important": false,
@@ -359,6 +375,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1rbGMtY3dlYTNjUEhjU3RNLWhmWmdKVEE1ZWZrNVdKUE5Cb19TcE5QWHBWRFc2SzRreE1rOWI4MUV0blpwTEFhMmRsRERtY0dCSFVldzRMT2Y1Y29GYWVtU0dBcldjZU1HT2Jfcw?oc=5",
+      "title": "대원제약, '펠루비' 소아용 해열제 개발 임상 2상 진입",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9wbE1wemhic05WaEVmT2g5UmhmajJTMGl0VkNEeFpsc3RITzY3WFJrRU9iZG42SHZWR3ZzM21xLVl5dURUazd5cDVNYTdTOU9USFlnaHlJd1lHWWNrMTBJa09pS3psMGloeVRaT9IBbEFVX3lxTE9wbE1wemhic05WaEVmT2g5UmhmajJTMGl0VkNEeFpsc3RITzY3WFJrRU9iZG42SHZWR3ZzM21xLVl5dURUazd5cDVNYTdTOU9USFlnaHlJd1lHWWNrMTBJa09pS3psMGloeVRaTw?oc=5",
       "title": "[반환물질 리부트]③ 대웅제약, LO 신약 개발 중단…1상 문턱 높았다",
       "important": false,
@@ -369,6 +393,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE55NTAtZHdGX3RYY3RiTEpBaWI2cFRpblJkTXFTLWFLZ2pjTkhoT2hRTV95ams1V0xvQmw5QThMZmd1Z0hLZkIwa2g1RGRNVGYwU1YwRW5YWWNVZjlvSnFmWTVQNTJ5YnRSVHhmNjBR?oc=5",
       "title": "대원제약, ‘펠루비’ 소아 해열제로 개발…임상 2상 승인",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBGLVAzcWYwNjY0TXNxa3ZUZWNqeTk4NVlBVjNJQk5ySjF4ZjVmcHBvNzNrNXhsamVYVlBhbXhidEdrV1hxdHRPYmU5dWpGRXdGbFhlUjlST3cwUnlaWUh2b2NCdm1sa09aVE50SWQxd2JLQdIBdkFVX3lxTFAydW9TaURRTjZhR0lZZFM0bTZFTG0tazFxRUNnY0ptSE5zM0l6cUFiSW5VMXhCMG1ETG9nWEhYc2paSldBQmRCNWtmTjAwaWp0UU5zd0d0akg2aUcyMy0zc3R6dDNDY3d5MnJUR2ZnTXhVcGZyVGc?oc=5",
+      "title": "국가신약개발사업 힘 실린다 … 1ㆍ2상 실탄 지원 대폭 증액",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -388,14 +420,6 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPNjl2ajh2bFNnUUt0NDh1amlSOUNsUlJyYUd1ME1vYkRyendiVTl2czQ5dVpLRGtzSEk1VmFqMU5XNkp2Q1U0dEZ5YVA3dnI0NVo4LVlsVjQwdE90Qmg4QmpLdjBNZzRSZ040eFo3OVpMRTRzakpfYm1BVmlxaGpSZVVlZkg2a0U?oc=5",
-      "title": "EU divided over diplomatic approach to war in Ukraine",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -431,7 +455,7 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUDBmemg0VzRYRlg3ZC1ENlZldy1lMGlxMFRvVlY0YXRvUXpiWkdRb1RHTUFpM09RbHlrcDlwbUVqUG5vcTE1NkRZcnFqS3psVmNPRTF1M0F4VTM3VzdOc1F5RDhJZExXWkN5Y2lXN3NBMklnYWxCSF9DRUZISUR3b2hOLXBxTnhVYXJ0ak1PSVpsVDNtQVhhUg?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNLWtwcGo1LWgzWGRMUHhRSlc5ZS1sLXBmampxdVYxUjBsbzhNVzl6SGZHWTJWbVlmYTVHY0N2SDZxMlMyZHJacmNTck40YWRxclhxTTFTLVF5N3YzNnJuMjlOOWp5Tm11dzNRZ0FpMDhRUnQyek1STE96LUV4bHVaQUItX0p4M01jN0oweF9pV2hJMVBUQy1F?oc=5",
       "title": "Indonesia Postpones Vice Presidential Election to December 9",
       "important": false,
       "state": "not_in_current_queue",
@@ -487,14 +511,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNVWVFcktqU1RqeGgxSkdka3E3OGJpdTJXRWlXOENlQjlpWElKU0VzX3ROd1BQbUNMeWtyeFo3elM5X0pCZWFaaFM4anQ2QkZnWXJ4RXVoQ0g1MmF5YjFXVk9NMmVLRkpkWndJeEE3bkVXbHZjTWxnZXo0bGY3MWVjbGpsSUo0bThhQWM0NFU4Z1pkN2J4Z2lES2lqZm1rRUFyQ0NOeFc5R3VqZEtwTkhkNVhkU1Y?oc=5",
-      "title": "Mongolia president announces resignation following corruption allegation",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQdnpaRWl6V2V6TmItTEFjemdRWEFkTlE1eVlabXpXOTBTTExMY25sbV8yOTh2ZVN1R1NiT2xxTmRiemN3NEZ1ZkFGdzlFdkkzTDNZcnNHZWk0SFpZTHp2R0lDdjlSQUZ5RzVRMjFELVQ4ZGFpTFc2RURBeE05MEx1eEN3TUgtUlJUZ21nSjB4NkVNbHlXa0wyLVFfNjh3OGtmRmEzUGNzU2tXdnVjQ09kWDl0Y18ydw?oc=5",
       "title": "First Milei, Now Lula Enters the Fray to Shape Spain’s Election",
       "important": false,
@@ -527,16 +543,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQkxWNU1jM0xjR3luOEt0LW5WaUUwajJfMG8tLU5JSHRDSWFJa2lkT1luaGZNbzdqNFZnMU1XdmZhcHZidHVISmZaZWRoLTFjQjFTUVhsSFFIVFFTTDBMSXpqd05fOGNpZ25HOHl0ZkVWUE9qakZxTktxZ2pPMkpIRWRHTEZLSy1YX1pTakVtWHpjX2RwY29kT29KbDdIa3kweG8xVUNqeW94bzE0TW1VOFBVdUlhMC1NOWM1VG1qSWtwdGM?oc=5",
-      "title": "El-Sisi discusses expanding investment cooperation in Egypt with EBRD president - Economy - Business",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPUDQteVB5SGdEbmFJYktZb3I2UWRsY0JES1M5T0NsdmR3NklIVlhXTzVIeHk1ZFE0N3Z2U2tjQmpwM2UtcjhpaGdiaTdBSTVNSi1IOHhxNjdKSk1XVnBUa1V1eHN4YTBNT0h1NXd3bzYxSmJLbEJLcGo1dUpnSFh6Y3FIS1pzUkJGSVJiQk01RE9aV3ByRDFhZmxzdG9mNzJWZk9LX1BFamtnUlJrMlc5MVIyaVUwN3JjamdZcFREQmxWOGQ5?oc=5",
-      "title": "German Investor Confidence Rises to Highest Level Since Start of Iran War",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObkhCQk1PYjhrVTNCS0M2YUJnelVoaTUxdW9zUExzUXFlYmZ4S3QxZ3c0QlNkYnZJSUpMS3FjV3RlT3NtN2lYOFFXY2lNNWNhODhhYUlOT3JDcU9SUVY0cG00bElYTzVmSlpPZVVaUHBZQnlrRGFBVVJhQm8zcGZxdzdpT29sbEhhOUZDV1RuTjR2dEllRXY0ZEdVZGpNOUgzZy1yWFkwa0p2YjN6Yk5UTWRSanFmOWxxVDFiMUFwTU9BUdIBwgFBVV95cUxObkhCQk1PYjhrVTNCS0M2YUJnelVoaTUxdW9zUExzUXFlYmZ4S3QxZ3c0QlNkYnZJSUpMS3FjV3RlT3NtN2lYOFFXY2lNNWNhODhhYUlOT3JDcU9SUVY0cG00bElYTzVmSlpPZVVaUHBZQnlrRGFBVVJhQm8zcGZxdzdpT29sbEhhOUZDV1RuTjR2dEllRXY0ZEdVZGpNOUgzZy1yWFkwa0p2YjN6Yk5UTWRSanFmOWxxVDFiMUFwTU9BUQ?oc=5",
+      "title": "After getting pass in run-up to election, Israel back in hot seat over winter aid for Gaza",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -545,14 +553,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNaTd5Zk5GUG42RkQ3VG16MHlsM1NZRzZSZWNobXB2VjJDUHY4eXY2TEQ3VU1KV1FlZjg5YVU3bjVZaktFQXFweWxWVkhHX3czaGhPdmhxQW5LVmpFX3hrcUxRQTduYWMta1JKemFrLVd4bnpSZEVpNEFsZjJhMkhMTjd5bldleUVhRlZvNTd6M1RkWEFGd2RvRE1wQTVySE9QX3ZXLVRubDQxWmFZSXUyRU1DdWJYRVN1UF9UYXNpTE9JaE5tT2QxNHdoWQ?oc=5",
       "title": "Chilean President José Antonio Kast attends Vietnam-Chile Business Forum in Hanoi",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQzZCRXVhdU04M21SODBqVUctTkw0ZGl3TlZESElIWDB3NmNJd2RrZGxhbWdrZUFrc0V5SXhWejQxbDM5RnN0bjFIbFBUdDh3NVVoU2hOeDhDeWQxand6cUZKTHkzSkFHT2hzYjdNUWRMX3BIQ0ZLdHN2NEE0X1lHeFdtcEhNbEd3WFFMQzk3dnU5ejEyWDJNNXlBYkpuR1ZFcEEwU0NseEw2NE54OUloV0ZROFItQ2pKYy0zdExDUW9DcElVemI5d0NSX3LSAcwBQVVfeXFMTkM2QkV1YXVNODNtUjgwalVHLU5MNGRpd05WREhJSFgwdzZjSXdka2RsYW1na2VBa3NFeUl4Vno0MWwzOUZzdG4xSGxQVHQ4dzVVaFNoTng4Q3lkMWp3enFGSkx5M0pBR09oc2I3TVFkTF9wSENGS3RzdjRBNF9ZR3hXbXBITWxHd1hRTEM5N3Z1OXoxMlgyTTV5QWJKbkdWRXBBMFNDbHhMNjROeDlJaFdGUThSLUNqSmMtM3RMQ1FvQ3BJVXpiOXdDUl9y?oc=5",
-      "title": "Serbia’s ex-top diplomat Vuk Jeremic on China’s rise in a geopolitical recession",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -623,6 +623,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMnRSNjU4RTlBWG90NE5RNF9IYldNNGkza1Y5Q09HbU11ZmxrVzZIZTlNekZKVDhSSHUtT2tQWDhWV1FhVF9OUnR0bFRFUTF6ak56bjRra1RHV19TUGd5YklpWVZCTF9CTlNZd29ES1VQRzVxYWVTZUpiWktQWk41aXlQcW1mazcwem1IU0xycmRaSzRuQnlwWWJXbUJUaDVEckhSTVRiLTFlZTA?oc=5",
+      "title": "China and Nuclear Arms Control: Why a Trump-Xi Breakthrough at APEC Is Unlikely",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaC1BOXhsX0dCZy15NHI1SHZVT09XNkpXM1I2cnR0Q2F0ZWJSTzdDQzJ0U3Q0Qks5NTI5MW01UGJ2WGIzNEw5U2YxME51dUg5a0U5Y25hTWFYOTROM0Z3WWJNaWhtRnRMNE82Q3FkWnVEeFlvTjkxQUNoSUgzOHc4MTJuRGZYQjI5QmJZTzUzZlJJXzFELXRTamMyMlZtVm1FM21nbXJBakw5LUgtTGRGd0tWeVk?oc=5",
       "title": "Thousands Protest Pax Silica in the Philippines Ahead of President Trump’s Arrival",
       "important": false,
@@ -631,8 +639,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQnVwN3ZLUVJkRjRTYzZRV3pYeUFTR2VPR2lXNGtXa091WjFMOGttMDNtZ04tbnh6dHhXb1BXQ0FXbF9ZbUZPY2R6X0V2dlJiNElSTjlTeko2eE9IRUUzYjZNUTBwZXF2a0ZUZ0IwZG5keUpEaWtWS1ZCOWJSTThIemJXQkt5V2NJS0NoU2l5SGtha0FfZkRSRTUzUFY1cm9WamJROG9tUFdxMEpFaWRKc29TSzl2dw?oc=5",
+      "title": "El-Sisi discusses expanding investment cooperation in Egypt with EBRD president - Economy - Business",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMivAdBVV95cUxPTEZ5X01vSEdNakduRFJ0VDJKWXlWdTQ3Q0RYMXNvQ3hfVVVLb3B2ZU8wNG40SklhcGhSNEg5am92YkRKWDhLek9JOEhYMzZibndJSmFDTEFUcUdMWFdJYkRFUmhsbGVHWUV6TkhrcUI2TjU2SUhGRnZaMzJTS3NJTk1xTjA1dzJ0VEJnWmVyVm03N2hwWnlMUWM1aWxSa1czUnlUZTZSVm1Dc1U4WjNteGdWcW1VZl91VUZTU29hWTlaMUY5OWVGLXYtaThrSzlEZk9yVVh0bGZDQ3F2QlRWbXRQYXotY09mTFEzeUJOcU9jZXFxNTZKY0dlU2JLUS04T3MzaXkyNXV6YmZKZU1FSTJId3ZTajBfYktxQ1BkZlNoYVY0WHRabEJXMTRoZFljVTR6RE55aTRTNUVCcFdoWjVTVHRHVWdQd0pZWExvbU44dS12TVNTdld0eGt3NWlXek9pX1JtZ2xiTGFOaHByX2dsU3R4UG1iQ2dOS1l4SVBOdy15RWhMU1pURUpuZlFkVGZIR2NfWFFOeWJIRFpaQUJMeVM0TFdYb0VVOS1rdFVaNlp4ZDBkRjNVU0laOWhnVmtiQVBQLUVCRzJNQXI2ckFmSS1JWUxNeWZJb0VtaV9rR200bnVPcEhLaGIyQkhUcjRZOEhOU01fY3hrRlhoajNPZHRwQm5SSUQ5ZTRsUDdCNW5YMDBWbFdtLTlCalk0UXIyTVgyb2k0Y3B2MG9MU1JILTdLZlItc096QU51YkE3ZW1jRjdvR2hjbVdJSE56Rzc2eVUzQ04yRUxWM2F6eWFYT3FhZVgtMkRBRm91SUYyRHUwUk9yaW9CTlFfS3gwTzk1OU5ESXhaX3hQZjNmd2pCa0cyTjlYb3pQX1h5dzA5N0lRVUo0WFhiTVNkbUk5VloxVWx2VThZeW9NbktZTTNiSWJzdWVScjVKcjdub3NLSW0zQy00SUpyVldWQm9kUFZqRENld1pBeWpaLUhsalo4QW5xTUVJUmJ5ZEg3ZnctSVBhWHNFRlFBQm42N0wzQ2FNOHZ5RUNxSDlCbGxRS2xDVEcyZjk2TEdVOERiYnZkdTZJUkJlN05tMExSRmp5dnFuelpjRWx0enU0RjdETmtfdXVIZWx0RmVoMDFGaUFMY1pGX0hrazJ0TUJTc19BZFVJc1V2RGlZYk1mNWVHeFExbG9uTTVES3NMb2g1cU82SVRfTjdqMTBkQmUtTXNsN191NFpFMjE1TUFTMll6UTB6UTdnYnV3QWtPSg?oc=5",
       "title": "‘𝗜𝗻 𝗮𝗻 𝗶𝗻𝘁𝗲𝗿𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 𝘄𝗼𝗿𝗹𝗱, 𝗻𝗼 𝗻𝗮𝘁𝗶𝗼𝗻 𝗽𝗼𝘄𝗲𝗿𝘀 𝗶𝘁𝘀 𝗳𝘂𝘁𝘂𝗿𝗲 𝗮𝗹𝗼𝗻𝗲.’ 🤝🌏⚡ President Ferdinand R. Marcos Jr. highlighted the Philippines’ efforts to strengthen its oil reserves and attract investments in renewable energy, modern power gr",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPUDVvQmJnbFVQcG9qNXpwYVM4OTFMdkVEZlVIMkpNQm1OalFnNG9walJGWTQ3RzdrdUhXenlQZU5tSHZ6ZlFGS24xX3RFT1NvOEZ6Vjg3Mm5seE5UcGxvN0YySVoyWW4xTWt4YTNjSDB3X0FMSHNRNlh5M245SzhieUZ4bHlBMC04eVBfa1RNTkRDeUVsRldZWXhyYjZsd1VWZVUwa2lqT1k1ZVlnRU1sWFplQXgwMTRGVmk5WDNNRHVUTXdqczRkTGJUdw?oc=5",
+      "title": "Brussels upgrades Spain’s growth forecast but anticipates an uptick in inflation",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
