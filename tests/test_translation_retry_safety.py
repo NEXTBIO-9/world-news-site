@@ -15,9 +15,11 @@ class RetryCounterTests(unittest.TestCase):
         self.assertEqual(publisher.retry_count('3'), 3)
 
     def test_malformed_backlog_retry_does_not_abort_preparation(self):
-        staged = {'articles': [{'title': 'New', 'url': 'https://example.com/new'}]}
+        from datetime import datetime, timezone
+        now = datetime.now(timezone.utc).isoformat()
+        staged = {'articles': [{'title': 'Central bank announces interest rate cut', 'url': 'https://example.com/new', 'category': '경제·금융', 'source': 'Reuters', 'published': now}]}
         queue = {'pending': [{'failures': 'broken', 'article': {
-            'title': 'Old', 'url': 'https://example.com/old'}}], 'excluded': []}
+            'title': 'FDA approves new clinical trial drug', 'url': 'https://example.com/old', 'category': '제약·신약', 'source': 'Reuters', 'published': now}}], 'excluded': []}
         with patch.object(publisher, 'read', return_value=queue):
             items = publisher.combined(staged)
         self.assertEqual(len(items), 2)
