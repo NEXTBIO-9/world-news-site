@@ -1,26 +1,35 @@
 {
-  "updated": "2026-11-17T10:15:06.028929+00:00",
+  "updated": "2026-11-17T11:24:27.382793+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 20,
-    "not_in_current_queue": 44,
-    "pending": 19,
-    "published": 117
+    "important_unpublished": 30,
+    "not_in_current_queue": 74,
+    "pending": 13,
+    "published": 93
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 17,
+    "not_in_current_queue": 27,
     "pending": 3
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 12,
+    "unexplained_not_queued": 12,
+    "source_blocked": 10,
     "repeated_extraction_failure": 5,
     "in_retry_queue": 3
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
     {
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNZzFtS1RUT3U5bHo2TDQ0clhJN2RqN3F4V1JVd3ByOFRpWFNQNk9TWXJKV256R09uU1FMUDFOUnJhdm5KcXlpSG54d3FTeEl4ZjJpUmdGaHE3NFVfNmhrQmJXaVNXNU5FdUpCTV9meWdKSlJaYldLbFFoNno2a3EzT0FUTmlQTjR2RjFzQmlmbVJTUEoxOThCQWs4MHlXM0lUM1VBQmlnblBhUVpPMUJ6MU9rZHZiT0hPUWRxdUFCWGNZTTNneE1GX044S3dSSU94TlHSAdcBQVVfeXFMTXk2a0JOTFd0U0NhWUFfN1RxYi0tYWphNzdrNm1nNE1jM2U5NUduampxMWJoaWFmMFhCZ1VYX0x4R1B1QnZFLUZwTnpxM1pUYksyemVoWFdOelRVUnRLNWNSOWZRQ1V4NC1XeUNLUjU0Vzc3QlQtLUNLYlBqa2Ric2VuVVBpTWp1T2FQZFZnX1ZjMjRXUmpkQWQ0ZkxiVEgxVnZUVVlMMExFdW9sUWZlZF80SFdCek1meDRVaTZna29aVVBjcmRLam1vSzhUUWhDMWpkTDdoT2M?oc=5",
+      "title": "11 killed, 36 wounded after massive fire engulfs shophouse in Thailand’s Phuket | World News",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMHFuMWFUcVpSWWhxeGNYSHNEa0M1THJnOUk4WnYwNG9KNmFZZDhfdDhpUjlMNmdaUkZjXzZUakZURy0yQWI1NXpGMHI3U2cyRmtyOHozZ215bGxCZG13bG16R1p1ZE5zSzVZZlpzdWpUd1NpVHd6Y004amliVlB3VkFSeUVvRk5PVy1CeTc1SXY5UHJJbU9CaHJlRU9jc3lNVHZxVmVoQ3dYa2tmU0diTjlDcWJJZldRbng3SzNmWXVjN1hOcTBCbVFHZG5ZWnMtaHhuYm1RNHQ3T28ybms0?oc=5",
       "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
       "important": true,
@@ -77,11 +86,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWDFEZm00Z1hPc0ZFOWFlbnVocWxZRGFEMzAwVzU1enFDOTZMcEFYQmo4NGNicU8wMDYzMmZrZmYzVmg1TFh3enZnWFNJSnJyd0I0RUp4RWNCX1AwYUZzMWdaYlZrZThUQWg2bDJnamhUZGdRd2c5QjZ0WG50aWNOdA?oc=5",
-      "title": "Colombia Earthquake LIVE: Strong 7.4-Magnitude Earthquake Hits Colombia, Tremors Felt In Venezuela Robert Irwin (jxLL3xsd6A)",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFA3aktFWW1lQjBzZ2UwYmlkbWlvNE92OE4xeHM4Vm0zOS04LV9ZQ3A3SHVoOXVXYWNsdGFJU0JPMjd4MVlMVFoxR0w4MmdVMFFsbWhrVFlQbUhiOGV3VU1RNHBBODhqU0EwRm95THZ1QnhZa3lxNnltRlR4a0I?oc=5",
+      "title": "17 killed in South Sudan revenge attack",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -117,11 +126,59 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQaXFzTGVaQlFTZGRSa1V0WDdTbWRrWlo0RkY0WWg4cF9HRlFOMDJScmtPMlFHNTBVSVJHeE4yTFdXWWN4ZUF2TmlabUtxYTVJYVRIdTZpVUhRaG1SS2tuNUZXVUVFOGM3ZXNGbHBWb2cwZzdHUXppSlZ3dWplVUhVZkRYMDhTdlVMa3dxbDkyX1_SAZYBQVVfeXFMTjNJckRESmRsWEFCYXVMb3RqamxPeHkyVHhuSjVWVVVhVXB4SEVFN3BGNGllQjU1QWhOSWc4cWd1YTUyV0VFN2dZcExjNlloaXlhRXhfak16d1g5ck1LUzhjTlpOZy14a2w1Xy1pWlhSM3FxNHVRMnZUbGZYdHZReHV4VzNXRFlicW5RVl9GdjlCZFZhRWdn?oc=5",
+      "title": "What parents need to know as measles outbreaks spread across the US - ABC News",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNaWc0RmVyVnRoQTI2bHZhNnZLVGhEa3ZuNmIyZExjR1dzZFRHSXdXOGQxQWJjbktSaTNtMGFZREVJT25pT3dWMDdldzdqaTBmZndudFA0TWNxSF9FOEg1UmR5UmwxZ3h1RzNSTjRyVWJyUHJnU2U3c0lzdGJwMktYa245MFFsZE1mT21JSjFBNnd0UdIBlwFBVV95cUxPUEZTYk1XY1ZvcjBORDFzMS1lNUpoZU8xTW9iSXliQWlNcTU5YjFyMS0yVlVJbHVUYnpiUWtvOTZQaFJGaVhXU0FzTmVLN1dad0VzWWpTM0JFbXdRUUMzbUlPMTFFOWZadE5LTEx1dkpnTDQyM1FOWmZKSzh4RHRIdXRidTlTR1ZwQTJ6YTNDclhvTTg5dkVJ?oc=5",
       "title": "Cleveland, Cuyahoga County ‘vulnerable’ amid Ohio measles outbreaks, says health director",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObjVqRWdvZWo0XzRTQU1ZRDZaYU56WHlWWHI0cGRhM05OT0RMWmFfb0xCWEUwT0QtSnZMUkdDMVZwTWVIY3FTUXVFbTh5ak8xdHdVazkxcl9ZeWRyUnhJaE5DQ3B6ZUFFdTdZRnNRcUdkZEZzVi1kWDczbmt6Y0xJc3VtbWlQVnZOX3Npc0FDZk4tdDQyWHc?oc=5",
+      "title": "Toronto police arrest suspect in Bridle Path home invasion investigation",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOakJpOERKX3RCaDVCbWZab1MyR3NYSlhaZ0M5OFRVNzlCeGxRTndxWkZ2Vzc3Y2poNjkzeTZCbkI3bUwtVzc4UDRQbFE2Xzd1UDdBZm9HNHVkWXVpVkhzNk13SmpWNDR0MEloZGg0bWFMLXdkUnh3VWtTVmdVME5sVjV4eGVhRXljTmtpUnVYQkNXbmJ6SG9meXdOd9IBoAFBVV95cUxNYXdCYm02ZDNTY25HdTBlY1VpdWgtNjR2el9sblFtVXNNRXE4RDdMVWlKVHpfd3o2bnc2X3l5ZjdzcFN0UGRFaVQtck1wTW5HTUk5ZmJCanV6UkVRYnBiNXdQRy1SZzczX19zY3U3RFFIWGVrZE1pZUNRTERHeXFjcDFxNHBqc3ZLRFlHMGhIa181djZHU196dHdQYlJPdkdT?oc=5",
+      "title": "Measles cases surpass 900 in US with infections in 24 states: CDC - ABC News",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOeTVOcEU1NHNfcVBOTXV2VHNGUGpKNnltdGFvMG5ZSUxpTVkwSXo1YUVJa2FNdUI4VDIyUEZtcEJLV2VSTTVTNzJBS0JWd2E2ODlEalZNdmdXUWZsdmQ3dnlsWGxSRkM4QS0wYlZrUTYxTDFKNUt5b3AxQUNLSmZ6SEpGOXhuREk4MUJIUXNiTXc5RW44Q29JQlNMWdIBoAFBVV95cUxPbExNUG1BUWxQMnU5SFZ6VENZOGdTQUtVcjl0VllxMUNHcjBiWjhMTWpHdVNRQ0FvODhrUFQxdTZYOTBOYkpwbWpTdFhBVDZJMTJMSGE5MTE0X0Q3MzA2Umd2MWRQdHNEckJrTDEtWjJQMy1URDNGZjI0XzZxR1ZtUjdhS1BNUEc1Z1ZDb0pXdEs5clVlNktWSUpCOUVSTlJR?oc=5",
+      "title": "Ukraine launches major drone attack again on Russia - ABC News",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQLXFCOFItM0FpeS1UOXcycm5Pa1JrdDhOcnVadGh5YklZekFFUVdpRUR1SkZIUDFuV081MUpHWlZ0N2x6UVdnMHp4bDF3TThHd0k4bjZOWUtTSUIzOE1kanZ6Qm9yNVJnTHM3VUxYR3o3Z3RoTWszbTZTbGhPYWZpRVRnMU42M3N5OGJ5Qnhxc1NKX3hLVHlkZUR0VdIBoAFBVV95cUxOczZvMzRwTlZmQjVaYXFyQ19KSmlCd3VyNmwzQnFxMDR2bWo5enJvU3dBQWxCYVhhV1VIOG9OSkRDaHNUUmJ0Q0xoT200M1NJaTY1ZWRzQk8xX3BORUwxajB1T0xkSGdmSE1EVFk2RDBtZFlZSUFndjd0ZmxjRmoyYWVLb05JdlFJdmVpTVNkbm5QVEFTSzhGWEdQXzJJMzFW?oc=5",
+      "title": "At least 17 killed in two South Africa mass shootings",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxON09ZZWF3NEozOXY1OXF3cGFIN2I0ZTl4ajNKQmtsUlFLc3lvc2xod3Ewd0dNWkctYmFBUmttUm9Nc0VWcjFmZzlBNE1WMnVhS1R6X3k1RmRIcHZLSkRJRVhkMEdRZnpNOGRNUmxjWFo3QjdZOF9qcTJMdUhCRVNTaTFia3dqOU9IbHV0Yl84SjhiS2JRdzVtRFhCSlo?oc=5",
+      "title": "Australian doctors warn of millions of deaths from antibiotic resistance",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -149,16 +206,48 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOc0ZzYy1hU016SzlsamNfZERnSldqSWI4QUxGWmltLVFUWm91TFpQY09OQTF6WmlZRDVEUHhRU291ZlNGS0x2UWNhMDVwTDhvM2ZyN0ZhM2FoeUlOMTM4ZGNjRUY4NHVtejVGVk5yem1lNXVXWFdVdmdfVDgydm16LWdmbnB5b1hmY3NQb0RiN0dfYUdvdHlzNmgtd1ROeHRNNXd2VFIxYnQ0eFVFaTY4STVfejhDSWxBLWYxUWx2ODY4cGlzeU1jd2hnV2dETmc?oc=5",
-      "title": "Allarity Therapeutics (ALLR) Expands Phase 2 Trial Inclusion Cri",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbGZCQzBNWXlsNkJNTHdKVzdUSG5PdWR4eFkwZ0VGQ2pGN3BYUVE1Qm55YWg2ZTVMRTZvWjFqRUluUzB6NGUtTWZDX2R4bThna3RQTVN4OUJPSW93WHhlZDRVcVhnenJLd0s0clp2aEh6NEtkQmJ3bG9JcWVHT3picVZzN0dYaWZrSlZwUi1USmttQm5RTHp4MkZydzl6RU04NUl1bzdEd0p1X084eFpJ0gG0AUFVX3lxTFBtSmI2V1R4aXp4WUx2TTNSU3BsXzQ5VnI0M2NiZnVleUNQOEdidnFXOEJ1emxyZ0pGWDVmYS1mX3htRF9kRElQOWZZMTRqdEk5WHBhUkNRN3BGV2F2U3Frd3l5LVFqY19vbmFXNkExb2JPYnNQTjF6Ry00cE5MTjQxYkY1YXM1WUF5UGtHN1hLNVhYUjRkSlFuajlGcFNQelItbDdoV3dyOWptQ09XOGx6Mm9FUg?oc=5",
+      "title": "Bahrain thwarts drone attack, Iran claims targeting US military radar",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVzBfcTd0dGtoRnJmelJGSUhydE9IdTBfejEwYVhrdFB3OG1qMkV2VEVPXzJXQkdZR3h6LVNfM1JEMWxBTTFPV2JPb01Vc1BFV2lQbThfTmVfUS1ReWNYZ2I2WTF5LWhGRm8zOTYtTXhoUmlrcjVxTkJHbjZ3TXdLQjE0VnhONnUtUnNjdGlESmR5dDgtNHBJa1h6RXFCYjdQMFNCcjJXTkpkZV9HbHNHVXBlWdIBuAFBVV95cUxOYTA4MG44OTJSdkxmODdjLTJ2SnhtQXRoNzZodTdDRC1lRUtXeGFTNzl3dGQ1UFpkTWQxRUxkQVY1d24tNXhMdGUydlpCWkZpdnRpTnpOSXVrbHBjSDRmZ3drUF93Rm0zRzJDRFhpWW5XaG8tNlNwc0FGSHBTVERvVjNyZS1FV016MkRJdW1VSHUyWXlEcHRsMnNabm9nRml1ejJ1czhMb2Rlbm5nQ2cwbHNzSmZHa0xB?oc=5",
+      "title": "Ukraine drone attack kills two in Crimea as Kyiv targets bridge to Russia",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFRqbDdBWnlCR0hRemExS25sTURtSk1BTVAyUXlKTHppbnR3b2poRmhNWlJMWk51bmZXQnozdVFjSS1RbVdHR3lTNXdHaG1neUxxN1cwUHExY3YwdGJYYUU3NU5OT1UtMlZ3cWxjNm45Q2VVanZQZDlyR2ZZbmtJeXYzWjVJeXZmWHRvQ0kzTUNhWkNyZmtWLXlIMUwyR2lkdHZZTWZjVGgwRWtsTTNabVotU1dFZw?oc=5",
+      "title": "What to know about antimicrobial resistance in pet treatment",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOeDFlVTVQZHRyai14RURaLTZXdUhHT2RRdUt1OUotRmtOdEx3NnIwVWZQZHVEUnkwVm1xclBLMDhfaUxRdjI0b0RaZDRIMDV6dXJkV2IwR2JOY1FXQjlLSHVORUVUTDNVdk4tZVA1T2g5WjA0V3ZuX081cUF5RGZRWDRhUVpLcDl2TGxtRHM3LWoyYXNoVDlwQ1dNbkRqb2pKbkRGNFlLQjYwazFNRFIwQ0U3UlJlRkJRWElua1BEYUppSG8?oc=5",
+      "title": "Houthis accuse Saudi Arabia of strikes that killed 3 including a child, and other Mideast news",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     }
   ],
   "unpublished": [
     {
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNZzFtS1RUT3U5bHo2TDQ0clhJN2RqN3F4V1JVd3ByOFRpWFNQNk9TWXJKV256R09uU1FMUDFOUnJhdm5KcXlpSG54d3FTeEl4ZjJpUmdGaHE3NFVfNmhrQmJXaVNXNU5FdUpCTV9meWdKSlJaYldLbFFoNno2a3EzT0FUTmlQTjR2RjFzQmlmbVJTUEoxOThCQWs4MHlXM0lUM1VBQmlnblBhUVpPMUJ6MU9rZHZiT0hPUWRxdUFCWGNZTTNneE1GX044S3dSSU94TlHSAdcBQVVfeXFMTXk2a0JOTFd0U0NhWUFfN1RxYi0tYWphNzdrNm1nNE1jM2U5NUduampxMWJoaWFmMFhCZ1VYX0x4R1B1QnZFLUZwTnpxM1pUYksyemVoWFdOelRVUnRLNWNSOWZRQ1V4NC1XeUNLUjU0Vzc3QlQtLUNLYlBqa2Ric2VuVVBpTWp1T2FQZFZnX1ZjMjRXUmpkQWQ0ZkxiVEgxVnZUVVlMMExFdW9sUWZlZF80SFdCek1meDRVaTZna29aVVBjcmRLam1vSzhUUWhDMWpkTDdoT2M?oc=5",
+      "title": "11 killed, 36 wounded after massive fire engulfs shophouse in Thailand’s Phuket | World News",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMHFuMWFUcVpSWWhxeGNYSHNEa0M1THJnOUk4WnYwNG9KNmFZZDhfdDhpUjlMNmdaUkZjXzZUakZURy0yQWI1NXpGMHI3U2cyRmtyOHozZ215bGxCZG13bG16R1p1ZE5zSzVZZlpzdWpUd1NpVHd6Y004amliVlB3VkFSeUVvRk5PVy1CeTc1SXY5UHJJbU9CaHJlRU9jc3lNVHZxVmVoQ3dYa2tmU0diTjlDcWJJZldRbng3SzNmWXVjN1hOcTBCbVFHZG5ZWnMtaHhuYm1RNHQ3T28ybms0?oc=5",
       "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
       "important": true,
@@ -215,11 +304,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWDFEZm00Z1hPc0ZFOWFlbnVocWxZRGFEMzAwVzU1enFDOTZMcEFYQmo4NGNicU8wMDYzMmZrZmYzVmg1TFh3enZnWFNJSnJyd0I0RUp4RWNCX1AwYUZzMWdaYlZrZThUQWg2bDJnamhUZGdRd2c5QjZ0WG50aWNOdA?oc=5",
-      "title": "Colombia Earthquake LIVE: Strong 7.4-Magnitude Earthquake Hits Colombia, Tremors Felt In Venezuela Robert Irwin (jxLL3xsd6A)",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFA3aktFWW1lQjBzZ2UwYmlkbWlvNE92OE4xeHM4Vm0zOS04LV9ZQ3A3SHVoOXVXYWNsdGFJU0JPMjd4MVlMVFoxR0w4MmdVMFFsbWhrVFlQbUhiOGV3VU1RNHBBODhqU0EwRm95THZ1QnhZa3lxNnltRlR4a0I?oc=5",
+      "title": "17 killed in South Sudan revenge attack",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -255,11 +344,59 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQaXFzTGVaQlFTZGRSa1V0WDdTbWRrWlo0RkY0WWg4cF9HRlFOMDJScmtPMlFHNTBVSVJHeE4yTFdXWWN4ZUF2TmlabUtxYTVJYVRIdTZpVUhRaG1SS2tuNUZXVUVFOGM3ZXNGbHBWb2cwZzdHUXppSlZ3dWplVUhVZkRYMDhTdlVMa3dxbDkyX1_SAZYBQVVfeXFMTjNJckRESmRsWEFCYXVMb3RqamxPeHkyVHhuSjVWVVVhVXB4SEVFN3BGNGllQjU1QWhOSWc4cWd1YTUyV0VFN2dZcExjNlloaXlhRXhfak16d1g5ck1LUzhjTlpOZy14a2w1Xy1pWlhSM3FxNHVRMnZUbGZYdHZReHV4VzNXRFlicW5RVl9GdjlCZFZhRWdn?oc=5",
+      "title": "What parents need to know as measles outbreaks spread across the US - ABC News",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNaWc0RmVyVnRoQTI2bHZhNnZLVGhEa3ZuNmIyZExjR1dzZFRHSXdXOGQxQWJjbktSaTNtMGFZREVJT25pT3dWMDdldzdqaTBmZndudFA0TWNxSF9FOEg1UmR5UmwxZ3h1RzNSTjRyVWJyUHJnU2U3c0lzdGJwMktYa245MFFsZE1mT21JSjFBNnd0UdIBlwFBVV95cUxPUEZTYk1XY1ZvcjBORDFzMS1lNUpoZU8xTW9iSXliQWlNcTU5YjFyMS0yVlVJbHVUYnpiUWtvOTZQaFJGaVhXU0FzTmVLN1dad0VzWWpTM0JFbXdRUUMzbUlPMTFFOWZadE5LTEx1dkpnTDQyM1FOWmZKSzh4RHRIdXRidTlTR1ZwQTJ6YTNDclhvTTg5dkVJ?oc=5",
       "title": "Cleveland, Cuyahoga County ‘vulnerable’ amid Ohio measles outbreaks, says health director",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObjVqRWdvZWo0XzRTQU1ZRDZaYU56WHlWWHI0cGRhM05OT0RMWmFfb0xCWEUwT0QtSnZMUkdDMVZwTWVIY3FTUXVFbTh5ak8xdHdVazkxcl9ZeWRyUnhJaE5DQ3B6ZUFFdTdZRnNRcUdkZEZzVi1kWDczbmt6Y0xJc3VtbWlQVnZOX3Npc0FDZk4tdDQyWHc?oc=5",
+      "title": "Toronto police arrest suspect in Bridle Path home invasion investigation",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOakJpOERKX3RCaDVCbWZab1MyR3NYSlhaZ0M5OFRVNzlCeGxRTndxWkZ2Vzc3Y2poNjkzeTZCbkI3bUwtVzc4UDRQbFE2Xzd1UDdBZm9HNHVkWXVpVkhzNk13SmpWNDR0MEloZGg0bWFMLXdkUnh3VWtTVmdVME5sVjV4eGVhRXljTmtpUnVYQkNXbmJ6SG9meXdOd9IBoAFBVV95cUxNYXdCYm02ZDNTY25HdTBlY1VpdWgtNjR2el9sblFtVXNNRXE4RDdMVWlKVHpfd3o2bnc2X3l5ZjdzcFN0UGRFaVQtck1wTW5HTUk5ZmJCanV6UkVRYnBiNXdQRy1SZzczX19zY3U3RFFIWGVrZE1pZUNRTERHeXFjcDFxNHBqc3ZLRFlHMGhIa181djZHU196dHdQYlJPdkdT?oc=5",
+      "title": "Measles cases surpass 900 in US with infections in 24 states: CDC - ABC News",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOeTVOcEU1NHNfcVBOTXV2VHNGUGpKNnltdGFvMG5ZSUxpTVkwSXo1YUVJa2FNdUI4VDIyUEZtcEJLV2VSTTVTNzJBS0JWd2E2ODlEalZNdmdXUWZsdmQ3dnlsWGxSRkM4QS0wYlZrUTYxTDFKNUt5b3AxQUNLSmZ6SEpGOXhuREk4MUJIUXNiTXc5RW44Q29JQlNMWdIBoAFBVV95cUxPbExNUG1BUWxQMnU5SFZ6VENZOGdTQUtVcjl0VllxMUNHcjBiWjhMTWpHdVNRQ0FvODhrUFQxdTZYOTBOYkpwbWpTdFhBVDZJMTJMSGE5MTE0X0Q3MzA2Umd2MWRQdHNEckJrTDEtWjJQMy1URDNGZjI0XzZxR1ZtUjdhS1BNUEc1Z1ZDb0pXdEs5clVlNktWSUpCOUVSTlJR?oc=5",
+      "title": "Ukraine launches major drone attack again on Russia - ABC News",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQLXFCOFItM0FpeS1UOXcycm5Pa1JrdDhOcnVadGh5YklZekFFUVdpRUR1SkZIUDFuV081MUpHWlZ0N2x6UVdnMHp4bDF3TThHd0k4bjZOWUtTSUIzOE1kanZ6Qm9yNVJnTHM3VUxYR3o3Z3RoTWszbTZTbGhPYWZpRVRnMU42M3N5OGJ5Qnhxc1NKX3hLVHlkZUR0VdIBoAFBVV95cUxOczZvMzRwTlZmQjVaYXFyQ19KSmlCd3VyNmwzQnFxMDR2bWo5enJvU3dBQWxCYVhhV1VIOG9OSkRDaHNUUmJ0Q0xoT200M1NJaTY1ZWRzQk8xX3BORUwxajB1T0xkSGdmSE1EVFk2RDBtZFlZSUFndjd0ZmxjRmoyYWVLb05JdlFJdmVpTVNkbm5QVEFTSzhGWEdQXzJJMzFW?oc=5",
+      "title": "At least 17 killed in two South Africa mass shootings",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxON09ZZWF3NEozOXY1OXF3cGFIN2I0ZTl4ajNKQmtsUlFLc3lvc2xod3Ewd0dNWkctYmFBUmttUm9Nc0VWcjFmZzlBNE1WMnVhS1R6X3k1RmRIcHZLSkRJRVhkMEdRZnpNOGRNUmxjWFo3QjdZOF9qcTJMdUhCRVNTaTFia3dqOU9IbHV0Yl84SjhiS2JRdzVtRFhCSlo?oc=5",
+      "title": "Australian doctors warn of millions of deaths from antibiotic resistance",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -287,11 +424,35 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOc0ZzYy1hU016SzlsamNfZERnSldqSWI4QUxGWmltLVFUWm91TFpQY09OQTF6WmlZRDVEUHhRU291ZlNGS0x2UWNhMDVwTDhvM2ZyN0ZhM2FoeUlOMTM4ZGNjRUY4NHVtejVGVk5yem1lNXVXWFdVdmdfVDgydm16LWdmbnB5b1hmY3NQb0RiN0dfYUdvdHlzNmgtd1ROeHRNNXd2VFIxYnQ0eFVFaTY4STVfejhDSWxBLWYxUWx2ODY4cGlzeU1jd2hnV2dETmc?oc=5",
-      "title": "Allarity Therapeutics (ALLR) Expands Phase 2 Trial Inclusion Cri",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbGZCQzBNWXlsNkJNTHdKVzdUSG5PdWR4eFkwZ0VGQ2pGN3BYUVE1Qm55YWg2ZTVMRTZvWjFqRUluUzB6NGUtTWZDX2R4bThna3RQTVN4OUJPSW93WHhlZDRVcVhnenJLd0s0clp2aEh6NEtkQmJ3bG9JcWVHT3picVZzN0dYaWZrSlZwUi1USmttQm5RTHp4MkZydzl6RU04NUl1bzdEd0p1X084eFpJ0gG0AUFVX3lxTFBtSmI2V1R4aXp4WUx2TTNSU3BsXzQ5VnI0M2NiZnVleUNQOEdidnFXOEJ1emxyZ0pGWDVmYS1mX3htRF9kRElQOWZZMTRqdEk5WHBhUkNRN3BGV2F2U3Frd3l5LVFqY19vbmFXNkExb2JPYnNQTjF6Ry00cE5MTjQxYkY1YXM1WUF5UGtHN1hLNVhYUjRkSlFuajlGcFNQelItbDdoV3dyOWptQ09XOGx6Mm9FUg?oc=5",
+      "title": "Bahrain thwarts drone attack, Iran claims targeting US military radar",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVzBfcTd0dGtoRnJmelJGSUhydE9IdTBfejEwYVhrdFB3OG1qMkV2VEVPXzJXQkdZR3h6LVNfM1JEMWxBTTFPV2JPb01Vc1BFV2lQbThfTmVfUS1ReWNYZ2I2WTF5LWhGRm8zOTYtTXhoUmlrcjVxTkJHbjZ3TXdLQjE0VnhONnUtUnNjdGlESmR5dDgtNHBJa1h6RXFCYjdQMFNCcjJXTkpkZV9HbHNHVXBlWdIBuAFBVV95cUxOYTA4MG44OTJSdkxmODdjLTJ2SnhtQXRoNzZodTdDRC1lRUtXeGFTNzl3dGQ1UFpkTWQxRUxkQVY1d24tNXhMdGUydlpCWkZpdnRpTnpOSXVrbHBjSDRmZ3drUF93Rm0zRzJDRFhpWW5XaG8tNlNwc0FGSHBTVERvVjNyZS1FV016MkRJdW1VSHUyWXlEcHRsMnNabm9nRml1ejJ1czhMb2Rlbm5nQ2cwbHNzSmZHa0xB?oc=5",
+      "title": "Ukraine drone attack kills two in Crimea as Kyiv targets bridge to Russia",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFRqbDdBWnlCR0hRemExS25sTURtSk1BTVAyUXlKTHppbnR3b2poRmhNWlJMWk51bmZXQnozdVFjSS1RbVdHR3lTNXdHaG1neUxxN1cwUHExY3YwdGJYYUU3NU5OT1UtMlZ3cWxjNm45Q2VVanZQZDlyR2ZZbmtJeXYzWjVJeXZmWHRvQ0kzTUNhWkNyZmtWLXlIMUwyR2lkdHZZTWZjVGgwRWtsTTNabVotU1dFZw?oc=5",
+      "title": "What to know about antimicrobial resistance in pet treatment",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOeDFlVTVQZHRyai14RURaLTZXdUhHT2RRdUt1OUotRmtOdEx3NnIwVWZQZHVEUnkwVm1xclBLMDhfaUxRdjI0b0RaZDRIMDV6dXJkV2IwR2JOY1FXQjlLSHVORUVUTDNVdk4tZVA1T2g5WjA0V3ZuX081cUF5RGZRWDRhUVpLcDl2TGxtRHM3LWoyYXNoVDlwQ1dNbkRqb2pKbkRGNFlLQjYwazFNRFIwQ0U3UlJlRkJRWElua1BEYUppSG8?oc=5",
+      "title": "Houthis accuse Saudi Arabia of strikes that killed 3 including a child, and other Mideast news",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -327,11 +488,27 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZWxuOVYzRzhhWFprdk1NeHlLMDZyUFVObUhvbDNPVFN4MWM1cUM4cVhKWU9UOVdiVlhIWURudEF0VWEwQnlwYXVINjFieFpqSnZCd3Frenh4U0pkcXkyTE5MUHNVZ2RUcDgtYm9weXhLYmJRV2RwTUFscHhoNFd4d1R2dHpBWUl4dGd3VU1sOHAxY2U2dko2WUlNOEtVSk5GbHRIQkVrUHF1VURLdWU5TkQ1UjBkNlpqRXh6TWVSQnFDYVEtMWVFSEdmZ08wbTVCb3ZuR1BZUmgta3dmdUE?oc=5",
-      "title": "Australia under attack as COP fossil fuel war flares",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQaEplcVU5UFhDM1VEYnk4OVBtWEU4cDJ3dFB0Z2I4TldEQXZmSEpKUURFcTRPMFZqMzk2ZXJqY2U4VzlWQU1WbU5XcUVmbU5VMVdCblp3TnVwUzAtVUtmWGZWQk9mR1ZMVzlad3NMX1hMZ2M1aGJ6MG5uVWZqcVNSeTQ5cUs2clFIdkJYdlhrY2lBSllvTTNrSnd5MTFmaUd0UkxfWjNhQ2hMY1lrcW5FTjV6b0tsOWZFUVU4aFU0QTVhbG1adzhBVm56MFpLN2JhUHRaZTllSdIB3gFBVV95cUxQZ2JTYlBMYUZNUTAtN3NrUVlKMkRuYV9uVzR6c2xHWVJmLUxWcFRGdll2a0xtRkhzSUJFcElCRC1jVXloTm5FWmlDMXlYU3dxUVpjS3hoeGpMM1B5Z3JUbzV0bS1RS1RmaE0wbHNjUXFnY1ZYNWdHU05kVU5fbW1fTjIyYkhSLXZnUG9HTUVYYldnNmVkbmlEZ3U1dWxBbEtXTU9ZM2hfLWlIRVp1dEhNQlF0UlpSZzlwMmFMZWZOSXhTNngxT1lLaGhkVGwzSlNLSjY5QUl5OXJXZG43Tmc?oc=5",
+      "title": "India-Thailand trade reaches $21.49 billion; UPI-PromptPay link discussed",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPOURfcFhaOE1xdXZkUWx6NXc2VDUycHl0cFU5U05xWUozM1ZiSTBBaENtQXRPTkZ2ZnRhNE9uNVlvQ3ZUU3dTeGVJRzhlT2hqaHlyMlNJbDluN2k0OTlyRm9xVm5UZmlpdHp6X2ppeGliU0MwVHpWTlQ3eGV5MUNnVjBVaU44VC1aVHJ1X29ZamVDaEpNNjNtYllEUDZLRW9zVmotTGZ2MjFQT3JYTldLTFZWZElIYlVNWVdVYjl1RmFQUUtJbzBfRXhhRVQxZWZYcXhPa19BSWNmUGhGWmVDdUFVcV95dw?oc=5",
+      "title": "What to watch this week: Bank Indonesia rate decision, US retail sales and China lending rates",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQR2d0akMyRzJBYzA5cjV3NERjV3NqTktUcXY4VGJ4bXlDWlFhMUdNc1lUNU5iNlIzLXV3Wk9qSkpVOUZOYjdkY0dFZEppN2stRmNrOUk3dzRyVk9UcnB4RmgyNWZfNm5US29sZEFZMFA2WXpnY1lfN2hRclZ6VXBaY2xZNnQtejdJbWQyMFRjX0F5clhFT3QwVVBBd0J3eHNVVzNrY3FCbGhjMGtrUkJUazNiR0RVbDR0MC1WQlRyUk01bUNsNDREYUc5QjF3TmpKSmlLNTJLd3dFeXpZVFYxci1VMW1USmc?oc=5",
+      "title": "Colombia Launches Milagro Week in New York With Investment Announcements and Meetings on Capitol Hill",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -383,6 +560,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB1dkZRQjhaNG5KajdJS1JWMEhNU2NXVUszc3A2eGFaQlRocUtOUmgxZzJBcERpUkxoNTRZU2lLd1lscWs2NFkwdWFtMFBuWVZkU2hFcXUxelE?oc=5",
+      "title": "Turkey and Qatar Sign Mutual Defense Pact in Istanbul",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBQeW1kWmdRMGJwSU1tMUJ1VUQ2Q1RwMjFJYnhtbHRhU1NDdHdKUGI1RzlMd3puU0hyNlRZeWgyVnVMLU1mbnlpQWo0Wklyck1udTJzTDZvdU8?oc=5",
       "title": "골드만삭스 \"2027년 세계 성장률 2.8%…금리 인상 지속될 것\"",
       "important": false,
@@ -412,6 +597,30 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1UR1Rsczhkd2hYdUkyeG54QndURUR1NmhfeUx1d19HRUJQX09BLVZ3aGFBTEFJdndkc0VwUGpCSmtHaFNpSTJBNWpqQ3p3QU5ZMHZFWDI5NnVpeDBJTWctbjJhMWpXckF3cHByamVoOEQ3WjBwVTJJ?oc=5",
+      "title": "Fire in Thailand kills 11, injures 16",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4zcF9sdjFwSHFsRDlBQmhjV3JObVdEblJURmhnMEJlVC1Fc1NDbVJib0lnVmhYR3h1U1Y0YjIzMU1LUVBJbnNWelMtenFoaktIVTNsUVVkZ29vN2prWldWVG4tQVlnNXlTd1F0SHpsazRNUTJ2dENZ?oc=5",
+      "title": "Uganda Launches Diaspora Network in Sweden",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9VUmNRRWpLSHhHNjRnUkl0SDUweFZldXoyV0JEQ0c0bXIwRnVsdVdsM1FVLTZCUndFOTNvQzY5OHVxS2ZkNmYta1F6MjR3dExJMlJVUkVDTEhEWFIwejhTMGlzcU5DUF9lei1tMkVqN0JjcE1H0gF0QVVfeXFMT1VSY1FFaktIeEc2NGdSSXRINTB4VmV1ejJXQkRDRzRtcjBGdWx1V2wzUVUtNkJSd0U5M29DNjk4dXFLZmQ2Zi1rUXoyNHd0TEkyUlVSRUNMSERYUjB6OFMwaXNxTkNQX2V6LW0yRWo3QmNwTUc?oc=5",
+      "title": "11 dead in Thailand fire: police",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -447,6 +656,22 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQMGhQUV9ieE1YX1NDZjZ1amVNc21zOV9CLVp4SE9qbW4xOExGaWpxZE1ra0lMaDdLLVJrOVplaEkzV0dZM0hyUl9hcS1jZzdLeW9QWVVhM0VNeUgzTHVkMmdVVDhzOUgzMzFwV1J5VTJBWVVkMzVvUktJdzNCeWxQeW1QTktUaFU?oc=5",
+      "title": "Phuket Fire Kills 11, Injures 18 in Patong, Thailand",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPY1ZnYWtQRjFoTDFtMWRZOXhHVzlZWGkwVWJBeHRSYUdiSzd0R3JlS0tBdVJTX2VlQUhpUWVhRlhOLVh1aUM2ZUp5TXBCY2Z3eGxlLVJRQk8zS1hHbllsb0RPY2ltZ01SeVYwYldXMzlobWZBQUVwVHZtckQ1MTl0QjNHMmplOGdhVFF4Zk9NYjFCUQ?oc=5",
+      "title": "Middle East latest: Saudi-led coalition intercepts missiles as Bahrain issues threat alert",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTGpQYzF5ay1sbkVFVWptV2hxTFVlUDJlSTVTbUdER0Qwb19ZMFM5R3F3aU01S21wQkpXRzZTMEszSTRzcFFTLWxHYlF5SkxETFhJYnVuWGQxQWVMWXZNTXIxZ1lveWE1cXFJVVZ5TUpSZlYtZF9KcFE3dUhyNHYzcVhRY1JmcXRjeVBSWkFhSHE5S2s?oc=5",
       "title": "Iran Announces New Breakthrough in Nuclear Fusion Technology",
       "important": false,
@@ -463,11 +688,67 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOODB4VlpxYS1vVmtqdWVrdTd3NjB2Z09wQWhKbXkxeVFhanFHWjJpT0c3MHBZampnYjNuWlFGSXJPVHZBTjhHM2VvQUJEQ0M4cHZEVUdpcnY5VHphSGY2QnpFdWtKR3hjSkRCbndjcFpsLWZPU1VDbmxXcnJ0WVg3V1VuRGJtMnQ4VnluSExXU2VtNkZjTWFv?oc=5",
+      "title": "South Korea Scrambles Jets Over Russian Aircraft, Japan Reports Airspace Breach",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZlpJakE3TlVPVGotNVlQZl9DMlljalRYOHJ5cVd5VDFTTTZELUhHZ1puVGdmbXA2TVVKTjZpT3VsTWQ3LVlqWVNGNThJSkJ1WVg0dFRJUUZFT1luQkdQc0Z3NEl1OV9oT0RVQ0lOZUowQTdGMzMtNUFzb0s3YS05QThiWWpOMW9qZE50SzhjSVlEMkFlNFppZ2NR0gGiAUFVX3lxTE11bkhmTWEyYjI2OE83WTE3MzItTHQtVmotVTJfc0NJUDAta0RsWkJxU1MwS054cFpZNWp4dVg3anFGQ1lBSjUtVjdrUFFhWHN1cDh2SGN6OWhiTGR1WFFoODl0VkJJRGxzdzFNMU8xTGlMY3huZ2tHenpmNlNQUzFRMFoyeXV6SUJwQWVoMUJYckNQRlZTYnFMZE5rbWtyZldKZw?oc=5",
+      "title": "State House Diaspora Unit Launches Uganda Network in Sweden",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQU0Nrcno4V0tSNHJKNXJkTjIzelNaalp1dkEwODkydUMyQzJZSmJTVmhZeVlTYXMzSW5wLVN6cUJiS3JDa2RhTUpCeDlxWE5wZ0toMHRqVkpBaUhNSWJ4X0V0ekJSSHBkWnc0ck1QZThDQjlUOGFaUHE5Yi10b3ZvUGM5TnkxeGRiNTVtNUZYVHRkbmNVcGM0a1JuQko?oc=5",
       "title": "Summit Therapeutics cancer drug rejection raises risks for China biotech expansion",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMzZ2TjJQTS1CbmdJc3UxTi00Ym96RmpnbE1ySzFjYjRVQlB5c0p3c0RsRmNocmp2VHFaSFc1Q3JOR2dzOUd0SnNuZFVFTTVCVG9NX2xVaWR0S2NubWpPV0MzNXIya3dBSGxfMy0wX1ZjcjlWYjMzZE1CWFhudXBpSTY0NEJZNkxzZWJhUXp3UER4dVNucWp1VEpLUTFiM2lIaVNvUg?oc=5",
+      "title": "New mass protests expected in France Tuesday as presidential election approaches",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNk5TQjdKZHRkLW1iclZDWmdsNm00eWEyRlBreHU2SmIxeGEwN1c1WXVwTFhQY1lZRjRxOXdJNTFCSW82UW1jVU4yN05XTkNsRUxNcWU0SU5WUWZFVnJXNDNETkJYSzRUODdGZVUxMkhfX2NtbTJPX1dVc2JMSE0xem5ITGFIVHl2cTYtSlFGSFZfdG5PdHFCY3VPTElmWnl4QXg0OHlnQVE?oc=5",
+      "title": "France and Malaysia upgrade ties and announce rare earths, defence cooperation deals",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdml1SV9lNzZBMkNGTkpPeEdDOFN3RHV3elRFbWNVVlp2ZG1kVk43R05VZFpCb085SUJtVENldF9rVTE1Wlh0cjlEdndVbE94eHo5OGlDNVlkLWtLTUVQdllhOWZ5Y3JBMGVxaWxNZXdOWFUxLS1fZzJzNnQyOU9JTmZPb3lVM3hWUWxjX1NVd3BWVkkySFNEemN0dDRaMGtsMmtQS05sVmQ?oc=5",
+      "title": "Syria - Saudi Arabia and Yemen: Cooperation Without a Confirmed Deployment",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcERUX1JBbnpYeHZsSHg3WDRXVWtnb3E3VnlCX0o1eVAxOHZQMWdfVjBHOXZ6LVFkYzJEMXphWDctSjVPeHU5R0xoR2JSUzVkLWZZVnM4dkhYLWhKX25hMUF2TXpMTjYtTllrMnBTaVBxeEV0SmxQcWNxcWtXRXZUUWY5UUoxbWJvekpWaFc0UEYwTmZvMUFRZEM0c1ladUxNTW1vc0gzLXFJbzDSAVZBVV95cUxPaEZZWDVMOG1LLW9BSkFxenJVOUg5TWYyT2FndGtOazdHWllxTjFyM0FXajkzODFDcV9wTXl2NmpEazBacC1mSW9rOHV0dHJsTHIyRm5Idw?oc=5",
+      "title": "Sudan army strike kills 15, including children: rights group, survivor",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPd3BndEJhNnNwMnQ2eEFxeW41QVVjV1NoSmxlNDFCc09kSm8zbEhXWVZWdzZSUVU1VlZJRnZCc09UWnA4M2NKaGN3VzhUQVZlclQ4M1FQTGdkX2E2UlEteTJuaERNREIweGZTNkRudm9EdnJrYkdoQU1mdHR3RWItS3FWcDVfUEljVXdWQ1lhWEgwdkRteGxPVlNzTjhVS25nVjBIVFNxelZFOVE3Zmc?oc=5",
+      "title": "A fire in a building in southern Thailand kills 11 people",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -487,6 +768,30 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPT3Bjb0VxRmd2NkwwUzdFYzJDbjN6TWpBLVYzd1FOX0x6YzMxQmdhMnZRR3pvR1RTMF93b3N6cktCY0plTmQxcDdINVBCRjZic3Z0NlZHNEljMDJYbnljbXNTRVByLXlEcEFGblpYakdEeDhjbHhIUzYtaV9fbXd1M2dzc0lOck5lSnVXY1VYUUNJUnhralJrR1RDbnI3X3BoNmUyQ19sUURXMjJVNktfRGZ3?oc=5",
+      "title": "PERSPECTIVE: The Trade War With Canada Many Americans May Not Even Know They Are In",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWVRDRUQ5Wk9zazRCbnlWdWNwZnZhT18yUmdPZzRuRGdua2hjSFBDeHYxMXRRdm1taWpydDg0SDBDaWJ1R1VmWDJkT3VXaThuLUJGYmVTZHlkTmo5cDlQc0RMMkE3ZVpEWkxUbFVEYVgtQXFDODhEbDJRRmlRbktubVJrODByTWtiMHZnX1o4Qm85M1lSQnpjcjhpc2VkQ1EtbzdTbFhOUnNPRFBzdDRFbVdxdw?oc=5",
+      "title": "Infoblox launches Australia realm on AWS for regulated industries",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNUp4YWhKejlTVC1GMUg2SXVydVFmSW54OXZHU3BaVmpxM28wd0g1N0dyTjdId204alAwWWktQ3dJT1pYMWpGSXl5YkhZWXBtak95MUFFLUF6Sy00QzNZOTVUUHJaS24xWHlwdC1hSjd0TkZBSFcxUlE3eGtkU1FqWHQyNzVSRV9QVEZHLW40M2N6MlViS20tSjBlZERacERCVE5Ec290ejJkZHR1RThCeEN6cw?oc=5",
+      "title": "Portugal’s economy more resilient than many EU partners report shows",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQdnpaRWl6V2V6TmItTEFjemdRWEFkTlE1eVlabXpXOTBTTExMY25sbV8yOTh2ZVN1R1NiT2xxTmRiemN3NEZ1ZkFGdzlFdkkzTDNZcnNHZWk0SFpZTHp2R0lDdjlSQUZ5RzVRMjFELVQ4ZGFpTFc2RURBeE05MEx1eEN3TUgtUlJUZ21nSjB4NkVNbHlXa0wyLVFfNjh3OGtmRmEzUGNzU2tXdnVjQ09kWDl0Y18ydw?oc=5",
       "title": "First Milei, Now Lula Enters the Fray to Shape Spain’s Election",
       "important": false,
@@ -503,6 +808,22 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVlA4eGN0ZXZWajlROTFtU3pfT09mcFctb25QLVBPTUhnSUt2R2dkQzNKY0hDcXNzdFJqYU5yYmxfQzlQOFBoeWMxRVJjZnVPRkdzN0lkZDFnTlNVTnJVUnpmMFZ5TlpGLVZVWVdJS1pjRmlEOEstcmEyRUpjakxnUDJpcnI3SU9TU3ByamdBWmZ4NHAwQmRmRWlEOHZoYUlBZ1RUcDRDdzllX1ZCdzIyQlpLTnJNa0ZwX3hmcA?oc=5",
+      "title": "Rescuers recover last 2 bodies after methane blast kills 4 at a Colombia coal mine",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQQWhDREI4eEJsZkxLUENhVGZYVlZlTWF1Q2RTWnpHYzdDSHhzNlpEVVd6S1BaRmZldzFjMF9wTkFybXZZSnFwU3l1LXFwZ2NzY1BUQzJQUmFhWko1Mk9NZmVpOXBLZnpyM3JiLWtocVZiNUplUE93TUtXbW1fdENIMHJQNjR5bUE1aGxGbW11T01ydkxIam5EUkQxa0tSSHJJQ2E3WEpISWlyVEJOcUhqcEhiQ0MzTlp4VE5GeHBn?oc=5",
+      "title": "Phoenix midfielder Tameka Yallop earns recall for Colombia internationals",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZXRzLVpZYXhYWG5KWlNpVjZQbUtVNXBIeTdjTThFV3RSTnJ3bFZpNzJhcVo2bUFnOEE3Mm45cFd5MDM2eS1SM2RfSGZmelR5RXQwSVI2U3BFQ2Y0UU9taDJoM3VOV2lTd1VtdGtBZWpnQTlMNVVfZU1IRlNHbEJKbUNCYi1lbzk3Vkdhay12eWR3Q19ZaU50Mm1TMUVyZExFVXVRenRyNEE5QUNIR29HaHdIaUg0UUN4NXVja0d2QVU?oc=5",
       "title": "South Africa’s Messy Local Election Fallout Rattles Investors",
       "important": false,
@@ -511,8 +832,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSnNrblJ4ZGpaR1ItSi1kMVNhamFTNlVnRUNwck1LSlg5SG5Xb0c5THBFWnowMm5tUFdLZjJsenNkQlNYZ2M4eC1pMU1WN3hjZERNeEhKN2hIZ0VTSUY1VVJLVGNITHJNRG1kbUZ0WHpEcm9XNzhPT2JSak1ON2ZjM2ZwRjljUl8ydjlDVEd6SF84QWZBUEpLMkVlUHpSODhDNHN5cktFTzRReV85bWNKT2NhM0k1a0ZDazZDUU9NSXFmUQ?oc=5",
-      "title": "Macron backs peaceful border resolution as Cambodia, France sign record 29 agreements",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObkhCQk1PYjhrVTNCS0M2YUJnelVoaTUxdW9zUExzUXFlYmZ4S3QxZ3c0QlNkYnZJSUpMS3FjV3RlT3NtN2lYOFFXY2lNNWNhODhhYUlOT3JDcU9SUVY0cG00bElYTzVmSlpPZVVaUHBZQnlrRGFBVVJhQm8zcGZxdzdpT29sbEhhOUZDV1RuTjR2dEllRXY0ZEdVZGpNOUgzZy1yWFkwa0p2YjN6Yk5UTWRSanFmOWxxVDFiMUFwTU9BUdIBwgFBVV95cUxObkhCQk1PYjhrVTNCS0M2YUJnelVoaTUxdW9zUExzUXFlYmZ4S3QxZ3c0QlNkYnZJSUpMS3FjV3RlT3NtN2lYOFFXY2lNNWNhODhhYUlOT3JDcU9SUVY0cG00bElYTzVmSlpPZVVaUHBZQnlrRGFBVVJhQm8zcGZxdzdpT29sbEhhOUZDV1RuTjR2dEllRXY0ZEdVZGpNOUgzZy1yWFkwa0p2YjN6Yk5UTWRSanFmOWxxVDFiMUFwTU9BUQ?oc=5",
+      "title": "After getting pass in run-up to election, Israel back in hot seat over winter aid for Gaza",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -532,14 +853,6 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQaEplcVU5UFhDM1VEYnk4OVBtWEU4cDJ3dFB0Z2I4TldEQXZmSEpKUURFcTRPMFZqMzk2ZXJqY2U4VzlWQU1WbU5XcUVmbU5VMVdCblp3TnVwUzAtVUtmWGZWQk9mR1ZMVzlad3NMX1hMZ2M1aGJ6MG5uVWZqcVNSeTQ5cUs2clFIdkJYdlhrY2lBSllvTTNrSnd5MTFmaUd0UkxfWjNhQ2hMY1lrcW5FTjV6b0tsOWZFUVU4aFU0QTVhbG1adzhBVm56MFpLN2JhUHRaZTllSdIB3gFBVV95cUxQZ2JTYlBMYUZNUTAtN3NrUVlKMkRuYV9uVzR6c2xHWVJmLUxWcFRGdll2a0xtRkhzSUJFcElCRC1jVXloTm5FWmlDMXlYU3dxUVpjS3hoeGpMM1B5Z3JUbzV0bS1RS1RmaE0wbHNjUXFnY1ZYNWdHU05kVU5fbW1fTjIyYkhSLXZnUG9HTUVYYldnNmVkbmlEZ3U1dWxBbEtXTU9ZM2hfLWlIRVp1dEhNQlF0UlpSZzlwMmFMZWZOSXhTNngxT1lLaGhkVGwzSlNLSjY5QUl5OXJXZG43Tmc?oc=5",
-      "title": "India-Thailand trade reaches $21.49 billion; UPI-PromptPay link discussed",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
@@ -567,16 +880,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBCTWtUckpQdlJfOVExeHZBTThTbkxhM1dKMXRMYXVfdkRpQTg3Ql9HQU9uOU83VGxiZnRVMDZac1daQzQwWEw3ag?oc=5",
-      "title": "UN General Assembly elects Bangladesh’s Rahman as next president",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBxMmVZTmhHdXM5N0t1X29nV3NNalF0S2RzOEVNUmx6TjdSTU5XWTczZlBfZzhlTFlfTXltVnZYVjY4THV5LXUwekE3bUFMUnA0VTdJNA?oc=5",
-      "title": "Azerbaijan and Vietnam eye new era of cooperation head of President Aliyev's visit",
+      "title": "Azerbaijan and Vietnam eye new era of cooperation ahead of President Aliyev's visit",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -599,14 +904,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4zcF9sdjFwSHFsRDlBQmhjV3JObVdEblJURmhnMEJlVC1Fc1NDbVJib0lnVmhYR3h1U1Y0YjIzMU1LUVBJbnNWelMtenFoaktIVTNsUVVkZ29vN2prWldWVG4tQVlnNXlTd1F0SHpsazRNUTJ2dENZ?oc=5",
-      "title": "Uganda Launches Diaspora Network in Sweden",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBZTUxkRVhfRDhfTDBWTzJzZ0RROHFEV1pDc1hFYkZLb3pWSjBfclk4ellTOTFLVERoLWxYQms1LXozWjZCNmpNcU11YmtRWDZwbzROUDJWaXJjODNPOGdmZFhQdEl0T2loTjVxQVJMaFh1NEl5MHlQMg?oc=5",
       "title": "Venezuela’s Acting President Delcy Rodriguez Leads Business Talks in UAE",
       "important": false,
@@ -615,24 +912,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQMGhQUV9ieE1YX1NDZjZ1amVNc21zOV9CLVp4SE9qbW4xOExGaWpxZE1ra0lMaDdLLVJrOVplaEkzV0dZM0hyUl9hcS1jZzdLeW9QWVVhM0VNeUgzTHVkMmdVVDhzOUgzMzFwV1J5VTJBWVVkMzVvUktJdzNCeWxQeW1QTktUaFU?oc=5",
-      "title": "Phuket Fire Kills 11, Injures 18 in Patong, Thailand",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSTJvS0Q1NFFkYlhSRU5xTGlXMGF1YmExNTVYWkdLd1ViUjJEUWNXZm96WFZrdWlOeDd0UmJySENIaTQtZHhrSzZEZlJ0LThEU2c1bFlDUFE5aHNTMDJOeDJmVG45QU9aOFJVamFld1VvRmoxaVdKaTk0NEJWMk9SQlF6MlVHR29oSFdPS0tvTFdrOFJsMHhxX3hKY9IBoAFBVV95cUxPWkZ4MkNlcjRKWGJKelBnSVQwVGRvUXpqakZEcF9VSkVfSXlDVy1rY2ZyaDMxdDItMEV0X1JoaWpvaTNkNnZrQk9hVFQyRmQ3WkdvekRwRmJNN2w0NmI5b0wxS0JtdUczRnRWLWthZE85eXY3WWNVVnNfNW84MHMycUdaVWF3bWw1RU9QRGF2QlRaZUV5VHNCNi0zLTJUZndL?oc=5",
-      "title": "Gunmen kill 17 in two separate shootings in South Africa",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMzZ2TjJQTS1CbmdJc3UxTi00Ym96RmpnbE1ySzFjYjRVQlB5c0p3c0RsRmNocmp2VHFaSFc1Q3JOR2dzOUd0SnNuZFVFTTVCVG9NX2xVaWR0S2NubWpPV0MzNXIya3dBSGxfMy0wX1ZjcjlWYjMzZE1CWFhudXBpSTY0NEJZNkxzZWJhUXp3UER4dVNucWp1VEpLUTFiM2lIaVNvUg?oc=5",
-      "title": "New mass protests expected in France Tuesday as presidential election approaches",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZWhUbWJxeHROSTZudWVKd1FGN2dWMmpUZlljZWZoVXhXT2kzc2dXMUNjVnp0T21OdGlnYzJ6ZzFvV2hmUVYwamVWTFQycERNUjYxQnZmWkNxR0d1eEFLVXNBOHlOVGNIcklxc0dzMEdNR0dCamZ3eS15RDlTaExFLUxWaw?oc=5",
+      "title": "How far can Singapore’s own laws go in the chip war?",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -649,14 +930,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMivAdBVV95cUxPTEZ5X01vSEdNakduRFJ0VDJKWXlWdTQ3Q0RYMXNvQ3hfVVVLb3B2ZU8wNG40SklhcGhSNEg5am92YkRKWDhLek9JOEhYMzZibndJSmFDTEFUcUdMWFdJYkRFUmhsbGVHWUV6TkhrcUI2TjU2SUhGRnZaMzJTS3NJTk1xTjA1dzJ0VEJnWmVyVm03N2hwWnlMUWM1aWxSa1czUnlUZTZSVm1Dc1U4WjNteGdWcW1VZl91VUZTU29hWTlaMUY5OWVGLXYtaThrSzlEZk9yVVh0bGZDQ3F2QlRWbXRQYXotY09mTFEzeUJOcU9jZXFxNTZKY0dlU2JLUS04T3MzaXkyNXV6YmZKZU1FSTJId3ZTajBfYktxQ1BkZlNoYVY0WHRabEJXMTRoZFljVTR6RE55aTRTNUVCcFdoWjVTVHRHVWdQd0pZWExvbU44dS12TVNTdld0eGt3NWlXek9pX1JtZ2xiTGFOaHByX2dsU3R4UG1iQ2dOS1l4SVBOdy15RWhMU1pURUpuZlFkVGZIR2NfWFFOeWJIRFpaQUJMeVM0TFdYb0VVOS1rdFVaNlp4ZDBkRjNVU0laOWhnVmtiQVBQLUVCRzJNQXI2ckFmSS1JWUxNeWZJb0VtaV9rR200bnVPcEhLaGIyQkhUcjRZOEhOU01fY3hrRlhoajNPZHRwQm5SSUQ5ZTRsUDdCNW5YMDBWbFdtLTlCalk0UXIyTVgyb2k0Y3B2MG9MU1JILTdLZlItc096QU51YkE3ZW1jRjdvR2hjbVdJSE56Rzc2eVUzQ04yRUxWM2F6eWFYT3FhZVgtMkRBRm91SUYyRHUwUk9yaW9CTlFfS3gwTzk1OU5ESXhaX3hQZjNmd2pCa0cyTjlYb3pQX1h5dzA5N0lRVUo0WFhiTVNkbUk5VloxVWx2VThZeW9NbktZTTNiSWJzdWVScjVKcjdub3NLSW0zQy00SUpyVldWQm9kUFZqRENld1pBeWpaLUhsalo4QW5xTUVJUmJ5ZEg3ZnctSVBhWHNFRlFBQm42N0wzQ2FNOHZ5RUNxSDlCbGxRS2xDVEcyZjk2TEdVOERiYnZkdTZJUkJlN05tMExSRmp5dnFuelpjRWx0enU0RjdETmtfdXVIZWx0RmVoMDFGaUFMY1pGX0hrazJ0TUJTc19BZFVJc1V2RGlZYk1mNWVHeFExbG9uTTVES3NMb2g1cU82SVRfTjdqMTBkQmUtTXNsN191NFpFMjE1TUFTMll6UTB6UTdnYnV3QWtPSg?oc=5",
       "title": "‘𝗜𝗻 𝗮𝗻 𝗶𝗻𝘁𝗲𝗿𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 𝘄𝗼𝗿𝗹𝗱, 𝗻𝗼 𝗻𝗮𝘁𝗶𝗼𝗻 𝗽𝗼𝘄𝗲𝗿𝘀 𝗶𝘁𝘀 𝗳𝘂𝘁𝘂𝗿𝗲 𝗮𝗹𝗼𝗻𝗲.’ 🤝🌏⚡ President Ferdinand R. Marcos Jr. highlighted the Philippines’ efforts to strengthen its oil reserves and attract investments in renewable energy, modern power gr",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNGtzdjRFSDduNzZybWo4THRHYkxrZW9sQWNGNGxUeURBb3V0STB0Z3ZLSTlRTWo5SFh2SlgzeThRTGlIZW93R29wQmI1a2I4Y3pXelJ6X193b19qbHJ3Z3VhVDNkaVV1RGlWcjdTTHFQaUVPSUh3RW5CU2VwQzVXNW5BUzF4R2RBc0gyMHFDMTgtUGVuaFZORTFzS094c1BablBiZVF4a3diNTJsRVpfUFJsd1I0QjJtc0xfZC1wQQ?oc=5",
-      "title": "Semiconductor firm KLA opens new Singapore plant that will create 400 new jobs",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
