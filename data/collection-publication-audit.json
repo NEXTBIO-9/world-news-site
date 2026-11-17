@@ -1,21 +1,21 @@
 {
-  "updated": "2026-11-17T21:10:03.419868+00:00",
+  "updated": "2026-11-17T22:05:36.050443+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 17,
-    "not_in_current_queue": 51,
-    "pending": 16,
-    "published": 113
+    "important_unpublished": 15,
+    "not_in_current_queue": 47,
+    "pending": 17,
+    "published": 116
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 15,
+    "not_in_current_queue": 13,
     "pending": 2
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 10,
-    "repeated_extraction_failure": 5,
+    "source_blocked": 9,
+    "repeated_extraction_failure": 4,
     "in_retry_queue": 2
   },
   "blocked_important_rss_candidates": 0,
@@ -26,14 +26,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5mU0hCekNLRmNfTXpEVzhYWE1kQWJjRkoxWl9KVVF4WVhzdG1WMmtib0R4eWR6SlcxUFNNSWRQWVNrajJ5dnp4TWN5TQ?oc=5",
-      "title": "요양병원 MRSA 내성률 84%…동네의원도 항생제 내성 비상 : 건강",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -85,8 +77,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNSUhENVlYekE1NXRxTWJTZGNBdVpxbG5TdEk3ZFZMUzI2NnJITWRKWE02NUpic3lWUXloR1VubHdMblJKek1YR2I5WENzUUJyTTNzMUFjRGRzU25hd1BZYTFlaXUwNjRxdldUbkU1NVZrVm5XU09Fcno0TDY5a20xWS1OaDhsMlZSQm15Wg?oc=5",
-      "title": "US loses measles-free status after 26 years amid major outbreak",
+      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNN2VqZHdtZmJfejJKY1hxdE9adlRWSjJYcnRQcm5hRzNMQ3VlWlJ2eXBVczJ4aVdfdF9oRGhSY1J1cHJBemV0OTRtYU9aVFBKS0J6a00yUHFkcHhaNDdxUkFwR3lZMTFWSEJ1UzQ5aWNtVDlHV2lHeEdkdGp5TjZxcDZzS3BOaVc0NFFEbjFpZHEwOGZLYXEydllkRmFmZWtCc1VWOHYyOTF2M1lmZVAtTWFXOGR1ZUU4Z1J0REpsX2wxOFFRcDRXQlo1bFZKMlY1enU5b0ZHNFhOV0ZvSTNMUFl3WVU3dExrSWc1LXNuamxqeUtsVWZLaDFtbXV5THJ2UkwxcmVJSnNNMTJqcC0wQXlR?oc=5",
+      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -111,14 +103,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORnk0TWY4ZzBFZ3VkeThFTlMzOEIyVHVDQ3pDNWxGTUxlX3dTejlkbktyd3JrQTF5dnFaazlab01mZnF0aDJRbUE2ZmxFTkptUU10TDlCWGVweFZ6ZmNFZmsxSFNVNDdpVnRmcEktdnMzYzMtU09Sdi1Sc0MtQTBOZU5vMGx1MkFUVlM2ZmFsU2lmeXVabDZyMGhKaG1xR0NBUzMzQXpfcw?oc=5",
       "title": "Helus Pharma to Present Topline Results from Phase 3 APPROACH Study...",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOWjBfNXcyeXlqSF9JeE0tTVl4azJZdkpHZkl6R1pVT2oyTFdfbms2dmJ4SjBFS0M4NmVndjl1d3IwNGdiVkxWckRBWUJYOEpvQlptaHhGdzF3M0QwT2xac0RvYzVRYzh3WWZVdWtINUtIUnJRc18xY3NjYzdVUkFBRVVUOHpOLXRoOGZIbDlhTkJxLU5KV0l6bFVlUzZIeFZPVVk4Mk9QUjZYSFVHWnhLNG9PczNaUWhUM3BQSEdQMFl0clcwV1ZyOXMtRjVlZDJvcXRTeTAwdlVCUEJNcHp1Nm9QeUZaUVRhTmtsZklzQkt2QmpuWFpsX0c1dkNIdVhqM2FvN1ZNUzM2clRHVy1wZUNiRGFtMm90RTVJUWRLTTM4ZnQxNXZSdkN0aw?oc=5",
-      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -151,14 +135,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5mU0hCekNLRmNfTXpEVzhYWE1kQWJjRkoxWl9KVVF4WVhzdG1WMmtib0R4eWR6SlcxUFNNSWRQWVNrajJ5dnp4TWN5TQ?oc=5",
-      "title": "요양병원 MRSA 내성률 84%…동네의원도 항생제 내성 비상 : 건강",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5VZkRvcnFZM1NpSWVxVFp6Q2hZUG1jc0tPbGFFeTJrSmZUYXJqdHQ5NjhqUmJwa0t1dDUtZEplTU1yeE9DQWg3Rkg4bU05cm0tVDQyOHFWOVVjdw?oc=5",
       "title": "“에취” 한번에 침방울 4m 날아간다…감염병 줄이는 ‘기침’ 예절",
       "important": true,
@@ -207,8 +183,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNSUhENVlYekE1NXRxTWJTZGNBdVpxbG5TdEk3ZFZMUzI2NnJITWRKWE02NUpic3lWUXloR1VubHdMblJKek1YR2I5WENzUUJyTTNzMUFjRGRzU25hd1BZYTFlaXUwNjRxdldUbkU1NVZrVm5XU09Fcno0TDY5a20xWS1OaDhsMlZSQm15Wg?oc=5",
-      "title": "US loses measles-free status after 26 years amid major outbreak",
+      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNN2VqZHdtZmJfejJKY1hxdE9adlRWSjJYcnRQcm5hRzNMQ3VlWlJ2eXBVczJ4aVdfdF9oRGhSY1J1cHJBemV0OTRtYU9aVFBKS0J6a00yUHFkcHhaNDdxUkFwR3lZMTFWSEJ1UzQ5aWNtVDlHV2lHeEdkdGp5TjZxcDZzS3BOaVc0NFFEbjFpZHEwOGZLYXEydllkRmFmZWtCc1VWOHYyOTF2M1lmZVAtTWFXOGR1ZUU4Z1J0REpsX2wxOFFRcDRXQlo1bFZKMlY1enU5b0ZHNFhOV0ZvSTNMUFl3WVU3dExrSWc1LXNuamxqeUtsVWZLaDFtbXV5THJ2UkwxcmVJSnNNMTJqcC0wQXlR?oc=5",
+      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -233,14 +209,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORnk0TWY4ZzBFZ3VkeThFTlMzOEIyVHVDQ3pDNWxGTUxlX3dTejlkbktyd3JrQTF5dnFaazlab01mZnF0aDJRbUE2ZmxFTkptUU10TDlCWGVweFZ6ZmNFZmsxSFNVNDdpVnRmcEktdnMzYzMtU09Sdi1Sc0MtQTBOZU5vMGx1MkFUVlM2ZmFsU2lmeXVabDZyMGhKaG1xR0NBUzMzQXpfcw?oc=5",
       "title": "Helus Pharma to Present Topline Results from Phase 3 APPROACH Study...",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOWjBfNXcyeXlqSF9JeE0tTVl4azJZdkpHZkl6R1pVT2oyTFdfbms2dmJ4SjBFS0M4NmVndjl1d3IwNGdiVkxWckRBWUJYOEpvQlptaHhGdzF3M0QwT2xac0RvYzVRYzh3WWZVdWtINUtIUnJRc18xY3NjYzdVUkFBRVVUOHpOLXRoOGZIbDlhTkJxLU5KV0l6bFVlUzZIeFZPVVk4Mk9QUjZYSFVHWnhLNG9PczNaUWhUM3BQSEdQMFl0clcwV1ZyOXMtRjVlZDJvcXRTeTAwdlVCUEJNcHp1Nm9QeUZaUVRhTmtsZklzQkt2QmpuWFpsX0c1dkNIdVhqM2FvN1ZNUzM2clRHVy1wZUNiRGFtMm90RTVJUWRLTTM4ZnQxNXZSdkN0aw?oc=5",
-      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -343,14 +311,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9LU3NENlltY3NPNGozbU5UeDlkb1JZWVF4VG85NUFEOHByelV6UjZtalFQSWxZb2d2QTl2by14OEczcEI4S1BGbXBfY0szYzh0RU14eU1adjRTSXZ6WkQ1aVh3S0JBZWxGanJ3?oc=5",
-      "title": "\"인공지능(AI)이라는 이름표가 신약의 가치를 결정해서는 안 된다\"",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE15d0JHa2pRV1F6cm5ibEw3bDFsbnR6T3hLUWlDdVpsWjdQV1ZmRXNSamZ2QkU2Tk56SlNzaVJUX2ZFSUpzM01Rcko1V2NKX3VRTXltUGg2LXFfVDdxN2NlZ21ZZzZuNHJqNXc?oc=5",
       "title": "염증 억제 넘어 장 점막 회복으로…대웅제약, 최대 6625억 신약 개발 승부수",
       "important": false,
@@ -415,6 +375,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOWFBlbEJuZWM0V0NHd1UwQ1E5aFBnRGRZemtSeTdKX0N2ZzZidWZLU0Z5eHhmcm8zUGtiMnd2QnI5VzdaVk9uY2VMRXRnRExjcVZqdEJSa09VcmVWQzNVNG9GX1ZibnAtYzI4NE1XOG1yUFY0TDVjOXJFa0E0ZWtILWUyT2lRcU1RVk4wYQ?oc=5",
+      "title": "Russia Seeks Stronger Nuclear Energy Ties with ASEAN",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNRVY0RFpoZjlrLUh0UmctRUZRcEdVQk9HS0V5dWV5TXg1TDBDRTQydHB6VnhVTDhVTXVpUXBSUEV4eGVyUW80Uk5xdTBBSVFzel83b21iUWNhZUVQNF9RQXlZWTVPTEdjSHlYQ2ZsSWY5Q3RyVUQwUGt6XzBkM3J4QnoyN29EXzNSYnhkUl9B?oc=5",
       "title": "Bangladesh's first nuclear power unit connected to national grid",
       "important": false,
@@ -471,14 +439,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNR2RnR09BYk01UUhPNmkwV2VQeVNEWXhyeHZrbnRETW51VlpOMGc2NmZSWVoxR0JXUVk4SVZoX2RBaUwzZnRnOFJoOWk5RnJnUDVvMlcyY3B6X0lmTnM4RjVwdmJ6dGFCVjlIYjk2MS1Rb0pmVTduY0x3QWo3SWgyY09VdEVfeDRMVHZabjNSZUgzclhMS0xPd1lod2NHX0c3SGhGbU5tcjdOVFhl?oc=5",
-      "title": "Israel set for new parliament speaker as Netanyahu grip loosens",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSDMtU0l4eWEzWW9TaUxnS2NEdUotUjNRdTNoS3BLYWNqV2FLdFVfN0NxOVV0Z0hUOHZZamU4WjdsWnBzRmpET203V1BZYWhzczEyRDNpUVFTZkt6Mk9fT0lBemkzZU52c1c4T0k3WGVCdW9JMWsybkFBOG1pZFNkUTRNRnFmSHRDaG90dE9teXdIMTZTeWN4bzdaaXBmLWZ6eklMNmhBZVhweE1mUGIwRtIBsAFBVV95cUxOSDMtU0l4eWEzWW9TaUxnS2NEdUotUjNRdTNoS3BLYWNqV2FLdFVfN0NxOVV0Z0hUOHZZamU4WjdsWnBzRmpET203V1BZYWhzczEyRDNpUVFTZkt6Mk9fT0lBemkzZU52c1c4T0k3WGVCdW9JMWsybkFBOG1pZFNkUTRNRnFmSHRDaG90dE9teXdIMTZTeWN4bzdaaXBmLWZ6eklMNmhBZVhweE1mUGIwRg?oc=5",
       "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
       "important": false,
@@ -489,14 +449,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdXI5aHJnVk41VWF3cVRTRFpNeW1KMUNhU0VORXlrclcxeDFjOFg3R3RwUzBsam0ybzltS3Y1OXhobTZhUDQ2RTFhTXB5d29LdWpSbmlJallkanljS3BuWVBXMjVrdkF4ZU9DM3BPbXJrb2MyS1RaWDJmZlVla251ZE9TU245NnRVQmxTYnZvYTQ0Ry1CZHJRTUgxYzBCTG9tMmNSX3dHai1YV2RwbHRFZThn?oc=5",
       "title": "France's Le Pen promises to lower retirement age if she wins election",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNVWVFcktqU1RqeGgxSkdka3E3OGJpdTJXRWlXOENlQjlpWElKU0VzX3ROd1BQbUNMeWtyeFo3elM5X0pCZWFaaFM4anQ2QkZnWXJ4RXVoQ0g1MmF5YjFXVk9NMmVLRkpkWndJeEE3bkVXbHZjTWxnZXo0bGY3MWVjbGpsSUo0bThhQWM0NFU4Z1pkN2J4Z2lES2lqZm1rRUFyQ0NOeFc5R3VqZEtwTkhkNVhkU1Y?oc=5",
-      "title": "Mongolia president announces resignation following corruption allegation",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -551,8 +503,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPUDQteVB5SGdEbmFJYktZb3I2UWRsY0JES1M5T0NsdmR3NklIVlhXTzVIeHk1ZFE0N3Z2U2tjQmpwM2UtcjhpaGdiaTdBSTVNSi1IOHhxNjdKSk1XVnBUa1V1eHN4YTBNT0h1NXd3bzYxSmJLbEJLcGo1dUpnSFh6Y3FIS1pzUkJGSVJiQk01RE9aV3ByRDFhZmxzdG9mNzJWZk9LX1BFamtnUlJrMlc5MVIyaVUwN3JjamdZcFREQmxWOGQ5?oc=5",
-      "title": "German Investor Confidence Rises to Highest Level Since Start of Iran War",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNRjlIbUpKS3NfVi1Oai13Y213OWJ4S0FkU0RIa1hDU1o2ZHBBN05zUXRKQnFZUDlXZ1hhbUxGS2wwUUJIbEVRSmNsSXFRNk10dEhIS0NuWVFHSHBPRFNxUUluT0ZZRlByUVhGajRMcWUxQlBkazFwU0hvYUthYlZGRzdEQTdrNnl4cDJWeEIzZWtaYnc0UUFMTk03QldsOHZiZGNTRTlmRWNrcVpIWHg5UGMzcDRINkF4cG1ZTExsZktQSjlTNm91Vg?oc=5",
+      "title": "EXCLUSIVE: Risk of nuclear accident in Ukraine increasing this winter, atomic safety regulators say",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -625,6 +577,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxOeWp4RHV2T1o3WndsTTdyZXlfYkZBRTBHRTJVQm5ZbkZGSXZlVVBYQ1I1TzYzQm5oTE5Cc3IyVWtmOTZwZDdTQjVwbzVGaTVVa2tMT0UtY01Xd0hBYW1VOXo5Wk8yZkt2YXp2OG4zeVZ1ejFkTU9KTkFUdld4SUJLSy05MGg5a0ZTbnhBQ1VvQzd3bVhLQTVrcFlWaC1uampRaDRYVmJDT0lZVnlET1pLWEM5c2NTa3IzWVJWWjZuaUlQcGp2eVBLRHV5NWxTcUpVWEdXQm1wT1pfMmFvSHkzSGY3R0hrTVdFM2t5cHhtNFVha3ZHd2NVTjRIS21pZndSVUdtX1RzMHlsVVHSAZACQVVfeXFMTTBnZHdTU3A1S292b21vSmF6Tzc1NzVVX25qWWZZRF8tUHBTUTlRS0Z3dEJXS3FIbWhzcmN4U2xHcVpPYzBvQTNaS2d5bFJBSmxhT29vTW9NVUtMMHY4aWFEY3BHM3BVY1RRQmpJZG5yVUFsZUx2bHlmS21PWGxnSkRmUTl1RHQ1eTJCeUNlQTdjU3pUcVFTc3RNM082Sy1FcVIxcGtHek9jd1gzVEU0WGJXRmY5Y1hhNHpHcmJHaTM4MXNQV09zN1Y1cDNkNTNCckEyZFd0YURvMk9fUHVJODRsakFLR216RWdWODl5WEhBU3ZFOEY1U3NHcV9LMHBxLURaX0k4QWlRMm91TEE0d2Y?oc=5",
       "title": "'I have never stolen': Mongolia's president announces resignation over $25 million bribery allegations",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORzNIVmdsTk54YWFOZWdPdlQzQ1Rqb01pNGI4VlBFMGVUWjZkQXVBajlzcjd5Qmk3SmtrVWxEMXhibjcxTDRxb0dIalU3dkl6UEI1Y013SmVndkM3NU5QNGxBN190MjExSzgzMWtFcFRCN0dSR19wYUVKQzBPTWJkY1gwNnExMGVnbEg1ZVo5X2o2VFZ0UXBWbkpR?oc=5",
+      "title": "Rooppur Nuclear Plant Feeds First 350 MW Into Bangladesh's Power Grid",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
