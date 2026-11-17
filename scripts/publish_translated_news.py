@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 from translate_news_titles import english, valid
 from news_priority import important
+from fetch_news import quality_score, selection_score, MIN_QUALITY_SCORE
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
@@ -85,6 +86,12 @@ def retry_count(value):
         return 0
 
 
+def eligible(article):
+    """Apply the same >=70 threshold to new, queued and restored stories."""
+    return (isinstance(article, dict) and quality_score(article) >= MIN_QUALITY_SCORE
+            and selection_score(article) >= MIN_QUALITY_SCORE)
+
+
 def combined(staged):
     """Current feed first; then still-fresh queued items not in this collection."""
     queue = read(QUEUE)
@@ -104,7 +111,7 @@ def combined(staged):
         if not isinstance(entry, dict) or not isinstance(entry.get('article'), dict):
             continue
         item = entry['article']
-        if (retry_count(entry.get('failures')) < MAX_FAILURES
+        if (eligible(item) and retry_count(entry.get('failures')) < MAX_FAILURES
                 and isinstance(item.get('title'), str) and item['title'].strip()
                 and isinstance(item.get('url'), str) and item['url'].strip()
                 and identity(item) not in seen and identity(item) not in excluded
@@ -112,7 +119,7 @@ def combined(staged):
             result.append(item)
             seen.add(identity(item))
     for item in staged['articles']:
-        if (isinstance(item, dict) and isinstance(item.get('title'), str) and item['title'].strip()
+        if (eligible(item) and isinstance(item.get('title'), str) and item['title'].strip()
                 and isinstance(item.get('url'), str) and item['url'].strip()
                 and identity(item) not in seen and identity(item) not in excluded
                 and item['url'] not in blocked_urls):
@@ -231,7 +238,7 @@ def publish(staged_path, audit_path):
         published.append(item)
         seen.add(key)
     for old in current_items:
-        if not isinstance(old, dict):
+        if not eligible(old):
             continue
         key = identity(old)
         if key in seen or key in excluded:
