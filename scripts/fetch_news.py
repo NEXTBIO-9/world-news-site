@@ -322,7 +322,7 @@ def quality_score(article):
         score -= 10
     return max(0, min(100, score))
 
-MIN_QUALITY_SCORE = 68
+MIN_QUALITY_SCORE = 70
 
 # Country-scoped Google queries are not proof of country relevance.
 # Require a country reference in the title for English queries.
@@ -744,7 +744,7 @@ def main():
     for article in unique.values():
         reason = protected_reason(article)
         reasons[reason] += 1
-        if reason in ('통과', '핵심 사건 보호'):
+        if reason == '통과' and selection_score(article) >= MIN_QUALITY_SCORE:
             article['countries'] = confirmed_countries(article)
             pool.append(article)
     pool.sort(key=lambda a: (selection_score(a), a['published']), reverse=True)
@@ -855,8 +855,10 @@ def main():
         for article in accepted
     ]
 
-    if len(articles) < 15:
-        raise RuntimeError('Too few quality articles; existing data preserved (minimum 15)')
+    # A selective high-importance feed may legitimately contain fewer than 15 stories.
+    # An empty selection is not evidence that collection succeeded.
+    if not articles:
+        raise RuntimeError('No eligible important articles; existing data preserved')
     # Protect the public site from a sudden abnormal collapse in article coverage.
     previous_path = Path('data/articles.json')
     if previous_path.exists():
@@ -865,7 +867,7 @@ def main():
             # Published history may exceed this run's MAX_TOTAL collection cap.
             # Compare against the achievable collection size, not all retained history.
             baseline = min(len(previous_articles), MAX_TOTAL)
-            minimum = max(30, int(baseline * .35))
+            minimum = max(1, int(baseline * .05))
             if baseline >= 80 and len(articles) < minimum:
                 raise RuntimeError(f'Severe feed coverage drop ({len(articles)} < {minimum}); previous articles preserved')
         except (OSError, ValueError, TypeError, AttributeError):
