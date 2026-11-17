@@ -1,33 +1,25 @@
 {
-  "updated": "2026-11-17T08:55:58.771262+00:00",
+  "updated": "2026-11-17T10:15:06.028929+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 21,
-    "not_in_current_queue": 43,
-    "pending": 21,
-    "published": 116
+    "important_unpublished": 20,
+    "not_in_current_queue": 44,
+    "pending": 19,
+    "published": 117
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 16,
-    "pending": 5
+    "not_in_current_queue": 17,
+    "pending": 3
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 11,
+    "source_blocked": 12,
     "repeated_extraction_failure": 5,
-    "in_retry_queue": 5
+    "in_retry_queue": 3
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
-    {
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPZVZpZzRPbkxsc2FrMFFmdFNQRWVYYnNKbWxKZkxkRG9INkdIWmZlRTJGeW1wZlhoNHA5QW5RZGtHRlFvaHMyNDZWZFBHaWptaHlfb0JkaUFKbXJIX3lrUVpKTHBXR2JhY3k3elBHOEU0bjZNOFdxSUZ5bjRwU1JoQXI1RzFVZ05Sd3UwbUhvZmlDbFU0VncwQ29CRDlZd2ZnUjd5X3hQeUI4YUVoeFhXQlV3WDlyZUxjU3daWTFNZ08xeFM0eFMtc19KR1FjOTR4NXFjXw?oc=5",
-      "title": "New Zealand central bank warns of rising global risks, growing private credit exposure",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
     {
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMHFuMWFUcVpSWWhxeGNYSHNEa0M1THJnOUk4WnYwNG9KNmFZZDhfdDhpUjlMNmdaUkZjXzZUakZURy0yQWI1NXpGMHI3U2cyRmtyOHozZ215bGxCZG13bG16R1p1ZE5zSzVZZlpzdWpUd1NpVHd6Y004amliVlB3VkFSeUVvRk5PVy1CeTc1SXY5UHJJbU9CaHJlRU9jc3lNVHZxVmVoQ3dYa2tmU0diTjlDcWJJZldRbng3SzNmWXVjN1hOcTBCbVFHZG5ZWnMtaHhuYm1RNHQ3T28ybms0?oc=5",
       "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
@@ -69,8 +61,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1YY3lla05RNFpOcDRNaS11SkhjSDhhSlhYWFJVT0JnN3pNNjdYOW5GaF8tZXNKaEtOTFl4czVHUEE5ZXU5SlFKREMyakh6TXFieTV4ZFlSWDJwT29Bc3hYZDc2M2QwWE5IVThNVXpjcWVFNzItREtZ?oc=5",
+      "title": "Federal Emergency Management Agency| FEMA, Hurricane Katrina, History, & Controversies",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9pczlRYTRiOTVPcjl3MWdmUUdmX19TRnp5T2xsbzFJbXNkYlU0YmhMRHNKd3V6RXB1Q0ZIR3dBczVvZ3ZpdEFfa2tyT3M2RkVzbEF0M3pZY24zVDVIWkxvcU8wYlBoMWcyYUpueTBweHprX3BhSkE?oc=5",
       "title": "Norway bird flu outbreak sparks supply worries as culls grow",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWDFEZm00Z1hPc0ZFOWFlbnVocWxZRGFEMzAwVzU1enFDOTZMcEFYQmo4NGNicU8wMDYzMmZrZmYzVmg1TFh3enZnWFNJSnJyd0I0RUp4RWNCX1AwYUZzMWdaYlZrZThUQWg2bDJnamhUZGdRd2c5QjZ0WG50aWNOdA?oc=5",
+      "title": "Colombia Earthquake LIVE: Strong 7.4-Magnitude Earthquake Hits Colombia, Tremors Felt In Venezuela Robert Irwin (jxLL3xsd6A)",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -151,14 +159,6 @@
   ],
   "unpublished": [
     {
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPZVZpZzRPbkxsc2FrMFFmdFNQRWVYYnNKbWxKZkxkRG9INkdIWmZlRTJGeW1wZlhoNHA5QW5RZGtHRlFvaHMyNDZWZFBHaWptaHlfb0JkaUFKbXJIX3lrUVpKTHBXR2JhY3k3elBHOEU0bjZNOFdxSUZ5bjRwU1JoQXI1RzFVZ05Sd3UwbUhvZmlDbFU0VncwQ29CRDlZd2ZnUjd5X3hQeUI4YUVoeFhXQlV3WDlyZUxjU3daWTFNZ08xeFM0eFMtc19KR1FjOTR4NXFjXw?oc=5",
-      "title": "New Zealand central bank warns of rising global risks, growing private credit exposure",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMHFuMWFUcVpSWWhxeGNYSHNEa0M1THJnOUk4WnYwNG9KNmFZZDhfdDhpUjlMNmdaUkZjXzZUakZURy0yQWI1NXpGMHI3U2cyRmtyOHozZ215bGxCZG13bG16R1p1ZE5zSzVZZlpzdWpUd1NpVHd6Y004amliVlB3VkFSeUVvRk5PVy1CeTc1SXY5UHJJbU9CaHJlRU9jc3lNVHZxVmVoQ3dYa2tmU0diTjlDcWJJZldRbng3SzNmWXVjN1hOcTBCbVFHZG5ZWnMtaHhuYm1RNHQ3T28ybms0?oc=5",
       "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
       "important": true,
@@ -199,8 +199,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1YY3lla05RNFpOcDRNaS11SkhjSDhhSlhYWFJVT0JnN3pNNjdYOW5GaF8tZXNKaEtOTFl4czVHUEE5ZXU5SlFKREMyakh6TXFieTV4ZFlSWDJwT29Bc3hYZDc2M2QwWE5IVThNVXpjcWVFNzItREtZ?oc=5",
+      "title": "Federal Emergency Management Agency| FEMA, Hurricane Katrina, History, & Controversies",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9pczlRYTRiOTVPcjl3MWdmUUdmX19TRnp5T2xsbzFJbXNkYlU0YmhMRHNKd3V6RXB1Q0ZIR3dBczVvZ3ZpdEFfa2tyT3M2RkVzbEF0M3pZY24zVDVIWkxvcU8wYlBoMWcyYUpueTBweHprX3BhSkE?oc=5",
       "title": "Norway bird flu outbreak sparks supply worries as culls grow",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWDFEZm00Z1hPc0ZFOWFlbnVocWxZRGFEMzAwVzU1enFDOTZMcEFYQmo4NGNicU8wMDYzMmZrZmYzVmg1TFh3enZnWFNJSnJyd0I0RUp4RWNCX1AwYUZzMWdaYlZrZThUQWg2bDJnamhUZGdRd2c5QjZ0WG50aWNOdA?oc=5",
+      "title": "Colombia Earthquake LIVE: Strong 7.4-Magnitude Earthquake Hits Colombia, Tremors Felt In Venezuela Robert Irwin (jxLL3xsd6A)",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -287,24 +303,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQ2x2eDVRWllNeG5SelE2ajFkTWNFVXNrZkxsSEVtZDhfNGNVWVVCeDRueEM4QjJtNUdFM05KS1QweUJDVU00OVZpWGFhbkhNUUZCZHJnRkRSWjZYY3FDejNJVk94NUJGUzJrWnRzZ2pteC0za25CSUxsMFM2Y1RuWjdxNWE1NDdLZk9sUnZzZ1ZsUUx3Skt5SUtGUDVFRmZKQjdTcWRjVU9oTzdP?oc=5",
-      "title": "Russia's missile attack damages two large bridges in Kiev",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOaE9BN2hwVlhvYUpVRjJFMmhGMFdkWjdpd0hDV3gtRG1wZ1dpQ2hHWGowUFZRbno2RU1yNldaNC1OMnQ3R0pZOURfcFpOY3VHcHczOU9fMnlmbml4M1hzTFUtWTVIdl9pRWJ2V015OUJJVWFiMmNjTTB4TVg2Xy1xUjJqMDE2Unlqb05WYXdIbEw5RDBRUjFRWVViSkNJOEVldkNUSWJaOXliaVpIanRQUHlMZXZXeHlaSXNXRnNPRQ?oc=5",
       "title": "Brazil's central bank faces backlash over stablecoin money laundering remarks",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMng0cDN1d1U4R3dCc0dXVW1SbW9HLWFtckRfX3RpWng5MjZRZnVVOFpQUFRHbTkweGNWZTYwdFZfVktSWDBVRXRPaDIwSDUyWEJPLUFFcUtFemNqRHc5b19ZTGxyNjhMVlM5Si1lU0VoeFdVMW5BVjI2dHFma1puM2NYQTJnbTlFWUdvRjNKNHoteGw0ZDh2WTczVTVSeDh3ejVwd2hBZnBTSnZqd3BfcGY1bW9IMHczTXZ6ekFZeUhVXzE1U0llNXVnYw?oc=5",
-      "title": "Global Health Threat: WHO Warns Antimicrobial Resistance Could Cause 39 Million Deaths by 2050",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -321,6 +321,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPWXB0Z002UEpmbHJqaTlBU2EzNFFwYUdTOTJyYW9WY3pQZngwcjB0dHY3MG9McC01VGpfN2hzVzVJZWphUWZaMmh4UnpjbzY4QVdjaHVvVkZDSnZUZER3ZzFGUDN6LUVOS3RBZzU4cnVHWVJ2R1ZsQ0hJNGU3M05BbWFKbU16NUpmbFEwRXlUenEwUWxKOEpVYUhRaUx4SzJ0SnlNaEVaTmJTVkJWOVFrNTE2WnJzSFVKT2I4Qmd1a1BVN1VLT0V5c3FrcDlmMWVsbzdr?oc=5",
       "title": "Colombia’s De La Espriella Vows Spending Cuts in Investor Pitch",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZWxuOVYzRzhhWFprdk1NeHlLMDZyUFVObUhvbDNPVFN4MWM1cUM4cVhKWU9UOVdiVlhIWURudEF0VWEwQnlwYXVINjFieFpqSnZCd3Frenh4U0pkcXkyTE5MUHNVZ2RUcDgtYm9weXhLYmJRV2RwTUFscHhoNFd4d1R2dHpBWUl4dGd3VU1sOHAxY2U2dko2WUlNOEtVSk5GbHRIQkVrUHF1VURLdWU5TkQ1UjBkNlpqRXh6TWVSQnFDYVEtMWVFSEdmZ08wbTVCb3ZuR1BZUmgta3dmdUE?oc=5",
+      "title": "Australia under attack as COP fossil fuel war flares",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -471,14 +479,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWmhxbG10RTR6TVFuLS05QzZFTHRJMW44aWVnT2tMOGZhUkUzWk5GS0d2OG12R2N2MmR5RW8wQzRHOVJNU2VJQ2M5aFd6ZGlzd2VFdXRnTmZIckNlV3l2UWdEemJiTVRnWEozZVRPdHFWYzNRUnFuSGRjM0RRdDNkb2RQN1Rnc0ZKM0tlcXd5ZHFpTjJ6NzhWanZZcGM3akVOM2hnT25ZRnltREZ3djdiedIBsAFBVV95cUxNWmhxbG10RTR6TVFuLS05QzZFTHRJMW44aWVnT2tMOGZhUkUzWk5GS0d2OG12R2N2MmR5RW8wQzRHOVJNU2VJQ2M5aFd6ZGlzd2VFdXRnTmZIckNlV3l2UWdEemJiTVRnWEozZVRPdHFWYzNRUnFuSGRjM0RRdDNkb2RQN1Rnc0ZKM0tlcXd5ZHFpTjJ6NzhWanZZcGM3akVOM2hnT25ZRnltREZ3djdieQ?oc=5",
-      "title": "Israel targets arms shipment in rare strike in Lebanon’s eastern Beqaa Valley",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa0JqQ3k0WGk0NVoxbHRNTHBTeDZxaVkyYmdzdGptNVB2MUVjb3lmcG1OTXRrWGs0U016Vi0tWTU5UmdYbk5IWHJfSTV0UEpEUkZvM0s1WjkwT3E1NFVfMzdGb3pyZ0J3cmhGWXMzVWJnSmpTTVh0MU1VcUJUcFZBamRua0kyOFVWSGUtQ243M2lITElJbmRRS3ZhNTNTenJJcXJTbFZiU0hJVFl1SHl5MnVB?oc=5",
       "title": "Yemen’s Long War, Saudi Arabia’s Security Dilemma, and the Shifting Middle East",
       "important": false,
@@ -487,24 +487,16 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQdnpaRWl6V2V6TmItTEFjemdRWEFkTlE1eVlabXpXOTBTTExMY25sbV8yOTh2ZVN1R1NiT2xxTmRiemN3NEZ1ZkFGdzlFdkkzTDNZcnNHZWk0SFpZTHp2R0lDdjlSQUZ5RzVRMjFELVQ4ZGFpTFc2RURBeE05MEx1eEN3TUgtUlJUZ21nSjB4NkVNbHlXa0wyLVFfNjh3OGtmRmEzUGNzU2tXdnVjQ09kWDl0Y18ydw?oc=5",
+      "title": "First Milei, Now Lula Enters the Fray to Shape Spain’s Election",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZ1hsTUpTUHZkN0l0N0g0TXJUVVNxZXB1dkZmNlBUXzd6U0JCam1KSmNmajk3RDJtSlExbUwwaUU3TEg2Y1N4RUFCWEdENElVRVZnLWI0RXlIRWYyUEIzeVp1R2dGWWMwMGxpNUxFUXR1ckdhdU9RSkQyM3RyUDhhSG50ejFzYVRaaF9GbUlDWmEwRUFsLWI4OEQ1dVY1NVBKdHhqZU9JVXV3TF9CemtnekZYQ3FBQ1E?oc=5",
       "title": "Kenya wins ITU Council re-election with 136 votes, leads African group",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPM1h3eVpOZ2JneXJERkRUM2hNVVJ6cmV0c0pOTjhra3ZRakJJakxxN2ZGM1ZrQnpXRmJSUjhpM2NYZXplVlVpbTNkazdKblFqN1poTmFrRXRpYjQya1hqbmZILVNFZDd6SVZVOWRndTJza2wyYkFKanc0cEEzZkZCQjJkajdKUDgtRWlPMVEwSndKZnpGV2cyQTh3VVBpVUE4ZE5tdFA3aXp5RThyN1c4ZjVOaWJPRm_SAbwBQVVfeXFMTVJqcS1KS0RfOTJVcHd1Q0g3RzQ2Tjl3RGlkV3E4QldkYm9rb2pLUGl4QmdnRW1tYzAtTW9fYUdaTGtGbXdNMzRRUVhua0kzaEtMdVZsb1h1cDhEZjVkeDg5aE9uQkRnQTJPdHloTVlsRE9BSVIzMndXTXg2dFBzS3F3U2RJMHNiMGFWZU0wajhObk1HZ29ydThwcTg2bU1laVh5UUVNd3lCQmZhZm50cjJuMHp2RUMwWWhXNXU?oc=5",
-      "title": "France expects EU sanctions on Iran in December over fridge hack",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRW5OZlhrdktieWRrS0FLQkNEbjB1b2FCVmJzaF9TaDF6ZEo1YWVCblZjYUNrX3JBRmxTcTluc3ktRWpibkF3Z2RQeEdENllUa0xybzRMNm0yd0FnSXgwWHh2SzkwakNYOWUwSXhoMkttZmdRWjlmcmFhbVg0MXFHZmN5eTF6LTZ2dDJZcW9BVk05N0JNcHdQVGZHT0NwemxoMk1NYTVyZUtxUEpYRFBDcWtNa0ZnVjhv0gG-AUFVX3lxTE0ySlVlenU0WW1vd3lXU0hfS3J0QXM3TWFlM29pRmJYVE1BTldORjVmekEtODdhdzdoVHZweXFLNzhDTHFNbWNwU3lETEUtSzFCMUo0OVZ5Zm0tWnBnS2ZZejFqN013dGhVOHUxSnNIbVpMekFEOGg3Wkxqcl81NTB1ZFBXa2xOLTNNNjFQVlJSdmNOcmNqUGZjM2lnRG5NZ0M3bUQzZDdlTHNVeTlrbWxRRU1SZ2gzaFN5bTQ3ZWc?oc=5",
-      "title": "11 Dead, Over A Dozen Injured As Fire Engulfs Multiple Buildings In Thailand's Phuket",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -535,11 +527,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOYjVTNGYyVlRaUjltRjBQeF9HR0pqdk93RVlUYzhEaFZES3BpdmU5TzVjeGFxQmVxQ2FmSEg1MU9qQmtiUjM4TmlqMmJ3MmEzdjJzZ1JHY181bml3WVdfYjUxVVh5V3hTcndLZ3BWQS1qYk55bm0xZmtJVDV2eEN4ZW5tQXNfcGZDS0N0ZFZ3TWdUSEtScW5teG8yak1GNTh5TjJZelBrenQwMHFNbTdDNTFLQThJSlE4Z3dLM2dMZDNXTTNZQXVCbEtxSXZVbHMtYXc?oc=5",
-      "title": "PTV. . #PTVNewsTonight | PH expected to gain wider export and investment opportunities in Canada following completion of key negotiations for #ASEAN-Canada Free Trade Agreement; Signing eyed for 2027",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQzZCRXVhdU04M21SODBqVUctTkw0ZGl3TlZESElIWDB3NmNJd2RrZGxhbWdrZUFrc0V5SXhWejQxbDM5RnN0bjFIbFBUdDh3NVVoU2hOeDhDeWQxand6cUZKTHkzSkFHT2hzYjdNUWRMX3BIQ0ZLdHN2NEE0X1lHeFdtcEhNbEd3WFFMQzk3dnU5ejEyWDJNNXlBYkpuR1ZFcEEwU0NseEw2NE54OUloV0ZROFItQ2pKYy0zdExDUW9DcElVemI5d0NSX3LSAcwBQVVfeXFMTkM2QkV1YXVNODNtUjgwalVHLU5MNGRpd05WREhJSFgwdzZjSXdka2RsYW1na2VBa3NFeUl4Vno0MWwzOUZzdG4xSGxQVHQ4dzVVaFNoTng4Q3lkMWp3enFGSkx5M0pBR09oc2I3TVFkTF9wSENGS3RzdjRBNF9ZR3hXbXBITWxHd1hRTEM5N3Z1OXoxMlgyTTV5QWJKbkdWRXBBMFNDbHhMNjROeDlJaFdGUThSLUNqSmMtM3RMQ1FvQ3BJVXpiOXdDUl9y?oc=5",
+      "title": "Serbia’s ex-top diplomat Vuk Jeremic on China’s rise in a geopolitical recession",
       "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -607,14 +599,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5uWDFia0x2N2lsci1GSzl3OEdXWjVGSEN3TVVYajU2MFJwZGtuVVdOZ1Ytb0ZhUTMtSG8zeW5QSDgzYlpHU2ZuR2xXSWE4Qi1qV0FEQW1XSTl2c0dlYnotaE5RaE15U2RSTlE?oc=5",
-      "title": "'조작기소 특검법' 국무회의 통과…이 대통령 순방 중 한 총리가 의결",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4zcF9sdjFwSHFsRDlBQmhjV3JObVdEblJURmhnMEJlVC1Fc1NDbVJib0lnVmhYR3h1U1Y0YjIzMU1LUVBJbnNWelMtenFoaktIVTNsUVVkZ29vN2prWldWVG4tQVlnNXlTd1F0SHpsazRNUTJ2dENZ?oc=5",
       "title": "Uganda Launches Diaspora Network in Sweden",
       "important": false,
@@ -639,8 +623,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVjFHY0lvTThVblBtWl9Eb25GSGd2N19wLTgzdldjR1J6Z1BNM3NuNGg3ZUNwX1FVQWV3ckJ1NzgzMGxGTmUtYmM5d0RnS3p1OEI4NW5Ya1VfT1lRODM1ZUI5aGMwMldQVkRGeWRJWGhDMG9Qb21aZ0JLblJNMk0zREdzNG4tUnYwamFyVjhMYW1DRjlqU3FqYw?oc=5",
-      "title": "GMA News. . WATCH: #ASEAN2026 leaders attend the 6th ASEAN-Australia Summit on Monday, Nov. 16, with Australian Prime Minister Anthony Albanese. Courtesy: ASEAN 2026 PH/YouTube Watch the livestream: bit.ly/ASEAN2026Nov16 Read: bit.ly/ASE",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSTJvS0Q1NFFkYlhSRU5xTGlXMGF1YmExNTVYWkdLd1ViUjJEUWNXZm96WFZrdWlOeDd0UmJySENIaTQtZHhrSzZEZlJ0LThEU2c1bFlDUFE5aHNTMDJOeDJmVG45QU9aOFJVamFld1VvRmoxaVdKaTk0NEJWMk9SQlF6MlVHR29oSFdPS0tvTFdrOFJsMHhxX3hKY9IBoAFBVV95cUxPWkZ4MkNlcjRKWGJKelBnSVQwVGRvUXpqakZEcF9VSkVfSXlDVy1rY2ZyaDMxdDItMEV0X1JoaWpvaTNkNnZrQk9hVFQyRmQ3WkdvekRwRmJNN2w0NmI5b0wxS0JtdUczRnRWLWthZE85eXY3WWNVVnNfNW84MHMycUdaVWF3bWw1RU9QRGF2QlRaZUV5VHNCNi0zLTJUZndL?oc=5",
+      "title": "Gunmen kill 17 in two separate shootings in South Africa",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -657,6 +641,22 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaC1BOXhsX0dCZy15NHI1SHZVT09XNkpXM1I2cnR0Q2F0ZWJSTzdDQzJ0U3Q0Qks5NTI5MW01UGJ2WGIzNEw5U2YxME51dUg5a0U5Y25hTWFYOTROM0Z3WWJNaWhtRnRMNE82Q3FkWnVEeFlvTjkxQUNoSUgzOHc4MTJuRGZYQjI5QmJZTzUzZlJJXzFELXRTamMyMlZtVm1FM21nbXJBakw5LUgtTGRGd0tWeVk?oc=5",
       "title": "Thousands Protest Pax Silica in the Philippines Ahead of President Trump’s Arrival",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMivAdBVV95cUxPTEZ5X01vSEdNakduRFJ0VDJKWXlWdTQ3Q0RYMXNvQ3hfVVVLb3B2ZU8wNG40SklhcGhSNEg5am92YkRKWDhLek9JOEhYMzZibndJSmFDTEFUcUdMWFdJYkRFUmhsbGVHWUV6TkhrcUI2TjU2SUhGRnZaMzJTS3NJTk1xTjA1dzJ0VEJnWmVyVm03N2hwWnlMUWM1aWxSa1czUnlUZTZSVm1Dc1U4WjNteGdWcW1VZl91VUZTU29hWTlaMUY5OWVGLXYtaThrSzlEZk9yVVh0bGZDQ3F2QlRWbXRQYXotY09mTFEzeUJOcU9jZXFxNTZKY0dlU2JLUS04T3MzaXkyNXV6YmZKZU1FSTJId3ZTajBfYktxQ1BkZlNoYVY0WHRabEJXMTRoZFljVTR6RE55aTRTNUVCcFdoWjVTVHRHVWdQd0pZWExvbU44dS12TVNTdld0eGt3NWlXek9pX1JtZ2xiTGFOaHByX2dsU3R4UG1iQ2dOS1l4SVBOdy15RWhMU1pURUpuZlFkVGZIR2NfWFFOeWJIRFpaQUJMeVM0TFdYb0VVOS1rdFVaNlp4ZDBkRjNVU0laOWhnVmtiQVBQLUVCRzJNQXI2ckFmSS1JWUxNeWZJb0VtaV9rR200bnVPcEhLaGIyQkhUcjRZOEhOU01fY3hrRlhoajNPZHRwQm5SSUQ5ZTRsUDdCNW5YMDBWbFdtLTlCalk0UXIyTVgyb2k0Y3B2MG9MU1JILTdLZlItc096QU51YkE3ZW1jRjdvR2hjbVdJSE56Rzc2eVUzQ04yRUxWM2F6eWFYT3FhZVgtMkRBRm91SUYyRHUwUk9yaW9CTlFfS3gwTzk1OU5ESXhaX3hQZjNmd2pCa0cyTjlYb3pQX1h5dzA5N0lRVUo0WFhiTVNkbUk5VloxVWx2VThZeW9NbktZTTNiSWJzdWVScjVKcjdub3NLSW0zQy00SUpyVldWQm9kUFZqRENld1pBeWpaLUhsalo4QW5xTUVJUmJ5ZEg3ZnctSVBhWHNFRlFBQm42N0wzQ2FNOHZ5RUNxSDlCbGxRS2xDVEcyZjk2TEdVOERiYnZkdTZJUkJlN05tMExSRmp5dnFuelpjRWx0enU0RjdETmtfdXVIZWx0RmVoMDFGaUFMY1pGX0hrazJ0TUJTc19BZFVJc1V2RGlZYk1mNWVHeFExbG9uTTVES3NMb2g1cU82SVRfTjdqMTBkQmUtTXNsN191NFpFMjE1TUFTMll6UTB6UTdnYnV3QWtPSg?oc=5",
+      "title": "‘𝗜𝗻 𝗮𝗻 𝗶𝗻𝘁𝗲𝗿𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 𝘄𝗼𝗿𝗹𝗱, 𝗻𝗼 𝗻𝗮𝘁𝗶𝗼𝗻 𝗽𝗼𝘄𝗲𝗿𝘀 𝗶𝘁𝘀 𝗳𝘂𝘁𝘂𝗿𝗲 𝗮𝗹𝗼𝗻𝗲.’ 🤝🌏⚡ President Ferdinand R. Marcos Jr. highlighted the Philippines’ efforts to strengthen its oil reserves and attract investments in renewable energy, modern power gr",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNGtzdjRFSDduNzZybWo4THRHYkxrZW9sQWNGNGxUeURBb3V0STB0Z3ZLSTlRTWo5SFh2SlgzeThRTGlIZW93R29wQmI1a2I4Y3pXelJ6X193b19qbHJ3Z3VhVDNkaVV1RGlWcjdTTHFQaUVPSUh3RW5CU2VwQzVXNW5BUzF4R2RBc0gyMHFDMTgtUGVuaFZORTFzS094c1BablBiZVF4a3diNTJsRVpfUFJsd1I0QjJtc0xfZC1wQQ?oc=5",
+      "title": "Semiconductor firm KLA opens new Singapore plant that will create 400 new jobs",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
