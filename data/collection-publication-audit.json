@@ -1,25 +1,33 @@
 {
-  "updated": "2026-11-17T13:18:29.239093+00:00",
+  "updated": "2026-11-17T14:42:05.109288+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
-  "collected_unique_urls": 179,
+  "collected_unique_urls": 173,
   "counts": {
     "important_unpublished": 16,
-    "not_in_current_queue": 46,
-    "pending": 19,
-    "published": 114
+    "not_in_current_queue": 45,
+    "pending": 16,
+    "published": 112
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 11,
-    "pending": 5
+    "not_in_current_queue": 12,
+    "pending": 4
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 7,
+    "source_blocked": 8,
     "repeated_extraction_failure": 4,
-    "in_retry_queue": 5
+    "in_retry_queue": 4
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
+    {
+      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQcGM3RDd5dU9hQkdMV0tXWW81bkw5bkZGMG9lam15NUNXOW9FUEtBMlViemhxVnltZVVDbnJXZjR4eHZuaFVXMzBhYXZKaUZvWkxfNTBkVUJ0eXlYV1duNWtJVy00Y0lXeGwxdmRaY0JhVm9HdjlBNmFnVTRWeEViRlp2blFtcGpsaERsalQyRG5LRlpOU2phLWkxUk4xSFhjeE05azgyRV9uZDZTbmNFcVU0MHZmOVF6WGFEaDBEZ3poeTJYTXptcFFWaE9uVVNOVTZ1Rk1zNWVXZm1hQ3prREc2ZWVJWkZrMXkyR2E0Q3ZnZm9TOXB2cg?oc=5",
+      "title": "Ukraine missile strike severs Russia’s Crimean bridge",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
     {
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMHFuMWFUcVpSWWhxeGNYSHNEa0M1THJnOUk4WnYwNG9KNmFZZDhfdDhpUjlMNmdaUkZjXzZUakZURy0yQWI1NXpGMHI3U2cyRmtyOHozZ215bGxCZG13bG16R1p1ZE5zSzVZZlpzdWpUd1NpVHd6Y004amliVlB3VkFSeUVvRk5PVy1CeTc1SXY5UHJJbU9CaHJlRU9jc3lNVHZxVmVoQ3dYa2tmU0diTjlDcWJJZldRbng3SzNmWXVjN1hOcTBCbVFHZG5ZWnMtaHhuYm1RNHQ3T28ybms0?oc=5",
       "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
@@ -111,6 +119,14 @@
   ],
   "unpublished": [
     {
+      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQcGM3RDd5dU9hQkdMV0tXWW81bkw5bkZGMG9lam15NUNXOW9FUEtBMlViemhxVnltZVVDbnJXZjR4eHZuaFVXMzBhYXZKaUZvWkxfNTBkVUJ0eXlYV1duNWtJVy00Y0lXeGwxdmRaY0JhVm9HdjlBNmFnVTRWeEViRlp2blFtcGpsaERsalQyRG5LRlpOU2phLWkxUk4xSFhjeE05azgyRV9uZDZTbmNFcVU0MHZmOVF6WGFEaDBEZ3poeTJYTXptcFFWaE9uVVNOVTZ1Rk1zNWVXZm1hQ3prREc2ZWVJWkZrMXkyR2E0Q3ZnZm9TOXB2cg?oc=5",
+      "title": "Ukraine missile strike severs Russia’s Crimean bridge",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMHFuMWFUcVpSWWhxeGNYSHNEa0M1THJnOUk4WnYwNG9KNmFZZDhfdDhpUjlMNmdaUkZjXzZUakZURy0yQWI1NXpGMHI3U2cyRmtyOHozZ215bGxCZG13bG16R1p1ZE5zSzVZZlpzdWpUd1NpVHd6Y004amliVlB3VkFSeUVvRk5PVy1CeTc1SXY5UHJJbU9CaHJlRU9jc3lNVHZxVmVoQ3dYa2tmU0diTjlDcWJJZldRbng3SzNmWXVjN1hOcTBCbVFHZG5ZWnMtaHhuYm1RNHQ3T28ybms0?oc=5",
       "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
       "important": true,
@@ -200,15 +216,7 @@
     },
     {
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSExLS2xqX3lkU2pva1NKLTFMUDFQRGVYZUhINUhjUzZTV0lSOGFoZERhOUFDdU9tai1fVGZoOGwzMUxndEpUc3BYNEJJX3dqaWV1cWVheklmNkNLZjZaanlYOVdUVnFGdXpCM2hPemxSS3VuNHZ1UEdYczdrYVRqVkJGY3BJMzQ?oc=5",
-      "title": "Pennsylvania’s measles outbreak has cost taxpayers $16 million so far, economists estimate",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOTXZzUGNldXQ2WnVzdWVHVFlLZS1WNU1KTjY0TDVZc2lheE1PZzFETEJwbEU0R2FxbjhHMkNNX0stb2pYLWdxQlljR0VsLUNvWVlkTDlrVnBfTjhweHN3d3lFR3RISjdvY3pqU0hxcmo2YjZRTl9nSXJiUVRVNzFXekJKNjdZN2xkZ0I1TA?oc=5",
-      "title": "Brazil's Central Bank Just Said Buying Stablecoins With Clean Money Is Money Laundering",
+      "title": "Pennsylvania’s measles outbreak has cost taxpayers an estimated $16 million so far",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -239,6 +247,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZWxuOVYzRzhhWFprdk1NeHlLMDZyUFVObUhvbDNPVFN4MWM1cUM4cVhKWU9UOVdiVlhIWURudEF0VWEwQnlwYXVINjFieFpqSnZCd3Frenh4U0pkcXkyTE5MUHNVZ2RUcDgtYm9weXhLYmJRV2RwTUFscHhoNFd4d1R2dHpBWUl4dGd3VU1sOHAxY2U2dko2WUlNOEtVSk5GbHRIQkVrUHF1VURLdWU5TkQ1UjBkNlpqRXh6TWVSQnFDYVEtMWVFSEdmZ08wbTVCb3ZuR1BZUmgta3dmdUE?oc=5",
+      "title": "Australia under attack as COP fossil fuel war flares",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNS1ljcmFXRnMwYW9vNzBhUU1tbnhLU2RBX3RMSnVkNThyYTRnU3V6U1RFVHpLT19xT0V6NFpZeXB0cmVteHFkVGwxSnJGQ19lOUlxUWRpc0ZUQ1BBd1VReTJYZW9TLTBmSms2blBWeDA3cG9Qc2JlbmFzV0h6MFZCWE1KS3prOXpwWDBpaHBWZEZJSDhWY0hPSEl2REdFZnBlc1B5TUFzWFJ6Z2Mwa2N5R2VHeVdadlZpQVo3Rmp5OS1iaWV6bVBvYzZIMGJHNXdzeE5SSFhySDhLc2d6dTlMbDNUQ2NLTUtPU0NJ?oc=5",
       "title": "Faihan Discusses Strengthening Parliamentary Cooperation with Austrian Parliament, Invites Companies to Invest in Iraq » Iraqi News Agency",
       "important": false,
@@ -257,14 +273,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE91anliZEk2akkxakcwa0o0aWdmdnYzbUtSUFpyM28wekdYM2hvdFZ5bUxKN3U1NlU5R0JsU245ZUZpV2RteGxiTkFkeURRd0ktbTJN?oc=5",
       "title": "Saudi Arabia Keeps Inflation in Check Despite Geopolitical Tensions and Global Trade Disruptions",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBDZWJWRGZhYnh4RF9DRVd6REV6NkZHM3MwNXZ5RmllLWMyZzV3ci1pV0VYWlE3UXNMblVuUXYtTm5hVS0zbHpOYXB2NkE4d09VMlc0?oc=5",
-      "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -295,14 +303,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBiRnpORkJESEFHQ0d5UlNGSldqbktfVUtvOFRJS2RlRnNuWlRWNkpXUFE5RmtINENJcHd2Y1FMRE9RdDEzaElZQVZpQTNlLW1VYU05ODlQZ1A?oc=5",
-      "title": "INTERVIEW| Egypt well-positioned to become regional hub for trade, investment: WEF president - Economy - Business",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1xaWFGTXdQMUZqVTh2Qmg3MmtleXlpR2VaM2VybkE1WXRycXN6czNjdmw0RjBvRGxyMV9peWRaUkQ5S0tQM0xBVnE4QzRBNjZ0cjZHMUY4cGZjNkg0dVhUa1BPNA?oc=5",
       "title": "‘AACR’ 달군 K-제약바이오…차세대 신약 개발 경쟁 본격화",
       "important": false,
@@ -316,6 +316,22 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4yOHROYjdWQjhqTDNRNFpyeXVZYXNrTU9FRm5VNjd2M0xJUFpLZGhvSU5IS3FWdmRSc0lCVDd6SHJ1ak5Eb2lDWllTeC1CNDlrX1lybkUteXZacEp4TFNBRVI4bDEtQQ?oc=5",
+      "title": "[바이오유럽] 사노피 “임상 단계보다 중요한 건 기술력…기술이전·투자·M&A 강화\"",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9LU3NENlltY3NPNGozbU5UeDlkb1JZWVF4VG85NUFEOHByelV6UjZtalFQSWxZb2d2QTl2by14OEczcEI4S1BGbXBfY0szYzh0RU14eU1adjRTSXZ6WkQ1aVh3S0JBZWxGanJ3?oc=5",
+      "title": "\"인공지능(AI)이라는 이름표가 신약의 가치를 결정해서는 안 된다\"",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -337,14 +353,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9mUTdfTFhNaHFlNXFPRVp5c1lSMXRVVmJfXzF5V3hWeFU4a2pIMm1TUlRDeWhoLUpRYkRoR19RNnktbkhXYlpqYVgtUTQ5UUpUcjJ1eEZHMGtud1hCM1JhbWVWVW1VTHZkMHNNdUpKQdIBb0FVX3lxTE9mUTdfTFhNaHFlNXFPRVp5c1lSMXRVVmJfXzF5V3hWeFU4a2pIMm1TUlRDeWhoLUpRYkRoR19RNnktbkhXYlpqYVgtUTQ5UUpUcjJ1eEZHMGtud1hCM1JhbWVWVW1VTHZkMHNNdUpKQQ?oc=5",
       "title": "바이오니아 \"신약 개발 투자로 3Q 영업손실…\"기술이전 논의 구체화\" - 머니투데이",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1rbGMtY3dlYTNjUEhjU3RNLWhmWmdKVEE1ZWZrNVdKUE5Cb19TcE5QWHBWRFc2SzRreE1rOWI4MUV0blpwTEFhMmRsRERtY0dCSFVldzRMT2Y1Y29GYWVtU0dBcldjZU1HT2Jfcw?oc=5",
-      "title": "대원제약, '펠루비' 소아용 해열제 개발 임상 2상 진입",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -391,16 +399,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZElfOFpBcXJHc0dUV3FYaGd6dV9DdHpxTmloQjRKUTd2d2ppc0ZfRzhIbnZ1ZVNQazBGX3Bsb3JOWEl4ZHdiemJfSEZrdUVRZnk2TVhzNUpzU2hZbDZRazdKdDBfNEk1VXpIZmJwRzR3MzF0TnVTS2lfT1FGdkVzbjF5RWo?oc=5",
-      "title": "Japan's Prime Minister's Office, Military GPS Data Traded Overseas",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPNjl2ajh2bFNnUUt0NDh1amlSOUNsUlJyYUd1ME1vYkRyendiVTl2czQ5dVpLRGtzSEk1VmFqMU5XNkp2Q1U0dEZ5YVA3dnI0NVo4LVlsVjQwdE90Qmg4QmpLdjBNZzRSZ040eFo3OVpMRTRzakpfYm1BVmlxaGpSZVVlZkg2a0U?oc=5",
+      "title": "EU divided over diplomatic approach to war in Ukraine",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPNjl2ajh2bFNnUUt0NDh1amlSOUNsUlJyYUd1ME1vYkRyendiVTl2czQ5dVpLRGtzSEk1VmFqMU5XNkp2Q1U0dEZ5YVA3dnI0NVo4LVlsVjQwdE90Qmg4QmpLdjBNZzRSZ040eFo3OVpMRTRzakpfYm1BVmlxaGpSZVVlZkg2a0U?oc=5",
-      "title": "EU divided over diplomatic approach to war in Ukraine",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbkY3Z0diREQxWV9DN2xYMXgwRW9pT2VsanIyVFhqNWpuVkJiX205ejVkdGhKV0tzOGZ2RjlSSkpDekRKY2dvYmVNMHEwcGxaTmRNSVZKTTBNak01b0dFSGRQUUJSel80Wl9tWEtMa19UZUdkREZKU1FTUnFuZGVZRGxqVTNBeUhnb0I4WURUN2YyMzQ?oc=5",
+      "title": "South Korea Offers Nuclear Energy for Indonesia AI Power",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -431,16 +439,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOa3ZVWk5yazBTSDhiMUxINU5aLU9oazI5NmVCYW8xc29xNUEtVVFKV2hoaHlDYmFpWXhVZV8wbVpqR3MwZEl2ZUhvSERZb0J6c3ZhZWpscXZwSnZYN0V1R0RrMTY2TEVuVHZBeW5rV21PSUtRdTU0SVpWUWNRTnl2X3IwZjQ4U3NMLWJ2NUZ3UzZsX1oxNk5uaFYyWDM?oc=5",
-      "title": "PIPELINES AND PORTS: Iran War Spurs Gulf Infrastructure Investment",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQU0Nrcno4V0tSNHJKNXJkTjIzelNaalp1dkEwODkydUMyQzJZSmJTVmhZeVlTYXMzSW5wLVN6cUJiS3JDa2RhTUpCeDlxWE5wZ0toMHRqVkpBaUhNSWJ4X0V0ekJSSHBkWnc0ck1QZThDQjlUOGFaUHE5Yi10b3ZvUGM5TnkxeGRiNTVtNUZYVHRkbmNVcGM0a1JuQko?oc=5",
-      "title": "Summit Therapeutics cancer drug rejection raises risks for China biotech expansion",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSVV6aGNTVFEtLXI3alIzSkFQX3N4cWpxWW5Fa05HM3RtN2pYaDExV1hMS1NJVE9RQlgxekZXZzVoN3dBRTVsTHZuRVV2ZENDaExtYVpneDlfcmFreWF2dUhYRDJ3YTNWakVUdUtzdnQ2MzFxRHNMb29xTkZfNzBBRWhrTDJwWGV0S2tvM0MtNE5UNjZGVlVjeWpDRmctMUNN?oc=5",
+      "title": "EU sees eurozone economy hold up despite Iran war",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -449,22 +449,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa0JqQ3k0WGk0NVoxbHRNTHBTeDZxaVkyYmdzdGptNVB2MUVjb3lmcG1OTXRrWGs0U016Vi0tWTU5UmdYbk5IWHJfSTV0UEpEUkZvM0s1WjkwT3E1NFVfMzdGb3pyZ0J3cmhGWXMzVWJnSmpTTVh0MU1VcUJUcFZBamRua0kyOFVWSGUtQ243M2lITElJbmRRS3ZhNTNTenJJcXJTbFZiU0hJVFl1SHl5MnVB?oc=5",
       "title": "Yemen’s Long War, Saudi Arabia’s Security Dilemma, and the Shifting Middle East",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPT3Bjb0VxRmd2NkwwUzdFYzJDbjN6TWpBLVYzd1FOX0x6YzMxQmdhMnZRR3pvR1RTMF93b3N6cktCY0plTmQxcDdINVBCRjZic3Z0NlZHNEljMDJYbnljbXNTRVByLXlEcEFGblpYakdEeDhjbHhIUzYtaV9fbXd1M2dzc0lOck5lSnVXY1VYUUNJUnhralJrR1RDbnI3X3BoNmUyQ19sUURXMjJVNktfRGZ3?oc=5",
-      "title": "PERSPECTIVE: The Trade War With Canada Many Americans May Not Even Know They Are In",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNVWVFcktqU1RqeGgxSkdka3E3OGJpdTJXRWlXOENlQjlpWElKU0VzX3ROd1BQbUNMeWtyeFo3elM5X0pCZWFaaFM4anQ2QkZnWXJ4RXVoQ0g1MmF5YjFXVk9NMmVLRkpkWndJeEE3bkVXbHZjTWxnZXo0bGY3MWVjbGpsSUo0bThhQWM0NFU4Z1pkN2J4Z2lES2lqZm1rRUFyQ0NOeFc5R3VqZEtwTkhkNVhkU1Y?oc=5",
-      "title": "Mongolia president announces resignation following corruption allegation",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -481,6 +465,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZ1hsTUpTUHZkN0l0N0g0TXJUVVNxZXB1dkZmNlBUXzd6U0JCam1KSmNmajk3RDJtSlExbUwwaUU3TEg2Y1N4RUFCWEdENElVRVZnLWI0RXlIRWYyUEIzeVp1R2dGWWMwMGxpNUxFUXR1ckdhdU9RSkQyM3RyUDhhSG50ejFzYVRaaF9GbUlDWmEwRUFsLWI4OEQ1dVY1NVBKdHhqZU9JVXV3TF9CemtnekZYQ3FBQ1E?oc=5",
       "title": "Kenya wins ITU Council re-election with 136 votes, leads African group",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPUFVBR1RpTU9Ddi0tRVFMRTVJMDM4bXZnbEhSdTZsSGNCTE5sSXRYR1UxZWNjNmFsbmc0eEdPWkVFb3B5eFdhR3ZraDRYWWMtQmNvbXpRT0h6c0FlSnB4VmowSnFGWktUQ2N1cDBkYVdZbDNpeWJZZVlTRkpZR0djeURBdWFqdFBKWGRBb2lrYzRNU1RMVjBieGtqQlEtTTJ3NlVVX09MLTZ2b25BckxrNU1CTS1hTzgw?oc=5",
+      "title": "INTERVIEW| Egypt well-positioned to become regional hub for trade, investment: WEF president - Economy - Business",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -575,24 +567,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4yOHROYjdWQjhqTDNRNFpyeXVZYXNrTU9FRm5VNjd2M0xJUFpLZGhvSU5IS3FWdmRSc0lCVDd6SHJ1ak5Eb2lDWllTeC1CNDlrX1lybkUteXZacEp4TFNBRVI4bDEtQQ?oc=5",
-      "title": "[바이오유럽] 사노피 “임상 단계보다 중요한 건 기술력…기술이전·투자·M&A 강화\"",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5uWDFia0x2N2lsci1GSzl3OEdXWjVGSEN3TVVYajU2MFJwZGtuVVdOZ1Ytb0ZhUTMtSG8zeW5QSDgzYlpHU2ZuR2xXSWE4Qi1qV0FEQW1XSTl2c0dlYnotaE5RaE15U2RSTlE?oc=5",
       "title": "'조작기소 특검법' 국무회의 통과…이 대통령 순방 중 한 총리가 의결",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZWhUbWJxeHROSTZudWVKd1FGN2dWMmpUZlljZWZoVXhXT2kzc2dXMUNjVnp0T21OdGlnYzJ6ZzFvV2hmUVYwamVWTFQycERNUjYxQnZmWkNxR0d1eEFLVXNBOHlOVGNIcklxc0dzMEdNR0dCamZ3eS15RDlTaExFLUxWaw?oc=5",
-      "title": "How far can Singapore’s own laws go in the chip war?",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
