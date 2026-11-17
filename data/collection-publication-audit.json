@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-17T15:48:00.299188+00:00",
+  "updated": "2026-11-17T16:43:36.720036+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 16,
-    "not_in_current_queue": 51,
-    "pending": 14,
+    "important_unpublished": 17,
+    "not_in_current_queue": 52,
+    "pending": 13,
     "published": 115
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 12,
+    "not_in_current_queue": 13,
     "pending": 4
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 8,
+    "source_blocked": 9,
     "repeated_extraction_failure": 4,
     "in_retry_queue": 4
   },
@@ -111,6 +111,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORnk0TWY4ZzBFZ3VkeThFTlMzOEIyVHVDQ3pDNWxGTUxlX3dTejlkbktyd3JrQTF5dnFaazlab01mZnF0aDJRbUE2ZmxFTkptUU10TDlCWGVweFZ6ZmNFZmsxSFNVNDdpVnRmcEktdnMzYzMtU09Sdi1Sc0MtQTBOZU5vMGx1MkFUVlM2ZmFsU2lmeXVabDZyMGhKaG1xR0NBUzMzQXpfcw?oc=5",
       "title": "Helus Pharma to Present Topline Results from Phase 3 APPROACH Study...",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNOGh3X0NwX3p1d0dvNFNuY0J6b2dSMWpub09FODVOUnljMUZQaXJodUUwdXQtOGNxZlZLaElZNU9TN3d0VjRkN2VtdW5GWndadGFtdm56MUtxZnRhWlJOMFpxVDdoZjQ3dk01VDFfRzJ0aWRFV3lHZXN2bVdoTnBYR2dmZWtWT1hsNEVuUHpvREZ1WnlLSFVGV2paM1dLRl8xYkJ5NnlLeXdsT3hQVXBGYUIxWURHYTg?oc=5",
+      "title": "Trump's Latin America allies recalibrate after US election earthquake",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -215,8 +223,16 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNOGh3X0NwX3p1d0dvNFNuY0J6b2dSMWpub09FODVOUnljMUZQaXJodUUwdXQtOGNxZlZLaElZNU9TN3d0VjRkN2VtdW5GWndadGFtdm56MUtxZnRhWlJOMFpxVDdoZjQ3dk01VDFfRzJ0aWRFV3lHZXN2bVdoTnBYR2dmZWtWT1hsNEVuUHpvREZ1WnlLSFVGV2paM1dLRl8xYkJ5NnlLeXdsT3hQVXBGYUIxWURHYTg?oc=5",
+      "title": "Trump's Latin America allies recalibrate after US election earthquake",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSExLS2xqX3lkU2pva1NKLTFMUDFQRGVYZUhINUhjUzZTV0lSOGFoZERhOUFDdU9tai1fVGZoOGwzMUxndEpUc3BYNEJJX3dqaWV1cWVheklmNkNLZjZaanlYOVdUVnFGdXpCM2hPemxSS3VuNHZ1UEdYczdrYVRqVkJGY3BJMzQ?oc=5",
-      "title": "Pennsylvania’s measles outbreak has cost taxpayers an estimated $16 million so far",
+      "title": "Pennsylvania’s measles outbreak has cost taxpayers $16 million so far, economists estimate",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -268,14 +284,6 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE05NEdfZ0V2alNHaFJoemFTcDRIV3JMSnJ2MVRoR1Yzd3F0akZSZzVnbjR3THNuZEtGR0UzWXE0cGlod0tvRnE4dW1IU294bXExUW5v?oc=5",
-      "title": "Azerbaijan and Vietnam eye new era of cooperation ahead of President Aliyev's visit",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -343,6 +351,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5uWDFia0x2N2lsci1GSzl3OEdXWjVGSEN3TVVYajU2MFJwZGtuVVdOZ1Ytb0ZhUTMtSG8zeW5QSDgzYlpHU2ZuR2xXSWE4Qi1qV0FEQW1XSTl2c0dlYnotaE5RaE15U2RSTlE?oc=5",
+      "title": "'조작기소 특검법' 국무회의 통과…이 대통령 순방 중 한 총리가 의결",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9peHdBSUFCNnZmS2RZbllIU3dXZXpnVzFaSFRKUzM0akd6UEpEaWhhRDhlRVRLNnNmSTM4X3BhZklyZThaVHptM1BvLXJSNkFlLVphUHZoUkU5VGsyUTJ3VkIzcGx2MDR4UUE?oc=5",
       "title": "국회의장 ‘개헌 로드맵’ 발표에…정점식 “이 정부에서 개헌은 없다”",
       "important": false,
@@ -361,14 +377,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9wbE1wemhic05WaEVmT2g5UmhmajJTMGl0VkNEeFpsc3RITzY3WFJrRU9iZG42SHZWR3ZzM21xLVl5dURUazd5cDVNYTdTOU9USFlnaHlJd1lHWWNrMTBJa09pS3psMGloeVRaT9IBbEFVX3lxTE9wbE1wemhic05WaEVmT2g5UmhmajJTMGl0VkNEeFpsc3RITzY3WFJrRU9iZG42SHZWR3ZzM21xLVl5dURUazd5cDVNYTdTOU9USFlnaHlJd1lHWWNrMTBJa09pS3psMGloeVRaTw?oc=5",
       "title": "[반환물질 리부트]③ 대웅제약, LO 신약 개발 중단…1상 문턱 높았다",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE55NTAtZHdGX3RYY3RiTEpBaWI2cFRpblJkTXFTLWFLZ2pjTkhoT2hRTV95ams1V0xvQmw5QThMZmd1Z0hLZkIwa2g1RGRNVGYwU1YwRW5YWWNVZjlvSnFmWTVQNTJ5YnRSVHhmNjBR?oc=5",
-      "title": "대원제약, ‘펠루비’ 소아 해열제로 개발…임상 2상 승인",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -439,8 +447,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNLWtwcGo1LWgzWGRMUHhRSlc5ZS1sLXBmampxdVYxUjBsbzhNVzl6SGZHWTJWbVlmYTVHY0N2SDZxMlMyZHJacmNTck40YWRxclhxTTFTLVF5N3YzNnJuMjlOOWp5Tm11dzNRZ0FpMDhRUnQyek1STE96LUV4bHVaQUItX0p4M01jN0oweF9pV2hJMVBUQy1F?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUDBmemg0VzRYRlg3ZC1ENlZldy1lMGlxMFRvVlY0YXRvUXpiWkdRb1RHTUFpM09RbHlrcDlwbUVqUG5vcTE1NkRZcnFqS3psVmNPRTF1M0F4VTM3VzdOc1F5RDhJZExXWkN5Y2lXN3NBMklnYWxCSF9DRUZISUR3b2hOLXBxTnhVYXJ0ak1PSVpsVDNtQVhhUg?oc=5",
       "title": "Indonesia Postpones Vice Presidential Election to December 9",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNb2E5OUdvNktidzdxOXpkVHVxYmpCTHNkZldCdjRxQVFTaG51eUhnbS03YjZwYnFnNHVYSk1iSUhMUlNNSHl3bUk1ZGl5QTVLX25NNnF6eF9GV1FlYk0tYm53NEhiNnZFeHFselRJbXBZLXpIS21fdUo4TUxoQWk5LTA2dS1HMjZpZkV0bVRLZWdENzNYeUZTR0p2dw?oc=5",
+      "title": "PIPELINES AND PORTS: Iran War Spurs Gulf Infrastructure Investment",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -479,6 +495,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdXI5aHJnVk41VWF3cVRTRFpNeW1KMUNhU0VORXlrclcxeDFjOFg3R3RwUzBsam0ybzltS3Y1OXhobTZhUDQ2RTFhTXB5d29LdWpSbmlJallkanljS3BuWVBXMjVrdkF4ZU9DM3BPbXJrb2MyS1RaWDJmZlVla251ZE9TU245NnRVQmxTYnZvYTQ0Ry1CZHJRTUgxYzBCTG9tMmNSX3dHai1YV2RwbHRFZThn?oc=5",
+      "title": "France's Le Pen promises to lower retirement age if she wins election",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPT3Bjb0VxRmd2NkwwUzdFYzJDbjN6TWpBLVYzd1FOX0x6YzMxQmdhMnZRR3pvR1RTMF93b3N6cktCY0plTmQxcDdINVBCRjZic3Z0NlZHNEljMDJYbnljbXNTRVByLXlEcEFGblpYakdEeDhjbHhIUzYtaV9fbXd1M2dzc0lOck5lSnVXY1VYUUNJUnhralJrR1RDbnI3X3BoNmUyQ19sUURXMjJVNktfRGZ3?oc=5",
       "title": "PERSPECTIVE: The Trade War With Canada Many Americans May Not Even Know They Are In",
       "important": false,
@@ -489,14 +513,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQYWYyMExibjVmaDlGOGx5VFl4Y1JSbjFUUkxPT0t5d1R4dW5relJrLXpCNWUxUlFzaURDNFNyTEhOVWMzSjdDcU82cHBXYUVCem9jc0Rvbk1nS0VXb0NmSUU4ZkVqdGJfRWlhNTRUNDVod3ZWVUhMWVFEMFNtLVNJeUpRbW5Pc1VGTmVnbmRkYWtBcXNCbF80QkE0Z1FwYjhiY05LbVVOcXZzMm5LNVc0ZGZKaw?oc=5",
       "title": "AI Investment Becomes a Global Growth Engine but Raises New Inflation Risks",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNVWVFcktqU1RqeGgxSkdka3E3OGJpdTJXRWlXOENlQjlpWElKU0VzX3ROd1BQbUNMeWtyeFo3elM5X0pCZWFaaFM4anQ2QkZnWXJ4RXVoQ0g1MmF5YjFXVk9NMmVLRkpkWndJeEE3bkVXbHZjTWxnZXo0bGY3MWVjbGpsSUo0bThhQWM0NFU4Z1pkN2J4Z2lES2lqZm1rRUFyQ0NOeFc5R3VqZEtwTkhkNVhkU1Y?oc=5",
-      "title": "Mongolia president announces resignation following corruption allegation",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -559,14 +575,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNejJIQ1RwVG9aamhmMDNVdmx0Tm0zS0o2U1pQOTJFSUh0Ny0weFVkeHJtdzhaeWhUTVVPZW5wU3kxZ2tXenJJLUEyZ2F5cVY1ZkEyVzVFRkdLcW5DWVFscGJlUzI1ZWVWRGVPbkswQVdQZXBmYTYzZ0ZFOURhNkVaTjFOclBWQnd0a05FR1NkNEM3ZXEyX1RqMl9MS2pFaG90enAtcWFOeS1JRkJDdEozaTUteXNrY3VsMlhNMksyVERreHk2VlROdHlodDZUcGR0LVJz?oc=5",
-      "title": "LOOK: U.S. President Donald Trump and Thai Prime Minister Anutin Charnvirakul officially sign a joint statement and agreements on reciprocal trade between the United States and Thailand. WATCH THE LIVESTREAM: https://bit.ly/TrumpArrivesInPH",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPVTRnVm9DendvNlM4eFFFRG1pSVJFdEpJNm5UaVN6cXZ5bUpqTEtvcC1RUWpET3Eya1R2YXJNWldKYUF4YmdnTS0xV3ZEVG0yRm8wbVU1LXVQejNKU2poOWNsZXFPNTlmbzZZNGlZVFl1Ny1JWktVZkhDc2xLODZQSG02MXJoS0RhdkJtWXg3amdRWlFzb0x5ZXVxQ3ZoeDdOeTVmN1FKdTYyakI4djVob01ZU2pIUXpjeTRsdkpZYXhrQlFFdUxFeGROMUZzRnp1RVRLb1dVRXNsNzRF?oc=5",
       "title": "Toronto Stock Exchange: TSX Falls 1.06% to 35,722.13 as Energy and Miners Slide After Steady 3.1% Inflation",
       "important": false,
@@ -599,8 +607,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9KeDgwVnVlMERLNDdKUTRXNXZ5bzYtb3BGdVZYX0FQdHdETnBqeUVlMWcyX09VeFBHRmZmZHEtdF96U3FMVFpXS3RRSkN1THBJNEdyaHZPeXA0UU03WWxn0gFfQVVfeXFMT0p4ODBWdWUwREs0N0pRNFc1dnlvNi1vcEZ1VlhfQVB0d0ROcGp5RWUxZzJfT1V4UEdGZmZkcS10X3pTcUxUWldLdFFKQ3VMcEk0R3Jodk95cDRRTTdZbGc?oc=5",
-      "title": "내년 세계 성장률 3.2% 소폭 상향…‘인공지능 산업’ 투자가 흐름 좌우",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBxMmVZTmhHdXM5N0t1X29nV3NNalF0S2RzOEVNUmx6TjdSTU5XWTczZlBfZzhlTFlfTXltVnZYVjY4THV5LXUwekE3bUFMUnA0VTdJNA?oc=5",
+      "title": "Azerbaijan and Vietnam eye new era of cooperation ahead of President Aliyev's visit",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
