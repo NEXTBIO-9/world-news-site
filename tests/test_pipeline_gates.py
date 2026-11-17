@@ -27,14 +27,15 @@ class ExtractionGateTests(unittest.TestCase):
                 return emit.call_args.args[0]
 
     def test_important_retry_after_half_hour(self):
-        a = {'url': 'https://example.org/a', 'title': 'Major earthquake strikes coast'}
+        a = {'url': 'https://example.org/a', 'title': 'Major earthquake strikes coast', 'category': '재해·재난', 'source': 'Reuters', 'published': __import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat()}
         self.assertFalse(self.run_gate(a, 10 * 60))
         self.assertTrue(self.run_gate(a, 40 * 60))
 
     def test_routine_retry_after_three_hours(self):
         a = {'url': 'https://example.org/a', 'title': 'Local museum opens exhibition'}
         self.assertFalse(self.run_gate(a, 40 * 60))
-        self.assertTrue(self.run_gate(a, 4 * 3600))
+        # Low-impact reports are no longer extraction candidates, even after cooldown.
+        self.assertFalse(self.run_gate(a, 4 * 3600))
 
     def test_title_gate_module_import(self):
         from scripts.translate_news_titles import pending

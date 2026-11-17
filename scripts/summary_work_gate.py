@@ -10,6 +10,7 @@ import re
 import sys
 import time
 from news_priority import important
+from fetch_news import quality_score, selection_score, MIN_QUALITY_SCORE
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,6 +60,8 @@ def main():
             if not isinstance(article, dict):
                 continue
             url, title = article.get('url'), article.get('title')
+            if quality_score(article) < MIN_QUALITY_SCORE or selection_score(article) < MIN_QUALITY_SCORE:
+                continue
             if not url or not title or url in summaries or url in blocked or int(nonextractable.get(url, 0) or 0) >= 3:
                 continue
             try:
