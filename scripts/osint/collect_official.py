@@ -33,6 +33,14 @@ def parse(xml, source):
                     "verification": "기관 발표 원문 링크 · 발표 내용 별도 검증 필요"})
     return out
 
+def merge_items(old, items):
+    old_items = old.get("items", []) if isinstance(old, dict) else []
+    if not isinstance(old_items, list):
+        old_items = []
+    unique = {a["url"]: a for a in old_items if isinstance(a, dict) and isinstance(a.get("url"), str) and a["url"].startswith("https://")}
+    unique.update({a["url"]: a for a in items})
+    return list(unique.values())[-150:]
+
 def main():
     items, errors = [], []
     for name, url in FEEDS:
@@ -49,12 +57,7 @@ def main():
     if DEST.exists():
         try: old = json.loads(DEST.read_text(encoding="utf-8"))
         except (ValueError, OSError): pass
-    old_items = old.get("items", []) if isinstance(old, dict) else []
-    if not isinstance(old_items, list):
-        old_items = []
-    unique = {a["url"]:a for a in old_items if isinstance(a,dict) and isinstance(a.get("url"), str) and a["url"].startswith("https://")}
-    unique.update({a["url"]:a for a in items})
-    data = {"updated":dt.datetime.now(dt.timezone.utc).isoformat(), "items":list(unique.values())[-150:],
+    data = {"updated":dt.datetime.now(dt.timezone.utc).isoformat(), "items":merge_items(old, items),
             "sources_ok":len(FEEDS)-len(errors),"sources_total":len(FEEDS),"errors":errors}
     DEST.parent.mkdir(parents=True,exist_ok=True)
     DEST.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
