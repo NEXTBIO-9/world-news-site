@@ -10,7 +10,7 @@ ALIASES = {
     "us indo-pacific command": "us-indopacom", "pacom.mil": "us-indopacom",
 }
 def publisher(item):
-    source = re.sub(r"\\s+", " ", str(item.get("source") or "").strip().lower())
+    source = re.sub(r"\s+", " ", str(item.get("source") or "").strip().lower())
     host = (urlparse(str(item.get("url") or "")).hostname or "").lower()
     if host.startswith("www."):
         host = host[4:]
@@ -19,7 +19,7 @@ def publisher(item):
 
 def normalize_title(item):
     title = str(item.get("original_title") or item.get("title") or "").lower()
-    title = re.sub(r"[^\\w\\s가-힣]", " ", title)
+    title = re.sub(r"[^\w\s가-힣]", " ", title)
     words = [x for x in title.split() if len(x) >= 3]
     return set(words)
 
