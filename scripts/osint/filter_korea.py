@@ -9,7 +9,7 @@ OUTPUT = Path("data/osint/events.json")
 DIRECT = re.compile(r"북한|대한민국|한국군|합참|주한미군|한미연합|한미일|한반도|서해\s*NLL|독도|north korea|south korea|rok military|usfk|korean peninsula|kim jong un|pyongyang|seoul", re.I)
 SECURITY = re.compile(r"미사일|핵무기|핵실험|군사|국방|안보|방위|군함|해군|공군|훈련|사이버공격|해킹|제재|군사협력|탄도|잠수함|방공|전투기|missile|nuclear|military|defen[cs]e|security|navy|warship|drill|exercise|sanction|cyberattack|ballistic|submarine|fighter jet", re.I)
 REGIONAL = re.compile(r"중국|일본|러시아|대만|동중국해|서해|동해|북러|미중|china|japan|russia|taiwan|east china sea|yellow sea|sea of japan|indo.pacific", re.I)
-CONNECTION = re.compile(r"한국|북한|한반도|주한미군|한미|한일|북러|대북|korea|usfk|pyongyang|seoul|north korean", re.I)
+INDIRECT = re.compile(r"북러|대북|북·러|북-러|north korea.russia|russia.north korea|russia.dprk|dprk.russia|anti.north korea", re.I)
 
 def classify(article):
     text = " ".join(str(article.get(k) or "") for k in ("title", "title_ko", "summary"))
@@ -20,7 +20,7 @@ def classify(article):
         return "A"
     # A regional headline is not enough: the Korea connection must be explicit
     # in the headline, not merely in the scraped summary/source label.
-    if REGIONAL.search(headline) and CONNECTION.search(headline):
+    if REGIONAL.search(headline) and INDIRECT.search(headline):
         return "B"
     return None
 
