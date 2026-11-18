@@ -1,0 +1,20 @@
+name: Korea OSINT preview data
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate OSINT preview from existing published news
+        run: python scripts/osint/filter_korea.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: korea-osint-preview
+          path: data/osint/events.json
+          retention-days: 7

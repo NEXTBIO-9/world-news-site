@@ -1,0 +1,37 @@
+name: Korea OSINT validation
+on:
+  push:
+    branches: [feature/korea-osint-center]
+  pull_request:
+    paths:
+      - 'scripts/osint/**'
+      - 'tests/test_korea_osint*.py'
+      - '.github/workflows/korea-osint-*.yml'
+      - 'korea-osint*'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_korea_osint.py' -v
+      - run: python -m unittest discover -s tests -p 'test_korea_osint_reports.py' -v
+      - run: python -m unittest discover -s tests -p 'test_korea_osint_official.py' -v
+      - run: python -m unittest discover -s tests -p 'test_korea_osint_verification.py' -v
+      - run: python -m unittest discover -s tests -p 'test_korea_osint_page.py' -v
+      - run: python -m compileall -q scripts/osint
+      - run: node --check korea-osint.js
+      - run: python scripts/osint/filter_korea.py && python scripts/osint/build_reports.py
+      - name: Collect official feeds for preview only
+        run: python scripts/osint/collect_official.py
+      - name: Upload preview data without publishing
+        uses: actions/upload-artifact@v4
+        with:
+          name: korea-osint-validation-preview
+          path: |
+            data/osint/events.json
+            data/osint/reports.json
+            data/osint/official.json
+          retention-days: 7
