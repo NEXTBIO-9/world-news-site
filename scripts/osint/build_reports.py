@@ -78,7 +78,10 @@ def preserve_published(result, previous):
 def main():
     from verify_sources import annotate, special_candidates, source_comparison
     data = json.loads(DATA.read_text(encoding="utf-8"))
-    items = annotate(data.get("events", []))
+    raw_items = data.get("events", []) if isinstance(data, dict) else []
+    if not isinstance(raw_items, list):
+        raise ValueError("Expected OSINT events list")
+    items = annotate([item for item in raw_items if isinstance(item, dict)])
     result = build(items)
     result["source_comparison_candidates"] = source_comparison(items)
     result["special_review_candidates"] = special_candidates(items)
