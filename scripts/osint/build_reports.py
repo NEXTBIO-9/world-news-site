@@ -5,7 +5,6 @@ import json
 import re
 from collections import defaultdict
 from pathlib import Path
-from verify_sources import annotate, special_candidates
 
 DATA = Path("data/osint/events.json")
 REPORTS = Path("data/osint/reports.json")
@@ -48,6 +47,7 @@ def build(items, now=None):
     return {"updated": local.isoformat(), "reports": reports, "topic_groups": group(items)}
 
 def main():
+    from verify_sources import annotate, special_candidates
     data = json.loads(DATA.read_text(encoding="utf-8"))
     items = annotate(data.get("events", []))
     result = build(items)
