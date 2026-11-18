@@ -5,6 +5,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from email.utils import parsedate_to_datetime
 from pathlib import Path
+from scripts.osint.filter_korea import classify
 
 DEST = Path("data/osint/official.json")
 # Official publisher feeds; feed reachability and terms must be checked in production.
@@ -19,7 +20,7 @@ def parse(xml, source):
         title = (item.findtext("title") or "").strip()
         url = (item.findtext("link") or "").strip()
         date = (item.findtext("pubDate") or "").strip()
-        if not title or not url.startswith("https://"):
+        if not title or not url.startswith("https://") or not classify({"title": title}):
             continue
         try:
             date = parsedate_to_datetime(date).astimezone(dt.timezone.utc).isoformat()
