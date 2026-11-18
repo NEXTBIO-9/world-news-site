@@ -5,7 +5,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from email.utils import parsedate_to_datetime
 from pathlib import Path
-from scripts.osint.filter_korea import classify
+from filter_korea import classify
 
 DEST = Path("data/osint/official.json")
 # Official publisher feeds; feed reachability and terms must be checked in production.
