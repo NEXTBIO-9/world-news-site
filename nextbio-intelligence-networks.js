@@ -88,9 +88,9 @@ async function load(){try{const r=await fetch('./data/bio-official.json?v='+Math
 function init(){const columns=document.querySelector('#nb-intelligence .nb2-columns'),alerts=$('nb-alerts'),bookmarks=$('nb-bookmarks');if(!columns||!alerts||!bookmarks)return;
  const left=alerts.closest('section');if(!left)return;left.classList.add('nbm-alerts-panel');
  const tabs=node('div','nbm-tabs');tabs.setAttribute('role','tablist');
- const alertBtn=node('button','','⚡ 신규·주요 뉴스'),marketBtn=node('button','','📈 글로벌 증시 주요 이슈'),riskBtn=node('button','','🚨 글로벌 위험 신호'),calendarBtn=node('button','','📅 글로벌 주요 일정'),anomalyBtn=node('button','','📡 국가별 이상 징후');
- for(const b of [alertBtn,marketBtn,riskBtn,calendarBtn,anomalyBtn]){b.type='button';b.setAttribute('role','tab')}
- tabs.append(alertBtn,marketBtn,riskBtn,calendarBtn,anomalyBtn);left.insertBefore(tabs,alerts);const marketList=node('div','nb2-list');marketList.id='nb-market-issues';marketList.hidden=true;left.append(marketList);const riskList=node('div','nb2-list');riskList.id='nb-risk-signals';riskList.hidden=true;left.append(riskList);const calendarList=node('div','nb2-list');calendarList.id='nb-global-calendar';calendarList.hidden=true;left.append(calendarList);const anomalyList=node('div','nb2-list');anomalyList.id='nb-country-anomaly';anomalyList.hidden=true;left.append(anomalyList);bookmarks.hidden=true;bookmarks.style.display='none';
+ const alertBtn=node('button','','⚡ 신규·주요 뉴스'),marketBtn=node('button','','📈 글로벌 증시 주요 이슈'),riskBtn=node('button','','🚨 글로벌 위험 신호'),calendarBtn=node('button','','📅 글로벌 주요 일정');
+ for(const b of [alertBtn,marketBtn,riskBtn,calendarBtn]){b.type='button';b.setAttribute('role','tab')}
+ tabs.append(alertBtn,marketBtn,riskBtn,calendarBtn);left.insertBefore(tabs,alerts);const marketList=node('div','nb2-list');marketList.id='nb-market-issues';marketList.hidden=true;left.append(marketList);const riskList=node('div','nb2-list');riskList.id='nb-risk-signals';riskList.hidden=true;left.append(riskList);const calendarList=node('div','nb2-list');calendarList.id='nb-global-calendar';calendarList.hidden=true;left.append(calendarList);bookmarks.hidden=true;bookmarks.style.display='none';
  for(const s of [...columns.children])if(s!==left)s.remove();
  const right=node('section','nbm-official');right.id='nbm-official';
  const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 발표 및 동아시아 안보 동향');
@@ -123,8 +123,8 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  loadNavy();
  function showRight(tab){officialMeta.hidden=tab!=='who';officialList.hidden=tab!=='who';forecastPanel.hidden=tab!=='forecast';whoBtn.setAttribute('aria-selected',String(tab==='who'));forecastBtn.setAttribute('aria-selected',String(tab==='forecast'));}
  whoBtn.addEventListener('click',()=>showRight('who'));forecastBtn.addEventListener('click',()=>showRight('forecast'));showRight('who');
- function show(tab){alerts.hidden=tab!=='alerts';marketList.hidden=tab!=='market';riskList.hidden=tab!=='risk';calendarList.hidden=tab!=='calendar';anomalyList.hidden=tab!=='anomaly';alertBtn.setAttribute('aria-selected',String(tab==='alerts'));marketBtn.setAttribute('aria-selected',String(tab==='market'));riskBtn.setAttribute('aria-selected',String(tab==='risk'));calendarBtn.setAttribute('aria-selected',String(tab==='calendar'));anomalyBtn.setAttribute('aria-selected',String(tab==='anomaly'))}
- alertBtn.addEventListener('click',()=>show('alerts'));marketBtn.addEventListener('click',()=>show('market'));riskBtn.addEventListener('click',()=>show('risk'));calendarBtn.addEventListener('click',()=>show('calendar'));anomalyBtn.addEventListener('click',()=>show('anomaly'));show('alerts');
+ function show(tab){alerts.hidden=tab!=='alerts';marketList.hidden=tab!=='market';riskList.hidden=tab!=='risk';calendarList.hidden=tab!=='calendar';alertBtn.setAttribute('aria-selected',String(tab==='alerts'));marketBtn.setAttribute('aria-selected',String(tab==='market'));riskBtn.setAttribute('aria-selected',String(tab==='risk'));calendarBtn.setAttribute('aria-selected',String(tab==='calendar'));anomalyBtn.setAttribute('aria-selected',String(tab==='anomaly'))}
+ alertBtn.addEventListener('click',()=>show('alerts'));marketBtn.addEventListener('click',()=>show('market'));riskBtn.addEventListener('click',()=>show('risk'));calendarBtn.addEventListener('click',()=>show('calendar'));show('alerts');
  // Repaint after creating the tab containers; the news feed may have rendered earlier.
  window.NB2?.refresh?.();
  document.addEventListener('nb-title-translation-changed',renderOfficial);load();setInterval(load,300000);
