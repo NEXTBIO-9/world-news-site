@@ -66,7 +66,10 @@ def preserve_published(result, previous):
     now_local = dt.datetime.fromisoformat(result["updated"])
     if old_daily and (now_local.hour < 7 or old_daily.get("date") == result["reports"][0]["date"]):
         result["reports"][0] = old_daily
-    if old_weekly and not any(x.get("type") == "weekly" for x in result["reports"]):
+    new_weekly = next((x for x in result["reports"] if x.get("type") == "weekly"), None)
+    if old_weekly and new_weekly and old_weekly.get("date") == new_weekly.get("date"):
+        result["reports"][result["reports"].index(new_weekly)] = old_weekly
+    elif old_weekly and not new_weekly:
         result["reports"].append(old_weekly)
     return result
 
