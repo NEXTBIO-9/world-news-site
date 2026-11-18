@@ -17,6 +17,7 @@ jobs:
           python-version: '3.11'
       - run: python -m unittest discover -s tests -p 'test_korea_osint.py' -v
       - run: python -m unittest discover -s tests -p 'test_korea_osint_reports.py' -v
+      - run: python -m unittest discover -s tests -p 'test_korea_osint_official.py' -v
       - run: python -m compileall -q scripts/osint
       - run: node --check korea-osint.js
       - run: python scripts/osint/filter_korea.py && python scripts/osint/build_reports.py
