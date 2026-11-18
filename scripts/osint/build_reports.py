@@ -5,6 +5,7 @@ import json
 import re
 from collections import defaultdict
 from pathlib import Path
+from verify_sources import annotate, special_candidates
 
 DATA = Path("data/osint/events.json")
 REPORTS = Path("data/osint/reports.json")
@@ -48,7 +49,10 @@ def build(items, now=None):
 
 def main():
     data = json.loads(DATA.read_text(encoding="utf-8"))
-    result = build(data.get("events", []))
+    items = annotate(data.get("events", []))
+    result = build(items)
+    result["special_review_candidates"] = special_candidates(items)
+    result["special_publication_enabled"] = False
     REPORTS.parent.mkdir(parents=True, exist_ok=True)
     REPORTS.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     print("Generated", len(result["reports"]), "templated briefings")
