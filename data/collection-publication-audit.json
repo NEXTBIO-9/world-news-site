@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-18T03:49:17.886767+00:00",
+  "updated": "2026-11-18T04:47:56.304647+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
-  "collected_unique_urls": 180,
+  "collected_unique_urls": 171,
   "counts": {
     "important_unpublished": 17,
-    "not_in_current_queue": 46,
-    "pending": 20,
-    "published": 114
+    "not_in_current_queue": 44,
+    "pending": 14,
+    "published": 113
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 11,
-    "pending": 6
+    "not_in_current_queue": 12,
+    "pending": 5
   },
   "important_unpublished_by_reason": {
     "source_blocked": 7,
-    "repeated_extraction_failure": 4,
-    "in_retry_queue": 6
+    "repeated_extraction_failure": 5,
+    "in_retry_queue": 5
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -106,6 +106,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQaXVyeVRYWmIxUnlwWTZBU2dYamhrZ0lQVlg4ZkZJdGhIbEZrTm5BN2VBRkMta0pXbHN3MnYzelZqaERwMmFnRnZpRFRsVlk3N2J4UjBrMVFWdllqVGRmSWYwRkREbWVOT09NdjhORmZ3NXlidlFtOGFfZVZWbDdEQlNOZmhVT1Z1Sk5wdVZTZlVoMTYyZ1JfaWlPNjRrNHVQZHQzZWctdU9SWGstQWliRWM3ZHRpWHVn?oc=5",
+      "title": "U.S. loses measles elimination status year after deadly Texas outbreak",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     }
   ],
@@ -199,6 +207,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQaXVyeVRYWmIxUnlwWTZBU2dYamhrZ0lQVlg4ZkZJdGhIbEZrTm5BN2VBRkMta0pXbHN3MnYzelZqaERwMmFnRnZpRFRsVlk3N2J4UjBrMVFWdllqVGRmSWYwRkREbWVOT09NdjhORmZ3NXlidlFtOGFfZVZWbDdEQlNOZmhVT1Z1Sk5wdVZTZlVoMTYyZ1JfaWlPNjRrNHVQZHQzZWctdU9SWGstQWliRWM3ZHRpWHVn?oc=5",
+      "title": "U.S. loses measles elimination status year after deadly Texas outbreak",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOT1czcjFxRG1Ibzd0YlVQMHE0WHhoTEN1MVRNRHIyQng3QmhQeDVTMGpwaDB3NDZGbklKRHhtZ0tlYXdJYVdiZEZVZDlsZ1Z0dDVLdHM5THkzbVAxOUtQSzRQeWlyT3ZUTnVIcTdKQ0JmLXNwN241QmoyVEx2eDZURGFiME1aSHFTTVdiS3NjMFZySEIzWWhaRVg5QnY0d2FWc1poUW1GcGdNbXIxWFgwci1tZ3pGdDVUOU9TWnMybXduN25fU1dFcnNldkNmOXZn?oc=5",
       "title": "Russia says Ukraine struck its bridge to Crimea for second day in biggest drone attack of war",
       "important": true,
@@ -217,14 +233,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitwZBVV95cUxNcl9mNkdrZXVkQ1g0VmowZzg0WTcxN2JmM1JVUVJTbE51QmhPOUIycEhKcDQ3d2Q3QnhSX1MxS0dsSVZXSUI5d0pKWTRMNWU1YjA4RGI4MTkxZ3NZZ05JQ1VxVWRRODBUUTN2d25feWZyT3p3bHFGN0dDWEJ1aGV4TktmM0JOVWs4X2tSYXR1aTNWYm80aGxhTGhsZlE3ekZlTGRQcEZoOHppS2RJcEVYT0hOOGZndVd5eWxNZ2tzbjhDeG4zaEdpMXktRlFYYzMxTWxnR0FHUjVBdHJFYnVqWlJEcmpaa25yX3RJWV9pSEppOG90TF9qZmxCUk5YdXRVM003UlNRN1cyYnNFbXY3eWNaYVJfUE5UNnJyLUxtYUFTTUJhYlRYZDh5TnpreXNXbzZrMEU0eGpwU0syT3B2aEh6MnA1UnJoVE1nc1F3UFlSZEJzb21QRmdIbFBrLXBHWFVUeFpTcEpZNVp2d0RuTGFKWWNMME1VZFdxZ2dqSEVXV0pOdWdBT0hNNFhtS3dxanNBVmxXR3lpSG9EMldmVjdEUkk0SGFtMWVMSzNOMTY0cFVtc1h6eXVyWnVHaXA2UkliUl9Ud0Y4dVpCajNmLVVLeXFhZ3V4bVg4MFh5WWpFYjhnZnBWNWk5VlJkZTVFWWszNEFhMlRVSUhOZlNWaGNkbno3YzJhM1BqOHRpZC01MnNQVzhCemNBQ09nbkl6MjlnenJmZmJ4QzMyc2xDTjZNSkVnQUVPNzBPdUU1SHJackYwSGo4TGVHN21zdEFxYm1mUzF2RWRvWGtsOE11YUJCa2k3cEpVSnc2TlQ5MF9YblRKVXNIb2JwbzJadWxrem1aN2dzenFxNl9HOFY1X0Jvak5vemV6OUFNSTFsZElSa05kUm1yNm42ZFJSSmFnNE1EaXJ3WkxKazU4Y1ltVFA4bEt3YURYSmtUanBTUlVFY0NaYnVHU1NkR3FDenpBTEFUQnhWY3V1WmU2a3RZdGZWQUJoYU8zalFlcDEwZENUVl96akdlcWxEQmVXMWVMSUNXaWtLZVAtX3QyNjEzVk80TGFfOWpUbXNFWnpxSDhHZThqd2dN?oc=5",
       "title": "𝗦𝘁𝗿𝗮𝘁𝗲𝗴𝗶𝗲𝘀 𝘁𝗼 𝗰𝗼𝗺𝗯𝗮𝘁 𝗮𝗻𝘁𝗶𝗺𝗶𝗰𝗿𝗼𝗯𝗶𝗮𝗹 𝗿𝗲𝘀𝗶𝘀𝘁𝗮𝗻𝗰𝗲 More countries are developing strategies to combat antimicrobial resistance (AMR), but inadequate diagnostic testing, treatment guidelines and funding continue to expose patients to drug-",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQaXVyeVRYWmIxUnlwWTZBU2dYamhrZ0lQVlg4ZkZJdGhIbEZrTm5BN2VBRkMta0pXbHN3MnYzelZqaERwMmFnRnZpRFRsVlk3N2J4UjBrMVFWdllqVGRmSWYwRkREbWVOT09NdjhORmZ3NXlidlFtOGFfZVZWbDdEQlNOZmhVT1Z1Sk5wdVZTZlVoMTYyZ1JfaWlPNjRrNHVQZHQzZWctdU9SWGstQWliRWM3ZHRpWHVn?oc=5",
-      "title": "U.S. loses measles elimination status year after deadly Texas outbreak",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -271,8 +279,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5JNWoyTnNYMER4U0dQb1YxbTdvaklOREdMWmZHeUNtSU9nTF9BUXNPVXAyZlR6dzFZdVNKMlROTzJWWDZVb0RaMGJmS0JDR2NvQ1E?oc=5",
-      "title": "Daily_Brief: #Sudan war, #Red_Sea tensions and ‘water security’ feature in #Egypt-#US-#UAE talks",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBqYmRudFFvSUJPem1BYzJFMDFPSE9SWTBvd0JTemM2OGxvelE4d0xQUV9hSXVaSHkyZzMxS2t0MmZ4aFpUZ3JTS1pocDdzM2pic3RMRWtmTQ?oc=5",
+      "title": "Azerbaijan and Vietnam eye new era of cooperation ahead of President Aliyev's visit",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -383,16 +391,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNRVY0RFpoZjlrLUh0UmctRUZRcEdVQk9HS0V5dWV5TXg1TDBDRTQydHB6VnhVTDhVTXVpUXBSUEV4eGVyUW80Uk5xdTBBSVFzel83b21iUWNhZUVQNF9RQXlZWTVPTEdjSHlYQ2ZsSWY5Q3RyVUQwUGt6XzBkM3J4QnoyN29EXzNSYnhkUl9B?oc=5",
-      "title": "Bangladesh's first nuclear power unit connected to national grid",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbkY3Z0diREQxWV9DN2xYMXgwRW9pT2VsanIyVFhqNWpuVkJiX205ejVkdGhKV0tzOGZ2RjlSSkpDekRKY2dvYmVNMHEwcGxaTmRNSVZKTTBNak01b0dFSGRQUUJSel80Wl9tWEtMa19UZUdkREZKU1FTUnFuZGVZRGxqVTNBeUhnb0I4WURUN2YyMzQ?oc=5",
+      "title": "South Korea Offers Nuclear Energy for Indonesia AI Power",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbkY3Z0diREQxWV9DN2xYMXgwRW9pT2VsanIyVFhqNWpuVkJiX205ejVkdGhKV0tzOGZ2RjlSSkpDekRKY2dvYmVNMHEwcGxaTmRNSVZKTTBNak01b0dFSGRQUUJSel80Wl9tWEtMa19UZUdkREZKU1FTUnFuZGVZRGxqVTNBeUhnb0I4WURUN2YyMzQ?oc=5",
-      "title": "South Korea Offers Nuclear Energy for Indonesia AI Power",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNTkRJYzVtWXc1TVlENmFYTVlFLUxwVHdmcE5CbVFEbExmMXV3NHc3QnU5Yjg0d3JUYnI1ZEN0VFNQaHdYY09sLWozZ1h1Um9lWHNDYzFjYTJTcXFoZUpJTEc2cktJWlJaU3ltTGtQTEpwWGxpUDVVbXdCeXYyc0xGaXQtTEpnb1hNdWdXRXNUeXF4c25hZmc?oc=5",
+      "title": "Ethiopia-Eritrea Border Clashes Raise Fears of Regional War",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -407,8 +415,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNTGM0UmlXNUx4YzNnSGdtaFF1VjR1Wkc2VVliMTYtMWFGVlQtSzVOS3FNMFN3T1kyR01KX2lqNXRLX3lVakJsdU50OXRSMTFsSDFNSzRReFZVV2VXcG9zT2sxSDZRRm9DMzNid3VIamJKQUlVS2lEY3BjWnM3ZExuelVNV0ZCQTE2b2YtNWdJNl95RTNWalk0?oc=5",
-      "title": "Ethiopia-Eritrea Border Clashes Raise Fears of Regional War",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxONmpSQUpsbFBZdHJBVzE5RksxTlV3a01Mb0c1bHktX0RSeXhLR3c1bC1JZ3FBUUtWcEYzbkNWZEV1SXQ1QUl2LW1oR0VMa2lvQ0dycm1QMHRWQmpRUjNDOTlqZ2xoU2xkOWZab25sb1R6UW56QWJqb0h0NjRaX3RiOFpCQTc5UzQtRjlMWFBFWG9QazFHQnpHTg?oc=5",
+      "title": "Here’s a List of Gulf Energy Infrastructure Damaged in Iran War",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -447,14 +455,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSDMtU0l4eWEzWW9TaUxnS2NEdUotUjNRdTNoS3BLYWNqV2FLdFVfN0NxOVV0Z0hUOHZZamU4WjdsWnBzRmpET203V1BZYWhzczEyRDNpUVFTZkt6Mk9fT0lBemkzZU52c1c4T0k3WGVCdW9JMWsybkFBOG1pZFNkUTRNRnFmSHRDaG90dE9teXdIMTZTeWN4bzdaaXBmLWZ6eklMNmhBZVhweE1mUGIwRtIBsAFBVV95cUxOSDMtU0l4eWEzWW9TaUxnS2NEdUotUjNRdTNoS3BLYWNqV2FLdFVfN0NxOVV0Z0hUOHZZamU4WjdsWnBzRmpET203V1BZYWhzczEyRDNpUVFTZkt6Mk9fT0lBemkzZU52c1c4T0k3WGVCdW9JMWsybkFBOG1pZFNkUTRNRnFmSHRDaG90dE9teXdIMTZTeWN4bzdaaXBmLWZ6eklMNmhBZVhweE1mUGIwRg?oc=5",
-      "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa0JqQ3k0WGk0NVoxbHRNTHBTeDZxaVkyYmdzdGptNVB2MUVjb3lmcG1OTXRrWGs0U016Vi0tWTU5UmdYbk5IWHJfSTV0UEpEUkZvM0s1WjkwT3E1NFVfMzdGb3pyZ0J3cmhGWXMzVWJnSmpTTVh0MU1VcUJUcFZBamRua0kyOFVWSGUtQ243M2lITElJbmRRS3ZhNTNTenJJcXJTbFZiU0hJVFl1SHl5MnVB?oc=5",
       "title": "Yemen’s Long War, Saudi Arabia’s Security Dilemma, and the Shifting Middle East",
       "important": false,
@@ -471,14 +471,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQnVwN3ZLUVJkRjRTYzZRV3pYeUFTR2VPR2lXNGtXa091WjFMOGttMDNtZ04tbnh6dHhXb1BXQ0FXbF9ZbUZPY2R6X0V2dlJiNElSTjlTeko2eE9IRUUzYjZNUTBwZXF2a0ZUZ0IwZG5keUpEaWtWS1ZCOWJSTThIemJXQkt5V2NJS0NoU2l5SGtha0FfZkRSRTUzUFY1cm9WamJROG9tUFdxMEpFaWRKc29TSzl2dw?oc=5",
-      "title": "El-Sisi discusses expanding investment cooperation in Egypt with EBRD president - Economy - Business",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQdnpaRWl6V2V6TmItTEFjemdRWEFkTlE1eVlabXpXOTBTTExMY25sbV8yOTh2ZVN1R1NiT2xxTmRiemN3NEZ1ZkFGdzlFdkkzTDNZcnNHZWk0SFpZTHp2R0lDdjlSQUZ5RzVRMjFELVQ4ZGFpTFc2RURBeE05MEx1eEN3TUgtUlJUZ21nSjB4NkVNbHlXa0wyLVFfNjh3OGtmRmEzUGNzU2tXdnVjQ09kWDl0Y18ydw?oc=5",
       "title": "First Milei, Now Lula Enters the Fray to Shape Spain’s Election",
       "important": false,
@@ -489,14 +481,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZ1hsTUpTUHZkN0l0N0g0TXJUVVNxZXB1dkZmNlBUXzd6U0JCam1KSmNmajk3RDJtSlExbUwwaUU3TEg2Y1N4RUFCWEdENElVRVZnLWI0RXlIRWYyUEIzeVp1R2dGWWMwMGxpNUxFUXR1ckdhdU9RSkQyM3RyUDhhSG50ejFzYVRaaF9GbUlDWmEwRUFsLWI4OEQ1dVY1NVBKdHhqZU9JVXV3TF9CemtnekZYQ3FBQ1E?oc=5",
       "title": "Kenya wins ITU Council re-election with 136 votes, leads African group",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPUFVBR1RpTU9Ddi0tRVFMRTVJMDM4bXZnbEhSdTZsSGNCTE5sSXRYR1UxZWNjNmFsbmc0eEdPWkVFb3B5eFdhR3ZraDRYWWMtQmNvbXpRT0h6c0FlSnB4VmowSnFGWktUQ2N1cDBkYVdZbDNpeWJZZVlTRkpZR0djeURBdWFqdFBKWGRBb2lrYzRNU1RMVjBieGtqQlEtTTJ3NlVVX09MLTZ2b25BckxrNU1CTS1hTzgw?oc=5",
-      "title": "INTERVIEW| Egypt well-positioned to become regional hub for trade, investment: WEF president - Economy - Business",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -527,24 +511,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNejJIQ1RwVG9aamhmMDNVdmx0Tm0zS0o2U1pQOTJFSUh0Ny0weFVkeHJtdzhaeWhUTVVPZW5wU3kxZ2tXenJJLUEyZ2F5cVY1ZkEyVzVFRkdLcW5DWVFscGJlUzI1ZWVWRGVPbkswQVdQZXBmYTYzZ0ZFOURhNkVaTjFOclBWQnd0a05FR1NkNEM3ZXEyX1RqMl9MS2pFaG90enAtcWFOeS1JRkJDdEozaTUteXNrY3VsMlhNMksyVERreHk2VlROdHlodDZUcGR0LVJz?oc=5",
-      "title": "LOOK: U.S. President Donald Trump and Thai Prime Minister Anutin Charnvirakul officially sign a joint statement and agreements on reciprocal trade between the United States and Thailand. WATCH THE LIVESTREAM: https://bit.ly/TrumpArrivesInPH",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPVTRnVm9DendvNlM4eFFFRG1pSVJFdEpJNm5UaVN6cXZ5bUpqTEtvcC1RUWpET3Eya1R2YXJNWldKYUF4YmdnTS0xV3ZEVG0yRm8wbVU1LXVQejNKU2poOWNsZXFPNTlmbzZZNGlZVFl1Ny1JWktVZkhDc2xLODZQSG02MXJoS0RhdkJtWXg3amdRWlFzb0x5ZXVxQ3ZoeDdOeTVmN1FKdTYyakI4djVob01ZU2pIUXpjeTRsdkpZYXhrQlFFdUxFeGROMUZzRnp1RVRLb1dVRXNsNzRF?oc=5",
       "title": "Toronto Stock Exchange: TSX Falls 1.06% to 35,722.13 as Energy and Miners Slide After Steady 3.1% Inflation",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPbEZUc2RDa0RUWm9nYmJMcUprcTBHRFV6dzBCU3AwNmdmSHRwNzVUak5ka0w0cC1la3UtakU2TE5YOVNFcGdfS1N1cllyVmM3RDJOb2ZhZUFKOWNDaThsT2Vtc19pdUhLd2VTWnF0cDRkQzVPbzhjZjA3M1QwaDNXYy0wdnZGVEtoWnRHTnJIbzFGbDRvOFEydjZIX0xjQVRlMk0xZWk2dGUxRmUxZ3k2LWttNjZ5ZS1DYkJodk1EeEhPcElWYWdaY050X0hUWUUtaTM4WnFTay1Nc3k0aXE4M0hsUnA?oc=5",
-      "title": "A.P. Moller Capital Announces The Completion Of Its Acquisition Of Mainstream Renewable Power South Africa",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -559,24 +527,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBxMmVZTmhHdXM5N0t1X29nV3NNalF0S2RzOEVNUmx6TjdSTU5XWTczZlBfZzhlTFlfTXltVnZYVjY4THV5LXUwekE3bUFMUnA0VTdJNA?oc=5",
-      "title": "Azerbaijan and Vietnam eye new era of cooperation ahead of President Aliyev's visit",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9OOUs2Z3JBSE5BejFaMlJ1RFFWa2EtYlhKa2k1Y1A3dE90X205OTNQbDBWSnhqSnB3Nkd6ZjFWRFlnZ1B2cENaOXRINU43UnlubXRmVjJUVWh0c2loWWZrVHZWWkRCWDdaaVI0UVFkUXpueEZwS2JxbklOaEVhdzQ?oc=5",
-      "title": "Norway Backs Nuclear-Powered Offshore Vessel Project",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNNFpYLS1sU1dFSGJwUnN5Uk9scTBZR253eFF1WmRudmFEbFRfMEFhMVZYUHdGRHBXbWhzdjJ0S1VKVGEtMEsxNlZranpmMXJqT0VHSVJ5MENzcDFQRy1tWjZjVWNyanlCZWN5U1FHNXpUNUx0SWktX0ZObm5sMVVXcDFHb01NUQ?oc=5",
-      "title": "Spain’s Election Is About Ceuta. Its Consequences Are About Gas",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4yUHZWamZ5c1FqYS1MeTVGWEJfQ3dNRTljS1lEcXJOYlFHRU42NzFZaFdaSGM2ekh5X1dxcW0zMEtTbFA0ckVpMjNKU24xSXlBcG9ibzN2MmxzMndQeHcxMVJkSFZrSXVNSzdZZw?oc=5",
+      "title": "李 “한일 국민간 선호도 최고”... 한일 정상회담",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -599,16 +551,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORzNIVmdsTk54YWFOZWdPdlQzQ1Rqb01pNGI4VlBFMGVUWjZkQXVBajlzcjd5Qmk3SmtrVWxEMXhibjcxTDRxb0dIalU3dkl6UEI1Y013SmVndkM3NU5QNGxBN190MjExSzgzMWtFcFRCN0dSR19wYUVKQzBPTWJkY1gwNnExMGVnbEg1ZVo5X2o2VFZ0UXBWbkpR?oc=5",
-      "title": "Rooppur Nuclear Plant Feeds First 350 MW Into Bangladesh's Power Grid",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPd2ZZT1FDblB1eXdUOHN4SnYzek5iVS1oVnYyVV9La1ZsZHJnZmhwanhFLWoxS3UtMjBzUThMVUdNWUp5RUs3VTJjYWJIZjdaN1hGbTlZWVRVZWM1d1F6QzM4eWprN3VjRGJ2V2xBNThHNlp2WGR2TnI0N1VKU3QxQXhSTWJPWVF5V3Z1ZDd5S2JsV0w1Ukp3TW5nSGxldUlRWWs2S1oyckQ?oc=5",
-      "title": "Washington must define its endgame in Iran before the next war begins - BLiTZ",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNYXVmZHk3Q0s1cU5yN2dsNk9ucmUzV29kVWtkYnQySTFUal9KMzFvaFRWYkI2QzZHTXQxQ2JqSzF1XzRhdVNudmdVNWExdVhMbmVpZmxHU016VTR4Z21tXzZYLUU1ZnctM1NpbkduM2huZWFRN0ZsdVVROS1DZXFlRVFiaG5HZzVNU2JOQVRGaWU?oc=5",
+      "title": "몽골 후렐수흐 대통령 사의 표명… “직 내려놓고 조사받아 명예 회복하겠다”",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
