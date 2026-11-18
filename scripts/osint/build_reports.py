@@ -31,6 +31,9 @@ def local_day(item):
     try:
         timestamp = dt.datetime.fromisoformat(str(item.get("published") or "").replace("Z", "+00:00"))
         if timestamp.tzinfo is None:
+            # Date-only values denote the source calendar date; do not shift days.
+            if re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", str(item.get("published") or "")):
+                return timestamp.date().isoformat()
             return ""
         return timestamp.astimezone(dt.timezone(dt.timedelta(hours=9))).date().isoformat()
     except (ValueError, TypeError):
@@ -64,6 +67,15 @@ def main():
     result["special_review_candidates"] = special_candidates(items)
     result["special_publication_enabled"] = False
     REPORTS.parent.mkdir(parents=True, exist_ok=True)
+    # Preserve the most recent Sunday briefing across weekday hourly refreshes.
+    if REPORTS.exists():
+        try:
+            previous = json.loads(REPORTS.read_text(encoding="utf-8"))
+            old_weekly = [x for x in previous.get("reports", []) if x.get("type") == "weekly"]
+            if old_weekly and not any(x.get("type") == "weekly" for x in result["reports"]):
+                result["reports"].extend(old_weekly[:1])
+        except (ValueError, OSError, TypeError, AttributeError):
+            pass
     REPORTS.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     print("Generated", len(result["reports"]), "templated briefings")
 
