@@ -45,14 +45,15 @@ def main():
         "last_checked": now,
         "check_status": "ok" if success == len(QUERIES) else "partial",
         "source_count": success,
-        "estimates": {
+        "estimates": old.get("estimates", {
             "scope": "Southern inter-Korean border fortification",
             "reference_period": "2026-08",
             "ground_preparation_pct": 90,
             "fences_mines_pct_min": 30,
             "fences_mines_pct_max": 60,
-            "note": "Reported estimates, not verified total border-wall completion or automatic measurements."
-        },
+            "note": "Historical reported estimates; updates require separately verified evidence."
+        }),
+        "estimate_evidence": old.get("estimate_evidence", []),
         "reports": list(articles.values())[:15]
     }
     DEST.parent.mkdir(parents=True, exist_ok=True)
