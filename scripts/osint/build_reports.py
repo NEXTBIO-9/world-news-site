@@ -22,13 +22,22 @@ def group(items):
     """Group broad topic for navigation only; never assert same-event corroboration."""
     grouped = defaultdict(list)
     for item in items:
-        day = str(item.get("published") or "")[:10]
+        day = local_day(item)
         grouped[(day, topic(item))].append(item)
     return [{"day": day, "topic": kind, "count": len(rows), "items": rows}
             for (day, kind), rows in sorted(grouped.items(), reverse=True)]
 
+def local_day(item):
+    try:
+        timestamp = dt.datetime.fromisoformat(str(item.get("published") or "").replace("Z", "+00:00"))
+        if timestamp.tzinfo is None:
+            return ""
+        return timestamp.astimezone(dt.timezone(dt.timedelta(hours=9))).date().isoformat()
+    except (ValueError, TypeError):
+        return ""
+
 def briefing(items, kind, date):
-    selected = [x for x in items if str(x.get("published") or "")[:10] == date] if kind == "daily" else items
+    selected = [x for x in items if local_day(x) == date] if kind == "daily" else items
     return {"id": hashlib.sha256((kind+date).encode()).hexdigest()[:12], "type": kind,
             "date": date, "title": ("대한민국 안보 일일 브리핑" if kind == "daily" else "대한민국 안보 주간 동향"),
             "summary": f"한국 안보 관련 보도 후보 {len(selected)}건. 독립적 사실 검증 및 전략적 판단은 수행되지 않았습니다.",
@@ -40,7 +49,7 @@ def build(items, now=None):
     today = local.date()
     daily_day = (today - dt.timedelta(days=1)).isoformat()
     week_start = today - dt.timedelta(days=7)
-    weekly = [x for x in items if str(x.get("published") or "")[:10] >= week_start.isoformat()]
+    weekly = [x for x in items if week_start.isoformat() <= local_day(x) < today.isoformat()]
     reports = [briefing(items, "daily", daily_day)]
     if today.weekday() == 6:
         reports.append(briefing(weekly, "weekly", today.isoformat()))
