@@ -81,6 +81,16 @@ def validated_events(data):
         raise ValueError("Expected OSINT events list")
     return [item for item in raw_items if isinstance(item, dict)]
 
+def gate_first_publication(result, previous):
+    """Never publish a new daily briefing before 07:00 KST on first run."""
+    local = dt.datetime.fromisoformat(result["updated"])
+    old_reports = previous.get("reports", []) if isinstance(previous, dict) else []
+    if not isinstance(old_reports, list):
+        old_reports = []
+    if local.hour < 7 and not any(isinstance(x, dict) and x.get("type") == "daily" for x in old_reports):
+        result["reports"] = [x for x in result["reports"] if x.get("type") != "daily"]
+    return result
+
 def main():
     from verify_sources import annotate, special_candidates, source_comparison
     data = json.loads(DATA.read_text(encoding="utf-8"))
@@ -91,12 +101,16 @@ def main():
     result["special_review_required"] = True
     result["special_publication_enabled"] = False
     REPORTS.parent.mkdir(parents=True, exist_ok=True)
+    previous = {}
     if REPORTS.exists():
         try:
             previous = json.loads(REPORTS.read_text(encoding="utf-8"))
+            if not isinstance(previous, dict):
+                previous = {}
             result = preserve_published(result, previous)
         except (ValueError, OSError, TypeError, AttributeError):
             pass
+    result = gate_first_publication(result, previous)
     REPORTS.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     print("Generated", len(result["reports"]), "templated briefings")
 
