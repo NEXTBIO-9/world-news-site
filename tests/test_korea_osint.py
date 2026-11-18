@@ -10,6 +10,10 @@ class KoreaOSINTTests(unittest.TestCase):
         self.assertIsNone(classify({"title":"France military drill in Europe"}))
     def test_non_security_korea(self):
         self.assertIsNone(classify({"title":"South Korea pop music awards"}))
+    def test_korea_publisher_not_evidence(self):
+        self.assertIsNone(classify({"title":"Japan nuclear policy debate", "summary":"The Korea Daily"}))
+    def test_korea_only_in_summary_not_sufficient(self):
+        self.assertIsNone(classify({"title":"Japan military exercise", "summary":"South Korea mentioned in unrelated summary"}))
     def test_deduplicate(self):
         a={"title":"North Korea missile launch","url":"https://example.com/1","source":"Test"}
         self.assertEqual(len(collect([a,a])),1)
