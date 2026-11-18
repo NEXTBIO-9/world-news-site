@@ -41,6 +41,14 @@ jobs:
           elif [ "$SCHEDULE" = "0 22 * * *" ]; then mode=daily
           else mode=special; fi
           echo "mode=$mode" >> "$GITHUB_OUTPUT"
+      - name: Require configured API key
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo 'Missing OPENAI_API_KEY repository secret' >&2
+            exit 1
+          fi
       - name: Generate verified public-source reports
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
