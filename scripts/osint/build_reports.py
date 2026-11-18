@@ -54,7 +54,7 @@ def build(items, now=None):
     week_start = today - dt.timedelta(days=7)
     weekly = [x for x in items if week_start.isoformat() <= local_day(x) < today.isoformat()]
     reports = [briefing(items, "daily", daily_day)]
-    if today.weekday() == 6:
+    if today.weekday() == 6 and local.hour >= 7:
         reports.append(briefing(weekly, "weekly", today.isoformat()))
     return {"updated": local.isoformat(), "reports": reports, "topic_groups": group(items)}
 
@@ -65,6 +65,7 @@ def main():
     result = build(items)
     result["source_comparison_candidates"] = source_comparison(items)
     result["special_review_candidates"] = special_candidates(items)
+    result["special_review_required"] = True
     result["special_publication_enabled"] = False
     REPORTS.parent.mkdir(parents=True, exist_ok=True)
     # Preserve the most recent Sunday briefing across weekday hourly refreshes.
