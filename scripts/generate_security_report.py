@@ -85,10 +85,18 @@ def main():
         articles=select(topic,168 if args.mode=="weekly" else 72,now)
         if len({a["source"].lower() for a in articles})<3:
             print(topic,": insufficient independent sources");continue
-        date_key=(now-dt.timedelta(hours=9)).strftime("%Y-%m-%d") if False else (now+dt.timedelta(hours=9)).strftime("%Y-%m-%d")
+        date_key=(now+dt.timedelta(hours=9)).strftime("%Y-%m-%d")
         if args.mode=="weekly":date_key=(now+dt.timedelta(hours=9)).strftime("%G-W%V")
         # Special reports only on substantive new source sets, not every poll.
         fingerprint=hashlib.sha256(json.dumps(sorted(a["url"] for a in articles),ensure_ascii=False).encode()).hexdigest()[:16]
+        if args.mode=="special":
+            # Avoid repeated special reports from rolling news windows.
+            recent=[r for r in reports if r.get("type")=="special" and r.get("topic")==topic]
+            if any((now-dt.datetime.fromisoformat(r["created_at"])).total_seconds()<24*3600 for r in recent):
+                print(topic,": special-report cooldown");continue
+            urgent=("attack","strike","invasion","missile launch","nuclear test","airstrike","공격","공습","침공","미사일 발사","핵실험","교전")
+            if not any(any(term in (a["title"]+" "+a["excerpt"]).lower() for term in urgent) for a in articles):
+                print(topic,": no major-incident signal");continue
         uid=f"{args.mode}:{topic}:{fingerprint if args.mode=='special' else date_key}"
         if any(r.get("id")==uid for r in reports):continue
         if args.dry_run:print("eligible",uid,"sources",len(articles));continue
