@@ -32,7 +32,7 @@ def local_day(item):
         timestamp = dt.datetime.fromisoformat(str(item.get("published") or "").replace("Z", "+00:00"))
         if timestamp.tzinfo is None:
             # Date-only values denote the source calendar date; do not shift days.
-            if re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", str(item.get("published") or "")):
+            if re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(item.get("published") or "")):
                 return timestamp.date().isoformat()
             return ""
         return timestamp.astimezone(dt.timezone(dt.timedelta(hours=9))).date().isoformat()
