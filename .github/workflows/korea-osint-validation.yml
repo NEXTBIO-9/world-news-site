@@ -5,7 +5,8 @@ on:
   pull_request:
     paths:
       - 'scripts/osint/**'
-      - 'tests/test_korea_osint.py'
+      - 'tests/test_korea_osint*.py'
+      - '.github/workflows/korea-osint-*.yml'
       - 'korea-osint*'
 jobs:
   test:
