@@ -9,6 +9,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from news_priority import important
+from fetch_news import quality_score, selection_score, MIN_QUALITY_SCORE
 
 ROOT = Path(__file__).resolve().parents[1]
 PATH = ROOT / 'data/article-summaries.json'
@@ -123,27 +124,27 @@ def main():
                if isinstance(item, dict) and needs_translation(item)
                and float(item.get('ko_retry_after', 0) or 0) <= time.time()]
     feed_path = ROOT / 'data/articles.json'
+    queue_path = ROOT / 'data/pending-title-news.json'
     feed = json.loads(feed_path.read_text(encoding='utf-8')) if feed_path.exists() else {}
-    by_url = {a.get('url'): a for a in feed.get('articles', []) if isinstance(a, dict)}
-    # Fresh publication time takes precedence; keep a quarter of capacity for
-    # older eligible excerpts so the backlog also makes forward progress.
+    queue = json.loads(queue_path.read_text(encoding='utf-8')) if queue_path.exists() else {}
+    candidates = list(feed.get('articles') or [])
+    candidates.extend(entry.get('article') for entry in (queue.get('pending') or [])
+                      if isinstance(entry, dict))
+    by_url = {a.get('url'): a for a in candidates
+              if isinstance(a, dict) and a.get('url')
+              and quality_score(a) >= MIN_QUALITY_SCORE
+              and selection_score(a) >= MIN_QUALITY_SCORE}
+    # Never spend expensive model time translating orphaned or below-threshold
+    # cache entries. Pending publication candidates are included explicitly.
+    pending = [(url, item) for url, item in pending if url in by_url]
     def published_time(pair):
-        article = by_url.get(pair[0], {})
-        return str(article.get('published') or pair[1].get('updated') or '')
-    # Translate articles in the current publication queue before orphaned cache
-    # entries; otherwise stale cached excerpts can consume the entire budget.
-    active = [pair for pair in pending if pair[0] in by_url]
-    inactive = [pair for pair in pending if pair[0] not in by_url]
-    # Within the fresh quota, translate important news before ordinary news.
-    # The separate oldest-first quota below still prevents backlog starvation.
-    newest = sorted(active, key=lambda pair: (important(by_url.get(pair[0], {})), published_time(pair)), reverse=True)
+        return str(by_url[pair[0]].get('published') or pair[1].get('updated') or '')
+    newest = sorted(pending, key=lambda pair:
+                    (important(by_url[pair[0]]), published_time(pair)), reverse=True)
     fresh_limit = max(1, LIMIT - max(1, LIMIT // 4))
     selected = newest[:fresh_limit]
     used = {url for url, _ in selected}
     selected += [pair for pair in reversed(newest) if pair[0] not in used][:LIMIT - len(selected)]
-    # Only use spare capacity for summaries no longer in the active queue.
-    if len(selected) < LIMIT:
-        selected += sorted(inactive, key=published_time, reverse=True)[:LIMIT - len(selected)]
     pending = selected
     if not pending:
         print('Korean summary translations: pending=0, translated=0')

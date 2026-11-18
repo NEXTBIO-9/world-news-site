@@ -74,8 +74,19 @@ def main():
             candidates += 1
         emit(candidates > 0, f'extraction candidates={candidates}; cached={len(summaries)}; blocked={len(blocked)}')
     else:
+        feed = load(FEED)
+        queue = load(ROOT / 'data/pending-title-news.json')
+        candidates = list(feed.get('articles') or [])
+        candidates.extend(entry.get('article') for entry in (queue.get('pending') or [])
+                          if isinstance(entry, dict))
+        eligible_urls = {a.get('url') for a in candidates
+                         if isinstance(a, dict) and a.get('url')
+                         and quality_score(a) >= MIN_QUALITY_SCORE
+                         and selection_score(a) >= MIN_QUALITY_SCORE}
         pending = 0
-        for item in summaries.values():
+        for url, item in summaries.items():
+            if url not in eligible_urls:
+                continue
             if not isinstance(item, dict):
                 continue
             source = str(item.get('text') or '').strip()
