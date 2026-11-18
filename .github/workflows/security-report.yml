@@ -1,0 +1,77 @@
+name: Security intelligence reports
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Report mode
+        required: true
+        type: choice
+        options: [daily, weekly, special]
+  schedule:
+    - cron: '0 22 * * *'
+    - cron: '10 22 * * 6'
+    - cron: '20 */3 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: nextbio-security-reports
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Determine report mode
+        id: mode
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_MODE: ${{ inputs.mode }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then mode="$INPUT_MODE"
+          elif [ "$SCHEDULE" = "10 22 * * 6" ]; then mode=weekly
+          elif [ "$SCHEDULE" = "0 22 * * *" ]; then mode=daily
+          else mode=special; fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+      - name: Generate verified public-source reports
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SECURITY_REPORT_MODEL: gpt-4.1-mini
+        run: python scripts/generate_security_report.py --mode "${{ steps.mode.outputs.mode }}"
+      - name: Commit report data without changing existing news
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/security_reports.json; then exit 0; fi
+          cp data/security_reports.json /tmp/security-reports-generated.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path("data/security_reports.json")
+          old=json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"reports":[]}
+          new=json.loads(Path("/tmp/security-reports-generated.json").read_text(encoding="utf-8"))
+          merged={r["id"]:r for r in old.get("reports",[]) if isinstance(r,dict) and "id" in r}
+          merged.update({r["id"]:r for r in new.get("reports",[]) if isinstance(r,dict) and "id" in r})
+          items=sorted(merged.values(),key=lambda r:r.get("created_at",""),reverse=True)[:200]
+          path.write_text(json.dumps({"updated":new.get("updated"),"reports":items},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          PY
+            git add data/security_reports.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish source-grounded security reports"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1
