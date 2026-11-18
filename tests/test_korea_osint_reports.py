@@ -43,6 +43,14 @@ class ReportTests(unittest.TestCase):
         new={"updated":"2026-11-22T07:00:00+09:00","reports":[{"type":"daily","date":"2026-11-21"},{"type":"weekly","date":"2026-11-22"}]}
         old={"reports":[{"type":"weekly","date":"2026-11-15"}]}
         self.assertEqual(preserve_published(new,old)["reports"][1]["date"],"2026-11-22")
+    def test_empty_daily_placeholder_is_replaced(self):
+        new={"updated":"2026-11-16T07:00:00+09:00","reports":[{"type":"daily","date":"2026-11-15","items":[{"title":"new"}]}]}
+        old={"reports":[{"type":"daily","date":"2026-11-15","items":[]}]}
+        self.assertEqual(preserve_published(new,old)["reports"][0]["items"][0]["title"],"new")
+    def test_empty_weekly_placeholder_is_replaced(self):
+        new={"updated":"2026-11-15T07:00:00+09:00","reports":[{"type":"daily","date":"2026-11-14"},{"type":"weekly","date":"2026-11-15","items":[{"title":"new"}]}]}
+        old={"reports":[{"type":"weekly","date":"2026-11-15","items":[]}]}
+        self.assertEqual(preserve_published(new,old)["reports"][1]["items"][0]["title"],"new")
     def test_corrupt_previous_reports_list(self):
         new={"updated":"2026-11-16T08:00:00+09:00","reports":[{"type":"daily","date":"2026-11-15"}]}
         self.assertEqual(preserve_published(new,{"reports":None})["reports"][0]["date"],"2026-11-15")
