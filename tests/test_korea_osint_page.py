@@ -29,6 +29,11 @@ class OSINTPageTests(unittest.TestCase):
         for name in requested:
             self.assertEqual(page.ids.count(name), 1, name)
         self.assertEqual(len(page.ids), len(set(page.ids)))
+    def test_collection_cannot_dispatch_from_feature_branch(self):
+        workflow = (ROOT / ".github/workflows/korea-osint-collect.yml").read_text(encoding="utf-8")
+        self.assertIn("if: github.ref == 'refs/heads/main'", workflow)
+        self.assertIn("ref: main", workflow)
+        self.assertIn("git add -- data/osint/events.json data/osint/official.json data/osint/reports.json", workflow)
     def test_script_and_data_paths(self):
         page = IdParser()
         page.feed((ROOT / "korea-osint.html").read_text(encoding="utf-8"))
