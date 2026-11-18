@@ -61,8 +61,10 @@ def build(items, now=None):
 def preserve_published(result, previous):
     """Preserve reports before 07:00 KST and keep the latest weekly report."""
     old_reports = previous.get("reports", [])
-    old_daily = next((x for x in old_reports if x.get("type") == "daily"), None)
-    old_weekly = next((x for x in old_reports if x.get("type") == "weekly"), None)
+    if not isinstance(old_reports, list):
+        return result
+    old_daily = next((x for x in old_reports if isinstance(x, dict) and x.get("type") == "daily"), None)
+    old_weekly = next((x for x in old_reports if isinstance(x, dict) and x.get("type") == "weekly"), None)
     now_local = dt.datetime.fromisoformat(result["updated"])
     if old_daily and (now_local.hour < 7 or old_daily.get("date") == result["reports"][0]["date"]):
         result["reports"][0] = old_daily
