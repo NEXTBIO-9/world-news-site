@@ -58,6 +58,18 @@ def build(items, now=None):
         reports.append(briefing(weekly, "weekly", today.isoformat()))
     return {"updated": local.isoformat(), "reports": reports, "topic_groups": group(items)}
 
+def preserve_published(result, previous):
+    """Preserve reports before 07:00 KST and keep the latest weekly report."""
+    old_reports = previous.get("reports", [])
+    old_daily = next((x for x in old_reports if x.get("type") == "daily"), None)
+    old_weekly = next((x for x in old_reports if x.get("type") == "weekly"), None)
+    now_local = dt.datetime.fromisoformat(result["updated"])
+    if old_daily and (now_local.hour < 7 or old_daily.get("date") == result["reports"][0]["date"]):
+        result["reports"][0] = old_daily
+    if old_weekly and not any(x.get("type") == "weekly" for x in result["reports"]):
+        result["reports"].append(old_weekly)
+    return result
+
 def main():
     from verify_sources import annotate, special_candidates, source_comparison
     data = json.loads(DATA.read_text(encoding="utf-8"))
@@ -68,18 +80,10 @@ def main():
     result["special_review_required"] = True
     result["special_publication_enabled"] = False
     REPORTS.parent.mkdir(parents=True, exist_ok=True)
-    # Keep daily briefing stable during hourly collection; publish at/after 07:00 KST.
     if REPORTS.exists():
         try:
             previous = json.loads(REPORTS.read_text(encoding="utf-8"))
-            old_reports = previous.get("reports", [])
-            old_daily = next((x for x in old_reports if x.get("type") == "daily"), None)
-            old_weekly = next((x for x in old_reports if x.get("type") == "weekly"), None)
-            now_local = dt.datetime.fromisoformat(result["updated"])
-            if old_daily and (now_local.hour < 7 or (now_local.hour >= 7 and old_daily.get("date") == result["reports"][0]["date"])):
-                result["reports"][0] = old_daily
-            if old_weekly and not any(x.get("type") == "weekly" for x in result["reports"]):
-                result["reports"].append(old_weekly)
+            result = preserve_published(result, previous)
         except (ValueError, OSError, TypeError, AttributeError):
             pass
     REPORTS.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
