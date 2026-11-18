@@ -93,9 +93,9 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  tabs.append(alertBtn,marketBtn,riskBtn,calendarBtn);left.insertBefore(tabs,alerts);const marketList=node('div','nb2-list');marketList.id='nb-market-issues';marketList.hidden=true;left.append(marketList);const riskList=node('div','nb2-list');riskList.id='nb-risk-signals';riskList.hidden=true;left.append(riskList);const calendarList=node('div','nb2-list');calendarList.id='nb-global-calendar';calendarList.hidden=true;left.append(calendarList);bookmarks.hidden=true;bookmarks.style.display='none';
  for(const s of [...columns.children])if(s!==left)s.remove();
  const right=node('section','nbm-official');right.id='nbm-official';
- const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 발표 및 동아시아 안보 동향');
- const whoBtn=node('button','','🏥 공식 감염병 발표'),forecastBtn=node('button','','🌏 동아시아 안보 동향');
- for(const b of [whoBtn,forecastBtn]){b.type='button';b.setAttribute('role','tab');rightTabs.append(b)}right.append(rightTabs);
+ const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 감염병 발표, 동아시아 안보 동향, 국제안보 정세평가');
+ const whoBtn=node('button','','🏥 공식 감염병 발표'),forecastBtn=node('button','','🌏 동아시아 안보 동향'),reportsBtn=node('button','','🛡️ 국제안보 정세평가');
+ for(const b of [whoBtn,forecastBtn,reportsBtn]){b.type='button';b.setAttribute('role','tab');rightTabs.append(b)}right.append(rightTabs);
  officialMeta=node('div','nbm-meta','WHO 공식 발표 · 제목 번역 ON/OFF 연동');right.append(officialMeta);
  officialList=node('div','nbm-list');right.append(officialList);
  const borderPanel=node('div','nbm-border-panel');borderPanel.id='nbm-border-panel';borderPanel.setAttribute('role','group');borderPanel.setAttribute('aria-label','북한 장벽 요새화 현황');
@@ -126,10 +126,35 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  const borderDetails=node('details','nbm-forecast-details');borderDetails.append(node('summary','','🧱 북한 장벽 요새화 현황 · 자세히 보기'),borderPanel);forecastPanel.append(borderDetails);right.append(forecastPanel);
  const navyPanel=node('div','nbm-border-panel');navyPanel.id='nbm-navy-panel';navyPanel.setAttribute('role','group');navyPanel.setAttribute('aria-label','중국 해군 최신 동향');navyPanel.append(node('h3','nbm-section-heading','⚓ 중국 해군 최신 동향'));navyPanel.append(node('div','nbm-meta','중국 해군·해경 훈련, 항모 활동, 해상 기동, 합동훈련 · 매일 1회 공개 보도 확인'));
  const navyList=node('div','nbm-list');navyList.append(node('p','nbm-empty','중국 해군 동향 데이터를 불러오는 중입니다.'));navyPanel.append(navyList);navyPanel.style.cssText='padding:10px 0 4px;border-top:1px solid #3a536e;margin-top:8px';const navyDetails=node('details','nbm-forecast-details');navyDetails.append(node('summary','','⚓ 중국 해군 최신 동향 · 최대 10건'),navyPanel);forecastPanel.append(navyDetails);columns.append(right);
+ const reportsPanel=node('div','nbm-border-panel');reportsPanel.id='nbm-osint-reports-panel';reportsPanel.setAttribute('role','tabpanel');reportsPanel.setAttribute('aria-label','NEXT BIO 국제안보 정세평가');reportsPanel.append(node('p','nbm-meta','일일·주간 보고서 · 공개자료 기반 · 사실 검증 전'));const reportsList=node('div','nbm-list');reportsList.append(node('p','nbm-empty','보고서 데이터를 불러오는 중입니다.'));reportsPanel.append(reportsList);right.append(reportsPanel);
  async function loadNavy(){try{const r=await fetch('./data/china-navy-news.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!r.ok)throw Error('아직 수집되지 않음');const d=await r.json();navyList.replaceChildren();const checked=d.last_checked?new Date(d.last_checked).toLocaleString('ko-KR'):'확인 전';navyList.append(node('p','nbm-meta','최근 확인 '+checked+' · 최신 최대 10건 표시 (수집 '+(d.items||[]).length+'건)'));for(const a of (d.items||[]).slice(0,10)){const item=node('div','nbm-item');const title=node('span','',a.title_ko||a.title||'제목 없음');if(a.url&&/^https:\/\//.test(a.url)){const link=node('a','',title.textContent);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link)}else item.append(title);if(a.category)item.append(node('span','nbm-source',a.category));navyList.append(item)}if(!(d.items||[]).length)navyList.append(node('p','nbm-empty','현재 수집된 관련 보도가 없습니다.'))}catch(e){navyList.replaceChildren(node('p','nbm-empty','첫 수집 대기 중입니다. GitHub Actions 실행 후 표시됩니다.'))}}
  loadNavy();
- function showRight(tab){officialMeta.hidden=tab!=='who';officialList.hidden=tab!=='who';forecastPanel.hidden=tab!=='forecast';whoBtn.setAttribute('aria-selected',String(tab==='who'));forecastBtn.setAttribute('aria-selected',String(tab==='forecast'));}
- whoBtn.addEventListener('click',()=>showRight('who'));forecastBtn.addEventListener('click',()=>showRight('forecast'));showRight('who');
+ async function loadOsintReports(){
+  try{
+   const [rr,er]=await Promise.all([fetch('./data/osint/reports.json',{cache:'no-store'}),fetch('./data/osint/events.json',{cache:'no-store'})]);
+   if(!rr.ok||!er.ok)throw Error('OSINT HTTP');
+   const reports=await rr.json(),events=await er.json();
+   reportsList.replaceChildren();
+   const published=Array.isArray(reports.reports)?reports.reports.filter(x=>x&&typeof x==='object'):[];
+   for(const r of published){
+    const card=node('div','nbm-item');
+    const kind=r.type==='weekly'?'주간보고서':r.type==='daily'?'일일보고서':'보고서';
+    card.append(node('strong','',kind+' · '+String(r.date||'기준일 미상')));
+    if(r.summary)card.append(node('p','',String(r.summary)));
+    if(Array.isArray(r.items))for(const item of r.items.slice(0,5)){
+     const title=String(item?.title||'관련 보도');const url=String(item?.url||'');
+     if(/^https:\/\//.test(url)){const a=node('a','',title);a.href=url;a.target='_blank';a.rel='noopener noreferrer';card.append(a)}else card.append(node('p','',title));
+    }
+    reportsList.append(card);
+   }
+   if(!published.length)reportsList.append(node('p','nbm-empty','아직 발행된 보고서가 없습니다. 첫 정기 수집 및 오전 7시 발행 이후 확인해 주세요.'));
+   const news=Array.isArray(events.events)?events.events.filter(x=>x&&typeof x.title==='string'&&/^https:\/\//.test(String(x.url||''))):[];
+   if(news.length){const section=node('div','nbm-item');section.append(node('strong','','한국 관련 안보 보도 · 최근 '+news.length+'건 중 최대 5건'));for(const item of news.slice(0,5)){const a=node('a','',item.title);a.href=item.url;a.target='_blank';a.rel='noopener noreferrer';section.append(a)}reportsList.append(section)}
+   reportsList.append(node('p','nbm-meta','※ 자동 수집한 공개 보도 및 템플릿 보고서입니다. 독립적인 사실 확인이나 정보기관의 공식 평가가 아닙니다.'));
+  }catch(e){reportsList.replaceChildren(node('p','nbm-empty','안보 보고서 데이터를 불러오지 못했습니다.'))}
+ }
+ function showRight(tab){officialMeta.hidden=tab!=='who';officialList.hidden=tab!=='who';forecastPanel.hidden=tab!=='forecast';reportsPanel.hidden=tab!=='reports';whoBtn.setAttribute('aria-selected',String(tab==='who'));forecastBtn.setAttribute('aria-selected',String(tab==='forecast'));reportsBtn.setAttribute('aria-selected',String(tab==='reports'));if(tab==='reports')loadOsintReports();}
+ whoBtn.addEventListener('click',()=>showRight('who'));forecastBtn.addEventListener('click',()=>showRight('forecast'));reportsBtn.addEventListener('click',()=>showRight('reports'));showRight('who');
  function show(tab){alerts.hidden=tab!=='alerts';marketList.hidden=tab!=='market';riskList.hidden=tab!=='risk';calendarList.hidden=tab!=='calendar';alertBtn.setAttribute('aria-selected',String(tab==='alerts'));marketBtn.setAttribute('aria-selected',String(tab==='market'));riskBtn.setAttribute('aria-selected',String(tab==='risk'));calendarBtn.setAttribute('aria-selected',String(tab==='calendar'))}
  alertBtn.addEventListener('click',()=>show('alerts'));marketBtn.addEventListener('click',()=>show('market'));riskBtn.addEventListener('click',()=>show('risk'));calendarBtn.addEventListener('click',()=>show('calendar'));show('alerts');
  // Repaint after creating the tab containers; the news feed may have rendered earlier.
