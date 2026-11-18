@@ -19,6 +19,7 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_korea_osint_reports.py' -v
       - run: python -m unittest discover -s tests -p 'test_korea_osint_official.py' -v
       - run: python -m unittest discover -s tests -p 'test_korea_osint_verification.py' -v
+      - run: python -m unittest discover -s tests -p 'test_korea_osint_page.py' -v
       - run: python -m compileall -q scripts/osint
       - run: node --check korea-osint.js
       - run: python scripts/osint/filter_korea.py && python scripts/osint/build_reports.py
