@@ -56,10 +56,11 @@ def build(items, now=None):
     return {"updated": local.isoformat(), "reports": reports, "topic_groups": group(items)}
 
 def main():
-    from verify_sources import annotate, special_candidates
+    from verify_sources import annotate, special_candidates, source_comparison
     data = json.loads(DATA.read_text(encoding="utf-8"))
     items = annotate(data.get("events", []))
     result = build(items)
+    result["source_comparison_candidates"] = source_comparison(items)
     result["special_review_candidates"] = special_candidates(items)
     result["special_publication_enabled"] = False
     REPORTS.parent.mkdir(parents=True, exist_ok=True)
