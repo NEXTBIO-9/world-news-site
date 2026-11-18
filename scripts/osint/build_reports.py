@@ -66,10 +66,10 @@ def preserve_published(result, previous):
     old_daily = next((x for x in old_reports if isinstance(x, dict) and x.get("type") == "daily"), None)
     old_weekly = next((x for x in old_reports if isinstance(x, dict) and x.get("type") == "weekly"), None)
     now_local = dt.datetime.fromisoformat(result["updated"])
-    if old_daily and (now_local.hour < 7 or old_daily.get("date") == result["reports"][0]["date"]):
+    if old_daily and (now_local.hour < 7 or (old_daily.get("date") == result["reports"][0]["date"] and old_daily.get("items"))):
         result["reports"][0] = old_daily
     new_weekly = next((x for x in result["reports"] if x.get("type") == "weekly"), None)
-    if old_weekly and new_weekly and old_weekly.get("date") == new_weekly.get("date"):
+    if old_weekly and new_weekly and old_weekly.get("date") == new_weekly.get("date") and old_weekly.get("items"):
         result["reports"][result["reports"].index(new_weekly)] = old_weekly
     elif old_weekly and not new_weekly:
         result["reports"].append(old_weekly)
