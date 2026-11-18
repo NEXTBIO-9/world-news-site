@@ -15,9 +15,12 @@ def classify(article):
     text = " ".join(str(article.get(k) or "") for k in ("title", "title_ko", "summary"))
     if not SECURITY.search(text):
         return None
-    if DIRECT.search(text):
+    headline = " ".join(str(article.get(k) or "") for k in ("title", "title_ko"))
+    if DIRECT.search(headline):
         return "A"
-    if REGIONAL.search(text) and CONNECTION.search(text):
+    # A regional headline is not enough: the Korea connection must be explicit
+    # in the headline, not merely in the scraped summary/source label.
+    if REGIONAL.search(headline) and CONNECTION.search(headline):
         return "B"
     return None
 
