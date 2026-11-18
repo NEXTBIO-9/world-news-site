@@ -1,0 +1,19 @@
+name: Korea OSINT validation
+on:
+  push:
+    branches: [feature/korea-osint-center]
+  pull_request:
+    paths:
+      - 'scripts/osint/**'
+      - 'tests/test_korea_osint.py'
+      - 'korea-osint*'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_korea_osint.py' -v
+      - run: python -m py_compile scripts/osint/filter_korea.py
