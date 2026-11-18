@@ -1,6 +1,6 @@
 import datetime as dt
 import unittest
-from scripts.osint.build_reports import build, group, local_day, preserve_published
+from scripts.osint.build_reports import build, group, local_day, preserve_published, validated_events
 
 class ReportTests(unittest.TestCase):
     def test_no_false_corroboration(self):
@@ -47,6 +47,10 @@ class ReportTests(unittest.TestCase):
         new={"updated":"2026-11-16T08:00:00+09:00","reports":[{"type":"daily","date":"2026-11-15"}]}
         self.assertEqual(preserve_published(new,{"reports":None})["reports"][0]["date"],"2026-11-15")
         self.assertEqual(preserve_published(new,{"reports":[None,42,{"type":"weekly","date":"2026-11-15"}]})["reports"][1]["type"],"weekly")
+    def test_validate_event_payload(self):
+        self.assertEqual(validated_events({"events":[None,{"title":"valid"},42]}),[{"title":"valid"}])
+        with self.assertRaises(ValueError):
+            validated_events({"events":"invalid"})
     def test_weekday(self):
         self.assertEqual(len(build([],dt.datetime(2026,11,16,tzinfo=dt.timezone.utc))["reports"]),1)
 if __name__=="__main__":unittest.main()
