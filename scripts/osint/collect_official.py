@@ -49,7 +49,10 @@ def main():
     if DEST.exists():
         try: old = json.loads(DEST.read_text(encoding="utf-8"))
         except (ValueError, OSError): pass
-    unique = {a["url"]:a for a in old.get("items", []) if isinstance(a,dict) and a.get("url")}
+    old_items = old.get("items", []) if isinstance(old, dict) else []
+    if not isinstance(old_items, list):
+        old_items = []
+    unique = {a["url"]:a for a in old_items if isinstance(a,dict) and isinstance(a.get("url"), str) and a["url"].startswith("https://")}
     unique.update({a["url"]:a for a in items})
     data = {"updated":dt.datetime.now(dt.timezone.utc).isoformat(), "items":list(unique.values())[-150:],
             "sources_ok":len(FEEDS)-len(errors),"sources_total":len(FEEDS),"errors":errors}
