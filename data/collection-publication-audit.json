@@ -1,21 +1,21 @@
 {
-  "updated": "2026-11-18T13:30:01.654884+00:00",
+  "updated": "2026-11-18T14:42:17.324535+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
     "important_unpublished": 14,
     "not_in_current_queue": 40,
-    "pending": 17,
-    "published": 123
+    "pending": 15,
+    "published": 125
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 10,
     "pending": 4
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 5,
-    "repeated_extraction_failure": 5,
+    "source_blocked": 6,
+    "repeated_extraction_failure": 4,
     "in_retry_queue": 4
   },
   "blocked_important_rss_candidates": 0,
@@ -26,14 +26,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5VZkRvcnFZM1NpSWVxVFp6Q2hZUG1jc0tPbGFFeTJrSmZUYXJqdHQ5NjhqUmJwa0t1dDUtZEplTU1yeE9DQWg3Rkg4bU05cm0tVDQyOHFWOVVjdw?oc=5",
-      "title": "“에취” 한번에 침방울 4m 날아간다…감염병 줄이는 ‘기침’ 예절",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -63,6 +55,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQzVxbF8zR2swbmswWnk4QlQ4M1pQRzgyS0g5bGJIR2RzLWt0ZmFFa01FVy1MT0ZPcTFka3kxWkxNeE5ndVJjQVZSamlKY3BvUlU4TUxxUXMyLU5udW5GWjlXak5PUzRNTUI0TENOczQtTjJQRlFJbjlqM09yLXJTN2ZnRW1JdVA4b28wVzNGeXY1X2g3WnZ6d19TVWhsMXdWdzc4Tg?oc=5",
       "title": "Antimicrobial Resistance Costs $3.5 Trillion Globally",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOWjBfNXcyeXlqSF9JeE0tTVl4azJZdkpHZkl6R1pVT2oyTFdfbms2dmJ4SjBFS0M4NmVndjl1d3IwNGdiVkxWckRBWUJYOEpvQlptaHhGdzF3M0QwT2xac0RvYzVRYzh3WWZVdWtINUtIUnJRc18xY3NjYzdVUkFBRVVUOHpOLXRoOGZIbDlhTkJxLU5KV0l6bFVlUzZIeFZPVVk4Mk9QUjZYSFVHWnhLNG9PczNaUWhUM3BQSEdQMFl0clcwV1ZyOXMtRjVlZDJvcXRTeTAwdlVCUEJNcHp1Nm9QeUZaUVRhTmtsZklzQkt2QmpuWFpsX0c1dkNIdVhqM2FvN1ZNUzM2clRHVy1wZUNiRGFtMm90RTVJUWRLTTM4ZnQxNXZSdkN0aw?oc=5",
+      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -111,14 +111,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5VZkRvcnFZM1NpSWVxVFp6Q2hZUG1jc0tPbGFFeTJrSmZUYXJqdHQ5NjhqUmJwa0t1dDUtZEplTU1yeE9DQWg3Rkg4bU05cm0tVDQyOHFWOVVjdw?oc=5",
-      "title": "“에취” 한번에 침방울 4m 날아간다…감염병 줄이는 ‘기침’ 예절",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1yZ2hPbVNtSDE0TWp0d1hOdWpDTXJraWJiS2tKTW8tS0ZMMU56T1g5bVFNX0xXTmppaFBlenIzVnpGekRxVy1LYkd0X0hOemowV1BOeEpHM3VVdURRM0FUSUVHbFk5eHA1?oc=5",
       "title": "요양병원 항생제 내성률 60% 돌파…슈퍼박테리아 비상",
       "important": true,
@@ -145,6 +137,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQzVxbF8zR2swbmswWnk4QlQ4M1pQRzgyS0g5bGJIR2RzLWt0ZmFFa01FVy1MT0ZPcTFka3kxWkxNeE5ndVJjQVZSamlKY3BvUlU4TUxxUXMyLU5udW5GWjlXak5PUzRNTUI0TENOczQtTjJQRlFJbjlqM09yLXJTN2ZnRW1JdVA4b28wVzNGeXY1X2g3WnZ6d19TVWhsMXdWdzc4Tg?oc=5",
       "title": "Antimicrobial Resistance Costs $3.5 Trillion Globally",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOWjBfNXcyeXlqSF9JeE0tTVl4azJZdkpHZkl6R1pVT2oyTFdfbms2dmJ4SjBFS0M4NmVndjl1d3IwNGdiVkxWckRBWUJYOEpvQlptaHhGdzF3M0QwT2xac0RvYzVRYzh3WWZVdWtINUtIUnJRc18xY3NjYzdVUkFBRVVUOHpOLXRoOGZIbDlhTkJxLU5KV0l6bFVlUzZIeFZPVVk4Mk9QUjZYSFVHWnhLNG9PczNaUWhUM3BQSEdQMFl0clcwV1ZyOXMtRjVlZDJvcXRTeTAwdlVCUEJNcHp1Nm9QeUZaUVRhTmtsZklzQkt2QmpuWFpsX0c1dkNIdVhqM2FvN1ZNUzM2clRHVy1wZUNiRGFtMm90RTVJUWRLTTM4ZnQxNXZSdkN0aw?oc=5",
+      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -231,6 +231,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBDZWJWRGZhYnh4RF9DRVd6REV6NkZHM3MwNXZ5RmllLWMyZzV3ci1pV0VYWlE3UXNMblVuUXYtTm5hVS0zbHpOYXB2NkE4d09VMlc0?oc=5",
+      "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5JNWoyTnNYMER4U0dQb1YxbTdvaklOREdMWmZHeUNtSU9nTF9BUXNPVXAyZlR6dzFZdVNKMlROTzJWWDZVb0RaMGJmS0JDR2NvQ1E?oc=5",
       "title": "Daily_Brief: #Sudan war, #Red_Sea tensions and ‘water security’ feature in #Egypt-#US-#UAE talks",
       "important": false,
@@ -257,6 +265,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE92eERPOFFNOXJwOU5wek93NnpmNVJFQWV2TUJweUFhSWVYNVlXeXdadURyQllGbWtwVHhXR1ZuNmp4Nlp3ZHhNaF9oQmxLZ1FRQjdWcjQtX1pDSHo2VjdQYw?oc=5",
       "title": "큐리언트, HER2 표적 ADC 'QP101' 국가신약개발사업 선정",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5xOVZhTDZRTzl2UzB6aVNWUTZNcTV1a1dKWXFNRThfYjlRSlJOVGh1NGdhVDh3dzRZaENxczUtUlhxeTYyYTVLRl9xcjVSV0thUGNTU1lpOWt5R05OX0NZbi12VTllNkFWQk0teVhEWW5sUEhzNGlDaWNLaw?oc=5",
+      "title": "Iran Is Emboldened After Trump and GOP’s Election Losses, Officials Say",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -295,16 +311,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
-      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZ0ZOZUdOWlFmMlJFLTFIQkt0TlRNVDc2VDB5WnlXVXhjVVpGcUJKN3FWQmRLczF0bXdzNWpYM3pOTTh1V3EweXVoYi1pS2QwQW1wMDEtcjBkVnpIZXdWLVBvLUVjY2FzcXUxT1dwTGFnMWxDbWJrbkpxOHFTZE9NUlFuVUs4NTdCS2c3WVpR?oc=5",
+      "title": "Russia Seeks Stronger Nuclear Energy Ties with ASEAN",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbkY3Z0diREQxWV9DN2xYMXgwRW9pT2VsanIyVFhqNWpuVkJiX205ejVkdGhKV0tzOGZ2RjlSSkpDekRKY2dvYmVNMHEwcGxaTmRNSVZKTTBNak01b0dFSGRQUUJSel80Wl9tWEtMa19UZUdkREZKU1FTUnFuZGVZRGxqVTNBeUhnb0I4WURUN2YyMzQ?oc=5",
-      "title": "South Korea Offers Nuclear Energy for Indonesia AI Power",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
+      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -361,14 +377,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNYkNuMHp2TkNveWdkVWxCN2c3NUtNUWQwdkhvQjlPLWZFRjFwRGdQTGEzSWxPaGpzMGxkb3M5aVFza01lU19xZ2dLc1piT1RScW1xNUFVakdKU1ZlNDkxcVVKUXg1a3pxUnAtZ04tSXFCaUV1Y3E2dXBGQjNSaFhkbEJzS3BXemJQSFVlOVBWWXEtdUxPcGVoRjEyUVJJVW1VVXkwa3hDTjVrYkE?oc=5",
       "title": "United Kingdom CPI inflation picks up to 3.6% YoY in October, misses estimates",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSDMtU0l4eWEzWW9TaUxnS2NEdUotUjNRdTNoS3BLYWNqV2FLdFVfN0NxOVV0Z0hUOHZZamU4WjdsWnBzRmpET203V1BZYWhzczEyRDNpUVFTZkt6Mk9fT0lBemkzZU52c1c4T0k3WGVCdW9JMWsybkFBOG1pZFNkUTRNRnFmSHRDaG90dE9teXdIMTZTeWN4bzdaaXBmLWZ6eklMNmhBZVhweE1mUGIwRtIBsAFBVV95cUxOSDMtU0l4eWEzWW9TaUxnS2NEdUotUjNRdTNoS3BLYWNqV2FLdFVfN0NxOVV0Z0hUOHZZamU4WjdsWnBzRmpET203V1BZYWhzczEyRDNpUVFTZkt6Mk9fT0lBemkzZU52c1c4T0k3WGVCdW9JMWsybkFBOG1pZFNkUTRNRnFmSHRDaG90dE9teXdIMTZTeWN4bzdaaXBmLWZ6eklMNmhBZVhweE1mUGIwRg?oc=5",
-      "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -439,14 +447,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQzZCRXVhdU04M21SODBqVUctTkw0ZGl3TlZESElIWDB3NmNJd2RrZGxhbWdrZUFrc0V5SXhWejQxbDM5RnN0bjFIbFBUdDh3NVVoU2hOeDhDeWQxand6cUZKTHkzSkFHT2hzYjdNUWRMX3BIQ0ZLdHN2NEE0X1lHeFdtcEhNbEd3WFFMQzk3dnU5ejEyWDJNNXlBYkpuR1ZFcEEwU0NseEw2NE54OUloV0ZROFItQ2pKYy0zdExDUW9DcElVemI5d0NSX3LSAcwBQVVfeXFMTkM2QkV1YXVNODNtUjgwalVHLU5MNGRpd05WREhJSFgwdzZjSXdka2RsYW1na2VBa3NFeUl4Vno0MWwzOUZzdG4xSGxQVHQ4dzVVaFNoTng4Q3lkMWp3enFGSkx5M0pBR09oc2I3TVFkTF9wSENGS3RzdjRBNF9ZR3hXbXBITWxHd1hRTEM5N3Z1OXoxMlgyTTV5QWJKbkdWRXBBMFNDbHhMNjROeDlJaFdGUThSLUNqSmMtM3RMQ1FvQ3BJVXpiOXdDUl9y?oc=5",
-      "title": "Serbia’s ex-top diplomat Vuk Jeremic on China’s rise in a geopolitical recession",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPeXFSaEZvUXFBeDRGRmRJZFMtSjlKSV9pUjl4cnRGZmhzNmw3MzQzeFdQZGdSNm5lSi1jWHE4dnhUb3M5OXlPQWFjNVdvSTVDbHl2TUtJM21nTF9fWHgtWnkxb0pQU0hoVk1MY2NJanVGcFhCS3c1SDZybTR4SnVZNmZSZnZHWGx6bk9qVXplYkhPelhTMDZOQmNtT2RhT0x3S3hYZEFFWXNGUlk4eXppdTV5ZjM2YmdOdHZlbmdrcTNNUGhFWWV3SmdJV2F0Z9IB0wFBVV95cUxPSVc3dXpaWkZwdHpJdEFzUElGQW9PdGFYak5ERENXTkh3aTkzYUxwc2VuTGZlemtTUkJxck5Mam5mWV9PUlFsUFhwTGZoWHJXUE9SM3dfQVRSeWNKLUJUdDJJQ2VwMWZRNkpqaEZVT2lYajk3eUtMT29PUDJtNUxVemFWb2xUMXptblQ2WmRRTGt2cHVpQW9PYmd0cVRQNEpxTVd6NnNCZ0hQeXhIcVpPVUJUMTA3MEpVTEtXMW0ycVVtTmxvaURpOUkxZS1GSFFVVy1R?oc=5",
       "title": "Australia sanctions Israeli settlers, organizations over West Bank expansion",
       "important": false,
@@ -455,24 +455,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbllnVE9jc1pmTWpQWkJjZDZtUEMyaTBlZXpGNE9UUVRNVlZIUUNaNHhZSUdGNmpRVG5fdnBDR215WDNTN1FMRk5oamFBR1FZUE9VeVVQaWtzaHUxaUFINFFzOFlSYmMwTU1DWUtBcThfWF9JZkJSeTdUOFhXTTVlR3RZbkZONHV1ejFUTlZjWXJmeVhEMmU2U1Mtb1V4MzllTVo3TVQyd1c1RXpiRjVBaVk2NWJ5bVlFdXZtTG1BcFVxZVVuSkVWVW5SeVAzM0U1Y0E?oc=5",
-      "title": "Ukraine’s Strike Leaves Russia Facing a Crimean Bridge Repair Job That May Outlast the War",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPbEZUc2RDa0RUWm9nYmJMcUprcTBHRFV6dzBCU3AwNmdmSHRwNzVUak5ka0w0cC1la3UtakU2TE5YOVNFcGdfS1N1cllyVmM3RDJOb2ZhZUFKOWNDaThsT2Vtc19pdUhLd2VTWnF0cDRkQzVPbzhjZjA3M1QwaDNXYy0wdnZGVEtoWnRHTnJIbzFGbDRvOFEydjZIX0xjQVRlMk0xZWk2dGUxRmUxZ3k2LWttNjZ5ZS1DYkJodk1EeEhPcElWYWdaY050X0hUWUUtaTM4WnFTay1Nc3k0aXE4M0hsUnA?oc=5",
       "title": "A.P. Moller Capital Announces The Completion Of Its Acquisition Of Mainstream Renewable Power South Africa",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9RbW1lUlcyeVlQRXZOYmprYVBQR3B3cnVyRGNFR1hIVlAyR0MzT2d2dVNjMkxBc0pVeXRIMUpLaDZHLVI5Y2g2Q3poVkwtTllTaVdZNlRXSVdIazZLdVhzVER2MTFMMWdwQlHSAW9BVV95cUxPZlE3X0xYTWhxZTVxT0VaeXNZUjF0VVZiX18xeVd4VnhVOGtqSDJtU1JUQ3loaC1KUWJEaEdfUTZ5LW5IV2JaamFYLVE0OVFKVHIydXhGRzBrbndYQjNSYW1lVlVtVUx2ZDBzTXVKSkE?oc=5",
-      "title": "바이오니아 \"신약 개발 투자로 3Q 영업손실…\"기술이전 논의 구체화\" - 머니투데이",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -527,6 +511,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQR0JzU0pnVkdxamxHSkxJOXR1RUg5dFRKOXNxTE5wQ3VLZVk4TG5VbFpSVFJuSGE4LXRPUFNrMngwcVhFbHhYaUhHQmc2SERIcHYwOUx1S05zOGRGYy05N0NRaUNTWUxsd0h4aE53T3ZoakZVRlZyZklWOTZjbUlndzVvYk5Sb2c3cm5qZ1ZmXzVjN2UydnI5SGYwRTdrM0UyQnc5eWdKVWhvcVc2X0hSUWVMZw?oc=5",
+      "title": "JLL Partners-backed CAI strikes deal to combine with Italy’s PQE Group",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaC1BOXhsX0dCZy15NHI1SHZVT09XNkpXM1I2cnR0Q2F0ZWJSTzdDQzJ0U3Q0Qks5NTI5MW01UGJ2WGIzNEw5U2YxME51dUg5a0U5Y25hTWFYOTROM0Z3WWJNaWhtRnRMNE82Q3FkWnVEeFlvTjkxQUNoSUgzOHc4MTJuRGZYQjI5QmJZTzUzZlJJXzFELXRTamMyMlZtVm1FM21nbXJBakw5LUgtTGRGd0tWeVk?oc=5",
       "title": "Thousands Protest Pax Silica in the Philippines Ahead of President Trump’s Arrival",
       "important": false,
@@ -545,14 +537,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQNWxWTWQ2V0dTZWVQYzZCY3lVZ1dDai16eDBBc3puaFVkb2RVWlM1ckE5b3BjVVUtMWZhTlJWdk5hYXd3MlZfMDd3N19ITXJTZGR1Q05WR2FibFBQaEF1SUw1OUlZS001NlIwaGNkQ0FrMEY5emM1RzBFZWQ5QzVjVFoydVB5NHl1YkZFejFxVVVkM2Z2eHdScUNjeVlsR1Q5b3JCelJvU1VjZWZDaFdkbVphSFlXaTdNVGpWejdn?oc=5",
       "title": "UK MPs Urge Government to Block UAE’s Lana Nusseibeh from UN Secretary-General Race Over Sudan War",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZzJaUG1kR0VDN202ODFXWEhHNHRWMUt1dFo0NlRKNTN0NHlJRkRTUmJqUGU5SC1tN3hQMTdDcFVrd3RJU0MzZTlWcnZ5OWVWb0ZJYUJEUVBDV1JVSHdTZWhiNjdjMUw2XzhIZTFCdTRHRmhFVE51NlJaLVNneG02bl9wYTBUeXJOcld5ZVdFREYwcWFWbTZfLUNtd005cFNNN3h2VW1TTEZZZk85ejM1RHNNYVJPRWZkYk5lRGVn?oc=5",
-      "title": "Ex-INEC commissioner, Igini, writes Trump to intervene against election rigging in Nigeria",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
