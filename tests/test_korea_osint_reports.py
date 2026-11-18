@@ -19,6 +19,12 @@ class ReportTests(unittest.TestCase):
         x=[{"title":"North Korea missile","published":"2026-11-14"}]
         now=dt.datetime(2026,11,15,8,tzinfo=dt.timezone(dt.timedelta(hours=9)))
         self.assertEqual(len(build(x,now)["reports"][0]["items"]),1)
+    def test_sunday_before_7am_no_weekly(self):
+        now=dt.datetime(2026,11,15,6,59,tzinfo=dt.timezone(dt.timedelta(hours=9)))
+        self.assertEqual(len(build([],now)["reports"]),1)
+    def test_sunday_at_7am_weekly(self):
+        now=dt.datetime(2026,11,15,7,0,tzinfo=dt.timezone(dt.timedelta(hours=9)))
+        self.assertEqual(len(build([],now)["reports"]),2)
     def test_weekday(self):
         self.assertEqual(len(build([],dt.datetime(2026,11,16,tzinfo=dt.timezone.utc))["reports"]),1)
 if __name__=="__main__":unittest.main()
