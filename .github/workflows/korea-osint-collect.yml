@@ -1,0 +1,41 @@
+name: Korea OSINT collection
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: korea-osint-data
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Select Korea security news
+        run: python scripts/osint/filter_korea.py
+      - name: Read official RSS feeds
+        run: python scripts/osint/collect_official.py
+      - name: Build conservative report summaries
+        run: python scripts/osint/build_reports.py
+      - name: Validate Python and tests
+        run: |
+          python -m compileall -q scripts/osint
+          python -m unittest discover -s tests -p 'test_korea_osint*.py'
+      - name: Publish OSINT data only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/osint/
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Korea OSINT public data"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
