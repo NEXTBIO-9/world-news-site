@@ -76,7 +76,7 @@ def main():
             old_daily = next((x for x in old_reports if x.get("type") == "daily"), None)
             old_weekly = next((x for x in old_reports if x.get("type") == "weekly"), None)
             now_local = dt.datetime.fromisoformat(result["updated"])
-            if old_daily and (now_local.hour < 7 or old_daily.get("date") == result["reports"][0]["date"]):
+            if old_daily and (now_local.hour < 7 or (now_local.hour >= 7 and old_daily.get("date") == result["reports"][0]["date"])):
                 result["reports"][0] = old_daily
             if old_weekly and not any(x.get("type") == "weekly" for x in result["reports"]):
                 result["reports"].append(old_weekly)
