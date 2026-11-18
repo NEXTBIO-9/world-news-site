@@ -1,6 +1,6 @@
 import datetime as dt
 import unittest
-from scripts.osint.build_reports import build, group, local_day, preserve_published, validated_events
+from scripts.osint.build_reports import build, group, local_day, preserve_published, validated_events, gate_first_publication
 
 class ReportTests(unittest.TestCase):
     def test_no_false_corroboration(self):
@@ -59,6 +59,16 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(validated_events({"events":[None,{"title":"valid"},42]}),[{"title":"valid"}])
         with self.assertRaises(ValueError):
             validated_events({"events":"invalid"})
+    def test_no_first_daily_publication_before_seven(self):
+        before=build([],dt.datetime(2026,11,16,6,59,tzinfo=dt.timezone(dt.timedelta(hours=9))))
+        self.assertEqual(gate_first_publication(before,{"reports":[]})["reports"],[])
+    def test_first_daily_publication_at_seven(self):
+        at=build([],dt.datetime(2026,11,16,7,0,tzinfo=dt.timezone(dt.timedelta(hours=9))))
+        self.assertEqual(len(gate_first_publication(at,{"reports":[]})["reports"]),1)
+    def test_keep_previous_daily_before_seven(self):
+        before=build([],dt.datetime(2026,11,16,6,59,tzinfo=dt.timezone(dt.timedelta(hours=9))))
+        previous={"reports":[{"type":"daily","date":"2026-11-14","items":[{"title":"prior"}]}]}
+        self.assertEqual(gate_first_publication(preserve_published(before,previous),previous)["reports"][0]["date"],"2026-11-14")
     def test_weekday(self):
         self.assertEqual(len(build([],dt.datetime(2026,11,16,tzinfo=dt.timezone.utc))["reports"]),1)
 if __name__=="__main__":unittest.main()
