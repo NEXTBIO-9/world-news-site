@@ -43,6 +43,10 @@ class ReportTests(unittest.TestCase):
         new={"updated":"2026-11-22T07:00:00+09:00","reports":[{"type":"daily","date":"2026-11-21"},{"type":"weekly","date":"2026-11-22"}]}
         old={"reports":[{"type":"weekly","date":"2026-11-15"}]}
         self.assertEqual(preserve_published(new,old)["reports"][1]["date"],"2026-11-22")
+    def test_corrupt_previous_reports_list(self):
+        new={"updated":"2026-11-16T08:00:00+09:00","reports":[{"type":"daily","date":"2026-11-15"}]}
+        self.assertEqual(preserve_published(new,{"reports":None})["reports"][0]["date"],"2026-11-15")
+        self.assertEqual(preserve_published(new,{"reports":[None,42,{"type":"weekly","date":"2026-11-15"}]})["reports"][1]["type"],"weekly")
     def test_weekday(self):
         self.assertEqual(len(build([],dt.datetime(2026,11,16,tzinfo=dt.timezone.utc))["reports"]),1)
 if __name__=="__main__":unittest.main()
