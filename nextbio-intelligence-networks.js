@@ -101,13 +101,20 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  const borderPanel=node('div','nbm-border-panel');borderPanel.id='nbm-border-panel';borderPanel.setAttribute('role','group');borderPanel.setAttribute('aria-label','북한 장벽 요새화 현황');
  borderPanel.append(node('h3','nbm-section-heading','🧱 북한 장벽 요새화 현황'));
  borderPanel.append(node('div','nbm-meta','남북 접경지역 요새화 · 2026년 8월 기준 보도 추정치'));
- const addEstimate=(label,value,pct,note)=>{const wrap=node('div','nbm-border-status');wrap.append(node('span','',label+' · 추정치'));wrap.append(node('strong','',value));const track=node('div','nbm-progress-track');const fill=node('div','nbm-progress-fill');fill.style.width=pct+'%';track.append(fill);wrap.append(track);wrap.append(node('span','',note));borderPanel.append(wrap)};
- addEstimate('지면 정리 작업','약 90%',90,'남부 국경 관련 보도 추정 · 전체 장벽 완공률이 아님');
- addEstimate('철책·지뢰지대 구축','약 30~60%',60,'구간별 추정 범위 · 막대는 상한 60%를 나타냄');
- borderPanel.append(node('p','','※ 남북 접경지역 추정치입니다. 중국·러시아 접경지역 전체 진행률과는 다르며, 공식 확정 수치가 아닙니다.'));
- borderPanel.append(node('p','','2026년 8월 기준 추정치로 보도된 값이며, 이후 공정률을 실시간 반영하지 않습니다.'));
- const checkInfo=node('p','nbm-meta','공개 보도 자동 확인: 매일 1회 · 첫 실행 대기 중');borderPanel.append(checkInfo);
- async function updateBorderCheck(){try{const r=await fetch('./data/nk-border-status.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!r.ok)return;const d=await r.json();if(d.last_checked){const date=new Date(d.last_checked);checkInfo.textContent='공개 보도 자동 확인: 매일 1회 · 최근 확인 '+(Number.isNaN(date.getTime())?d.last_checked:date.toLocaleString('ko-KR'))+' · 추정치 자동 변경 없음';}}catch(e){}}
+ const estimatesBox=node('div','');borderPanel.append(estimatesBox);
+ const estimateNote=node('p','','※ 남북 접경지역의 과거 보도 추정치이며 중국·러시아 접경지역 전체 완공률이나 공식 확정 수치가 아닙니다.');borderPanel.append(estimateNote);
+ const checkInfo=node('p','nbm-meta','공개 보도 확인 정보 로딩 중');borderPanel.append(checkInfo);
+ const addEstimate=(label,value,pct,note)=>{const wrap=node('div','nbm-border-status');wrap.append(node('span','',label+' · 보도 추정치'));wrap.append(node('strong','',value));const track=node('div','nbm-progress-track');const fill=node('div','nbm-progress-fill');fill.style.width=Math.max(0,Math.min(100,pct))+'%';track.append(fill);wrap.append(track);wrap.append(node('span','',note));estimatesBox.append(wrap)};
+ function showEstimates(e){
+  estimatesBox.replaceChildren();
+  const ground=Number(e?.ground_preparation_pct),low=Number(e?.fences_mines_pct_min),high=Number(e?.fences_mines_pct_max);
+  if(!Number.isFinite(ground)||!Number.isFinite(low)||!Number.isFinite(high)||ground<0||ground>100||low<0||high>100||low>high){estimatesBox.append(node('p','nbm-empty','추정치 데이터 검증이 필요합니다.'));return}
+  addEstimate('지면 정리 작업','약 '+ground+'%',ground,'전체 장벽 완공률이 아닌 해당 구간 보도 추정');
+  addEstimate('철책·지뢰지대 구축','약 '+low+'~'+high+'%',high,'구간별 추정 범위 · 막대는 상한을 표시');
+  const period=String(e.reference_period||'기준일 미상');
+  estimateNote.textContent='※ '+period+' 기준 공개 보도 추정치입니다. 남북 접경지역 일부 구간에 관한 수치로, 공식 확정치나 실시간 측정값이 아닙니다.';
+ }
+ async function updateBorderCheck(){try{const r=await fetch('./data/nk-border-status.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();showEstimates(d.estimates);const date=d.last_checked?new Date(d.last_checked):null;const checked=date&&!Number.isNaN(date.getTime())?date.toLocaleString('ko-KR'):'확인 시각 미상';const evidence=Array.isArray(d.estimate_evidence)?d.estimate_evidence:[];checkInfo.textContent='공개 보도 자동 확인: 매일 1회 · 최근 확인 '+checked+' · 수치 갱신은 검증된 근거가 등록된 경우에만 적용';if(evidence.length){const latest=evidence[evidence.length-1];if(latest&&typeof latest.url==='string'&&/^https:\/\//.test(latest.url)){const link=node('a','','최근 수치 근거 확인');link.href=latest.url;link.target='_blank';link.rel='noopener noreferrer';checkInfo.append(' · ',link)}}}catch(e){checkInfo.textContent='공개 보도 확인 정보를 불러오지 못했습니다.';estimatesBox.replaceChildren(node('p','nbm-empty','추정치 데이터를 불러오지 못했습니다.'))}}
  updateBorderCheck();
  const source=node('a','','관련 공개 분석 검색 (38 North)');source.href='https://www.38north.org/?s=border+fence';source.target='_blank';source.rel='noopener noreferrer';borderPanel.append(source);borderPanel.style.cssText='padding:10px 0 4px;border-top:1px solid #3a536e;margin-top:8px';
  const forecastPanel=node('div','nbm-border-panel');forecastPanel.id='nbm-forecast-panel';forecastPanel.setAttribute('role','tabpanel');
