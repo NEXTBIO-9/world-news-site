@@ -68,13 +68,18 @@ def main():
     result["special_review_required"] = True
     result["special_publication_enabled"] = False
     REPORTS.parent.mkdir(parents=True, exist_ok=True)
-    # Preserve the most recent Sunday briefing across weekday hourly refreshes.
+    # Keep daily briefing stable during hourly collection; publish at/after 07:00 KST.
     if REPORTS.exists():
         try:
             previous = json.loads(REPORTS.read_text(encoding="utf-8"))
-            old_weekly = [x for x in previous.get("reports", []) if x.get("type") == "weekly"]
+            old_reports = previous.get("reports", [])
+            old_daily = next((x for x in old_reports if x.get("type") == "daily"), None)
+            old_weekly = next((x for x in old_reports if x.get("type") == "weekly"), None)
+            now_local = dt.datetime.fromisoformat(result["updated"])
+            if old_daily and (now_local.hour < 7 or old_daily.get("date") == result["reports"][0]["date"]):
+                result["reports"][0] = old_daily
             if old_weekly and not any(x.get("type") == "weekly" for x in result["reports"]):
-                result["reports"].extend(old_weekly[:1])
+                result["reports"].append(old_weekly)
         except (ValueError, OSError, TypeError, AttributeError):
             pass
     REPORTS.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
