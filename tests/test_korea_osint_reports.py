@@ -1,6 +1,6 @@
 import datetime as dt
 import unittest
-from scripts.osint.build_reports import build, group, local_day
+from scripts.osint.build_reports import build, group, local_day, preserve_published
 
 class ReportTests(unittest.TestCase):
     def test_no_false_corroboration(self):
@@ -25,6 +25,16 @@ class ReportTests(unittest.TestCase):
     def test_sunday_at_7am_weekly(self):
         now=dt.datetime(2026,11,15,7,0,tzinfo=dt.timezone(dt.timedelta(hours=9)))
         self.assertEqual(len(build([],now)["reports"]),2)
+    def test_preserve_old_daily_before_7am(self):
+        new={"updated":"2026-11-16T06:59:00+09:00","reports":[{"type":"daily","date":"2026-11-15","items":[]}]}
+        old={"reports":[{"type":"daily","date":"2026-11-14","items":[{"title":"old"}]},{"type":"weekly","date":"2026-11-15"}]}
+        out=preserve_published(new,old)
+        self.assertEqual(out["reports"][0]["date"],"2026-11-14")
+        self.assertEqual(out["reports"][1]["type"],"weekly")
+    def test_replace_daily_after_7am(self):
+        new={"updated":"2026-11-16T07:00:00+09:00","reports":[{"type":"daily","date":"2026-11-15"}]}
+        old={"reports":[{"type":"daily","date":"2026-11-14"}]}
+        self.assertEqual(preserve_published(new,old)["reports"][0]["date"],"2026-11-15")
     def test_weekday(self):
         self.assertEqual(len(build([],dt.datetime(2026,11,16,tzinfo=dt.timezone.utc))["reports"]),1)
 if __name__=="__main__":unittest.main()
