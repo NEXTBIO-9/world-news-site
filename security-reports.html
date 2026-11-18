@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXT BIO | 국제안보 정세평가</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;background:#101827;color:#e7edf7}
+body{max-width:980px;margin:auto;padding:20px}a{color:#8fc3ff}header{display:flex;justify-content:space-between;gap:16px;align-items:center}
+article{background:#1d2a3d;border:1px solid #33445c;border-radius:14px;padding:22px;margin:18px 0}
+small,.muted{color:#b5c6dc}h1{font-size:1.7rem}h2{font-size:1.3rem}h3{font-size:1rem;margin-top:22px}
+li{margin:8px 0;line-height:1.6}.pill{background:#33445c;border-radius:99px;padding:5px 10px;display:inline-block}
+</style></head><body><header><strong>NEXT BIO · 공개정보 정세평가</strong><a href="./index.html">세계뉴스로 돌아가기</a></header>
+<h1>국제안보 정세평가</h1><p class="muted">공개 기사 기반 AI 분석 · 정부기관 공식 평가가 아닙니다. 원문 전문 검증이 불가능한 경우 분석에 한계가 있습니다.</p>
+<main id="reports"><p>보고서를 불러오는 중입니다.</p></main>
+<script>
+const el=document.getElementById("reports");
+function node(tag,content,parent){const x=document.createElement(tag);x.textContent=content;parent.append(x);return x}
+function section(parent,title,items){node("h3",title,parent);const ul=document.createElement("ul");parent.append(ul);for(const s of items||[])node("li",s,ul)}
+fetch("./data/security_reports.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(data=>{
+el.replaceChildren();const reports=data.reports||[];
+if(!reports.length){node("p","아직 검증을 통과한 보고서가 없습니다.",el);return}
+for(const r of reports){const a=r.assessment||{},card=document.createElement("article");el.append(card);
+node("small",r.topic_name+" · "+r.type+" · "+new Date(r.created_at).toLocaleString("ko-KR"),card);
+node("h2",a.headline||"정세평가",card);
+node("p","평가 신뢰도: "+(a.confidence||"미정")+" | 위험도: "+(a.risk||"평가 불가"),card);
+section(card,"Ⅰ. 핵심 판단",a.key_judgments);section(card,"Ⅱ. 주요 정세",a.situation);
+section(card,"Ⅲ. 전략적 함의",a.implications);section(card,"Ⅳ. 향후 7일",a.outlook_7d);
+section(card,"Ⅴ. 향후 30일",a.outlook_30d);section(card,"Ⅵ. 관찰 지표",a.indicators);
+node("h3","분석의 한계",card);node("p",a.limitations||"공개 자료에 한정됨",card);
+node("h3","근거 자료",card);const ul=document.createElement("ul");card.append(ul);
+for(const s of r.sources||[]){const li=document.createElement("li");ul.append(li);const link=document.createElement("a");link.href=s.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=s.title+" — "+s.source;li.append(link)}
+}
+}).catch(()=>{el.textContent="보고서 데이터를 불러오지 못했습니다."});
+</script></body></html>
