@@ -21,3 +21,14 @@ jobs:
       - run: python -m compileall -q scripts/osint
       - run: node --check korea-osint.js
       - run: python scripts/osint/filter_korea.py && python scripts/osint/build_reports.py
+      - name: Collect official feeds for preview only
+        run: python scripts/osint/collect_official.py
+      - name: Upload preview data without publishing
+        uses: actions/upload-artifact@v4
+        with:
+          name: korea-osint-validation-preview
+          path: |
+            data/osint/events.json
+            data/osint/reports.json
+            data/osint/official.json
+          retention-days: 7
