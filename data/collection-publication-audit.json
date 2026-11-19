@@ -1,28 +1,44 @@
 {
-  "updated": "2026-11-19T03:49:26.291430+00:00",
+  "updated": "2026-11-19T04:54:23.607838+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 15,
-    "not_in_current_queue": 37,
-    "pending": 18,
-    "published": 125
+    "important_unpublished": 18,
+    "not_in_current_queue": 41,
+    "pending": 15,
+    "published": 124
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 8,
-    "pending": 7
+    "not_in_current_queue": 12,
+    "pending": 6
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 6,
-    "repeated_extraction_failure": 2,
-    "in_retry_queue": 7
+    "source_blocked": 8,
+    "repeated_extraction_failure": 4,
+    "in_retry_queue": 6
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQQ2tBTy10NE5XanhKOFJvbklobjZmakJrLTh6U1ZBU1MzWmpFZklEeVROWVNGenJCRXp5YTJvZE0wdVliWTE4Rl84aDZUYUZ1UEM2QUdhM0R1QjhYWlp1NlBmV21xZ0dmWnY2Ym9LTHd6VHY2ZFVQbFlaWjNQYlZUZDkzUTVvUzYwbWd5azNrWnZHSDNhWlJtVFdyOVp1VjVpbE02aXBKMkZDNDRDVThFZ2FkdUptUG44X1VidC1UYmJtN0xlY2p2cUVCZlRSeXV6cjFYRzA3WlhLZ0dZLTUyb28tU3hrWGxvc1E?oc=5",
+      "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1yZ2hPbVNtSDE0TWp0d1hOdWpDTXJraWJiS2tKTW8tS0ZMMU56T1g5bVFNX0xXTmppaFBlenIzVnpGekRxVy1LYkd0X0hOemowV1BOeEpHM3VVdURRM0FUSUVHbFk5eHA1?oc=5",
+      "title": "요양병원 항생제 내성률 60% 돌파…슈퍼박테리아 비상",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTndmSjAtVkZldVMtNEpCYWxuaHNWOXNSaXFfT3dsUndnMzhJQXExU3p6bUNjY29aWXRrVndsQXpqU1FUdDVnVDl4NUNMeWFSQ0dRS2tuamc1OEJ1NzRVU0FETFdja0VGamw4UGxWNURsNk1jMGxpbGZkWTdnQ1d0TDlVZW8yS09C?oc=5",
+      "title": "WHO sounds the alarm on antimicrobial resistance threat",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -50,6 +66,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQ2x2eDVRWllNeG5SelE2ajFkTWNFVXNrZkxsSEVtZDhfNGNVWVVCeDRueEM4QjJtNUdFM05KS1QweUJDVU00OVZpWGFhbkhNUUZCZHJnRkRSWjZYY3FDejNJVk94NUJGUzJrWnRzZ2pteC0za25CSUxsMFM2Y1RuWjdxNWE1NDdLZk9sUnZzZ1ZsUUx3Skt5SUtGUDVFRmZKQjdTcWRjVU9oTzdP?oc=5",
+      "title": "Russia's missile attack damages two large bridges in Kiev",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -82,13 +106,37 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNR2JEQy1LUjQ5RkFMU3paM2JhVFloSHBpWG1kVi1rMHJlNHBCZC15Y0JneVhkT042UlBpejNNdjE3VV92cnM4R1lhcjV2TjBnWUhGNWVhUnNqblBxX1RPOUlUbFlQR2lpTGpOc0U1ZTFJR1NyQVYzQUN3aVg1MzdRRDBfdkMzR1RXQ2J6UzFsNUl5Vzh2Y18taDNWcVpoV1F0NE1qYmhKUG9KNzZLcFpOR3c4S19NRjY2VjRPbDdlUjhoTEE?oc=5",
+      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     }
   ],
   "unpublished": [
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQQ2tBTy10NE5XanhKOFJvbklobjZmakJrLTh6U1ZBU1MzWmpFZklEeVROWVNGenJCRXp5YTJvZE0wdVliWTE4Rl84aDZUYUZ1UEM2QUdhM0R1QjhYWlp1NlBmV21xZ0dmWnY2Ym9LTHd6VHY2ZFVQbFlaWjNQYlZUZDkzUTVvUzYwbWd5azNrWnZHSDNhWlJtVFdyOVp1VjVpbE02aXBKMkZDNDRDVThFZ2FkdUptUG44X1VidC1UYmJtN0xlY2p2cUVCZlRSeXV6cjFYRzA3WlhLZ0dZLTUyb28tU3hrWGxvc1E?oc=5",
+      "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1yZ2hPbVNtSDE0TWp0d1hOdWpDTXJraWJiS2tKTW8tS0ZMMU56T1g5bVFNX0xXTmppaFBlenIzVnpGekRxVy1LYkd0X0hOemowV1BOeEpHM3VVdURRM0FUSUVHbFk5eHA1?oc=5",
+      "title": "요양병원 항생제 내성률 60% 돌파…슈퍼박테리아 비상",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTndmSjAtVkZldVMtNEpCYWxuaHNWOXNSaXFfT3dsUndnMzhJQXExU3p6bUNjY29aWXRrVndsQXpqU1FUdDVnVDl4NUNMeWFSQ0dRS2tuamc1OEJ1NzRVU0FETFdja0VGamw4UGxWNURsNk1jMGxpbGZkWTdnQ1d0TDlVZW8yS09C?oc=5",
+      "title": "WHO sounds the alarm on antimicrobial resistance threat",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -116,6 +164,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQ2x2eDVRWllNeG5SelE2ajFkTWNFVXNrZkxsSEVtZDhfNGNVWVVCeDRueEM4QjJtNUdFM05KS1QweUJDVU00OVZpWGFhbkhNUUZCZHJnRkRSWjZYY3FDejNJVk94NUJGUzJrWnRzZ2pteC0za25CSUxsMFM2Y1RuWjdxNWE1NDdLZk9sUnZzZ1ZsUUx3Skt5SUtGUDVFRmZKQjdTcWRjVU9oTzdP?oc=5",
+      "title": "Russia's missile attack damages two large bridges in Kiev",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -151,11 +207,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPalZyQzBhZFd1MVlNM1ZNVnViTnYyNjhxTXNVVnFJWno1SHFwV25MeDF6VHJWUEo3b0hlRGpIeE10UG9zR25RM0xwNTVnQml5NEZhbmlxYXdsbnR3QmNLSko3c1JEODFobkNOeDVfWUlkVWVwRThvUDdzSkZjOHBQUHdZOHNhNmFYTmh0SG5GaS1BSzA3aXVEOTA2b1oySVo5SUhOR1lLNEhGdmxuT0t5VWVUY1dqVHFXSUNWTEVLRloyTy1VODZhTldaU2lSWWxiZkE?oc=5",
-      "title": "M 7.1 Earthquake Rocks Southeast Maluku, BMKG Reveals Current Conditions and Aftershock Potential",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNR2JEQy1LUjQ5RkFMU3paM2JhVFloSHBpWG1kVi1rMHJlNHBCZC15Y0JneVhkT042UlBpejNNdjE3VV92cnM4R1lhcjV2TjBnWUhGNWVhUnNqblBxX1RPOUlUbFlQR2lpTGpOc0U1ZTFJR1NyQVYzQUN3aVg1MzdRRDBfdkMzR1RXQ2J6UzFsNUl5Vzh2Y18taDNWcVpoV1F0NE1qYmhKUG9KNzZLcFpOR3c4S19NRjY2VjRPbDdlUjhoTEE?oc=5",
+      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
       "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -183,22 +239,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPLThwaE96bUg2Sklmd3JzWWw3Q3JLMUZ6MGMwQzZVVHRJTS1uTEM4ZkVHN2FlaFlIRlpib2syUDZ5TjZLcVJpM1I4YmZ4YlZBZ3B4NDNtcFZvR2tZMjZJOG5CZW1TOGpOSlo4Q19nRmZibHE1V1djWTdBV1JROGhaU252UkFaU3Rqb0xyeC12SU1RTG9uUlFNcXFsWkR5RGJ0X1A3S1F0S2hfVDRVQ2lIZ1lucG9wU0Zu?oc=5",
-      "title": "The 1929 earthquake that triggered a deadly Newfoundland tsunami",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPelZVUTEydVBUcGd2SWtZUVAtdmlpUC1pUGpvWm13SG1QYzQ0ckdHQ0hRa09pdnVPak5lckZYRlJ2Z2FxQlVkWnBXRGVHWERkSEVFV1VYSm5nTHJWcGxvamI4ZXlJczRWT3NEXzFFTVdvNTk1OVJDRUlWY2NMYzVGckhCeEFMclNCZExqUDA2RkhGdnNickI4dzNMUGxqQldreDJ6aWh1ZHdZV1BMbmo5UjgzU3VkVWYxWGc?oc=5",
-      "title": "Saudi-led coalition intercepts Houthi missile targeting southern Saudi Arabia",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOaE9BN2hwVlhvYUpVRjJFMmhGMFdkWjdpd0hDV3gtRG1wZ1dpQ2hHWGowUFZRbno2RU1yNldaNC1OMnQ3R0pZOURfcFpOY3VHcHczOU9fMnlmbml4M1hzTFUtWTVIdl9pRWJ2V015OUJJVWFiMmNjTTB4TVg2Xy1xUjJqMDE2Unlqb05WYXdIbEw5RDBRUjFRWVViSkNJOEVldkNUSWJaOXliaVpIanRQUHlMZXZXeHlaSXNXRnNPRQ?oc=5",
       "title": "Brazil's central bank faces backlash over stablecoin money laundering remarks",
       "important": true,
@@ -207,8 +247,32 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQnduWTFXWFlZdk0tS1dvaGgwNlpXZDRlX3JEUWtPTkRhV05XYURacmpkVlhmbmlwSnpGT28tZlV2eUNkdGZpLWk3bnJoVV9MTFV4bUMwcEZpTTZLU01yMnREYXZrLUFycTdFRGpBelJrT1NfbXJ3eDAzYkNocGFfZmxrNzdVb1hBM1ZhR2pjbnkxV3VDenlkdjRraUJGTVFlUUwxZUdiWGpKUm50S0VfMUc3Ukxvelc0VEtuWkNVMjMySEE?oc=5",
+      "title": "Connecting agricultural research and knowledge to support action against antimicrobial resistance",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPV1F2a0Zpa1J3VXVOQXVFeVkwUjRTbndlNDJPNGZqT1NLOF9SSUFHay1GTXVOOXhIenBFdGJsTHN1a0ZFZE85LW9jOGczWnBrX3Zyc0FZVko2OXBuTWxybmpjV2RsTGNZeUVoTU1kSVpGLWFUYnF3c1pFQzVWRUR3dlhYUHAyQXE4bmFJNm5NaEhsZzd4djlmcklfeGVQZGdJSWRWTWhXTE1rYXVuZkhHaVFWcGJTa3JJakFQeVdLLWtYQmVaNjJjUUFKbzc?oc=5",
+      "title": "Antimicrobial Resistance Could Contribute To 39 Million Deaths By 2050: WHO",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNS1ljcmFXRnMwYW9vNzBhUU1tbnhLU2RBX3RMSnVkNThyYTRnU3V6U1RFVHpLT19xT0V6NFpZeXB0cmVteHFkVGwxSnJGQ19lOUlxUWRpc0ZUQ1BBd1VReTJYZW9TLTBmSms2blBWeDA3cG9Qc2JlbmFzV0h6MFZCWE1KS3prOXpwWDBpaHBWZEZJSDhWY0hPSEl2REdFZnBlc1B5TUFzWFJ6Z2Mwa2N5R2VHeVdadlZpQVo3Rmp5OS1iaWV6bVBvYzZIMGJHNXdzeE5SSFhySDhLc2d6dTlMbDNUQ2NLTUtPU0NJ?oc=5",
       "title": "Faihan Discusses Strengthening Parliamentary Cooperation with Austrian Parliament, Invites Companies to Invest in Iraq » Iraqi News Agency",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBDZWJWRGZhYnh4RF9DRVd6REV6NkZHM3MwNXZ5RmllLWMyZzV3ci1pV0VYWlE3UXNMblVuUXYtTm5hVS0zbHpOYXB2NkE4d09VMlc0?oc=5",
+      "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -239,24 +303,16 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNSWZIYjM2Y05tRk5XY0pqVUhvNTRsM29sYjJIOG84YXNvU1dMeGJ0TGVjblFCZl96M3dqanVZbXBqTEhtSEM4ZWF0ckduRFUwb1l1OWNWRlZrWVZCUm1zdjRIdll4LXJzOWR4RXE1MmhFZElJQzMyTEhVTktpOFBULWF0Ykk4dDdUTl9kQXJvdTVZWTdPZTN1eHV6UkNrODhfZ1huby1WdTNBQnQ1RHFmaThVWGdZQjM5UkQ3Mlc5Y1I4Y1RqQUpkWmUwMDR0YVNHYWltLUtJYzJlZVJoVzJCMzN0X2FTdlNPb3BsVTNKY1RjSFRpRHBtcTJRWTJ1ekhWMWdwcjdmZw?oc=5",
+      "title": "‘Megaphone diplomacy’: Israel warns of retaliatory sanctions over Australia’s West Bank settlement penalties",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMVp6RlBJeEtMUUtxSlhrMVM3Vm9jMDhta0JPa1JfVmdfS1UyS0xRcWFuM0pvOWFKYUZfd2JwTFZhbndoQVNLRGpTUHkxeTBCbXktN2o3VUxSSE1iZFZyaEhjbDVtSU9aSkVJY1Y5QkJhLVZLWXhzYlIyQTVDNlFONGdodnpKVzZy?oc=5",
       "title": "European Commission Raises Poland’s 2027 Inflation Forecast to 4.4%",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZ0ZOZUdOWlFmMlJFLTFIQkt0TlRNVDc2VDB5WnlXVXhjVVpGcUJKN3FWQmRLczF0bXdzNWpYM3pOTTh1V3EweXVoYi1pS2QwQW1wMDEtcjBkVnpIZXdWLVBvLUVjY2FzcXUxT1dwTGFnMWxDbWJrbkpxOHFTZE9NUlFuVUs4NTdCS2c3WVpR?oc=5",
-      "title": "Russia Seeks Stronger Nuclear Energy Ties with ASEAN",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
-      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -273,6 +329,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNWkQzZEItMXVKUlRxQWxvWWJlQVpGTmk4UXVwbVZWeW54MWVYaUcwUXpUUlN4QTJHMEI1ZXdtSTMxN1Fkd2tGM3V5VFliQlM2ejlDYjcwdUhNY2dxOUg1eEtlTk9mSE96MFphSVg5Mll4UmQ3dnBQNkdIamdyQmx5NG1BUHNkdmFrYjB6VEdGM05jQXV1LUQ0MQ?oc=5",
       "title": "Ethiopia-Eritrea border tensions raise fears of fresh war",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxONmpSQUpsbFBZdHJBVzE5RksxTlV3a01Mb0c1bHktX0RSeXhLR3c1bC1JZ3FBUUtWcEYzbkNWZEV1SXQ1QUl2LW1oR0VMa2lvQ0dycm1QMHRWQmpRUjNDOTlqZ2xoU2xkOWZab25sb1R6UW56QWJqb0h0NjRaX3RiOFpCQTc5UzQtRjlMWFBFWG9QazFHQnpHTg?oc=5",
+      "title": "Here’s a List of Gulf Energy Infrastructure Damaged in Iran War",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -305,14 +369,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMzZ2TjJQTS1CbmdJc3UxTi00Ym96RmpnbE1ySzFjYjRVQlB5c0p3c0RsRmNocmp2VHFaSFc1Q3JOR2dzOUd0SnNuZFVFTTVCVG9NX2xVaWR0S2NubWpPV0MzNXIya3dBSGxfMy0wX1ZjcjlWYjMzZE1CWFhudXBpSTY0NEJZNkxzZWJhUXp3UER4dVNucWp1VEpLUTFiM2lIaVNvUg?oc=5",
       "title": "New mass protests expected in France Tuesday as presidential election approaches",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQWN6N09PZXM0VGlFTnBTNTN5b21GYmR2VWNfSmxIb3dRdUxOblZPWUxoMjAwNlJnWEp4WEVIZzFTeVpWc052UmdpYS1pMER2VncwalNSSTNUSGVMZHo2My1hT2ZPVWlqRnR5VWFTS3diRmxMUlFrVUx4dnZtRUhkVERJaTRpSTdPMzIzVDVnZHdRNkZ3OFIwSm03cjNkWURnYXFhQg?oc=5",
-      "title": "Trump and Xi Should Press Putin to End War, Not Appease Him, Ukraine Says",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -479,14 +535,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1ydXJmTHZrTGJvaDg2RkZ4SFYyTVlDNjdpcWJxenlRS1FwSFZFaXZ4UFA1WGFpVGhTcERpUTRvRDdueUNwRGVoazBVUjhRWEY4X2FrbEFDRW9udGU0NVFuREswbl9sRmlyYTk4U1c4RHJKanA5RVI4?oc=5",
-      "title": "하나증권 \"임상 기대만으론 부족하다…실적 갖춘 제약·바이오주에 뭉칫돈 몰릴 가능성\" |",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9OOUs2Z3JBSE5BejFaMlJ1RFFWa2EtYlhKa2k1Y1A3dE90X205OTNQbDBWSnhqSnB3Nkd6ZjFWRFlnZ1B2cENaOXRINU43UnlubXRmVjJUVWh0c2loWWZrVHZWWkRCWDdaaVI0UVFkUXpueEZwS2JxbklOaEVhdzQ?oc=5",
       "title": "Norway Backs Nuclear-Powered Offshore Vessel Project",
       "important": false,
@@ -513,14 +561,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaC1BOXhsX0dCZy15NHI1SHZVT09XNkpXM1I2cnR0Q2F0ZWJSTzdDQzJ0U3Q0Qks5NTI5MW01UGJ2WGIzNEw5U2YxME51dUg5a0U5Y25hTWFYOTROM0Z3WWJNaWhtRnRMNE82Q3FkWnVEeFlvTjkxQUNoSUgzOHc4MTJuRGZYQjI5QmJZTzUzZlJJXzFELXRTamMyMlZtVm1FM21nbXJBakw5LUgtTGRGd0tWeVk?oc=5",
       "title": "Thousands Protest Pax Silica in the Philippines Ahead of President Trump’s Arrival",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMivAdBVV95cUxPTEZ5X01vSEdNakduRFJ0VDJKWXlWdTQ3Q0RYMXNvQ3hfVVVLb3B2ZU8wNG40SklhcGhSNEg5am92YkRKWDhLek9JOEhYMzZibndJSmFDTEFUcUdMWFdJYkRFUmhsbGVHWUV6TkhrcUI2TjU2SUhGRnZaMzJTS3NJTk1xTjA1dzJ0VEJnWmVyVm03N2hwWnlMUWM1aWxSa1czUnlUZTZSVm1Dc1U4WjNteGdWcW1VZl91VUZTU29hWTlaMUY5OWVGLXYtaThrSzlEZk9yVVh0bGZDQ3F2QlRWbXRQYXotY09mTFEzeUJOcU9jZXFxNTZKY0dlU2JLUS04T3MzaXkyNXV6YmZKZU1FSTJId3ZTajBfYktxQ1BkZlNoYVY0WHRabEJXMTRoZFljVTR6RE55aTRTNUVCcFdoWjVTVHRHVWdQd0pZWExvbU44dS12TVNTdld0eGt3NWlXek9pX1JtZ2xiTGFOaHByX2dsU3R4UG1iQ2dOS1l4SVBOdy15RWhMU1pURUpuZlFkVGZIR2NfWFFOeWJIRFpaQUJMeVM0TFdYb0VVOS1rdFVaNlp4ZDBkRjNVU0laOWhnVmtiQVBQLUVCRzJNQXI2ckFmSS1JWUxNeWZJb0VtaV9rR200bnVPcEhLaGIyQkhUcjRZOEhOU01fY3hrRlhoajNPZHRwQm5SSUQ5ZTRsUDdCNW5YMDBWbFdtLTlCalk0UXIyTVgyb2k0Y3B2MG9MU1JILTdLZlItc096QU51YkE3ZW1jRjdvR2hjbVdJSE56Rzc2eVUzQ04yRUxWM2F6eWFYT3FhZVgtMkRBRm91SUYyRHUwUk9yaW9CTlFfS3gwTzk1OU5ESXhaX3hQZjNmd2pCa0cyTjlYb3pQX1h5dzA5N0lRVUo0WFhiTVNkbUk5VloxVWx2VThZeW9NbktZTTNiSWJzdWVScjVKcjdub3NLSW0zQy00SUpyVldWQm9kUFZqRENld1pBeWpaLUhsalo4QW5xTUVJUmJ5ZEg3ZnctSVBhWHNFRlFBQm42N0wzQ2FNOHZ5RUNxSDlCbGxRS2xDVEcyZjk2TEdVOERiYnZkdTZJUkJlN05tMExSRmp5dnFuelpjRWx0enU0RjdETmtfdXVIZWx0RmVoMDFGaUFMY1pGX0hrazJ0TUJTc19BZFVJc1V2RGlZYk1mNWVHeFExbG9uTTVES3NMb2g1cU82SVRfTjdqMTBkQmUtTXNsN191NFpFMjE1TUFTMll6UTB6UTdnYnV3QWtPSg?oc=5",
-      "title": "‘𝗜𝗻 𝗮𝗻 𝗶𝗻𝘁𝗲𝗿𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 𝘄𝗼𝗿𝗹𝗱, 𝗻𝗼 𝗻𝗮𝘁𝗶𝗼𝗻 𝗽𝗼𝘄𝗲𝗿𝘀 𝗶𝘁𝘀 𝗳𝘂𝘁𝘂𝗿𝗲 𝗮𝗹𝗼𝗻𝗲.’ 🤝🌏⚡ President Ferdinand R. Marcos Jr. highlighted the Philippines’ efforts to strengthen its oil reserves and attract investments in renewable energy, modern power gr",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
