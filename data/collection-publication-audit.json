@@ -1,33 +1,25 @@
 {
-  "updated": "2026-11-19T12:14:28.680705+00:00",
+  "updated": "2026-11-19T13:25:27.196712+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 17,
-    "not_in_current_queue": 36,
+    "important_unpublished": 19,
+    "not_in_current_queue": 34,
     "pending": 19,
-    "published": 125
+    "published": 127
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 10,
-    "pending": 7
+    "pending": 9
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 7,
-    "repeated_extraction_failure": 3,
-    "in_retry_queue": 7
+    "repeated_extraction_failure": 2,
+    "source_blocked": 8,
+    "in_retry_queue": 9
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
-    {
-      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOYVRDMTIwZVhpUW5CWTE4U0F4eUpYQ3BUMnZxZGEtX2hxZnkzRFMwZ3gwSVhMQ3o2bUxoS3J0QWhGWnFyZ3hUV0tSbERLZ0FDUG9raEk1cUNPVVdUYVFTV1lpY0lBX2xKTHhwMG9XSWFpQllzRUVVQ2xfUzhxT2ZjU25GZm50MFJwOHRuWmYzZHlOVnVXcVUwa0dXZHBCQlBIVnB3WVlfTnluZGdpRHpGdFNyc2hWbmd0Wnoza1JidVRBZU4tRE1famM2Q0ZjN2lsSzJka2llbmwyQ2FLeFNPaDNCQlhxWXc3NGVj?oc=5",
-      "title": "Pennsylvania DOH confirms 8th measles-related death amid growing outbreak",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
     {
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8xaDZobTFBbExrZUROel9JSWVNYWthVXJvdmpkT0xLR21HQV9sVU4wMUlHWENpdVNyakwtSzRIZHpOUlJyeHo3c3pWcnBzMmI4NzJtUWJHVWvSAVhBVV95cUxPMWg2aG0xQWxMa2VETnpfSUllTWFrYVVyb3ZqZE9MS0dtR0FfbFVOMDFJR1hDaXVTcmpMLUs0SGR6TlJScnh6N3N6VnJwczJiODcybVFiR1Vr?oc=5",
       "title": "'슈퍼박테리아' 대응에 AI 활용…질병청, 항생제 내성 국제학술대회 개최",
@@ -61,6 +53,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNN2VqZHdtZmJfejJKY1hxdE9adlRWSjJYcnRQcm5hRzNMQ3VlWlJ2eXBVczJ4aVdfdF9oRGhSY1J1cHJBemV0OTRtYU9aVFBKS0J6a00yUHFkcHhaNDdxUkFwR3lZMTFWSEJ1UzQ5aWNtVDlHV2lHeEdkdGp5TjZxcDZzS3BOaVc0NFFEbjFpZHEwOGZLYXEydllkRmFmZWtCc1VWOHYyOTF2M1lmZVAtTWFXOGR1ZUU4Z1J0REpsX2wxOFFRcDRXQlo1bFZKMlY1enU5b0ZHNFhOV0ZvSTNMUFl3WVU3dExrSWc1LXNuamxqeUtsVWZLaDFtbXV5THJ2UkwxcmVJSnNNMTJqcC0wQXlR?oc=5",
+      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQzVxbF8zR2swbmswWnk4QlQ4M1pQRzgyS0g5bGJIR2RzLWt0ZmFFa01FVy1MT0ZPcTFka3kxWkxNeE5ndVJjQVZSamlKY3BvUlU4TUxxUXMyLU5udW5GWjlXak5PUzRNTUI0TENOczQtTjJQRlFJbjlqM09yLXJTN2ZnRW1JdVA4b28wVzNGeXY1X2g3WnZ6d19TVWhsMXdWdzc4Tg?oc=5",
       "title": "Antimicrobial Resistance Costs $3.5 Trillion Globally",
       "important": true,
@@ -85,11 +85,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQaXVyeVRYWmIxUnlwWTZBU2dYamhrZ0lQVlg4ZkZJdGhIbEZrTm5BN2VBRkMta0pXbHN3MnYzelZqaERwMmFnRnZpRFRsVlk3N2J4UjBrMVFWdllqVGRmSWYwRkREbWVOT09NdjhORmZ3NXlidlFtOGFfZVZWbDdEQlNOZmhVT1Z1Sk5wdVZTZlVoMTYyZ1JfaWlPNjRrNHVQZHQzZWctdU9SWGstQWliRWM3ZHRpWHVn?oc=5",
-      "title": "U.S. loses measles elimination status year after deadly Texas outbreak",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbExSZHdQNnEyR0RSUGY0dGtXSWpnTGd1NFFyUlJsUjdnam96cnlPYW5VLVdPemJrcnBlMk1DZklPR3E1VllpV0FhMEMtczNKcmJwM3VWSGJHN1FiNFh4SngwVFo5WjBuWFkyOHhTZFIzZ0g2cUlYTU1IQlZvTDhNMnZDNWxCTnd6dG5yVzI4WHpmd25DVk5GRXBHcThTSEVfRWpWTGpXZlpzUnFsODBqZHc2N2hwb0JQVzhR?oc=5",
+      "title": "Five top economists share good news about interest rate hikes in South Africa",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -103,14 +103,6 @@
   ],
   "unpublished": [
     {
-      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOYVRDMTIwZVhpUW5CWTE4U0F4eUpYQ3BUMnZxZGEtX2hxZnkzRFMwZ3gwSVhMQ3o2bUxoS3J0QWhGWnFyZ3hUV0tSbERLZ0FDUG9raEk1cUNPVVdUYVFTV1lpY0lBX2xKTHhwMG9XSWFpQllzRUVVQ2xfUzhxT2ZjU25GZm50MFJwOHRuWmYzZHlOVnVXcVUwa0dXZHBCQlBIVnB3WVlfTnluZGdpRHpGdFNyc2hWbmd0Wnoza1JidVRBZU4tRE1famM2Q0ZjN2lsSzJka2llbmwyQ2FLeFNPaDNCQlhxWXc3NGVj?oc=5",
-      "title": "Pennsylvania DOH confirms 8th measles-related death amid growing outbreak",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8xaDZobTFBbExrZUROel9JSWVNYWthVXJvdmpkT0xLR21HQV9sVU4wMUlHWENpdVNyakwtSzRIZHpOUlJyeHo3c3pWcnBzMmI4NzJtUWJHVWvSAVhBVV95cUxPMWg2aG0xQWxMa2VETnpfSUllTWFrYVVyb3ZqZE9MS0dtR0FfbFVOMDFJR1hDaXVTcmpMLUs0SGR6TlJScnh6N3N6VnJwczJiODcybVFiR1Vr?oc=5",
       "title": "'슈퍼박테리아' 대응에 AI 활용…질병청, 항생제 내성 국제학술대회 개최",
       "important": true,
@@ -143,6 +135,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNN2VqZHdtZmJfejJKY1hxdE9adlRWSjJYcnRQcm5hRzNMQ3VlWlJ2eXBVczJ4aVdfdF9oRGhSY1J1cHJBemV0OTRtYU9aVFBKS0J6a00yUHFkcHhaNDdxUkFwR3lZMTFWSEJ1UzQ5aWNtVDlHV2lHeEdkdGp5TjZxcDZzS3BOaVc0NFFEbjFpZHEwOGZLYXEydllkRmFmZWtCc1VWOHYyOTF2M1lmZVAtTWFXOGR1ZUU4Z1J0REpsX2wxOFFRcDRXQlo1bFZKMlY1enU5b0ZHNFhOV0ZvSTNMUFl3WVU3dExrSWc1LXNuamxqeUtsVWZLaDFtbXV5THJ2UkwxcmVJSnNNMTJqcC0wQXlR?oc=5",
+      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQzVxbF8zR2swbmswWnk4QlQ4M1pQRzgyS0g5bGJIR2RzLWt0ZmFFa01FVy1MT0ZPcTFka3kxWkxNeE5ndVJjQVZSamlKY3BvUlU4TUxxUXMyLU5udW5GWjlXak5PUzRNTUI0TENOczQtTjJQRlFJbjlqM09yLXJTN2ZnRW1JdVA4b28wVzNGeXY1X2g3WnZ6d19TVWhsMXdWdzc4Tg?oc=5",
       "title": "Antimicrobial Resistance Costs $3.5 Trillion Globally",
       "important": true,
@@ -167,11 +167,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQaXVyeVRYWmIxUnlwWTZBU2dYamhrZ0lQVlg4ZkZJdGhIbEZrTm5BN2VBRkMta0pXbHN3MnYzelZqaERwMmFnRnZpRFRsVlk3N2J4UjBrMVFWdllqVGRmSWYwRkREbWVOT09NdjhORmZ3NXlidlFtOGFfZVZWbDdEQlNOZmhVT1Z1Sk5wdVZTZlVoMTYyZ1JfaWlPNjRrNHVQZHQzZWctdU9SWGstQWliRWM3ZHRpWHVn?oc=5",
-      "title": "U.S. loses measles elimination status year after deadly Texas outbreak",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbExSZHdQNnEyR0RSUGY0dGtXSWpnTGd1NFFyUlJsUjdnam96cnlPYW5VLVdPemJrcnBlMk1DZklPR3E1VllpV0FhMEMtczNKcmJwM3VWSGJHN1FiNFh4SngwVFo5WjBuWFkyOHhTZFIzZ0g2cUlYTU1IQlZvTDhNMnZDNWxCTnd6dG5yVzI4WHpmd25DVk5GRXBHcThTSEVfRWpWTGpXZlpzUnFsODBqZHc2N2hwb0JQVzhR?oc=5",
+      "title": "Five top economists share good news about interest rate hikes in South Africa",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -185,6 +185,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPalZyQzBhZFd1MVlNM1ZNVnViTnYyNjhxTXNVVnFJWno1SHFwV25MeDF6VHJWUEo3b0hlRGpIeE10UG9zR25RM0xwNTVnQml5NEZhbmlxYXdsbnR3QmNLSko3c1JEODFobkNOeDVfWUlkVWVwRThvUDdzSkZjOHBQUHdZOHNhNmFYTmh0SG5GaS1BSzA3aXVEOTA2b1oySVo5SUhOR1lLNEhGdmxuT0t5VWVUY1dqVHFXSUNWTEVLRloyTy1VODZhTldaU2lSWWxiZkE?oc=5",
       "title": "M 7.1 Earthquake Rocks Southeast Maluku, BMKG Reveals Current Conditions and Aftershock Potential",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOeFpMZC1HZVpiVFVmdExnaGgxTTgxWl9QZ3ZBRl9VV2ZaVzBVeDExYzQ4cV9aOWp1UWpPMG9fendDX05PWlJQMmUwZDg2M0IwUFh6cEJKTmNQSURpbnY0OV9NT2ZxNi1qTDlOaUxiYURiRmVzbkpGVWVTNEI0Q1RnZjJlU1pUYXZLYWdmRzd6Q3JTV3dibnVZTmxLNTZGOFNxTzVSLWFoWFI5Yi0zZ2Y4MGJ2OHNyN2p5U0xOby1XQ2FOdGVuV1pWQTZwV0U5bzZ6VXR3dkNOcjNtdEdycUpWb2lGeFNFRWhxMWNV?oc=5",
+      "title": "Missouri reports three new measles cases Tuesday as United States loses elimination status",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -239,8 +247,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBDZWJWRGZhYnh4RF9DRVd6REV6NkZHM3MwNXZ5RmllLWMyZzV3ci1pV0VYWlE3UXNMblVuUXYtTm5hVS0zbHpOYXB2NkE4d09VMlc0?oc=5",
-      "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPV1F2a0Zpa1J3VXVOQXVFeVkwUjRTbndlNDJPNGZqT1NLOF9SSUFHay1GTXVOOXhIenBFdGJsTHN1a0ZFZE85LW9jOGczWnBrX3Zyc0FZVko2OXBuTWxybmpjV2RsTGNZeUVoTU1kSVpGLWFUYnF3c1pFQzVWRUR3dlhYUHAyQXE4bmFJNm5NaEhsZzd4djlmcklfeGVQZGdJSWRWTWhXTE1rYXVuZkhHaVFWcGJTa3JJakFQeVdLLWtYQmVaNjJjUUFKbzc?oc=5",
+      "title": "Antimicrobial Resistance Could Contribute To 39 Million Deaths By 2050: WHO",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxONXQtWlEwdXBjMlhYMFhySE1TNkNaWXphNy1aaUZUVVNuVEVhaHloYnBnckF4YTVaQ3VleHUzaEhNYUxhSjNPU0Z5TDhkWlptU3ZaemZVd0VmUkhlTVRkd2VYYVZtZDNyd3Z3Zjd5cEZ3VnRBdXphVWZWbVZkWnNOc05aTE8wdU9GV1dTeGlvOHNOM3Z1NENwU1ptVGRZM3Bkd3ZGZVZ1T2JHczhyZ0VKdmp1UERzTExud05qcmgwcWRoSzA3dlpyaFp1WHJYbGpiQkpmaEpmT28teHhBUHfSAeMBQVVfeXFMUHBRS2FocThyR0Z2T1BUaDZFa05VR051UFBCeURMTlQ1dzcwcTVSZ2lMWGdnWGJqa09sTnc0RlhPSU1xUlY0eGhfQUx3NU5rWWxoV1hLemR5MXpIY1FOcXVzaVVQVG50Tl9fZ2x6RXFKVjk4clBPWmtYa1k1MjZpU1Z3a3ZUTng4c1Z1UzVqemhuTWNvRFBOX1Q3dDhZVXlQczJnSF9jd2dhclhReTloblFCUU9yMnNTaGRsSG1SOEthdHd0MEg4TVFRajJDenRJN2d5bnhqZ19idWRCTVpWNmpsSlE?oc=5",
+      "title": "Trump-Xi-Putin Trilateral: Xi Urges Total Nuclear-Weapons Ban, Calls For Restraint On Taiwan | N18G",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -295,14 +311,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNWkQzZEItMXVKUlRxQWxvWWJlQVpGTmk4UXVwbVZWeW54MWVYaUcwUXpUUlN4QTJHMEI1ZXdtSTMxN1Fkd2tGM3V5VFliQlM2ejlDYjcwdUhNY2dxOUg1eEtlTk9mSE96MFphSVg5Mll4UmQ3dnBQNkdIamdyQmx5NG1BUHNkdmFrYjB6VEdGM05jQXV1LUQ0MQ?oc=5",
-      "title": "Ethiopia-Eritrea border tensions raise fears of fresh war",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOLUxidUs1bm1lZDBfQ3ZabV9ZQTlyZ194eG82YkxnX3BjYkRUMTdQcFVoQ2owZXJQRnhwVG15clRIcFEyVDAzMkY1LTJoRFRNTy1JMjFUU1dMZlFLVFlGRW5SUjhzb2ZaVU1JRWRpOEc4bVA0WDNIaXlhT29ReGNzYlNIQUVmc3J6ejRERkdqN2NZbDBtSGplZERB?oc=5",
       "title": "Immigration splits Spain ahead of snap election",
       "important": false,
@@ -316,6 +324,14 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNb2E5OUdvNktidzdxOXpkVHVxYmpCTHNkZldCdjRxQVFTaG51eUhnbS03YjZwYnFnNHVYSk1iSUhMUlNNSHl3bUk1ZGl5QTVLX25NNnF6eF9GV1FlYk0tYm53NEhiNnZFeHFselRJbXBZLXpIS21fdUo4TUxoQWk5LTA2dS1HMjZpZkV0bVRLZWdENzNYeUZTR0p2dw?oc=5",
+      "title": "PIPELINES AND PORTS: Iran War Spurs Gulf Infrastructure Investment",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -399,14 +415,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQR0JzU0pnVkdxamxHSkxJOXR1RUg5dFRKOXNxTE5wQ3VLZVk4TG5VbFpSVFJuSGE4LXRPUFNrMngwcVhFbHhYaUhHQmc2SERIcHYwOUx1S05zOGRGYy05N0NRaUNTWUxsd0h4aE53T3ZoakZVRlZyZklWOTZjbUlndzVvYk5Sb2c3cm5qZ1ZmXzVjN2UydnI5SGYwRTdrM0UyQnc5eWdKVWhvcVc2X0hSUWVMZw?oc=5",
-      "title": "JLL Partners-backed CAI strikes deal to combine with Italy’s PQE Group",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNVzBFa0NUVXhzQmtfdWUyRWpaTHZjTU5GaDR3TEhCZkhNc0IwOGxTQ1JMOTZEcFRnSFFJdHVBRnk4Q3k4WnhHb08xY3Frdm9uT2J4bWNnOEZ1cnNQZy1WX0NUOXpJZl8xN3lGTkVxVnRvanc5THF5X1JLeDU0alVTVlZQZ0VjOEI0cmhlY25McjN5TjdhVjI3Z29IZm1KaXFRLWlGYjdkWXRlUTlsYmtwTlNqdTN5Zw?oc=5",
       "title": "Canada defends Sifuna meeting as diplomats weigh Kenya’s pre-election field",
       "important": false,
@@ -423,14 +431,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUTkzOEZnalAxOW44SjZKSzZUQ0ZRWUpXak8tRW9xMDdhMlFQRjNBV2JFNEN5dE9xa1ZPaXkwNzdCQmNoZ1lhTHY3MW81ZVZabUdDMzFfWU1HSnBxRUVBSi1adEpCNDRlM190ZHByNS1KejAwenc4cDBEZmwtbzJBMmFMelJZV3BzeXl2a0F0eGNIRzMySGR2VmFRTUFKR1JPZlJmRV9YVFhzYlk5RXk2dnQxVlcyTGNVY1dDOTRISHrSAccBQVVfeXFMTXJfVlgzbnY3X0ZvZnRybndIOUNXcDZDNTFlTkFTa0syZG9xY0g5MnRXWDdkVjRVamE5WVpNYjU2YjVyelhQdTd3cVZKcmdqSjhyOFBaZmZVNktobFpyY0x3WGVQRWZzWmgtd0RIbkw0U0xHakI5T25FcTByUG5KTldYUG84bjItSXNYUWRhb0tEZE9uYjJQQnlTVjY4Z3FFX1lMSmo5NjZWUXMxNXdKZldkREhNSG16THFaMWhXOHlZNjYzckMwRQ?oc=5",
-      "title": "US trade deal awaits tariff clarity; India-EU FTA seen boosting FDI",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSUg5MGxzdmZjWDRrRncyYXFFc2xfTjBmN05RdlR3S2o3SzVmRl8xUWFMMXZsUWFzajlNeVg5S1V5VW1WZ3ZfcXI2QzJQRW51VTl2MkN0OWVKc1FUcE80YnV6Yk1Ha0tnT2lTSjNLR3ZVYUJra3FlX2FuWTJsZ1ZkU3RLUG1uQ1lUQ3otUmFWcTVMdWcxWnVQSDRGTGpGR2daNVFFUFVaMDZPdWl2MExyNUVXWEVZUVIwQ0oxYTVBbk1vdw?oc=5",
       "title": "Canada Concludes Free Trade Agreement Negotiations with ASEAN and the Philippines",
       "important": false,
@@ -439,8 +439,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMjd2cndUekRhdGZRSDV1bzZxM0RTbVNScDNXQUZFWUw5bUR4Mm1vWGxiX2U1TkZYQmdOZ0FqY2lTbHp1MWtTelh6cXRrWFlHcjQ4bkdUNU5JaHVuY2tQdDg1MEtERzB2bDc4WG1kV2dXbkRaNlc0SU5BSG1rMUc5RmNjZnA1SHBxTG91MEdNNXMwbF8tTVhfME1ock9LYzAwVHRhU0o1c2tEMW5CdmoyV1p5VVZfNmQwakVXMmxFVnp6cHc?oc=5",
-      "title": "Israeli parliament elects Eisenkot ally Matan Kahana as speaker in blow for Netanyahu",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNdVJjbkp2YmgtU3VWNU9PdW9oS2VzZ0RvVnFpcGFCeHNrbFpnSDBvS1I1bWl6VnlQNXVIQVVEc3hBbG1TbUYtOEwzRk9uRmQwUk1RZmcyUmF6VG12WFN3UVZ5WXFmNk5jdktoMktjaGg5Ujl6MURMQUdJVzh4NGxoNE9PVUszTUF6Z240Qy1GbHh3REJMYmJJeGt3MzdOVHg4SGh2ajFwSGU4V1l0a3JRcFlKdkRpbkNSSm9hcTdoRzFoNXRhR2JF?oc=5",
+      "title": "Ukraine Could Receive Fresh IMF Support as War Pressures Keep Public Finances Under Strain",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -455,16 +455,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQdlFnMXpQZGdZUS1acGZnSWNwQjRvRWk3TzhWVjFhT0VkZU9jWXBfa0lxQUx0ZnljMDNOSFljNm1kT3V0a1NHS0ZiaFBKRkl5bFprMUtFeDFlQU5ORTVUU2VDdWxxUUp1TFlIWk9IZEZCbjBEODFZS2hLZERiYjZpdjF6TWdsdTB3cVJIQm13Sk9KQWtiMnlvY0Z5T25BY2NEdlI2cjluRVA5NDg3eDBRQlJSamN5TjBndy10c0tvRjNtU0x0NHNUZzZDNWI3VWxULXJz?oc=5",
-      "title": "President Trump is in China to meet with Xi Jinping and Vladimir Putin of Russia. Follow our live coverage.",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxONUh6d0Q5eVJZY1o4by1ua3M0Z1hyMjBnazdMR2syaU8tRGgxX1h3cXAtUlU0cm5VdWRUYm94SmFoU19VTzF5dUpKdWY4U3d3NDczVFVnRFhDLVFQWFc4NElGLUpxVDJzdFZsNDNBTFc0dkZjdDM3V0pIbmV1WmJybzNxYzc4a0hTY2gtdWFLN2hRWUlsdjhlbXlqcmxHMWpUbi1BNnUwY2drMEstUS14Y1Z5TUloeUJjY1lISkgycUhHME1MaHNHNVN6RW5CU1J1MEFTMjJFMDlObG9iRnIw?oc=5",
+      "title": "MARCOS SPOTTED BESIDE RUSSIA PRESIDENT PUTIN AT APEC MEETING President Ferdinand R. Marcos Jr. was seen seated beside Russian President Vladimir Putin during the 2026 APEC Economic Leaders' Meeting held in Shenzhen, China, on Thur",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxONUh6d0Q5eVJZY1o4by1ua3M0Z1hyMjBnazdMR2syaU8tRGgxX1h3cXAtUlU0cm5VdWRUYm94SmFoU19VTzF5dUpKdWY4U3d3NDczVFVnRFhDLVFQWFc4NElGLUpxVDJzdFZsNDNBTFc0dkZjdDM3V0pIbmV1WmJybzNxYzc4a0hTY2gtdWFLN2hRWUlsdjhlbXlqcmxHMWpUbi1BNnUwY2drMEstUS14Y1Z5TUloeUJjY1lISkgycUhHME1MaHNHNVN6RW5CU1J1MEFTMjJFMDlObG9iRnIw?oc=5",
-      "title": "MARCOS SPOTTED BESIDE RUSSIA PRESIDENT PUTIN AT APEC MEETING President Ferdinand R. Marcos Jr. was seen seated beside Russian President Vladimir Putin during the 2026 APEC Economic Leaders' Meeting held in Shenzhen, China, on Thur",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOaHdMZDhrbHJEak94LUxwUGs3YWJXSTNEMVJlSlNnUUhzNkdhRnhCQWVVNUNfZ2d3d1BLOUhYSzl5cGVsdmw4X3VlUzJ2UG1wMkV6TFNzMDhJOWo4LWNnUlVjZ01mS2Z0SzFHdnJYVjV5Vm9RVl9qak5hWG1zQU1JODFMOVpEYnYzeFFmbWQ5MXIwQi1wTHIyQkN5emhpSGoycl95WmJyTk43YTVmeWZvT0M5eHRac1RZcGdvaWhHWjhFS21PRTYzeENoN0E5RHVvMkZOekcyejRWNDBQZ3hoMHdOQQ?oc=5",
+      "title": "1000 long range strike drones announced for Ukraine as Prime Minister co-chairs Coalition of the Willing in Berlin",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -489,14 +489,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9OOUs2Z3JBSE5BejFaMlJ1RFFWa2EtYlhKa2k1Y1A3dE90X205OTNQbDBWSnhqSnB3Nkd6ZjFWRFlnZ1B2cENaOXRINU43UnlubXRmVjJUVWh0c2loWWZrVHZWWkRCWDdaaVI0UVFkUXpueEZwS2JxbklOaEVhdzQ?oc=5",
       "title": "Norway Backs Nuclear-Powered Offshore Vessel Project",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcVJnMEtZNE54VFZkWHRQVElkblRDXzVlamdNYmM2ZE1QVVJZUXJXREhBWllXWDE5YlJzQ2tPS09EcUpHS0ZKb3dSWkM4YnVKMHhBVExUU1hkRGZ5ZFRwX0dPYllJd1ZXSEtobElJVnUzcmx5elBQOWQ3bFpjdTQ3NGE3ZzA0QzdCR2hzNTd4S0JUcEZzdW9fSFNB?oc=5",
-      "title": "UK Inflation Rises to 3.6% Amid Increasing Fuel Prices",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -529,14 +521,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQYTdNbENkZ0VvY0d4MlJnWnV3NDJCQ1NSVHlUTXBCT2RIWWVZRHdhNktCQzZEc1A1TnFlU2phM1J1U2Z2WWFTNnhMSmhsNS1ISnU1WkJLLTF5SFQwVnk0cTB6dmlwZExlTGNSWFp3Zk9DZlg5bWxsd3hWdDZJY1lFNWlDbm15REJWeVYtTXJXTHRtMVhWdzlRU3c0OUFDOTlXQXQ1SU9HMTZhSU9jOWJTc0otUWJyM00?oc=5",
       "title": "India targets 100 GWe nuclear capacity by 2047, five indigenous SMRs by 2033: Jitendra Singh",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRjhGQ0h1QU01VUstclJQNjRwb09TUnR6SFZuM0dSMnJrVTFuWTNSdEFMamhLMGhpbWpVMWFZeHJ0WFhaVlk0RE9UTnVJcUJiMDRuUmFDSUg5VEREY3dGRUNOdzA4MUo1TjVwMlZpaUdQSTUxeWZ6ZmRPTTF3aENZYVZEY3RCYm5ORko2SHN4NEdLWVp5RzVIbFF5QlFlNEpueXpwb1lpV2xSai01WnRmblZCS3RNcDRqZkdVeFVpOHFsN211VGd6R253?oc=5",
-      "title": "Address by President Cyril Ramaphosa to the South Africa and the AI Opportunity Conference on the occasion of his Working Visit to Silicon Valley, San Jose, United States of America",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
