@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-19T21:08:57.772784+00:00",
+  "updated": "2026-11-19T22:09:07.553794+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 17,
-    "not_in_current_queue": 38,
-    "pending": 12,
-    "published": 130
+    "important_unpublished": 19,
+    "not_in_current_queue": 39,
+    "pending": 13,
+    "published": 128
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 12,
-    "pending": 5
+    "not_in_current_queue": 13,
+    "pending": 6
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 8,
+    "source_blocked": 9,
     "repeated_extraction_failure": 4,
-    "in_retry_queue": 5
+    "in_retry_queue": 6
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -42,6 +42,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPb3owdnRiaEFIUV9qb2JVT04yS0FFak1jak9BYWswVW00OHJGSGxtTnBja2gzSUtfYld1akZhbWVtNXZYTENmX0dtcFF4bE9fUGhNQTUtN2oxZFJXcjFWT3haMElDUVp6czhDR3VNUUJfc3FfYVc1cGtsZFF2clc3UzJLOEc?oc=5",
+      "title": "Israel Says Gaza Tunnel Section Destroyed as Ceasefire Frays",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -101,16 +109,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbExSZHdQNnEyR0RSUGY0dGtXSWpnTGd1NFFyUlJsUjdnam96cnlPYW5VLVdPemJrcnBlMk1DZklPR3E1VllpV0FhMEMtczNKcmJwM3VWSGJHN1FiNFh4SngwVFo5WjBuWFkyOHhTZFIzZ0g2cUlYTU1IQlZvTDhNMnZDNWxCTnd6dG5yVzI4WHpmd25DVk5GRXBHcThTSEVfRWpWTGpXZlpzUnFsODBqZHc2N2hwb0JQVzhR?oc=5",
-      "title": "Five top economists share good news about interest rate hikes in South Africa",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
+      "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQa1k5ZGNHU2J3TkNRSFpMaTVWSjdvbG4wcUpubFh4Nnltb2MxYnBXQVhHaEpBSHRvQkpkYVFQSkpwUDVKWE50ZW5IRGs0TVZNM09zRVhHUk1iMUNnTG0tUm9jb0UzejVOXzJsYlpQRzJ1dWpwcFhNMHgxZUVjZjlXMFZfSWVORFVKUVFVNFptTzE0eDZXUExwaWF1RDZoZUZxTW9TLTNWRVF2WWNLWUMxS2RHbWZpU0JHNlpQamJNOHpyME9SX0YtY1JKejY?oc=5",
-      "title": "Coalition forces intercept Houthi missile launched towards Riyadh, debris causes damage",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbExSZHdQNnEyR0RSUGY0dGtXSWpnTGd1NFFyUlJsUjdnam96cnlPYW5VLVdPemJrcnBlMk1DZklPR3E1VllpV0FhMEMtczNKcmJwM3VWSGJHN1FiNFh4SngwVFo5WjBuWFkyOHhTZFIzZ0g2cUlYTU1IQlZvTDhNMnZDNWxCTnd6dG5yVzI4WHpmd25DVk5GRXBHcThTSEVfRWpWTGpXZlpzUnFsODBqZHc2N2hwb0JQVzhR?oc=5",
+      "title": "Five top economists share good news about interest rate hikes in South Africa",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -143,6 +151,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPb3owdnRiaEFIUV9qb2JVT04yS0FFak1jak9BYWswVW00OHJGSGxtTnBja2gzSUtfYld1akZhbWVtNXZYTENmX0dtcFF4bE9fUGhNQTUtN2oxZFJXcjFWT3haMElDUVp6czhDR3VNUUJfc3FfYVc1cGtsZFF2clc3UzJLOEc?oc=5",
+      "title": "Israel Says Gaza Tunnel Section Destroyed as Ceasefire Frays",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
       "title": "M6.0 Earthquake Strikes off the Coast of Peru",
       "important": true,
@@ -199,6 +215,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
+      "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbExSZHdQNnEyR0RSUGY0dGtXSWpnTGd1NFFyUlJsUjdnam96cnlPYW5VLVdPemJrcnBlMk1DZklPR3E1VllpV0FhMEMtczNKcmJwM3VWSGJHN1FiNFh4SngwVFo5WjBuWFkyOHhTZFIzZ0g2cUlYTU1IQlZvTDhNMnZDNWxCTnd6dG5yVzI4WHpmd25DVk5GRXBHcThTSEVfRWpWTGpXZlpzUnFsODBqZHc2N2hwb0JQVzhR?oc=5",
       "title": "Five top economists share good news about interest rate hikes in South Africa",
       "important": true,
@@ -207,16 +231,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQa1k5ZGNHU2J3TkNRSFpMaTVWSjdvbG4wcUpubFh4Nnltb2MxYnBXQVhHaEpBSHRvQkpkYVFQSkpwUDVKWE50ZW5IRGs0TVZNM09zRVhHUk1iMUNnTG0tUm9jb0UzejVOXzJsYlpQRzJ1dWpwcFhNMHgxZUVjZjlXMFZfSWVORFVKUVFVNFptTzE0eDZXUExwaWF1RDZoZUZxTW9TLTNWRVF2WWNLWUMxS2RHbWZpU0JHNlpQamJNOHpyME9SX0YtY1JKejY?oc=5",
-      "title": "Coalition forces intercept Houthi missile launched towards Riyadh, debris causes damage",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPalZyQzBhZFd1MVlNM1ZNVnViTnYyNjhxTXNVVnFJWno1SHFwV25MeDF6VHJWUEo3b0hlRGpIeE10UG9zR25RM0xwNTVnQml5NEZhbmlxYXdsbnR3QmNLSko3c1JEODFobkNOeDVfWUlkVWVwRThvUDdzSkZjOHBQUHdZOHNhNmFYTmh0SG5GaS1BSzA3aXVEOTA2b1oySVo5SUhOR1lLNEhGdmxuT0t5VWVUY1dqVHFXSUNWTEVLRloyTy1VODZhTldaU2lSWWxiZkE?oc=5",
+      "title": "M 7.1 Earthquake Rocks Southeast Maluku, BMKG Reveals Current Conditions and Aftershock Potential",
       "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPalZyQzBhZFd1MVlNM1ZNVnViTnYyNjhxTXNVVnFJWno1SHFwV25MeDF6VHJWUEo3b0hlRGpIeE10UG9zR25RM0xwNTVnQml5NEZhbmlxYXdsbnR3QmNLSko3c1JEODFobkNOeDVfWUlkVWVwRThvUDdzSkZjOHBQUHdZOHNhNmFYTmh0SG5GaS1BSzA3aXVEOTA2b1oySVo5SUhOR1lLNEhGdmxuT0t5VWVUY1dqVHFXSUNWTEVLRloyTy1VODZhTldaU2lSWWxiZkE?oc=5",
-      "title": "M 7.1 Earthquake Rocks Southeast Maluku, BMKG Reveals Current Conditions and Aftershock Potential",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPSEVxQTFpNEQ0TGJqQU1xX3JEVTFTRmkxWV82VEM2UzQxSVYzaF9iQkctR08ybHJkbUdqQUVuUENzTXNJY2lhUjFibklhY1pEYnZHSXdqUTNIZFB1YXFVWkh3WlRRRjIybWR1SzdwcVdlcVk2c3RRbzBCdEFyY19GSmY3WWdSNEtyOUdxenpWazJNUkhteXRGQ1JiNjJ2QklBY094QWxlcG5zdUNNaWN3Z04tNlJYcE8zV0lwdW9paUJMQmJtYXlfdDRTTVRDWTBYa19LZVRXYUE?oc=5",
+      "title": "The United States, which in 2000 became one of the first countries to be declared measles-free, has been facing its largest outbreak in over three decades. Link to the full story in the comments section. | via ANC 24/7",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -263,6 +287,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1teXpfQll6MTNyb0ZPZlJMRk83UTlZbFhCeGEyOGhkaVN6bnl0enp5SEh4T3RVemxMbktDakJLekdLcGdGNWVqc05TUUNiQjctUHB2TTFzdUt2LVh4Q1M4ZXlkYw?oc=5",
+      "title": "신약 후보물질 넘어 허가서류까지…AI, 개발기간 단축 새 가능성",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8tWDV0SG5GbkNQanoxX0x5N1R2QUxhY0hCMGV0OWN0eWRfcWE3UWZZZEpORVc1X2g3SzhKSVpzSmJTcWRsNzQ1YkxzME5ETHlNT2R0aXVOV1Z5UUp5SWhrSThvZmVvblUxUmc?oc=5",
       "title": "“숨돌리기 이후엔 인상?”… 한은, 다음 주 금통위서 금리 올리나",
       "important": false,
@@ -295,11 +327,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeGVzSjhrbUhOTTctX0ViTkJTRnFEZnkwNTJQR3gySTJRQlk3aXNwenJ2Qk1DejVYcF84dmF4WDFPd2xKRzEwazEtOEdOb05OOFhJaXZQVTd3R2lDRHdGbTgtM1JSSEMxeFN5OTlLc0tLNE55MHlHRDZNU3lOVFBDaTJwQQ?oc=5",
-      "title": "Iran war live: Strait of Hormuz crisis dubbed ‘largest energy shock in history’",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE44WmtSaXQxeWxSUWtyazdjQWxqc2ZXY2VkWWxRSXF6ZGhtZjh4ZEo4RFVKQUNFOEdUUk9FLXRQd05oZFdfcWNhendwRWFrMUp3OHlyLWxLemVfMnJQZWNLaXJZUGNxWERMcXVwTnIzQ2FHSm5z?oc=5",
+      "title": "[2026 제약바이오투자대전] 신한투자증권, 신약개발사 상장 준비 사례 공개",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -313,14 +345,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMVp6RlBJeEtMUUtxSlhrMVM3Vm9jMDhta0JPa1JfVmdfS1UyS0xRcWFuM0pvOWFKYUZfd2JwTFZhbndoQVNLRGpTUHkxeTBCbXktN2o3VUxSSE1iZFZyaEhjbDVtSU9aSkVJY1Y5QkJhLVZLWXhzYlIyQTVDNlFONGdodnpKVzZy?oc=5",
       "title": "European Commission Raises Poland’s 2027 Inflation Forecast to 4.4%",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdGdrMlJHd05TY2ZOcHVPU1JNWUVoam9WbFdBV1hnRnhKb2xMWmRJTWlnZ1dfTkJLamJzUGd2ZWxzTlRjWWplTC1WYzBIZ2NtLW9PelMwNnNPLW9mSEt4bVZaeXRVNUFrRWRGSFUwcUIxN3NPNmVIaWFLYWNGSmdqa3dEeGJqWkdBWnAtWg?oc=5",
-      "title": "First successful human challenge model for dengue serotype 4 could speed vaccine and drug testing",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -471,16 +495,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQdlFnMXpQZGdZUS1acGZnSWNwQjRvRWk3TzhWVjFhT0VkZU9jWXBfa0lxQUx0ZnljMDNOSFljNm1kT3V0a1NHS0ZiaFBKRkl5bFprMUtFeDFlQU5ORTVUU2VDdWxxUUp1TFlIWk9IZEZCbjBEODFZS2hLZERiYjZpdjF6TWdsdTB3cVJIQm13Sk9KQWtiMnlvY0Z5T25BY2NEdlI2cjluRVA5NDg3eDBRQlJSamN5TjBndy10c0tvRjNtU0x0NHNUZzZDNWI3VWxULXJz?oc=5",
-      "title": "President Trump is in China to meet with Xi Jinping and Vladimir Putin of Russia. Follow our live coverage.",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPekZsWEVTR2hBcVIwNWpwb1ZrbXFDSWVXQkNVY3JhbGZjNzFoVEJMSFJmUVJVbWxEV1YxOWYwSzA1YW9Pa1drQk50d3FWN0t4WDdWRDIzQTJRRk1nSDMtN0dUT3hfaW0xRkx4TU0tV3VpNGZzZU5QelFVZVVIVkRmX2ozZ2FKY0JIRVlFa1dwakFIR2Y1UE04Nzk2RVA1WHJXc3RQNUFpQlBWMFJ3SExEZ1lHY3lJVElibU9HSlVYVGMzcm9tdUNfLVlGakRzaUJybUxIY19SVQ?oc=5",
+      "title": "Ukraine war latest: Russian drones kill 1, damage 2 European embassies, cathedral in hours-long drone raid on Kyiv",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPekZsWEVTR2hBcVIwNWpwb1ZrbXFDSWVXQkNVY3JhbGZjNzFoVEJMSFJmUVJVbWxEV1YxOWYwSzA1YW9Pa1drQk50d3FWN0t4WDdWRDIzQTJRRk1nSDMtN0dUT3hfaW0xRkx4TU0tV3VpNGZzZU5QelFVZVVIVkRmX2ozZ2FKY0JIRVlFa1dwakFIR2Y1UE04Nzk2RVA1WHJXc3RQNUFpQlBWMFJ3SExEZ1lHY3lJVElibU9HSlVYVGMzcm9tdUNfLVlGakRzaUJybUxIY19SVQ?oc=5",
-      "title": "Ukraine war latest: Russian drones kill 1, damage 2 European embassies, cathedral in hours-long drone raid on Kyiv",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcFoyTlhOMXhfVS1nZlBXMExaZ1dZMWUzVE5mM3YxSTN5bVF2UlNSNGxNbnlnS21wdDY4TE5TVk9CbHY4bmJnLVZPSWlfeE5uU0dCS1g1emM3ZWVwT01Qd1lmS3htd2hobS1iUjV1WncxbXBwVDdHZ2Q0R0pNUGZLNF9Vdw?oc=5",
+      "title": "India to host Brazil President Lula for state visit",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
