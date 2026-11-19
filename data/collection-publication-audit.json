@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-19T11:25:52.207019+00:00",
+  "updated": "2026-11-19T12:14:28.680705+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 18,
+    "important_unpublished": 17,
     "not_in_current_queue": 36,
-    "pending": 21,
-    "published": 123
+    "pending": 19,
+    "published": 125
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 8,
-    "pending": 10
+    "not_in_current_queue": 10,
+    "pending": 7
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 6,
-    "repeated_extraction_failure": 2,
-    "in_retry_queue": 10
+    "source_blocked": 7,
+    "repeated_extraction_failure": 3,
+    "in_retry_queue": 7
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -26,6 +26,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8xaDZobTFBbExrZUROel9JSWVNYWthVXJvdmpkT0xLR21HQV9sVU4wMUlHWENpdVNyakwtSzRIZHpOUlJyeHo3c3pWcnBzMmI4NzJtUWJHVWvSAVhBVV95cUxPMWg2aG0xQWxMa2VETnpfSUllTWFrYVVyb3ZqZE9MS0dtR0FfbFVOMDFJR1hDaXVTcmpMLUs0SGR6TlJScnh6N3N6VnJwczJiODcybVFiR1Vr?oc=5",
+      "title": "'슈퍼박테리아' 대응에 AI 활용…질병청, 항생제 내성 국제학술대회 개최",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -42,6 +50,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRlJuRnRZRW1vbWZLLUhJNjNMX2d3Tk5tTEk2ckloVm5Ca3ItMmJGdC1KYWg4YXRLbDRnaEYwdDNydmt0QVU5SnBoVVBzcmRMbGh3aVowN3NCMkYxNUlQMF9sem5DQzc1QzhzUW96RV9MdmZ2SkRTRlNhTTdOR2dMSV9OVEVqa3NaVGMwTEhWMA?oc=5",
+      "title": "Interest rate surprise for South Africa could be coming",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -95,6 +111,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8xaDZobTFBbExrZUROel9JSWVNYWthVXJvdmpkT0xLR21HQV9sVU4wMUlHWENpdVNyakwtSzRIZHpOUlJyeHo3c3pWcnBzMmI4NzJtUWJHVWvSAVhBVV95cUxPMWg2aG0xQWxMa2VETnpfSUllTWFrYVVyb3ZqZE9MS0dtR0FfbFVOMDFJR1hDaXVTcmpMLUs0SGR6TlJScnh6N3N6VnJwczJiODcybVFiR1Vr?oc=5",
+      "title": "'슈퍼박테리아' 대응에 AI 활용…질병청, 항생제 내성 국제학술대회 개최",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
       "title": "M6.0 Earthquake Strikes off the Coast of Peru",
       "important": true,
@@ -108,6 +132,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRlJuRnRZRW1vbWZLLUhJNjNMX2d3Tk5tTEk2ckloVm5Ca3ItMmJGdC1KYWg4YXRLbDRnaEYwdDNydmt0QVU5SnBoVVBzcmRMbGh3aVowN3NCMkYxNUlQMF9sem5DQzc1QzhzUW96RV9MdmZ2SkRTRlNhTTdOR2dMSV9OVEVqa3NaVGMwTEhWMA?oc=5",
+      "title": "Interest rate surprise for South Africa could be coming",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -159,16 +191,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPbFZPMHNsZnNOeHAyX2ZrbkIycjdENUpoOE5TeGNjdjZITTBDWmxocUJ4Mkg4bThhSXJzeExaZXI4b0FXbWhzZ19tbGFKQ1JPNWZwaGJ1WFdldmljMkxpTlV0V0dDTkNnMFlISnZzWURDbkxpR0VMeUpKTVpjNUFHYTFxTVJ1bzlJNGFxR0trRHBRQ3RRWG94MGduQmVCaW9UbVgtemhzazVFNUJDZTBKeHlqZVEwSF9LanNnRkpzUEc0SXhHTnU3TUhLOEt0SWFuMkE?oc=5",
-      "title": "Strong mag. 5.2 earthquake - Indian Ocean, 130 km southwest of Pulau Nias Island, North Sumatra, Indonesia, on Thursday, Nov 19, 2026, at 01:34 am (GMT +0)",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8xaDZobTFBbExrZUROel9JSWVNYWthVXJvdmpkT0xLR21HQV9sVU4wMUlHWENpdVNyakwtSzRIZHpOUlJyeHo3c3pWcnBzMmI4NzJtUWJHVWvSAVhBVV95cUxPMWg2aG0xQWxMa2VETnpfSUllTWFrYVVyb3ZqZE9MS0dtR0FfbFVOMDFJR1hDaXVTcmpMLUs0SGR6TlJScnh6N3N6VnJwczJiODcybVFiR1Vr?oc=5",
-      "title": "'슈퍼박테리아' 대응에 AI 활용…질병청, 항생제 내성 국제학술대회 개최",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5TRksyb3NqTF9ZSnJCMjgxaGdsdkZQSmEyMm4zZHo2Zk9VbWFyNmZROG8wSGdUbk5SQUlFQUJGcHhWdFlLYXgwUEg5clBTRDl5S1BMVmdCQ2dSeTVKWkV4LUt5UmFXZ3l1dXVmZE1iN3JHUG9NdlF3?oc=5",
+      "title": "항생제 내성 슈퍼박테리아, 경남서 5년 새 74% 늘었다",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -199,14 +223,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPLThwaE96bUg2Sklmd3JzWWw3Q3JLMUZ6MGMwQzZVVHRJTS1uTEM4ZkVHN2FlaFlIRlpib2syUDZ5TjZLcVJpM1I4YmZ4YlZBZ3B4NDNtcFZvR2tZMjZJOG5CZW1TOGpOSlo4Q19nRmZibHE1V1djWTdBV1JROGhaU252UkFaU3Rqb0xyeC12SU1RTG9uUlFNcXFsWkR5RGJ0X1A3S1F0S2hfVDRVQ2lIZ1lucG9wU0Zu?oc=5",
-      "title": "The 1929 earthquake that triggered a deadly Newfoundland tsunami",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOaE9BN2hwVlhvYUpVRjJFMmhGMFdkWjdpd0hDV3gtRG1wZ1dpQ2hHWGowUFZRbno2RU1yNldaNC1OMnQ3R0pZOURfcFpOY3VHcHczOU9fMnlmbml4M1hzTFUtWTVIdl9pRWJ2V015OUJJVWFiMmNjTTB4TVg2Xy1xUjJqMDE2Unlqb05WYXdIbEw5RDBRUjFRWVViSkNJOEVldkNUSWJaOXliaVpIanRQUHlMZXZXeHlaSXNXRnNPRQ?oc=5",
       "title": "Brazil's central bank faces backlash over stablecoin money laundering remarks",
       "important": true,
@@ -217,14 +233,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQnduWTFXWFlZdk0tS1dvaGgwNlpXZDRlX3JEUWtPTkRhV05XYURacmpkVlhmbmlwSnpGT28tZlV2eUNkdGZpLWk3bnJoVV9MTFV4bUMwcEZpTTZLU01yMnREYXZrLUFycTdFRGpBelJrT1NfbXJ3eDAzYkNocGFfZmxrNzdVb1hBM1ZhR2pjbnkxV3VDenlkdjRraUJGTVFlUUwxZUdiWGpKUm50S0VfMUc3Ukxvelc0VEtuWkNVMjMySEE?oc=5",
       "title": "Connecting agricultural research and knowledge to support action against antimicrobial resistance",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPV1F2a0Zpa1J3VXVOQXVFeVkwUjRTbndlNDJPNGZqT1NLOF9SSUFHay1GTXVOOXhIenBFdGJsTHN1a0ZFZE85LW9jOGczWnBrX3Zyc0FZVko2OXBuTWxybmpjV2RsTGNZeUVoTU1kSVpGLWFUYnF3c1pFQzVWRUR3dlhYUHAyQXE4bmFJNm5NaEhsZzd4djlmcklfeGVQZGdJSWRWTWhXTE1rYXVuZkhHaVFWcGJTa3JJakFQeVdLLWtYQmVaNjJjUUFKbzc?oc=5",
-      "title": "Antimicrobial Resistance Could Contribute To 39 Million Deaths By 2050: WHO",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -281,14 +289,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMVp6RlBJeEtMUUtxSlhrMVM3Vm9jMDhta0JPa1JfVmdfS1UyS0xRcWFuM0pvOWFKYUZfd2JwTFZhbndoQVNLRGpTUHkxeTBCbXktN2o3VUxSSE1iZFZyaEhjbDVtSU9aSkVJY1Y5QkJhLVZLWXhzYlIyQTVDNlFONGdodnpKVzZy?oc=5",
       "title": "European Commission Raises Poland’s 2027 Inflation Forecast to 4.4%",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNLWtwcGo1LWgzWGRMUHhRSlc5ZS1sLXBmampxdVYxUjBsbzhNVzl6SGZHWTJWbVlmYTVHY0N2SDZxMlMyZHJacmNTck40YWRxclhxTTFTLVF5N3YzNnJuMjlOOWp5Tm11dzNRZ0FpMDhRUnQyek1STE96LUV4bHVaQUItX0p4M01jN0oweF9pV2hJMVBUQy1F?oc=5",
-      "title": "Indonesia Postpones Vice Presidential Election to December 9",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -383,14 +383,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaVMyT3o1X1loMDB4WDJaelo2QVI4QlV0TXN2QUhqY0tTVUxka2FxM2dzVXExRnBRSnB2Yk9oTE5IRm5jb0U3bDh5RDF2ZGpZQ00zT3lYSng4VjF0U2tMNDZkY0VkaFJDOHFhTnRLZ1BSWjMwNVBWWnQ3YllZVTBlVFFTdU4xUkptdHFNWlB5TDJrWGJQTE9zRlc3V3VsN0dxZEtNcTR5czgyOVQ3TlloSw?oc=5",
-      "title": "Stocks of Diageo, other liquor makers fall in India on Scotch tariff jolt",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa0JqQ3k0WGk0NVoxbHRNTHBTeDZxaVkyYmdzdGptNVB2MUVjb3lmcG1OTXRrWGs0U016Vi0tWTU5UmdYbk5IWHJfSTV0UEpEUkZvM0s1WjkwT3E1NFVfMzdGb3pyZ0J3cmhGWXMzVWJnSmpTTVh0MU1VcUJUcFZBamRua0kyOFVWSGUtQ243M2lITElJbmRRS3ZhNTNTenJJcXJTbFZiU0hJVFl1SHl5MnVB?oc=5",
       "title": "Yemen’s Long War, Saudi Arabia’s Security Dilemma, and the Shifting Middle East",
       "important": false,
@@ -431,8 +423,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZXRzLVpZYXhYWG5KWlNpVjZQbUtVNXBIeTdjTThFV3RSTnJ3bFZpNzJhcVo2bUFnOEE3Mm45cFd5MDM2eS1SM2RfSGZmelR5RXQwSVI2U3BFQ2Y0UU9taDJoM3VOV2lTd1VtdGtBZWpnQTlMNVVfZU1IRlNHbEJKbUNCYi1lbzk3Vkdhay12eWR3Q19ZaU50Mm1TMUVyZExFVXVRenRyNEE5QUNIR29HaHdIaUg0UUN4NXVja0d2QVU?oc=5",
-      "title": "South Africa’s Messy Local Election Fallout Rattles Investors",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUTkzOEZnalAxOW44SjZKSzZUQ0ZRWUpXak8tRW9xMDdhMlFQRjNBV2JFNEN5dE9xa1ZPaXkwNzdCQmNoZ1lhTHY3MW81ZVZabUdDMzFfWU1HSnBxRUVBSi1adEpCNDRlM190ZHByNS1KejAwenc4cDBEZmwtbzJBMmFMelJZV3BzeXl2a0F0eGNIRzMySGR2VmFRTUFKR1JPZlJmRV9YVFhzYlk5RXk2dnQxVlcyTGNVY1dDOTRISHrSAccBQVVfeXFMTXJfVlgzbnY3X0ZvZnRybndIOUNXcDZDNTFlTkFTa0syZG9xY0g5MnRXWDdkVjRVamE5WVpNYjU2YjVyelhQdTd3cVZKcmdqSjhyOFBaZmZVNktobFpyY0x3WGVQRWZzWmgtd0RIbkw0U0xHakI5T25FcTByUG5KTldYUG84bjItSXNYUWRhb0tEZE9uYjJQQnlTVjY4Z3FFX1lMSmo5NjZWUXMxNXdKZldkREhNSG16THFaMWhXOHlZNjYzckMwRQ?oc=5",
+      "title": "US trade deal awaits tariff clarity; India-EU FTA seen boosting FDI",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -447,8 +439,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNdVJjbkp2YmgtU3VWNU9PdW9oS2VzZ0RvVnFpcGFCeHNrbFpnSDBvS1I1bWl6VnlQNXVIQVVEc3hBbG1TbUYtOEwzRk9uRmQwUk1RZmcyUmF6VG12WFN3UVZ5WXFmNk5jdktoMktjaGg5Ujl6MURMQUdJVzh4NGxoNE9PVUszTUF6Z240Qy1GbHh3REJMYmJJeGt3MzdOVHg4SGh2ajFwSGU4V1l0a3JRcFlKdkRpbkNSSm9hcTdoRzFoNXRhR2JF?oc=5",
-      "title": "Ukraine Could Receive Fresh IMF Support as War Pressures Keep Public Finances Under Strain",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMjd2cndUekRhdGZRSDV1bzZxM0RTbVNScDNXQUZFWUw5bUR4Mm1vWGxiX2U1TkZYQmdOZ0FqY2lTbHp1MWtTelh6cXRrWFlHcjQ4bkdUNU5JaHVuY2tQdDg1MEtERzB2bDc4WG1kV2dXbkRaNlc0SU5BSG1rMUc5RmNjZnA1SHBxTG91MEdNNXMwbF8tTVhfME1ock9LYzAwVHRhU0o1c2tEMW5CdmoyV1p5VVZfNmQwakVXMmxFVnp6cHc?oc=5",
+      "title": "Israeli parliament elects Eisenkot ally Matan Kahana as speaker in blow for Netanyahu",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -495,6 +487,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9OOUs2Z3JBSE5BejFaMlJ1RFFWa2EtYlhKa2k1Y1A3dE90X205OTNQbDBWSnhqSnB3Nkd6ZjFWRFlnZ1B2cENaOXRINU43UnlubXRmVjJUVWh0c2loWWZrVHZWWkRCWDdaaVI0UVFkUXpueEZwS2JxbklOaEVhdzQ?oc=5",
+      "title": "Norway Backs Nuclear-Powered Offshore Vessel Project",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcVJnMEtZNE54VFZkWHRQVElkblRDXzVlamdNYmM2ZE1QVVJZUXJXREhBWllXWDE5YlJzQ2tPS09EcUpHS0ZKb3dSWkM4YnVKMHhBVExUU1hkRGZ5ZFRwX0dPYllJd1ZXSEtobElJVnUzcmx5elBQOWQ3bFpjdTQ3NGE3ZzA0QzdCR2hzNTd4S0JUcEZzdW9fSFNB?oc=5",
       "title": "UK Inflation Rises to 3.6% Amid Increasing Fuel Prices",
       "important": false,
@@ -503,16 +503,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQRDNmbS12UXBRSW5weHJLNXRrNkw4ZWo3QXlfX29qTzNqTHJfTHkyRHNzMHU0UlUzbDFOOWFIN080bVdwVXdlNlJDTnhoeHowcTdRdlhRcjVNOEJNNWI1TFl3ZDQyWV8zVlU4dmlPUlZFVDQ5QUdJdk5qMUxHVHVMNTB3cmFYU19pQjhhVTh1VWVIZm5xblk2TV9wZmJBSzJ1UjBTXw?oc=5",
-      "title": "India and Egypt Set $12 Billion Trade Ambition, Explore Free Trade Agreement",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTk43UHBvWmltRnJkY2lvdjdzb1ZLMWRWUVJ6blFXMU55bzJrUUhkNHg1MmxtTEtGOS1jeGdGTUFFMU1IblhmNHNQNVh3dERwdVJGa0paR0pkclNZdVFhUEFYYTRPTE82dVp0UEhLWUMzbG9qMFdjTjJUM1d6TWU3TEI3MjZPUEp0enMyMGc3LVNrcU5NQXJ5aVhtVVFSZTZsdjhwQ1JUZ01vWFN6UG5odGhTZ9IBuwFBVV95cUxNU01ieERLaWlzM3NZVGFRZV8zakJNSjZjeEEzV1lDUEpZR0pVT2w3bkUzcVA4bkdhSFdIdUhDQTl0TXVsZTVLaGc2Z0J6Ul9yMTlRWTJCb1YtVnN6RjZuT3RhS2QyemNDNUdkdFd1TW14eE1IZDFhbFNWXzg3cXVEUVlSZDBDUy13OGlld21OYnc2c0s0VnpDaV9Cb251Y0F4SUFLaE1wcnJWQ2ExZDZnLVNTZ3ozNHU0LVhr?oc=5",
+      "title": "Kenya Set To Sign Landmark Trade Agreement With Nigeria To Boost Technology Businesses",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTk43UHBvWmltRnJkY2lvdjdzb1ZLMWRWUVJ6blFXMU55bzJrUUhkNHg1MmxtTEtGOS1jeGdGTUFFMU1IblhmNHNQNVh3dERwdVJGa0paR0pkclNZdVFhUEFYYTRPTE82dVp0UEhLWUMzbG9qMFdjTjJUM1d6TWU3TEI3MjZPUEp0enMyMGc3LVNrcU5NQXJ5aVhtVVFSZTZsdjhwQ1JUZ01vWFN6UG5odGhTZ9IBuwFBVV95cUxNU01ieERLaWlzM3NZVGFRZV8zakJNSjZjeEEzV1lDUEpZR0pVT2w3bkUzcVA4bkdhSFdIdUhDQTl0TXVsZTVLaGc2Z0J6Ul9yMTlRWTJCb1YtVnN6RjZuT3RhS2QyemNDNUdkdFd1TW14eE1IZDFhbFNWXzg3cXVEUVlSZDBDUy13OGlld21OYnc2c0s0VnpDaV9Cb251Y0F4SUFLaE1wcnJWQ2ExZDZnLVNTZ3ozNHU0LVhr?oc=5",
-      "title": "Kenya Set To Sign Landmark Trade Agreement With Nigeria To Boost Technology Businesses",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPM1ZlY04xX0Jka3N0bTVFd1NHcDlvVGFPNVJ3RGxBeG5XZE1fSmRjYjhEZUYxRzljQ21EcnJGcHU4cWdpZ3BISG1sWW5mQ1NCU1NYSmFzT3JZOUNOanlja0dJMGRJVV9xUnAxR1FOUDRNal90ZjdLZ1FiUDZ1X3dWS05ENGlnQ21hLWt3RG5wd2I2U1puQzNlZWR1NENPUkV1bkFPZG93NloxWTZmTVp0aUhaTdIBswFBVV95cUxPM1ZlY04xX0Jka3N0bTVFd1NHcDlvVGFPNVJ3RGxBeG5XZE1fSmRjYjhEZUYxRzljQ21EcnJGcHU4cWdpZ3BISG1sWW5mQ1NCU1NYSmFzT3JZOUNOanlja0dJMGRJVV9xUnAxR1FOUDRNal90ZjdLZ1FiUDZ1X3dWS05ENGlnQ21hLWt3RG5wd2I2U1puQzNlZWR1NENPUkV1bkFPZG93NloxWTZmTVp0aUhaTQ?oc=5",
+      "title": "President Tokayev highlights Kazakhstan's AI partnerships with NVIDIA and OpenAI",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
