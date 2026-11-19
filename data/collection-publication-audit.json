@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-19T09:03:33.410446+00:00",
+  "updated": "2026-11-19T10:13:07.798215+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 16,
-    "not_in_current_queue": 49,
-    "pending": 19,
-    "published": 112
+    "important_unpublished": 21,
+    "not_in_current_queue": 42,
+    "pending": 21,
+    "published": 117
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 12,
-    "pending": 4
+    "not_in_current_queue": 10,
+    "pending": 11
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 9,
-    "repeated_extraction_failure": 3,
-    "in_retry_queue": 4
+    "source_blocked": 8,
+    "repeated_extraction_failure": 2,
+    "in_retry_queue": 11
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -29,16 +29,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5VZkRvcnFZM1NpSWVxVFp6Q2hZUG1jc0tPbGFFeTJrSmZUYXJqdHQ5NjhqUmJwa0t1dDUtZEplTU1yeE9DQWg3Rkg4bU05cm0tVDQyOHFWOVVjdw?oc=5",
-      "title": "“에취” 한번에 침방울 4m 날아간다…감염병 줄이는 ‘기침’ 예절",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
+      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTndmSjAtVkZldVMtNEpCYWxuaHNWOXNSaXFfT3dsUndnMzhJQXExU3p6bUNjY29aWXRrVndsQXpqU1FUdDVnVDl4NUNMeWFSQ0dRS2tuamc1OEJ1NzRVU0FETFdja0VGamw4UGxWNURsNk1jMGxpbGZkWTdnQ1d0TDlVZW8yS09C?oc=5",
+      "title": "WHO sounds the alarm on antimicrobial resistance threat",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -69,16 +69,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOenN5b0JxU0xadWQtYV84bE1MQmRpVDZUWUQxVldGNmFBSUVEWE9xZWRBUTV4U1duUkpmUzNMRExRNm5CcktMbV9POTVyd2VBajkyeE9WUFBxZG9panlTZDJFcFAwb2wtd1EyUk1xYW1jLWNMU1IwX1VKZE5yY21aMFFBVkhsZjBleDdJZ3VoWkJBUUIxM3VNenp0bHZ2akFsY0d2RUhGYzVhWFU?oc=5",
-      "title": "Zealand Pharma announces initiation of the Phase 2 ZYNERGY trial of...",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOXy1MRlJ2MUdNa1FZVFhJaVV6dmdoTDg4eG1xeWMwM1o2cWN0WG9BaUVNYnJzV2hHUDZLV1dSMGxNUzFZa1RyVEZSd0QtSTRpQVRNZENNdXE1SF9pTWxTU2g5VmIwUXJUX3F0OVAtcGpkeG85c2d6bllKODdVY2Z5dXR6anJteWt4aUREVFdtTHRTcnR4eGdaeDBfVmpvS2JkRFpPejZtMGI4bkNGbUNYTw?oc=5",
-      "title": "LNG Canada Nears Crucial Phase 2 Decision as First Expansion Year Builds Momentum",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTEtGeEpGMG92bHd4akpaREVwYXdrMmEzdXppQzFsOG9CZ2hGX3QyaXZpRmtVN0lLakFFMWIxc2w3RFlmZ3haNS1POEpRcGE0Q2NlMWxoa3RFOTZPM2xUcVotM0ctVGxRVTJ5R0Etc19NWnZjSVowVVFoVWhINmc5eEFXWk01c2RnTWhsOXVDcnh1WUJEN1FCejB1Qk1KVVNpX25DakI3Rld4d3A1T29R?oc=5",
+      "title": "A propos - WHO sounds the alarm on antimicrobial resistance threat",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -98,14 +90,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPbUNENlZ3TE9KQmkyOTdlQmRVbTYyZmpZVGk3OWRwMi1IcW5HdDhIVTNnV0VXSXNCVGNMOUNYQ3pTX3U3bU5rN0N6alRTcXJNVFhmX0tpUVZYRTNqOFZiOTdKdXlwUXRyQkR0LURHS2oyRUp4S1FMdGhNSzRfUFhsSUg1NE5BUGY3NHNtRzNvUFl5a3NGSzl0T2pHQ1hKQjBNbnNiblVxYWRORUstT0huVjA0SkZxZE9OV0d5V0lfTmrSAcYBQVVfeXFMUGZHMWpVaHNscEZBSEZ2bkhDTTlyaUVQamJmSHdYc2wxSFlNRk9tZGZKQlZOdk1SOVU0MHFONkphbFotbVpQMS1HS2o1dGd6eEpPbXh2cndXTkl3OV9BVlpJZkVZVzVsR0M5S0ozMjd6Mnk1S19RMWZ6Vy1DTllEZ3FVeVFMTmkxVTZxTDlkY0hCdkk2azUyckIxWEluV3FoTjdobGRGaHdsaFFYNzZTaVJLYWZrYmYzeGh2OGRTTkIwYzlQTjNB?oc=5",
-      "title": "US strikes IRGC missile site on Qeshm Island in ‘self-defense’",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -127,16 +111,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5VZkRvcnFZM1NpSWVxVFp6Q2hZUG1jc0tPbGFFeTJrSmZUYXJqdHQ5NjhqUmJwa0t1dDUtZEplTU1yeE9DQWg3Rkg4bU05cm0tVDQyOHFWOVVjdw?oc=5",
-      "title": "“에취” 한번에 침방울 4m 날아간다…감염병 줄이는 ‘기침’ 예절",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
+      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTndmSjAtVkZldVMtNEpCYWxuaHNWOXNSaXFfT3dsUndnMzhJQXExU3p6bUNjY29aWXRrVndsQXpqU1FUdDVnVDl4NUNMeWFSQ0dRS2tuamc1OEJ1NzRVU0FETFdja0VGamw4UGxWNURsNk1jMGxpbGZkWTdnQ1d0TDlVZW8yS09C?oc=5",
+      "title": "WHO sounds the alarm on antimicrobial resistance threat",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -167,16 +151,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOenN5b0JxU0xadWQtYV84bE1MQmRpVDZUWUQxVldGNmFBSUVEWE9xZWRBUTV4U1duUkpmUzNMRExRNm5CcktMbV9POTVyd2VBajkyeE9WUFBxZG9panlTZDJFcFAwb2wtd1EyUk1xYW1jLWNMU1IwX1VKZE5yY21aMFFBVkhsZjBleDdJZ3VoWkJBUUIxM3VNenp0bHZ2akFsY0d2RUhGYzVhWFU?oc=5",
-      "title": "Zealand Pharma announces initiation of the Phase 2 ZYNERGY trial of...",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOXy1MRlJ2MUdNa1FZVFhJaVV6dmdoTDg4eG1xeWMwM1o2cWN0WG9BaUVNYnJzV2hHUDZLV1dSMGxNUzFZa1RyVEZSd0QtSTRpQVRNZENNdXE1SF9pTWxTU2g5VmIwUXJUX3F0OVAtcGpkeG85c2d6bllKODdVY2Z5dXR6anJteWt4aUREVFdtTHRTcnR4eGdaeDBfVmpvS2JkRFpPejZtMGI4bkNGbUNYTw?oc=5",
-      "title": "LNG Canada Nears Crucial Phase 2 Decision as First Expansion Year Builds Momentum",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTEtGeEpGMG92bHd4akpaREVwYXdrMmEzdXppQzFsOG9CZ2hGX3QyaXZpRmtVN0lLakFFMWIxc2w3RFlmZ3haNS1POEpRcGE0Q2NlMWxoa3RFOTZPM2xUcVotM0ctVGxRVTJ5R0Etc19NWnZjSVowVVFoVWhINmc5eEFXWk01c2RnTWhsOXVDcnh1WUJEN1FCejB1Qk1KVVNpX25DakI3Rld4d3A1T29R?oc=5",
+      "title": "A propos - WHO sounds the alarm on antimicrobial resistance threat",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -196,14 +172,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPbUNENlZ3TE9KQmkyOTdlQmRVbTYyZmpZVGk3OWRwMi1IcW5HdDhIVTNnV0VXSXNCVGNMOUNYQ3pTX3U3bU5rN0N6alRTcXJNVFhmX0tpUVZYRTNqOFZiOTdKdXlwUXRyQkR0LURHS2oyRUp4S1FMdGhNSzRfUFhsSUg1NE5BUGY3NHNtRzNvUFl5a3NGSzl0T2pHQ1hKQjBNbnNiblVxYWRORUstT0huVjA0SkZxZE9OV0d5V0lfTmrSAcYBQVVfeXFMUGZHMWpVaHNscEZBSEZ2bkhDTTlyaUVQamJmSHdYc2wxSFlNRk9tZGZKQlZOdk1SOVU0MHFONkphbFotbVpQMS1HS2o1dGd6eEpPbXh2cndXTkl3OV9BVlpJZkVZVzVsR0M5S0ozMjd6Mnk1S19RMWZ6Vy1DTllEZ3FVeVFMTmkxVTZxTDlkY0hCdkk2azUyckIxWEluV3FoTjdobGRGaHdsaFFYNzZTaVJLYWZrYmYzeGh2OGRTTkIwYzlQTjNB?oc=5",
-      "title": "US strikes IRGC missile site on Qeshm Island in ‘self-defense’",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -231,6 +199,46 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8xaDZobTFBbExrZUROel9JSWVNYWthVXJvdmpkT0xLR21HQV9sVU4wMUlHWENpdVNyakwtSzRIZHpOUlJyeHo3c3pWcnBzMmI4NzJtUWJHVWvSAVhBVV95cUxPMWg2aG0xQWxMa2VETnpfSUllTWFrYVVyb3ZqZE9MS0dtR0FfbFVOMDFJR1hDaXVTcmpMLUs0SGR6TlJScnh6N3N6VnJwczJiODcybVFiR1Vr?oc=5",
+      "title": "'슈퍼박테리아' 대응에 AI 활용…질병청, 항생제 내성 국제학술대회 개최",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE56TkdCVG83eDEwcGZvUHlPc3VybGg5enk2NmlfeXVHYzJ5SEotNnJPMGxzNEptTVdKZ3VkZ191M3oyd0dlelozSHZ6U3pyZlphQ0ZiVThESTU0bG1HRHk1bV9wd1NRa0VGTlYxU3E3NXN3cmktaUtIOA?oc=5",
+      "title": "M5.7 Earthquake Hits Japan’s Kumamoto Prefecture on Early Thursday",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcW5ZRzJjeS1zWVFocm1zQkVuby1SZzh0c1M4Nnd2bXNfMzVybW0xTWtVZkluVUVJLU4yY0l2SW9jR1dXZEdHZzU0SE5DVTlaV3pFYkNrcWZoMmRfYVhvSDRqRk9Gd2FhUU9wcUF1LVhCZEhxaFhmY2RQWVRWZkVheG5lbVhvcmhacnhWUUYtUVY1NjUyd3VjQzIyWkxkY3RyZWV0X1RkN3ctQQ?oc=5",
+      "title": "Human travel drove Ebola spread in DR Congo, outbreak reconstruction suggests",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitwZBVV95cUxNcl9mNkdrZXVkQ1g0VmowZzg0WTcxN2JmM1JVUVJTbE51QmhPOUIycEhKcDQ3d2Q3QnhSX1MxS0dsSVZXSUI5d0pKWTRMNWU1YjA4RGI4MTkxZ3NZZ05JQ1VxVWRRODBUUTN2d25feWZyT3p3bHFGN0dDWEJ1aGV4TktmM0JOVWs4X2tSYXR1aTNWYm80aGxhTGhsZlE3ekZlTGRQcEZoOHppS2RJcEVYT0hOOGZndVd5eWxNZ2tzbjhDeG4zaEdpMXktRlFYYzMxTWxnR0FHUjVBdHJFYnVqWlJEcmpaa25yX3RJWV9pSEppOG90TF9qZmxCUk5YdXRVM003UlNRN1cyYnNFbXY3eWNaYVJfUE5UNnJyLUxtYUFTTUJhYlRYZDh5TnpreXNXbzZrMEU0eGpwU0syT3B2aEh6MnA1UnJoVE1nc1F3UFlSZEJzb21QRmdIbFBrLXBHWFVUeFpTcEpZNVp2d0RuTGFKWWNMME1VZFdxZ2dqSEVXV0pOdWdBT0hNNFhtS3dxanNBVmxXR3lpSG9EMldmVjdEUkk0SGFtMWVMSzNOMTY0cFVtc1h6eXVyWnVHaXA2UkliUl9Ud0Y4dVpCajNmLVVLeXFhZ3V4bVg4MFh5WWpFYjhnZnBWNWk5VlJkZTVFWWszNEFhMlRVSUhOZlNWaGNkbno3YzJhM1BqOHRpZC01MnNQVzhCemNBQ09nbkl6MjlnenJmZmJ4QzMyc2xDTjZNSkVnQUVPNzBPdUU1SHJackYwSGo4TGVHN21zdEFxYm1mUzF2RWRvWGtsOE11YUJCa2k3cEpVSnc2TlQ5MF9YblRKVXNIb2JwbzJadWxrem1aN2dzenFxNl9HOFY1X0Jvak5vemV6OUFNSTFsZElSa05kUm1yNm42ZFJSSmFnNE1EaXJ3WkxKazU4Y1ltVFA4bEt3YURYSmtUanBTUlVFY0NaYnVHU1NkR3FDenpBTEFUQnhWY3V1WmU2a3RZdGZWQUJoYU8zalFlcDEwZENUVl96akdlcWxEQmVXMWVMSUNXaWtLZVAtX3QyNjEzVk80TGFfOWpUbXNFWnpxSDhHZThqd2dN?oc=5",
+      "title": "𝗦𝘁𝗿𝗮𝘁𝗲𝗴𝗶𝗲𝘀 𝘁𝗼 𝗰𝗼𝗺𝗯𝗮𝘁 𝗮𝗻𝘁𝗶𝗺𝗶𝗰𝗿𝗼𝗯𝗶𝗮𝗹 𝗿𝗲𝘀𝗶𝘀𝘁𝗮𝗻𝗰𝗲 More countries are developing strategies to combat antimicrobial resistance (AMR), but inadequate diagnostic testing, treatment guidelines and funding continue to expose patients to drug-",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOejM3SVhiazhNV09xeDF3YXJ3ZVpjQnMwUVJmbUE3SmZnWEZBUE5IcVBSY3NlZWQ4XzFJWkJHRDV5RXdnR1pSQmZTX291TzJtY2ZOYlB6NHpuTy13SjhMN2ZOR3JsN29wVjUtclFONUhtcVFON2UxcEY5ekZlZUN6SkdpWFZkdk9QY2QySnlNclAtU0JlaEJGLW5NdDU4RnFXVi1ncy1xSE12MWpTWTZLeHpTeFJPUjNw?oc=5",
+      "title": "European officials call for ‘swift and sustained’ action on antimicrobial resistance",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPLThwaE96bUg2Sklmd3JzWWw3Q3JLMUZ6MGMwQzZVVHRJTS1uTEM4ZkVHN2FlaFlIRlpib2syUDZ5TjZLcVJpM1I4YmZ4YlZBZ3B4NDNtcFZvR2tZMjZJOG5CZW1TOGpOSlo4Q19nRmZibHE1V1djWTdBV1JROGhaU252UkFaU3Rqb0xyeC12SU1RTG9uUlFNcXFsWkR5RGJ0X1A3S1F0S2hfVDRVQ2lIZ1lucG9wU0Zu?oc=5",
       "title": "The 1929 earthquake that triggered a deadly Newfoundland tsunami",
       "important": true,
@@ -241,6 +249,22 @@
     {
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOaE9BN2hwVlhvYUpVRjJFMmhGMFdkWjdpd0hDV3gtRG1wZ1dpQ2hHWGowUFZRbno2RU1yNldaNC1OMnQ3R0pZOURfcFpOY3VHcHczOU9fMnlmbml4M1hzTFUtWTVIdl9pRWJ2V015OUJJVWFiMmNjTTB4TVg2Xy1xUjJqMDE2Unlqb05WYXdIbEw5RDBRUjFRWVViSkNJOEVldkNUSWJaOXliaVpIanRQUHlMZXZXeHlaSXNXRnNPRQ?oc=5",
       "title": "Brazil's central bank faces backlash over stablecoin money laundering remarks",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQnduWTFXWFlZdk0tS1dvaGgwNlpXZDRlX3JEUWtPTkRhV05XYURacmpkVlhmbmlwSnpGT28tZlV2eUNkdGZpLWk3bnJoVV9MTFV4bUMwcEZpTTZLU01yMnREYXZrLUFycTdFRGpBelJrT1NfbXJ3eDAzYkNocGFfZmxrNzdVb1hBM1ZhR2pjbnkxV3VDenlkdjRraUJGTVFlUUwxZUdiWGpKUm50S0VfMUc3Ukxvelc0VEtuWkNVMjMySEE?oc=5",
+      "title": "Connecting agricultural research and knowledge to support action against antimicrobial resistance",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPV1F2a0Zpa1J3VXVOQXVFeVkwUjRTbndlNDJPNGZqT1NLOF9SSUFHay1GTXVOOXhIenBFdGJsTHN1a0ZFZE85LW9jOGczWnBrX3Zyc0FZVko2OXBuTWxybmpjV2RsTGNZeUVoTU1kSVpGLWFUYnF3c1pFQzVWRUR3dlhYUHAyQXE4bmFJNm5NaEhsZzd4djlmcklfeGVQZGdJSWRWTWhXTE1rYXVuZkhHaVFWcGJTa3JJakFQeVdLLWtYQmVaNjJjUUFKbzc?oc=5",
+      "title": "Antimicrobial Resistance Could Contribute To 39 Million Deaths By 2050: WHO",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -263,24 +287,24 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE92eERPOFFNOXJwOU5wek93NnpmNVJFQWV2TUJweUFhSWVYNVlXeXdadURyQllGbWtwVHhXR1ZuNmp4Nlp3ZHhNaF9oQmxLZ1FRQjdWcjQtX1pDSHo2VjdQYw?oc=5",
-      "title": "큐리언트, HER2 표적 ADC 'QP101' 국가신약개발사업 선정",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5jVFduTE1IUTJ0eHFaLUVPbndEdHNONWRnc2ljdUl6YzVqUVdUMGhCVDFYMEppUHdxcUtYMFFmQXE1YXlHdDFYaEZORXpEQkU4NGxhUmRWM2xtdTFBdkg2a3Z3?oc=5",
+      "title": "Bangladesh Enters the Nuclear Age",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBaWTJfU19HVHBralVQYWxoajN0TjNaeG9FYl9FZXJnd1NndTIxTjJhSzFCczV4SlctcExob2NCMlNBcGZDdktGZFFobFhvXzVIcVhvVXEzYVZYTGVEYUs1a2RDbkhSQQ?oc=5",
-      "title": "AI 신약개발, 후보 발굴 넘어 직접 임상으로…빅테크 자본력 주목",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9ETF8yUXBRVThOLW5IbGZ0T3N2YU96S0tOalBmSVVSQ1NTZjRleDFyanBzQlZQbVhSZ204eUllU3lzd1Z3djA0Si1mbGFWSlNjc29MbXBfcGV4Wjh1eEg0allkcW1BRDNYT19sTg?oc=5",
+      "title": "대웅제약·티온랩, 월 1회 비만치료제 ‘TION-L002’ 임상 1상 승인",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE82MzhfNU9kcWgwbW45YmZiNVFNQlF1T0xGR3ZZUnBnS3lfVEZSOG9rTXNkV0dKMEduSFBRR3owanVneE1ObWF6RGw4ZHpOWWpYSDU0WFc5djY3cWZMSHFDVVdGcDFZZUswODdZbw?oc=5",
-      "title": "뎅기열 4형 바이러스 인체 감염모델 첫 개발…백신·치료제 연구 가속 기대",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBsTHVDMUF5WVU0VE9fZnBFd1hja05zS3hhYVhPYVZBbk5zZmFwMUhNY0paQ015clhZVmF1SVI5aHRqS3pLY2x1QWhNQUozajFIUXl4V2RPVy1yWDV2b19Mc0pYNjBSS0l6bmcyTmRpMXTSAXRBVV95cUxPLXZRdmd3U0c2Nm1BRjZ1Q3pkSk1jRTJCaDcteHJsV1ZSWi1NOG16QW13TzB4V3BsRlJEdk5hWmhSUUItbWx6ZXB5WTUyOXNBaklyd200bTV0TGpidWtpQzFQUXh1Q0lJT2pMbWtCNzZZSXpxRw?oc=5",
+      "title": "대웅제약, ‘월 1회 주사 비만치료제’ 임상 1상 승인…신약 개발 속도",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -305,14 +329,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMVp6RlBJeEtMUUtxSlhrMVM3Vm9jMDhta0JPa1JfVmdfS1UyS0xRcWFuM0pvOWFKYUZfd2JwTFZhbndoQVNLRGpTUHkxeTBCbXktN2o3VUxSSE1iZFZyaEhjbDVtSU9aSkVJY1Y5QkJhLVZLWXhzYlIyQTVDNlFONGdodnpKVzZy?oc=5",
       "title": "European Commission Raises Poland’s 2027 Inflation Forecast to 4.4%",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdGdrMlJHd05TY2ZOcHVPU1JNWUVoam9WbFdBV1hnRnhKb2xMWmRJTWlnZ1dfTkJLamJzUGd2ZWxzTlRjWWplTC1WYzBIZ2NtLW9PelMwNnNPLW9mSEt4bVZaeXRVNUFrRWRGSFUwcUIxN3NPNmVIaWFLYWNGSmdqa3dEeGJqWkdBWnAtWg?oc=5",
-      "title": "First successful human challenge model for dengue serotype 4 could speed vaccine and drug testing",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -359,16 +375,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQUzZjS1Zxb0NyTEc3RUxicWlPbEhmM1Q1S2JJck5nWWVRalJGVU5ITGNGbDZCcFZ5X3lrSE9LcjhYQUExeElJQVFqcVpVRFdGS2tKT0twc3BLb0ttZmNkMUNQSFZLaGpRRE4zNVgtTlRTRnV0akExdVNsYWZpeFRLaEJmXzAxZlJfOW5iQTBDVEw0LUh1NWtyanZHMFc?oc=5",
-      "title": "Eight Israeli Firms Face UK Sanctions Over West Bank Settlements",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNnYyMXcyZ00wMXQxRHpsWW00VTZsZGhzWTBvQlhQYUJMWHVqZ09CeEFubm5QeEJ5eEdQMmRUSU4zb3pQWGZQLW5DQjByZFVlN3YxYmJUN29iWk1xeFd0bUV1ejhEbEtrX3liN3dkZTVsVmtDZWRqWFhsUklaeWx0UW44VmRvc1NHdURVTE0xcXNuVUtpbkg3VHoxdHhuNk8y?oc=5",
-      "title": "THE WORLD BRACES as Trump’s Canada Tariff Stand-Off Escalates: McGeever",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOa3ZVWk5yazBTSDhiMUxINU5aLU9oazI5NmVCYW8xc29xNUEtVVFKV2hoaHlDYmFpWXhVZV8wbVpqR3MwZEl2ZUhvSERZb0J6c3ZhZWpscXZwSnZYN0V1R0RrMTY2TEVuVHZBeW5rV21PSUtRdTU0SVpWUWNRTnl2X3IwZjQ4U3NMLWJ2NUZ3UzZsX1oxNk5uaFYyWDM?oc=5",
+      "title": "PIPELINES AND PORTS: Iran War Spurs Gulf Infrastructure Investment",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -401,14 +409,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOWlQ3LWRNMDUwY2poX1F0Zk5sVlhRbFB0SkktcjM0VnJrTGdLNHlLaWhxWTlfWVZGcmFsMUYzT1JsNVdZN2NfSEdqYWVfMmZEdTRMaUlKb0lreUo4ZHV1X2VhbGRFcFV0YnpNSVJwZjJyUDVjUHJ5Vktud3MxcDBHT2c4cFhtTUdQZWZYaVVUY25PQWpOV2htSDg4RnQ2ck02NW82cjBBTQ?oc=5",
       "title": "Malaysia eyes French expertise in nuclear energy development",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNMTNaRmRWQ2hsOEtxY0h3LUF1TzRJTU5nNzFiNVdOclhrLVRfRnZ2Zk5oWGJVbVVLLW5yQ0daNUE0dDJTU2RWeGFJQVFkNll3N1QyOEJHcE5QNGtQWmhuZ0FXak5QMEdmd0VfekRWeEgwVFVnNFprdG5Gcnh5cU0ycUdfUF9ucEJNdlZFb1RFTTg3V0hEcDZfd1ZGbDFhSzVLczJnT1ZWZXVlUdIBrwFBVV95cUxNbHM0SHdxWUNkRWc0ZVVJQ2JZX01GN0k3ZTVfbE1mT1ZWTTk5TEFxQTBRTll3MHNTYVdLRy1CNFI3QTVEbW9idEFYWXpycWZSRXQ1R25MUk52M1h5Z2FYSzFsN25aS3FLQXBIUEtuOVpuXzdSYVcyX3dHbjdvbGlKcG1aUm8wczMtVFk4b21oSG1JYy1ia19yZGpZUE0yVGkzY3JldWRVYU9hSlVFS1c0?oc=5",
-      "title": "‘Sanctions can no longer stop growth’: Putin's message to the West at Apec summit",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -503,14 +503,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMivAdBVV95cUxPTEZ5X01vSEdNakduRFJ0VDJKWXlWdTQ3Q0RYMXNvQ3hfVVVLb3B2ZU8wNG40SklhcGhSNEg5am92YkRKWDhLek9JOEhYMzZibndJSmFDTEFUcUdMWFdJYkRFUmhsbGVHWUV6TkhrcUI2TjU2SUhGRnZaMzJTS3NJTk1xTjA1dzJ0VEJnWmVyVm03N2hwWnlMUWM1aWxSa1czUnlUZTZSVm1Dc1U4WjNteGdWcW1VZl91VUZTU29hWTlaMUY5OWVGLXYtaThrSzlEZk9yVVh0bGZDQ3F2QlRWbXRQYXotY09mTFEzeUJOcU9jZXFxNTZKY0dlU2JLUS04T3MzaXkyNXV6YmZKZU1FSTJId3ZTajBfYktxQ1BkZlNoYVY0WHRabEJXMTRoZFljVTR6RE55aTRTNUVCcFdoWjVTVHRHVWdQd0pZWExvbU44dS12TVNTdld0eGt3NWlXek9pX1JtZ2xiTGFOaHByX2dsU3R4UG1iQ2dOS1l4SVBOdy15RWhMU1pURUpuZlFkVGZIR2NfWFFOeWJIRFpaQUJMeVM0TFdYb0VVOS1rdFVaNlp4ZDBkRjNVU0laOWhnVmtiQVBQLUVCRzJNQXI2ckFmSS1JWUxNeWZJb0VtaV9rR200bnVPcEhLaGIyQkhUcjRZOEhOU01fY3hrRlhoajNPZHRwQm5SSUQ5ZTRsUDdCNW5YMDBWbFdtLTlCalk0UXIyTVgyb2k0Y3B2MG9MU1JILTdLZlItc096QU51YkE3ZW1jRjdvR2hjbVdJSE56Rzc2eVUzQ04yRUxWM2F6eWFYT3FhZVgtMkRBRm91SUYyRHUwUk9yaW9CTlFfS3gwTzk1OU5ESXhaX3hQZjNmd2pCa0cyTjlYb3pQX1h5dzA5N0lRVUo0WFhiTVNkbUk5VloxVWx2VThZeW9NbktZTTNiSWJzdWVScjVKcjdub3NLSW0zQy00SUpyVldWQm9kUFZqRENld1pBeWpaLUhsalo4QW5xTUVJUmJ5ZEg3ZnctSVBhWHNFRlFBQm42N0wzQ2FNOHZ5RUNxSDlCbGxRS2xDVEcyZjk2TEdVOERiYnZkdTZJUkJlN05tMExSRmp5dnFuelpjRWx0enU0RjdETmtfdXVIZWx0RmVoMDFGaUFMY1pGX0hrazJ0TUJTc19BZFVJc1V2RGlZYk1mNWVHeFExbG9uTTVES3NMb2g1cU82SVRfTjdqMTBkQmUtTXNsN191NFpFMjE1TUFTMll6UTB6UTdnYnV3QWtPSg?oc=5",
-      "title": "‘𝗜𝗻 𝗮𝗻 𝗶𝗻𝘁𝗲𝗿𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 𝘄𝗼𝗿𝗹𝗱, 𝗻𝗼 𝗻𝗮𝘁𝗶𝗼𝗻 𝗽𝗼𝘄𝗲𝗿𝘀 𝗶𝘁𝘀 𝗳𝘂𝘁𝘂𝗿𝗲 𝗮𝗹𝗼𝗻𝗲.’ 🤝🌏⚡ President Ferdinand R. Marcos Jr. highlighted the Philippines’ efforts to strengthen its oil reserves and attract investments in renewable energy, modern power gr",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "unexplained_not_queued",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUTkzOEZnalAxOW44SjZKSzZUQ0ZRWUpXak8tRW9xMDdhMlFQRjNBV2JFNEN5dE9xa1ZPaXkwNzdCQmNoZ1lhTHY3MW81ZVZabUdDMzFfWU1HSnBxRUVBSi1adEpCNDRlM190ZHByNS1KejAwenc4cDBEZmwtbzJBMmFMelJZV3BzeXl2a0F0eGNIRzMySGR2VmFRTUFKR1JPZlJmRV9YVFhzYlk5RXk2dnQxVlcyTGNVY1dDOTRISHrSAccBQVVfeXFMTXJfVlgzbnY3X0ZvZnRybndIOUNXcDZDNTFlTkFTa0syZG9xY0g5MnRXWDdkVjRVamE5WVpNYjU2YjVyelhQdTd3cVZKcmdqSjhyOFBaZmZVNktobFpyY0x3WGVQRWZzWmgtd0RIbkw0U0xHakI5T25FcTByUG5KTldYUG84bjItSXNYUWRhb0tEZE9uYjJQQnlTVjY4Z3FFX1lMSmo5NjZWUXMxNXdKZldkREhNSG16THFaMWhXOHlZNjYzckMwRQ?oc=5",
       "title": "US trade deal awaits tariff clarity; India-EU FTA seen boosting FDI",
       "important": false,
@@ -535,24 +527,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMjd2cndUekRhdGZRSDV1bzZxM0RTbVNScDNXQUZFWUw5bUR4Mm1vWGxiX2U1TkZYQmdOZ0FqY2lTbHp1MWtTelh6cXRrWFlHcjQ4bkdUNU5JaHVuY2tQdDg1MEtERzB2bDc4WG1kV2dXbkRaNlc0SU5BSG1rMUc5RmNjZnA1SHBxTG91MEdNNXMwbF8tTVhfME1ock9LYzAwVHRhU0o1c2tEMW5CdmoyV1p5VVZfNmQwakVXMmxFVnp6cHc?oc=5",
-      "title": "Israeli parliament elects Eisenkot ally Matan Kahana as speaker in blow for Netanyahu",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVklGWGdSY3NwRm5TT2FNbUM2MVIwR1AyMnpJZjlxV2p0TUVjN05jZFNRRTNwY09RYVFuZ2hfeWtJQ2JKRE00VG9telBsY3BsU0RLbklsOFp5cXJYcFRJdjRtSDEwaG4wLUNuZ2tGWkRUMGg2bG95X3JPQ0NJNWw3dzk4Q3BuWmNvM3FIVmZfVmN5VmpFbEtjNWlGV3ZJRkY1TnBXdGtobndpNFc5V2N2dnVzSXlQcWFsMHA2bUZfS2FaU28xeGFSLUhmZi1xMjNGZ1Biag?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaEFvUTJHSzFhVWE3ZHZ1VHJaTmZ4T2VvejRpelM4ZURIaWtjYlJFTDdualM5ZWJWVmRMUGhBc3pLQzJ1VDJRWmY3SV9HRUIyanQ3bGoxdDFOcXQxbm4tWFFSRVBtYkQyaF9wNld1cXBfbXZrWDhiWW9kRzQ1aVl6MVBwcFd4dngzMjdVeE5mMVNMSjhjWUR2blBvLTRLV3RmMWR0QTYzcnVuUHhsMHg2N1BZdkVtUDFNTWRpSHlMU2VUVGJFVXRVbTNtb1lRQ0RDX19F?oc=5",
       "title": "PHILIPPINES, MEXICO SEEK STRONGER BILATERAL TIES LOOK: President Ferdinand Marcos Jr. met with Mexican President Claudia Sheinbaum on the sidelines of the 33rd APEC Economic Leaders’ Meeting to reaffirm the longstanding friendship betwee",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNeFhEenpyaWpTUVprcDJkcTNDY0F2VGVXWjNSc0ZVUFhlUWwxV0RBQWNHRV91eWcySzAxZ3A0WlFyaFRvN3hqaHQ3V1ZiNmsybVdRdnA5NVJ5US1TVFJmaDliUGJBc0c5ZHg0eGdLSW4zb1dPV0kxcDdPZ045TUJ6a2lOcElselNQWDNZdUVqOFlCb0liTF9UUmJ0VmctUjhHajdqek1MdW5KbXU0a20xTmlyb19nSG9DRkdEa2g3UVJvd2hJdmhLSzZQUmlxdVUzYkhhYjN4VTl5dU5sTi1KSA?oc=5",
-      "title": "PHILIPPINES OPENS NEW TRADE ROUTE TO LATIN AMERICA WITH CHILE FREE TRADE DEAL Philippines officially opened a new trade gateway to Latin America after signing a free trade agreement with Chile during a bilateral meeting on the sidelines of",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -561,46 +537,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPbEZUc2RDa0RUWm9nYmJMcUprcTBHRFV6dzBCU3AwNmdmSHRwNzVUak5ka0w0cC1la3UtakU2TE5YOVNFcGdfS1N1cllyVmM3RDJOb2ZhZUFKOWNDaThsT2Vtc19pdUhLd2VTWnF0cDRkQzVPbzhjZjA3M1QwaDNXYy0wdnZGVEtoWnRHTnJIbzFGbDRvOFEydjZIX0xjQVRlMk0xZWk2dGUxRmUxZ3k2LWttNjZ5ZS1DYkJodk1EeEhPcElWYWdaY050X0hUWUUtaTM4WnFTay1Nc3k0aXE4M0hsUnA?oc=5",
       "title": "A.P. Moller Capital Announces The Completion Of Its Acquisition Of Mainstream Renewable Power South Africa",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE16WDJHU21wME9ueF9WMDRUV3VFR01NdUlOR2M2NVFEb0pqV0tvajBiYVBoZlZVUW5BNVBvckpoUG1QZElRWExUNUNyeEk5NHdpcHN5R3hR?oc=5",
-      "title": "Xi, Putin blast Western ‘protectionism’ and sanctions",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8tWDV0SG5GbkNQanoxX0x5N1R2QUxhY0hCMGV0OWN0eWRfcWE3UWZZZEpORVc1X2g3SzhKSVpzSmJTcWRsNzQ1YkxzME5ETHlNT2R0aXVOV1Z5UUp5SWhrSThvZmVvblUxUmc?oc=5",
-      "title": "“숨돌리기 이후엔 인상?”… 한은, 다음주 금통위서 금리 올리나",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9ETF8yUXBRVThOLW5IbGZ0T3N2YU96S0tOalBmSVVSQ1NTZjRleDFyanBzQlZQbVhSZ204eUllU3lzd1Z3djA0Si1mbGFWSlNjc29MbXBfcGV4Wjh1eEg0allkcW1BRDNYT19sTg?oc=5",
-      "title": "대웅제약·티온랩, 월 1회 비만치료제 ‘TION-L002’ 임상 1상 승인",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBsTHVDMUF5WVU0VE9fZnBFd1hja05zS3hhYVhPYVZBbk5zZmFwMUhNY0paQ015clhZVmF1SVI5aHRqS3pLY2x1QWhNQUozajFIUXl4V2RPVy1yWDV2b19Mc0pYNjBSS0l6bmcyTmRpMXTSAXRBVV95cUxPLXZRdmd3U0c2Nm1BRjZ1Q3pkSk1jRTJCaDcteHJsV1ZSWi1NOG16QW13TzB4V3BsRlJEdk5hWmhSUUItbWx6ZXB5WTUyOXNBaklyd200bTV0TGpidWtpQzFQUXh1Q0lJT2pMbWtCNzZZSXpxRw?oc=5",
-      "title": "대웅제약, ‘월 1회 주사 비만치료제’ 임상 1상 승인…신약 개발 속도",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1ydXJmTHZrTGJvaDg2RkZ4SFYyTVlDNjdpcWJxenlRS1FwSFZFaXZ4UFA1WGFpVGhTcERpUTRvRDdueUNwRGVoazBVUjhRWEY4X2FrbEFDRW9udGU0NVFuREswbl9sRmlyYTk4U1c4RHJKanA5RVI4?oc=5",
-      "title": "하나증권 \"임상 기대만으론 부족하다…실적 갖춘 제약·바이오주에 뭉칫돈 몰릴 가능성\" |",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -623,16 +559,24 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPX2JKNnJibmw4TUk0bjU5N0x4cy0zOVlJTGxLQ2xwRUY4MWRqMkFBTlRiWDlvZ01rd1M5QjhFeWF4aXdTVGtwZDF1WmxyeDg4WThPUE9kVXlHYVJBY3NEb0wyVHBUaGZBU0VkYnlZeFEycm8ta2x3a0ptTGNYLWljWE0zSQ?oc=5",
-      "title": "Korean biotech NeoImmuneTech reports 4.1 billion won in U.S. Endari sales",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcVJnMEtZNE54VFZkWHRQVElkblRDXzVlamdNYmM2ZE1QVVJZUXJXREhBWllXWDE5YlJzQ2tPS09EcUpHS0ZKb3dSWkM4YnVKMHhBVExUU1hkRGZ5ZFRwX0dPYllJd1ZXSEtobElJVnUzcmx5elBQOWQ3bFpjdTQ3NGE3ZzA0QzdCR2hzNTd4S0JUcEZzdW9fSFNB?oc=5",
+      "title": "UK Inflation Rises to 3.6% Amid Increasing Fuel Prices",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcVJnMEtZNE54VFZkWHRQVElkblRDXzVlamdNYmM2ZE1QVVJZUXJXREhBWllXWDE5YlJzQ2tPS09EcUpHS0ZKb3dSWkM4YnVKMHhBVExUU1hkRGZ5ZFRwX0dPYllJd1ZXSEtobElJVnUzcmx5elBQOWQ3bFpjdTQ3NGE3ZzA0QzdCR2hzNTd4S0JUcEZzdW9fSFNB?oc=5",
-      "title": "UK Inflation Rises to 3.6% Amid Increasing Fuel Prices",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWUkwRnhSRXJveHlzWmlibi1tR3FUV2tpT3htZmFweWx3VnpqVVRCaXFOUGVJaVRyZ2ZYR016RWpPa01ZLXVnRHBDaWxnVkVxYWRReXFrU0FraVVCZVhJZUNrZXZOODVyRUFDLWcwS1VGT1dERVNvNWhZcHJOZUtCeUxhTDB6TkM0VmMzNGNJdm55dGE2ZzZ0bkpRaU1JbE04UlYzcmJtUk9xYWs?oc=5",
+      "title": "Today's Top 3 News: South Korea Offers Nuclear Energy for Indonesia AI Power",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTk43UHBvWmltRnJkY2lvdjdzb1ZLMWRWUVJ6blFXMU55bzJrUUhkNHg1MmxtTEtGOS1jeGdGTUFFMU1IblhmNHNQNVh3dERwdVJGa0paR0pkclNZdVFhUEFYYTRPTE82dVp0UEhLWUMzbG9qMFdjTjJUM1d6TWU3TEI3MjZPUEp0enMyMGc3LVNrcU5NQXJ5aVhtVVFSZTZsdjhwQ1JUZ01vWFN6UG5odGhTZ9IBuwFBVV95cUxNU01ieERLaWlzM3NZVGFRZV8zakJNSjZjeEEzV1lDUEpZR0pVT2w3bkUzcVA4bkdhSFdIdUhDQTl0TXVsZTVLaGc2Z0J6Ul9yMTlRWTJCb1YtVnN6RjZuT3RhS2QyemNDNUdkdFd1TW14eE1IZDFhbFNWXzg3cXVEUVlSZDBDUy13OGlld21OYnc2c0s0VnpDaV9Cb251Y0F4SUFLaE1wcnJWQ2ExZDZnLVNTZ3ozNHU0LVhr?oc=5",
+      "title": "Kenya Set To Sign Landmark Trade Agreement With Nigeria To Boost Technology Businesses",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
