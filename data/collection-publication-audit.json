@@ -1,25 +1,41 @@
 {
-  "updated": "2026-11-19T06:13:37.907881+00:00",
+  "updated": "2026-11-19T07:37:30.448954+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 16,
-    "not_in_current_queue": 39,
-    "pending": 16,
-    "published": 125
+    "important_unpublished": 20,
+    "not_in_current_queue": 41,
+    "pending": 22,
+    "published": 117
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 9,
-    "pending": 7
+    "not_in_current_queue": 11,
+    "pending": 9
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 7,
-    "repeated_extraction_failure": 2,
-    "in_retry_queue": 7
+    "source_blocked": 8,
+    "repeated_extraction_failure": 3,
+    "in_retry_queue": 9
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
+    {
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQQ2tBTy10NE5XanhKOFJvbklobjZmakJrLTh6U1ZBU1MzWmpFZklEeVROWVNGenJCRXp5YTJvZE0wdVliWTE4Rl84aDZUYUZ1UEM2QUdhM0R1QjhYWlp1NlBmV21xZ0dmWnY2Ym9LTHd6VHY2ZFVQbFlaWjNQYlZUZDkzUTVvUzYwbWd5azNrWnZHSDNhWlJtVFdyOVp1VjVpbE02aXBKMkZDNDRDVThFZ2FkdUptUG44X1VidC1UYmJtN0xlY2p2cUVCZlRSeXV6cjFYRzA3WlhLZ0dZLTUyb28tU3hrWGxvc1E?oc=5",
+      "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5VZkRvcnFZM1NpSWVxVFp6Q2hZUG1jc0tPbGFFeTJrSmZUYXJqdHQ5NjhqUmJwa0t1dDUtZEplTU1yeE9DQWg3Rkg4bU05cm0tVDQyOHFWOVVjdw?oc=5",
+      "title": "“에취” 한번에 침방울 4m 날아간다…감염병 줄이는 ‘기침’ 예절",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
     {
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
       "title": "M6.0 Earthquake Strikes off the Coast of Peru",
@@ -94,6 +110,22 @@
     }
   ],
   "unpublished": [
+    {
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQQ2tBTy10NE5XanhKOFJvbklobjZmakJrLTh6U1ZBU1MzWmpFZklEeVROWVNGenJCRXp5YTJvZE0wdVliWTE4Rl84aDZUYUZ1UEM2QUdhM0R1QjhYWlp1NlBmV21xZ0dmWnY2Ym9LTHd6VHY2ZFVQbFlaWjNQYlZUZDkzUTVvUzYwbWd5azNrWnZHSDNhWlJtVFdyOVp1VjVpbE02aXBKMkZDNDRDVThFZ2FkdUptUG44X1VidC1UYmJtN0xlY2p2cUVCZlRSeXV6cjFYRzA3WlhLZ0dZLTUyb28tU3hrWGxvc1E?oc=5",
+      "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5VZkRvcnFZM1NpSWVxVFp6Q2hZUG1jc0tPbGFFeTJrSmZUYXJqdHQ5NjhqUmJwa0t1dDUtZEplTU1yeE9DQWg3Rkg4bU05cm0tVDQyOHFWOVVjdw?oc=5",
+      "title": "“에취” 한번에 침방울 4m 날아간다…감염병 줄이는 ‘기침’ 예절",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
     {
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
       "title": "M6.0 Earthquake Strikes off the Coast of Peru",
@@ -223,11 +255,19 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNS1ljcmFXRnMwYW9vNzBhUU1tbnhLU2RBX3RMSnVkNThyYTRnU3V6U1RFVHpLT19xT0V6NFpZeXB0cmVteHFkVGwxSnJGQ19lOUlxUWRpc0ZUQ1BBd1VReTJYZW9TLTBmSms2blBWeDA3cG9Qc2JlbmFzV0h6MFZCWE1KS3prOXpwWDBpaHBWZEZJSDhWY0hPSEl2REdFZnBlc1B5TUFzWFJ6Z2Mwa2N5R2VHeVdadlZpQVo3Rmp5OS1iaWV6bVBvYzZIMGJHNXdzeE5SSFhySDhLc2d6dTlMbDNUQ2NLTUtPU0NJ?oc=5",
-      "title": "Faihan Discusses Strengthening Parliamentary Cooperation with Austrian Parliament, Invites Companies to Invest in Iraq » Iraqi News Agency",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNemJ2NVFxRlo4aFBKalNHLVlwcW02V0hLRXNYZ2hBWnR1Sk9lMTRKN3pzMzhUcmxHVmdPLUs4bjNocUZjcFhuVUQ4c0tlbUJnb0xUWGdrOTBRd0RyTFZwMTJkb21nWlc3aGh3SzN5bnVZYms3djBPaERvRUtLX2dSUGRLUEpRbkhOdWZqOWJKQUlscVQwOHNhaWNCLTFSekJCMVlpbS1wTno3T19mNGRxdXJvdzNDdXYxc2pBc0xxMHJ5QkhPZkN0Y9IB1AFBVV95cUxPWHhzUlVqSk1sVFMzakpTcU1SRGIteHNFSlJ0LVlHWGlIZEZydGM3NjVzbHFBWFh6UVdVWWJxMkZuVkZmZXVPQzRGQkozdksxTnZHdXhtYS1PUnQyVVY2cEtSbGdfNzdVRXlSVEp4azA5X1RfVWRMQVd4RUM4VE9fNFlOcjFveVkzNzkyNm1IZXJGZUVrUlo2cUpyWEVjM0ZySzBxUHhQazYtQTEzYkZJcHctWWI2cnpRZ1Bab2VuODlrcERpcHZIU2swaThlZ1V3dDhDbg?oc=5",
+      "title": "Central bank launches probe into 16 banks over forex irregularities",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPV1F2a0Zpa1J3VXVOQXVFeVkwUjRTbndlNDJPNGZqT1NLOF9SSUFHay1GTXVOOXhIenBFdGJsTHN1a0ZFZE85LW9jOGczWnBrX3Zyc0FZVko2OXBuTWxybmpjV2RsTGNZeUVoTU1kSVpGLWFUYnF3c1pFQzVWRUR3dlhYUHAyQXE4bmFJNm5NaEhsZzd4djlmcklfeGVQZGdJSWRWTWhXTE1rYXVuZkhHaVFWcGJTa3JJakFQeVdLLWtYQmVaNjJjUUFKbzc?oc=5",
+      "title": "Antimicrobial Resistance Could Contribute To 39 Million Deaths By 2050: WHO",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
@@ -255,14 +295,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeGVzSjhrbUhOTTctX0ViTkJTRnFEZnkwNTJQR3gySTJRQlk3aXNwenJ2Qk1DejVYcF84dmF4WDFPd2xKRzEwazEtOEdOb05OOFhJaXZQVTd3R2lDRHdGbTgtM1JSSEMxeFN5OTlLc0tLNE55MHlHRDZNU3lOVFBDaTJwQQ?oc=5",
-      "title": "Iran war live: UAE’s ADNOC says 11 injured after ship attacked in Strait of Hormuz",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNSWZIYjM2Y05tRk5XY0pqVUhvNTRsM29sYjJIOG84YXNvU1dMeGJ0TGVjblFCZl96M3dqanVZbXBqTEhtSEM4ZWF0ckduRFUwb1l1OWNWRlZrWVZCUm1zdjRIdll4LXJzOWR4RXE1MmhFZElJQzMyTEhVTktpOFBULWF0Ykk4dDdUTl9kQXJvdTVZWTdPZTN1eHV6UkNrODhfZ1huby1WdTNBQnQ1RHFmaThVWGdZQjM5UkQ3Mlc5Y1I4Y1RqQUpkWmUwMDR0YVNHYWltLUtJYzJlZVJoVzJCMzN0X2FTdlNPb3BsVTNKY1RjSFRpRHBtcTJRWTJ1ekhWMWdwcjdmZw?oc=5",
       "title": "‘Megaphone diplomacy’: Israel warns of retaliatory sanctions over Australia’s West Bank settlement penalties",
       "important": false,
@@ -281,6 +313,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZ0ZOZUdOWlFmMlJFLTFIQkt0TlRNVDc2VDB5WnlXVXhjVVpGcUJKN3FWQmRLczF0bXdzNWpYM3pOTTh1V3EweXVoYi1pS2QwQW1wMDEtcjBkVnpIZXdWLVBvLUVjY2FzcXUxT1dwTGFnMWxDbWJrbkpxOHFTZE9NUlFuVUs4NTdCS2c3WVpR?oc=5",
       "title": "Russia Seeks Stronger Nuclear Energy Ties with ASEAN",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
+      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -321,6 +361,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOa3ZVWk5yazBTSDhiMUxINU5aLU9oazI5NmVCYW8xc29xNUEtVVFKV2hoaHlDYmFpWXhVZV8wbVpqR3MwZEl2ZUhvSERZb0J6c3ZhZWpscXZwSnZYN0V1R0RrMTY2TEVuVHZBeW5rV21PSUtRdTU0SVpWUWNRTnl2X3IwZjQ4U3NMLWJ2NUZ3UzZsX1oxNk5uaFYyWDM?oc=5",
       "title": "PIPELINES AND PORTS: Iran War Spurs Gulf Infrastructure Investment",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNnYyMXcyZ00wMXQxRHpsWW00VTZsZGhzWTBvQlhQYUJMWHVqZ09CeEFubm5QeEJ5eEdQMmRUSU4zb3pQWGZQLW5DQjByZFVlN3YxYmJUN29iWk1xeFd0bUV1ejhEbEtrX3liN3dkZTVsVmtDZWRqWFhsUklaeWx0UW44VmRvc1NHdURVTE0xcXNuVUtpbkg3VHoxdHhuNk8y?oc=5",
+      "title": "THE WORLD BRACES as Trump’s Canada Tariff Stand-Off Escalates: McGeever",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -375,11 +423,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd2RfR21Oc015MU1HaDhseDZ4X0FHbzZDUFJUMGp1ZFMyUlJfZUlEQWdacndzMkZzXzVrWVBzdlhQTGgxXzZaVVFuZGNHVWFSeUxpREk1ME5oeWhtWXZ3UUQwbVhzbjdrNjY1TlJGTTdwQkdVX1ZsaFpjNWZHUkZXdFExWkJjLXRndm1MUC1BXzRvSGYtRWUzVU10VXY5V0o1QUtlSkVDZ1ZRbE9XTGxwdA?oc=5",
-      "title": "BREAKING | South Africa’s Inflation Rate Surges to 5.2% as Food and Transport Costs Rise",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaVMyT3o1X1loMDB4WDJaelo2QVI4QlV0TXN2QUhqY0tTVUxka2FxM2dzVXExRnBRSnB2Yk9oTE5IRm5jb0U3bDh5RDF2ZGpZQ00zT3lYSng4VjF0U2tMNDZkY0VkaFJDOHFhTnRLZ1BSWjMwNVBWWnQ3YllZVTBlVFFTdU4xUkptdHFNWlB5TDJrWGJQTE9zRlc3V3VsN0dxZEtNcTR5czgyOVQ3TlloSw?oc=5",
+      "title": "Stocks of Diageo, other liquor makers fall in India on Scotch tariff jolt",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -423,16 +471,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQdnpaRWl6V2V6TmItTEFjemdRWEFkTlE1eVlabXpXOTBTTExMY25sbV8yOTh2ZVN1R1NiT2xxTmRiemN3NEZ1ZkFGdzlFdkkzTDNZcnNHZWk0SFpZTHp2R0lDdjlSQUZ5RzVRMjFELVQ4ZGFpTFc2RURBeE05MEx1eEN3TUgtUlJUZ21nSjB4NkVNbHlXa0wyLVFfNjh3OGtmRmEzUGNzU2tXdnVjQ09kWDl0Y18ydw?oc=5",
-      "title": "First Milei, Now Lula Enters the Fray to Shape Spain’s Election",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZ1hsTUpTUHZkN0l0N0g0TXJUVVNxZXB1dkZmNlBUXzd6U0JCam1KSmNmajk3RDJtSlExbUwwaUU3TEg2Y1N4RUFCWEdENElVRVZnLWI0RXlIRWYyUEIzeVp1R2dGWWMwMGxpNUxFUXR1ckdhdU9RSkQyM3RyUDhhSG50ejFzYVRaaF9GbUlDWmEwRUFsLWI4OEQ1dVY1NVBKdHhqZU9JVXV3TF9CemtnekZYQ3FBQ1E?oc=5",
+      "title": "Kenya wins ITU Council re-election with 136 votes, leads African group",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZ1hsTUpTUHZkN0l0N0g0TXJUVVNxZXB1dkZmNlBUXzd6U0JCam1KSmNmajk3RDJtSlExbUwwaUU3TEg2Y1N4RUFCWEdENElVRVZnLWI0RXlIRWYyUEIzeVp1R2dGWWMwMGxpNUxFUXR1ckdhdU9RSkQyM3RyUDhhSG50ejFzYVRaaF9GbUlDWmEwRUFsLWI4OEQ1dVY1NVBKdHhqZU9JVXV3TF9CemtnekZYQ3FBQ1E?oc=5",
-      "title": "Kenya wins ITU Council re-election with 136 votes, leads African group",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUTkzOEZnalAxOW44SjZKSzZUQ0ZRWUpXak8tRW9xMDdhMlFQRjNBV2JFNEN5dE9xa1ZPaXkwNzdCQmNoZ1lhTHY3MW81ZVZabUdDMzFfWU1HSnBxRUVBSi1adEpCNDRlM190ZHByNS1KejAwenc4cDBEZmwtbzJBMmFMelJZV3BzeXl2a0F0eGNIRzMySGR2VmFRTUFKR1JPZlJmRV9YVFhzYlk5RXk2dnQxVlcyTGNVY1dDOTRISHrSAccBQVVfeXFMTXJfVlgzbnY3X0ZvZnRybndIOUNXcDZDNTFlTkFTa0syZG9xY0g5MnRXWDdkVjRVamE5WVpNYjU2YjVyelhQdTd3cVZKcmdqSjhyOFBaZmZVNktobFpyY0x3WGVQRWZzWmgtd0RIbkw0U0xHakI5T25FcTByUG5KTldYUG84bjItSXNYUWRhb0tEZE9uYjJQQnlTVjY4Z3FFX1lMSmo5NjZWUXMxNXdKZldkREhNSG16THFaMWhXOHlZNjYzckMwRQ?oc=5",
+      "title": "US trade deal awaits tariff clarity; India-EU FTA seen boosting FDI",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -455,16 +503,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNaTd5Zk5GUG42RkQ3VG16MHlsM1NZRzZSZWNobXB2VjJDUHY4eXY2TEQ3VU1KV1FlZjg5YVU3bjVZaktFQXFweWxWVkhHX3czaGhPdmhxQW5LVmpFX3hrcUxRQTduYWMta1JKemFrLVd4bnpSZEVpNEFsZjJhMkhMTjd5bldleUVhRlZvNTd6M1RkWEFGd2RvRE1wQTVySE9QX3ZXLVRubDQxWmFZSXUyRU1DdWJYRVN1UF9UYXNpTE9JaE5tT2QxNHdoWQ?oc=5",
-      "title": "Chilean President José Antonio Kast attends Vietnam-Chile Business Forum in Hanoi",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNdVJjbkp2YmgtU3VWNU9PdW9oS2VzZ0RvVnFpcGFCeHNrbFpnSDBvS1I1bWl6VnlQNXVIQVVEc3hBbG1TbUYtOEwzRk9uRmQwUk1RZmcyUmF6VG12WFN3UVZ5WXFmNk5jdktoMktjaGg5Ujl6MURMQUdJVzh4NGxoNE9PVUszTUF6Z240Qy1GbHh3REJMYmJJeGt3MzdOVHg4SGh2ajFwSGU4V1l0a3JRcFlKdkRpbkNSSm9hcTdoRzFoNXRhR2JF?oc=5",
+      "title": "Ukraine Could Receive Fresh IMF Support as War Pressures Keep Public Finances Under Strain",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNSEVfM1k2ZEtSbUp1aUttWm9LX185RDl2VHplSURsNEp1SFMzQ2RfN2FUZGtYZTR5ZnNETVVyblBJVEwwaEg2LTVycEF1T05nMzlmYWlCX0ZvSGlxZlZvdG5HZW1JdmNkWURYOU1xaGRwZEliY1FRNDQwQ0RPcDNSb2NfZnVQcFR5UThEMzVlVUpjaFJDQnpZbUE4QnNrdTRGWGp2ejI3M2tnTHFWdWYzVzJJbWl6ckFwNWtQNzNFWkRmN3k1UlR0dmVGVkduQ0huMzIxeEpuVQ?oc=5",
-      "title": "President Ferdinand Marcos Jr. had a pull aside—a brief informal meeting—with New Zealand Prime Minister Christopher Luxon on the sidelines of the APEC gala dinner on Wednesday night, November 18. (📷: PCO) | via Jervis Manahan, ABS-CBN News",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVklGWGdSY3NwRm5TT2FNbUM2MVIwR1AyMnpJZjlxV2p0TUVjN05jZFNRRTNwY09RYVFuZ2hfeWtJQ2JKRE00VG9telBsY3BsU0RLbklsOFp5cXJYcFRJdjRtSDEwaG4wLUNuZ2tGWkRUMGg2bG95X3JPQ0NJNWw3dzk4Q3BuWmNvM3FIVmZfVmN5VmpFbEtjNWlGV3ZJRkY1TnBXdGtobndpNFc5V2N2dnVzSXlQcWFsMHA2bUZfS2FaU28xeGFSLUhmZi1xMjNGZ1Biag?oc=5",
+      "title": "PHILIPPINES, MEXICO SEEK STRONGER BILATERAL TIES LOOK: President Ferdinand Marcos Jr. met with Mexican President Claudia Sheinbaum on the sidelines of the 33rd APEC Economic Leaders’ Meeting to reaffirm the longstanding friendship betwee",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -473,6 +521,22 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNdkJVZ01LVFdpd0lkZHhBN3V0WlVLSzNaTE5WM3ZFSEJNVHQxbTJQNlExcnViUnMxRjVSeGNDbU5LZVJBQTFwNE1qZ19UY3VaZkpta3UzcjZDRjVWRVVyX2dlamVUVHd6UVhoaWhLNEwzQ055Y3otTVZZSFJZM3FOSUppOWllbWhDTDRvbmkyUlFKUWhEcHpBNkRHOFRaZHZkNVRGTlk2VE14NEdvUWQ5OEMzcFNhVVA1RmlxWUhyYnF1eTBTM0RmTzl5NEJGdlFaS2d1NlVuay0?oc=5",
       "title": "Singapore announces SG Semiconductor to strengthen its role in the global semiconductor ecosystem",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPbEZUc2RDa0RUWm9nYmJMcUprcTBHRFV6dzBCU3AwNmdmSHRwNzVUak5ka0w0cC1la3UtakU2TE5YOVNFcGdfS1N1cllyVmM3RDJOb2ZhZUFKOWNDaThsT2Vtc19pdUhLd2VTWnF0cDRkQzVPbzhjZjA3M1QwaDNXYy0wdnZGVEtoWnRHTnJIbzFGbDRvOFEydjZIX0xjQVRlMk0xZWk2dGUxRmUxZ3k2LWttNjZ5ZS1DYkJodk1EeEhPcElWYWdaY050X0hUWUUtaTM4WnFTay1Nc3k0aXE4M0hsUnA?oc=5",
+      "title": "A.P. Moller Capital Announces The Completion Of Its Acquisition Of Mainstream Renewable Power South Africa",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBaWTJfU19HVHBralVQYWxoajN0TjNaeG9FYl9FZXJnd1NndTIxTjJhSzFCczV4SlctcExob2NCMlNBcGZDdktGZFFobFhvXzVIcVhvVXEzYVZYTGVEYUs1a2RDbkhSQQ?oc=5",
+      "title": "AI 신약개발, 후보 발굴 넘어 직접 임상으로…빅테크 자본력 주목",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -503,6 +567,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOdmNFN2F0OFI2WjMtT0dCbkdiYnp5X044Rm9UUmstN2Itc1NQYXZUb1N0Y3pnNjNfU2RfLTQwYzZBTDdpWjBjSjZBbTVpUG9iMzdGekxPa3ZYNFc3QWNHeXhOUkdjRGhCTG1lUGlnTFJWd18ybDNlMEd0Xzd0bUtJZTdJYXRPdw?oc=5",
+      "title": "Indonesia parliament passes asset forfeiture bill into law",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcVJnMEtZNE54VFZkWHRQVElkblRDXzVlamdNYmM2ZE1QVVJZUXJXREhBWllXWDE5YlJzQ2tPS09EcUpHS0ZKb3dSWkM4YnVKMHhBVExUU1hkRGZ5ZFRwX0dPYllJd1ZXSEtobElJVnUzcmx5elBQOWQ3bFpjdTQ3NGE3ZzA0QzdCR2hzNTd4S0JUcEZzdW9fSFNB?oc=5",
       "title": "UK Inflation Rises to 3.6% Amid Increasing Fuel Prices",
       "important": false,
@@ -511,16 +583,24 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMnRSNjU4RTlBWG90NE5RNF9IYldNNGkza1Y5Q09HbU11ZmxrVzZIZTlNekZKVDhSSHUtT2tQWDhWV1FhVF9OUnR0bFRFUTF6ak56bjRra1RHV19TUGd5YklpWVZCTF9CTlNZd29ES1VQRzVxYWVTZUpiWktQWk41aXlQcW1mazcwem1IU0xycmRaSzRuQnlwWWJXbUJUaDVEckhSTVRiLTFlZTA?oc=5",
-      "title": "China and Nuclear Arms Control: Why a Trump-Xi Breakthrough at APEC Is Unlikely",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaC1BOXhsX0dCZy15NHI1SHZVT09XNkpXM1I2cnR0Q2F0ZWJSTzdDQzJ0U3Q0Qks5NTI5MW01UGJ2WGIzNEw5U2YxME51dUg5a0U5Y25hTWFYOTROM0Z3WWJNaWhtRnRMNE82Q3FkWnVEeFlvTjkxQUNoSUgzOHc4MTJuRGZYQjI5QmJZTzUzZlJJXzFELXRTamMyMlZtVm1FM21nbXJBakw5LUgtTGRGd0tWeVk?oc=5",
+      "title": "Thousands Protest Pax Silica in the Philippines Ahead of President Trump’s Arrival",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaC1BOXhsX0dCZy15NHI1SHZVT09XNkpXM1I2cnR0Q2F0ZWJSTzdDQzJ0U3Q0Qks5NTI5MW01UGJ2WGIzNEw5U2YxME51dUg5a0U5Y25hTWFYOTROM0Z3WWJNaWhtRnRMNE82Q3FkWnVEeFlvTjkxQUNoSUgzOHc4MTJuRGZYQjI5QmJZTzUzZlJJXzFELXRTamMyMlZtVm1FM21nbXJBakw5LUgtTGRGd0tWeVk?oc=5",
-      "title": "Thousands Protest Pax Silica in the Philippines Ahead of President Trump’s Arrival",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNb09ud3MtQXFka0NJTVpTSnVaSFNEMkpMVjlVUkhmd1k1VElvVVpzNkoyT1M1OU1fTjJ3NWQ4dW1yWEt2MFNuUzc4RkVBQTduZkNDRjI5OE1QQ1l0M0tPcmtLYlJQWVdpdnV2TG50OTBrSnlnbzNmNVhsTkZHWFhBVzh2dWFPdlFpSnlLaDgyTlEtdmVCM2Y4X25rRkx6aUFrdUUwX2VkZktfNTlPT3hQVk55aTZFd1FKZHc?oc=5",
+      "title": "Top Vietnamese leader meets Singapore Prime Minister in Shenzhen",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMivAdBVV95cUxPTEZ5X01vSEdNakduRFJ0VDJKWXlWdTQ3Q0RYMXNvQ3hfVVVLb3B2ZU8wNG40SklhcGhSNEg5am92YkRKWDhLek9JOEhYMzZibndJSmFDTEFUcUdMWFdJYkRFUmhsbGVHWUV6TkhrcUI2TjU2SUhGRnZaMzJTS3NJTk1xTjA1dzJ0VEJnWmVyVm03N2hwWnlMUWM1aWxSa1czUnlUZTZSVm1Dc1U4WjNteGdWcW1VZl91VUZTU29hWTlaMUY5OWVGLXYtaThrSzlEZk9yVVh0bGZDQ3F2QlRWbXRQYXotY09mTFEzeUJOcU9jZXFxNTZKY0dlU2JLUS04T3MzaXkyNXV6YmZKZU1FSTJId3ZTajBfYktxQ1BkZlNoYVY0WHRabEJXMTRoZFljVTR6RE55aTRTNUVCcFdoWjVTVHRHVWdQd0pZWExvbU44dS12TVNTdld0eGt3NWlXek9pX1JtZ2xiTGFOaHByX2dsU3R4UG1iQ2dOS1l4SVBOdy15RWhMU1pURUpuZlFkVGZIR2NfWFFOeWJIRFpaQUJMeVM0TFdYb0VVOS1rdFVaNlp4ZDBkRjNVU0laOWhnVmtiQVBQLUVCRzJNQXI2ckFmSS1JWUxNeWZJb0VtaV9rR200bnVPcEhLaGIyQkhUcjRZOEhOU01fY3hrRlhoajNPZHRwQm5SSUQ5ZTRsUDdCNW5YMDBWbFdtLTlCalk0UXIyTVgyb2k0Y3B2MG9MU1JILTdLZlItc096QU51YkE3ZW1jRjdvR2hjbVdJSE56Rzc2eVUzQ04yRUxWM2F6eWFYT3FhZVgtMkRBRm91SUYyRHUwUk9yaW9CTlFfS3gwTzk1OU5ESXhaX3hQZjNmd2pCa0cyTjlYb3pQX1h5dzA5N0lRVUo0WFhiTVNkbUk5VloxVWx2VThZeW9NbktZTTNiSWJzdWVScjVKcjdub3NLSW0zQy00SUpyVldWQm9kUFZqRENld1pBeWpaLUhsalo4QW5xTUVJUmJ5ZEg3ZnctSVBhWHNFRlFBQm42N0wzQ2FNOHZ5RUNxSDlCbGxRS2xDVEcyZjk2TEdVOERiYnZkdTZJUkJlN05tMExSRmp5dnFuelpjRWx0enU0RjdETmtfdXVIZWx0RmVoMDFGaUFMY1pGX0hrazJ0TUJTc19BZFVJc1V2RGlZYk1mNWVHeFExbG9uTTVES3NMb2g1cU82SVRfTjdqMTBkQmUtTXNsN191NFpFMjE1TUFTMll6UTB6UTdnYnV3QWtPSg?oc=5",
+      "title": "‘𝗜𝗻 𝗮𝗻 𝗶𝗻𝘁𝗲𝗿𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 𝘄𝗼𝗿𝗹𝗱, 𝗻𝗼 𝗻𝗮𝘁𝗶𝗼𝗻 𝗽𝗼𝘄𝗲𝗿𝘀 𝗶𝘁𝘀 𝗳𝘂𝘁𝘂𝗿𝗲 𝗮𝗹𝗼𝗻𝗲.’ 🤝🌏⚡ President Ferdinand R. Marcos Jr. highlighted the Philippines’ efforts to strengthen its oil reserves and attract investments in renewable energy, modern power gr",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
