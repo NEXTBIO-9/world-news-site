@@ -1,52 +1,28 @@
 {
-  "updated": "2026-11-19T01:15:34.325470+00:00",
+  "updated": "2026-11-19T02:29:16.062786+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 18,
-    "not_in_current_queue": 40,
-    "pending": 18,
-    "published": 122
+    "important_unpublished": 16,
+    "not_in_current_queue": 35,
+    "pending": 19,
+    "published": 126
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 11,
-    "pending": 7
+    "not_in_current_queue": 8,
+    "pending": 8
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 8,
-    "repeated_extraction_failure": 3,
-    "in_retry_queue": 7
+    "source_blocked": 6,
+    "repeated_extraction_failure": 2,
+    "in_retry_queue": 8
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
     {
       "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQQ2tBTy10NE5XanhKOFJvbklobjZmakJrLTh6U1ZBU1MzWmpFZklEeVROWVNGenJCRXp5YTJvZE0wdVliWTE4Rl84aDZUYUZ1UEM2QUdhM0R1QjhYWlp1NlBmV21xZ0dmWnY2Ym9LTHd6VHY2ZFVQbFlaWjNQYlZUZDkzUTVvUzYwbWd5azNrWnZHSDNhWlJtVFdyOVp1VjVpbE02aXBKMkZDNDRDVThFZ2FkdUptUG44X1VidC1UYmJtN0xlY2p2cUVCZlRSeXV6cjFYRzA3WlhLZ0dZLTUyb28tU3hrWGxvc1E?oc=5",
       "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5VZkRvcnFZM1NpSWVxVFp6Q2hZUG1jc0tPbGFFeTJrSmZUYXJqdHQ5NjhqUmJwa0t1dDUtZEplTU1yeE9DQWg3Rkg4bU05cm0tVDQyOHFWOVVjdw?oc=5",
-      "title": "“에취” 한번에 침방울 4m 날아간다…감염병 줄이는 ‘기침’ 예절",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTndmSjAtVkZldVMtNEpCYWxuaHNWOXNSaXFfT3dsUndnMzhJQXExU3p6bUNjY29aWXRrVndsQXpqU1FUdDVnVDl4NUNMeWFSQ0dRS2tuamc1OEJ1NzRVU0FETFdja0VGamw4UGxWNURsNk1jMGxpbGZkWTdnQ1d0TDlVZW8yS09C?oc=5",
-      "title": "WHO sounds the alarm on antimicrobial resistance threat",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -113,30 +89,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQQ2tBTy10NE5XanhKOFJvbklobjZmakJrLTh6U1ZBU1MzWmpFZklEeVROWVNGenJCRXp5YTJvZE0wdVliWTE4Rl84aDZUYUZ1UEM2QUdhM0R1QjhYWlp1NlBmV21xZ0dmWnY2Ym9LTHd6VHY2ZFVQbFlaWjNQYlZUZDkzUTVvUzYwbWd5azNrWnZHSDNhWlJtVFdyOVp1VjVpbE02aXBKMkZDNDRDVThFZ2FkdUptUG44X1VidC1UYmJtN0xlY2p2cUVCZlRSeXV6cjFYRzA3WlhLZ0dZLTUyb28tU3hrWGxvc1E?oc=5",
       "title": "Outpacing Antimicrobial Resistance: The Next Generation of Detection, Prevention, and Treatment",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5VZkRvcnFZM1NpSWVxVFp6Q2hZUG1jc0tPbGFFeTJrSmZUYXJqdHQ5NjhqUmJwa0t1dDUtZEplTU1yeE9DQWg3Rkg4bU05cm0tVDQyOHFWOVVjdw?oc=5",
-      "title": "“에취” 한번에 침방울 4m 날아간다…감염병 줄이는 ‘기침’ 예절",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTndmSjAtVkZldVMtNEpCYWxuaHNWOXNSaXFfT3dsUndnMzhJQXExU3p6bUNjY29aWXRrVndsQXpqU1FUdDVnVDl4NUNMeWFSQ0dRS2tuamc1OEJ1NzRVU0FETFdja0VGamw4UGxWNURsNk1jMGxpbGZkWTdnQ1d0TDlVZW8yS09C?oc=5",
-      "title": "WHO sounds the alarm on antimicrobial resistance threat",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -223,6 +175,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOejM3SVhiazhNV09xeDF3YXJ3ZVpjQnMwUVJmbUE3SmZnWEZBUE5IcVBSY3NlZWQ4XzFJWkJHRDV5RXdnR1pSQmZTX291TzJtY2ZOYlB6NHpuTy13SjhMN2ZOR3JsN29wVjUtclFONUhtcVFON2UxcEY5ekZlZUN6SkdpWFZkdk9QY2QySnlNclAtU0JlaEJGLW5NdDU4RnFXVi1ncy1xSE12MWpTWTZLeHpTeFJPUjNw?oc=5",
+      "title": "European officials call for ‘swift and sustained’ action on antimicrobial resistance",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPLThwaE96bUg2Sklmd3JzWWw3Q3JLMUZ6MGMwQzZVVHRJTS1uTEM4ZkVHN2FlaFlIRlpib2syUDZ5TjZLcVJpM1I4YmZ4YlZBZ3B4NDNtcFZvR2tZMjZJOG5CZW1TOGpOSlo4Q19nRmZibHE1V1djWTdBV1JROGhaU252UkFaU3Rqb0xyeC12SU1RTG9uUlFNcXFsWkR5RGJ0X1A3S1F0S2hfVDRVQ2lIZ1lucG9wU0Zu?oc=5",
       "title": "The 1929 earthquake that triggered a deadly Newfoundland tsunami",
       "important": true,
@@ -279,14 +239,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1veFVjajQ3MExQa0V0aVp1YzdNLVBlVHZ3bGpEYmNxNVpjTk5uODFBaTB1UkwwQnQyWUowV0R6S2d3UnRXTTJEUDZwei1wVG1KWDJDRGFlS23SAVhBVV95cUxNb3hVY2o0NzBMUGtFdGladWM3TS1QZVR2d2xqRGJjcTVaY05ObjgxQWkwdVJMMEJ0MllKMFdEektnd1J0V00yRFA2cHotcFRtSlgyQ0RhZUtt?oc=5",
-      "title": "[특징주]기술이전 실적 기대치 미달…리가켐바이오 11%대 급락",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBiRnpORkJESEFHQ0d5UlNGSldqbktfVUtvOFRJS2RlRnNuWlRWNkpXUFE5RmtINENJcHd2Y1FMRE9RdDEzaElZQVZpQTNlLW1VYU05ODlQZ1A?oc=5",
       "title": "INTERVIEW| Egypt well-positioned to become regional hub for trade, investment: WEF president - Economy - Business",
       "important": false,
@@ -303,16 +255,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZElfOFpBcXJHc0dUV3FYaGd6dV9DdHpxTmloQjRKUTd2d2ppc0ZfRzhIbnZ1ZVNQazBGX3Bsb3JOWEl4ZHdiemJfSEZrdUVRZnk2TVhzNUpzU2hZbDZRazdKdDBfNEk1VXpIZmJwRzR3MzF0TnVTS2lfT1FGdkVzbjF5RWo?oc=5",
-      "title": "Japan's Prime Minister's Office, Military GPS Data Traded Overseas",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMVp6RlBJeEtMUUtxSlhrMVM3Vm9jMDhta0JPa1JfVmdfS1UyS0xRcWFuM0pvOWFKYUZfd2JwTFZhbndoQVNLRGpTUHkxeTBCbXktN2o3VUxSSE1iZFZyaEhjbDVtSU9aSkVJY1Y5QkJhLVZLWXhzYlIyQTVDNlFONGdodnpKVzZy?oc=5",
+      "title": "European Commission Raises Poland’s 2027 Inflation Forecast to 4.4%",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMVp6RlBJeEtMUUtxSlhrMVM3Vm9jMDhta0JPa1JfVmdfS1UyS0xRcWFuM0pvOWFKYUZfd2JwTFZhbndoQVNLRGpTUHkxeTBCbXktN2o3VUxSSE1iZFZyaEhjbDVtSU9aSkVJY1Y5QkJhLVZLWXhzYlIyQTVDNlFONGdodnpKVzZy?oc=5",
-      "title": "European Commission Raises Poland’s 2027 Inflation Forecast to 4.4%",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZ0ZOZUdOWlFmMlJFLTFIQkt0TlRNVDc2VDB5WnlXVXhjVVpGcUJKN3FWQmRLczF0bXdzNWpYM3pOTTh1V3EweXVoYi1pS2QwQW1wMDEtcjBkVnpIZXdWLVBvLUVjY2FzcXUxT1dwTGFnMWxDbWJrbkpxOHFTZE9NUlFuVUs4NTdCS2c3WVpR?oc=5",
+      "title": "Russia Seeks Stronger Nuclear Energy Ties with ASEAN",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -415,14 +367,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOMHIyVk5RYnI3VVMyUkRDTXRuNGJBcHBEVHpMVll2UUdSa0VOS0FHT3B0TEh0U0EwTTEyMTlhSWJISndmMDdiMDNYWjg5WWdPZW5oem5WOXNzekRRQUh3eUNadnlCZHZPOGliLV9SVjBYREp4Tll6RE84V2s1NHNCYlRlN1ItYUxCVnpCTHNlbTM0MVU4RjFjWUIwNWFiNTRQU2duTnVEbUhndDNZUFE?oc=5",
-      "title": "United Kingdom: Inflation to peak at 4.5% in Q1 2027 - Societe Generale",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa0JqQ3k0WGk0NVoxbHRNTHBTeDZxaVkyYmdzdGptNVB2MUVjb3lmcG1OTXRrWGs0U016Vi0tWTU5UmdYbk5IWHJfSTV0UEpEUkZvM0s1WjkwT3E1NFVfMzdGb3pyZ0J3cmhGWXMzVWJnSmpTTVh0MU1VcUJUcFZBamRua0kyOFVWSGUtQ243M2lITElJbmRRS3ZhNTNTenJJcXJTbFZiU0hJVFl1SHl5MnVB?oc=5",
       "title": "Yemen’s Long War, Saudi Arabia’s Security Dilemma, and the Shifting Middle East",
       "important": false,
@@ -503,16 +447,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBxMmVZTmhHdXM5N0t1X29nV3NNalF0S2RzOEVNUmx6TjdSTU5XWTczZlBfZzhlTFlfTXltVnZYVjY4THV5LXUwekE3bUFMUnA0VTdJNA?oc=5",
-      "title": "Azerbaijan and Vietnam eye new era of cooperation ahead of President Aliyev's visit",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9ETF8yUXBRVThOLW5IbGZ0T3N2YU96S0tOalBmSVVSQ1NTZjRleDFyanBzQlZQbVhSZ204eUllU3lzd1Z3djA0Si1mbGFWSlNjc29MbXBfcGV4Wjh1eEg0allkcW1BRDNYT19sTg?oc=5",
+      "title": "대웅제약·티온랩, 월 1회 비만치료제 ‘TION-L002’ 임상 1상 승인",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBaWTJfU19HVHBralVQYWxoajN0TjNaeG9FYl9FZXJnd1NndTIxTjJhSzFCczV4SlctcExob2NCMlNBcGZDdktGZFFobFhvXzVIcVhvVXEzYVZYTGVEYUs1a2RDbkhSQQ?oc=5",
-      "title": "AI 신약개발, 후보 발굴 넘어 직접 임상으로…빅테크 자본력 주목",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBsTHVDMUF5WVU0VE9fZnBFd1hja05zS3hhYVhPYVZBbk5zZmFwMUhNY0paQ015clhZVmF1SVI5aHRqS3pLY2x1QWhNQUozajFIUXl4V2RPVy1yWDV2b19Mc0pYNjBSS0l6bmcyTmRpMXTSAXRBVV95cUxPLXZRdmd3U0c2Nm1BRjZ1Q3pkSk1jRTJCaDcteHJsV1ZSWi1NOG16QW13TzB4V3BsRlJEdk5hWmhSUUItbWx6ZXB5WTUyOXNBaklyd200bTV0TGpidWtpQzFQUXh1Q0lJT2pMbWtCNzZZSXpxRw?oc=5",
+      "title": "대웅제약, ‘월 1회 주사 비만치료제’ 임상 1상 승인…신약 개발 속도",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
