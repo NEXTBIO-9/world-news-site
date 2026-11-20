@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-20T08:57:51.251060+00:00",
+  "updated": "2026-11-20T10:19:44.275676+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 17,
-    "not_in_current_queue": 35,
-    "pending": 13,
-    "published": 132
+    "important_unpublished": 18,
+    "not_in_current_queue": 38,
+    "pending": 14,
+    "published": 128
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 13,
-    "pending": 4
+    "pending": 5
   },
   "important_unpublished_by_reason": {
     "source_blocked": 9,
     "repeated_extraction_failure": 4,
-    "in_retry_queue": 4
+    "in_retry_queue": 5
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -61,6 +61,22 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
+      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbE1uTUdsZ1kzaFBJUnFZbF9Bb20tRXRzTXpBek9NZmhHTU5PWGZWdTQ1SmptZXczZjVGVU83T0RWLXRQVGxSQVlMcFZOWlYyMW10YU5CM19nR2ZKYWFTX2d1TnRqNWtOTEFqS0ZhMUVhNjRRMFhaRG13d0hKTkIyeXhxTkY?oc=5",
+      "title": "Brazil’s central bank steps in to stem real’s slide since Lula’s re-election",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRlJuRnRZRW1vbWZLLUhJNjNMX2d3Tk5tTEk2ckloVm5Ca3ItMmJGdC1KYWg4YXRLbDRnaEYwdDNydmt0QVU5SnBoVVBzcmRMbGh3aVowN3NCMkYxNUlQMF9sem5DQzc1QzhzUW96RV9MdmZ2SkRTRlNhTTdOR2dMSV9OVEVqa3NaVGMwTEhWMA?oc=5",
       "title": "Interest rate surprise for South Africa could be coming",
       "important": true,
@@ -77,8 +93,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOWjBfNXcyeXlqSF9JeE0tTVl4azJZdkpHZkl6R1pVT2oyTFdfbms2dmJ4SjBFS0M4NmVndjl1d3IwNGdiVkxWckRBWUJYOEpvQlptaHhGdzF3M0QwT2xac0RvYzVRYzh3WWZVdWtINUtIUnJRc18xY3NjYzdVUkFBRVVUOHpOLXRoOGZIbDlhTkJxLU5KV0l6bFVlUzZIeFZPVVk4Mk9QUjZYSFVHWnhLNG9PczNaUWhUM3BQSEdQMFl0clcwV1ZyOXMtRjVlZDJvcXRTeTAwdlVCUEJNcHp1Nm9QeUZaUVRhTmtsZklzQkt2QmpuWFpsX0c1dkNIdVhqM2FvN1ZNUzM2clRHVy1wZUNiRGFtMm90RTVJUWRLTTM4ZnQxNXZSdkN0aw?oc=5",
-      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPNm81bE9YVFdzcmVxckpJcEZfWGowSEVKYzgzQWlYY2lGRkhHaHN6cUF1Ry16ZUtWVXBPRnB6bFRBZk95VEk1QW4ydzhxTFBlamJXQU1zZXdRQVlvTnNGNW5oODM2cklRV0U0NnY2dWliMkNKV3k0b0FzTGxUY1lrUFE4anYzYUhzN3kzbjNNUTdUMzZoT0hTajg4WE9pSXJuNFRB?oc=5",
+      "title": "South Africa’s rand takes a hit after interest rate decision",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -87,14 +103,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTEtGeEpGMG92bHd4akpaREVwYXdrMmEzdXppQzFsOG9CZ2hGX3QyaXZpRmtVN0lLakFFMWIxc2w3RFlmZ3haNS1POEpRcGE0Q2NlMWxoa3RFOTZPM2xUcVotM0ctVGxRVTJ5R0Etc19NWnZjSVowVVFoVWhINmc5eEFXWk01c2RnTWhsOXVDcnh1WUJEN1FCejB1Qk1KVVNpX25DakI3Rld4d3A1T29R?oc=5",
       "title": "A propos - WHO sounds the alarm on antimicrobial resistance threat",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNOGh3X0NwX3p1d0dvNFNuY0J6b2dSMWpub09FODVOUnljMUZQaXJodUUwdXQtOGNxZlZLaElZNU9TN3d0VjRkN2VtdW5GWndadGFtdm56MUtxZnRhWlJOMFpxVDdoZjQ3dk01VDFfRzJ0aWRFV3lHZXN2bVdoTnBYR2dmZWtWT1hsNEVuUHpvREZ1WnlLSFVGV2paM1dLRl8xYkJ5NnlLeXdsT3hQVXBGYUIxWURHYTg?oc=5",
-      "title": "Trump's Latin America allies recalibrate after US election earthquake",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -111,14 +119,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
       "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNR2JEQy1LUjQ5RkFMU3paM2JhVFloSHBpWG1kVi1rMHJlNHBCZC15Y0JneVhkT042UlBpejNNdjE3VV92cnM4R1lhcjV2TjBnWUhGNWVhUnNqblBxX1RPOUlUbFlQR2lpTGpOc0U1ZTFJR1NyQVYzQUN3aVg1MzdRRDBfdkMzR1RXQ2J6UzFsNUl5Vzh2Y18taDNWcVpoV1F0NE1qYmhKUG9KNzZLcFpOR3c4S19NRjY2VjRPbDdlUjhoTEE?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -167,6 +167,22 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
+      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbE1uTUdsZ1kzaFBJUnFZbF9Bb20tRXRzTXpBek9NZmhHTU5PWGZWdTQ1SmptZXczZjVGVU83T0RWLXRQVGxSQVlMcFZOWlYyMW10YU5CM19nR2ZKYWFTX2d1TnRqNWtOTEFqS0ZhMUVhNjRRMFhaRG13d0hKTkIyeXhxTkY?oc=5",
+      "title": "Brazil’s central bank steps in to stem real’s slide since Lula’s re-election",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRlJuRnRZRW1vbWZLLUhJNjNMX2d3Tk5tTEk2ckloVm5Ca3ItMmJGdC1KYWg4YXRLbDRnaEYwdDNydmt0QVU5SnBoVVBzcmRMbGh3aVowN3NCMkYxNUlQMF9sem5DQzc1QzhzUW96RV9MdmZ2SkRTRlNhTTdOR2dMSV9OVEVqa3NaVGMwTEhWMA?oc=5",
       "title": "Interest rate surprise for South Africa could be coming",
       "important": true,
@@ -183,8 +199,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOWjBfNXcyeXlqSF9JeE0tTVl4azJZdkpHZkl6R1pVT2oyTFdfbms2dmJ4SjBFS0M4NmVndjl1d3IwNGdiVkxWckRBWUJYOEpvQlptaHhGdzF3M0QwT2xac0RvYzVRYzh3WWZVdWtINUtIUnJRc18xY3NjYzdVUkFBRVVUOHpOLXRoOGZIbDlhTkJxLU5KV0l6bFVlUzZIeFZPVVk4Mk9QUjZYSFVHWnhLNG9PczNaUWhUM3BQSEdQMFl0clcwV1ZyOXMtRjVlZDJvcXRTeTAwdlVCUEJNcHp1Nm9QeUZaUVRhTmtsZklzQkt2QmpuWFpsX0c1dkNIdVhqM2FvN1ZNUzM2clRHVy1wZUNiRGFtMm90RTVJUWRLTTM4ZnQxNXZSdkN0aw?oc=5",
-      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPNm81bE9YVFdzcmVxckpJcEZfWGowSEVKYzgzQWlYY2lGRkhHaHN6cUF1Ry16ZUtWVXBPRnB6bFRBZk95VEk1QW4ydzhxTFBlamJXQU1zZXdRQVlvTnNGNW5oODM2cklRV0U0NnY2dWliMkNKV3k0b0FzTGxUY1lrUFE4anYzYUhzN3kzbjNNUTdUMzZoT0hTajg4WE9pSXJuNFRB?oc=5",
+      "title": "South Africa’s rand takes a hit after interest rate decision",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -193,14 +209,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTEtGeEpGMG92bHd4akpaREVwYXdrMmEzdXppQzFsOG9CZ2hGX3QyaXZpRmtVN0lLakFFMWIxc2w3RFlmZ3haNS1POEpRcGE0Q2NlMWxoa3RFOTZPM2xUcVotM0ctVGxRVTJ5R0Etc19NWnZjSVowVVFoVWhINmc5eEFXWk01c2RnTWhsOXVDcnh1WUJEN1FCejB1Qk1KVVNpX25DakI3Rld4d3A1T29R?oc=5",
       "title": "A propos - WHO sounds the alarm on antimicrobial resistance threat",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNOGh3X0NwX3p1d0dvNFNuY0J6b2dSMWpub09FODVOUnljMUZQaXJodUUwdXQtOGNxZlZLaElZNU9TN3d0VjRkN2VtdW5GWndadGFtdm56MUtxZnRhWlJOMFpxVDdoZjQ3dk01VDFfRzJ0aWRFV3lHZXN2bVdoTnBYR2dmZWtWT1hsNEVuUHpvREZ1WnlLSFVGV2paM1dLRl8xYkJ5NnlLeXdsT3hQVXBGYUIxWURHYTg?oc=5",
-      "title": "Trump's Latin America allies recalibrate after US election earthquake",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -223,16 +231,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNR2JEQy1LUjQ5RkFMU3paM2JhVFloSHBpWG1kVi1rMHJlNHBCZC15Y0JneVhkT042UlBpejNNdjE3VV92cnM4R1lhcjV2TjBnWUhGNWVhUnNqblBxX1RPOUlUbFlQR2lpTGpOc0U1ZTFJR1NyQVYzQUN3aVg1MzdRRDBfdkMzR1RXQ2J6UzFsNUl5Vzh2Y18taDNWcVpoV1F0NE1qYmhKUG9KNzZLcFpOR3c4S19NRjY2VjRPbDdlUjhoTEE?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPSEVxQTFpNEQ0TGJqQU1xX3JEVTFTRmkxWV82VEM2UzQxSVYzaF9iQkctR08ybHJkbUdqQUVuUENzTXNJY2lhUjFibklhY1pEYnZHSXdqUTNIZFB1YXFVWkh3WlRRRjIybWR1SzdwcVdlcVk2c3RRbzBCdEFyY19GSmY3WWdSNEtyOUdxenpWazJNUkhteXRGQ1JiNjJ2QklBY094QWxlcG5zdUNNaWN3Z04tNlJYcE8zV0lwdW9paUJMQmJtYXlfdDRTTVRDWTBYa19LZVRXYUE?oc=5",
+      "title": "The United States, which in 2000 became one of the first countries to be declared measles-free, has been facing its largest outbreak in over three decades. Link to the full story in the comments section. | via ANC 24/7",
       "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPalZyQzBhZFd1MVlNM1ZNVnViTnYyNjhxTXNVVnFJWno1SHFwV25MeDF6VHJWUEo3b0hlRGpIeE10UG9zR25RM0xwNTVnQml5NEZhbmlxYXdsbnR3QmNLSko3c1JEODFobkNOeDVfWUlkVWVwRThvUDdzSkZjOHBQUHdZOHNhNmFYTmh0SG5GaS1BSzA3aXVEOTA2b1oySVo5SUhOR1lLNEhGdmxuT0t5VWVUY1dqVHFXSUNWTEVLRloyTy1VODZhTldaU2lSWWxiZkE?oc=5",
-      "title": "M 7.1 Earthquake Rocks Southeast Maluku, BMKG Reveals Current Conditions and Aftershock Potential",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdzlmaVQ2Zkk3QmNVdjJzN2xxSS12T3NDLUVSNVFVdEwyNHA5d1lyRVVnQVNDS1o5alpXbnZMUnI1WE9nckh5dUpkSWNFckt4cTZsUHVRdG5hc245dUE3ZzNUcFJVZjREdTQxalVHMEpuYmh4SjNzcVF2Mm8zNEplOHZOR29admZaVmZOS2M1UW9EeXZic19vWVlvcERBcHNaUVd0STJvczk?oc=5",
+      "title": "Bangladesh fights world’s worst measles outbreak as vaccination gaps fuel spread",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -295,14 +303,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNSWZIYjM2Y05tRk5XY0pqVUhvNTRsM29sYjJIOG84YXNvU1dMeGJ0TGVjblFCZl96M3dqanVZbXBqTEhtSEM4ZWF0ckduRFUwb1l1OWNWRlZrWVZCUm1zdjRIdll4LXJzOWR4RXE1MmhFZElJQzMyTEhVTktpOFBULWF0Ykk4dDdUTl9kQXJvdTVZWTdPZTN1eHV6UkNrODhfZ1huby1WdTNBQnQ1RHFmaThVWGdZQjM5UkQ3Mlc5Y1I4Y1RqQUpkWmUwMDR0YVNHYWltLUtJYzJlZVJoVzJCMzN0X2FTdlNPb3BsVTNKY1RjSFRpRHBtcTJRWTJ1ekhWMWdwcjdmZw?oc=5",
-      "title": "Israel warns Wong against sanctions ‘mistake’ in political uncertainty",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMVp6RlBJeEtMUUtxSlhrMVM3Vm9jMDhta0JPa1JfVmdfS1UyS0xRcWFuM0pvOWFKYUZfd2JwTFZhbndoQVNLRGpTUHkxeTBCbXktN2o3VUxSSE1iZFZyaEhjbDVtSU9aSkVJY1Y5QkJhLVZLWXhzYlIyQTVDNlFONGdodnpKVzZy?oc=5",
       "title": "European Commission Raises Poland’s 2027 Inflation Forecast to 4.4%",
       "important": false,
@@ -337,6 +337,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNemYwbFZnM255bU42cm1paGx2ZVoteXM5aUJBbURyMlZVblBOT2hqMEIweTR5SFF3enJqemU0T3ZaV054bHBDUGgwUUlnWXNGR0tUTTlKdlZoV2haVHVibldlRjF0VE1LbnNRY2NEd2xoa3ZkQVJQYzJyZm13YlYwZEtBYk9iMThGRVRuYWpZb08wX0RhclNRMjF6Y1ZWV0hsZHJwLVlZaw?oc=5",
       "title": "BNPB Reports Floods, Landslide and Extreme Weather Across Indonesia",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNYkNuMHp2TkNveWdkVWxCN2c3NUtNUWQwdkhvQjlPLWZFRjFwRGdQTGEzSWxPaGpzMGxkb3M5aVFza01lU19xZ2dLc1piT1RScW1xNUFVakdKU1ZlNDkxcVVKUXg1a3pxUnAtZ04tSXFCaUV1Y3E2dXBGQjNSaFhkbEJzS3BXemJQSFVlOVBWWXEtdUxPcGVoRjEyUVJJVW1VVXkwa3hDTjVrYkE?oc=5",
+      "title": "United Kingdom CPI inflation picks up to 3.6% YoY in October, misses estimates",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -383,8 +391,24 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQnVwN3ZLUVJkRjRTYzZRV3pYeUFTR2VPR2lXNGtXa091WjFMOGttMDNtZ04tbnh6dHhXb1BXQ0FXbF9ZbUZPY2R6X0V2dlJiNElSTjlTeko2eE9IRUUzYjZNUTBwZXF2a0ZUZ0IwZG5keUpEaWtWS1ZCOWJSTThIemJXQkt5V2NJS0NoU2l5SGtha0FfZkRSRTUzUFY1cm9WamJROG9tUFdxMEpFaWRKc29TSzl2dw?oc=5",
-      "title": "El-Sisi discusses expanding investment cooperation in Egypt with EBRD president - Economy - Business",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdXI5aHJnVk41VWF3cVRTRFpNeW1KMUNhU0VORXlrclcxeDFjOFg3R3RwUzBsam0ybzltS3Y1OXhobTZhUDQ2RTFhTXB5d29LdWpSbmlJallkanljS3BuWVBXMjVrdkF4ZU9DM3BPbXJrb2MyS1RaWDJmZlVla251ZE9TU245NnRVQmxTYnZvYTQ0Ry1CZHJRTUgxYzBCTG9tMmNSX3dHai1YV2RwbHRFZThn?oc=5",
+      "title": "France's Le Pen promises to lower retirement age if she wins election",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY2JtZUJubGd2ZHAwZy1nU3dhQ09Pd3A5a2drSWVWZ3ZTRGRDem8yU3pseEItYlBxb2lFbkI5SE5zVVZkU3RKMDNaYy1lUHItUmlZLV9GcDROZjFnNVBmaU44S0dScUJBeFRXeUx3MWFieGJZY052X1owbS1nWUNsR2lva3FyTVBQM2tFNkRfY1E5eTluZkotaFFKbXZoRkZqeVQxRGdVSnBET0h1YjB6QkZyUQ?oc=5",
+      "title": "Emirati candidate for UN top job vows to end Sudan conflict amid war crimes scrutiny",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNd2tVS3ktQThQZmhzbFBGVmwzRDlycmtudVhLTk1vLWpJeDlQMFBqV1J3bFZXNGtTT0VfRGJaWUxBeWNWck0tblgzbTJsQmM4SXNRbUVXZEo1Nk1UdWpONURjY1I5RnJsVmRuRzdra2VFSVlyYnJUTnhjUXNjNUJKU2YtWDBfQkZuWFV2d3FJZTdFSzZKdHgyM242QzVReUJENE52TEtXaWlfMnNlNGZkejlzRGR3TnM?oc=5",
+      "title": "Bank of Japan to raise interest rates in December and again by end-March, economists say",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -409,6 +433,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONXRyVXFLb2J4SEt4Q3ZxZ1FFZ1RydUYwdWJOaWt6aGI0MExJbFF6S2dhSG1WZmRMaEJILXNkdG1XUkhleXNjUFNoaWlkR1gtdHppc3NZV0RVeUdqWVdSOU5jLTlsdXFwaDJwZTJ2eDRDY3lDUDAxUk53NjF4NkFRZGxFQU0tRjgxOVlMQm92cloyRXJraWFMSU5LU2Z0dEx2SUlTZVNjbWk2aDNDUTJLQlhGZXh6eUhXQ2JZWWdn?oc=5",
       "title": "Canada defends Sifuna meeting as diplomats weigh Kenya’s pre-election field",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMklCVXFmWDVLQ2pQRjFod3dnREpTV3JPWTRjUEstQmNJRXMtOUktX281TU0zcmVOb0xWRV9CeENjaWoybTZQZDVXV3p3ZHg1NzZCYTRtNGNxaW5lcnpNNnhXS1IzOWhqQ1J3ck1ZWVBVdjA1cmViUkt1S0ZFbmgzNndJV2J1b25sQVFWbUp2UkZNTk9Pa25mRmNMVTI4LWF5aXJPMDV6eFZyaDRHLTUtT1AyVk5DUFl6cVFyUTB2YXMydw?oc=5",
+      "title": "Vietnam facilitates US pharmaceutical company’s vaccine technology transfer",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
