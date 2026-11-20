@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-20T03:32:54.785206+00:00",
+  "updated": "2026-11-20T04:43:25.488984+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 15,
-    "not_in_current_queue": 42,
-    "pending": 15,
+    "important_unpublished": 19,
+    "not_in_current_queue": 40,
+    "pending": 17,
     "published": 123
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 13,
-    "pending": 2
+    "not_in_current_queue": 14,
+    "pending": 5
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 9,
+    "source_blocked": 10,
     "repeated_extraction_failure": 4,
-    "in_retry_queue": 2
+    "in_retry_queue": 5
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -26,6 +26,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBib0xfRkxjNUFGOXRfY3R5V0owTmFTZHBmc29aNlpma21YeldSU0Y3REZvSlhrZ2E3V0s5SWRpV2Y2Vmt2cFE0?oc=5",
+      "title": "World Antimicrobial Resistance Awareness Week 2026",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -61,11 +69,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQS1lSFJxcWZkajluOUY3VUdHWXNCSTFoX0I0U3U5VjdFQTlzbzRRbW1ObWFmdXBJRnVfU2xHWnN4VUVrNlJ3UEt5UmNoNnNIMGxPd25Tekd0cDZvNk91NjEtQlNhRlR1R0RxdmwzY3NCbTFWVEhNeU1mclFWYVdBUXZONlY3a2N6bnc?oc=5",
-      "title": "Tremors felt in Australia after huge 6.6 magnitude earthquake rocks Indonesia",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbE1uTUdsZ1kzaFBJUnFZbF9Bb20tRXRzTXpBek9NZmhHTU5PWGZWdTQ1SmptZXczZjVGVU83T0RWLXRQVGxSQVlMcFZOWlYyMW10YU5CM19nR2ZKYWFTX2d1TnRqNWtOTEFqS0ZhMUVhNjRRMFhaRG13d0hKTkIyeXhxTkY?oc=5",
+      "title": "Brazil’s central bank steps in to stem real’s slide since Lula’s re-election",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -93,6 +101,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTEtGeEpGMG92bHd4akpaREVwYXdrMmEzdXppQzFsOG9CZ2hGX3QyaXZpRmtVN0lLakFFMWIxc2w3RFlmZ3haNS1POEpRcGE0Q2NlMWxoa3RFOTZPM2xUcVotM0ctVGxRVTJ5R0Etc19NWnZjSVowVVFoVWhINmc5eEFXWk01c2RnTWhsOXVDcnh1WUJEN1FCejB1Qk1KVVNpX25DakI3Rld4d3A1T29R?oc=5",
+      "title": "A propos - WHO sounds the alarm on antimicrobial resistance threat",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNOGh3X0NwX3p1d0dvNFNuY0J6b2dSMWpub09FODVOUnljMUZQaXJodUUwdXQtOGNxZlZLaElZNU9TN3d0VjRkN2VtdW5GWndadGFtdm56MUtxZnRhWlJOMFpxVDdoZjQ3dk01VDFfRzJ0aWRFV3lHZXN2bVdoTnBYR2dmZWtWT1hsNEVuUHpvREZ1WnlLSFVGV2paM1dLRl8xYkJ5NnlLeXdsT3hQVXBGYUIxWURHYTg?oc=5",
       "title": "Trump's Latin America allies recalibrate after US election earthquake",
       "important": true,
@@ -106,14 +122,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
-      "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -135,6 +143,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBib0xfRkxjNUFGOXRfY3R5V0owTmFTZHBmc29aNlpma21YeldSU0Y3REZvSlhrZ2E3V0s5SWRpV2Y2Vmt2cFE0?oc=5",
+      "title": "World Antimicrobial Resistance Awareness Week 2026",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8xaDZobTFBbExrZUROel9JSWVNYWthVXJvdmpkT0xLR21HQV9sVU4wMUlHWENpdVNyakwtSzRIZHpOUlJyeHo3c3pWcnBzMmI4NzJtUWJHVWvSAVhBVV95cUxPMWg2aG0xQWxMa2VETnpfSUllTWFrYVVyb3ZqZE9MS0dtR0FfbFVOMDFJR1hDaXVTcmpMLUs0SGR6TlJScnh6N3N6VnJwczJiODcybVFiR1Vr?oc=5",
       "title": "'슈퍼박테리아' 대응에 AI 활용…질병청, 항생제 내성 국제학술대회 개최",
       "important": true,
@@ -167,11 +183,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQS1lSFJxcWZkajluOUY3VUdHWXNCSTFoX0I0U3U5VjdFQTlzbzRRbW1ObWFmdXBJRnVfU2xHWnN4VUVrNlJ3UEt5UmNoNnNIMGxPd25Tekd0cDZvNk91NjEtQlNhRlR1R0RxdmwzY3NCbTFWVEhNeU1mclFWYVdBUXZONlY3a2N6bnc?oc=5",
-      "title": "Tremors felt in Australia after huge 6.6 magnitude earthquake rocks Indonesia",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbE1uTUdsZ1kzaFBJUnFZbF9Bb20tRXRzTXpBek9NZmhHTU5PWGZWdTQ1SmptZXczZjVGVU83T0RWLXRQVGxSQVlMcFZOWlYyMW10YU5CM19nR2ZKYWFTX2d1TnRqNWtOTEFqS0ZhMUVhNjRRMFhaRG13d0hKTkIyeXhxTkY?oc=5",
+      "title": "Brazil’s central bank steps in to stem real’s slide since Lula’s re-election",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -199,6 +215,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOTEtGeEpGMG92bHd4akpaREVwYXdrMmEzdXppQzFsOG9CZ2hGX3QyaXZpRmtVN0lLakFFMWIxc2w3RFlmZ3haNS1POEpRcGE0Q2NlMWxoa3RFOTZPM2xUcVotM0ctVGxRVTJ5R0Etc19NWnZjSVowVVFoVWhINmc5eEFXWk01c2RnTWhsOXVDcnh1WUJEN1FCejB1Qk1KVVNpX25DakI3Rld4d3A1T29R?oc=5",
+      "title": "A propos - WHO sounds the alarm on antimicrobial resistance threat",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNOGh3X0NwX3p1d0dvNFNuY0J6b2dSMWpub09FODVOUnljMUZQaXJodUUwdXQtOGNxZlZLaElZNU9TN3d0VjRkN2VtdW5GWndadGFtdm56MUtxZnRhWlJOMFpxVDdoZjQ3dk01VDFfRzJ0aWRFV3lHZXN2bVdoTnBYR2dmZWtWT1hsNEVuUHpvREZ1WnlLSFVGV2paM1dLRl8xYkJ5NnlLeXdsT3hQVXBGYUIxWURHYTg?oc=5",
       "title": "Trump's Latin America allies recalibrate after US election earthquake",
       "important": true,
@@ -212,14 +236,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
-      "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -241,6 +257,30 @@
     {
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE56TkdCVG83eDEwcGZvUHlPc3VybGg5enk2NmlfeXVHYzJ5SEotNnJPMGxzNEptTVdKZ3VkZ191M3oyd0dlelozSHZ6U3pyZlphQ0ZiVThESTU0bG1HRHk1bV9wd1NRa0VGTlYxU3E3NXN3cmktaUtIOA?oc=5",
       "title": "M5.7 Earthquake Hits Japan’s Kumamoto Prefecture on Early Thursday",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitwZBVV95cUxNcl9mNkdrZXVkQ1g0VmowZzg0WTcxN2JmM1JVUVJTbE51QmhPOUIycEhKcDQ3d2Q3QnhSX1MxS0dsSVZXSUI5d0pKWTRMNWU1YjA4RGI4MTkxZ3NZZ05JQ1VxVWRRODBUUTN2d25feWZyT3p3bHFGN0dDWEJ1aGV4TktmM0JOVWs4X2tSYXR1aTNWYm80aGxhTGhsZlE3ekZlTGRQcEZoOHppS2RJcEVYT0hOOGZndVd5eWxNZ2tzbjhDeG4zaEdpMXktRlFYYzMxTWxnR0FHUjVBdHJFYnVqWlJEcmpaa25yX3RJWV9pSEppOG90TF9qZmxCUk5YdXRVM003UlNRN1cyYnNFbXY3eWNaYVJfUE5UNnJyLUxtYUFTTUJhYlRYZDh5TnpreXNXbzZrMEU0eGpwU0syT3B2aEh6MnA1UnJoVE1nc1F3UFlSZEJzb21QRmdIbFBrLXBHWFVUeFpTcEpZNVp2d0RuTGFKWWNMME1VZFdxZ2dqSEVXV0pOdWdBT0hNNFhtS3dxanNBVmxXR3lpSG9EMldmVjdEUkk0SGFtMWVMSzNOMTY0cFVtc1h6eXVyWnVHaXA2UkliUl9Ud0Y4dVpCajNmLVVLeXFhZ3V4bVg4MFh5WWpFYjhnZnBWNWk5VlJkZTVFWWszNEFhMlRVSUhOZlNWaGNkbno3YzJhM1BqOHRpZC01MnNQVzhCemNBQ09nbkl6MjlnenJmZmJ4QzMyc2xDTjZNSkVnQUVPNzBPdUU1SHJackYwSGo4TGVHN21zdEFxYm1mUzF2RWRvWGtsOE11YUJCa2k3cEpVSnc2TlQ5MF9YblRKVXNIb2JwbzJadWxrem1aN2dzenFxNl9HOFY1X0Jvak5vemV6OUFNSTFsZElSa05kUm1yNm42ZFJSSmFnNE1EaXJ3WkxKazU4Y1ltVFA4bEt3YURYSmtUanBTUlVFY0NaYnVHU1NkR3FDenpBTEFUQnhWY3V1WmU2a3RZdGZWQUJoYU8zalFlcDEwZENUVl96akdlcWxEQmVXMWVMSUNXaWtLZVAtX3QyNjEzVk80TGFfOWpUbXNFWnpxSDhHZThqd2dN?oc=5",
+      "title": "𝗦𝘁𝗿𝗮𝘁𝗲𝗴𝗶𝗲𝘀 𝘁𝗼 𝗰𝗼𝗺𝗯𝗮𝘁 𝗮𝗻𝘁𝗶𝗺𝗶𝗰𝗿𝗼𝗯𝗶𝗮𝗹 𝗿𝗲𝘀𝗶𝘀𝘁𝗮𝗻𝗰𝗲 More countries are developing strategies to combat antimicrobial resistance (AMR), but inadequate diagnostic testing, treatment guidelines and funding continue to expose patients to drug-",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOejM3SVhiazhNV09xeDF3YXJ3ZVpjQnMwUVJmbUE3SmZnWEZBUE5IcVBSY3NlZWQ4XzFJWkJHRDV5RXdnR1pSQmZTX291TzJtY2ZOYlB6NHpuTy13SjhMN2ZOR3JsN29wVjUtclFONUhtcVFON2UxcEY5ekZlZUN6SkdpWFZkdk9QY2QySnlNclAtU0JlaEJGLW5NdDU4RnFXVi1ncy1xSE12MWpTWTZLeHpTeFJPUjNw?oc=5",
+      "title": "European officials call for ‘swift and sustained’ action on antimicrobial resistance",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQnduWTFXWFlZdk0tS1dvaGgwNlpXZDRlX3JEUWtPTkRhV05XYURacmpkVlhmbmlwSnpGT28tZlV2eUNkdGZpLWk3bnJoVV9MTFV4bUMwcEZpTTZLU01yMnREYXZrLUFycTdFRGpBelJrT1NfbXJ3eDAzYkNocGFfZmxrNzdVb1hBM1ZhR2pjbnkxV3VDenlkdjRraUJGTVFlUUwxZUdiWGpKUm50S0VfMUc3Ukxvelc0VEtuWkNVMjMySEE?oc=5",
+      "title": "Connecting agricultural research and knowledge to support action against antimicrobial resistance",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -287,6 +327,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBsTHVDMUF5WVU0VE9fZnBFd1hja05zS3hhYVhPYVZBbk5zZmFwMUhNY0paQ015clhZVmF1SVI5aHRqS3pLY2x1QWhNQUozajFIUXl4V2RPVy1yWDV2b19Mc0pYNjBSS0l6bmcyTmRpMXTSAXRBVV95cUxPLXZRdmd3U0c2Nm1BRjZ1Q3pkSk1jRTJCaDcteHJsV1ZSWi1NOG16QW13TzB4V3BsRlJEdk5hWmhSUUItbWx6ZXB5WTUyOXNBaklyd200bTV0TGpidWtpQzFQUXh1Q0lJT2pMbWtCNzZZSXpxRw?oc=5",
+      "title": "대웅제약, ‘월 1회 주사 비만치료제’ 임상 1상 승인…신약 개발 속도",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeGVzSjhrbUhOTTctX0ViTkJTRnFEZnkwNTJQR3gySTJRQlk3aXNwenJ2Qk1DejVYcF84dmF4WDFPd2xKRzEwazEtOEdOb05OOFhJaXZQVTd3R2lDRHdGbTgtM1JSSEMxeFN5OTlLc0tLNE55MHlHRDZNU3lOVFBDaTJwQQ?oc=5",
       "title": "Iran war live: Houthi attack damages Saudi PIF headquarters in Riyadh",
       "important": false,
@@ -319,24 +367,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
-      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOLUxidUs1bm1lZDBfQ3ZabV9ZQTlyZ194eG82YkxnX3BjYkRUMTdQcFVoQ2owZXJQRnhwVG15clRIcFEyVDAzMkY1LTJoRFRNTy1JMjFUU1dMZlFLVFlGRW5SUjhzb2ZaVU1JRWRpOEc4bVA0WDNIaXlhT29ReGNzYlNIQUVmc3J6ejRERkdqN2NZbDBtSGplZERB?oc=5",
       "title": "Immigration splits Spain ahead of snap election",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQUzZjS1Zxb0NyTEc3RUxicWlPbEhmM1Q1S2JJck5nWWVRalJGVU5ITGNGbDZCcFZ5X3lrSE9LcjhYQUExeElJQVFqcVpVRFdGS2tKT0twc3BLb0ttZmNkMUNQSFZLaGpRRE4zNVgtTlRTRnV0akExdVNsYWZpeFRLaEJmXzAxZlJfOW5iQTBDVEw0LUh1NWtyanZHMFc?oc=5",
-      "title": "Eight Israeli Firms Face UK Sanctions Over West Bank Settlements",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -351,8 +383,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOejY2RDhkei0xUlQwOFBocjZvMjdhYzFuRC1xRnNxUUV6OFhocWxsVGswcmVKSU9XNzZQcXZzTmltZF9XelVRZm5OR0kyNjNybTZsMVZSanBvQUpZTE10MnR5MTgtSlFOcC1PckxkeHRKY01MYnoxVHBwVVh2a3cwX1lSclpDTXk2Slp3SF8tclptVWxvOWIyMXhJcUJySW5aNDFDRVMzcWZ2dw?oc=5",
-      "title": "IAEA flags gaps in Bangladesh’s nuclear emergency preparedness",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNYkNuMHp2TkNveWdkVWxCN2c3NUtNUWQwdkhvQjlPLWZFRjFwRGdQTGEzSWxPaGpzMGxkb3M5aVFza01lU19xZ2dLc1piT1RScW1xNUFVakdKU1ZlNDkxcVVKUXg1a3pxUnAtZ04tSXFCaUV1Y3E2dXBGQjNSaFhkbEJzS3BXemJQSFVlOVBWWXEtdUxPcGVoRjEyUVJJVW1VVXkwa3hDTjVrYkE?oc=5",
+      "title": "United Kingdom CPI inflation picks up to 3.6% YoY in October, misses estimates",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -377,14 +409,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxQNEFBX2RZRUx4TUlVWnhUVzBkSDFWVWo1V0YtemxTQm81TG5MSE5pZXJfMC1MaDQ1TFE3YWhTRTJWaXBqZWhQRmZMNkxuNVVzanNUbkx6U2dIQm1uYkdpMEh4dlJXbVdpODFIV1BDN1JYbVROdDNjSWlBNDZtRXBwRGc3VmhHNzdZd0VxTVRhLS1zX05DX25fM3dGUFpWUXdIT1pWTHIxX1ZzQ0VReTBrYU00cFZSMUkxWl9kUTk3M2tYNmNoRVVtWTFLSU9sazVLNXJOTW1JY29BdFpRek1XNG95OHpfeWpLZ0Y2aEVNUHdYSFZoSU5IN1N1YUFMRS1uaHpKNzVtdUNIMUZZZWR5X2Y3TGZoX2JrSHI5TkRkNV9rWjZvQ01BRkJoZ1Zhdw?oc=5",
       "title": "Ghada Amer: Egypt possesses the potential to compete in artificial intelligence",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNbHM0SHdxWUNkRWc0ZVVJQ2JZX01GN0k3ZTVfbE1mT1ZWTTk5TEFxQTBRTll3MHNTYVdLRy1CNFI3QTVEbW9idEFYWXpycWZSRXQ1R25MUk52M1h5Z2FYSzFsN25aS3FLQXBIUEtuOVpuXzdSYVcyX3dHbjdvbGlKcG1aUm8wczMtVFk4b21oSG1JYy1ia19yZGpZUE0yVGkzY3JldWRVYU9hSlVFS1c00gGvAUFVX3lxTE1sczRId3FZQ2RFZzRlVUlDYllfTUY3STdlNV9sTWZPVlZNOTlMQXFBMFFOWXcwc1NhV0tHLUI0UjdBNURtb2J0QVhZenJxZlJFdDVHbkxSTnYzWHlnYVhLMWw3blpLcUtBcEhQS245Wm5fN1JhVzJfd0duN29saUpwbVpSbzBzMy1UWThvbWhIbUljLWJrX3JkallQTTJUaTNjcmV1ZFVhT2FKVUVLVzQ?oc=5",
-      "title": "‘Sanctions can no longer stop growth’: Putin's message to the West at Apec summit",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -455,14 +479,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMjd2cndUekRhdGZRSDV1bzZxM0RTbVNScDNXQUZFWUw5bUR4Mm1vWGxiX2U1TkZYQmdOZ0FqY2lTbHp1MWtTelh6cXRrWFlHcjQ4bkdUNU5JaHVuY2tQdDg1MEtERzB2bDc4WG1kV2dXbkRaNlc0SU5BSG1rMUc5RmNjZnA1SHBxTG91MEdNNXMwbF8tTVhfME1ock9LYzAwVHRhU0o1c2tEMW5CdmoyV1p5VVZfNmQwakVXMmxFVnp6cHc?oc=5",
-      "title": "Israeli parliament elects Eisenkot ally Matan Kahana as speaker in blow for Netanyahu",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRjhGQ0h1QU01VUstclJQNjRwb09TUnR6SFZuM0dSMnJrVTFuWTNSdEFMamhLMGhpbWpVMWFZeHJ0WFhaVlk0RE9UTnVJcUJiMDRuUmFDSUg5VEREY3dGRUNOdzA4MUo1TjVwMlZpaUdQSTUxeWZ6ZmRPTTF3aENZYVZEY3RCYm5ORko2SHN4NEdLWVp5RzVIbFF5QlFlNEpueXpwb1lpV2xSai01WnRmblZCS3RNcDRqZkdVeFVpOHFsN211VGd6R253?oc=5",
       "title": "Address by President Cyril Ramaphosa to the South Africa and the AI Opportunity Conference on the occasion of his Working Visit to Silicon Valley, San Jose, United States of America",
       "important": false,
@@ -481,14 +497,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaEFvUTJHSzFhVWE3ZHZ1VHJaTmZ4T2VvejRpelM4ZURIaWtjYlJFTDdualM5ZWJWVmRMUGhBc3pLQzJ1VDJRWmY3SV9HRUIyanQ3bGoxdDFOcXQxbm4tWFFSRVBtYkQyaF9wNld1cXBfbXZrWDhiWW9kRzQ1aVl6MVBwcFd4dngzMjdVeE5mMVNMSjhjWUR2blBvLTRLV3RmMWR0QTYzcnVuUHhsMHg2N1BZdkVtUDFNTWRpSHlMU2VUVGJFVXRVbTNtb1lRQ0RDX19F?oc=5",
       "title": "PHILIPPINES, MEXICO SEEK STRONGER BILATERAL TIES LOOK: President Ferdinand Marcos Jr. met with Mexican President Claudia Sheinbaum on the sidelines of the 33rd APEC Economic Leaders’ Meeting to reaffirm the longstanding friendship betwee",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQdlFnMXpQZGdZUS1acGZnSWNwQjRvRWk3TzhWVjFhT0VkZU9jWXBfa0lxQUx0ZnljMDNOSFljNm1kT3V0a1NHS0ZiaFBKRkl5bFprMUtFeDFlQU5ORTVUU2VDdWxxUUp1TFlIWk9IZEZCbjBEODFZS2hLZERiYjZpdjF6TWdsdTB3cVJIQm13Sk9KQWtiMnlvY0Z5T25BY2NEdlI2cjluRVA5NDg3eDBRQlJSamN5TjBndy10c0tvRjNtU0x0NHNUZzZDNWI3VWxULXJz?oc=5",
-      "title": "President Trump is in China to meet with Xi Jinping and Vladimir Putin of Russia. Follow our live coverage.",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
