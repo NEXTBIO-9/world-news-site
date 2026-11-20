@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-20T21:08:06.790488+00:00",
+  "updated": "2026-11-20T21:54:57.645240+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 15,
+    "important_unpublished": 16,
     "not_in_current_queue": 38,
-    "pending": 17,
-    "published": 125
+    "pending": 23,
+    "published": 119
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 12,
+    "not_in_current_queue": 13,
     "pending": 3
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 8,
+    "source_blocked": 9,
     "repeated_extraction_failure": 4,
     "in_retry_queue": 3
   },
@@ -71,6 +71,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
       "title": "M6.0 Earthquake Strikes off the Coast of Peru",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbE1uTUdsZ1kzaFBJUnFZbF9Bb20tRXRzTXpBek9NZmhHTU5PWGZWdTQ1SmptZXczZjVGVU83T0RWLXRQVGxSQVlMcFZOWlYyMW10YU5CM19nR2ZKYWFTX2d1TnRqNWtOTEFqS0ZhMUVhNjRRMFhaRG13d0hKTkIyeXhxTkY?oc=5",
+      "title": "Brazil’s central bank steps in to stem real’s slide since Lula’s re-election",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -175,6 +183,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbE1uTUdsZ1kzaFBJUnFZbF9Bb20tRXRzTXpBek9NZmhHTU5PWGZWdTQ1SmptZXczZjVGVU83T0RWLXRQVGxSQVlMcFZOWlYyMW10YU5CM19nR2ZKYWFTX2d1TnRqNWtOTEFqS0ZhMUVhNjRRMFhaRG13d0hKTkIyeXhxTkY?oc=5",
+      "title": "Brazil’s central bank steps in to stem real’s slide since Lula’s re-election",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOMDZDNzZVZkh2Z2tkZERCMUcyX0pKaEZDaEVzVnZCUWo4aEJRZGJOeWpuMVJ5eV94Qi1qVlI2MWFzdlA4eVFDc04tQm1WdG1seEx1cXlvM0hVVzdjamp5M01xLUNZUTBUNWd5QU55MlZmUnJsR2dVZmsyYjZwVHMzVmNGSUg0eXdFbHNsTmY2Sy0wRDJCWFl2YVFtbGc?oc=5",
       "title": "How Bank Indonesia Anticipates Fed's Year-End Interest Rate Hike",
       "important": true,
@@ -215,14 +231,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE56TkdCVG83eDEwcGZvUHlPc3VybGg5enk2NmlfeXVHYzJ5SEotNnJPMGxzNEptTVdKZ3VkZ191M3oyd0dlelozSHZ6U3pyZlphQ0ZiVThESTU0bG1HRHk1bV9wd1NRa0VGTlYxU3E3NXN3cmktaUtIOA?oc=5",
-      "title": "M5.7 Earthquake Hits Japan’s Kumamoto Prefecture on Early Thursday",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOejM3SVhiazhNV09xeDF3YXJ3ZVpjQnMwUVJmbUE3SmZnWEZBUE5IcVBSY3NlZWQ4XzFJWkJHRDV5RXdnR1pSQmZTX291TzJtY2ZOYlB6NHpuTy13SjhMN2ZOR3JsN29wVjUtclFONUhtcVFON2UxcEY5ekZlZUN6SkdpWFZkdk9QY2QySnlNclAtU0JlaEJGLW5NdDU4RnFXVi1ncy1xSE12MWpTWTZLeHpTeFJPUjNw?oc=5",
       "title": "European officials call for ‘swift and sustained’ action on antimicrobial resistance",
       "important": true,
@@ -233,6 +241,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQnduWTFXWFlZdk0tS1dvaGgwNlpXZDRlX3JEUWtPTkRhV05XYURacmpkVlhmbmlwSnpGT28tZlV2eUNkdGZpLWk3bnJoVV9MTFV4bUMwcEZpTTZLU01yMnREYXZrLUFycTdFRGpBelJrT1NfbXJ3eDAzYkNocGFfZmxrNzdVb1hBM1ZhR2pjbnkxV3VDenlkdjRraUJGTVFlUUwxZUdiWGpKUm50S0VfMUc3Ukxvelc0VEtuWkNVMjMySEE?oc=5",
       "title": "Connecting agricultural research and knowledge to support action against antimicrobial resistance",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNa2VfaHQ1V0Q1VWpXVmxWM1pqa1hMa0hSSkEySFhrLW40VHM4RDMxNnhmaDc1am93LTNyLTZ3RmZEQk10Q1ppUUdRdFhXclM4eHpVeElPRzdVd0FfeVpuT2p0OGxDdGFqRFZWdTZ2VzVONlpUZmJLekdTWkg0R19WMERQbVh5WjRRM0tqQmc5QXZUVlZXNWVzaXhaOF9CX3M5OXkxa3cxY1FuQlpnZU5PX05YSHBTVkhUTkRTMWZobGVtRlMyT2RnU0JLaGt5dw?oc=5",
+      "title": "IDOH: Indiana experiencing measles outbreak",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -271,6 +287,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE51dzJ5MTNMSDU4d1dOSFNnbWVWTV9aQUlqbl9rVDdKZlhiRmZPaUNwNE1FUFBKdlVVLTRHZDRBTmxWV2c4cl9NNU9pR3NsYkEtd0VzRFhza3l3LVRXTU5hSWZHTzNodVZHS1E0?oc=5",
+      "title": "Courtesy call on Prime Minister TAKAICHI by the members of Japan-Brazil Business Council Plenary Meeting",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8tWDV0SG5GbkNQanoxX0x5N1R2QUxhY0hCMGV0OWN0eWRfcWE3UWZZZEpORVc1X2g3SzhKSVpzSmJTcWRsNzQ1YkxzME5ETHlNT2R0aXVOV1Z5UUp5SWhrSThvZmVvblUxUmc?oc=5",
       "title": "“숨돌리기 이후엔 인상?”… 한은, 다음 주 금통위서 금리 올리나",
       "important": false,
@@ -289,14 +313,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE82MzhfNU9kcWgwbW45YmZiNVFNQlF1T0xGR3ZZUnBnS3lfVEZSOG9rTXNkV0dKMEduSFBRR3owanVneE1ObWF6RGw4ZHpOWWpYSDU0WFc5djY3cWZMSHFDVVdGcDFZZUswODdZbw?oc=5",
       "title": "뎅기열 4형 바이러스 인체 감염모델 첫 개발…백신·치료제 연구 가속 기대",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ydVhQTWZEVGUtUnJQWTkzNnpvcTIyT014VWVzdkdSWHVSUlNVSWdkaHcxdFZhSW8yQUNtOVR5Umk0MGM2c0I0LTJmUi1pUEhvdG5uLWNoZ1c0VklUZXo5cUxqNHpkMWl2Nnk5ZU12VDJad9IBdkFVX3lxTE1QbjUxOVNkcG5Rem9YRXdzcDU3cTVMbFZrRWxYSVRzd05nLUNuYzA2OHVrRWhHYmFlNElxbzV3ZWVONGdMcHFHWWNyV3ZTS0hvVjIzYlE4TlZDNEpwNkY3NThObVg0SktEbUpOVHlWZ0FYUU9kdmc?oc=5",
-      "title": "“美, 中과 신약개발 협력으로 자본ㆍ상용화 노하우 이전”",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -327,22 +343,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdGdrMlJHd05TY2ZOcHVPU1JNWUVoam9WbFdBV1hnRnhKb2xMWmRJTWlnZ1dfTkJLamJzUGd2ZWxzTlRjWWplTC1WYzBIZ2NtLW9PelMwNnNPLW9mSEt4bVZaeXRVNUFrRWRGSFUwcUIxN3NPNmVIaWFLYWNGSmdqa3dEeGJqWkdBWnAtWg?oc=5",
-      "title": "First successful human challenge model for dengue serotype 4 could speed vaccine and drug testing",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
-      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOLUxidUs1bm1lZDBfQ3ZabV9ZQTlyZ194eG82YkxnX3BjYkRUMTdQcFVoQ2owZXJQRnhwVG15clRIcFEyVDAzMkY1LTJoRFRNTy1JMjFUU1dMZlFLVFlGRW5SUjhzb2ZaVU1JRWRpOEc4bVA0WDNIaXlhT29ReGNzYlNIQUVmc3J6ejRERkdqN2NZbDBtSGplZERB?oc=5",
       "title": "Immigration splits Spain ahead of snap election",
       "important": false,
@@ -359,8 +359,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPa2Eza0lPSV9LcEQzNjUwbU9pa0NIUklLMnNxVkNIZVBOVlhrOWEydnZuTG4waGtkYnRDSWZ6SElWSllLVTluUlJ6RE9RQ1NUWDN5anl5QkNScjMwNVRKQ09ZaDAtbXNkY2Y0X0Z5d1hWN2ttX1JpVmNvelF5TFFreXZGajhxT2VudTB1REt5UzBUNldWVmEtMUVzOElCdlhMWlZSX1pB0gGrAUFVX3lxTFBidHB1cXFfRW5uQ3llMzRPQXRJY3VEek9jTFVuc2Zqa2Q1TXdLb1dEVF83QmVHcU9TbXBZaTR4QXVrT2tfYmF1V2RRLURBb0NPbVd1RGlpbFdzTVdQT1hHaTFWdUIyaGVzb2pFaVp4aUhncjdFX1ZXLVVVaVZsMzc3dzZDcDRxbjR3SHhFei1YZ0ZSdU9DSF92S0tPUThMY0lQYnhKbFVqUWF4MA?oc=5",
+      "title": "Danish Parliament approves US-Greenland security deal after Trump pressure",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOejY2RDhkei0xUlQwOFBocjZvMjdhYzFuRC1xRnNxUUV6OFhocWxsVGswcmVKSU9XNzZQcXZzTmltZF9XelVRZm5OR0kyNjNybTZsMVZSanBvQUpZTE10MnR5MTgtSlFOcC1PckxkeHRKY01MYnoxVHBwVVh2a3cwX1lSclpDTXk2Slp3SF8tclptVWxvOWIyMXhJcUJySW5aNDFDRVMzcWZ2dw?oc=5",
       "title": "IAEA flags gaps in Bangladesh’s nuclear emergency preparedness",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNT0JEYTlwbVd6TXVhU3lMMnpSN251QUZhenhmbEk5enlPX0lUYjhMa29xOXZOamc4VnNiWGx1QVlfcTFIaW9PcVpYSFdXQ0o1dzZFNlRpamZFVWx1MF9ReGdfeHF1ZlFkdkhaaEM5eVQ3eEV6SE5jeVFUaEl5LVJhUmtiMktvRkxjM1lWV2FJV3JhaHJxUFM2cjlsRTg3QV9Sd0licGhvME9lYVU?oc=5",
+      "title": "EU Considers Stronger Measures Against Russia as War Diplomacy Stalls",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -407,14 +423,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x0gG4AUFVX3lxTFBwVmMtRHJDV0lBNjhHMzhCR0xqV0NxTjUxU2hCX0pnVjd6Qy15U1I4LXFsMWRnWXZ3UjFOb2ZjVUs4bWF1R0lGZW9tZjZYbFR3MUVnSXZybGZDMkNzWlc4ZUJDSW5xb25zRGNwa250eXcwQnQ1N1NmeWkyTG5zUTRLdE1JSjZtOU5VeW5GQU9DdXZRdTA2T0ZJSmd2NXN6MGNRMkIzMndvVmw2cnplNjFaN0xYajJqbnE?oc=5",
-      "title": "Spain's Sanchez admits 'mistakes' in election debate with rival Feijoo",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONXRyVXFLb2J4SEt4Q3ZxZ1FFZ1RydUYwdWJOaWt6aGI0MExJbFF6S2dhSG1WZmRMaEJILXNkdG1XUkhleXNjUFNoaWlkR1gtdHppc3NZV0RVeUdqWVdSOU5jLTlsdXFwaDJwZTJ2eDRDY3lDUDAxUk53NjF4NkFRZGxFQU0tRjgxOVlMQm92cloyRXJraWFMSU5LU2Z0dEx2SUlTZVNjbWk2aDNDUTJLQlhGZXh6eUhXQ2JZWWdn?oc=5",
       "title": "Canada defends Sifuna meeting as diplomats weigh Kenya’s pre-election field",
       "important": false,
@@ -439,16 +447,32 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPcEdfVllWVXlSYXNabGx1YzF4ajlSSVhvN3dsSGttdm9PVkIwZExNb1QzUWpyTjdFREFtWmlGRFlOZEdvLVNER1NDREg2NUMta0prcGVJRHBkYnhLa2o1RllTeTJTMUZDZ3hpMHE5cHF0clRWcE1NVVJGbE9Ca25ZaV9Ec3dEdHBxNXctQ3h0UHp6WFJoOEdIc0IzMmNRV1RHX0VLbUZmd05qcnB6UGx0R0lyMUd6MWR5TlZ6U2k3Umg2Zw?oc=5",
-      "title": "Andy Burnham says Europe 'ready to enter negotiations' to help end Russia's war in Ukraine",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQNWZIZVAzV3VvNjNuRTlOSE9tUk5lTEhPUnlqZUxpVkR4WFExOVNXZ2NGZjlUbVNadTQ1QVY0TjUxazEzYzU0UmQ1U25mcDl2WXBFOHFEcGNEeUNOTE1pSzViS0JaUVo0QzBTeGo4c2RGV3hQeWFrcGFoaWV0STJHMG83NjBoejhRaHNiY3YtTVp1ZW1GZmxvTW91bkk0RU1fNk1kZTBpS0pKMFlmTWNmX2wzMUVJbXFIRFpUUEtTZDZ6V3M?oc=5",
+      "title": "Trump pledges stronger defense ties with Philippines, eyes nuclear energy cooperation",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcXYtN2ZVcmNlRWdTRGIwWGl1aHZlcklfQzZvcDJiZmpYXzZhVjZXRGpGc1RuSFhkN2t0UnZmSFZia3VDUzRCWld4MUZ4WXJMQ2UtZVZsOUlxZ2RIWXdYS0VqTVY1V0h5U2lwSWdDcWo0OUQwQUlobXB4TFJrckNYZlBkM2FScTBWNG5sY2JGTGJocW1XcUREMUpKVkxwQkhTTzdWZU8wdUc3Z19RaUs2X3VyOEUwQklOTVh0NUZLaEVybGhVVC1wbGstTFNVSVJud1JVT3VKemw?oc=5",
-      "title": "ABS-CBN News. . WATCH: President Ferdinand Marcos Jr. reported on the outcomes of his participation in the 33rd APEC Economic Leaders Meeting in Shenzhen, China. | via Jervis Manahan, ABS-CBN News",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaEFvUTJHSzFhVWE3ZHZ1VHJaTmZ4T2VvejRpelM4ZURIaWtjYlJFTDdualM5ZWJWVmRMUGhBc3pLQzJ1VDJRWmY3SV9HRUIyanQ3bGoxdDFOcXQxbm4tWFFSRVBtYkQyaF9wNld1cXBfbXZrWDhiWW9kRzQ1aVl6MVBwcFd4dngzMjdVeE5mMVNMSjhjWUR2blBvLTRLV3RmMWR0QTYzcnVuUHhsMHg2N1BZdkVtUDFNTWRpSHlMU2VUVGJFVXRVbTNtb1lRQ0RDX19F?oc=5",
+      "title": "PHILIPPINES, MEXICO SEEK STRONGER BILATERAL TIES LOOK: President Ferdinand Marcos Jr. met with Mexican President Claudia Sheinbaum on the sidelines of the 33rd APEC Economic Leaders’ Meeting to reaffirm the longstanding friendship betwee",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQMXlaMzM0Mk9ER2wtVjE1ZVVKSWQ2aDdZNEozSXRvMjdkWHpVVGRPbGNYWHRiUlIyZGc2emFLeG5mVEEzMklWVlBaMFdwVUthMGlJRm9LM05xYnZsanNoRkwtZElfOHlaNEhQR1FCeFVCbEtwVkZtdGRLbjczZE9QdkRGaUd6YzI0bzdtTXNkUGkxUnhJeTlueHJSYUMtelJGNmF6Qm9yaGtNOEM4Y1VVNDhfZmxjdnZmendiWm1jdnFBbXlLOGdHZ0Fab0o1MnVZRE96WHJlcy0yc21EcGs4YUpDdmZDaVHSAecBQVVfeXFMUDF5WjMzNDJPREdsLVYxNWVVSklkNmg3WTRKM0l0bzI3ZFh6VVRkT2xjWFh0YlJSMmRnNnphS3huZlRBMzJJVlZQWjBXcFVLYTBpSUZvSzNOcWJ2bGpzaEZMLWRJXzh5WjRIUEdRQnhVQmxLcFZGbXRkS243M2RPUHZERmlHemMyNG83bU1zZFBpMVJ4SXk5bnhyUmFDLXpSRjZhekJvcmhrTThDOGNVVTQ4X2ZsY3Z2Znp3YlptY3ZxQW15SzhnR2dBWm9KNTJ1WURPelhyZXMtMnNtRHBrOGFKQ3ZmQ2lR?oc=5",
+      "title": "Space Exploration Technologies (SPCX) Merger Talks Raise The Question Of Whether Shares Are A Bargain",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOY1hsbFRWejhFWlN6NHV4MlB0ak9BdDBmSVFoNTVaWEdFMmhvd0lDemc0NkhvX3pzU2pwbkdiaWNjdkYzUzNzaFV1SFRZcW1JUW1XY3NvaWNfeDZvVkFMQzIwbTRNVDNHdkhJSEpzRk1QUXVTbkVxdW5tUGU0RldkaHBveFlCbHhobGVlR2gxYWU4NHpMZ1Y2ZEw3LXhQUTZnSEdCTWZ1endwMUVzSkU1NmNGS0w0dnpST1l2dFMzdmprWENmbHdEVF93dmkxZ0JPaU94OTB0T1BVNnNmMUxkODM2TlVSa2RndUZ3?oc=5",
+      "title": "Deputy Minister Steenhuisen Urges South Africa (SA) Companies to Capitalise on Export Opportunities Through China’s Zero Tariff Scheme",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -463,16 +487,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5kYmVqUXBXa2dhU2d2MzNxYko1NlZyaGdTTVVXZk5ocUNsQ0k0UEFOM2RUR09uQUtoVllOMEUxb2IzVHdFcGVsODIyeXNZWmFOR25nZ2RuQmdVWlBEb1YwNWhzMkxqMDFqSDRsMG84QXZLQ0k5Vm8zTnhISmF1Zw?oc=5",
-      "title": "Rubio Urges UAE to Help Bring Sudan War to an End",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0wSnZnWHZ6emNZNTV2Rl9ZaDF6T3kyUWRXeV9mVExuTWNJQ0JrRXJqVk9TN3p3VHZhbFhmWnRPSUFRS1RTZHdTTW1IcUFUNFQ2M21GdXNYV3JNLWdxRl80dHBMaXh0XzhWeXo3WGhSMWFRMS1sUDN1ZEdB?oc=5",
+      "title": "Syria Is Paying the Price for the Iran War",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9iY2NFZGMtUW5pbUVpWkZiQ1hJOW9vRjM1WFBuTzJLeEg0dEZMd2dfSzBtSE9seVdmOE1OVTlKcGQ3UndaemxleHRPUDhTUTBmdlVWVVdrMVhfNnB4dWdnRTRGNkN6SUtEV0ZBUlRkaDIxSUVzLWZpMFVWV2k2QQ?oc=5",
-      "title": "Syria Is Paying the Price for the Iran War",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5kYmVqUXBXa2dhU2d2MzNxYko1NlZyaGdTTVVXZk5ocUNsQ0k0UEFOM2RUR09uQUtoVllOMEUxb2IzVHdFcGVsODIyeXNZWmFOR25nZ2RuQmdVWlBEb1YwNWhzMkxqMDFqSDRsMG84QXZLQ0k5Vm8zTnhISmF1Zw?oc=5",
+      "title": "Rubio Urges UAE to Help Bring Sudan War to an End",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -495,8 +519,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNb0F2dXZIbmZWckNpSS1XVGNPYkhCR1BfWVBIandpOHZZZVlOYmtlVkxHVHpvV1dHYkphWDE2MTVVbTg4M1dVZl9WTjJHN1d2SkR2aFR3Znl3LWgzb2tNcXBHMnltVmJwVGVBVmNYMk1INHNUVkxfNGZDeURSekFidzdfOEhuZnJrMVJQQThBdw?oc=5",
+      "title": "Trump says Putin wants to end Russia's war against Ukraine through diplomacy",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcE9rMnJHU2dQdE5wZ3hCYW1CdHlxTy1nZVJKMWw0WjQ4ajh4bW1fWVU5SWtaU0NPM1RnclNTMkxWYS1fU1MtNC1CTURRSmJLb2VuUWtmWWhELVVXZjFTa3FOMW9kbTU0UERpVVRWT1ZiZkhaQVJ6SkdPTXdHOUpXekhaQVlNQTNaeHYza2tpRXVVMHNHalNOUVAxdETSAaMBQVVfeXFMTTBZQmxvNHpDX0pIbWw5OW0zMUtiWWhacURFeVZ0djJsX0l6RXRqdDlfSFBKa1VDdUtpS3lfTHRzWHMybmFQZEhxMzdUY2dVQmt1bkxwQW1SVEhjVXpfQ1k3VTQ5VEgtMHVNWnZUam5qR2JlMG14ZmxNMHZZTHJ4Q0tad2FXdWlIYkxCNzhTTXM1QXZDY1RsZFoxUWZrS1I2RmZIUQ?oc=5",
       "title": "‘Philippines in talks with Russia for nuclear technology’",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZ05xR2tWUEtkVE1IM01oV0VjZDFPQ1hLa2JpdGNnMnBYSnlPVUp5Y21VbHB1OW4yVzV6Y1RxSnVUdjZzWERNTzA5NExHODlpc1RMUWJwd0hNZG1YMWtRQW1EY3FvVUgtcGVVV0x5M3ZUamp3YjBWSjZxaFdQTEhLMVk5V3RQZFV5bmVWYXEzOXl6OHRsbERVcVJ3cmlrcUE2eHRZ?oc=5",
+      "title": "BNPB Delivers Flood Aid and Enhances Mitigation Efforts in Aceh",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -537,6 +577,22 @@
     {
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNeDVqSjF0V2pJbmRWeGZwMkd5NVo3OTVrQ1gwX29oaWRwNjQ2cUkwQm5ZMkcxQTRKNzdoUGNRS2g3MS1VVmhJMm91bUU1Wm1pVzA0UVpLQ3VyVnNmQTUyZkhzWkljTU1DWTA3cjZPVGhtalR2Skk0dlhfZ0hyYkp4LXpxc0RTbWdndGEyVVBET3ZHYmdIMHBvY1pUcllLRFVvdkxIZUxRNlVzTGd0WDFTNQ?oc=5",
       "title": "Investing in Children’s Health: New Vaccine Warehouse Opens in Bishkek",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWnRsSTN2UHlvZ3hscnFOdktrT0UzVDdjM3hyeDM0ZWFkTGVuNjRMVGFMWnhPYVJHZHV5WmVINHp6R282a2xnVENuMWxhU3NLd1pxNUJ6ZUlacHU0WFR1SmprZEE5UUVDQm9HemliQ3NjWDVteHRnQWRNVWlHVE9tNk5tZUI0TXZqRW9WSUdVUmFHRXdwbkc5RDU2R2JWdE4xR0FGXzdBeW40bTV5XzFjSjJ3MNIBuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x?oc=5",
+      "title": "Spain's Sanchez admits 'mistakes' in election debate with rival Feijoo",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPeGpnVFRpR0tYWnhKSGpfdVFVZGstTWhfWEJNSzQxLUNIWXVFUy1ZV19uWGRibE42aTZDNEI2UmtCSUtBdThOTmV4eWNkTUowVmxzTG9hb2NESjVQRDBEaFVyWXk0VC1pZ0RaVGdTeGc2Q3NnMDZHNmI2ZDlZcUhwbjlSakNMYWNJdkJ1bktfZTlBaFRUbUEwd3lBV3BHVHRITVEwdlhwMTlCamRZZXZVbU1EU1Q5Q3lxQVhYNDI2QzVtX28?oc=5",
+      "title": "Counting the hidden costs of natural hazards: Understanding post-flood demand surge in the construction sector in New Zealand",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
