@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-19T23:56:22.208804+00:00",
+  "updated": "2026-11-20T01:14:02.735270+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 18,
-    "not_in_current_queue": 35,
-    "pending": 16,
+    "important_unpublished": 19,
+    "not_in_current_queue": 32,
+    "pending": 19,
     "published": 129
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 13,
-    "pending": 5
+    "pending": 6
   },
   "important_unpublished_by_reason": {
     "source_blocked": 9,
     "repeated_extraction_failure": 4,
-    "in_retry_queue": 5
+    "in_retry_queue": 6
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -53,15 +53,7 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQQ1VMa1BSSUttZWU5YlRkd2RJVW0zZHlIU09YTlYzeWI2MUQzZ1V5djFwZU1DSW5rSk5hU20zdTZnMXV4NTdiNVl6UldwT3p1ZUNDOTMxVjItM3pTcGZUMGNNRUZBX0lXazI5NHZkRC16U1J4M2JoQTZjRUh1UGh1d2ZTZTRtMUZmVDNJ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQS1lSFJxcWZkajluOUY3VUdHWXNCSTFoX0I0U3U5VjdFQTlzbzRRbW1ObWFmdXBJRnVfU2xHWnN4VUVrNlJ3UEt5UmNoNnNIMGxPd25Tekd0cDZvNk91NjEtQlNhRlR1R0RxdmwzY3NCbTFWVEhNeU1mclFWYVdBUXZONlY3a2N6bnc?oc=5",
       "title": "Tremors felt in Australia after huge 6.6 magnitude earthquake rocks Indonesia",
       "important": true,
       "state": "not_in_current_queue",
@@ -71,14 +63,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRlJuRnRZRW1vbWZLLUhJNjNMX2d3Tk5tTEk2ckloVm5Ca3ItMmJGdC1KYWg4YXRLbDRnaEYwdDNydmt0QVU5SnBoVVBzcmRMbGh3aVowN3NCMkYxNUlQMF9sem5DQzc1QzhzUW96RV9MdmZ2SkRTRlNhTTdOR2dMSV9OVEVqa3NaVGMwTEhWMA?oc=5",
       "title": "Interest rate surprise for South Africa could be coming",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNN2VqZHdtZmJfejJKY1hxdE9adlRWSjJYcnRQcm5hRzNMQ3VlWlJ2eXBVczJ4aVdfdF9oRGhSY1J1cHJBemV0OTRtYU9aVFBKS0J6a00yUHFkcHhaNDdxUkFwR3lZMTFWSEJ1UzQ5aWNtVDlHV2lHeEdkdGp5TjZxcDZzS3BOaVc0NFFEbjFpZHEwOGZLYXEydllkRmFmZWtCc1VWOHYyOTF2M1lmZVAtTWFXOGR1ZUU4Z1J0REpsX2wxOFFRcDRXQlo1bFZKMlY1enU5b0ZHNFhOV0ZvSTNMUFl3WVU3dExrSWc1LXNuamxqeUtsVWZLaDFtbXV5THJ2UkwxcmVJSnNNMTJqcC0wQXlR?oc=5",
-      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -119,6 +103,22 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
       "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbExSZHdQNnEyR0RSUGY0dGtXSWpnTGd1NFFyUlJsUjdnam96cnlPYW5VLVdPemJrcnBlMk1DZklPR3E1VllpV0FhMEMtczNKcmJwM3VWSGJHN1FiNFh4SngwVFo5WjBuWFkyOHhTZFIzZ0g2cUlYTU1IQlZvTDhNMnZDNWxCTnd6dG5yVzI4WHpmd25DVk5GRXBHcThTSEVfRWpWTGpXZlpzUnFsODBqZHc2N2hwb0JQVzhR?oc=5",
+      "title": "Five top economists share good news about interest rate hikes in South Africa",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNR2JEQy1LUjQ5RkFMU3paM2JhVFloSHBpWG1kVi1rMHJlNHBCZC15Y0JneVhkT042UlBpejNNdjE3VV92cnM4R1lhcjV2TjBnWUhGNWVhUnNqblBxX1RPOUlUbFlQR2lpTGpOc0U1ZTFJR1NyQVYzQUN3aVg1MzdRRDBfdkMzR1RXQ2J6UzFsNUl5Vzh2Y18taDNWcVpoV1F0NE1qYmhKUG9KNzZLcFpOR3c4S19NRjY2VjRPbDdlUjhoTEE?oc=5",
+      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -159,15 +159,7 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQQ1VMa1BSSUttZWU5YlRkd2RJVW0zZHlIU09YTlYzeWI2MUQzZ1V5djFwZU1DSW5rSk5hU20zdTZnMXV4NTdiNVl6UldwT3p1ZUNDOTMxVjItM3pTcGZUMGNNRUZBX0lXazI5NHZkRC16U1J4M2JoQTZjRUh1UGh1d2ZTZTRtMUZmVDNJ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQS1lSFJxcWZkajluOUY3VUdHWXNCSTFoX0I0U3U5VjdFQTlzbzRRbW1ObWFmdXBJRnVfU2xHWnN4VUVrNlJ3UEt5UmNoNnNIMGxPd25Tekd0cDZvNk91NjEtQlNhRlR1R0RxdmwzY3NCbTFWVEhNeU1mclFWYVdBUXZONlY3a2N6bnc?oc=5",
       "title": "Tremors felt in Australia after huge 6.6 magnitude earthquake rocks Indonesia",
       "important": true,
       "state": "not_in_current_queue",
@@ -177,14 +169,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRlJuRnRZRW1vbWZLLUhJNjNMX2d3Tk5tTEk2ckloVm5Ca3ItMmJGdC1KYWg4YXRLbDRnaEYwdDNydmt0QVU5SnBoVVBzcmRMbGh3aVowN3NCMkYxNUlQMF9sem5DQzc1QzhzUW96RV9MdmZ2SkRTRlNhTTdOR2dMSV9OVEVqa3NaVGMwTEhWMA?oc=5",
       "title": "Interest rate surprise for South Africa could be coming",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNN2VqZHdtZmJfejJKY1hxdE9adlRWSjJYcnRQcm5hRzNMQ3VlWlJ2eXBVczJ4aVdfdF9oRGhSY1J1cHJBemV0OTRtYU9aVFBKS0J6a00yUHFkcHhaNDdxUkFwR3lZMTFWSEJ1UzQ5aWNtVDlHV2lHeEdkdGp5TjZxcDZzS3BOaVc0NFFEbjFpZHEwOGZLYXEydllkRmFmZWtCc1VWOHYyOTF2M1lmZVAtTWFXOGR1ZUU4Z1J0REpsX2wxOFFRcDRXQlo1bFZKMlY1enU5b0ZHNFhOV0ZvSTNMUFl3WVU3dExrSWc1LXNuamxqeUtsVWZLaDFtbXV5THJ2UkwxcmVJSnNNMTJqcC0wQXlR?oc=5",
-      "title": "Impact of the COVID-19 Pandemic on Hospital Service Utilization at a Tertiary Care Institute in Central India: A Retrospective Observational Study",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -231,8 +215,32 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbExSZHdQNnEyR0RSUGY0dGtXSWpnTGd1NFFyUlJsUjdnam96cnlPYW5VLVdPemJrcnBlMk1DZklPR3E1VllpV0FhMEMtczNKcmJwM3VWSGJHN1FiNFh4SngwVFo5WjBuWFkyOHhTZFIzZ0g2cUlYTU1IQlZvTDhNMnZDNWxCTnd6dG5yVzI4WHpmd25DVk5GRXBHcThTSEVfRWpWTGpXZlpzUnFsODBqZHc2N2hwb0JQVzhR?oc=5",
+      "title": "Five top economists share good news about interest rate hikes in South Africa",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNR2JEQy1LUjQ5RkFMU3paM2JhVFloSHBpWG1kVi1rMHJlNHBCZC15Y0JneVhkT042UlBpejNNdjE3VV92cnM4R1lhcjV2TjBnWUhGNWVhUnNqblBxX1RPOUlUbFlQR2lpTGpOc0U1ZTFJR1NyQVYzQUN3aVg1MzdRRDBfdkMzR1RXQ2J6UzFsNUl5Vzh2Y18taDNWcVpoV1F0NE1qYmhKUG9KNzZLcFpOR3c4S19NRjY2VjRPbDdlUjhoTEE?oc=5",
+      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPalZyQzBhZFd1MVlNM1ZNVnViTnYyNjhxTXNVVnFJWno1SHFwV25MeDF6VHJWUEo3b0hlRGpIeE10UG9zR25RM0xwNTVnQml5NEZhbmlxYXdsbnR3QmNLSko3c1JEODFobkNOeDVfWUlkVWVwRThvUDdzSkZjOHBQUHdZOHNhNmFYTmh0SG5GaS1BSzA3aXVEOTA2b1oySVo5SUhOR1lLNEhGdmxuT0t5VWVUY1dqVHFXSUNWTEVLRloyTy1VODZhTldaU2lSWWxiZkE?oc=5",
       "title": "M 7.1 Earthquake Rocks Southeast Maluku, BMKG Reveals Current Conditions and Aftershock Potential",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBib0xfRkxjNUFGOXRfY3R5V0owTmFTZHBmc29aNlpma21YeldSU0Y3REZvSlhrZ2E3V0s5SWRpV2Y2Vmt2cFE0?oc=5",
+      "title": "World Antimicrobial Resistance Awareness Week 2026",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -284,30 +292,6 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8tWDV0SG5GbkNQanoxX0x5N1R2QUxhY0hCMGV0OWN0eWRfcWE3UWZZZEpORVc1X2g3SzhKSVpzSmJTcWRsNzQ1YkxzME5ETHlNT2R0aXVOV1Z5UUp5SWhrSThvZmVvblUxUmc?oc=5",
-      "title": "“숨돌리기 이후엔 인상?”… 한은, 다음 주 금통위서 금리 올리나",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE82MzhfNU9kcWgwbW45YmZiNVFNQlF1T0xGR3ZZUnBnS3lfVEZSOG9rTXNkV0dKMEduSFBRR3owanVneE1ObWF6RGw4ZHpOWWpYSDU0WFc5djY3cWZMSHFDVVdGcDFZZUswODdZbw?oc=5",
-      "title": "뎅기열 4형 바이러스 인체 감염모델 첫 개발…백신·치료제 연구 가속 기대",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9ETF8yUXBRVThOLW5IbGZ0T3N2YU96S0tOalBmSVVSQ1NTZjRleDFyanBzQlZQbVhSZ204eUllU3lzd1Z3djA0Si1mbGFWSlNjc29MbXBfcGV4Wjh1eEg0allkcW1BRDNYT19sTg?oc=5",
-      "title": "대웅제약·티온랩, 월 1회 비만치료제 ‘TION-L002’ 임상 1상 승인",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -463,8 +447,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE43SVJaeXBDZUJpVGU5MGpCYjE4c0hjbmg2V3ZuQ2Npd0NET2xqSmpwTmRWSXo3UDZLeDZ0aXhnbHl0bFNLalYyRjdOanlsSGxXSzF3aGMya09ZN09ZUmFfek5R0gFnQVVfeXFMUFRlQkVrbVg2UVpkdE8zVTktUUdtVE9WVzJmSGp5OE5DSUFhQ042M3BxSW5oQ2lxVG1LTzFSR1RjWVc3TTYwSjBLVHBnNlhsMEVrV1MxSkM1WVZCb18tQm15bGZZNWFHRQ?oc=5",
+      "title": "UK and Norway to provide funding for acquisition of two combat patrol boats for Ukraine, totaling approximately EUR 120 mln",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1wc3M1N2t6S2hkRGNoa3c1OHNNM2dzVlNPelRwRjJLRWw0VXFxUlpRbUx4Y0pmMzVaQ1doNEJfMkhVa3FTaDRQR18zYXQyQ3NvT0IwbEQ3SG1rbEUtMnhvR204SC01Z2IxekNWTQ?oc=5",
       "title": "글로벌 제약업계, AI 신약개발 투자 확대…개발 비용·기간 단축 경쟁",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE85WDdQazVZVjRRSnRZekM1ZlRxM054aWZSSFI1MElHbzgzUGNnellKTFB3MlVUU2FLRjMybWxPbVEwZ0N6Q1U4UTlVUHhqR2dCdmVwbERJWENfckhmWm9DZ2N5MkZqNnRTTm5HMldXa1jSAXBBVV95cUxPOVg3UGs1WVY0UUp0WXpDNWZUcTNOeGlmUkhSNTBJR284M1BjZ3pZSkxQdzJVVFNhS0YzMm1sT21RMGdDekNVOFE5VVB4akdnQnZlcGxESVhDX3JIZlpvQ2djeTJGajZ0U05uRzJXV2tY?oc=5",
+      "title": "美 의회 자문위, 中 바이오 지배력 확대 경고…“신약개발 의존 심화”",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -479,8 +479,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPa09fM0Q5Zk9iSTh0XzFoUElfek5IZnBTMmxlRTJoX3dIN1NnYVEycWlLQUZlU0Z6M3U3YkRuNUtWQVJJMDlnLS1xWG4wZ080NWlXUWxOYm92aDBXQjNjS2lhOUVGcG1WMDlWeFZJWDUzN2pQV2RuZ01VVWIxd2JuSFRpVXdneDAwb2Y2WDdGYkJqWTRTSlE?oc=5",
-      "title": "Latest: Parts of France put on flood alert as heavy rain continues",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaXVXTmd2MjBndkg0d0JQeVhMX0lCbWVJSExkY0hWVFJTY1lTZ1J5SFR5RHNkOUotTkFLNy04dVJHQ2MxQ05qRWRLVFJxOWN6dEhHUkdPMDJsWS1lOFVTWFg0MERfWHF6WUZKTDBFNFN3VW9Bemh1dkJheWZnNjFfWEJIT2d0U2dpWUxCSlN3cktNdGczQUdF?oc=5",
+      "title": "Japan's inflation up from 2.1% to 2.3% in October",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
