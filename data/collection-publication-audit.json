@@ -1,26 +1,33 @@
 {
-  "updated": "2026-11-20T13:17:52.506344+00:00",
+  "updated": "2026-11-20T14:45:30.133852+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 20,
+    "important_unpublished": 21,
     "not_in_current_queue": 39,
-    "pending": 15,
-    "published": 126
+    "pending": 17,
+    "published": 124
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 15,
-    "pending": 5
+    "not_in_current_queue": 14,
+    "pending": 7
   },
   "important_unpublished_by_reason": {
     "source_blocked": 10,
     "repeated_extraction_failure": 4,
-    "unexplained_not_queued": 1,
-    "in_retry_queue": 5
+    "in_retry_queue": 7
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
+    {
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPdlJjaUxJWFFNOTV5OE13X3lKRzJxZXVldjNIU21yOTlYVzRGTmR6OTJ2MUdkM2o5Mjl2MDVVT0RPQURGcy01cE8zM0RpOHY0R0NiVUpybGd1WDFIMklwR2ctelBlcVF3SVBrbV82UlRpM2xIV0o0X0QtQm5vVFM0T0FBaU4zb2pVaFVnRGtCYUNFVEczUm5sclJLOUZoM0NfS19XV0lDMjlRQklMQTVDcEtqeHdDcWhhTEYzdFpweEl2ekhLQ2wwVlE4Tm5haHdEUl9uVE94TU5pQXFhYWxOYTBYOA?oc=5",
+      "title": "Russia pummels Ukraine, missile hits Poland, after Putin threat",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
     {
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOYVRDMTIwZVhpUW5CWTE4U0F4eUpYQ3BUMnZxZGEtX2hxZnkzRFMwZ3gwSVhMQ3o2bUxoS3J0QWhGWnFyZ3hUV0tSbERLZ0FDUG9raEk1cUNPVVdUYVFTV1lpY0lBX2xKTHhwMG9XSWFpQllzRUVVQ2xfUzhxT2ZjU25GZm50MFJwOHRuWmYzZHlOVnVXcVUwa0dXZHBCQlBIVnB3WVlfTnluZGdpRHpGdFNyc2hWbmd0Wnoza1JidVRBZU4tRE1famM2Q0ZjN2lsSzJka2llbmwyQ2FLeFNPaDNCQlhxWXc3NGVj?oc=5",
       "title": "Pennsylvania DOH confirms 8th measles-related death amid growing outbreak",
@@ -62,27 +69,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRlJuRnRZRW1vbWZLLUhJNjNMX2d3Tk5tTEk2ckloVm5Ca3ItMmJGdC1KYWg4YXRLbDRnaEYwdDNydmt0QVU5SnBoVVBzcmRMbGh3aVowN3NCMkYxNUlQMF9sem5DQzc1QzhzUW96RV9MdmZ2SkRTRlNhTTdOR2dMSV9OVEVqa3NaVGMwTEhWMA?oc=5",
       "title": "Interest rate surprise for South Africa could be coming",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUW40aWxFZ3dRTklwcUZPb1REd3hUaVp1MExDSDBWb3FSN3ozcHNwUVZjTi0wSllVZUYzRjloakVlTXp3eEpxZ1VJNFh1STczdWNMLWphU2NySXNqZkN6VHRNZzlQVktvYi01NGhYdmJ3TEI0anhXajJuQnhyTkdXT3ZLcllLVHZlVkt5S2xsMA?oc=5",
-      "title": "Pakistan successfully test-fires Fatah-3 supersonic cruise missile",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -134,8 +125,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbEhFSUFKNE9hY0hmX1M4LTRwMm41czZoaDZQX2VMYWJZMVgtekRnaUxnQUg5Qk1GenA1TWVjaU9OQng3em5oa2ptVzhPS2gwZHU5ZzgyV2dpekttOXU2LWhjaW1HWUpxc2VKSHpIeUhSc3lCYkxQVTN2Ukx4dTZYZ3VDcXFIVmhZZTh5TnRBQUpRNlpuQ1dIeVBzR0dQaWJjMWR1VXdTSV9YUTd5cUVJR0loai1iaVdqQ2pKZDFSUDlDSll6WWlDSTIzSdIB0AFBVV95cUxQMGt4Q3N1QW14N1ZHNU9UTzh1d3RTbTFiM3B2NnhLYkJ2SEFqNlRDRGI0RFlkcnhxM2EzR3g2bUJqSlhJOFJGaWwtZ25haVc5MGpTMFdVRnRMSzIzN3Y4U2x0VVUwOVJOa3p4WmxZaHZHY09hOWJVUV85M1UxdEJqVGNHN1l2VXZQUF9sY19UQjFmZG9QNjRVWW5sSVVwNy1fSU5oY0pLWTlrTW1OOG5heHhsUFM1WTBzZ2hpV3BDM0xXb1RoWlkxd24yYjhtZFFI?oc=5",
-      "title": "Russian missile hit south-east Poland during attack on Ukraine, no-one hurt: Warsaw",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOcm13Wnl0RnJuZk1vOVhoSG1jbTBma082c2ZJbGk5dGZCYks4MExJV3QtamtDMGtKMFM1OUgxUDBQM0NRMFJPWDd3YWtsemJxUUQ2c1VOR3NNVnlfTFRlOEsxUzVfTUVZMXpodkJXUmU5X0Rkdi1ocjhYdXhUMGpjdllMb1JEN3BkRF9NUWdMR3FGZ3hzVEUyUWwzbnJfbUwxV244bVhzN1JBN09vTUkwRUduWmlqeXlmT0JfOEVEaHNISWZJckhQTHROWncxUGvSAdQBQVVfeXFMUGFWc29FaUZIR00wN2xZSHRCaEswMm92R3FCc2ozc3FURXBpVGtrMGR0WHJsekViNUgzOC1JeTRqSEdlWmRjaVJ1LVhTbWY2cGdMTm5BUl9pLWlRTkxYQkU3bmJmSWM5UFRlWFB1TVlOd0lCNzV5aXZGajNxdlQyYzdTc3BkaVJqV00tSlo5U2Z3MlplY2wtRW1RR2Z5YmQ5YlJVVzZmTnB5aG1BQTZmN01BQmhoQzM4UFNyLUFESmtCQ2lQMnZDbFNRbFktc2JMTnREZkc?oc=5",
+      "title": "France seeks UNSC meeting over Russian strikes in Kyiv; Poland reports missile incursions",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -144,6 +135,14 @@
   ],
   "unpublished": [
     {
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPdlJjaUxJWFFNOTV5OE13X3lKRzJxZXVldjNIU21yOTlYVzRGTmR6OTJ2MUdkM2o5Mjl2MDVVT0RPQURGcy01cE8zM0RpOHY0R0NiVUpybGd1WDFIMklwR2ctelBlcVF3SVBrbV82UlRpM2xIV0o0X0QtQm5vVFM0T0FBaU4zb2pVaFVnRGtCYUNFVEczUm5sclJLOUZoM0NfS19XV0lDMjlRQklMQTVDcEtqeHdDcWhhTEYzdFpweEl2ekhLQ2wwVlE4Tm5haHdEUl9uVE94TU5pQXFhYWxOYTBYOA?oc=5",
+      "title": "Russia pummels Ukraine, missile hits Poland, after Putin threat",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOYVRDMTIwZVhpUW5CWTE4U0F4eUpYQ3BUMnZxZGEtX2hxZnkzRFMwZ3gwSVhMQ3o2bUxoS3J0QWhGWnFyZ3hUV0tSbERLZ0FDUG9raEk1cUNPVVdUYVFTV1lpY0lBX2xKTHhwMG9XSWFpQllzRUVVQ2xfUzhxT2ZjU25GZm50MFJwOHRuWmYzZHlOVnVXcVUwa0dXZHBCQlBIVnB3WVlfTnluZGdpRHpGdFNyc2hWbmd0Wnoza1JidVRBZU4tRE1famM2Q0ZjN2lsSzJka2llbmwyQ2FLeFNPaDNCQlhxWXc3NGVj?oc=5",
       "title": "Pennsylvania DOH confirms 8th measles-related death amid growing outbreak",
       "important": true,
@@ -184,27 +183,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQzNWcS1YVExmZlNCblB0SWxLTGZoVHVpOHdDNERqMDVQRFBUeF9qcXUwWkItWE1iTjV3YVRWNktPTDN2a0gzeU1ITThsNHRDTkNYR09hVDNFTTJoenNyOERFY3hFeDBDVlBwaEpNckgzdWVHRFlYZUlhSUw2ZHpYMUN1RmI?oc=5",
-      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRlJuRnRZRW1vbWZLLUhJNjNMX2d3Tk5tTEk2ckloVm5Ca3ItMmJGdC1KYWg4YXRLbDRnaEYwdDNydmt0QVU5SnBoVVBzcmRMbGh3aVowN3NCMkYxNUlQMF9sem5DQzc1QzhzUW96RV9MdmZ2SkRTRlNhTTdOR2dMSV9OVEVqa3NaVGMwTEhWMA?oc=5",
       "title": "Interest rate surprise for South Africa could be coming",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUW40aWxFZ3dRTklwcUZPb1REd3hUaVp1MExDSDBWb3FSN3ozcHNwUVZjTi0wSllVZUYzRjloakVlTXp3eEpxZ1VJNFh1STczdWNMLWphU2NySXNqZkN6VHRNZzlQVktvYi01NGhYdmJ3TEI0anhXajJuQnhyTkdXT3ZLcllLVHZlVkt5S2xsMA?oc=5",
-      "title": "Pakistan successfully test-fires Fatah-3 supersonic cruise missile",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -256,8 +239,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbEhFSUFKNE9hY0hmX1M4LTRwMm41czZoaDZQX2VMYWJZMVgtekRnaUxnQUg5Qk1GenA1TWVjaU9OQng3em5oa2ptVzhPS2gwZHU5ZzgyV2dpekttOXU2LWhjaW1HWUpxc2VKSHpIeUhSc3lCYkxQVTN2Ukx4dTZYZ3VDcXFIVmhZZTh5TnRBQUpRNlpuQ1dIeVBzR0dQaWJjMWR1VXdTSV9YUTd5cUVJR0loai1iaVdqQ2pKZDFSUDlDSll6WWlDSTIzSdIB0AFBVV95cUxQMGt4Q3N1QW14N1ZHNU9UTzh1d3RTbTFiM3B2NnhLYkJ2SEFqNlRDRGI0RFlkcnhxM2EzR3g2bUJqSlhJOFJGaWwtZ25haVc5MGpTMFdVRnRMSzIzN3Y4U2x0VVUwOVJOa3p4WmxZaHZHY09hOWJVUV85M1UxdEJqVGNHN1l2VXZQUF9sY19UQjFmZG9QNjRVWW5sSVVwNy1fSU5oY0pLWTlrTW1OOG5heHhsUFM1WTBzZ2hpV3BDM0xXb1RoWlkxd24yYjhtZFFI?oc=5",
-      "title": "Russian missile hit south-east Poland during attack on Ukraine, no-one hurt: Warsaw",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOcm13Wnl0RnJuZk1vOVhoSG1jbTBma082c2ZJbGk5dGZCYks4MExJV3QtamtDMGtKMFM1OUgxUDBQM0NRMFJPWDd3YWtsemJxUUQ2c1VOR3NNVnlfTFRlOEsxUzVfTUVZMXpodkJXUmU5X0Rkdi1ocjhYdXhUMGpjdllMb1JEN3BkRF9NUWdMR3FGZ3hzVEUyUWwzbnJfbUwxV244bVhzN1JBN09vTUkwRUduWmlqeXlmT0JfOEVEaHNISWZJckhQTHROWncxUGvSAdQBQVVfeXFMUGFWc29FaUZIR00wN2xZSHRCaEswMm92R3FCc2ozc3FURXBpVGtrMGR0WHJsekViNUgzOC1JeTRqSEdlWmRjaVJ1LVhTbWY2cGdMTm5BUl9pLWlRTkxYQkU3bmJmSWM5UFRlWFB1TVlOd0lCNzV5aXZGajNxdlQyYzdTc3BkaVJqV00tSlo5U2Z3MlplY2wtRW1RR2Z5YmQ5YlJVVzZmTnB5aG1BQTZmN01BQmhoQzM4UFNyLUFESmtCQ2lQMnZDbFNRbFktc2JMTnREZkc?oc=5",
+      "title": "France seeks UNSC meeting over Russian strikes in Kyiv; Poland reports missile incursions",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -266,6 +249,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPalZyQzBhZFd1MVlNM1ZNVnViTnYyNjhxTXNVVnFJWno1SHFwV25MeDF6VHJWUEo3b0hlRGpIeE10UG9zR25RM0xwNTVnQml5NEZhbmlxYXdsbnR3QmNLSko3c1JEODFobkNOeDVfWUlkVWVwRThvUDdzSkZjOHBQUHdZOHNhNmFYTmh0SG5GaS1BSzA3aXVEOTA2b1oySVo5SUhOR1lLNEhGdmxuT0t5VWVUY1dqVHFXSUNWTEVLRloyTy1VODZhTldaU2lSWWxiZkE?oc=5",
       "title": "M 7.1 Earthquake Rocks Southeast Maluku, BMKG Reveals Current Conditions and Aftershock Potential",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPSEVxQTFpNEQ0TGJqQU1xX3JEVTFTRmkxWV82VEM2UzQxSVYzaF9iQkctR08ybHJkbUdqQUVuUENzTXNJY2lhUjFibklhY1pEYnZHSXdqUTNIZFB1YXFVWkh3WlRRRjIybWR1SzdwcVdlcVk2c3RRbzBCdEFyY19GSmY3WWdSNEtyOUdxenpWazJNUkhteXRGQ1JiNjJ2QklBY094QWxlcG5zdUNNaWN3Z04tNlJYcE8zV0lwdW9paUJMQmJtYXlfdDRTTVRDWTBYa19LZVRXYUE?oc=5",
+      "title": "The United States, which in 2000 became one of the first countries to be declared measles-free, has been facing its largest outbreak in over three decades. Link to the full story in the comments section. | via ANC 24/7",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -304,6 +295,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQRXIxZ0plQ2VRa1ZDQ2ZCdWRBR1hSeFhIQkR4Ry1POGVLUE1yaUx5cnhxYk4weFlMMmFiOHZoZmx6NjU0UDVKWmRjSG1USFJqRG5yMVB0dVlpUXE0QjZvWkh4dTVHdWVlemtiMEtoSHEybmFoVHhiTm1IaXEzWU55Y2EzQ0ptUUNfU3JfTGRlUXNsdnNVYlZKMmU3QVMxc0ktQVAtWGxaTjRiUkZrQTZ0eXRNYVp2VXMzMjdIaUxBT2VhSER6Nk1wLXhlWG54Zw?oc=5",
+      "title": "Japan earthquake insurance gap returns to focus after Kumamoto",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1teXpfQll6MTNyb0ZPZlJMRk83UTlZbFhCeGEyOGhkaVN6bnl0enp5SEh4T3RVemxMbktDakJLekdLcGdGNWVqc05TUUNiQjctUHB2TTFzdUt2LVh4Q1M4ZXlkYw?oc=5",
       "title": "신약 후보물질 넘어 허가서류까지…AI, 개발기간 단축 새 가능성",
       "important": false,
@@ -312,11 +311,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8tWDV0SG5GbkNQanoxX0x5N1R2QUxhY0hCMGV0OWN0eWRfcWE3UWZZZEpORVc1X2g3SzhKSVpzSmJTcWRsNzQ1YkxzME5ETHlNT2R0aXVOV1Z5UUp5SWhrSThvZmVvblUxUmc?oc=5",
-      "title": "“숨돌리기 이후엔 인상?”… 한은, 다음 주 금통위서 금리 올리나",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE51dzJ5MTNMSDU4d1dOSFNnbWVWTV9aQUlqbl9rVDdKZlhiRmZPaUNwNE1FUFBKdlVVLTRHZDRBTmxWV2c4cl9NNU9pR3NsYkEtd0VzRFhza3l3LVRXTU5hSWZHTzNodVZHS1E0?oc=5",
+      "title": "Courtesy call on Prime Minister TAKAICHI by the members of Japan-Brazil Business Council Plenary Meeting",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -344,8 +343,16 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ydVhQTWZEVGUtUnJQWTkzNnpvcTIyT014VWVzdkdSWHVSUlNVSWdkaHcxdFZhSW8yQUNtOVR5Umk0MGM2c0I0LTJmUi1pUEhvdG5uLWNoZ1c0VklUZXo5cUxqNHpkMWl2Nnk5ZU12VDJad9IBdkFVX3lxTE1QbjUxOVNkcG5Rem9YRXdzcDU3cTVMbFZrRWxYSVRzd05nLUNuYzA2OHVrRWhHYmFlNElxbzV3ZWVONGdMcHFHWWNyV3ZTS0hvVjIzYlE4TlZDNEpwNkY3NThObVg0SktEbUpOVHlWZ0FYUU9kdmc?oc=5",
+      "title": "“美, 中과 신약개발 협력으로 자본ㆍ상용화 노하우 이전”",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeGVzSjhrbUhOTTctX0ViTkJTRnFEZnkwNTJQR3gySTJRQlk3aXNwenJ2Qk1DejVYcF84dmF4WDFPd2xKRzEwazEtOEdOb05OOFhJaXZQVTd3R2lDRHdGbTgtM1JSSEMxeFN5OTlLc0tLNE55MHlHRDZNU3lOVFBDaTJwQQ?oc=5",
-      "title": "Iran war live: Houthi attack damages Saudi PIF headquarters in Riyadh",
+      "title": "Iran war live: Trump delays decision on fresh strikes until after January 1",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -432,8 +439,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY2JtZUJubGd2ZHAwZy1nU3dhQ09Pd3A5a2drSWVWZ3ZTRGRDem8yU3pseEItYlBxb2lFbkI5SE5zVVZkU3RKMDNaYy1lUHItUmlZLV9GcDROZjFnNVBmaU44S0dScUJBeFRXeUx3MWFieGJZY052X1owbS1nWUNsR2lva3FyTVBQM2tFNkRfY1E5eTluZkotaFFKbXZoRkZqeVQxRGdVSnBET0h1YjB6QkZyUQ?oc=5",
-      "title": "Emirati candidate for UN top job vows to end Sudan conflict amid war crimes scrutiny",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQYzhWZGVhS1c4WFVrQ3FHelJlSDJsZFRLTlJhWXJaOUZ3ZkJnemU5c3ByOTVTWnVZTG5RS3Y1WGRvalpOUkQ4RDlPUk1wUXdqTFBsQnFaME5HTlFDbFNmdlp3QU5UNDhYQ2N4MnpzQ1NnT2xrWmFNdDJZTkJhNnU0QmNWcXdBSWt2eDhFbS15cENKLVpZSkJjM2RXaVpiNERSRVpGeWxUTF9WY09zbU5FTEhEckw?oc=5",
+      "title": "Cambodia prepares investment roadshow to Egypt, pushes for bilateral treaty",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -520,16 +527,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE43SVJaeXBDZUJpVGU5MGpCYjE4c0hjbmg2V3ZuQ2Npd0NET2xqSmpwTmRWSXo3UDZLeDZ0aXhnbHl0bFNLalYyRjdOanlsSGxXSzF3aGMya09ZN09ZUmFfek5R0gFnQVVfeXFMUFRlQkVrbVg2UVpkdE8zVTktUUdtVE9WVzJmSGp5OE5DSUFhQ042M3BxSW5oQ2lxVG1LTzFSR1RjWVc3TTYwSjBLVHBnNlhsMEVrV1MxSkM1WVZCb18tQm15bGZZNWFHRQ?oc=5",
-      "title": "UK and Norway to provide funding for acquisition of two combat patrol boats for Ukraine, totaling approximately EUR 120 mln",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcFoyTlhOMXhfVS1nZlBXMExaZ1dZMWUzVE5mM3YxSTN5bVF2UlNSNGxNbnlnS21wdDY4TE5TVk9CbHY4bmJnLVZPSWlfeE5uU0dCS1g1emM3ZWVwT01Qd1lmS3htd2hobS1iUjV1WncxbXBwVDdHZ2Q0R0pNUGZLNF9Vdw?oc=5",
+      "title": "India to host Brazil President Lula for state visit",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcFoyTlhOMXhfVS1nZlBXMExaZ1dZMWUzVE5mM3YxSTN5bVF2UlNSNGxNbnlnS21wdDY4TE5TVk9CbHY4bmJnLVZPSWlfeE5uU0dCS1g1emM3ZWVwT01Qd1lmS3htd2hobS1iUjV1WncxbXBwVDdHZ2Q0R0pNUGZLNF9Vdw?oc=5",
-      "title": "India to host Brazil President Lula for state visit",
+      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQTm9zZU1Ia25PaTZFeXBxbnNMN3AtMUgtX3duVE9TRWswSEc4TXl0WWJBQnIwLWxOQVhaVVVrVE1Vc2tfR0tHUklfMHNieDJUQThlY0dwOGcwREhQa0d3Um9VTkNBWHNSdG12ZHhyQzJDVVl3aTZCUFJORDFLN2pHWUtheDZXeldWR095OGRFV1pPWl9sakZTZjRtMkg2Z2dnLWdCVFFjY3dDLWpFbU1wakdrMVoxWW92VG1yZm1LTktFcGk4WHJEdnFqUlA0X0tEVEZvT1VjSzlVbzdNRExZT1hyekdEZTF5NE5uQVhQU3ZlclJnZEtTblRfZWxsNmh6SEQzX2oxdk9aWndB0gGSAkFVX3lxTFBCeFZtMTF2OTBJOWpDV2xGSGpFUWtTbTVQMVJtTm1zZVVKakR4V01WZFJwZFR6SEwwcDloMG5LM2YwY0lfWEdhNVVoTFlEd3VmbzFrbGZiMy13aGp1WHhUcTk1Q0RRczZfaW42ak40d0hJT1JKc1NfZTJ0dzFXZ0RTVmlzMmsyNHdtbVlXdDl5cWtXcmF3b2pTMWFpcThnMGpuSldONmMyY1F6Q1prX3ZpdDFWZHBqa012Sk1oSlczVC00QWU0YUJNOEFNdG1oZVZDV0pwaFhaYXhxbUUtOXg5S055OERVV2ZYUGx1X3FHQWpzWjRRZ0I5MXFwVGJ5ZC1zQnBRVXYyYTE1R2ItYWhZVlE?oc=5",
+      "title": "Incident in Poland is dangerous, a result of the war in Ukraine: Rutte",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
