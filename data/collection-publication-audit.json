@@ -1,21 +1,22 @@
 {
-  "updated": "2026-11-20T12:10:44.315799+00:00",
+  "updated": "2026-11-20T13:17:52.506344+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 18,
-    "not_in_current_queue": 36,
+    "important_unpublished": 20,
+    "not_in_current_queue": 39,
     "pending": 15,
-    "published": 129
+    "published": 126
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 13,
+    "not_in_current_queue": 15,
     "pending": 5
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 9,
+    "source_blocked": 10,
     "repeated_extraction_failure": 4,
+    "unexplained_not_queued": 1,
     "in_retry_queue": 5
   },
   "blocked_important_rss_candidates": 0,
@@ -77,6 +78,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUW40aWxFZ3dRTklwcUZPb1REd3hUaVp1MExDSDBWb3FSN3ozcHNwUVZjTi0wSllVZUYzRjloakVlTXp3eEpxZ1VJNFh1STczdWNMLWphU2NySXNqZkN6VHRNZzlQVktvYi01NGhYdmJ3TEI0anhXajJuQnhyTkdXT3ZLcllLVHZlVkt5S2xsMA?oc=5",
+      "title": "Pakistan successfully test-fires Fatah-3 supersonic cruise missile",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOMDZDNzZVZkh2Z2tkZERCMUcyX0pKaEZDaEVzVnZCUWo4aEJRZGJOeWpuMVJ5eV94Qi1qVlI2MWFzdlA4eVFDc04tQm1WdG1seEx1cXlvM0hVVzdjamp5M01xLUNZUTBUNWd5QU55MlZmUnJsR2dVZmsyYjZwVHMzVmNGSUg0eXdFbHNsTmY2Sy0wRDJCWFl2YVFtbGc?oc=5",
       "title": "How Bank Indonesia Anticipates Fed's Year-End Interest Rate Hike",
       "important": true,
@@ -119,6 +128,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
       "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbEhFSUFKNE9hY0hmX1M4LTRwMm41czZoaDZQX2VMYWJZMVgtekRnaUxnQUg5Qk1GenA1TWVjaU9OQng3em5oa2ptVzhPS2gwZHU5ZzgyV2dpekttOXU2LWhjaW1HWUpxc2VKSHpIeUhSc3lCYkxQVTN2Ukx4dTZYZ3VDcXFIVmhZZTh5TnRBQUpRNlpuQ1dIeVBzR0dQaWJjMWR1VXdTSV9YUTd5cUVJR0loai1iaVdqQ2pKZDFSUDlDSll6WWlDSTIzSdIB0AFBVV95cUxQMGt4Q3N1QW14N1ZHNU9UTzh1d3RTbTFiM3B2NnhLYkJ2SEFqNlRDRGI0RFlkcnhxM2EzR3g2bUJqSlhJOFJGaWwtZ25haVc5MGpTMFdVRnRMSzIzN3Y4U2x0VVUwOVJOa3p4WmxZaHZHY09hOWJVUV85M1UxdEJqVGNHN1l2VXZQUF9sY19UQjFmZG9QNjRVWW5sSVVwNy1fSU5oY0pLWTlrTW1OOG5heHhsUFM1WTBzZ2hpV3BDM0xXb1RoWlkxd24yYjhtZFFI?oc=5",
+      "title": "Russian missile hit south-east Poland during attack on Ukraine, no-one hurt: Warsaw",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -183,6 +200,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUW40aWxFZ3dRTklwcUZPb1REd3hUaVp1MExDSDBWb3FSN3ozcHNwUVZjTi0wSllVZUYzRjloakVlTXp3eEpxZ1VJNFh1STczdWNMLWphU2NySXNqZkN6VHRNZzlQVktvYi01NGhYdmJ3TEI0anhXajJuQnhyTkdXT3ZLcllLVHZlVkt5S2xsMA?oc=5",
+      "title": "Pakistan successfully test-fires Fatah-3 supersonic cruise missile",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "unexplained_not_queued",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOMDZDNzZVZkh2Z2tkZERCMUcyX0pKaEZDaEVzVnZCUWo4aEJRZGJOeWpuMVJ5eV94Qi1qVlI2MWFzdlA4eVFDc04tQm1WdG1seEx1cXlvM0hVVzdjamp5M01xLUNZUTBUNWd5QU55MlZmUnJsR2dVZmsyYjZwVHMzVmNGSUg0eXdFbHNsTmY2Sy0wRDJCWFl2YVFtbGc?oc=5",
       "title": "How Bank Indonesia Anticipates Fed's Year-End Interest Rate Hike",
       "important": true,
@@ -231,16 +256,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPalZyQzBhZFd1MVlNM1ZNVnViTnYyNjhxTXNVVnFJWno1SHFwV25MeDF6VHJWUEo3b0hlRGpIeE10UG9zR25RM0xwNTVnQml5NEZhbmlxYXdsbnR3QmNLSko3c1JEODFobkNOeDVfWUlkVWVwRThvUDdzSkZjOHBQUHdZOHNhNmFYTmh0SG5GaS1BSzA3aXVEOTA2b1oySVo5SUhOR1lLNEhGdmxuT0t5VWVUY1dqVHFXSUNWTEVLRloyTy1VODZhTldaU2lSWWxiZkE?oc=5",
-      "title": "M 7.1 Earthquake Rocks Southeast Maluku, BMKG Reveals Current Conditions and Aftershock Potential",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbEhFSUFKNE9hY0hmX1M4LTRwMm41czZoaDZQX2VMYWJZMVgtekRnaUxnQUg5Qk1GenA1TWVjaU9OQng3em5oa2ptVzhPS2gwZHU5ZzgyV2dpekttOXU2LWhjaW1HWUpxc2VKSHpIeUhSc3lCYkxQVTN2Ukx4dTZYZ3VDcXFIVmhZZTh5TnRBQUpRNlpuQ1dIeVBzR0dQaWJjMWR1VXdTSV9YUTd5cUVJR0loai1iaVdqQ2pKZDFSUDlDSll6WWlDSTIzSdIB0AFBVV95cUxQMGt4Q3N1QW14N1ZHNU9UTzh1d3RTbTFiM3B2NnhLYkJ2SEFqNlRDRGI0RFlkcnhxM2EzR3g2bUJqSlhJOFJGaWwtZ25haVc5MGpTMFdVRnRMSzIzN3Y4U2x0VVUwOVJOa3p4WmxZaHZHY09hOWJVUV85M1UxdEJqVGNHN1l2VXZQUF9sY19UQjFmZG9QNjRVWW5sSVVwNy1fSU5oY0pLWTlrTW1OOG5heHhsUFM1WTBzZ2hpV3BDM0xXb1RoWlkxd24yYjhtZFFI?oc=5",
+      "title": "Russian missile hit south-east Poland during attack on Ukraine, no-one hurt: Warsaw",
       "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE56TkdCVG83eDEwcGZvUHlPc3VybGg5enk2NmlfeXVHYzJ5SEotNnJPMGxzNEptTVdKZ3VkZ191M3oyd0dlelozSHZ6U3pyZlphQ0ZiVThESTU0bG1HRHk1bV9wd1NRa0VGTlYxU3E3NXN3cmktaUtIOA?oc=5",
-      "title": "M5.7 Earthquake Hits Japan’s Kumamoto Prefecture on Early Thursday",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPalZyQzBhZFd1MVlNM1ZNVnViTnYyNjhxTXNVVnFJWno1SHFwV25MeDF6VHJWUEo3b0hlRGpIeE10UG9zR25RM0xwNTVnQml5NEZhbmlxYXdsbnR3QmNLSko3c1JEODFobkNOeDVfWUlkVWVwRThvUDdzSkZjOHBQUHdZOHNhNmFYTmh0SG5GaS1BSzA3aXVEOTA2b1oySVo5SUhOR1lLNEhGdmxuT0t5VWVUY1dqVHFXSUNWTEVLRloyTy1VODZhTldaU2lSWWxiZkE?oc=5",
+      "title": "M 7.1 Earthquake Rocks Southeast Maluku, BMKG Reveals Current Conditions and Aftershock Potential",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -271,11 +296,27 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMizAJBVV95cUxOMlJnS052VmtpZldWQUx4ZjhfSlJrSUNNanRVcWRjRUV6YU95V3QtWVhpdEtGNUZtSnlZaVZvRUVfRnE1S2pHUnBUYWhOWFVqN2lXN1o0c1BsanpBRmlJSnhNWGRuRTM4Y3hld0VpZ1Z3emdXV2VOdElYMWl5Z19fcXNyX2tBYnM2QnU1amRQdDBnVjNHb2s2NUFwcmxrbEdoUklZSjlON0Q0eFRXWVhuVnlYN2JVUmQwampGRE1iTlRUQjRwWF9ITEtHMEFVTUJRWXEweUo2U2s2VjZMUEJxMkR0SDFHLWxydlloZUI1aXZCaVViYUJ6WWtlWkEzLXZPUHk2UVhSZlFnSjdTVFlJenRKT25TSnFRMERVZHNYNnExczFtQUgwR2ZiQjJOVm8tNzlnUzVnRi1HZ1ZuamdMTS1zTGp4MnVsQ1BPaQ?oc=5",
+      "title": "Switzerland checks the wastewater of almost 2 million people for flu, RSV and COVID, and an ETH Zurich scientist says a new pandemic virus would probably be spotted there before hospitals see it - ECOticias.com",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1teXpfQll6MTNyb0ZPZlJMRk83UTlZbFhCeGEyOGhkaVN6bnl0enp5SEh4T3RVemxMbktDakJLekdLcGdGNWVqc05TUUNiQjctUHB2TTFzdUt2LVh4Q1M4ZXlkYw?oc=5",
       "title": "신약 후보물질 넘어 허가서류까지…AI, 개발기간 단축 새 가능성",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8tWDV0SG5GbkNQanoxX0x5N1R2QUxhY0hCMGV0OWN0eWRfcWE3UWZZZEpORVc1X2g3SzhKSVpzSmJTcWRsNzQ1YkxzME5ETHlNT2R0aXVOV1Z5UUp5SWhrSThvZmVvblUxUmc?oc=5",
+      "title": "“숨돌리기 이후엔 인상?”… 한은, 다음 주 금통위서 금리 올리나",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -289,6 +330,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE82MzhfNU9kcWgwbW45YmZiNVFNQlF1T0xGR3ZZUnBnS3lfVEZSOG9rTXNkV0dKMEduSFBRR3owanVneE1ObWF6RGw4ZHpOWWpYSDU0WFc5djY3cWZMSHFDVVdGcDFZZUswODdZbw?oc=5",
       "title": "뎅기열 4형 바이러스 인체 감염모델 첫 개발…백신·치료제 연구 가속 기대",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9ETF8yUXBRVThOLW5IbGZ0T3N2YU96S0tOalBmSVVSQ1NTZjRleDFyanBzQlZQbVhSZ204eUllU3lzd1Z3djA0Si1mbGFWSlNjc29MbXBfcGV4Wjh1eEg0allkcW1BRDNYT19sTg?oc=5",
+      "title": "대웅제약·티온랩, 월 1회 비만치료제 ‘TION-L002’ 임상 1상 승인",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -311,8 +360,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMVp6RlBJeEtMUUtxSlhrMVM3Vm9jMDhta0JPa1JfVmdfS1UyS0xRcWFuM0pvOWFKYUZfd2JwTFZhbndoQVNLRGpTUHkxeTBCbXktN2o3VUxSSE1iZFZyaEhjbDVtSU9aSkVJY1Y5QkJhLVZLWXhzYlIyQTVDNlFONGdodnpKVzZy?oc=5",
-      "title": "European Commission Raises Poland’s 2027 Inflation Forecast to 4.4%",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdGdrMlJHd05TY2ZOcHVPU1JNWUVoam9WbFdBV1hnRnhKb2xMWmRJTWlnZ1dfTkJLamJzUGd2ZWxzTlRjWWplTC1WYzBIZ2NtLW9PelMwNnNPLW9mSEt4bVZaeXRVNUFrRWRGSFUwcUIxN3NPNmVIaWFLYWNGSmdqa3dEeGJqWkdBWnAtWg?oc=5",
+      "title": "First successful human challenge model for dengue serotype 4 could speed vaccine and drug testing",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -321,6 +370,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOLUxidUs1bm1lZDBfQ3ZabV9ZQTlyZ194eG82YkxnX3BjYkRUMTdQcFVoQ2owZXJQRnhwVG15clRIcFEyVDAzMkY1LTJoRFRNTy1JMjFUU1dMZlFLVFlGRW5SUjhzb2ZaVU1JRWRpOEc4bVA0WDNIaXlhT29ReGNzYlNIQUVmc3J6ejRERkdqN2NZbDBtSGplZERB?oc=5",
       "title": "Immigration splits Spain ahead of snap election",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVWhLdVJvcTNxWGo4WVpRRGdJdW1pNGxhcWFhTWp6M1RDai1kUThLcXF3RzFUZl9JRHc1RjFTdUMyRzFkWW1Xd18xbFZKdEZRU2w3WFFlSDVRVG4wSnJiLUEzQUkwZS02YVBETjkxbnNSTURXeDhWWTV3RjgxUERmaHIxOFNLZHBVRnVGSi1VYzU4MGo3U0ZLd3N5ZXlqWEU?oc=5",
+      "title": "War in Ukraine: Is France in direct conflict with Russia?",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -337,14 +394,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOejY2RDhkei0xUlQwOFBocjZvMjdhYzFuRC1xRnNxUUV6OFhocWxsVGswcmVKSU9XNzZQcXZzTmltZF9XelVRZm5OR0kyNjNybTZsMVZSanBvQUpZTE10MnR5MTgtSlFOcC1PckxkeHRKY01MYnoxVHBwVVh2a3cwX1lSclpDTXk2Slp3SF8tclptVWxvOWIyMXhJcUJySW5aNDFDRVMzcWZ2dw?oc=5",
       "title": "IAEA flags gaps in Bangladesh’s nuclear emergency preparedness",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNYkNuMHp2TkNveWdkVWxCN2c3NUtNUWQwdkhvQjlPLWZFRjFwRGdQTGEzSWxPaGpzMGxkb3M5aVFza01lU19xZ2dLc1piT1RScW1xNUFVakdKU1ZlNDkxcVVKUXg1a3pxUnAtZ04tSXFCaUV1Y3E2dXBGQjNSaFhkbEJzS3BXemJQSFVlOVBWWXEtdUxPcGVoRjEyUVJJVW1VVXkwa3hDTjVrYkE?oc=5",
-      "title": "United Kingdom CPI inflation picks up to 3.6% YoY in October, misses estimates",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -383,14 +432,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdXI5aHJnVk41VWF3cVRTRFpNeW1KMUNhU0VORXlrclcxeDFjOFg3R3RwUzBsam0ybzltS3Y1OXhobTZhUDQ2RTFhTXB5d29LdWpSbmlJallkanljS3BuWVBXMjVrdkF4ZU9DM3BPbXJrb2MyS1RaWDJmZlVla251ZE9TU245NnRVQmxTYnZvYTQ0Ry1CZHJRTUgxYzBCTG9tMmNSX3dHai1YV2RwbHRFZThn?oc=5",
-      "title": "France's Le Pen promises to lower retirement age if she wins election",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY2JtZUJubGd2ZHAwZy1nU3dhQ09Pd3A5a2drSWVWZ3ZTRGRDem8yU3pseEItYlBxb2lFbkI5SE5zVVZkU3RKMDNaYy1lUHItUmlZLV9GcDROZjFnNVBmaU44S0dScUJBeFRXeUx3MWFieGJZY052X1owbS1nWUNsR2lva3FyTVBQM2tFNkRfY1E5eTluZkotaFFKbXZoRkZqeVQxRGdVSnBET0h1YjB6QkZyUQ?oc=5",
       "title": "Emirati candidate for UN top job vows to end Sudan conflict amid war crimes scrutiny",
       "important": false,
@@ -409,6 +450,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNd2tVS3ktQThQZmhzbFBGVmwzRDlycmtudVhLTk1vLWpJeDlQMFBqV1J3bFZXNGtTT0VfRGJaWUxBeWNWck0tblgzbTJsQmM4SXNRbUVXZEo1Nk1UdWpONURjY1I5RnJsVmRuRzdra2VFSVlyYnJUTnhjUXNjNUJKU2YtWDBfQkZuWFV2d3FJZTdFSzZKdHgyM242QzVReUJENE52TEtXaWlfMnNlNGZkejlzRGR3TnM?oc=5",
       "title": "Bank of Japan to raise interest rates in December and again by end-March, economists say",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSnIzQndsVlg5NEdwVllHY09ZMFpEUzc0ZFdCTHVIdWU4dHhfOG1oa25EclNCSnRJMTlmVUNobUdvQkJYVHlxQURZOGFKMGFkZG9mdnZUcXpqYzRfUkVhNTNTbnBPYjh0dnBuT1lNckk2eHNTSEtZZW5UWHhLQmdybm9KMkZPNi01UktvZFNPWWdHU3Q1T3dNZm9jZ1draG15QUo1aEZmSjMxMkZBVkowNndoWjk2aXV50gG-AUFVX3lxTE9SaHBEYVJObVhFMnRfU2hRS0FfcXhfNjFZQjYyOFREUGNjcDAxdnRNUDIyV052R01nbVJ6Vm5IMGRHWDlCbnd2blh4dWlMVDZDelo1WTFneG9TMjgwS214enZCS3VWVjRKVHFveTVJUndiOHU3eWg1UnpsWV9sTEdDRExXWVF4Y2pPQjVGckpVdnM0dGlxOFp0LTVOMGRlTEg5bVM0NVliS3JsV1F0b1dmUUJEWURCeG5JeEF1bnc?oc=5",
+      "title": "President Tinubu to graduates: shun cybercrime, deploy skills to solve Nigeria’s problems",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -444,14 +493,6 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRjhGQ0h1QU01VUstclJQNjRwb09TUnR6SFZuM0dSMnJrVTFuWTNSdEFMamhLMGhpbWpVMWFZeHJ0WFhaVlk0RE9UTnVJcUJiMDRuUmFDSUg5VEREY3dGRUNOdzA4MUo1TjVwMlZpaUdQSTUxeWZ6ZmRPTTF3aENZYVZEY3RCYm5ORko2SHN4NEdLWVp5RzVIbFF5QlFlNEpueXpwb1lpV2xSai01WnRmblZCS3RNcDRqZkdVeFVpOHFsN211VGd6R253?oc=5",
-      "title": "Address by President Cyril Ramaphosa to the South Africa and the AI Opportunity Conference on the occasion of his Working Visit to Silicon Valley, San Jose, United States of America",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -511,16 +552,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNeDVqSjF0V2pJbmRWeGZwMkd5NVo3OTVrQ1gwX29oaWRwNjQ2cUkwQm5ZMkcxQTRKNzdoUGNRS2g3MS1VVmhJMm91bUU1Wm1pVzA0UVpLQ3VyVnNmQTUyZkhzWkljTU1DWTA3cjZPVGhtalR2Skk0dlhfZ0hyYkp4LXpxc0RTbWdndGEyVVBET3ZHYmdIMHBvY1pUcllLRFVvdkxIZUxRNlVzTGd0WDFTNQ?oc=5",
-      "title": "Investing in Children’s Health: New Vaccine Warehouse Opens in Bishkek",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdDQ1QXNJbWNmblBGamw1WW02ZnQ1N2Z6YngwODMwNWVtYkZxVVd4ZGlrek9sRy1BOEd0aUJJZk16eWRVWF9Id2d6dFNJMDNqazh4QXcwcTZ2SXJieWxsSkZGQ21fTF9mOTlRU0U1VERhVUtYZTFvaHJPcnNLbURxWFpoQTdtX0czVDFuekhCTWY2dWxCT0hhWDZ4QXZWbE5WWEJRbjNmbw?oc=5",
+      "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTk43UHBvWmltRnJkY2lvdjdzb1ZLMWRWUVJ6blFXMU55bzJrUUhkNHg1MmxtTEtGOS1jeGdGTUFFMU1IblhmNHNQNVh3dERwdVJGa0paR0pkclNZdVFhUEFYYTRPTE82dVp0UEhLWUMzbG9qMFdjTjJUM1d6TWU3TEI3MjZPUEp0enMyMGc3LVNrcU5NQXJ5aVhtVVFSZTZsdjhwQ1JUZ01vWFN6UG5odGhTZ9IBuwFBVV95cUxNU01ieERLaWlzM3NZVGFRZV8zakJNSjZjeEEzV1lDUEpZR0pVT2w3bkUzcVA4bkdhSFdIdUhDQTl0TXVsZTVLaGc2Z0J6Ul9yMTlRWTJCb1YtVnN6RjZuT3RhS2QyemNDNUdkdFd1TW14eE1IZDFhbFNWXzg3cXVEUVlSZDBDUy13OGlld21OYnc2c0s0VnpDaV9Cb251Y0F4SUFLaE1wcnJWQ2ExZDZnLVNTZ3ozNHU0LVhr?oc=5",
-      "title": "Kenya Set To Sign Landmark Trade Agreement With Nigeria To Boost Technology Businesses",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNeDVqSjF0V2pJbmRWeGZwMkd5NVo3OTVrQ1gwX29oaWRwNjQ2cUkwQm5ZMkcxQTRKNzdoUGNRS2g3MS1VVmhJMm91bUU1Wm1pVzA0UVpLQ3VyVnNmQTUyZkhzWkljTU1DWTA3cjZPVGhtalR2Skk0dlhfZ0hyYkp4LXpxc0RTbWdndGEyVVBET3ZHYmdIMHBvY1pUcllLRFVvdkxIZUxRNlVzTGd0WDFTNQ?oc=5",
+      "title": "Investing in Children’s Health: New Vaccine Warehouse Opens in Bishkek",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
