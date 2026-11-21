@@ -1,33 +1,25 @@
 {
-  "updated": "2026-11-21T09:13:33.711591+00:00",
+  "updated": "2026-11-21T10:08:38.157862+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 21,
+    "important_unpublished": 22,
     "not_in_current_queue": 34,
-    "pending": 21,
-    "published": 125
+    "pending": 18,
+    "published": 128
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 15,
-    "pending": 6
+    "not_in_current_queue": 17,
+    "pending": 5
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 12,
+    "source_blocked": 14,
     "repeated_extraction_failure": 3,
-    "in_retry_queue": 6
+    "in_retry_queue": 5
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
-    {
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPY3hKY0VXY05pTTBJX1F5WE13Y3N2VHFRRVdnRDlZNHpyVTVfc2pzMXJ1aXRzWUNQNHVRaVFBTnQ0OEFESlBidGgyekhHcm9UdnNvc3ZyOTFCRWZsTk4yMUM1MlROVGJINWFCUmpWNlp3VkdZMVRHdDZKeGZ2dnN3RVZuNEoxZ2psc3Z0UjlhOVdidlJMYkRUcWo4aDNuRzBHcmZrZy1YalgtNmFGeEd1WWNtSHNyZUlFcXAtNXppRHRIRWFncUpKUnFKSGtUTWgtMElyQzFrMzI4T2ZqdmfSAd4BQVVfeXFMT2N4SmNFV2NOaU0wSV9ReVhNd2NzdlRxUUVXZ0Q5WTR6clU1X3NqczFydWl0c1lDUDR1UWlRQU50NDhBREpQYnRoMnpIR3JvVHZzb3N2cjkxQkVmbE5OMjFDNTJUTlRiSDVhQlJqVjZad1ZHWTFUR3Q2SnhmdnZzd0VWbjRKMWdqbHN2dFI5YTlXYnZSTGJEVHFqOGgzbkcwR3Jma2ctWGpYLTZhRnhHdVljbUhzcmVJRXFwLTV6aUR0SEVhZ3FKSlJxSkhrVE1oLTBJckMxazMyOE9manZn?oc=5",
-      "title": "Massive Peru Earthquake Caught On Live TV: News Anchor Steadily Reports As Studio Shakes | Video",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
     {
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOYVRDMTIwZVhpUW5CWTE4U0F4eUpYQ3BUMnZxZGEtX2hxZnkzRFMwZ3gwSVhMQ3o2bUxoS3J0QWhGWnFyZ3hUV0tSbERLZ0FDUG9raEk1cUNPVVdUYVFTV1lpY0lBX2xKTHhwMG9XSWFpQllzRUVVQ2xfUzhxT2ZjU25GZm50MFJwOHRuWmYzZHlOVnVXcVUwa0dXZHBCQlBIVnB3WVlfTnluZGdpRHpGdFNyc2hWbmd0Wnoza1JidVRBZU4tRE1famM2Q0ZjN2lsSzJka2llbmwyQ2FLeFNPaDNCQlhxWXc3NGVj?oc=5",
       "title": "Pennsylvania DOH confirms 8th measles-related death amid growing outbreak",
@@ -42,14 +34,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
-      "title": "6.7 magnitude earthquake jolts central Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -71,6 +55,22 @@
     {
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbE1uTUdsZ1kzaFBJUnFZbF9Bb20tRXRzTXpBek9NZmhHTU5PWGZWdTQ1SmptZXczZjVGVU83T0RWLXRQVGxSQVlMcFZOWlYyMW10YU5CM19nR2ZKYWFTX2d1TnRqNWtOTEFqS0ZhMUVhNjRRMFhaRG13d0hKTkIyeXhxTkY?oc=5",
       "title": "Brazil’s central bank steps in to stem real’s slide since Lula’s re-election",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNSnFxV0dDaW9UeHo4VnBCV2M3UklEZF9pWVhVY2p6Y2h2SHFuM0hNaF85SFZsaVNPY2xEMjduZ3BlcVlpaXNocXZucHIwQWVZTUJjZHFQeDhwNW8xbVJuamktYV9CWUVSRnlIc2RKWGhVZHZOZTRFVlYyb0hDNnJKMm5xdl94YVpLcWx5T3AtQQ?oc=5",
+      "title": "Magnitude 6.9 earthquake strikes Peru’s Junin region",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQzlVOGh5bjJSSVh4bzVTZm5ubDZ2TkYtQnNoUXhFTWxud2lFcy1sM1BYcjQ5NDlQQXJ1LTRQSW5VWTJzZnJNV3lhcTNuRkRVTDNKSjJGaVBhcF9hU0tMQzhrcFdZR0Rkdm5Jem11cVpYaFdCVkNBSUt0cUthSXlYNENSRHA0OHQ2ZEFudE9KQzRoQQ?oc=5",
+      "title": "6.7-magnitude earthquake hits Peru, tremors felt in Lima",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -101,6 +101,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYWZncFVIMkVZOFVrNFlpd050aUFJb2JiLUg4R2hOcDJyMW0xLTZaNFduMXk0QWZHOHhzZXFmQVlBVmRnUU16V1hTMVVYX2ZVa2dRVURKeVhLZkRaNnFmWk84NkhqX2k3QjFkWmlrVlNNclZuM3Y0WEc1LUowZE8tdVYyT1Roalk3OEUxaTFMR2xUTHMwQWE0U0FqdlBoSzZOMEQ3ZVR3?oc=5",
+      "title": "Today's Top 3 News: Prabowo Returns from Asia Trip, California Earthquake",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV3ozTkpDcXdBaFJMSTloNEdKWjE5MHpZeWlaUUVtQmRUaXhzRGdsQldTX0ZzbWlzaXhrdHk2dEZrZEpZT3gydnowTDFDZ2hJY3RCandHZW1ZS2wwbWtDUk5QU1dwcWl6RHVZanl0a19DR2F0NW5uSWhGblhYdVBnd2xjRzFYa3E0ckJDbi1jUDNSZDJDSjlGYWlfYU8xajJMNHFEU3ROMU9xOXNjaUHSAbYBQVVfeXFMTjlIZC1lZXppcDJHRC1Ram9kSVZWa1lxcGNodS0zYjcyRTdIYlhsVnhERlJ4X0dLeEoxSXc4V2txQ1JTaEJxbUptQ1FyOVAtMG9qRW9hZTB0SUdaT2hsT0E4WjdSQTJ4dnAyNm1wY1plank3YjVfNS1KSzMyODlOWlJDbzFYSmh2am5pdWUteFctVVdqM3NKZXNSSExHcUtRMlpTQXNIdnExcWt1aDQyOE8wYUxwb0E?oc=5",
       "title": "'Look At India': Trump Targets US Central Bank Over High Interest Rates",
       "important": true,
@@ -119,6 +127,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
       "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNR2JEQy1LUjQ5RkFMU3paM2JhVFloSHBpWG1kVi1rMHJlNHBCZC15Y0JneVhkT042UlBpejNNdjE3VV92cnM4R1lhcjV2TjBnWUhGNWVhUnNqblBxX1RPOUlUbFlQR2lpTGpOc0U1ZTFJR1NyQVYzQUN3aVg1MzdRRDBfdkMzR1RXQ2J6UzFsNUl5Vzh2Y18taDNWcVpoV1F0NE1qYmhKUG9KNzZLcFpOR3c4S19NRjY2VjRPbDdlUjhoTEE?oc=5",
+      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -143,14 +159,6 @@
   ],
   "unpublished": [
     {
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPY3hKY0VXY05pTTBJX1F5WE13Y3N2VHFRRVdnRDlZNHpyVTVfc2pzMXJ1aXRzWUNQNHVRaVFBTnQ0OEFESlBidGgyekhHcm9UdnNvc3ZyOTFCRWZsTk4yMUM1MlROVGJINWFCUmpWNlp3VkdZMVRHdDZKeGZ2dnN3RVZuNEoxZ2psc3Z0UjlhOVdidlJMYkRUcWo4aDNuRzBHcmZrZy1YalgtNmFGeEd1WWNtSHNyZUlFcXAtNXppRHRIRWFncUpKUnFKSGtUTWgtMElyQzFrMzI4T2ZqdmfSAd4BQVVfeXFMT2N4SmNFV2NOaU0wSV9ReVhNd2NzdlRxUUVXZ0Q5WTR6clU1X3NqczFydWl0c1lDUDR1UWlRQU50NDhBREpQYnRoMnpIR3JvVHZzb3N2cjkxQkVmbE5OMjFDNTJUTlRiSDVhQlJqVjZad1ZHWTFUR3Q2SnhmdnZzd0VWbjRKMWdqbHN2dFI5YTlXYnZSTGJEVHFqOGgzbkcwR3Jma2ctWGpYLTZhRnhHdVljbUhzcmVJRXFwLTV6aUR0SEVhZ3FKSlJxSkhrVE1oLTBJckMxazMyOE9manZn?oc=5",
-      "title": "Massive Peru Earthquake Caught On Live TV: News Anchor Steadily Reports As Studio Shakes | Video",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOYVRDMTIwZVhpUW5CWTE4U0F4eUpYQ3BUMnZxZGEtX2hxZnkzRFMwZ3gwSVhMQ3o2bUxoS3J0QWhGWnFyZ3hUV0tSbERLZ0FDUG9raEk1cUNPVVdUYVFTV1lpY0lBX2xKTHhwMG9XSWFpQllzRUVVQ2xfUzhxT2ZjU25GZm50MFJwOHRuWmYzZHlOVnVXcVUwa0dXZHBCQlBIVnB3WVlfTnluZGdpRHpGdFNyc2hWbmd0Wnoza1JidVRBZU4tRE1famM2Q0ZjN2lsSzJka2llbmwyQ2FLeFNPaDNCQlhxWXc3NGVj?oc=5",
       "title": "Pennsylvania DOH confirms 8th measles-related death amid growing outbreak",
       "important": true,
@@ -164,14 +172,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
-      "title": "6.7 magnitude earthquake jolts central Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -193,6 +193,22 @@
     {
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbE1uTUdsZ1kzaFBJUnFZbF9Bb20tRXRzTXpBek9NZmhHTU5PWGZWdTQ1SmptZXczZjVGVU83T0RWLXRQVGxSQVlMcFZOWlYyMW10YU5CM19nR2ZKYWFTX2d1TnRqNWtOTEFqS0ZhMUVhNjRRMFhaRG13d0hKTkIyeXhxTkY?oc=5",
       "title": "Brazil’s central bank steps in to stem real’s slide since Lula’s re-election",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNSnFxV0dDaW9UeHo4VnBCV2M3UklEZF9pWVhVY2p6Y2h2SHFuM0hNaF85SFZsaVNPY2xEMjduZ3BlcVlpaXNocXZucHIwQWVZTUJjZHFQeDhwNW8xbVJuamktYV9CWUVSRnlIc2RKWGhVZHZOZTRFVlYyb0hDNnJKMm5xdl94YVpLcWx5T3AtQQ?oc=5",
+      "title": "Magnitude 6.9 earthquake strikes Peru’s Junin region",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQzlVOGh5bjJSSVh4bzVTZm5ubDZ2TkYtQnNoUXhFTWxud2lFcy1sM1BYcjQ5NDlQQXJ1LTRQSW5VWTJzZnJNV3lhcTNuRkRVTDNKSjJGaVBhcF9hU0tMQzhrcFdZR0Rkdm5Jem11cVpYaFdCVkNBSUt0cUthSXlYNENSRHA0OHQ2ZEFudE9KQzRoQQ?oc=5",
+      "title": "6.7-magnitude earthquake hits Peru, tremors felt in Lima",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -223,6 +239,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYWZncFVIMkVZOFVrNFlpd050aUFJb2JiLUg4R2hOcDJyMW0xLTZaNFduMXk0QWZHOHhzZXFmQVlBVmRnUU16V1hTMVVYX2ZVa2dRVURKeVhLZkRaNnFmWk84NkhqX2k3QjFkWmlrVlNNclZuM3Y0WEc1LUowZE8tdVYyT1Roalk3OEUxaTFMR2xUTHMwQWE0U0FqdlBoSzZOMEQ3ZVR3?oc=5",
+      "title": "Today's Top 3 News: Prabowo Returns from Asia Trip, California Earthquake",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV3ozTkpDcXdBaFJMSTloNEdKWjE5MHpZeWlaUUVtQmRUaXhzRGdsQldTX0ZzbWlzaXhrdHk2dEZrZEpZT3gydnowTDFDZ2hJY3RCandHZW1ZS2wwbWtDUk5QU1dwcWl6RHVZanl0a19DR2F0NW5uSWhGblhYdVBnd2xjRzFYa3E0ckJDbi1jUDNSZDJDSjlGYWlfYU8xajJMNHFEU3ROMU9xOXNjaUHSAbYBQVVfeXFMTjlIZC1lZXppcDJHRC1Ram9kSVZWa1lxcGNodS0zYjcyRTdIYlhsVnhERlJ4X0dLeEoxSXc4V2txQ1JTaEJxbUptQ1FyOVAtMG9qRW9hZTB0SUdaT2hsT0E4WjdSQTJ4dnAyNm1wY1plank3YjVfNS1KSzMyODlOWlJDbzFYSmh2am5pdWUteFctVVdqM3NKZXNSSExHcUtRMlpTQXNIdnExcWt1aDQyOE8wYUxwb0E?oc=5",
       "title": "'Look At India': Trump Targets US Central Bank Over High Interest Rates",
       "important": true,
@@ -241,6 +265,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
       "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNR2JEQy1LUjQ5RkFMU3paM2JhVFloSHBpWG1kVi1rMHJlNHBCZC15Y0JneVhkT042UlBpejNNdjE3VV92cnM4R1lhcjV2TjBnWUhGNWVhUnNqblBxX1RPOUlUbFlQR2lpTGpOc0U1ZTFJR1NyQVYzQUN3aVg1MzdRRDBfdkMzR1RXQ2J6UzFsNUl5Vzh2Y18taDNWcVpoV1F0NE1qYmhKUG9KNzZLcFpOR3c4S19NRjY2VjRPbDdlUjhoTEE?oc=5",
+      "title": "M6.0 Earthquake Strikes off the Coast of Peru",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -295,16 +327,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPODVMcXZLbWZOSHFLU1p3Z2p1ZUdMYlFFOFVhN2dDLVJ3V2twQ01aZUlvMWgweHlrZVFTak1MeHkxaDlGVEZwM1R2WUgwM3otR2lpMVdfU25aOUkzbHp5bkRqb1FPdHc5YnhTV2F6UGNjTy1VUUwyQ1dDdkxHRkFrZGpTdms5b3VrUVA1cGFMS2xFMU9iSTIxZGNmdnFZZ2NfQ2MwZWZSMTV1alVHWFRyc20td3NqSVMtNjRUZtIBwgFBVV95cUxNMUZ4T0d3QTFGZG5FamQyYkRvbnZGNk5KWXhOME5CdThlZWFyY0V1YkNSN1dwTUZiMUpEbVNtOEp4ZUVnczVtdzVHNFZJdUVlUmw3SXcxNlR2WmVfM0ZPSUVJTVUyWGxVaGJSQUMyTzhpejFpRjgxUjdwQUZldDVpX29HRnFjOVBmT21MZFNyXzVsNzc3VHZZYlBYSjhqTFdabkdnblN0cHBvc3VJbzltRUFCWGlFSHZJZFhsSWZmVTV0UQ?oc=5",
-      "title": "6.7 magnitude earthquake strikes Peru’s Andes: Tremors felt in capital Lima; no casualties or damage report...",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNa2VfaHQ1V0Q1VWpXVmxWM1pqa1hMa0hSSkEySFhrLW40VHM4RDMxNnhmaDc1am93LTNyLTZ3RmZEQk10Q1ppUUdRdFhXclM4eHpVeElPRzdVd0FfeVpuT2p0OGxDdGFqRFZWdTZ2VzVONlpUZmJLekdTWkg0R19WMERQbVh5WjRRM0tqQmc5QXZUVlZXNWVzaXhaOF9CX3M5OXkxa3cxY1FuQlpnZU5PX05YSHBTVkhUTkRTMWZobGVtRlMyT2RnU0JLaGt5dw?oc=5",
-      "title": "IDOH: Indiana experiencing measles outbreak",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRlF0TG80NXhNcHN1ck9QNWoyZFUxNXRickxncmFqU19VZ1dnSk9VNXh6RUFzdFRnb3k5ZFVaM3huMWNpbnZ6ZEVsM1IyTTkwd2ZqampndjZDbmpIWXd5QjBRTUtFa0pGZ1ItbkxoVTdxbGk0TjZnclJIVHFoTmtneGJUWW5tNU92dVM1eHBNUUdxTHFzdXVRQy1KRmZVS0ZZeWlzTzF4V2o0LWxiazRRMEltVVlNa0xKNGpHVHBORURzemPSAccBQVVfeXFMUF9tQVR3MkV2eDdfZzdJZ3BXX2hEcWVCc3dNUWZtR013b1VQLUpqUlQ1aG55eXp0VUNtNDBfM21XMWQ1OXZRRjl3b1hUMEpyc05JZmlOWU5XU0hteDJvUkMtdHB4cXJBUm15RWZLc0NXeWRCZGR0VFd5cVBBM2gwM2ZXZkZOTFVmMjRZSkxfcS10UG93ZE1nRVg4dndVVnd1MDhURVd3S05lQm1LYms1YndEUlhBall2M1BaZHZKOFk2MUsxMmYxSQ?oc=5",
+      "title": "Magnitude 6.7 earthquake shakes Perus Andes, with no damage or casualties immediately reported",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -316,14 +340,6 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4tVGQ4eDZQTVlBNXRqOFVKZTkzZWNvRjNaLVctdm82R25OSnFOTDhYVVo2YlB3eVZFbnVSUERDMHNtWXpuWE5jQVFfYkMzeTViME9sQXNKU25jWDRLWG9GSnlua3M?oc=5",
-      "title": "반환 신약 다시 개발…한미 '에페' 상업화, JW·유한도 도전",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -340,14 +356,6 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE95aHBKVWFQUk5tcjN4UUk3dGc4b3BVbHRPZmhZU3Q1RzVlUHg5YXBFUE45YWFkWmhfOU9XSGkyLTQtTGVlTXhyNG9qODZmQnI5bVNyTTlwOEJJTzJZaEtLUnI4V3lxUzB3NnJ4VVUwTU92aGpuVk9TQg?oc=5",
-      "title": "Trump Says Mexico Trade Deal Is Close as Tariff Talks Continue",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -431,14 +439,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY2JtZUJubGd2ZHAwZy1nU3dhQ09Pd3A5a2drSWVWZ3ZTRGRDem8yU3pseEItYlBxb2lFbkI5SE5zVVZkU3RKMDNaYy1lUHItUmlZLV9GcDROZjFnNVBmaU44S0dScUJBeFRXeUx3MWFieGJZY052X1owbS1nWUNsR2lva3FyTVBQM2tFNkRfY1E5eTluZkotaFFKbXZoRkZqeVQxRGdVSnBET0h1YjB6QkZyUQ?oc=5",
-      "title": "Emirati candidate for UN top job vows to end Sudan conflict amid war crimes scrutiny",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONXRyVXFLb2J4SEt4Q3ZxZ1FFZ1RydUYwdWJOaWt6aGI0MExJbFF6S2dhSG1WZmRMaEJILXNkdG1XUkhleXNjUFNoaWlkR1gtdHppc3NZV0RVeUdqWVdSOU5jLTlsdXFwaDJwZTJ2eDRDY3lDUDAxUk53NjF4NkFRZGxFQU0tRjgxOVlMQm92cloyRXJraWFMSU5LU2Z0dEx2SUlTZVNjbWk2aDNDUTJLQlhGZXh6eUhXQ2JZWWdn?oc=5",
       "title": "Canada defends Sifuna meeting as diplomats weigh Kenya’s pre-election field",
       "important": false,
@@ -452,6 +452,14 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMklCVXFmWDVLQ2pQRjFod3dnREpTV3JPWTRjUEstQmNJRXMtOUktX281TU0zcmVOb0xWRV9CeENjaWoybTZQZDVXV3p3ZHg1NzZCYTRtNGNxaW5lcnpNNnhXS1IzOWhqQ1J3ck1ZWVBVdjA1cmViUkt1S0ZFbmgzNndJV2J1b25sQVFWbUp2UkZNTk9Pa25mRmNMVTI4LWF5aXJPMDV6eFZyaDRHLTUtT1AyVk5DUFl6cVFyUTB2YXMydw?oc=5",
+      "title": "Vietnam facilitates US pharmaceutical company’s vaccine technology transfer",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -479,16 +487,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE00MEhYOWxTTkNmZmFjZzdnTWp6SzhKOG9faWROREl2LXlJQ2tKR3dGbTZvQklyUENlWFhiZWIwSzB0ajk3cktybWRZV3V3ZWZpUmw4el8waXdfUWJQNnlxRGhMeERKazNsOUxzMg?oc=5",
-      "title": "글로벌 제약사, AI로 신약 후보물질 개발기간 최대 절반 단축",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9LQllxUWtFaEFMTXl6X0xocGVNeVVZM0h3Zl84OThnYVdTSTV2cGhUN1NPRk5FelhTNkd0RnVzelFUM1hiTnBCTVdObERJSm5UcVF6d0VPVThvbHJjLTNCbHZwR0JoWm1xbE40?oc=5",
+      "title": "반환 신약 다시 개발…한미 '에페' 상업화, JW·유한도 도전",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5SREMyaXVNUTJkcWFyTzlXM3g2eE1BQlFIM2VWSEk2VGlCV25yYlVPUHQzeDkzdE95X3BxV0Y0M3FxQ1Q4OU90WGRDNjFhM2h0LW00N191R3BFS0t5WlFVTjdHY2ZPRzQwZG5QbzBhdXVCQQ?oc=5",
-      "title": "Israel Election 2026 Live Updates: Eisenkot, Netanyahu race to build government",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE00MEhYOWxTTkNmZmFjZzdnTWp6SzhKOG9faWROREl2LXlJQ2tKR3dGbTZvQklyUENlWFhiZWIwSzB0ajk3cktybWRZV3V3ZWZpUmw4el8waXdfUWJQNnlxRGhMeERKazNsOUxzMg?oc=5",
+      "title": "글로벌 제약사, AI로 신약 후보물질 개발기간 최대 절반 단축",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -561,22 +569,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNY1MxS3hCOHMzQ1BxRVRMU1Rndk9JMmdKdkZvNGFPUFg1Q21VQmpkWnVrOFZCbE12LWRHREtCMTA4eDk1Y1RtZEVoYmQtemh6UHNLX1dGa1J5enVRNk1VN2phdU9rbzFibTEwd2lmTDRsUnhLTkltbTh4c3JfbS0tVGx4Z2JZQ0lSOEJuS0dxNEhQQWJYWlNDT0RBbW42UkU1aDEwZ2V3aWJrUUFzZVV5Ui1n?oc=5",
       "title": "How is Singapore developing semiconductor talent to meet industry needs?",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOd1pGYlo3YURVMjVtckd2VWhwcjMyXzd6ZHdQZFhKTUpGelRSYlBOdWk1aTZYZWJnMjhKVkdXLTBwTExfTVlVX1JHZEZNcGdiSllDbkRleW53Q25sWkxSZGRaZ2VhdldMSUpNV1lWaUNyVEFwOG14OHhudVJ2a3dxYlUtSmI3R3Z4WldrRHpIZTRsM3BhZTVWakF6MjlYTGJabVZ0SWNEM2xtQVFWN2RIWG9B?oc=5",
-      "title": "War, latest news. Ukraine: Russian attacks on Kryvyi Rih – 2 dead and 47 injured",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOLV9pWTNWU1JhZGRUOURfRktKSXlqU00tM05UMURhS3MyV3BLanlPVVJyQUlmSFVBaG5fVVEtQUFVNkVwTUtObGk2VGRPbUdWRE9CdjlIY19WblNiMlBZQV9FU1ZQYm1uMnhvRmN5b0xZUElUTHQyQ3d3Rnh4c3NGamVfN0ozeFFtQUZtemE1aVVvR0dFQzV2a1RTSEZycTFIeFl1V1phZk80XzVSZ201YXdLcV9OQ3ZvR0dv?oc=5",
-      "title": "Shivraj Singh Chouhan to Dedicate India’s First Indigenous H5N1 Chicken Vaccine on November 20",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
