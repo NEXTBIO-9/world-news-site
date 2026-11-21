@@ -68,10 +68,10 @@ function renderArticle(container,source){
   if(!a){document.getElementById('title').textContent='아직 기사를 불러오지 못했습니다.';error.textContent='발행 처리 중일 수 있습니다. 15초 후 자동으로 다시 확인합니다.';setTimeout(()=>location.reload(),15000);return;}
   document.title=a.title+' | NEXT BIO';
   document.getElementById('title').textContent=a.title||'제목 없음';
-  document.getElementById('category').textContent=a.category||'직접 작성 뉴스';
+  document.getElementById('category').style.display='none';
   renderArticle(document.getElementById('body'),a.body||a.summary||'');
 
-  document.getElementById('meta').textContent='NEXT BIO 직접 작성 · '+(a.published?new Date(a.published).toLocaleDateString('ko-KR'):'');
+  document.getElementById('meta').style.display='none';
   if(typeof a.image==='string'&&/^https:\/\//i.test(a.image)){const img=document.getElementById('cover');img.src=a.image;img.style.display='block';img.onerror=()=>{img.style.display='none';};}
  }catch(e){document.getElementById('title').textContent='기사를 불러올 수 없습니다.';error.textContent='잠시 후 다시 시도해 주세요.';console.error(e);}
 })();
