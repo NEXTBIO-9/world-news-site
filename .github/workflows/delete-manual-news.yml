@@ -9,7 +9,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   delete:
-    if: github.event.issue.user.login == 'NEXTBIO-9' && startsWith(github.event.issue.title, '[자체기사삭제] #')
+    if: github.event.issue.user.login == 'NEXTBIO-9' && startsWith(github.event.issue.title, '[')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
