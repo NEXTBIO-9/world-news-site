@@ -70,7 +70,6 @@ function renderArticle(container,source){
   if(id===19){
     a={...a,title:'3-2번 기사'};
     let body=String(a.body||a.summary||'');
-    body=body.replace(/^# (?:3-2번 기사|계엄 선포 전 북한을 향했던 무인기와 아파치 헬기, 군사작전은 무엇을 노렸나)\\s*\\n+/,'');
     body=body.replace(/(?:^|\\n)## ■ 북한이 실제로 공격했다면 무슨 일이 벌어졌을까[\\s\\S]*?(?=\\n## ■ 2024년 계엄 이전의 군사작전은 무엇을 남겼나|$)/,'');
     body=body.replace(/(?:^|\\n)## ■ 2017년 기무사 계엄 문건과 연결되는 질문[\\s\\S]*?(?=\\n## ■ 2024년 계엄 이전의 군사작전은 무엇을 남겼나|$)/,'');
     a.body=body.trim();
