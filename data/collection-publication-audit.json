@@ -1,21 +1,21 @@
 {
-  "updated": "2026-11-21T14:19:33.467064+00:00",
+  "updated": "2026-11-21T15:06:55.253669+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 22,
-    "not_in_current_queue": 35,
-    "pending": 20,
-    "published": 125
+    "important_unpublished": 21,
+    "not_in_current_queue": 34,
+    "pending": 18,
+    "published": 128
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 16,
+    "not_in_current_queue": 15,
     "pending": 6
   },
   "important_unpublished_by_reason": {
     "source_blocked": 12,
-    "repeated_extraction_failure": 4,
+    "repeated_extraction_failure": 3,
     "in_retry_queue": 6
   },
   "blocked_important_rss_candidates": 0,
@@ -98,14 +98,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxON1h6N0pDTFdmTG1wSmdGRUw2Y0RScnBzeWVYSWJ5akg5MUxFY0U1czdiSTRpYzlFWkYwSDZIYlFDdmVRZVBrbkItUnM4dF9xZUVhTmJWNDdGUUZ0ZFo2OFlmczBxODlLU0dkdENqdXNHZXdvM3JaS2JsNzkwZXJxdm05cVBPZXlGVjREYUhLRjJxWmF4UTQ5Unc4WFRwekNLOGg0?oc=5",
-      "title": "Russian missile strike in Poland: Is NATO facing a new threat?",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -231,14 +223,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxON1h6N0pDTFdmTG1wSmdGRUw2Y0RScnBzeWVYSWJ5akg5MUxFY0U1czdiSTRpYzlFWkYwSDZIYlFDdmVRZVBrbkItUnM4dF9xZUVhTmJWNDdGUUZ0ZFo2OFlmczBxODlLU0dkdENqdXNHZXdvM3JaS2JsNzkwZXJxdm05cVBPZXlGVjREYUhLRjJxWmF4UTQ5Unc4WFRwekNLOGg0?oc=5",
-      "title": "Russian missile strike in Poland: Is NATO facing a new threat?",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWDBQUTdkaEJ1cGFCcmpkbkFCTUppQUNNTE9DemN2ckwwWTU3eXNsQU81dzVnZHhHQmFXR3Q4azZQUkJkdG5JQUVabGxQeEEzaERncUg4RGctb0xCc1JmWWw4aVFUMU5vRGhROU5aZk1UU0RJOGZvVWtXWmNRcjlwSEFxQkh3S3BuckRpbW9rOVRhazE3YXNPX09sS2RyVmlfYWpBYw?oc=5",
       "title": "Antimicrobial resistance explained: What it is and why it matters",
       "important": true,
@@ -276,6 +260,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE56TkdCVG83eDEwcGZvUHlPc3VybGg5enk2NmlfeXVHYzJ5SEotNnJPMGxzNEptTVdKZ3VkZ191M3oyd0dlelozSHZ6U3pyZlphQ0ZiVThESTU0bG1HRHk1bV9wd1NRa0VGTlYxU3E3NXN3cmktaUtIOA?oc=5",
+      "title": "M5.7 Earthquake Hits Japan’s Kumamoto Prefecture on Early Thursday",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
@@ -319,14 +311,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNa2VfaHQ1V0Q1VWpXVmxWM1pqa1hMa0hSSkEySFhrLW40VHM4RDMxNnhmaDc1am93LTNyLTZ3RmZEQk10Q1ppUUdRdFhXclM4eHpVeElPRzdVd0FfeVpuT2p0OGxDdGFqRFZWdTZ2VzVONlpUZmJLekdTWkg0R19WMERQbVh5WjRRM0tqQmc5QXZUVlZXNWVzaXhaOF9CX3M5OXkxa3cxY1FuQlpnZU5PX05YSHBTVkhUTkRTMWZobGVtRlMyT2RnU0JLaGt5dw?oc=5",
-      "title": "IDOH: Indiana experiencing measles outbreak",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5maWpJR1J2THZpYm95U0J0UVViWDlGNFFXRWpvcjM3bktMM0YxSzNJcVZqM2g2NFJQaU5rTTh4c25kc3RsNTVKdHpHWUQ4TkR5Vl8zSVJvZWxlaElERllIUG9kbw?oc=5",
       "title": "리가켐바이오, 국민성장펀드 바이오 1호 투자 유치…5000억 조달",
       "important": false,
@@ -351,11 +335,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBnT3pwR0RUQS12eUxXZS1wU1hGdUs2V0RseW5aNTkwLVg3ZU5fOU84M240U3ZZVkczZ05SaHY1V0s5cWdScTVCYkZ6cFhFUXRwbWlaNUg1eWxhNE84N0lOYUpQTkZSbDRUOGtz?oc=5",
-      "title": "10월 생산자물가 0.1% 하락…사과·돼지고기 가격 급락 영향",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0yV2dpcndVRkVHMTQzOE1CTEpRV3FPU0tLMVVjX08yY2ZON2w5VHJpZEg4WUVPLU5CMUNkVXFJS0g5UUdCcmRhei13WVg5U09OaG15YklPaWlBZ0ZZeVVSVXlEeW1lNndu?oc=5",
+      "title": "Abdel Fattah al-Sisi | Biography, President, & Egypt",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -368,7 +352,7 @@
     },
     {
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ydVhQTWZEVGUtUnJQWTkzNnpvcTIyT014VWVzdkdSWHVSUlNVSWdkaHcxdFZhSW8yQUNtOVR5Umk0MGM2c0I0LTJmUi1pUEhvdG5uLWNoZ1c0VklUZXo5cUxqNHpkMWl2Nnk5ZU12VDJad9IBdkFVX3lxTE1QbjUxOVNkcG5Rem9YRXdzcDU3cTVMbFZrRWxYSVRzd05nLUNuYzA2OHVrRWhHYmFlNElxbzV3ZWVONGdMcHFHWWNyV3ZTS0hvVjIzYlE4TlZDNEpwNkY3NThObVg0SktEbUpOVHlWZ0FYUU9kdmc?oc=5",
-      "title": "“美, 中과 신약개발 협력으로 자본ㆍ상용화 노하우 이전”",
+      "title": "“美, 中과 신약개발 협력 급증…자본ㆍ상용화 노하우 넘어가”",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -383,6 +367,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSWg3S2pyN251RmlYaVlDWmRXaVV1ZU92RkJadkpPYmNndV8zS2F4Tk42ZTUzR2V2ZzVkdlBueXhiQy1SekpfQkdXaGYzUEw1eGk2YWhnYUFWcFlmYU04bWZ2V0hkdE1ZbzNTZVBpRUFMZTduWnh0LTZLdlFVd3NzNDlR?oc=5",
+      "title": "Indonesia-Canada Trade Agreement to Take Effect 1 December",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNSWZIYjM2Y05tRk5XY0pqVUhvNTRsM29sYjJIOG84YXNvU1dMeGJ0TGVjblFCZl96M3dqanVZbXBqTEhtSEM4ZWF0ckduRFUwb1l1OWNWRlZrWVZCUm1zdjRIdll4LXJzOWR4RXE1MmhFZElJQzMyTEhVTktpOFBULWF0Ykk4dDdUTl9kQXJvdTVZWTdPZTN1eHV6UkNrODhfZ1huby1WdTNBQnQ1RHFmaThVWGdZQjM5UkQ3Mlc5Y1I4Y1RqQUpkWmUwMDR0YVNHYWltLUtJYzJlZVJoVzJCMzN0X2FTdlNPb3BsVTNKY1RjSFRpRHBtcTJRWTJ1ekhWMWdwcjdmZw?oc=5",
       "title": "Israel warns Wong against sanctions ‘mistake’ in political uncertainty",
       "important": false,
@@ -391,19 +383,19 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
-      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVWhLdVJvcTNxWGo4WVpRRGdJdW1pNGxhcWFhTWp6M1RDai1kUThLcXF3RzFUZl9JRHc1RjFTdUMyRzFkWW1Xd18xbFZKdEZRU2w3WFFlSDVRVG4wSnJiLUEzQUkwZS02YVBETjkxbnNSTURXeDhWWTV3RjgxUERmaHIxOFNLZHBVRnVGSi1VYzU4MGo3U0ZLd3N5ZXlqWEU?oc=5",
+      "title": "War in Ukraine: Is France in direct conflict with Russia?",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPa2Eza0lPSV9LcEQzNjUwbU9pa0NIUklLMnNxVkNIZVBOVlhrOWEydnZuTG4waGtkYnRDSWZ6SElWSllLVTluUlJ6RE9RQ1NUWDN5anl5QkNScjMwNVRKQ09ZaDAtbXNkY2Y0X0Z5d1hWN2ttX1JpVmNvelF5TFFreXZGajhxT2VudTB1REt5UzBUNldWVmEtMUVzOElCdlhMWlZSX1pB0gGrAUFVX3lxTFBidHB1cXFfRW5uQ3llMzRPQXRJY3VEek9jTFVuc2Zqa2Q1TXdLb1dEVF83QmVHcU9TbXBZaTR4QXVrT2tfYmF1V2RRLURBb0NPbVd1RGlpbFdzTVdQT1hHaTFWdUIyaGVzb2pFaVp4aUhncjdFX1ZXLVVVaVZsMzc3dzZDcDRxbjR3SHhFei1YZ0ZSdU9DSF92S0tPUThMY0lQYnhKbFVqUWF4MA?oc=5",
-      "title": "Danish Parliament approves US-Greenland security deal after Trump pressure",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNZWV1UV92eVNuZy1MajdYdFV3dkFVR2V1eGRJb1hheTRxMnJtWVkzSmFDc0hieFpWREpHX3BEMEc1S2dQeERuT0RUcUhxLU0tRVNTSGp3QVdwRnZyUEdYbFZCSzRzenBrT3NDd28xemdGMDNTbExUTEw2clZYWGpoOWc3bkVZQmVkbkhlMmxmNjR0bTZuZ1BBM3VoMHp5dG55ZkVyMlR3?oc=5",
+      "title": "Bangladesh’s Rooppur begins supplying nuclear electricity to grid -- ANS / Nuclear Newswire",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -433,14 +425,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWnRsSTN2UHlvZ3hscnFOdktrT0UzVDdjM3hyeDM0ZWFkTGVuNjRMVGFMWnhPYVJHZHV5WmVINHp6R282a2xnVENuMWxhU3NLd1pxNUJ6ZUlacHU0WFR1SmprZEE5UUVDQm9HemliQ3NjWDVteHRnQWRNVWlHVE9tNk5tZUI0TXZqRW9WSUdVUmFHRXdwbkc5RDU2R2JWdE4xR0FGXzdBeW40bTV5XzFjSjJ3MNIBuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x?oc=5",
       "title": "Spain's Sanchez admits 'mistakes' in election debate with rival Feijoo",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY2JtZUJubGd2ZHAwZy1nU3dhQ09Pd3A5a2drSWVWZ3ZTRGRDem8yU3pseEItYlBxb2lFbkI5SE5zVVZkU3RKMDNaYy1lUHItUmlZLV9GcDROZjFnNVBmaU44S0dScUJBeFRXeUx3MWFieGJZY052X1owbS1nWUNsR2lva3FyTVBQM2tFNkRfY1E5eTluZkotaFFKbXZoRkZqeVQxRGdVSnBET0h1YjB6QkZyUQ?oc=5",
-      "title": "Emirati candidate for UN top job vows to end Sudan conflict amid war crimes scrutiny",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -479,7 +463,7 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaEFvUTJHSzFhVWE3ZHZ1VHJaTmZ4T2VvejRpelM4ZURIaWtjYlJFTDdualM5ZWJWVmRMUGhBc3pLQzJ1VDJRWmY3SV9HRUIyanQ3bGoxdDFOcXQxbm4tWFFSRVBtYkQyaF9wNld1cXBfbXZrWDhiWW9kRzQ1aVl6MVBwcFd4dngzMjdVeE5mMVNMSjhjWUR2blBvLTRLV3RmMWR0QTYzcnVuUHhsMHg2N1BZdkVtUDFNTWRpSHlMU2VUVGJFVXRVbTNtb1lRQ0RDX19F?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVklGWGdSY3NwRm5TT2FNbUM2MVIwR1AyMnpJZjlxV2p0TUVjN05jZFNRRTNwY09RYVFuZ2hfeWtJQ2JKRE00VG9telBsY3BsU0RLbklsOFp5cXJYcFRJdjRtSDEwaG4wLUNuZ2tGWkRUMGg2bG95X3JPQ0NJNWw3dzk4Q3BuWmNvM3FIVmZfVmN5VmpFbEtjNWlGV3ZJRkY1TnBXdGtobndpNFc5V2N2dnVzSXlQcWFsMHA2bUZfS2FaU28xeGFSLUhmZi1xMjNGZ1Biag?oc=5",
       "title": "PHILIPPINES, MEXICO SEEK STRONGER BILATERAL TIES LOOK: President Ferdinand Marcos Jr. met with Mexican President Claudia Sheinbaum on the sidelines of the 33rd APEC Economic Leaders’ Meeting to reaffirm the longstanding friendship betwee",
       "important": false,
       "state": "pending",
@@ -535,16 +519,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNZWV1UV92eVNuZy1MajdYdFV3dkFVR2V1eGRJb1hheTRxMnJtWVkzSmFDc0hieFpWREpHX3BEMEc1S2dQeERuT0RUcUhxLU0tRVNTSGp3QVdwRnZyUEdYbFZCSzRzenBrT3NDd28xemdGMDNTbExUTEw2clZYWGpoOWc3bkVZQmVkbkhlMmxmNjR0bTZuZ1BBM3VoMHp5dG55ZkVyMlR3?oc=5",
-      "title": "Bangladesh’s Rooppur begins supplying nuclear electricity to grid -- ANS / Nuclear Newswire",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdDQ1QXNJbWNmblBGamw1WW02ZnQ1N2Z6YngwODMwNWVtYkZxVVd4ZGlrek9sRy1BOEd0aUJJZk16eWRVWF9Id2d6dFNJMDNqazh4QXcwcTZ2SXJieWxsSkZGQ21fTF9mOTlRU0U1VERhVUtYZTFvaHJPcnNLbURxWFpoQTdtX0czVDFuekhCTWY2dWxCT0hhWDZ4QXZWbE5WWEJRbjNmbw?oc=5",
+      "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdDQ1QXNJbWNmblBGamw1WW02ZnQ1N2Z6YngwODMwNWVtYkZxVVd4ZGlrek9sRy1BOEd0aUJJZk16eWRVWF9Id2d6dFNJMDNqazh4QXcwcTZ2SXJieWxsSkZGQ21fTF9mOTlRU0U1VERhVUtYZTFvaHJPcnNLbURxWFpoQTdtX0czVDFuekhCTWY2dWxCT0hhWDZ4QXZWbE5WWEJRbjNmbw?oc=5",
-      "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNVWZuTHhDZU1hb0tfWVBGc3pOeVlSekY5MUliUlZTWl81WGQzS0E3SmctVzNVcldWNzhQS0JMUnF1ckxGOXpjT2NDVUpsMFVlbEctWE9ManRPM2RsNmtCLThvSV9lWDVaV0tzVzJmVmJUNjFraWlDWmhRc1NZWC1DcjI3NjZPZG1FdGNqMUFxNzRRMDFBYjFxVXFDbHl6Qzc4UVZqSzByWVlxYXBB?oc=5",
+      "title": "Sweden, Pakistan hold talks to modernize bilateral investment treaty",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -567,24 +551,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNY1MxS3hCOHMzQ1BxRVRMU1Rndk9JMmdKdkZvNGFPUFg1Q21VQmpkWnVrOFZCbE12LWRHREtCMTA4eDk1Y1RtZEVoYmQtemh6UHNLX1dGa1J5enVRNk1VN2phdU9rbzFibTEwd2lmTDRsUnhLTkltbTh4c3JfbS0tVGx4Z2JZQ0lSOEJuS0dxNEhQQWJYWlNDT0RBbW42UkU1aDEwZ2V3aWJrUUFzZVV5Ui1n?oc=5",
-      "title": "How is Singapore developing semiconductor talent to meet industry needs?",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOd1pGYlo3YURVMjVtckd2VWhwcjMyXzd6ZHdQZFhKTUpGelRSYlBOdWk1aTZYZWJnMjhKVkdXLTBwTExfTVlVX1JHZEZNcGdiSllDbkRleW53Q25sWkxSZGRaZ2VhdldMSUpNV1lWaUNyVEFwOG14OHhudVJ2a3dxYlUtSmI3R3Z4WldrRHpIZTRsM3BhZTVWakF6MjlYTGJabVZ0SWNEM2xtQVFWN2RIWG9B?oc=5",
-      "title": "War, latest news. Moscow: ‘Cargo ship attacked in international waters in the Gulf of Finland’. Ukraine: Russian attacks on Kryvyi Rih",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOLV9pWTNWU1JhZGRUOURfRktKSXlqU00tM05UMURhS3MyV3BLanlPVVJyQUlmSFVBaG5fVVEtQUFVNkVwTUtObGk2VGRPbUdWRE9CdjlIY19WblNiMlBZQV9FU1ZQYm1uMnhvRmN5b0xZUElUTHQyQ3d3Rnh4c3NGamVfN0ozeFFtQUZtemE1aVVvR0dFQzV2a1RTSEZycTFIeFl1V1phZk80XzVSZ201YXdLcV9OQ3ZvR0dv?oc=5",
-      "title": "Shivraj Singh Chouhan to Dedicate India’s First Indigenous H5N1 Chicken Vaccine on November 20",
+      "title": "War, latest news. Finland: suspected airspace violation by a Russian helicopter. Ukraine: Russian attacks on Kryvyi Rih",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
