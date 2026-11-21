@@ -1,34 +1,25 @@
 {
-  "updated": "2026-11-21T04:52:47.586094+00:00",
+  "updated": "2026-11-21T05:54:05.135356+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 23,
-    "not_in_current_queue": 39,
-    "pending": 20,
-    "published": 121
+    "important_unpublished": 22,
+    "not_in_current_queue": 38,
+    "pending": 19,
+    "published": 123
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 19,
-    "pending": 4
+    "not_in_current_queue": 17,
+    "pending": 5
   },
   "important_unpublished_by_reason": {
-    "unexplained_not_queued": 1,
-    "source_blocked": 15,
+    "source_blocked": 14,
     "repeated_extraction_failure": 3,
-    "in_retry_queue": 4
+    "in_retry_queue": 5
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
-    {
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQdUpieWRmVVR5eld0ajUxLWphX1pxUXQtSTBLRU9TelpNempvS19lQnRNNVQ0SnlVczVQTU8xT1VkR0xoU1lqMktaSldvSU80enYydTNPSnBVcFU3a2JxVzljM3VWREo0cUVTRVhHdm9uM0c1TFNlSW9BcTI0MzRmWV9mTkF0dFp4SnJyU2kxdHRoT29NZmE0SUNVbHJNRlhaazJ5Q3ZaTEt2WXB6WHY4Z3NxTXFSTl84dTVTOEpCS1BKdno1WXI1Q2VURHNESmdFUGRjaQ?oc=5",
-      "title": "Singapore’s new maritime master plan to focus on capacity, technology, upskilling; work on Tuas Port Phase 2 begins",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "unexplained_not_queued",
-      "rss_fallback_candidate": false
-    },
     {
       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPY3hKY0VXY05pTTBJX1F5WE13Y3N2VHFRRVdnRDlZNHpyVTVfc2pzMXJ1aXRzWUNQNHVRaVFBTnQ0OEFESlBidGgyekhHcm9UdnNvc3ZyOTFCRWZsTk4yMUM1MlROVGJINWFCUmpWNlp3VkdZMVRHdDZKeGZ2dnN3RVZuNEoxZ2psc3Z0UjlhOVdidlJMYkRUcWo4aDNuRzBHcmZrZy1YalgtNmFGeEd1WWNtSHNyZUlFcXAtNXppRHRIRWFncUpKUnFKSGtUTWgtMElyQzFrMzI4T2ZqdmfSAd4BQVVfeXFMT2N4SmNFV2NOaU0wSV9ReVhNd2NzdlRxUUVXZ0Q5WTR6clU1X3NqczFydWl0c1lDUDR1UWlRQU50NDhBREpQYnRoMnpIR3JvVHZzb3N2cjkxQkVmbE5OMjFDNTJUTlRiSDVhQlJqVjZad1ZHWTFUR3Q2SnhmdnZzd0VWbjRKMWdqbHN2dFI5YTlXYnZSTGJEVHFqOGgzbkcwR3Jma2ctWGpYLTZhRnhHdVljbUhzcmVJRXFwLTV6aUR0SEVhZ3FKSlJxSkhrVE1oLTBJckMxazMyOE9manZn?oc=5",
       "title": "Massive Peru Earthquake Caught On Live TV: News Anchor Steadily Reports As Studio Shakes | Video",
@@ -56,14 +47,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
       "title": "6.7 magnitude earthquake jolts central Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1mYWdrVDQ2VjVPZ2pRWVRzRUo1OHhzWG40eWtmcFdtblliNHhVb0NDU1pkZlFUQUdyM1dLSFFGMGR5cmdzTWpueUE4SkFqSTM3SlY1OElWRTZCS2FKbzdSMGVnTHctVWFadDZOUWI3TzZlSGs?oc=5",
-      "title": "Android earthquake alerts now available in Italy",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -176,14 +159,6 @@
   ],
   "unpublished": [
     {
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQdUpieWRmVVR5eld0ajUxLWphX1pxUXQtSTBLRU9TelpNempvS19lQnRNNVQ0SnlVczVQTU8xT1VkR0xoU1lqMktaSldvSU80enYydTNPSnBVcFU3a2JxVzljM3VWREo0cUVTRVhHdm9uM0c1TFNlSW9BcTI0MzRmWV9mTkF0dFp4SnJyU2kxdHRoT29NZmE0SUNVbHJNRlhaazJ5Q3ZaTEt2WXB6WHY4Z3NxTXFSTl84dTVTOEpCS1BKdno1WXI1Q2VURHNESmdFUGRjaQ?oc=5",
-      "title": "Singapore’s new maritime master plan to focus on capacity, technology, upskilling; work on Tuas Port Phase 2 begins",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "unexplained_not_queued",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPY3hKY0VXY05pTTBJX1F5WE13Y3N2VHFRRVdnRDlZNHpyVTVfc2pzMXJ1aXRzWUNQNHVRaVFBTnQ0OEFESlBidGgyekhHcm9UdnNvc3ZyOTFCRWZsTk4yMUM1MlROVGJINWFCUmpWNlp3VkdZMVRHdDZKeGZ2dnN3RVZuNEoxZ2psc3Z0UjlhOVdidlJMYkRUcWo4aDNuRzBHcmZrZy1YalgtNmFGeEd1WWNtSHNyZUlFcXAtNXppRHRIRWFncUpKUnFKSGtUTWgtMElyQzFrMzI4T2ZqdmfSAd4BQVVfeXFMT2N4SmNFV2NOaU0wSV9ReVhNd2NzdlRxUUVXZ0Q5WTR6clU1X3NqczFydWl0c1lDUDR1UWlRQU50NDhBREpQYnRoMnpIR3JvVHZzb3N2cjkxQkVmbE5OMjFDNTJUTlRiSDVhQlJqVjZad1ZHWTFUR3Q2SnhmdnZzd0VWbjRKMWdqbHN2dFI5YTlXYnZSTGJEVHFqOGgzbkcwR3Jma2ctWGpYLTZhRnhHdVljbUhzcmVJRXFwLTV6aUR0SEVhZ3FKSlJxSkhrVE1oLTBJckMxazMyOE9manZn?oc=5",
       "title": "Massive Peru Earthquake Caught On Live TV: News Anchor Steadily Reports As Studio Shakes | Video",
       "important": true,
@@ -210,14 +185,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
       "title": "6.7 magnitude earthquake jolts central Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1mYWdrVDQ2VjVPZ2pRWVRzRUo1OHhzWG40eWtmcFdtblliNHhVb0NDU1pkZlFUQUdyM1dLSFFGMGR5cmdzTWpueUE4SkFqSTM3SlY1OElWRTZCS2FKbzdSMGVnTHctVWFadDZOUWI3TzZlSGs?oc=5",
-      "title": "Android earthquake alerts now available in Italy",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -344,6 +311,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRVI2QXdCZWhKQ0xDMWxfNldiS1B1Zm5PbklhSG1qdEVRcHhKOW1XbnBQenJBbUtUV3Jjb1dhZWQ4YUhVanA1VjRrSE00Rk1tRXZRTWxNMVg2Y3hOUmhGSTJnQmlzR0gxckdoSkFPZmNienMzbHZCc1ZuTWlGX0hLMUdlMTYyc1drY05rVXkxN3BkNnI1QnVFY3o3bThnWnBCS0tSaXd0WEM3UU1uNW9oeHI3Z3ZkOVpqX1F3?oc=5",
+      "title": "Moderate mag. 4.7 earthquake - 38 km northeast of Calama, Provincia de El Loa, Region de Antofagasta, Chile, on Friday, Nov 20, 2026, at 10:24 pm (Santiago time)",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPODVMcXZLbWZOSHFLU1p3Z2p1ZUdMYlFFOFVhN2dDLVJ3V2twQ01aZUlvMWgweHlrZVFTak1MeHkxaDlGVEZwM1R2WUgwM3otR2lpMVdfU25aOUkzbHp5bkRqb1FPdHc5YnhTV2F6UGNjTy1VUUwyQ1dDdkxHRkFrZGpTdms5b3VrUVA1cGFMS2xFMU9iSTIxZGNmdnFZZ2NfQ2MwZWZSMTV1alVHWFRyc20td3NqSVMtNjRUZtIBwgFBVV95cUxNMUZ4T0d3QTFGZG5FamQyYkRvbnZGNk5KWXhOME5CdThlZWFyY0V1YkNSN1dwTUZiMUpEbVNtOEp4ZUVnczVtdzVHNFZJdUVlUmw3SXcxNlR2WmVfM0ZPSUVJTVUyWGxVaGJSQUMyTzhpejFpRjgxUjdwQUZldDVpX29HRnFjOVBmT21MZFNyXzVsNzc3VHZZYlBYSjhqTFdabkdnblN0cHBvc3VJbzltRUFCWGlFSHZJZFhsSWZmVTV0UQ?oc=5",
       "title": "6.7 magnitude earthquake strikes Peru’s Andes: Tremors felt in capital Lima; no casualties or damage report...",
       "important": true,
@@ -360,6 +335,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1WNkZUbkdFLXk4ajdoOFd3YkhpSmhxMVhGVDhUNFRkT0lmc1lqNTFmUFBFcU9EQmxzTGVhYWdvZ0t0X05HSUp0RElpTzF0NXdrTGdGTEhzVEI2RVplWVE?oc=5",
+      "title": "Pete Hegseth | Military Career, Marriages, Boat Strike, Iran War, & Facts",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5maWpJR1J2THZpYm95U0J0UVViWDlGNFFXRWpvcjM3bktMM0YxSzNJcVZqM2g2NFJQaU5rTTh4c25kc3RsNTVKdHpHWUQ4TkR5Vl8zSVJvZWxlaElERllIUG9kbw?oc=5",
       "title": "리가켐바이오, 국민성장펀드 바이오 1호 투자 유치…5000억 조달",
       "important": false,
@@ -368,8 +351,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5Wa0M3c0FyUzhwZklhaEJ3bWRfaE4xcFdtcXJCTzR5QmwxemVkUDFpUXVqRmJRZkNWS0EtNkZRX01hNWNHdXMwLXQzTFREUUhzejZndFd5Ykc1YkF1czBkaQ?oc=5",
+      "title": "Abbas Araghchi | Iran, Education, Life, Biography, War, & Nuclear Diplomacy",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE51dzJ5MTNMSDU4d1dOSFNnbWVWTV9aQUlqbl9rVDdKZlhiRmZPaUNwNE1FUFBKdlVVLTRHZDRBTmxWV2c4cl9NNU9pR3NsYkEtd0VzRFhza3l3LVRXTU5hSWZHTzNodVZHS1E0?oc=5",
       "title": "Courtesy call on Prime Minister TAKAICHI by the members of Japan-Brazil Business Council Plenary Meeting",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE95aHBKVWFQUk5tcjN4UUk3dGc4b3BVbHRPZmhZU3Q1RzVlUHg5YXBFUE45YWFkWmhfOU9XSGkyLTQtTGVlTXhyNG9qODZmQnI5bVNyTTlwOEJJTzJZaEtLUnI4V3lxUzB3NnJ4VVUwTU92aGpuVk9TQg?oc=5",
+      "title": "Trump Says Mexico Trade Deal Is Close as Tariff Talks Continue",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -410,14 +409,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVWhLdVJvcTNxWGo4WVpRRGdJdW1pNGxhcWFhTWp6M1RDai1kUThLcXF3RzFUZl9JRHc1RjFTdUMyRzFkWW1Xd18xbFZKdEZRU2w3WFFlSDVRVG4wSnJiLUEzQUkwZS02YVBETjkxbnNSTURXeDhWWTV3RjgxUERmaHIxOFNLZHBVRnVGSi1VYzU4MGo3U0ZLd3N5ZXlqWEU?oc=5",
       "title": "War in Ukraine: Is France in direct conflict with Russia?",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPa2Eza0lPSV9LcEQzNjUwbU9pa0NIUklLMnNxVkNIZVBOVlhrOWEydnZuTG4waGtkYnRDSWZ6SElWSllLVTluUlJ6RE9RQ1NUWDN5anl5QkNScjMwNVRKQ09ZaDAtbXNkY2Y0X0Z5d1hWN2ttX1JpVmNvelF5TFFreXZGajhxT2VudTB1REt5UzBUNldWVmEtMUVzOElCdlhMWlZSX1pB0gGrAUFVX3lxTFBidHB1cXFfRW5uQ3llMzRPQXRJY3VEek9jTFVuc2Zqa2Q1TXdLb1dEVF83QmVHcU9TbXBZaTR4QXVrT2tfYmF1V2RRLURBb0NPbVd1RGlpbFdzTVdQT1hHaTFWdUIyaGVzb2pFaVp4aUhncjdFX1ZXLVVVaVZsMzc3dzZDcDRxbjR3SHhFei1YZ0ZSdU9DSF92S0tPUThMY0lQYnhKbFVqUWF4MA?oc=5",
-      "title": "Danish Parliament approves US-Greenland security deal after Trump pressure",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -512,14 +503,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRlVLekJsV1lXTGsxOWFDNkJLTDZhV3JSeFRQWS1zNXlobWJ6cDB0dXdhUE5IZ2VBY3N1THJOdVFtNmhEcnVTcUpWS2x4cVJRV1BscHJ2cVRmbGxtUEJLd0xvRUhkYlpUZU1PcnZpUzJ5cWx5R3ZnWFN5VXdiWmkwczJpci1yQkpVWWtMNV9yY3JHc3NfNzc0V2R2ZWlkSDVaa3V1MUhJVUNoSV9MQl91ckE5c2J4c1c2VFlPSHBIYzAxX2RZYXpZ?oc=5",
-      "title": "Energy-security response to Iran war could cut oil demand by 4% by 2035, IEA says",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaEFvUTJHSzFhVWE3ZHZ1VHJaTmZ4T2VvejRpelM4ZURIaWtjYlJFTDdualM5ZWJWVmRMUGhBc3pLQzJ1VDJRWmY3SV9HRUIyanQ3bGoxdDFOcXQxbm4tWFFSRVBtYkQyaF9wNld1cXBfbXZrWDhiWW9kRzQ1aVl6MVBwcFd4dngzMjdVeE5mMVNMSjhjWUR2blBvLTRLV3RmMWR0QTYzcnVuUHhsMHg2N1BZdkVtUDFNTWRpSHlMU2VUVGJFVXRVbTNtb1lRQ0RDX19F?oc=5",
       "title": "PHILIPPINES, MEXICO SEEK STRONGER BILATERAL TIES LOOK: President Ferdinand Marcos Jr. met with Mexican President Claudia Sheinbaum on the sidelines of the 33rd APEC Economic Leaders’ Meeting to reaffirm the longstanding friendship betwee",
       "important": false,
@@ -568,14 +551,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5mRHd6Tk53dkRxaDdoclc5R290dFlwZkVGY0FXSTJ5Qml3Tzg5SmlYQTNNOW81MXc5ak5pR0dxS2R5OHdRQ2otWkRWSTh3MkRHa3FEbUFlQlA4NFF3YllRMUJBUFgtWG90T2d4cF9OMzlVMUFM?oc=5",
-      "title": "혁신형 제약기업 35곳 내년 재인증...R&D 투자 넘어 개발 성과 평가",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5kYmVqUXBXa2dhU2d2MzNxYko1NlZyaGdTTVVXZk5ocUNsQ0k0UEFOM2RUR09uQUtoVllOMEUxb2IzVHdFcGVsODIyeXNZWmFOR25nZ2RuQmdVWlBEb1YwNWhzMkxqMDFqSDRsMG84QXZLQ0k5Vm8zTnhISmF1Zw?oc=5",
       "title": "Rubio Urges UAE to Help Bring Sudan War to an End",
       "important": false,
@@ -586,14 +561,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcE9rMnJHU2dQdE5wZ3hCYW1CdHlxTy1nZVJKMWw0WjQ4ajh4bW1fWVU5SWtaU0NPM1RnclNTMkxWYS1fU1MtNC1CTURRSmJLb2VuUWtmWWhELVVXZjFTa3FOMW9kbTU0UERpVVRWT1ZiZkhaQVJ6SkdPTXdHOUpXekhaQVlNQTNaeHYza2tpRXVVMHNHalNOUVAxdETSAaMBQVVfeXFMTTBZQmxvNHpDX0pIbWw5OW0zMUtiWWhacURFeVZ0djJsX0l6RXRqdDlfSFBKa1VDdUtpS3lfTHRzWHMybmFQZEhxMzdUY2dVQmt1bkxwQW1SVEhjVXpfQ1k3VTQ5VEgtMHVNWnZUam5qR2JlMG14ZmxNMHZZTHJ4Q0tad2FXdWlIYkxCNzhTTXM1QXZDY1RsZFoxUWZrS1I2RmZIUQ?oc=5",
       "title": "‘Philippines in talks with Russia for nuclear technology’",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPUUlzSGg3SGdSaXZNWTdKaHptNmk3VW52NGJncDhZSHZrUTItN2Rkekc1R0duOXMteVc0SDdqQnIzLUZWZEFyeXI4bFFraFlHb2gyZ1NTeGFxNUpBdHZ6aV81dkxPSlpOalRMVWhXWXBjZndKUWZyUDN4ZDY1MENUYUNhOWlJeHl3d3lNbnNFOWZDYTZvMEVhUGJWSG1Ndw?oc=5",
-      "title": "India, Israel Conclude Second Round of Free Trade Agreement Negotiations",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -640,8 +607,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNU01ieERLaWlzM3NZVGFRZV8zakJNSjZjeEEzV1lDUEpZR0pVT2w3bkUzcVA4bkdhSFdIdUhDQTl0TXVsZTVLaGc2Z0J6Ul9yMTlRWTJCb1YtVnN6RjZuT3RhS2QyemNDNUdkdFd1TW14eE1IZDFhbFNWXzg3cXVEUVlSZDBDUy13OGlld21OYnc2c0s0VnpDaV9Cb251Y0F4SUFLaE1wcnJWQ2ExZDZnLVNTZ3ozNHU0LVhr0gG7AUFVX3lxTE1TTWJ4REtpaXMzc1lUYVFlXzNqQk1KNmN4QTNXWUNQSllHSlVPbDduRTNxUDhuR2FIV0h1SENBOXRNdWxlNUtoZzZnQnpSX3IxOVFZMkJvVi1Wc3pGNm5PdGFLZDJ6Y0M1R2R0V3VNbXh4TUhkMWFsU1ZfODdxdURRWVJkMENTLXc4aWV3bU5idzZzSzRWekNpX0JvbnVjQXhJQUtoTXByclZDYTFkNmctU1NnejM0dTQtWGs?oc=5",
-      "title": "Kenya Set To Sign Landmark Trade Agreement With Nigeria To Boost Technology Businesses",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOLV9pWTNWU1JhZGRUOURfRktKSXlqU00tM05UMURhS3MyV3BLanlPVVJyQUlmSFVBaG5fVVEtQUFVNkVwTUtObGk2VGRPbUdWRE9CdjlIY19WblNiMlBZQV9FU1ZQYm1uMnhvRmN5b0xZUElUTHQyQ3d3Rnh4c3NGamVfN0ozeFFtQUZtemE1aVVvR0dFQzV2a1RTSEZycTFIeFl1V1phZk80XzVSZ201YXdLcV9OQ3ZvR0dv?oc=5",
+      "title": "Shivraj Singh Chouhan to Dedicate India’s First Indigenous H5N1 Chicken Vaccine on November 20",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
