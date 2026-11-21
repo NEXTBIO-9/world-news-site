@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-21T00:08:09.826433+00:00",
+  "updated": "2026-11-21T01:22:36.838860+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 14,
-    "not_in_current_queue": 38,
-    "pending": 17,
-    "published": 125
+    "important_unpublished": 15,
+    "not_in_current_queue": 35,
+    "pending": 15,
+    "published": 130
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 12,
-    "pending": 2
+    "pending": 3
   },
   "important_unpublished_by_reason": {
     "source_blocked": 8,
     "repeated_extraction_failure": 4,
-    "in_retry_queue": 2
+    "in_retry_queue": 3
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -215,6 +215,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPSnFqR2FuVjBuNndPWlpBTTgwMG5yQ3ZiSTN5bmd6UHZpOFgtRmhzVmlLX21XRmxTR0drc3ppV01CSGU5UHVNc1ZoeHpRdTYwcExQaXdGcVc5UHVBdGVGQ1lwT2lLRXlsUnhrQlc4N0I1cjZWa2NSQ2NnTUNobktxRWw4SDJVNXRONW5yRnEyRnZrX3BmVlFPWWJBZVUwZm5GSGlVdkZBME5TLUJVeXZyS2t6YWoxTXhEekViRHB6RVdNUGthdXpKZ01VUmFRcWNPbGVDREtxMk1IWms5QmNiZjkwZjIzUGVzMlJqSXpINTRZMFNJS3FwMm5Yc3hJWUhJelZPTThheHHSAY4CQVVfeXFMTm91T1ljVEFDX0ZSZ1ljb3M3UHd2bnFkQzU5V0hiaWR3LXc5WUZMUjRrOVB6MTU0UTVMZWVPRDhPak9PWmhiMnZBQk5QUnp4WHNRVF9XSHo4NFhuSDRDUVJ4ckM3d0FuZGhLSWdvaFVoRUZpQ2dpOXIwRWI1XzlIdFd6b3RBbTQzMzltZFU5cTZTQlR5dU5WVmF3d2VOTjIzMm0zaThicEE3azdPZVB2bU1JNmJLWEZxTXlRZWJTOW1OMDY4R29XeE1BUFlQb18wZFgxeEZCT0JfTm80TmZkSFNjS0x0dEFxd1IxUXRmRWhHZ250T182dENGcjhyaHJKYnRGTzBSZ1VMcGJJaVRn?oc=5",
+      "title": "Magnitude 6.9 earthquake shakes Peru's Andes",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOejM3SVhiazhNV09xeDF3YXJ3ZVpjQnMwUVJmbUE3SmZnWEZBUE5IcVBSY3NlZWQ4XzFJWkJHRDV5RXdnR1pSQmZTX291TzJtY2ZOYlB6NHpuTy13SjhMN2ZOR3JsN29wVjUtclFONUhtcVFON2UxcEY5ekZlZUN6SkdpWFZkdk9QY2QySnlNclAtU0JlaEJGLW5NdDU4RnFXVi1ncy1xSE12MWpTWTZLeHpTeFJPUjNw?oc=5",
       "title": "European officials call for ‘swift and sustained’ action on antimicrobial resistance",
       "important": true,
@@ -239,8 +247,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1teXpfQll6MTNyb0ZPZlJMRk83UTlZbFhCeGEyOGhkaVN6bnl0enp5SEh4T3RVemxMbktDakJLekdLcGdGNWVqc05TUUNiQjctUHB2TTFzdUt2LVh4Q1M4ZXlkYw?oc=5",
-      "title": "신약 후보물질 넘어 허가서류까지…AI, 개발기간 단축 새 가능성",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5maWpJR1J2THZpYm95U0J0UVViWDlGNFFXRWpvcjM3bktMM0YxSzNJcVZqM2g2NFJQaU5rTTh4c25kc3RsNTVKdHpHWUQ4TkR5Vl8zSVJvZWxlaElERllIUG9kbw?oc=5",
+      "title": "리가켐바이오, 국민성장펀드 바이오 1호 투자 유치…5000억 조달",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -263,16 +271,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1wc3M1N2t6S2hkRGNoa3c1OHNNM2dzVlNPelRwRjJLRWw0VXFxUlpRbUx4Y0pmMzVaQ1doNEJfMkhVa3FTaDRQR18zYXQyQ3NvT0IwbEQ3SG1rbEUtMnhvR204SC01Z2IxekNWTQ?oc=5",
-      "title": "글로벌 제약업계, AI 신약개발 투자 확대…개발 비용·기간 단축 경쟁",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE82MzhfNU9kcWgwbW45YmZiNVFNQlF1T0xGR3ZZUnBnS3lfVEZSOG9rTXNkV0dKMEduSFBRR3owanVneE1ObWF6RGw4ZHpOWWpYSDU0WFc5djY3cWZMSHFDVVdGcDFZZUswODdZbw?oc=5",
+      "title": "뎅기열 4형 바이러스 인체 감염모델 첫 개발…백신·치료제 연구 가속 기대",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE82MzhfNU9kcWgwbW45YmZiNVFNQlF1T0xGR3ZZUnBnS3lfVEZSOG9rTXNkV0dKMEduSFBRR3owanVneE1ObWF6RGw4ZHpOWWpYSDU0WFc5djY3cWZMSHFDVVdGcDFZZUswODdZbw?oc=5",
-      "title": "뎅기열 4형 바이러스 인체 감염모델 첫 개발…백신·치료제 연구 가속 기대",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ydVhQTWZEVGUtUnJQWTkzNnpvcTIyT014VWVzdkdSWHVSUlNVSWdkaHcxdFZhSW8yQUNtOVR5Umk0MGM2c0I0LTJmUi1pUEhvdG5uLWNoZ1c0VklUZXo5cUxqNHpkMWl2Nnk5ZU12VDJad9IBdkFVX3lxTE1QbjUxOVNkcG5Rem9YRXdzcDU3cTVMbFZrRWxYSVRzd05nLUNuYzA2OHVrRWhHYmFlNElxbzV3ZWVONGdMcHFHWWNyV3ZTS0hvVjIzYlE4TlZDNEpwNkY3NThObVg0SktEbUpOVHlWZ0FYUU9kdmc?oc=5",
+      "title": "“美, 中과 신약개발 협력으로 자본ㆍ상용화 노하우 이전”",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -297,14 +305,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNSWZIYjM2Y05tRk5XY0pqVUhvNTRsM29sYjJIOG84YXNvU1dMeGJ0TGVjblFCZl96M3dqanVZbXBqTEhtSEM4ZWF0ckduRFUwb1l1OWNWRlZrWVZCUm1zdjRIdll4LXJzOWR4RXE1MmhFZElJQzMyTEhVTktpOFBULWF0Ykk4dDdUTl9kQXJvdTVZWTdPZTN1eHV6UkNrODhfZ1huby1WdTNBQnQ1RHFmaThVWGdZQjM5UkQ3Mlc5Y1I4Y1RqQUpkWmUwMDR0YVNHYWltLUtJYzJlZVJoVzJCMzN0X2FTdlNPb3BsVTNKY1RjSFRpRHBtcTJRWTJ1ekhWMWdwcjdmZw?oc=5",
       "title": "Israel warns Wong against sanctions ‘mistake’ in political uncertainty",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
-      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -343,14 +343,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNT0JEYTlwbVd6TXVhU3lMMnpSN251QUZhenhmbEk5enlPX0lUYjhMa29xOXZOamc4VnNiWGx1QVlfcTFIaW9PcVpYSFdXQ0o1dzZFNlRpamZFVWx1MF9ReGdfeHF1ZlFkdkhaaEM5eVQ3eEV6SE5jeVFUaEl5LVJhUmtiMktvRkxjM1lWV2FJV3JhaHJxUFM2cjlsRTg3QV9Sd0licGhvME9lYVU?oc=5",
-      "title": "EU Considers Stronger Measures Against Russia as War Diplomacy Stalls",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbFBwX2c4aU9rVTBJS1NxcVROQUlTYmlGSGM3YXpwNEFCbFJzUWdzYlA5T09jZlJ2NGFmbk82Sk1FbHRNWXEwTlBuWnkwcG5OYUowSFNIZkhuaFdwVHc5M3lCS3Y3aDBkT21KR1VINzBkRmx6VDdtdFZ6QjRNczJySzJkREVPVmI2MEdwaTQ2cGVEbFdWSklNNkVzUWJGOTlYOUxOQVl3N0hYcTRJT1HSAa4BQVVfeXFMTWxQcF9nOGlPa1UwSUtTcXFUTkFJU2JpRkhjN2F6cDRBQmxSc1Fnc2JQOU9PY2ZSdjRhZm5PNkpNRWx0TVlxME5Qblp5MHBuTmFKMEhTSGZIbmhXcFR3OTN5Qkt2N2gwZE9tSkdVSDcwZEZselQ3bXRWekI0TXMycksyZERFT1ZiNjBHcGk0NnBlRGxXVkpJTTZFc1FiRjk5WDlMTkFZdzdIWHE0SU9R?oc=5",
       "title": "Trump Says Putin Wants Diplomatic End To Ukraine War",
       "important": false,
@@ -375,24 +367,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxNRWNndFRQWElVTGNjal9vQzRuSGRaaU1wN25YRVV3dWlxdWI2Q3lYLWd0MTBtMFduQnEtLWE2SFlrT3ZlU2pocjVxblpVSEIybUI1VEZoMFFoOW5BVUFwMjJmd3lHLVhrSGtuaWZaSjdHTGEyVWZyNFBIaW1UZVZrbnVRNDNRVS1ZMFgzaWNoR1BBTXVWUzV6TWhzWWZiWno5MlNCMGVDQjJVOEdDd211cEIyZGprdHJSQVYxS2FkVk5fX0tKRU5ZU013YUpMcGtvT0otbFN4S3QtWlFrNEpnVzR1NUxyWnc3Y1ZLYW5mZDR5a0NsXzJtN0VXcUtFbGp5cDJoU3BrRTY4VXNhN1VtWHN1aFlZWENVSUlkbC1LQWh1R28yTXU3dVc3SUdZWFZE?oc=5",
-      "title": "University of Tehran President Warns UN Secretary-General and New York Times Editor-in-Chief Against Normalization of Attacks on Iran’s Critical Water and Energy Infrastructure",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa0JqQ3k0WGk0NVoxbHRNTHBTeDZxaVkyYmdzdGptNVB2MUVjb3lmcG1OTXRrWGs0U016Vi0tWTU5UmdYbk5IWHJfSTV0UEpEUkZvM0s1WjkwT3E1NFVfMzdGb3pyZ0J3cmhGWXMzVWJnSmpTTVh0MU1VcUJUcFZBamRua0kyOFVWSGUtQ243M2lITElJbmRRS3ZhNTNTenJJcXJTbFZiU0hJVFl1SHl5MnVB?oc=5",
       "title": "Yemen’s Long War, Saudi Arabia’s Security Dilemma, and the Shifting Middle East",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWnRsSTN2UHlvZ3hscnFOdktrT0UzVDdjM3hyeDM0ZWFkTGVuNjRMVGFMWnhPYVJHZHV5WmVINHp6R282a2xnVENuMWxhU3NLd1pxNUJ6ZUlacHU0WFR1SmprZEE5UUVDQm9HemliQ3NjWDVteHRnQWRNVWlHVE9tNk5tZUI0TXZqRW9WSUdVUmFHRXdwbkc5RDU2R2JWdE4xR0FGXzdBeW40bTV5XzFjSjJ3MNIBuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x?oc=5",
-      "title": "Spain's Sanchez admits 'mistakes' in election debate with rival Feijoo",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -409,6 +385,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSnIzQndsVlg5NEdwVllHY09ZMFpEUzc0ZFdCTHVIdWU4dHhfOG1oa25EclNCSnRJMTlmVUNobUdvQkJYVHlxQURZOGFKMGFkZG9mdnZUcXpqYzRfUkVhNTNTbnBPYjh0dnBuT1lNckk2eHNTSEtZZW5UWHhLQmdybm9KMkZPNi01UktvZFNPWWdHU3Q1T3dNZm9jZ1draG15QUo1aEZmSjMxMkZBVkowNndoWjk2aXV50gG-AUFVX3lxTE9SaHBEYVJObVhFMnRfU2hRS0FfcXhfNjFZQjYyOFREUGNjcDAxdnRNUDIyV052R01nbVJ6Vm5IMGRHWDlCbnd2blh4dWlMVDZDelo1WTFneG9TMjgwS214enZCS3VWVjRKVHFveTVJUndiOHU3eWg1UnpsWV9sTEdDRExXWVF4Y2pPQjVGckpVdnM0dGlxOFp0LTVOMGRlTEg5bVM0NVliS3JsV1F0b1dmUUJEWURCeG5JeEF1bnc?oc=5",
       "title": "President Tinubu to graduates: shun cybercrime, deploy skills to solve Nigeria’s problems",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x0gG4AUFVX3lxTFBwVmMtRHJDV0lBNjhHMzhCR0xqV0NxTjUxU2hCX0pnVjd6Qy15U1I4LXFsMWRnWXZ3UjFOb2ZjVUs4bWF1R0lGZW9tZjZYbFR3MUVnSXZybGZDMkNzWlc4ZUJDSW5xb25zRGNwa250eXcwQnQ1N1NmeWkyTG5zUTRLdE1JSjZtOU5VeW5GQU9DdXZRdTA2T0ZJSmd2NXN6MGNRMkIzMndvVmw2cnplNjFaN0xYajJqbnE?oc=5",
+      "title": "Spain's Sanchez admits 'mistakes' in election debate with rival Feijoo",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -439,16 +423,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVklGWGdSY3NwRm5TT2FNbUM2MVIwR1AyMnpJZjlxV2p0TUVjN05jZFNRRTNwY09RYVFuZ2hfeWtJQ2JKRE00VG9telBsY3BsU0RLbklsOFp5cXJYcFRJdjRtSDEwaG4wLUNuZ2tGWkRUMGg2bG95X3JPQ0NJNWw3dzk4Q3BuWmNvM3FIVmZfVmN5VmpFbEtjNWlGV3ZJRkY1TnBXdGtobndpNFc5V2N2dnVzSXlQcWFsMHA2bUZfS2FaU28xeGFSLUhmZi1xMjNGZ1Biag?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaEFvUTJHSzFhVWE3ZHZ1VHJaTmZ4T2VvejRpelM4ZURIaWtjYlJFTDdualM5ZWJWVmRMUGhBc3pLQzJ1VDJRWmY3SV9HRUIyanQ3bGoxdDFOcXQxbm4tWFFSRVBtYkQyaF9wNld1cXBfbXZrWDhiWW9kRzQ1aVl6MVBwcFd4dngzMjdVeE5mMVNMSjhjWUR2blBvLTRLV3RmMWR0QTYzcnVuUHhsMHg2N1BZdkVtUDFNTWRpSHlMU2VUVGJFVXRVbTNtb1lRQ0RDX19F?oc=5",
       "title": "PHILIPPINES, MEXICO SEEK STRONGER BILATERAL TIES LOOK: President Ferdinand Marcos Jr. met with Mexican President Claudia Sheinbaum on the sidelines of the 33rd APEC Economic Leaders’ Meeting to reaffirm the longstanding friendship betwee",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNbF9qMnNHYkhkaEJyQmhHVnRnV1BSdTR1YzJaWGNnYVFXNG1mNGVocXdVbHd4a2xBR1hkRjkxQS1QYTlzNktEc2ktOG9XRU80Zl84dXpERHBJQ0ZSRFBEUEJRdmZTa0R0R1pxZEdxd0FMQkhnNGZLMFJpX3RURTFjMDduZzhtbVNKZ01FYllYUzhTanVhaFIyV19WRWV3bFBrcmlzR2xaUlJxZ0p6SGNNY25tZUhubHlkX3cyWGE4V3ExUUx4REZmN1gtWTB0S3ZHUkNtdEVIMA?oc=5",
-      "title": "The Philippines and Chile signed the Comprehensive Economic Partnership Agreement, a free trade agreement that will deepen trade relations between the two countries. Link to the full story in the comments section. | via ANC 24/7",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -463,8 +439,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNeFhEenpyaWpTUVprcDJkcTNDY0F2VGVXWjNSc0ZVUFhlUWwxV0RBQWNHRV91eWcySzAxZ3A0WlFyaFRvN3hqaHQ3V1ZiNmsybVdRdnA5NVJ5US1TVFJmaDliUGJBc0c5ZHg0eGdLSW4zb1dPV0kxcDdPZ045TUJ6a2lOcElselNQWDNZdUVqOFlCb0liTF9UUmJ0VmctUjhHajdqek1MdW5KbXU0a20xTmlyb19nSG9DRkdEa2g3UVJvd2hJdmhLSzZQUmlxdVUzYkhhYjN4VTl5dU5sTi1KSA?oc=5",
-      "title": "PHILIPPINES OPENS NEW TRADE ROUTE TO LATIN AMERICA WITH CHILE FREE TRADE DEAL Philippines officially opened a new trade gateway to Latin America after signing a free trade agreement with Chile during a bilateral meeting on the sidelines of",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE16WDJHU21wME9ueF9WMDRUV3VFR01NdUlOR2M2NVFEb0pqV0tvajBiYVBoZlZVUW5BNVBvckpoUG1QZElRWExUNUNyeEk5NHdpcHN5R3hR?oc=5",
+      "title": "Xi, Putin blast Western ‘protectionism’ and sanctions",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -487,16 +463,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5mRHd6Tk53dkRxaDdoclc5R290dFlwZkVGY0FXSTJ5Qml3Tzg5SmlYQTNNOW81MXc5ak5pR0dxS2R5OHdRQ2otWkRWSTh3MkRHa3FEbUFlQlA4NFF3YllRMUJBUFgtWG90T2d4cF9OMzlVMUFM?oc=5",
-      "title": "혁신형 제약기업 35곳 내년 재인증...R&D 투자 넘어 개발 성과 평가",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBnT3pwR0RUQS12eUxXZS1wU1hGdUs2V0RseW5aNTkwLVg3ZU5fOU84M240U3ZZVkczZ05SaHY1V0s5cWdScTVCYkZ6cFhFUXRwbWlaNUg1eWxhNE84N0lOYUpQTkZSbDRUOGtz?oc=5",
+      "title": "10월 생산자물가 0.1% 하락…사과·돼지고기 가격 급락 영향",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0wSnZnWHZ6emNZNTV2Rl9ZaDF6T3kyUWRXeV9mVExuTWNJQ0JrRXJqVk9TN3p3VHZhbFhmWnRPSUFRS1RTZHdTTW1IcUFUNFQ2M21GdXNYV3JNLWdxRl80dHBMaXh0XzhWeXo3WGhSMWFRMS1sUDN1ZEdB?oc=5",
-      "title": "Syria Is Paying the Price for the Iran War",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5mRHd6Tk53dkRxaDdoclc5R290dFlwZkVGY0FXSTJ5Qml3Tzg5SmlYQTNNOW81MXc5ak5pR0dxS2R5OHdRQ2otWkRWSTh3MkRHa3FEbUFlQlA4NFF3YllRMUJBUFgtWG90T2d4cF9OMzlVMUFM?oc=5",
+      "title": "혁신형 제약기업 35곳 내년 재인증...R&D 투자 넘어 개발 성과 평가",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -511,24 +487,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNb0F2dXZIbmZWckNpSS1XVGNPYkhCR1BfWVBIandpOHZZZVlOYmtlVkxHVHpvV1dHYkphWDE2MTVVbTg4M1dVZl9WTjJHN1d2SkR2aFR3Znl3LWgzb2tNcXBHMnltVmJwVGVBVmNYMk1INHNUVkxfNGZDeURSekFidzdfOEhuZnJrMVJQQThBdw?oc=5",
-      "title": "Trump says Putin wants to end Russia's war against Ukraine through diplomacy",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcE9rMnJHU2dQdE5wZ3hCYW1CdHlxTy1nZVJKMWw0WjQ4ajh4bW1fWVU5SWtaU0NPM1RnclNTMkxWYS1fU1MtNC1CTURRSmJLb2VuUWtmWWhELVVXZjFTa3FOMW9kbTU0UERpVVRWT1ZiZkhaQVJ6SkdPTXdHOUpXekhaQVlNQTNaeHYza2tpRXVVMHNHalNOUVAxdETSAaMBQVVfeXFMTTBZQmxvNHpDX0pIbWw5OW0zMUtiWWhacURFeVZ0djJsX0l6RXRqdDlfSFBKa1VDdUtpS3lfTHRzWHMybmFQZEhxMzdUY2dVQmt1bkxwQW1SVEhjVXpfQ1k3VTQ5VEgtMHVNWnZUam5qR2JlMG14ZmxNMHZZTHJ4Q0tad2FXdWlIYkxCNzhTTXM1QXZDY1RsZFoxUWZrS1I2RmZIUQ?oc=5",
       "title": "‘Philippines in talks with Russia for nuclear technology’",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZ05xR2tWUEtkVE1IM01oV0VjZDFPQ1hLa2JpdGNnMnBYSnlPVUp5Y21VbHB1OW4yVzV6Y1RxSnVUdjZzWERNTzA5NExHODlpc1RMUWJwd0hNZG1YMWtRQW1EY3FvVUgtcGVVV0x5M3ZUamp3YjBWSjZxaFdQTEhLMVk5V3RQZFV5bmVWYXEzOXl6OHRsbERVcVJ3cmlrcUE2eHRZ?oc=5",
-      "title": "BNPB Delivers Flood Aid and Enhances Mitigation Efforts in Aceh",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
