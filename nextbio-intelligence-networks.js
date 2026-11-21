@@ -111,9 +111,6 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
    const link=node('a','',String(a.title_ko||a.title));
    link.href='./article.html?id='+encodeURIComponent(a.manual_issue);
    item.append(link);
-   const date=new Date(a.published||'');
-   const meta=[String(a.category||'자체 기사'),Number.isFinite(date.getTime())?date.toLocaleDateString('ko-KR'):''];
-   item.append(node('span','nbm-source',meta.filter(Boolean).join(' · ')));
    manualPanel.append(item);
   }
  }catch{manualPanel.replaceChildren(node('p','nbm-empty','자체 발행 기사 데이터를 불러오지 못했습니다.'))}}
