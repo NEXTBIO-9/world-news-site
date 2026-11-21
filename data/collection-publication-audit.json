@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-20T23:07:58.561694+00:00",
+  "updated": "2026-11-21T00:08:09.826433+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
     "important_unpublished": 14,
-    "not_in_current_queue": 36,
-    "pending": 18,
-    "published": 126
+    "not_in_current_queue": 38,
+    "pending": 17,
+    "published": 125
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 11,
-    "pending": 3
+    "not_in_current_queue": 12,
+    "pending": 2
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 7,
+    "source_blocked": 8,
     "repeated_extraction_failure": 4,
-    "in_retry_queue": 3
+    "in_retry_queue": 2
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -95,6 +95,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
       "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbEhFSUFKNE9hY0hmX1M4LTRwMm41czZoaDZQX2VMYWJZMVgtekRnaUxnQUg5Qk1GenA1TWVjaU9OQng3em5oa2ptVzhPS2gwZHU5ZzgyV2dpekttOXU2LWhjaW1HWUpxc2VKSHpIeUhSc3lCYkxQVTN2Ukx4dTZYZ3VDcXFIVmhZZTh5TnRBQUpRNlpuQ1dIeVBzR0dQaWJjMWR1VXdTSV9YUTd5cUVJR0loai1iaVdqQ2pKZDFSUDlDSll6WWlDSTIzSdIB0AFBVV95cUxQMGt4Q3N1QW14N1ZHNU9UTzh1d3RTbTFiM3B2NnhLYkJ2SEFqNlRDRGI0RFlkcnhxM2EzR3g2bUJqSlhJOFJGaWwtZ25haVc5MGpTMFdVRnRMSzIzN3Y4U2x0VVUwOVJOa3p4WmxZaHZHY09hOWJVUV85M1UxdEJqVGNHN1l2VXZQUF9sY19UQjFmZG9QNjRVWW5sSVVwNy1fSU5oY0pLWTlrTW1OOG5heHhsUFM1WTBzZ2hpV3BDM0xXb1RoWlkxd24yYjhtZFFI?oc=5",
+      "title": "Russian missile hit south-east Poland during attack on Ukraine, no-one hurt: Warsaw",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -191,6 +199,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbEhFSUFKNE9hY0hmX1M4LTRwMm41czZoaDZQX2VMYWJZMVgtekRnaUxnQUg5Qk1GenA1TWVjaU9OQng3em5oa2ptVzhPS2gwZHU5ZzgyV2dpekttOXU2LWhjaW1HWUpxc2VKSHpIeUhSc3lCYkxQVTN2Ukx4dTZYZ3VDcXFIVmhZZTh5TnRBQUpRNlpuQ1dIeVBzR0dQaWJjMWR1VXdTSV9YUTd5cUVJR0loai1iaVdqQ2pKZDFSUDlDSll6WWlDSTIzSdIB0AFBVV95cUxQMGt4Q3N1QW14N1ZHNU9UTzh1d3RTbTFiM3B2NnhLYkJ2SEFqNlRDRGI0RFlkcnhxM2EzR3g2bUJqSlhJOFJGaWwtZ25haVc5MGpTMFdVRnRMSzIzN3Y4U2x0VVUwOVJOa3p4WmxZaHZHY09hOWJVUV85M1UxdEJqVGNHN1l2VXZQUF9sY19UQjFmZG9QNjRVWW5sSVVwNy1fSU5oY0pLWTlrTW1OOG5heHhsUFM1WTBzZ2hpV3BDM0xXb1RoWlkxd24yYjhtZFFI?oc=5",
+      "title": "Russian missile hit south-east Poland during attack on Ukraine, no-one hurt: Warsaw",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMizAJBVV95cUxOMlJnS052VmtpZldWQUx4ZjhfSlJrSUNNanRVcWRjRUV6YU95V3QtWVhpdEtGNUZtSnlZaVZvRUVfRnE1S2pHUnBUYWhOWFVqN2lXN1o0c1BsanpBRmlJSnhNWGRuRTM4Y3hld0VpZ1Z3emdXV2VOdElYMWl5Z19fcXNyX2tBYnM2QnU1amRQdDBnVjNHb2s2NUFwcmxrbEdoUklZSjlON0Q0eFRXWVhuVnlYN2JVUmQwampGRE1iTlRUQjRwWF9ITEtHMEFVTUJRWXEweUo2U2s2VjZMUEJxMkR0SDFHLWxydlloZUI1aXZCaVViYUJ6WWtlWkEzLXZPUHk2UVhSZlFnSjdTVFlJenRKT25TSnFRMERVZHNYNnExczFtQUgwR2ZiQjJOVm8tNzlnUzVnRi1HZ1ZuamdMTS1zTGp4MnVsQ1BPaQ?oc=5",
       "title": "Switzerland checks the wastewater of almost 2 million people for flu, RSV and COVID, and an ETH Zurich scientist says a new pandemic virus would probably be spotted there before hospitals see it - ECOticias.com",
       "important": true,
@@ -207,14 +223,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQnduWTFXWFlZdk0tS1dvaGgwNlpXZDRlX3JEUWtPTkRhV05XYURacmpkVlhmbmlwSnpGT28tZlV2eUNkdGZpLWk3bnJoVV9MTFV4bUMwcEZpTTZLU01yMnREYXZrLUFycTdFRGpBelJrT1NfbXJ3eDAzYkNocGFfZmxrNzdVb1hBM1ZhR2pjbnkxV3VDenlkdjRraUJGTVFlUUwxZUdiWGpKUm50S0VfMUc3Ukxvelc0VEtuWkNVMjMySEE?oc=5",
-      "title": "Connecting agricultural research and knowledge to support action against antimicrobial resistance",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNa2VfaHQ1V0Q1VWpXVmxWM1pqa1hMa0hSSkEySFhrLW40VHM4RDMxNnhmaDc1am93LTNyLTZ3RmZEQk10Q1ppUUdRdFhXclM4eHpVeElPRzdVd0FfeVpuT2p0OGxDdGFqRFZWdTZ2VzVONlpUZmJLekdTWkg0R19WMERQbVh5WjRRM0tqQmc5QXZUVlZXNWVzaXhaOF9CX3M5OXkxa3cxY1FuQlpnZU5PX05YSHBTVkhUTkRTMWZobGVtRlMyT2RnU0JLaGt5dw?oc=5",
       "title": "IDOH: Indiana experiencing measles outbreak",
       "important": true,
@@ -223,7 +231,7 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE85NXp0U0RBSzdZZUhiZUxlZ2NwOXdiMmZlcmRJODFESnFDRzBMWHBwb2VBVVFxZnVzeFBycFFJUWgteFh3QzNzdDJDc3lWdWQ1TkxKZXR5ZEE?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9rZ1B0YlhPMjVkNzc4ZFRKVFlLQ0xtYUd1eU1HZ3FjMl9KRm96ckdRbktDUVZTWER2djdqNElWUWVHRkZLc0dSeWtFdGhvQVc1UW91QWlB?oc=5",
       "title": "美 의회 “중국 바이오, 글로벌 신약개발 주도권 잠식” 경고 … 美 자본과 개발경험 동시에 흡수",
       "important": false,
       "state": "not_in_current_queue",
@@ -233,14 +241,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1teXpfQll6MTNyb0ZPZlJMRk83UTlZbFhCeGEyOGhkaVN6bnl0enp5SEh4T3RVemxMbktDakJLekdLcGdGNWVqc05TUUNiQjctUHB2TTFzdUt2LVh4Q1M4ZXlkYw?oc=5",
       "title": "신약 후보물질 넘어 허가서류까지…AI, 개발기간 단축 새 가능성",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5maWpJR1J2THZpYm95U0J0UVViWDlGNFFXRWpvcjM3bktMM0YxSzNJcVZqM2g2NFJQaU5rTTh4c25kc3RsNTVKdHpHWUQ4TkR5Vl8zSVJvZWxlaElERllIUG9kbw?oc=5",
-      "title": "리가켐바이오, 국민성장펀드 바이오 1호 투자 유치…5000억 조달",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -279,14 +279,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ydVhQTWZEVGUtUnJQWTkzNnpvcTIyT014VWVzdkdSWHVSUlNVSWdkaHcxdFZhSW8yQUNtOVR5Umk0MGM2c0I0LTJmUi1pUEhvdG5uLWNoZ1c0VklUZXo5cUxqNHpkMWl2Nnk5ZU12VDJad9IBdkFVX3lxTE1QbjUxOVNkcG5Rem9YRXdzcDU3cTVMbFZrRWxYSVRzd05nLUNuYzA2OHVrRWhHYmFlNElxbzV3ZWVONGdMcHFHWWNyV3ZTS0hvVjIzYlE4TlZDNEpwNkY3NThObVg0SktEbUpOVHlWZ0FYUU9kdmc?oc=5",
-      "title": "“美, 中과 신약개발 협력으로 자본ㆍ상용화 노하우 이전”",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSWg3S2pyN251RmlYaVlDWmRXaVV1ZU92RkJadkpPYmNndV8zS2F4Tk42ZTUzR2V2ZzVkdlBueXhiQy1SekpfQkdXaGYzUEw1eGk2YWhnYUFWcFlmYU04bWZ2V0hkdE1ZbzNTZVBpRUFMZTduWnh0LTZLdlFVd3NzNDlR?oc=5",
       "title": "Indonesia-Canada Trade Agreement to Take Effect 1 December",
       "important": false,
@@ -305,6 +297,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNSWZIYjM2Y05tRk5XY0pqVUhvNTRsM29sYjJIOG84YXNvU1dMeGJ0TGVjblFCZl96M3dqanVZbXBqTEhtSEM4ZWF0ckduRFUwb1l1OWNWRlZrWVZCUm1zdjRIdll4LXJzOWR4RXE1MmhFZElJQzMyTEhVTktpOFBULWF0Ykk4dDdUTl9kQXJvdTVZWTdPZTN1eHV6UkNrODhfZ1huby1WdTNBQnQ1RHFmaThVWGdZQjM5UkQ3Mlc5Y1I4Y1RqQUpkWmUwMDR0YVNHYWltLUtJYzJlZVJoVzJCMzN0X2FTdlNPb3BsVTNKY1RjSFRpRHBtcTJRWTJ1ekhWMWdwcjdmZw?oc=5",
       "title": "Israel warns Wong against sanctions ‘mistake’ in political uncertainty",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
+      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -343,6 +343,22 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNT0JEYTlwbVd6TXVhU3lMMnpSN251QUZhenhmbEk5enlPX0lUYjhMa29xOXZOamc4VnNiWGx1QVlfcTFIaW9PcVpYSFdXQ0o1dzZFNlRpamZFVWx1MF9ReGdfeHF1ZlFkdkhaaEM5eVQ3eEV6SE5jeVFUaEl5LVJhUmtiMktvRkxjM1lWV2FJV3JhaHJxUFM2cjlsRTg3QV9Sd0licGhvME9lYVU?oc=5",
+      "title": "EU Considers Stronger Measures Against Russia as War Diplomacy Stalls",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbFBwX2c4aU9rVTBJS1NxcVROQUlTYmlGSGM3YXpwNEFCbFJzUWdzYlA5T09jZlJ2NGFmbk82Sk1FbHRNWXEwTlBuWnkwcG5OYUowSFNIZkhuaFdwVHc5M3lCS3Y3aDBkT21KR1VINzBkRmx6VDdtdFZ6QjRNczJySzJkREVPVmI2MEdwaTQ2cGVEbFdWSklNNkVzUWJGOTlYOUxOQVl3N0hYcTRJT1HSAa4BQVVfeXFMTWxQcF9nOGlPa1UwSUtTcXFUTkFJU2JpRkhjN2F6cDRBQmxSc1Fnc2JQOU9PY2ZSdjRhZm5PNkpNRWx0TVlxME5Qblp5MHBuTmFKMEhTSGZIbmhXcFR3OTN5Qkt2N2gwZE9tSkdVSDcwZEZselQ3bXRWekI0TXMycksyZERFT1ZiNjBHcGk0NnBlRGxXVkpJTTZFc1FiRjk5WDlMTkFZdzdIWHE0SU9R?oc=5",
+      "title": "Trump Says Putin Wants Diplomatic End To Ukraine War",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOMHIyVk5RYnI3VVMyUkRDTXRuNGJBcHBEVHpMVll2UUdSa0VOS0FHT3B0TEh0U0EwTTEyMTlhSWJISndmMDdiMDNYWjg5WWdPZW5oem5WOXNzekRRQUh3eUNadnlCZHZPOGliLV9SVjBYREp4Tll6RE84V2s1NHNCYlRlN1ItYUxCVnpCTHNlbTM0MVU4RjFjWUIwNWFiNTRQU2duTnVEbUhndDNZUFE?oc=5",
       "title": "United Kingdom: Inflation to peak at 4.5% in Q1 2027 - Societe Generale",
       "important": false,
@@ -356,6 +372,14 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxNRWNndFRQWElVTGNjal9vQzRuSGRaaU1wN25YRVV3dWlxdWI2Q3lYLWd0MTBtMFduQnEtLWE2SFlrT3ZlU2pocjVxblpVSEIybUI1VEZoMFFoOW5BVUFwMjJmd3lHLVhrSGtuaWZaSjdHTGEyVWZyNFBIaW1UZVZrbnVRNDNRVS1ZMFgzaWNoR1BBTXVWUzV6TWhzWWZiWno5MlNCMGVDQjJVOEdDd211cEIyZGprdHJSQVYxS2FkVk5fX0tKRU5ZU013YUpMcGtvT0otbFN4S3QtWlFrNEpnVzR1NUxyWnc3Y1ZLYW5mZDR5a0NsXzJtN0VXcUtFbGp5cDJoU3BrRTY4VXNhN1VtWHN1aFlZWENVSUlkbC1LQWh1R28yTXU3dVc3SUdZWFZE?oc=5",
+      "title": "University of Tehran President Warns UN Secretary-General and New York Times Editor-in-Chief Against Normalization of Attacks on Iran’s Critical Water and Energy Infrastructure",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -407,14 +431,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMklCVXFmWDVLQ2pQRjFod3dnREpTV3JPWTRjUEstQmNJRXMtOUktX281TU0zcmVOb0xWRV9CeENjaWoybTZQZDVXV3p3ZHg1NzZCYTRtNGNxaW5lcnpNNnhXS1IzOWhqQ1J3ck1ZWVBVdjA1cmViUkt1S0ZFbmgzNndJV2J1b25sQVFWbUp2UkZNTk9Pa25mRmNMVTI4LWF5aXJPMDV6eFZyaDRHLTUtT1AyVk5DUFl6cVFyUTB2YXMydw?oc=5",
-      "title": "Vietnam facilitates US pharmaceutical company’s vaccine technology transfer",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSUg5MGxzdmZjWDRrRncyYXFFc2xfTjBmN05RdlR3S2o3SzVmRl8xUWFMMXZsUWFzajlNeVg5S1V5VW1WZ3ZfcXI2QzJQRW51VTl2MkN0OWVKc1FUcE80YnV6Yk1Ha0tnT2lTSjNLR3ZVYUJra3FlX2FuWTJsZ1ZkU3RLUG1uQ1lUQ3otUmFWcTVMdWcxWnVQSDRGTGpGR2daNVFFUFVaMDZPdWl2MExyNUVXWEVZUVIwQ0oxYTVBbk1vdw?oc=5",
       "title": "Canada Concludes Free Trade Agreement Negotiations with ASEAN and the Philippines",
       "important": false,
@@ -423,8 +439,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaEFvUTJHSzFhVWE3ZHZ1VHJaTmZ4T2VvejRpelM4ZURIaWtjYlJFTDdualM5ZWJWVmRMUGhBc3pLQzJ1VDJRWmY3SV9HRUIyanQ3bGoxdDFOcXQxbm4tWFFSRVBtYkQyaF9wNld1cXBfbXZrWDhiWW9kRzQ1aVl6MVBwcFd4dngzMjdVeE5mMVNMSjhjWUR2blBvLTRLV3RmMWR0QTYzcnVuUHhsMHg2N1BZdkVtUDFNTWRpSHlMU2VUVGJFVXRVbTNtb1lRQ0RDX19F?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVklGWGdSY3NwRm5TT2FNbUM2MVIwR1AyMnpJZjlxV2p0TUVjN05jZFNRRTNwY09RYVFuZ2hfeWtJQ2JKRE00VG9telBsY3BsU0RLbklsOFp5cXJYcFRJdjRtSDEwaG4wLUNuZ2tGWkRUMGg2bG95X3JPQ0NJNWw3dzk4Q3BuWmNvM3FIVmZfVmN5VmpFbEtjNWlGV3ZJRkY1TnBXdGtobndpNFc5V2N2dnVzSXlQcWFsMHA2bUZfS2FaU28xeGFSLUhmZi1xMjNGZ1Biag?oc=5",
       "title": "PHILIPPINES, MEXICO SEEK STRONGER BILATERAL TIES LOOK: President Ferdinand Marcos Jr. met with Mexican President Claudia Sheinbaum on the sidelines of the 33rd APEC Economic Leaders’ Meeting to reaffirm the longstanding friendship betwee",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNbF9qMnNHYkhkaEJyQmhHVnRnV1BSdTR1YzJaWGNnYVFXNG1mNGVocXdVbHd4a2xBR1hkRjkxQS1QYTlzNktEc2ktOG9XRU80Zl84dXpERHBJQ0ZSRFBEUEJRdmZTa0R0R1pxZEdxd0FMQkhnNGZLMFJpX3RURTFjMDduZzhtbVNKZ01FYllYUzhTanVhaFIyV19WRWV3bFBrcmlzR2xaUlJxZ0p6SGNNY25tZUhubHlkX3cyWGE4V3ExUUx4REZmN1gtWTB0S3ZHUkNtdEVIMA?oc=5",
+      "title": "The Philippines and Chile signed the Comprehensive Economic Partnership Agreement, a free trade agreement that will deepen trade relations between the two countries. Link to the full story in the comments section. | via ANC 24/7",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -439,8 +463,32 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNeFhEenpyaWpTUVprcDJkcTNDY0F2VGVXWjNSc0ZVUFhlUWwxV0RBQWNHRV91eWcySzAxZ3A0WlFyaFRvN3hqaHQ3V1ZiNmsybVdRdnA5NVJ5US1TVFJmaDliUGJBc0c5ZHg0eGdLSW4zb1dPV0kxcDdPZ045TUJ6a2lOcElselNQWDNZdUVqOFlCb0liTF9UUmJ0VmctUjhHajdqek1MdW5KbXU0a20xTmlyb19nSG9DRkdEa2g3UVJvd2hJdmhLSzZQUmlxdVUzYkhhYjN4VTl5dU5sTi1KSA?oc=5",
+      "title": "PHILIPPINES OPENS NEW TRADE ROUTE TO LATIN AMERICA WITH CHILE FREE TRADE DEAL Philippines officially opened a new trade gateway to Latin America after signing a free trade agreement with Chile during a bilateral meeting on the sidelines of",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE43SVJaeXBDZUJpVGU5MGpCYjE4c0hjbmg2V3ZuQ2Npd0NET2xqSmpwTmRWSXo3UDZLeDZ0aXhnbHl0bFNLalYyRjdOanlsSGxXSzF3aGMya09ZN09ZUmFfek5R0gFnQVVfeXFMUFRlQkVrbVg2UVpkdE8zVTktUUdtVE9WVzJmSGp5OE5DSUFhQ042M3BxSW5oQ2lxVG1LTzFSR1RjWVc3TTYwSjBLVHBnNlhsMEVrV1MxSkM1WVZCb18tQm15bGZZNWFHRQ?oc=5",
       "title": "UK and Norway to provide funding for acquisition of two combat patrol boats for Ukraine, totaling approximately EUR 120 mln",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4tVGQ4eDZQTVlBNXRqOFVKZTkzZWNvRjNaLVctdm82R25OSnFOTDhYVVo2YlB3eVZFbnVSUERDMHNtWXpuWE5jQVFfYkMzeTViME9sQXNKU25jWDRLWG9GSnlua3M?oc=5",
+      "title": "반환 신약 다시 개발…한미 '에페' 상업화, JW·유한도 도전",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5mRHd6Tk53dkRxaDdoclc5R290dFlwZkVGY0FXSTJ5Qml3Tzg5SmlYQTNNOW81MXc5ak5pR0dxS2R5OHdRQ2otWkRWSTh3MkRHa3FEbUFlQlA4NFF3YllRMUJBUFgtWG90T2d4cF9OMzlVMUFM?oc=5",
+      "title": "혁신형 제약기업 35곳 내년 재인증...R&D 투자 넘어 개발 성과 평가",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -457,14 +505,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5kYmVqUXBXa2dhU2d2MzNxYko1NlZyaGdTTVVXZk5ocUNsQ0k0UEFOM2RUR09uQUtoVllOMEUxb2IzVHdFcGVsODIyeXNZWmFOR25nZ2RuQmdVWlBEb1YwNWhzMkxqMDFqSDRsMG84QXZLQ0k5Vm8zTnhISmF1Zw?oc=5",
       "title": "Rubio Urges UAE to Help Bring Sudan War to an End",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcFoyTlhOMXhfVS1nZlBXMExaZ1dZMWUzVE5mM3YxSTN5bVF2UlNSNGxNbnlnS21wdDY4TE5TVk9CbHY4bmJnLVZPSWlfeE5uU0dCS1g1emM3ZWVwT01Qd1lmS3htd2hobS1iUjV1WncxbXBwVDdHZ2Q0R0pNUGZLNF9Vdw?oc=5",
-      "title": "India to host Brazil President Lula for state visit",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -495,24 +535,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNM0hockpiekxITC1NQUNfU3loNC1PMlBaYUFxZ0Uya0ZLMkEtcEg5NE4yVzIwTXRxMmZhem5JY2FEa1VRNUpHVkNiMTZBUXVxTDdFa0Z4OXJVZnpPVG5qY2F6RjRtbS1zbldUUUlldHc0T2lMZ0RNWTg1S3h1MlZsR25qdkhtZWw2UUhGSEhUeDlwbXhRWElsQUlvQ1gxQkJRSXFyRQ?oc=5",
-      "title": "Trump Says Putin Wants Ukraine War Ended Through Diplomacy After China Meeting",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNZWV1UV92eVNuZy1MajdYdFV3dkFVR2V1eGRJb1hheTRxMnJtWVkzSmFDc0hieFpWREpHX3BEMEc1S2dQeERuT0RUcUhxLU0tRVNTSGp3QVdwRnZyUEdYbFZCSzRzenBrT3NDd28xemdGMDNTbExUTEw2clZYWGpoOWc3bkVZQmVkbkhlMmxmNjR0bTZuZ1BBM3VoMHp5dG55ZkVyMlR3?oc=5",
       "title": "Bangladesh’s Rooppur begins supplying nuclear electricity to grid -- ANS / Nuclear Newswire",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQODUyS0tkeDhBMDZQTFFXclNNdW9uc0N3SlFUVnFHVlRHYW1yX3M0NWZ5em5Tb0xuSTNNd190MkxnZ1JtZ0N2OWJTbGk0X2d2UnZuTU5XVzRPQ1RhaFJMVXJXOXFvd1lidGdhYWk0ZURTNkZLUDkwVUZYc05sNVVxV29WajNubVU2Z1hpa3MyeFBSRXZtSFZoYlU0ZU5TMThKZmhUNjZR?oc=5",
-      "title": "India and Finland sign key agreements during President Alexander Stubb’s visit",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -529,14 +553,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNeDVqSjF0V2pJbmRWeGZwMkd5NVo3OTVrQ1gwX29oaWRwNjQ2cUkwQm5ZMkcxQTRKNzdoUGNRS2g3MS1VVmhJMm91bUU1Wm1pVzA0UVpLQ3VyVnNmQTUyZkhzWkljTU1DWTA3cjZPVGhtalR2Skk0dlhfZ0hyYkp4LXpxc0RTbWdndGEyVVBET3ZHYmdIMHBvY1pUcllLRFVvdkxIZUxRNlVzTGd0WDFTNQ?oc=5",
       "title": "Investing in Children’s Health: New Vaccine Warehouse Opens in Bishkek",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRjA5QTlZcllPbmJwVUQ5Wk9nMGQ5bVlRXzRjSVd5Znlla2t2Sy1TZFVWbzRTY01xc0pOaUFqdHNLUHV2TmY3SlRwUUpBNmtyaWlNV0IzRGt6UXNPZzJDT2ozVFU3ZnU5cW43WmxQMHBPUm9Md1VqUTNlNVdiM0Zwc0FaN3RRakNBWDhIcGRqc0lqbDM5UG5ZVFRFc0JRUEFsLUJZSWZtbXZ6RWxDTzB5bm94bGd5MUxVU0NMUTliSWVIQzkwV0Yw?oc=5",
-      "title": "What makes Singapore a prime location for semiconductor companies driving innovation?",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
