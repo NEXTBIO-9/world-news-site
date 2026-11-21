@@ -39,7 +39,7 @@ small{display:block;margin-top:22px;color:#a9bad0}
    const del=document.createElement('button');del.type='button';del.className='action delete';del.textContent='삭제';
    del.addEventListener('click',()=>{
     if(!confirm('정말 이 기사를 삭제할까요?\n\n'+a.title+'\n\n다음 화면에서 GitHub 삭제 요청을 제출해야 삭제됩니다.'))return;
-    const issueTitle='[자체기사삭제] #'+a.manual_issue;
+    const issueTitle='[DELETE-MANUAL] #'+a.manual_issue;
     const issueBody='삭제할 기사 번호: '+a.manual_issue+'\n\n기사 제목: '+a.title+'\n\n이 요청은 NEXTBIO-9 저장소 소유자가 제출해야 처리됩니다.';
     const url='https://github.com/NEXTBIO-9/world-news-site/issues/new?title='+encodeURIComponent(issueTitle)+'&body='+encodeURIComponent(issueBody);
     window.open(url,'_blank','noopener,noreferrer');
