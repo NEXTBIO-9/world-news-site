@@ -731,32 +731,12 @@ window.addEventListener('resize',()=>map.invalidateSize());
 
   const data=await r.json();
 
-  // Manual news is stored separately so automated feed refreshes cannot erase it.
-  let manualArticles=[];
-  // Read the newest public main-branch file first, without waiting for Pages deployment.
-  for(const manualUrl of [
-   'https://raw.githubusercontent.com/NEXTBIO-9/world-news-site/main/data/manual-articles.json?t='+Date.now(),
-   './data/manual-articles.json?t='+Date.now()
-  ]){
-   try {
-    const mr=await fetch(manualUrl,{cache:'no-store'});
-    if(!mr.ok)continue;
-    const md=await mr.json();
-    if(Array.isArray(md.articles)){manualArticles=md.articles;break;}
-   } catch(error){console.warn('Manual news source unavailable',error);}
-  }
-  all=nbDeduplicateArticles([...manualArticles,...(Array.isArray(data.articles)?data.articles:[])])
-   .filter(a=>
-    a&&a.title&&(a.manual===true && Number.isSafeInteger(a.manual_issue) || /^https?:\/\//i.test(a.url||''))
-   )
-   .map(a=>({
-    ...a,
-    countries:matchedCountries(a)
-   }))
-   .sort((a,b)=>
-    (Number(Boolean(b.manual&&b.important))-Number(Boolean(a.manual&&a.important))) ||
-    (new Date(b.published)-new Date(a.published))
-   );
+  // TEST1 manual articles are intentionally excluded from the public news feed.
+  // The dedicated TEST1 tab reads data/manual-articles.json independently.
+  all=nbDeduplicateArticles(Array.isArray(data.articles)?data.articles:[])
+   .filter(a=>a&&a.title&&a.manual!==true&&/^https?:\/\//i.test(a.url||''))
+   .map(a=>({...a,countries:matchedCountries(a)}))
+   .sort((a,b)=>new Date(b.published)-new Date(a.published));
 
   if($('updated')){
    $('updated').textContent=data.updated
@@ -791,45 +771,4 @@ window.addEventListener('resize',()=>map.invalidateSize());
  }
 })();
 
-/* Live manual-news updates: refresh only manual entries, without resetting filters or map state. */
-let nbManualRefreshBusy=false;
-let nbManualRevision='';
-async function nbRefreshManualNews(){
- if(nbManualRefreshBusy||document.hidden||!Array.isArray(all))return;
- nbManualRefreshBusy=true;
- try{
-  let data=null;
-  for(const url of [
-   'https://raw.githubusercontent.com/NEXTBIO-9/world-news-site/main/data/manual-articles.json?t='+Date.now(),
-   './data/manual-articles.json?t='+Date.now()
-  ]){
-   try{
-    const response=await fetch(url,{cache:'no-store'});
-    if(!response.ok)continue;
-    const result=await response.json();
-    if(Array.isArray(result.articles)){data=result;break;}
-   }catch(error){console.warn('Live manual news source unavailable',error);}
-  }
-  if(!data)return;
-  const revision=JSON.stringify(data.articles);
-  if(revision===nbManualRevision)return;
-  nbManualRevision=revision;
-  const manual=data.articles.filter(a=>a&&a.manual===true&&Number.isSafeInteger(a.manual_issue)&&a.title)
-   .map(a=>({...a,countries:matchedCountries(a)}));
-  const previous=all.filter(a=>!a.manual);
-  const next=nbDeduplicateArticles([...manual,...previous]).sort((a,b)=>
-   (Number(Boolean(b.manual&&b.important))-Number(Boolean(a.manual&&a.important)))||
-   (new Date(b.published)-new Date(a.published))
-  );
-  const existing=all.filter(a=>a.manual).map(a=>({manual_issue:a.manual_issue,title:a.title,body:a.body,important:a.important,published:a.published,category:a.category,countries:a.countries}));
-  const incoming=manual.map(a=>({manual_issue:a.manual_issue,title:a.title,body:a.body,important:a.important,published:a.published,category:a.category,countries:a.countries}));
-  if(JSON.stringify(existing)===JSON.stringify(incoming))return;
-  all=next;
-  render();
- }catch(error){console.warn('Live manual news refresh failed',error);}
- finally{nbManualRefreshBusy=false;}
-}
-setInterval(nbRefreshManualNews,30000);
-document.addEventListener('visibilitychange',()=>{
- if(!document.hidden)nbRefreshManualNews();
-});
+/* TEST1 articles are loaded only by the dedicated TEST1 tab. */
