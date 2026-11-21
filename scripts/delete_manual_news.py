@@ -7,7 +7,7 @@ from pathlib import Path
 
 title = os.environ["REQUEST_TITLE"].strip()
 body = os.environ.get("REQUEST_BODY", "")
-match = re.fullmatch(r"\[자체기사삭제\] #(\d+)", title)
+match = re.fullmatch(r"\[(?:DELETE-MANUAL|자체기사삭제)\] #(\d+)", title)
 if not match:
     raise ValueError("Invalid delete request title")
 number = int(match.group(1))
