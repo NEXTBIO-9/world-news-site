@@ -9,7 +9,8 @@ title = os.environ["REQUEST_TITLE"].strip()
 body = os.environ.get("REQUEST_BODY", "")
 match = re.fullmatch(r"\[(?:DELETE-MANUAL|자체기사삭제)\] #(\d+)", title)
 if not match:
-    raise ValueError("Invalid delete request title")
+    print("Not a manual deletion request; skipping.")
+    raise SystemExit(0)
 number = int(match.group(1))
 if number < 1 or not re.search(r"(?m)^삭제할 기사 번호:\s*" + str(number) + r"\s*$", body):
     raise ValueError("Delete request body does not match issue number")
