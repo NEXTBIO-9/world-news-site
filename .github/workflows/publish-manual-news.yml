@@ -13,23 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Publish owner-authored article
-        env:
-          ISSUE_BODY: ${{ github.event.issue.body }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-          ISSUE_URL: ${{ github.event.issue.html_url }}
-        run: python scripts/publish_manual_news.py
       - name: Commit published news
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/manual-articles.json
-          if ! git diff --cached --quiet; then
+          # Rebuild against the latest remote state to avoid conflicting JSON commits.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/publish_manual_news.py
+            git add data/manual-articles.json
+            if git diff --cached --quiet; then exit 0; fi
             git commit -m "Publish manual news issue #${{ github.event.issue.number }}"
-            for attempt in 1 2 3; do
-              if git push; then exit 0; fi
-              git fetch origin main
-              git rebase origin/main || exit 1
-            done
-            exit 1
-          fi
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
