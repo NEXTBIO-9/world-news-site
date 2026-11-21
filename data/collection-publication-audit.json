@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-21T12:06:22.245095+00:00",
+  "updated": "2026-11-21T13:14:22.125111+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 20,
-    "not_in_current_queue": 36,
-    "pending": 16,
+    "important_unpublished": 21,
+    "not_in_current_queue": 31,
+    "pending": 21,
     "published": 128
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 15,
-    "pending": 5
+    "pending": 6
   },
   "important_unpublished_by_reason": {
     "source_blocked": 11,
     "repeated_extraction_failure": 4,
-    "in_retry_queue": 5
+    "in_retry_queue": 6
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -287,6 +287,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOEJ4TWJwOHZkQTdBR1JtaDlFZG50TGRTM3JiMVdzLWFhSUZ2ZXBWeHEyRjVpeGowUFB3cG9tek5JbmdxdnU2ZjBuenBrZEVuLW5KazJJVk0tTEJNa0JnaXQtUWJZaGV3OFpWRjR3VzhmcklvTUtTelJFVlVYcEQzeTFOOU01M1c2dHlubTA3TQ?oc=5",
+      "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOejM3SVhiazhNV09xeDF3YXJ3ZVpjQnMwUVJmbUE3SmZnWEZBUE5IcVBSY3NlZWQ4XzFJWkJHRDV5RXdnR1pSQmZTX291TzJtY2ZOYlB6NHpuTy13SjhMN2ZOR3JsN29wVjUtclFONUhtcVFON2UxcEY5ekZlZUN6SkdpWFZkdk9QY2QySnlNclAtU0JlaEJGLW5NdDU4RnFXVi1ncy1xSE12MWpTWTZLeHpTeFJPUjNw?oc=5",
       "title": "European officials call for ‘swift and sustained’ action on antimicrobial resistance",
       "important": true,
@@ -311,14 +319,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4tVGQ4eDZQTVlBNXRqOFVKZTkzZWNvRjNaLVctdm82R25OSnFOTDhYVVo2YlB3eVZFbnVSUERDMHNtWXpuWE5jQVFfYkMzeTViME9sQXNKU25jWDRLWG9GSnlua3M?oc=5",
-      "title": "반환 신약 다시 개발…한미 '에페' 상업화, JW·유한도 도전",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE51dzJ5MTNMSDU4d1dOSFNnbWVWTV9aQUlqbl9rVDdKZlhiRmZPaUNwNE1FUFBKdlVVLTRHZDRBTmxWV2c4cl9NNU9pR3NsYkEtd0VzRFhza3l3LVRXTU5hSWZHTzNodVZHS1E0?oc=5",
       "title": "Courtesy call on Prime Minister TAKAICHI by the members of Japan-Brazil Business Council Plenary Meeting",
       "important": false,
@@ -332,22 +332,6 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ydVhQTWZEVGUtUnJQWTkzNnpvcTIyT014VWVzdkdSWHVSUlNVSWdkaHcxdFZhSW8yQUNtOVR5Umk0MGM2c0I0LTJmUi1pUEhvdG5uLWNoZ1c0VklUZXo5cUxqNHpkMWl2Nnk5ZU12VDJad9IBdkFVX3lxTE1QbjUxOVNkcG5Rem9YRXdzcDU3cTVMbFZrRWxYSVRzd05nLUNuYzA2OHVrRWhHYmFlNElxbzV3ZWVONGdMcHFHWWNyV3ZTS0hvVjIzYlE4TlZDNEpwNkY3NThObVg0SktEbUpOVHlWZ0FYUU9kdmc?oc=5",
-      "title": "“美, 中과 신약개발 협력으로 자본ㆍ상용화 노하우 이전”",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSWg3S2pyN251RmlYaVlDWmRXaVV1ZU92RkJadkpPYmNndV8zS2F4Tk42ZTUzR2V2ZzVkdlBueXhiQy1SekpfQkdXaGYzUEw1eGk2YWhnYUFWcFlmYU04bWZ2V0hkdE1ZbzNTZVBpRUFMZTduWnh0LTZLdlFVd3NzNDlR?oc=5",
-      "title": "Indonesia-Canada Trade Agreement to Take Effect 1 December",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -375,6 +359,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPa2Eza0lPSV9LcEQzNjUwbU9pa0NIUklLMnNxVkNIZVBOVlhrOWEydnZuTG4waGtkYnRDSWZ6SElWSllLVTluUlJ6RE9RQ1NUWDN5anl5QkNScjMwNVRKQ09ZaDAtbXNkY2Y0X0Z5d1hWN2ttX1JpVmNvelF5TFFreXZGajhxT2VudTB1REt5UzBUNldWVmEtMUVzOElCdlhMWlZSX1pB0gGrAUFVX3lxTFBidHB1cXFfRW5uQ3llMzRPQXRJY3VEek9jTFVuc2Zqa2Q1TXdLb1dEVF83QmVHcU9TbXBZaTR4QXVrT2tfYmF1V2RRLURBb0NPbVd1RGlpbFdzTVdQT1hHaTFWdUIyaGVzb2pFaVp4aUhncjdFX1ZXLVVVaVZsMzc3dzZDcDRxbjR3SHhFei1YZ0ZSdU9DSF92S0tPUThMY0lQYnhKbFVqUWF4MA?oc=5",
+      "title": "Danish Parliament approves US-Greenland security deal after Trump pressure",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOejY2RDhkei0xUlQwOFBocjZvMjdhYzFuRC1xRnNxUUV6OFhocWxsVGswcmVKSU9XNzZQcXZzTmltZF9XelVRZm5OR0kyNjNybTZsMVZSanBvQUpZTE10MnR5MTgtSlFOcC1PckxkeHRKY01MYnoxVHBwVVh2a3cwX1lSclpDTXk2Slp3SF8tclptVWxvOWIyMXhJcUJySW5aNDFDRVMzcWZ2dw?oc=5",
       "title": "IAEA flags gaps in Bangladesh’s nuclear emergency preparedness",
       "important": false,
@@ -391,30 +383,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOMHIyVk5RYnI3VVMyUkRDTXRuNGJBcHBEVHpMVll2UUdSa0VOS0FHT3B0TEh0U0EwTTEyMTlhSWJISndmMDdiMDNYWjg5WWdPZW5oem5WOXNzekRRQUh3eUNadnlCZHZPOGliLV9SVjBYREp4Tll6RE84V2s1NHNCYlRlN1ItYUxCVnpCTHNlbTM0MVU4RjFjWUIwNWFiNTRQU2duTnVEbUhndDNZUFE?oc=5",
-      "title": "United Kingdom: Inflation to peak at 4.5% in Q1 2027 - Societe Generale",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa0JqQ3k0WGk0NVoxbHRNTHBTeDZxaVkyYmdzdGptNVB2MUVjb3lmcG1OTXRrWGs0U016Vi0tWTU5UmdYbk5IWHJfSTV0UEpEUkZvM0s1WjkwT3E1NFVfMzdGb3pyZ0J3cmhGWXMzVWJnSmpTTVh0MU1VcUJUcFZBamRua0kyOFVWSGUtQ243M2lITElJbmRRS3ZhNTNTenJJcXJTbFZiU0hJVFl1SHl5MnVB?oc=5",
-      "title": "Yemen’s Long War, Saudi Arabia’s Security Dilemma, and the Shifting Middle East",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWnRsSTN2UHlvZ3hscnFOdktrT0UzVDdjM3hyeDM0ZWFkTGVuNjRMVGFMWnhPYVJHZHV5WmVINHp6R282a2xnVENuMWxhU3NLd1pxNUJ6ZUlacHU0WFR1SmprZEE5UUVDQm9HemliQ3NjWDVteHRnQWRNVWlHVE9tNk5tZUI0TXZqRW9WSUdVUmFHRXdwbkc5RDU2R2JWdE4xR0FGXzdBeW40bTV5XzFjSjJ3MNIBuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x?oc=5",
-      "title": "Spain's Sanchez admits 'mistakes' in election debate with rival Feijoo",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY2JtZUJubGd2ZHAwZy1nU3dhQ09Pd3A5a2drSWVWZ3ZTRGRDem8yU3pseEItYlBxb2lFbkI5SE5zVVZkU3RKMDNaYy1lUHItUmlZLV9GcDROZjFnNVBmaU44S0dScUJBeFRXeUx3MWFieGJZY052X1owbS1nWUNsR2lva3FyTVBQM2tFNkRfY1E5eTluZkotaFFKbXZoRkZqeVQxRGdVSnBET0h1YjB6QkZyUQ?oc=5",
       "title": "Emirati candidate for UN top job vows to end Sudan conflict amid war crimes scrutiny",
       "important": false,
@@ -423,8 +391,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQYzhWZGVhS1c4WFVrQ3FHelJlSDJsZFRLTlJhWXJaOUZ3ZkJnemU5c3ByOTVTWnVZTG5RS3Y1WGRvalpOUkQ4RDlPUk1wUXdqTFBsQnFaME5HTlFDbFNmdlp3QU5UNDhYQ2N4MnpzQ1NnT2xrWmFNdDJZTkJhNnU0QmNWcXdBSWt2eDhFbS15cENKLVpZSkJjM2RXaVpiNERSRVpGeWxUTF9WY09zbU5FTEhEckw?oc=5",
-      "title": "Cambodia prepares investment roadshow to Egypt, pushes for bilateral treaty",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x0gG4AUFVX3lxTFBwVmMtRHJDV0lBNjhHMzhCR0xqV0NxTjUxU2hCX0pnVjd6Qy15U1I4LXFsMWRnWXZ3UjFOb2ZjVUs4bWF1R0lGZW9tZjZYbFR3MUVnSXZybGZDMkNzWlc4ZUJDSW5xb25zRGNwa250eXcwQnQ1N1NmeWkyTG5zUTRLdE1JSjZtOU5VeW5GQU9DdXZRdTA2T0ZJSmd2NXN6MGNRMkIzMndvVmw2cnplNjFaN0xYajJqbnE?oc=5",
+      "title": "Spain's Sanchez admits 'mistakes' in election debate with rival Feijoo",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -463,8 +431,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRlVLekJsV1lXTGsxOWFDNkJLTDZhV3JSeFRQWS1zNXlobWJ6cDB0dXdhUE5IZ2VBY3N1THJOdVFtNmhEcnVTcUpWS2x4cVJRV1BscHJ2cVRmbGxtUEJLd0xvRUhkYlpUZU1PcnZpUzJ5cWx5R3ZnWFN5VXdiWmkwczJpci1yQkpVWWtMNV9yY3JHc3NfNzc0V2R2ZWlkSDVaa3V1MUhJVUNoSV9MQl91ckE5c2J4c1c2VFlPSHBIYzAxX2RZYXpZ?oc=5",
-      "title": "Energy-security response to Iran war could cut oil demand by 4% by 2035, IEA says",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMmJ1MkI1NFRhVGFBd09OcklwWXpmN2taa1EtT1pfNWxDSzZhamdaUkJubjMxb01yQV9zQ0hqQ0JFVGFGUE92RFRvRjh1Q21UeElHcWFxWnRhdnFlZFNuT1BBY081U2tyTVpaZmU5RmR6cmRfcklWUG1LeXRfdUZJTlNGQ213X0JDNGdzMTZOdVlPTVZYZVZaUmdGVVFpYmJFdG5xSUlBclI0QWlPYzdsTFdncWJjeF80XzI5N3NXMDM4b1E?oc=5",
+      "title": "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -479,6 +447,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcXYtN2ZVcmNlRWdTRGIwWGl1aHZlcklfQzZvcDJiZmpYXzZhVjZXRGpGc1RuSFhkN2t0UnZmSFZia3VDUzRCWld4MUZ4WXJMQ2UtZVZsOUlxZ2RIWXdYS0VqTVY1V0h5U2lwSWdDcWo0OUQwQUlobXB4TFJrckNYZlBkM2FScTBWNG5sY2JGTGJocW1XcUREMUpKVkxwQkhTTzdWZU8wdUc3Z19RaUs2X3VyOEUwQklOTVh0NUZLaEVybGhVVC1wbGstTFNVSVJud1JVT3VKemw?oc=5",
+      "title": "ABS-CBN News. . WATCH: President Ferdinand Marcos Jr. reported on the outcomes of his participation in the 33rd APEC Economic Leaders Meeting in Shenzhen, China. | via Jervis Manahan, ABS-CBN News",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE43SVJaeXBDZUJpVGU5MGpCYjE4c0hjbmg2V3ZuQ2Npd0NET2xqSmpwTmRWSXo3UDZLeDZ0aXhnbHl0bFNLalYyRjdOanlsSGxXSzF3aGMya09ZN09ZUmFfek5R0gFnQVVfeXFMUFRlQkVrbVg2UVpkdE8zVTktUUdtVE9WVzJmSGp5OE5DSUFhQ042M3BxSW5oQ2lxVG1LTzFSR1RjWVc3TTYwSjBLVHBnNlhsMEVrV1MxSkM1WVZCb18tQm15bGZZNWFHRQ?oc=5",
       "title": "UK and Norway to provide funding for acquisition of two combat patrol boats for Ukraine, totaling approximately EUR 120 mln",
       "important": false,
@@ -487,7 +463,7 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOUHhNNl91NGhQclcycXhFak5tVHR2MG03SXpfaUJCSVF0cThYV3RRa2U0dlhpclZqcmlVckFlZDJHNDVMLXlNX2R0WUpwZ2U5MzB3ekcyQ3hyR3IwYkRNMUJRS0dDSk42WXZLQVhGaWhLNjdEeUE4em1zVHZTQVNJalRfYjZtOEUwMG1zTkZMeE9zMDRTdm1mUmtlOEM0NGl5LWVvbzBpNjlxR04tZU9GNjFrbUpicjEwZm1LOUx2Y2lIYmJDQnRydVlOVXEyenppZXpDTXo4VjBPbjFTZnVRNTNNZ3VKakY0VWkwVmdLMWhMV2dJcDVjblNXa0dwQQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOWDVZTjNtZWR4S2NsSkhqbVB3eXI1TWZRN0tpRkIwdTFzN0hCWGpRYTVLSHNoUFRLckZlbnhDSGFTQk5ZR3FtenQxM0U2NEZ1UUZ2RE1FY0JTQzNkc0ZIRU5sYzlfWWdYdEw3SDlLVlJkNXBJLU9uRjllNXp6ZzlpY0VOU2txZktROEU3VjJGZ1JoanJIenJaUC1YUVhIcWtVSnI3SWQzYWNMbkxCQjB6eUdwV2JheVRjdzgwRTA2VXg0WGhlSnJiTXNXXzBsaHZwSmg5a3g3MWsxNUdvTEFWSlBsd3JFZEdpNzF1eTFFbEtSZ2lDaGIxVmkyUjBTQQ?oc=5",
       "title": "HH The Amir Attends Dinner Banquet Hosted by President of Germany",
       "important": false,
       "state": "pending",
@@ -503,8 +479,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPMHNXblJhM0lGNll5aDBDdThyYUpka0pJaXItQUhBQ29HSVNaWUhqSzJQSUtTRHZEMldjazZCOG5odVpuNVUyMjZCTVJvYmtsay1TajZVMTl2dFNxQlp6b3BDNXdjNWJHTEhHYm80bnVCLUJuUmRRcWh3R0U4S2QwUGR4SzhpTkVsZXM0aWRnaGdNajBmczk3MFVyUnFja3JvMG44V0podkFBcVpObnVjNTRKSHJ1OGFRanVwYkp1N1I4UC1mMk9BbW5qbFFYUzBZZE04UXRaWHpMVlh1Mk9MakljUEhMbVRlZzlsQzVlanVIZnM4NllVcEVxeTg0dHdOTzE4T3pHeVcyc3fSAZACQVVfeXFMTkl5ajBfM2xFNl9tSllnSDJ6bjJxeE1XYjFtRUZDS0RHdzBaOFpGeU91R1phSVFPWkZNQTJJWUE1VGRaYU0zOW40WHpNR2UtRmJQR09iUS1EcVhWM2o2THEzdHdka08tWU1udE1qbnNpQWx5ZC1Wbmc2eWo4TjdzcVMwWFpnWmlNUXNwSTdXOGZNR2hRbU01QW1RMnZBVWF1bGN3Q25vM0JpOHduQWJrTEtxUEFYNE9kMmk5X1ppMkFUUm5kaFlQQ3pRMU90WDZQVmNicGgzZU53aUttYktmTGFpMXR1UnQwcE1uMExaa19pR0xMbkJQMzgtMnhFdnV4clAzUFF5R2lzX1cwV01XSzc?oc=5",
+      "title": "Incident in Poland is dangerous, a result of the war in Ukraine: Rutte",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcE9rMnJHU2dQdE5wZ3hCYW1CdHlxTy1nZVJKMWw0WjQ4ajh4bW1fWVU5SWtaU0NPM1RnclNTMkxWYS1fU1MtNC1CTURRSmJLb2VuUWtmWWhELVVXZjFTa3FOMW9kbTU0UERpVVRWT1ZiZkhaQVJ6SkdPTXdHOUpXekhaQVlNQTNaeHYza2tpRXVVMHNHalNOUVAxdETSAaMBQVVfeXFMTTBZQmxvNHpDX0pIbWw5OW0zMUtiWWhacURFeVZ0djJsX0l6RXRqdDlfSFBKa1VDdUtpS3lfTHRzWHMybmFQZEhxMzdUY2dVQmt1bkxwQW1SVEhjVXpfQ1k3VTQ5VEgtMHVNWnZUam5qR2JlMG14ZmxNMHZZTHJ4Q0tad2FXdWlIYkxCNzhTTXM1QXZDY1RsZFoxUWZrS1I2RmZIUQ?oc=5",
       "title": "‘Philippines in talks with Russia for nuclear technology’",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPUUlzSGg3SGdSaXZNWTdKaHptNmk3VW52NGJncDhZSHZrUTItN2Rkekc1R0duOXMteVc0SDdqQnIzLUZWZEFyeXI4bFFraFlHb2gyZ1NTeGFxNUpBdHZ6aV81dkxPSlpOalRMVWhXWXBjZndKUWZyUDN4ZDY1MENUYUNhOWlJeHl3d3lNbnNFOWZDYTZvMEVhUGJWSG1Ndw?oc=5",
+      "title": "India, Israel Conclude Second Round of Free Trade Agreement Negotiations",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -537,6 +529,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPOWZGNUY0bUNnMlpfc0ZRNUdCRDNWWGJfd2pRMXRtNEdKWjF1T0Jra1dOdGg3aE8tNXp4SVZya29xbjhHeHE1Z2tUbV9hVzhpQW8xcUdUWXRDdFFoRXJKMFRXQnRxbUp4eVd5d1BJb1RCNlhxWFdpVGhkd3BWZVdJUEw1ZGNpeTUxTnA5MmRrVjM1eURwWURSSnNsVURLTUJTSlAtemZ0cEo1U0h5?oc=5",
       "title": "Karnataka’s New Plan to Fight Antibiotic Resistance",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNeDVqSjF0V2pJbmRWeGZwMkd5NVo3OTVrQ1gwX29oaWRwNjQ2cUkwQm5ZMkcxQTRKNzdoUGNRS2g3MS1VVmhJMm91bUU1Wm1pVzA0UVpLQ3VyVnNmQTUyZkhzWkljTU1DWTA3cjZPVGhtalR2Skk0dlhfZ0hyYkp4LXpxc0RTbWdndGEyVVBET3ZHYmdIMHBvY1pUcllLRFVvdkxIZUxRNlVzTGd0WDFTNQ?oc=5",
+      "title": "Investing in Children’s Health: New Vaccine Warehouse Opens in Bishkek",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
