@@ -1,0 +1,34 @@
+name: Delete manual NEXT BIO news
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: write
+concurrency:
+  group: nextbio-manual-news-publish
+  cancel-in-progress: false
+jobs:
+  delete:
+    if: github.event.issue.user.login == 'NEXTBIO-9' && startsWith(github.event.issue.title, '[자체기사삭제] #')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove owner-selected manual article
+        env:
+          REQUEST_TITLE: ${{ github.event.issue.title }}
+          REQUEST_BODY: ${{ github.event.issue.body }}
+        run: python scripts/delete_manual_news.py
+      - name: Commit deletion
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/manual-articles.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Delete manual news via issue #${{ github.event.issue.number }}"
+            for attempt in 1 2 3; do
+              if git push; then exit 0; fi
+              git fetch origin main
+              git rebase origin/main || exit 1
+            done
+            exit 1
+          fi
