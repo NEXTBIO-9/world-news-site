@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-21T21:08:01.388838+00:00",
+  "updated": "2026-11-21T22:07:23.646617+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 20,
-    "not_in_current_queue": 33,
-    "pending": 15,
-    "published": 132
+    "important_unpublished": 21,
+    "not_in_current_queue": 35,
+    "pending": 16,
+    "published": 129
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 15,
+    "not_in_current_queue": 16,
     "pending": 5
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 12,
+    "source_blocked": 13,
     "repeated_extraction_failure": 3,
     "in_retry_queue": 5
   },
@@ -23,14 +23,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPY3hKY0VXY05pTTBJX1F5WE13Y3N2VHFRRVdnRDlZNHpyVTVfc2pzMXJ1aXRzWUNQNHVRaVFBTnQ0OEFESlBidGgyekhHcm9UdnNvc3ZyOTFCRWZsTk4yMUM1MlROVGJINWFCUmpWNlp3VkdZMVRHdDZKeGZ2dnN3RVZuNEoxZ2psc3Z0UjlhOVdidlJMYkRUcWo4aDNuRzBHcmZrZy1YalgtNmFGeEd1WWNtSHNyZUlFcXAtNXppRHRIRWFncUpKUnFKSGtUTWgtMElyQzFrMzI4T2ZqdmfSAd4BQVVfeXFMT2N4SmNFV2NOaU0wSV9ReVhNd2NzdlRxUUVXZ0Q5WTR6clU1X3NqczFydWl0c1lDUDR1UWlRQU50NDhBREpQYnRoMnpIR3JvVHZzb3N2cjkxQkVmbE5OMjFDNTJUTlRiSDVhQlJqVjZad1ZHWTFUR3Q2SnhmdnZzd0VWbjRKMWdqbHN2dFI5YTlXYnZSTGJEVHFqOGgzbkcwR3Jma2ctWGpYLTZhRnhHdVljbUhzcmVJRXFwLTV6aUR0SEVhZ3FKSlJxSkhrVE1oLTBJckMxazMyOE9manZn?oc=5",
       "title": "Massive Peru Earthquake Caught On Live TV: News Anchor Steadily Reports As Studio Shakes | Video",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOYVRDMTIwZVhpUW5CWTE4U0F4eUpYQ3BUMnZxZGEtX2hxZnkzRFMwZ3gwSVhMQ3o2bUxoS3J0QWhGWnFyZ3hUV0tSbERLZ0FDUG9raEk1cUNPVVdUYVFTV1lpY0lBX2xKTHhwMG9XSWFpQllzRUVVQ2xfUzhxT2ZjU25GZm50MFJwOHRuWmYzZHlOVnVXcVUwa0dXZHBCQlBIVnB3WVlfTnluZGdpRHpGdFNyc2hWbmd0Wnoza1JidVRBZU4tRE1famM2Q0ZjN2lsSzJka2llbmwyQ2FLeFNPaDNCQlhxWXc3NGVj?oc=5",
-      "title": "Pennsylvania DOH confirms 8th measles-related death amid growing outbreak",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -58,6 +50,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPb3owdnRiaEFIUV9qb2JVT04yS0FFak1jak9BYWswVW00OHJGSGxtTnBja2gzSUtfYld1akZhbWVtNXZYTENmX0dtcFF4bE9fUGhNQTUtN2oxZFJXcjFWT3haMElDUVp6czhDR3VNUUJfc3FfYVc1cGtsZFF2clc3UzJLOEc?oc=5",
+      "title": "Israel Says Gaza Tunnel Section Destroyed as Ceasefire Frays",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -119,6 +119,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
       "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOFUtT3RhbVk0V2hKYWFkUjhLbU1TWG91N1FRbVR2RW9kRVA5U29OMzhSeHVZajJaSWNXLUpBT29IblFLZVBFMUp1MXFjRVhEUjNRdXg1SGNBcUVTQzdjUmc0NS12Uk9wejJSUl8tN050WDRocUtMSE9nOGRtMFNTNHpZUWJhTWdoUzlmV251UE5DbVpMMW9ldUVCdy13SG5XN1JxSjZ5ZkMzREdSb09sYzZfU0g5djJCMEZBOXhaUHVnSVhhMFdLQUVR0gHPAUFVX3lxTFBUdmJteDFqUkNwQmxWekFpT3QyckZvSVBxRXhEU2tlc2xQdFU5eXRpMDhIZ0xMTzZka3dVNFptX2JyY1dOMWFJQ2ZjS3QwQjloLWdzQ28yY1RXdEJiaERaZ3NvbTJNQnJrVUxNMTdsTERFR3VraEVGVnVNREhoNzFKYWpfSk1sdGVrc3NjaGthMjNyWG9MRDZSZHhpNDdfRjhnU3MyVWlua2JzTHd0M2IwMEVrYjdQRXZucGZCZ0RkcW9BeGx2LVUtUGxKc3l6OA?oc=5",
+      "title": "Syria and the WHO prepare an urgent vaccination in Deir Ez Zor to stop a polio outbreak",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -151,14 +159,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOYVRDMTIwZVhpUW5CWTE4U0F4eUpYQ3BUMnZxZGEtX2hxZnkzRFMwZ3gwSVhMQ3o2bUxoS3J0QWhGWnFyZ3hUV0tSbERLZ0FDUG9raEk1cUNPVVdUYVFTV1lpY0lBX2xKTHhwMG9XSWFpQllzRUVVQ2xfUzhxT2ZjU25GZm50MFJwOHRuWmYzZHlOVnVXcVUwa0dXZHBCQlBIVnB3WVlfTnluZGdpRHpGdFNyc2hWbmd0Wnoza1JidVRBZU4tRE1famM2Q0ZjN2lsSzJka2llbmwyQ2FLeFNPaDNCQlhxWXc3NGVj?oc=5",
-      "title": "Pennsylvania DOH confirms 8th measles-related death amid growing outbreak",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBwbkw2Qm1NMEUwdWNnZVRJNDh3QXlxQUI3dFpnWHpRcWJsUlRYeGpVT0cxcGljNFdvUFhnMl94Z1NMWjY2d1B0cVd6XzZRNTNpZjN1NEo1WmtBbG5lLVVj?oc=5",
       "title": "Hurricane Katrina | Deaths, Damage, & Facts",
       "important": true,
@@ -180,6 +180,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPb3owdnRiaEFIUV9qb2JVT04yS0FFak1jak9BYWswVW00OHJGSGxtTnBja2gzSUtfYld1akZhbWVtNXZYTENmX0dtcFF4bE9fUGhNQTUtN2oxZFJXcjFWT3haMElDUVp6czhDR3VNUUJfc3FfYVc1cGtsZFF2clc3UzJLOEc?oc=5",
+      "title": "Israel Says Gaza Tunnel Section Destroyed as Ceasefire Frays",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -241,6 +249,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
       "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOFUtT3RhbVk0V2hKYWFkUjhLbU1TWG91N1FRbVR2RW9kRVA5U29OMzhSeHVZajJaSWNXLUpBT29IblFLZVBFMUp1MXFjRVhEUjNRdXg1SGNBcUVTQzdjUmc0NS12Uk9wejJSUl8tN050WDRocUtMSE9nOGRtMFNTNHpZUWJhTWdoUzlmV251UE5DbVpMMW9ldUVCdy13SG5XN1JxSjZ5ZkMzREdSb09sYzZfU0g5djJCMEZBOXhaUHVnSVhhMFdLQUVR0gHPAUFVX3lxTFBUdmJteDFqUkNwQmxWekFpT3QyckZvSVBxRXhEU2tlc2xQdFU5eXRpMDhIZ0xMTzZka3dVNFptX2JyY1dOMWFJQ2ZjS3QwQjloLWdzQ28yY1RXdEJiaERaZ3NvbTJNQnJrVUxNMTdsTERFR3VraEVGVnVNREhoNzFKYWpfSk1sdGVrc3NjaGthMjNyWG9MRDZSZHhpNDdfRjhnU3MyVWlua2JzTHd0M2IwMEVrYjdQRXZucGZCZ0RkcW9BeGx2LVUtUGxKc3l6OA?oc=5",
+      "title": "Syria and the WHO prepare an urgent vaccination in Deir Ez Zor to stop a polio outbreak",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -351,8 +367,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ydVhQTWZEVGUtUnJQWTkzNnpvcTIyT014VWVzdkdSWHVSUlNVSWdkaHcxdFZhSW8yQUNtOVR5Umk0MGM2c0I0LTJmUi1pUEhvdG5uLWNoZ1c0VklUZXo5cUxqNHpkMWl2Nnk5ZU12VDJad9IBdkFVX3lxTE1QbjUxOVNkcG5Rem9YRXdzcDU3cTVMbFZrRWxYSVRzd05nLUNuYzA2OHVrRWhHYmFlNElxbzV3ZWVONGdMcHFHWWNyV3ZTS0hvVjIzYlE4TlZDNEpwNkY3NThObVg0SktEbUpOVHlWZ0FYUU9kdmc?oc=5",
-      "title": "“美, 中과 신약개발 협력 급증…자본ㆍ상용화 노하우 넘어가”",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE85WDdQazVZVjRRSnRZekM1ZlRxM054aWZSSFI1MElHbzgzUGNnellKTFB3MlVUU2FLRjMybWxPbVEwZ0N6Q1U4UTlVUHhqR2dCdmVwbERJWENfckhmWm9DZ2N5MkZqNnRTTm5HMldXa1jSAXBBVV95cUxPOVg3UGs1WVY0UUp0WXpDNWZUcTNOeGlmUkhSNTBJR284M1BjZ3pZSkxQdzJVVFNhS0YzMm1sT21RMGdDekNVOFE5VVB4akdnQnZlcGxESVhDX3JIZlpvQ2djeTJGajZ0U05uRzJXV2tY?oc=5",
+      "title": "美 의회 자문위, 中 바이오 지배력 확대 경고…“신약개발 의존 심화”",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -375,11 +391,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
-      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
+      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPMHNXblJhM0lGNll5aDBDdThyYUpka0pJaXItQUhBQ29HSVNaWUhqSzJQSUtTRHZEMldjazZCOG5odVpuNVUyMjZCTVJvYmtsay1TajZVMTl2dFNxQlp6b3BDNXdjNWJHTEhHYm80bnVCLUJuUmRRcWh3R0U4S2QwUGR4SzhpTkVsZXM0aWRnaGdNajBmczk3MFVyUnFja3JvMG44V0podkFBcVpObnVjNTRKSHJ1OGFRanVwYkp1N1I4UC1mMk9BbW5qbFFYUzBZZE04UXRaWHpMVlh1Mk9MakljUEhMbVRlZzlsQzVlanVIZnM4NllVcEVxeTg0dHdOTzE4T3pHeVcyc3fSAZACQVVfeXFMTkl5ajBfM2xFNl9tSllnSDJ6bjJxeE1XYjFtRUZDS0RHdzBaOFpGeU91R1phSVFPWkZNQTJJWUE1VGRaYU0zOW40WHpNR2UtRmJQR09iUS1EcVhWM2o2THEzdHdka08tWU1udE1qbnNpQWx5ZC1Wbmc2eWo4TjdzcVMwWFpnWmlNUXNwSTdXOGZNR2hRbU01QW1RMnZBVWF1bGN3Q25vM0JpOHduQWJrTEtxUEFYNE9kMmk5X1ppMkFUUm5kaFlQQ3pRMU90WDZQVmNicGgzZU53aUttYktmTGFpMXR1UnQwcE1uMExaa19pR0xMbkJQMzgtMnhFdnV4clAzUFF5R2lzX1cwV01XSzc?oc=5",
+      "title": "Incident in Poland is dangerous, a result of the war in Ukraine: Rutte",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -407,6 +423,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWnRsSTN2UHlvZ3hscnFOdktrT0UzVDdjM3hyeDM0ZWFkTGVuNjRMVGFMWnhPYVJHZHV5WmVINHp6R282a2xnVENuMWxhU3NLd1pxNUJ6ZUlacHU0WFR1SmprZEE5UUVDQm9HemliQ3NjWDVteHRnQWRNVWlHVE9tNk5tZUI0TXZqRW9WSUdVUmFHRXdwbkc5RDU2R2JWdE4xR0FGXzdBeW40bTV5XzFjSjJ3MNIBuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x?oc=5",
+      "title": "Spain's Sanchez admits 'mistakes' in election debate with rival Feijoo",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY2JtZUJubGd2ZHAwZy1nU3dhQ09Pd3A5a2drSWVWZ3ZTRGRDem8yU3pseEItYlBxb2lFbkI5SE5zVVZkU3RKMDNaYy1lUHItUmlZLV9GcDROZjFnNVBmaU44S0dScUJBeFRXeUx3MWFieGJZY052X1owbS1nWUNsR2lva3FyTVBQM2tFNkRfY1E5eTluZkotaFFKbXZoRkZqeVQxRGdVSnBET0h1YjB6QkZyUQ?oc=5",
       "title": "Emirati candidate for UN top job vows to end Sudan conflict amid war crimes scrutiny",
       "important": false,
@@ -417,14 +441,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNVzBFa0NUVXhzQmtfdWUyRWpaTHZjTU5GaDR3TEhCZkhNc0IwOGxTQ1JMOTZEcFRnSFFJdHVBRnk4Q3k4WnhHb08xY3Frdm9uT2J4bWNnOEZ1cnNQZy1WX0NUOXpJZl8xN3lGTkVxVnRvanc5THF5X1JLeDU0alVTVlZQZ0VjOEI0cmhlY25McjN5TjdhVjI3Z29IZm1KaXFRLWlGYjdkWXRlUTlsYmtwTlNqdTN5Zw?oc=5",
       "title": "Canada defends Sifuna meeting as diplomats weigh Kenya’s pre-election field",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x0gG4AUFVX3lxTFBwVmMtRHJDV0lBNjhHMzhCR0xqV0NxTjUxU2hCX0pnVjd6Qy15U1I4LXFsMWRnWXZ3UjFOb2ZjVUs4bWF1R0lGZW9tZjZYbFR3MUVnSXZybGZDMkNzWlc4ZUJDSW5xb25zRGNwa250eXcwQnQ1N1NmeWkyTG5zUTRLdE1JSjZtOU5VeW5GQU9DdXZRdTA2T0ZJSmd2NXN6MGNRMkIzMndvVmw2cnplNjFaN0xYajJqbnE?oc=5",
-      "title": "Spain's Sanchez admits 'mistakes' in election debate with rival Feijoo",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -444,6 +460,14 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRlVLekJsV1lXTGsxOWFDNkJLTDZhV3JSeFRQWS1zNXlobWJ6cDB0dXdhUE5IZ2VBY3N1THJOdVFtNmhEcnVTcUpWS2x4cVJRV1BscHJ2cVRmbGxtUEJLd0xvRUhkYlpUZU1PcnZpUzJ5cWx5R3ZnWFN5VXdiWmkwczJpci1yQkpVWWtMNV9yY3JHc3NfNzc0V2R2ZWlkSDVaa3V1MUhJVUNoSV9MQl91ckE5c2J4c1c2VFlPSHBIYzAxX2RZYXpZ?oc=5",
+      "title": "Energy-security response to Iran war could cut oil demand by 4% by 2035, IEA says",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -497,6 +521,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPUUlzSGg3SGdSaXZNWTdKaHptNmk3VW52NGJncDhZSHZrUTItN2Rkekc1R0duOXMteVc0SDdqQnIzLUZWZEFyeXI4bFFraFlHb2gyZ1NTeGFxNUpBdHZ6aV81dkxPSlpOalRMVWhXWXBjZndKUWZyUDN4ZDY1MENUYUNhOWlJeHl3d3lNbnNFOWZDYTZvMEVhUGJWSG1Ndw?oc=5",
       "title": "India, Israel Conclude Second Round of Free Trade Agreement Negotiations",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdDQ1QXNJbWNmblBGamw1WW02ZnQ1N2Z6YngwODMwNWVtYkZxVVd4ZGlrek9sRy1BOEd0aUJJZk16eWRVWF9Id2d6dFNJMDNqazh4QXcwcTZ2SXJieWxsSkZGQ21fTF9mOTlRU0U1VERhVUtYZTFvaHJPcnNLbURxWFpoQTdtX0czVDFuekhCTWY2dWxCT0hhWDZ4QXZWbE5WWEJRbjNmbw?oc=5",
+      "title": "Bangladesh emerges as 33rd nuclear power nation: Faqir Mahbub",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
