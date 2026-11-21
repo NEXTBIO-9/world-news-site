@@ -1,12 +1,51 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>NEXT BIO | 관리자 안내</title>
-<style>body{margin:0;background:#101827;color:#e8f1ff;font:16px/1.7 system-ui,sans-serif}main{max-width:680px;margin:8vh auto;padding:28px;background:#1d2a3d;border-radius:18px}h1{font-size:24px}p{color:#c3d4e9}a{color:#9fc7ff}.btn{display:inline-block;padding:12px 18px;background:#3986e8;color:white;border-radius:9px;text-decoration:none;font-weight:700}small{color:#a9bad0}</style></head>
-<body><main><h1>NEXT BIO · 관리자 안내</h1>
-<p>기사 관리 기능은 공개 웹페이지에서 제공하지 않습니다. GitHub의 저장소 소유자 계정(NEXTBIO-9)으로 로그인하여 기사 발행 및 관리 요청을 진행하세요.</p>
-<p><a class="btn" href="https://github.com/NEXTBIO-9/world-news-site/issues?q=is%3Aissue+author%3ANEXTBIO-9">GitHub에서 내 기사 관리</a></p>
-<p><a href="https://github.com/NEXTBIO-9/world-news-site/issues/new?template=manual-news.yml">새 기사 작성</a></p>
+<meta name="robots" content="noindex,nofollow"><title>NEXT BIO | 자체 기사 관리</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101827;color:#e8f1ff;font:16px/1.6 system-ui,sans-serif}
+main{max-width:850px;margin:5vh auto;padding:28px;background:#1d2a3d;border-radius:18px}
+h1{font-size:25px;margin-top:0}h2{font-size:19px;margin-top:30px}p{color:#c3d4e9}
+a{color:#9fc7ff}.btn,.action{display:inline-block;padding:9px 15px;border-radius:8px;text-decoration:none;font-weight:700}
+.btn{background:#3986e8;color:white}.action{border:1px solid #59718d;margin-left:7px}
+.delete{color:#ffc7c7;border-color:#ae5e66;background:transparent;cursor:pointer;font:inherit;font-weight:700}
+.item{border-top:1px solid #40516b;padding:15px 0}.item strong{display:block;overflow-wrap:anywhere}
+.meta{font-size:13px;color:#a9bad0;margin:5px 0 10px}.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.actions .action{margin-left:0}
+small{display:block;margin-top:22px;color:#a9bad0}
+</style></head><body><main>
+<h1>NEXT BIO · 자체 발행 기사 관리</h1>
+<p>이 페이지는 링크를 아는 사람 누구나 볼 수 있지만, <strong>실제 기사 발행·수정·삭제는 GitHub의 NEXTBIO-9 계정만 처리할 수 있습니다.</strong> GitHub에 해당 계정으로 로그인한 뒤 진행하세요.</p>
+<a class="btn" href="https://github.com/NEXTBIO-9/world-news-site/issues/new?template=manual-news.yml">+ 새 기사 작성</a>
+<h2>발행된 기사</h2><div id="articles" aria-live="polite"><p>기사 목록을 불러오는 중입니다.</p></div>
 <p><a href="./">← 세계뉴스로 돌아가기</a></p>
-<small>이 사이트는 공개 GitHub Pages로 운영되며, 이 안내 페이지 자체는 공개됩니다. 실제 게시 및 삭제 권한은 GitHub Actions에서 저장소 소유자 계정으로 제한됩니다. 기존 기사 수정은 해당 발행 Issue에서 진행합니다.</small>
-</main></body></html>
+<small>수정: 원래 발행 Issue를 편집하면 자동 반영됩니다. 삭제: 확인 후 GitHub에서 삭제 요청을 제출하면 자동 반영됩니다. 이 페이지에 비밀번호나 토큰을 입력하지 마세요.</small>
+</main>
+<script>
+(async()=>{
+ const container=document.getElementById('articles');
+ try{
+  const r=await fetch('./data/manual-articles.json?t='+Date.now(),{cache:'no-store'});
+  if(!r.ok)throw Error('HTTP '+r.status);
+  const data=await r.json();
+  const articles=(Array.isArray(data.articles)?data.articles:[]).filter(a=>a&&a.manual===true&&Number.isSafeInteger(a.manual_issue)&&a.title).sort((a,b)=>(Date.parse(b.published||'')||0)-(Date.parse(a.published||'')||0));
+  container.replaceChildren();
+  if(!articles.length){const p=document.createElement('p');p.textContent='발행된 자체 기사가 없습니다.';container.append(p);return}
+  for(const a of articles){
+   const item=document.createElement('div');item.className='item';
+   const title=document.createElement('strong');title.textContent=a.title;item.append(title);
+   const meta=document.createElement('div');meta.className='meta';meta.textContent='#'+a.manual_issue+' · '+(a.category||'기타')+' · '+(a.published?new Date(a.published).toLocaleDateString('ko-KR'):'');item.append(meta);
+   const actions=document.createElement('div');actions.className='actions';
+   const view=document.createElement('a');view.className='action';view.href='./article.html?id='+a.manual_issue;view.textContent='기사 보기';actions.append(view);
+   const edit=document.createElement('a');edit.className='action';edit.href='https://github.com/NEXTBIO-9/world-news-site/issues/'+a.manual_issue;edit.target='_blank';edit.rel='noopener noreferrer';edit.textContent='수정';actions.append(edit);
+   const del=document.createElement('button');del.type='button';del.className='action delete';del.textContent='삭제';
+   del.addEventListener('click',()=>{
+    if(!confirm('정말 이 기사를 삭제할까요?\n\n'+a.title+'\n\n다음 화면에서 GitHub 삭제 요청을 제출해야 삭제됩니다.'))return;
+    const issueTitle='[자체기사삭제] #'+a.manual_issue;
+    const issueBody='삭제할 기사 번호: '+a.manual_issue+'\n\n기사 제목: '+a.title+'\n\n이 요청은 NEXTBIO-9 저장소 소유자가 제출해야 처리됩니다.';
+    const url='https://github.com/NEXTBIO-9/world-news-site/issues/new?title='+encodeURIComponent(issueTitle)+'&body='+encodeURIComponent(issueBody);
+    window.open(url,'_blank','noopener,noreferrer');
+   });
+   actions.append(del);item.append(actions);container.append(item);
+  }
+ }catch(e){container.replaceChildren();const p=document.createElement('p');p.textContent='기사 목록을 불러오지 못했습니다. 잠시 후 다시 시도하세요.';container.append(p)}
+})();
+</script></body></html>
