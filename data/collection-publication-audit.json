@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-22T16:03:40.010098+00:00",
+  "updated": "2026-11-22T17:04:11.971299+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 21,
-    "not_in_current_queue": 38,
-    "pending": 13,
-    "published": 129
+    "important_unpublished": 19,
+    "not_in_current_queue": 34,
+    "pending": 14,
+    "published": 132
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 17,
-    "pending": 4
+    "not_in_current_queue": 14,
+    "pending": 5
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 14,
-    "repeated_extraction_failure": 3,
-    "in_retry_queue": 4
+    "source_blocked": 12,
+    "repeated_extraction_failure": 2,
+    "in_retry_queue": 5
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -45,14 +45,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1PMWRFS2RwcUVlSTVBaHBHeXlyaGJZOFd3QW1aTE1VdkQ2UUxHa1l0bzdVZWlxN1dxclZyMG52NVZuZEFKNThCY2JKVzNWMGZpS3c?oc=5",
-      "title": "질병청·美 CDC, 감염병 공동 대응 논의…보건안보 협력 확대",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
       "title": "6.7 magnitude earthquake jolts central Peru",
       "important": true,
@@ -77,14 +69,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNmszVVpQTVFYalNNNGFzd3VKX1hkZ0tYX3JRRmowOE8waFFCOEtHV0NqcGwxdUdDaklTUERGMnFubTd0eVhzc3hjS2NsWDlZTW9ueDQ1ZGhNNUczb29YdXZ6Tm9XZkFORWYyVzM3RnNPczZRb2xhcXpyUW5oaFpPOEZCdFZCRXRCN25SakkyZzVkdw?oc=5",
-      "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQzlVOGh5bjJSSVh4bzVTZm5ubDZ2TkYtQnNoUXhFTWxud2lFcy1sM1BYcjQ5NDlQQXJ1LTRQSW5VWTJzZnJNV3lhcTNuRkRVTDNKSjJGaVBhcF9hU0tMQzhrcFdZR0Rkdm5Jem11cVpYaFdCVkNBSUt0cUthSXlYNENSRHA0OHQ2ZEFudE9KQzRoQQ?oc=5",
       "title": "6.7-magnitude earthquake hits Peru, tremors felt in Lima",
       "important": true,
@@ -103,14 +87,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWDBQUTdkaEJ1cGFCcmpkbkFCTUppQUNNTE9DemN2ckwwWTU3eXNsQU81dzVnZHhHQmFXR3Q4azZQUkJkdG5JQUVabGxQeEEzaERncUg4RGctb0xCc1JmWWw4aVFUMU5vRGhROU5aZk1UU0RJOGZvVWtXWmNRcjlwSEFxQkh3S3BuckRpbW9rOVRhazE3YXNPX09sS2RyVmlfYWpBYw?oc=5",
       "title": "Antimicrobial resistance explained: What it is and why it matters",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNQ1l3dkNqLXBUVW91ZDlzcXdGc3A4Q1Q1ZVBYbFBjZ0I5RDVRVFlsWW04cGdBVEd4OFBRUFR4VmtGdUM1OFJEUzJUbnhnZFRJT3pfRzh0dHc2WkpIOVpuUFNYeW96MzBYNVNiOEtkUEtQa0xfVUJDN2wtM1NOTTExb0gtNE9pcGJqeG03X0RQXzhrcEtDZmVPV09UYVlMdWpfUTVIQTZB0gGmAUFVX3lxTE1DWXd2Q2otcFRVb3VkOXNxd0ZzcDhDVDVlUFhsUGNnQjlENVFUWWxZbThwZ0FUR3g4UFFQVHhWa0Z1QzU4UkRTMlRueGdkVElPel9HOHR0dzZaSkg5Wm5QU1h5b3ozMFg1U2I4S2RQS1BrTF9VQkM3bC0zU05NMTFvSC00T2lwYmp4bTdfRFBfOGtwS0NmZU9XT1RhWUx1al9RNUhBNkE?oc=5",
-      "title": "10년 만에 고개 든 ‘이 감염병’, 해외 안 갔는데 어떻게?",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -183,14 +159,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1PMWRFS2RwcUVlSTVBaHBHeXlyaGJZOFd3QW1aTE1VdkQ2UUxHa1l0bzdVZWlxN1dxclZyMG52NVZuZEFKNThCY2JKVzNWMGZpS3c?oc=5",
-      "title": "질병청·美 CDC, 감염병 공동 대응 논의…보건안보 협력 확대",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
       "title": "6.7 magnitude earthquake jolts central Peru",
       "important": true,
@@ -215,14 +183,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNmszVVpQTVFYalNNNGFzd3VKX1hkZ0tYX3JRRmowOE8waFFCOEtHV0NqcGwxdUdDaklTUERGMnFubTd0eVhzc3hjS2NsWDlZTW9ueDQ1ZGhNNUczb29YdXZ6Tm9XZkFORWYyVzM3RnNPczZRb2xhcXpyUW5oaFpPOEZCdFZCRXRCN25SakkyZzVkdw?oc=5",
-      "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQzlVOGh5bjJSSVh4bzVTZm5ubDZ2TkYtQnNoUXhFTWxud2lFcy1sM1BYcjQ5NDlQQXJ1LTRQSW5VWTJzZnJNV3lhcTNuRkRVTDNKSjJGaVBhcF9hU0tMQzhrcFdZR0Rkdm5Jem11cVpYaFdCVkNBSUt0cUthSXlYNENSRHA0OHQ2ZEFudE9KQzRoQQ?oc=5",
       "title": "6.7-magnitude earthquake hits Peru, tremors felt in Lima",
       "important": true,
@@ -241,14 +201,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWDBQUTdkaEJ1cGFCcmpkbkFCTUppQUNNTE9DemN2ckwwWTU3eXNsQU81dzVnZHhHQmFXR3Q4azZQUkJkdG5JQUVabGxQeEEzaERncUg4RGctb0xCc1JmWWw4aVFUMU5vRGhROU5aZk1UU0RJOGZvVWtXWmNRcjlwSEFxQkh3S3BuckRpbW9rOVRhazE3YXNPX09sS2RyVmlfYWpBYw?oc=5",
       "title": "Antimicrobial resistance explained: What it is and why it matters",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNQ1l3dkNqLXBUVW91ZDlzcXdGc3A4Q1Q1ZVBYbFBjZ0I5RDVRVFlsWW04cGdBVEd4OFBRUFR4VmtGdUM1OFJEUzJUbnhnZFRJT3pfRzh0dHc2WkpIOVpuUFNYeW96MzBYNVNiOEtkUEtQa0xfVUJDN2wtM1NOTTExb0gtNE9pcGJqeG03X0RQXzhrcEtDZmVPV09UYVlMdWpfUTVIQTZB0gGmAUFVX3lxTE1DWXd2Q2otcFRVb3VkOXNxd0ZzcDhDVDVlUFhsUGNnQjlENVFUWWxZbThwZ0FUR3g4UFFQVHhWa0Z1QzU4UkRTMlRueGdkVElPel9HOHR0dzZaSkg5Wm5QU1h5b3ozMFg1U2I4S2RQS1BrTF9VQkM3bC0zU05NMTFvSC00T2lwYmp4bTdfRFBfOGtwS0NmZU9XT1RhWUx1al9RNUhBNkE?oc=5",
-      "title": "10년 만에 고개 든 ‘이 감염병’, 해외 안 갔는데 어떻게?",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -313,6 +265,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPWmFvWXZVUVI1SVJjelJSMTRFd0xLOVdEN1ZXYlA2bXg4TlA3am1ISmFOb21rZWxELWl1Z1Z2T0d4VnJsR0stYVB5Z21IREFISnBrRHhNQ090VUpMVFFjc1NBeXlIOUJfT05ieE1GV0NpUm8yZXJ2Uk1YX1JpMExlVVhwTXk2TkxWRS0wdXg0U09Jc3g3MVVVUmhzZjFkdENGMDU0cFBOWG9yb2U5Z01WOXhwcHd3RkxPcnhDdFV0OVRTRnFFV2R1ekd3SkMxT095Vmt0UjhMd3ZEdTNrRE81UlBoWVNXRExMNW1MaDFGMTV2eERlN0hwWWVXX3ltR1dyak9F?oc=5",
       "title": "Magnitude 6.7 earthquake shakes Peru’s Andes, with no damage or casualties immediately reported",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRXEyang3dHphaTE4TjJfSmFLV01uOHA1c19FYkVQckhaSEl1T2Nybnl2eU1tcHBMSURwRzBxWm8wZEZPeXJjTHJyZlZEaWo5TnpHSVFQUXk4aWpydkdnZWdsM2pzcDNxdHJiX0dRMGNENWNrc25LV21vOFQ3WWNNcURpTVFBQU1pWE10NG9zZkw?oc=5",
+      "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -423,8 +383,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTXAteEJvNkdtQlF0VEN6d29JSWY0WWplX2o2bU41dXdMX2FCekxRa2Fhbmd5ZWc0Tlg4TWJoYVZCcHhObmpzNHo3ZjV4dVEyQldWaDdSbmJhUnpKS0UtWmRwZ2ZOTHZPdnVmeV9YT2lRUDR5WWRJQ1dGY0hVM1l6LWZYcG9EY21EdUZfTXlLU2hVU1HSAZgBQVVfeXFMT2dPb1lqemdpcXd4MTJWbHFQVXlmTXI4Yy1ROEVFYXIzMFRBeUYzVFZ2bURHQ1NEZnE0VzJLanNHdHB6Z3FsalZ2Z0RtMVI0aEhSQmJQQk9jYzN1eVdjX3o1TWlyQXlJZUpPT2hZUnVsaXVjNzU3MEUwTTBmR2VJZEdGOGpPQXJtVmxLejNwbm93YS1FbVEzeXg?oc=5",
-      "title": "Manila in nuclear energy talks with US, Russia, Canada",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSWg3S2pyN251RmlYaVlDWmRXaVV1ZU92RkJadkpPYmNndV8zS2F4Tk42ZTUzR2V2ZzVkdlBueXhiQy1SekpfQkdXaGYzUEw1eGk2YWhnYUFWcFlmYU04bWZ2V0hkdE1ZbzNTZVBpRUFMZTduWnh0LTZLdlFVd3NzNDlR?oc=5",
+      "title": "Indonesia-Canada Trade Agreement to Take Effect 1 December",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -436,14 +396,6 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcE9rMnJHU2dQdE5wZ3hCYW1CdHlxTy1nZVJKMWw0WjQ4ajh4bW1fWVU5SWtaU0NPM1RnclNTMkxWYS1fU1MtNC1CTURRSmJLb2VuUWtmWWhELVVXZjFTa3FOMW9kbTU0UERpVVRWT1ZiZkhaQVJ6SkdPTXdHOUpXekhaQVlNQTNaeHYza2tpRXVVMHNHalNOUVAxdETSAaMBQVVfeXFMTTBZQmxvNHpDX0pIbWw5OW0zMUtiWWhacURFeVZ0djJsX0l6RXRqdDlfSFBKa1VDdUtpS3lfTHRzWHMybmFQZEhxMzdUY2dVQmt1bkxwQW1SVEhjVXpfQ1k3VTQ5VEgtMHVNWnZUam5qR2JlMG14ZmxNMHZZTHJ4Q0tad2FXdWlIYkxCNzhTTXM1QXZDY1RsZFoxUWZrS1I2RmZIUQ?oc=5",
-      "title": "‘Philippines in talks with Russia for nuclear technology’",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "unexplained_not_queued",
       "rss_fallback_candidate": false
     },
     {
@@ -503,6 +455,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOU19mZlJnR3hiTGFuNFhCM0FQY18wOEx3amtwc2t5Q1dOSmYtVlp1RF9XeWtzVkRrZ29vVnRTTnlpSDhMQVVlc1R5S0Z4Q0xZNkRDbEdEV2ptdmNYSzhfYURHLTI4SVdrcFQzeVB5ZEhLSFh1V25ZakhYMV9ObHM4WjZJbVFDVDlvUDl2a3pvRE5QWlpFVVZZOXdwaDl4cmswWUM2blFTUzktRVYtR0ZfWmpKcnY2ajdKcm82d3pYV09ZLVdtVjRwdmFySUwxMTN2LU5zWkFISkg?oc=5",
+      "title": "The Philippines and Chile signed the Comprehensive Economic Partnership Agreement, a free trade agreement that will deepen trade relations between the two countries. Link to the full story in the comments section. | via ANC 24/7",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcXYtN2ZVcmNlRWdTRGIwWGl1aHZlcklfQzZvcDJiZmpYXzZhVjZXRGpGc1RuSFhkN2t0UnZmSFZia3VDUzRCWld4MUZ4WXJMQ2UtZVZsOUlxZ2RIWXdYS0VqTVY1V0h5U2lwSWdDcWo0OUQwQUlobXB4TFJrckNYZlBkM2FScTBWNG5sY2JGTGJocW1XcUREMUpKVkxwQkhTTzdWZU8wdUc3Z19RaUs2X3VyOEUwQklOTVh0NUZLaEVybGhVVC1wbGstTFNVSVJud1JVT3VKemw?oc=5",
       "title": "ABS-CBN News. . WATCH: President Ferdinand Marcos Jr. reported on the outcomes of his participation in the 33rd APEC Economic Leaders Meeting in Shenzhen, China. | via Jervis Manahan, ABS-CBN News",
       "important": false,
@@ -519,16 +479,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5NeEFwOFZRdTJaNmVBdE11MUtKeWJaekw5TktWYTdIQVF3cDl4VlFzY2laWUFaUE1BcndIbmlaU1JSaklCVklmQ0FQUGYycm5YMDhidlJndDREY1h5MEhwSER0dFQ0MTd40gFuQVVfeXFMUHlual9LSEpuejYwNnNFMTAxTFVEcTFma2JvZjVjRzl0SV9ndDN1ai1kX0d3ak05RTM5czZ2eVB4b2RhU2ptZ29jS2Z4bXAtbXFzZm9UclpIRDNJdzFsSnoyNm5iZnNSZnk1MjA2dnc?oc=5",
-      "title": "'블랙 먼데이' 공포…韓 금리·美 물가가 증시 향방 가른다 - 머니투데이",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBuRDNzZF9QbzA4TjZxcG9JcFJXeUFmaGx5THJONE51SlFITEJ3TW5od0F4R2R4Y2NULTh2Tnl2Sjl3NGdaWWkzenNYSDlNVzZfb0pZN0o5a3RmZkdvRUNiRVlpUUJoalZGSmxOUQ?oc=5",
-      "title": "“대통령, 6일 중 하루는 외국” 野 비판에…靑 “캐나다 총리는 113일 순방”",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNTVY1ejdHN3dVczM5Q3FtdzBBb1htQXVXNnM5cnhGV1dPdW9KS3pOMXFPbS13WjgwTEczU3E5czFrbXN1NlRzRldKWlFvZ1VzOE1Kckh1ZHVlNXFpWlMzTXdTa0VkczExanVBRC1RQ3JvVDk5ZUFmQ3J0MDh2TFRaSHdtQm5yTTVGNkRET29PdHo3UQ?oc=5",
+      "title": "Pakistan & Russia Strike $80 Million Deal for Local Insulin Plant",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
