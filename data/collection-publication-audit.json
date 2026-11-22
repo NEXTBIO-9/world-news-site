@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-21T23:02:11.495654+00:00",
+  "updated": "2026-11-22T00:08:02.046693+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 20,
+    "important_unpublished": 21,
     "not_in_current_queue": 36,
-    "pending": 17,
-    "published": 127
+    "pending": 15,
+    "published": 129
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 16,
+    "not_in_current_queue": 17,
     "pending": 4
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 12,
+    "source_blocked": 13,
     "repeated_extraction_failure": 4,
     "in_retry_queue": 4
   },
@@ -58,6 +58,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pekFpUk9iS2xWVW5hdE9nVjc4eVZoaGN3UWs0U1g5bTh3VzVCbFB6ZE9OZFpCOWlSNXExU082V1lvUVNxbnNEQzlITXVyazJuWEp4U0dJakhKZHFVS1c0eHF1emtXalNVbXhjNm1YTVNIZ0ZQR2tLTzN5b3Y4RFU?oc=5",
+      "title": "Israel - Lebanon War, Conflict, Invasion",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -191,6 +199,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pekFpUk9iS2xWVW5hdE9nVjc4eVZoaGN3UWs0U1g5bTh3VzVCbFB6ZE9OZFpCOWlSNXExU082V1lvUVNxbnNEQzlITXVyazJuWEp4U0dJakhKZHFVS1c0eHF1emtXalNVbXhjNm1YTVNIZ0ZQR2tLTzN5b3Y4RFU?oc=5",
+      "title": "Israel - Lebanon War, Conflict, Invasion",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPb3owdnRiaEFIUV9qb2JVT04yS0FFak1jak9BYWswVW00OHJGSGxtTnBja2gzSUtfYld1akZhbWVtNXZYTENmX0dtcFF4bE9fUGhNQTUtN2oxZFJXcjFWT3haMElDUVp6czhDR3VNUUJfc3FfYVc1cGtsZFF2clc3UzJLOEc?oc=5",
       "title": "Israel Says Gaza Tunnel Section Destroyed as Ceasefire Frays",
       "important": true,
@@ -311,6 +327,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5oVWtKRVVURHIydmpwX2djUENuV3NoZVF6d292elhQQzNSRHVFT0xSd3lWZFNhVVU2aXJDS2JmY0dqQm5VR1IwTGhHSklCY09kMDhN?oc=5",
+      "title": "Iraq War | Summary, Causes, Dates, Combatants, Casualties, & Facts",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9rZ1B0YlhPMjVkNzc4ZFRKVFlLQ0xtYUd1eU1HZ3FjMl9KRm96ckdRbktDUVZTWER2djdqNElWUWVHRkZLc0dSeWtFdGhvQVc1UW91QWlB?oc=5",
       "title": "美 의회 “중국 바이오, 글로벌 신약개발 주도권 잠식” 경고 … 美 자본과 개발경험 동시에 흡수",
       "important": false,
@@ -351,30 +375,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1wc3M1N2t6S2hkRGNoa3c1OHNNM2dzVlNPelRwRjJLRWw0VXFxUlpRbUx4Y0pmMzVaQ1doNEJfMkhVa3FTaDRQR18zYXQyQ3NvT0IwbEQ3SG1rbEUtMnhvR204SC01Z2IxekNWTQ?oc=5",
-      "title": "글로벌 제약업계, AI 신약개발 투자 확대…개발 비용·기간 단축 경쟁",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE85WDdQazVZVjRRSnRZekM1ZlRxM054aWZSSFI1MElHbzgzUGNnellKTFB3MlVUU2FLRjMybWxPbVEwZ0N6Q1U4UTlVUHhqR2dCdmVwbERJWENfckhmWm9DZ2N5MkZqNnRTTm5HMldXa1jSAXBBVV95cUxPOVg3UGs1WVY0UUp0WXpDNWZUcTNOeGlmUkhSNTBJR284M1BjZ3pZSkxQdzJVVFNhS0YzMm1sT21RMGdDekNVOFE5VVB4akdnQnZlcGxESVhDX3JIZlpvQ2djeTJGajZ0U05uRzJXV2tY?oc=5",
-      "title": "美 의회 자문위, 中 바이오 지배력 확대 경고…“신약개발 의존 심화”",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ydVhQTWZEVGUtUnJQWTkzNnpvcTIyT014VWVzdkdSWHVSUlNVSWdkaHcxdFZhSW8yQUNtOVR5Umk0MGM2c0I0LTJmUi1pUEhvdG5uLWNoZ1c0VklUZXo5cUxqNHpkMWl2Nnk5ZU12VDJad9IBdkFVX3lxTE1QbjUxOVNkcG5Rem9YRXdzcDU3cTVMbFZrRWxYSVRzd05nLUNuYzA2OHVrRWhHYmFlNElxbzV3ZWVONGdMcHFHWWNyV3ZTS0hvVjIzYlE4TlZDNEpwNkY3NThObVg0SktEbUpOVHlWZ0FYUU9kdmc?oc=5",
-      "title": "“美, 中과 신약개발 협력 급증…자본ㆍ상용화 노하우 넘어가”",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5mRHd6Tk53dkRxaDdoclc5R290dFlwZkVGY0FXSTJ5Qml3Tzg5SmlYQTNNOW81MXc5ak5pR0dxS2R5OHdRQ2otWkRWSTh3MkRHa3FEbUFlQlA4NFF3YllRMUJBUFgtWG90T2d4cF9OMzlVMUFM?oc=5",
       "title": "혁신형 제약기업 35곳 내년 재인증...R&D 투자 넘어 개발 성과 평가",
       "important": false,
@@ -396,6 +396,14 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
+      "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -511,14 +519,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5SREMyaXVNUTJkcWFyTzlXM3g2eE1BQlFIM2VWSEk2VGlCV25yYlVPUHQzeDkzdE95X3BxV0Y0M3FxQ1Q4OU90WGRDNjFhM2h0LW00N191R3BFS0t5WlFVTjdHY2ZPRzQwZG5QbzBhdXVCQQ?oc=5",
-      "title": "Israel Election 2026 Live Updates: Eisenkot, Netanyahu race to build government",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5kYmVqUXBXa2dhU2d2MzNxYko1NlZyaGdTTVVXZk5ocUNsQ0k0UEFOM2RUR09uQUtoVllOMEUxb2IzVHdFcGVsODIyeXNZWmFOR25nZ2RuQmdVWlBEb1YwNWhzMkxqMDFqSDRsMG84QXZLQ0k5Vm8zTnhISmF1Zw?oc=5",
       "title": "Rubio Urges UAE to Help Bring Sudan War to an End",
       "important": false,
@@ -553,14 +553,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNVWZuTHhDZU1hb0tfWVBGc3pOeVlSekY5MUliUlZTWl81WGQzS0E3SmctVzNVcldWNzhQS0JMUnF1ckxGOXpjT2NDVUpsMFVlbEctWE9ManRPM2RsNmtCLThvSV9lWDVaV0tzVzJmVmJUNjFraWlDWmhRc1NZWC1DcjI3NjZPZG1FdGNqMUFxNzRRMDFBYjFxVXFDbHl6Qzc4UVZqSzByWVlxYXBB?oc=5",
       "title": "Sweden, Pakistan hold talks to modernize bilateral investment treaty",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPOWZGNUY0bUNnMlpfc0ZRNUdCRDNWWGJfd2pRMXRtNEdKWjF1T0Jra1dOdGg3aE8tNXp4SVZya29xbjhHeHE1Z2tUbV9hVzhpQW8xcUdUWXRDdFFoRXJKMFRXQnRxbUp4eVd5d1BJb1RCNlhxWFdpVGhkd3BWZVdJUEw1ZGNpeTUxTnA5MmRrVjM1eURwWURSSnNsVURLTUJTSlAtemZ0cEo1U0h5?oc=5",
-      "title": "Karnataka’s New Plan to Fight Antibiotic Resistance",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
