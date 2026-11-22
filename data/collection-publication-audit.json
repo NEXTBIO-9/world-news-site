@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-22T13:11:00.417431+00:00",
+  "updated": "2026-11-22T14:18:19.996902+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 20,
-    "not_in_current_queue": 34,
-    "pending": 16,
-    "published": 130
+    "important_unpublished": 18,
+    "not_in_current_queue": 33,
+    "pending": 13,
+    "published": 134
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 15,
-    "pending": 5
+    "not_in_current_queue": 14,
+    "pending": 4
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 12,
+    "source_blocked": 11,
     "repeated_extraction_failure": 3,
-    "in_retry_queue": 5
+    "in_retry_queue": 4
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -47,14 +47,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
       "title": "6.7 magnitude earthquake jolts central Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPb3owdnRiaEFIUV9qb2JVT04yS0FFak1jak9BYWswVW00OHJGSGxtTnBja2gzSUtfYld1akZhbWVtNXZYTENmX0dtcFF4bE9fUGhNQTUtN2oxZFJXcjFWT3haMElDUVp6czhDR3VNUUJfc3FfYVc1cGtsZFF2clc3UzJLOEc?oc=5",
-      "title": "Israel Says Gaza Tunnel Section Destroyed as Ceasefire Frays",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -175,14 +167,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPb3owdnRiaEFIUV9qb2JVT04yS0FFak1jak9BYWswVW00OHJGSGxtTnBja2gzSUtfYld1akZhbWVtNXZYTENmX0dtcFF4bE9fUGhNQTUtN2oxZFJXcjFWT3haMElDUVp6czhDR3VNUUJfc3FfYVc1cGtsZFF2clc3UzJLOEc?oc=5",
-      "title": "Israel Says Gaza Tunnel Section Destroyed as Ceasefire Frays",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbE1uTUdsZ1kzaFBJUnFZbF9Bb20tRXRzTXpBek9NZmhHTU5PWGZWdTQ1SmptZXczZjVGVU83T0RWLXRQVGxSQVlMcFZOWlYyMW10YU5CM19nR2ZKYWFTX2d1TnRqNWtOTEFqS0ZhMUVhNjRRMFhaRG13d0hKTkIyeXhxTkY?oc=5",
       "title": "Brazil’s central bank steps in to stem real’s slide since Lula’s re-election",
       "important": true,
@@ -295,14 +279,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNa2VfaHQ1V0Q1VWpXVmxWM1pqa1hMa0hSSkEySFhrLW40VHM4RDMxNnhmaDc1am93LTNyLTZ3RmZEQk10Q1ppUUdRdFhXclM4eHpVeElPRzdVd0FfeVpuT2p0OGxDdGFqRFZWdTZ2VzVONlpUZmJLekdTWkg0R19WMERQbVh5WjRRM0tqQmc5QXZUVlZXNWVzaXhaOF9CX3M5OXkxa3cxY1FuQlpnZU5PX05YSHBTVkhUTkRTMWZobGVtRlMyT2RnU0JLaGt5dw?oc=5",
-      "title": "IDOH: Indiana experiencing measles outbreak",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPaWdfbXM0UEFxOGc5OGN3WnNsUVhwR2JVVDJTTnNoMGlrenZfOVF5QlRKQ3lJeFlMMHhmZDBLYXJvQ3Vaa2VYU21HWjIyOHBvLXBKNGpfcmdjY1Mxa3lQWHBVeFEtZGY4T3NxQVVhRXBreE5GSXMyMTN3eVpCZ1ZHTUUxWEE2cXozWm8zUk1DYkx6MVlGbXI1cDFWUFJwQkhuUGsyRmpST09FLUhZX1pFUEw1bTFkWU1DWENORlo5WnBteEtiR1d1VmtrdTJVSzJ6bG52QU530gHbAUFVX3lxTE44QTEtcXNmZWJST2Z0OFBzOFlpWHVqZ0hGam10cUkzOEVWY3RkdkxRTHFKeWtmdTZhaGI5MDFCcFM2dkw1V29pYWZ5b3F2WGM3RlhUQ2pYR3AwLWVPNlFJQ2pPT1RaT1lYOGVZaFdaRDQ1VXQwT3hVMDNpdHRiSVludnNqN0hBaGJBYkhZLW5IdGlhSEpUNzVPTFFPbUVBOEdDN0MxNnJfeExQWFBsSUt4Zy1xcHgwa0RrYkp6ZXF0Y3FtMm0zNG1tSUtFUFdWV0htY3REcm83cXlQVQ?oc=5",
       "title": "Sudan civil war: Drone strikes damage homes, UN premises in capital Khartoum, casualties unclear",
       "important": false,
@@ -327,19 +303,19 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5MOS0xWDFtNlJVZFRFUkNoYXc1TkFUTmlNeVoxRlFUcWNjeEhfU214WVBjb3NyZ0IyeEE4ckpyN1dqYVFVWXhOUFYzc2Jfb0N6aGFocXhwdnZiUQ?oc=5",
-      "title": "李대통령 \"시험지 고유 식별표식 검토…공정성 타협불가 원칙\"",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8wNVQ2Tk11M0ItWkpETzJDN0JGN1Rpd3ZtVkNvT3hmcDVnUklXZXpOM09XRWVIWV83VG5ndmZVQnoxTlpJejBRVm1VVk1Ddk5jVlRQZVVKRXlaVFXSAWBBVV95cUxObzRrTEFTZ25Jc0lKcC1tbzRZdEozVC1GRnpzVnZUSVF6M3RDak5JeU1ub2NiWk1BMmc0MjBneDMxNGI3MEE2aVJBYVhjLUZaVGVNcHNHTVkwZEJaOFl6M0Y?oc=5",
+      "title": "트럼프, SNS에 얄타회담·미중러 정상회담 사진 나란히 게시",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5vNGtMQVNnbklzSUpwLW1vNFl0SjNULUZGenNWdlRJUXozdENqTkl5TW5vY2JaTUEyZzQyMGd4MzE0YjcwQTZpUkFhWGMtRlpUZU1wc0dNWTBkQlo4WXozRtIBYEFVX3lxTE5vNGtMQVNnbklzSUpwLW1vNFl0SjNULUZGenNWdlRJUXozdENqTkl5TW5vY2JaTUEyZzQyMGd4MzE0YjcwQTZpUkFhWGMtRlpUZU1wc0dNWTBkQlo4WXozRg?oc=5",
-      "title": "트럼프, SNS에 얄타회담·미중러 정상회담 사진 나란히 게시",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nTzlhOGZTS180cWNtVG91c2VWRVJFYlk0cW5Ba1RHUEFOSEtldU15QktQT0EzRVY1ZVdZZ0VTRHVWTVhyN1IzeU1wbmlDMUhrQ3Roc1YxcmdMUQ?oc=5",
+      "title": "2026 Iran war | Oil, Explained, United States, Israel, Strait of Hormuz, Map, & Conflict",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -361,6 +337,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE51dzJ5MTNMSDU4d1dOSFNnbWVWTV9aQUlqbl9rVDdKZlhiRmZPaUNwNE1FUFBKdlVVLTRHZDRBTmxWV2c4cl9NNU9pR3NsYkEtd0VzRFhza3l3LVRXTU5hSWZHTzNodVZHS1E0?oc=5",
       "title": "Courtesy call on Prime Minister TAKAICHI by the members of Japan-Brazil Business Council Plenary Meeting",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5nMlM1QWlIb2V3MGVoSll6Mm5yaXA0RERMZjNjNWpJNldUTF9CNDZzUFVQMlI5Nl9BRlVTSzd5X1NsUmtVVkoyQTE4bzFoWXQ4TzZlNUxwaHAtd1E2bmQ4SkNvTVJpMzZtU3c?oc=5",
+      "title": "Iran - Nuclear Deal, Sanctions, Diplomacy",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -391,24 +375,16 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdXBVVU1tbkE3WjRHVXVmN0N4X0tqUVA4ODJna2NIaWsxZ0swMGoxaUNUX083TFNuay1NcHEwalJBZjJFZmtmUV9BNFlSRHBTX0ZpNzlmcVlXbUwyUXBWSlR4MFhCaGFtYjUxb3ZoeV8tNVBERnBiVGNtbnZRMVZpSzBvbEZyTmpVMzl6ZTEtOThuOWljWEE?oc=5",
+      "title": "Iraqi Embassy: Prime Minister to Visit Cairo on Monday » Iraqi News Agency",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPMjBqM0dKTHRSeGhyenlKTWJsZGw3UWVoZzFEM1lnUWZrZmVJWXZoYzFyQ0J5NEhvTU91VHYzYzRFWnAwaGhsM0lGNXNRRjc3YlNJUy1zTEdOaXR2UkxWS2FlYUVlNlhfUjU4M0hnQnBiVzlFamRPTFBhNFpXNmRUT3dfdE5PUmtoanhpX0ZHeU1iQnVNV0NGWng0S2hZQQ?oc=5",
       "title": "Indonesia, EU Seal Zero-Tariff Trade Deal After Decade-Long Talks",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQa0RCaVNESHIyME5LaU1tX3F0NjNKdDhKX2xmNVhXRWxWOF80U3J0Wm1YNmNSdmFlNEh4YlJ2NFVfaEJVVHEwWnBveFdyekJHVDI5N0VHWGZTaGtxdFA5OUJ0WFFmMVV3ajltU01OamstbFNhMHNFSm5jWGQ2MTlQa3FsM0pFdGZLaEJ5NnJRNXZXU0FkS251WnF2NkRwb2s?oc=5",
-      "title": "What We Don’t Know About the Iran War",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNT0JEYTlwbVd6TXVhU3lMMnpSN251QUZhenhmbEk5enlPX0lUYjhMa29xOXZOamc4VnNiWGx1QVlfcTFIaW9PcVpYSFdXQ0o1dzZFNlRpamZFVWx1MF9ReGdfeHF1ZlFkdkhaaEM5eVQ3eEV6SE5jeVFUaEl5LVJhUmtiMktvRkxjM1lWV2FJV3JhaHJxUFM2cjlsRTg3QV9Sd0licGhvME9lYVU?oc=5",
-      "title": "EU Considers Stronger Measures Against Russia as War Diplomacy Stalls",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -431,14 +407,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY2JtZUJubGd2ZHAwZy1nU3dhQ09Pd3A5a2drSWVWZ3ZTRGRDem8yU3pseEItYlBxb2lFbkI5SE5zVVZkU3RKMDNaYy1lUHItUmlZLV9GcDROZjFnNVBmaU44S0dScUJBeFRXeUx3MWFieGJZY052X1owbS1nWUNsR2lva3FyTVBQM2tFNkRfY1E5eTluZkotaFFKbXZoRkZqeVQxRGdVSnBET0h1YjB6QkZyUQ?oc=5",
-      "title": "Emirati candidate for UN top job vows to end Sudan conflict amid war crimes scrutiny",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMzc3NDJ0VjhUdmg5TUtoY2x2b0o0enB5UXlWR3EwanB1S21fUXBKdHhCaWZXUmF3a3R3NWJSbEo4WWNDUFdzdFd4ckFQNndCRlViQ1NzejkxZnU3cmVJWGEwckRzWlJtdDdlM0xFeDVDYWszVkdDMHBLQk90c0ZmXzkzSDZFb3k2RGpGY2NaTVE3Y08wTWt1aGpRZlhKcEdJWmtGZlRxbTZTajF5czU5aF9JQ2RveGdkcEFnWjZB?oc=5",
       "title": "German president to visit Kenya on final Africa tour before leaving office",
       "important": false,
@@ -449,6 +417,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPOTRxeEU3aURIMTJqSHJmd0Q5S19EUTNnTVdab3RwVDBmQ3ZSR01LYUItUHdCTU1PbGFvWHh1b1d0YURuMG9PUEtZYXM0VkswLUVBNm1zeG4yRXdXTkd1amtVMU4xOEozNG1MY2NFdDNrTlJxbW4xS1VnbU16Qkxndy05ZDN0cm1IclhVUk0tWXJaQ0p3VFJ2bG1LOG9MTEV0ejRSM0FfQUNmUEVBeGNoZW5zX3V5eU50NEo1b0NnSWhjcU54RTcwWdIByAFBVV95cUxOQW9ZYWNWek9lQ2JaeklkSU4yOHYxUXVUa0tCMTdvYmo5dkozWllGMUloRVpvLWFCSW5iNDR3TWJBbU1yN2xwVHlOY0h2VGZFeXlnNVlmekdwd1c0MDE1UmhYWVN2a2lPVVlZNlpYdTBxeDBFR05fcEtFbkFhQWl6WHNuY05Qakh2bUxMTENJZ2xfa2NuS2VzS0I0cksxN194VERWNlI3ekl0TmNRODM0MVRpV0l5TmR4Q1JnYjA0dEpGdWk2dkFfSw?oc=5",
       "title": "How battle to host UN high seas treaty tests China’s push for global leadership",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNbWVldVlmTVBsLUFRbllWVElSLXJPeHk5V2tObUFMOTF2YUxUUVk4bldJU3V1NXZIVWN3LUVaUmFFdHdlM1BiVUtwc0cyRkhSZ0xwTXg1MFZOTDdoeDR4Sk5iOGJfOVpkVzRWUC1MaDlLRm5QUVNUQ21EOTFaemJfUklDNnhxMGJYeTRvTTF3VHhrQzIwRkxxN1FXeWlJVnZmMHF0QW9KQ083bHJtamNtMVVwUEdkLWxvVW1tdFRsOXNZczNnNE1sRlR4bw?oc=5",
+      "title": "Ignacio Galán meets British Prime Minister in Brussels during EU–UK Summit",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -487,8 +463,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTXAteEJvNkdtQlF0VEN6d29JSWY0WWplX2o2bU41dXdMX2FCekxRa2Fhbmd5ZWc0Tlg4TWJoYVZCcHhObmpzNHo3ZjV4dVEyQldWaDdSbmJhUnpKS0UtWmRwZ2ZOTHZPdnVmeV9YT2lRUDR5WWRJQ1dGY0hVM1l6LWZYcG9EY21EdUZfTXlLU2hVU1HSAZgBQVVfeXFMT2dPb1lqemdpcXd4MTJWbHFQVXlmTXI4Yy1ROEVFYXIzMFRBeUYzVFZ2bURHQ1NEZnE0VzJLanNHdHB6Z3FsalZ2Z0RtMVI0aEhSQmJQQk9jYzN1eVdjX3o1TWlyQXlJZUpPT2hZUnVsaXVjNzU3MEUwTTBmR2VJZEdGOGpPQXJtVmxLejNwbm93YS1FbVEzeXg?oc=5",
-      "title": "Manila in nuclear energy talks with US, Russia, Canada",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbU9WMDczZHJocTZXNWxNYkxfb3hxOFN0ZUxCVl9PT2xxa281cXhCdGJ6Ty1UdVp1c3YtSWVHcW90Mm11ckFwVk90XzhPRWhOa1JxUnpjNUF4V1A0OUlYdHBwR1k4M1VYMDNvdnlkT2czZmh4cE56RDRqYWd1NlA5Rm9nN21LN0YzNDV4OHFheHlFY0RvcGc?oc=5",
+      "title": "‘Wildly naive’: Is New Zealand sleepwalking into a world of war?",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -519,24 +495,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNVWZuTHhDZU1hb0tfWVBGc3pOeVlSekY5MUliUlZTWl81WGQzS0E3SmctVzNVcldWNzhQS0JMUnF1ckxGOXpjT2NDVUpsMFVlbEctWE9ManRPM2RsNmtCLThvSV9lWDVaV0tzVzJmVmJUNjFraWlDWmhRc1NZWC1DcjI3NjZPZG1FdGNqMUFxNzRRMDFBYjFxVXFDbHl6Qzc4UVZqSzByWVlxYXBB?oc=5",
-      "title": "Sweden, Pakistan hold talks to modernize bilateral investment treaty",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRVdxbFpQeFpFZWlSOVN5VUI2a2hHRVJrd0haLVBjUVRkTXlqQlprLUQzMG4tVHlIek1XcFY2b29uaGhVcVJadVN6R1h6RjlTLVVWb2ZpV19VdHVpemh1ZjJXTHRhZHd0cm5ZVGZLV0lKaEZ0R3hoQ3BVaWlHbHVDaDJ4TXc4RGRBRGZISGx0WDJSWUVsSzR1N3pPSG5hMllqN2NDbW9qZ2VSWEh4TjlUMDBhNUUwZw?oc=5",
       "title": "NEXT Weather Alert for flood watch in South Florida extended to Friday morning",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOLV9pWTNWU1JhZGRUOURfRktKSXlqU00tM05UMURhS3MyV3BLanlPVVJyQUlmSFVBaG5fVVEtQUFVNkVwTUtObGk2VGRPbUdWRE9CdjlIY19WblNiMlBZQV9FU1ZQYm1uMnhvRmN5b0xZUElUTHQyQ3d3Rnh4c3NGamVfN0ozeFFtQUZtemE1aVVvR0dFQzV2a1RTSEZycTFIeFl1V1phZk80XzVSZ201YXdLcV9OQ3ZvR0dv?oc=5",
-      "title": "Shivraj Singh Chouhan to Dedicate India’s First Indigenous H5N1 Chicken Vaccine on November 20",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
