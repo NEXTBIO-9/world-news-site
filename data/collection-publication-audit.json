@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-22T05:00:03.557882+00:00",
+  "updated": "2026-11-22T05:54:05.471104+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
     "important_unpublished": 24,
-    "not_in_current_queue": 41,
-    "pending": 17,
-    "published": 122
+    "not_in_current_queue": 36,
+    "pending": 19,
+    "published": 125
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 19,
-    "pending": 5
+    "not_in_current_queue": 18,
+    "pending": 6
   },
   "important_unpublished_by_reason": {
     "source_blocked": 14,
-    "repeated_extraction_failure": 5,
-    "in_retry_queue": 5
+    "repeated_extraction_failure": 4,
+    "in_retry_queue": 6
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -29,11 +29,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1YMS13V1RKMk9Wb2pNQ1RRazhoTHlyRlVTZG8yc3Q1NkpOYlZuc3RYS1RhSDRxdXNhRW9UMjRIai16NzdOZnlnMHQ1d1VQVjlIeXcw0gFYQVVfeXFMTzFoNmhtMUFsTGtlRE56X0lJZU1ha2FVcm92amRPTEtHbUdBX2xVTjAxSUdYQ2l1U3JqTC1LNEhkek5SUnJ4ejdzelZycHMyYjg3Mm1RYkdVaw?oc=5",
-      "title": "'슈퍼박테리아' 대응에 AI 활용…질병청, 항생제 내성 국제학술대회 개최",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOGplcnVPQll4c210MGI2dnJsbWloRUlQalZiMjhsTEYxbjFLYzVEY2NWeGQ2MjJ1WWowVGlRcmJQdm1PcHRDLTBmQXg2ZnFwNG12VTFqdDlKMTNhRVdtSkVtQk42Nk9lZ1BlSUd1YnFSc21tOTRMdnBCRlpKVWN6NFNSejJjandsbDVXMzZRdWQwT0NVYkNSTDhPb2VGMy1VY2FUV2tnc2JZU2poOFNPYk5TbVpwdVhUQ3l4VkZoMkU5b3lwb3o1OUM2XzJGVHhERG1sb1hHdVl2M1pTNmhKRHBlX2Y?oc=5",
+      "title": "Today's Top 3 News: Prabowo Returns from Asia Trip, California Earthquake",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -133,8 +133,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYWZncFVIMkVZOFVrNFlpd050aUFJb2JiLUg4R2hOcDJyMW0xLTZaNFduMXk0QWZHOHhzZXFmQVlBVmRnUU16V1hTMVVYX2ZVa2dRVURKeVhLZkRaNnFmWk84NkhqX2k3QjFkWmlrVlNNclZuM3Y0WEc1LUowZE8tdVYyT1Roalk3OEUxaTFMR2xUTHMwQWE0U0FqdlBoSzZOMEQ3ZVR3?oc=5",
-      "title": "Today's Top 3 News: Prabowo Returns from Asia Trip, California Earthquake",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNQ1l3dkNqLXBUVW91ZDlzcXdGc3A4Q1Q1ZVBYbFBjZ0I5RDVRVFlsWW04cGdBVEd4OFBRUFR4VmtGdUM1OFJEUzJUbnhnZFRJT3pfRzh0dHc2WkpIOVpuUFNYeW96MzBYNVNiOEtkUEtQa0xfVUJDN2wtM1NOTTExb0gtNE9pcGJqeG03X0RQXzhrcEtDZmVPV09UYVlMdWpfUTVIQTZB0gGmAUFVX3lxTE1DWXd2Q2otcFRVb3VkOXNxd0ZzcDhDVDVlUFhsUGNnQjlENVFUWWxZbThwZ0FUR3g4UFFQVHhWa0Z1QzU4UkRTMlRueGdkVElPel9HOHR0dzZaSkg5Wm5QU1h5b3ozMFg1U2I4S2RQS1BrTF9VQkM3bC0zU05NMTFvSC00T2lwYmp4bTdfRFBfOGtwS0NmZU9XT1RhWUx1al9RNUhBNkE?oc=5",
+      "title": "10년 만에 고개 든 ‘이 감염병’, 해외 안 갔는데 어떻게?",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -143,14 +143,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
       "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUUJ5QjBndGJPNTFwMHRqRzZVNHRqd0JpaW1oc2UxeGd0RXpYNDNWQlE2Yl9vLVBfbUxZS3ZqeG1iTnh3Um1vZXJRWU5aenBiaFlYRmRBVy00eFpYRVJFNHN0NTk2TVdWOXNfbHZKckxpRi05WDNJM2VaLWRjR1l0c3JrYkYyZEU0UFItS2NQR19Pb1cwWG1BNW43Y19mZE9EajUwZHA4RUJTOVFoOWdnbG5tT1pzdDhvVlI3MEZlcU50YWd0a2c?oc=5",
-      "title": "Capricor's Duchenne treatment fails to get FDA approval, shares sink",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -183,11 +175,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1YMS13V1RKMk9Wb2pNQ1RRazhoTHlyRlVTZG8yc3Q1NkpOYlZuc3RYS1RhSDRxdXNhRW9UMjRIai16NzdOZnlnMHQ1d1VQVjlIeXcw0gFYQVVfeXFMTzFoNmhtMUFsTGtlRE56X0lJZU1ha2FVcm92amRPTEtHbUdBX2xVTjAxSUdYQ2l1U3JqTC1LNEhkek5SUnJ4ejdzelZycHMyYjg3Mm1RYkdVaw?oc=5",
-      "title": "'슈퍼박테리아' 대응에 AI 활용…질병청, 항생제 내성 국제학술대회 개최",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOGplcnVPQll4c210MGI2dnJsbWloRUlQalZiMjhsTEYxbjFLYzVEY2NWeGQ2MjJ1WWowVGlRcmJQdm1PcHRDLTBmQXg2ZnFwNG12VTFqdDlKMTNhRVdtSkVtQk42Nk9lZ1BlSUd1YnFSc21tOTRMdnBCRlpKVWN6NFNSejJjandsbDVXMzZRdWQwT0NVYkNSTDhPb2VGMy1VY2FUV2tnc2JZU2poOFNPYk5TbVpwdVhUQ3l4VkZoMkU5b3lwb3o1OUM2XzJGVHhERG1sb1hHdVl2M1pTNmhKRHBlX2Y?oc=5",
+      "title": "Today's Top 3 News: Prabowo Returns from Asia Trip, California Earthquake",
       "important": true,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -287,8 +279,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYWZncFVIMkVZOFVrNFlpd050aUFJb2JiLUg4R2hOcDJyMW0xLTZaNFduMXk0QWZHOHhzZXFmQVlBVmRnUU16V1hTMVVYX2ZVa2dRVURKeVhLZkRaNnFmWk84NkhqX2k3QjFkWmlrVlNNclZuM3Y0WEc1LUowZE8tdVYyT1Roalk3OEUxaTFMR2xUTHMwQWE0U0FqdlBoSzZOMEQ3ZVR3?oc=5",
-      "title": "Today's Top 3 News: Prabowo Returns from Asia Trip, California Earthquake",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNQ1l3dkNqLXBUVW91ZDlzcXdGc3A4Q1Q1ZVBYbFBjZ0I5RDVRVFlsWW04cGdBVEd4OFBRUFR4VmtGdUM1OFJEUzJUbnhnZFRJT3pfRzh0dHc2WkpIOVpuUFNYeW96MzBYNVNiOEtkUEtQa0xfVUJDN2wtM1NOTTExb0gtNE9pcGJqeG03X0RQXzhrcEtDZmVPV09UYVlMdWpfUTVIQTZB0gGmAUFVX3lxTE1DWXd2Q2otcFRVb3VkOXNxd0ZzcDhDVDVlUFhsUGNnQjlENVFUWWxZbThwZ0FUR3g4UFFQVHhWa0Z1QzU4UkRTMlRueGdkVElPel9HOHR0dzZaSkg5Wm5QU1h5b3ozMFg1U2I4S2RQS1BrTF9VQkM3bC0zU05NMTFvSC00T2lwYmp4bTdfRFBfOGtwS0NmZU9XT1RhWUx1al9RNUhBNkE?oc=5",
+      "title": "10년 만에 고개 든 ‘이 감염병’, 해외 안 갔는데 어떻게?",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -297,14 +289,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSlNtd2o3VDQ5VGJYWTJvQ2dqLVVXN0xqRThoc0l5Yk15aF8wT0xKcF9QQ2ZGRGRvSHlLYURMN0JDd1JUSmVUQkJ2T1ZNZl9mT2laYVMzQW1Gdk5SeXB6YVNIVkxaS0MybmVSZHJ3MWtZZXN6QXNEUFowOThiN2VYeWlLd3RQM2gtUUhuY1JSbFFlOEk0aVN6dUZYN1BEdC1mWjJpcXFMUG93X2FUcW9aUGMzb0F6WlB4NWfSAboBQVVfeXFMUEpTbXdqN1Q0OVRiWFkyb0Nnai1VVzdMakU4aHNJeWJNeWhfME9MSnBfUENmRkRkb0h5S2FETDdCQ3dSVEplVEJCdk9WTWZfZk9pWmFTM0FtRnZOUnlwemFTSFZMWktDMm5lUmRydzFrWWVzekFzRFBaMDk4YjdlWHlpS3d0UDNoLVFIbmNSUmxRZThJNGlTenVGWDdQRHQtZloyaXFxTFBvd19hVHFvWlBjM29BelpQeDVn?oc=5",
       "title": "Air Force bombs entrances to underground Hezbollah missile site in east Lebanon — IDF",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUUJ5QjBndGJPNTFwMHRqRzZVNHRqd0JpaW1oc2UxeGd0RXpYNDNWQlE2Yl9vLVBfbUxZS3ZqeG1iTnh3Um1vZXJRWU5aenBiaFlYRmRBVy00eFpYRVJFNHN0NTk2TVdWOXNfbHZKckxpRi05WDNJM2VaLWRjR1l0c3JrYkYyZEU0UFItS2NQR19Pb1cwWG1BNW43Y19mZE9EajUwZHA4RUJTOVFoOWdnbG5tT1pzdDhvVlI3MEZlcU50YWd0a2c?oc=5",
-      "title": "Capricor's Duchenne treatment fails to get FDA approval, shares sink",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -367,16 +351,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5oVWtKRVVURHIydmpwX2djUENuV3NoZVF6d292elhQQzNSRHVFT0xSd3lWZFNhVVU2aXJDS2JmY0dqQm5VR1IwTGhHSklCY09kMDhN?oc=5",
-      "title": "Iraq War | Summary, Causes, Dates, Combatants, Casualties, & Facts",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNa2VfaHQ1V0Q1VWpXVmxWM1pqa1hMa0hSSkEySFhrLW40VHM4RDMxNnhmaDc1am93LTNyLTZ3RmZEQk10Q1ppUUdRdFhXclM4eHpVeElPRzdVd0FfeVpuT2p0OGxDdGFqRFZWdTZ2VzVONlpUZmJLekdTWkg0R19WMERQbVh5WjRRM0tqQmc5QXZUVlZXNWVzaXhaOF9CX3M5OXkxa3cxY1FuQlpnZU5PX05YSHBTVkhUTkRTMWZobGVtRlMyT2RnU0JLaGt5dw?oc=5",
+      "title": "IDOH: Indiana experiencing measles outbreak",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5maWpJR1J2THZpYm95U0J0UVViWDlGNFFXRWpvcjM3bktMM0YxSzNJcVZqM2g2NFJQaU5rTTh4c25kc3RsNTVKdHpHWUQ4TkR5Vl8zSVJvZWxlaElERllIUG9kbw?oc=5",
-      "title": "리가켐바이오, 국민성장펀드 바이오 1호 투자 유치…5000억 조달",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5oVWtKRVVURHIydmpwX2djUENuV3NoZVF6d292elhQQzNSRHVFT0xSd3lWZFNhVVU2aXJDS2JmY0dqQm5VR1IwTGhHSklCY09kMDhN?oc=5",
+      "title": "Iraq War | Summary, Causes, Dates, Combatants, Casualties, & Facts",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -423,6 +407,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9DU1BkMEdwOVpObzk5SlYzLVRoaXhuaXlEcTJVNkN5Ry1iV0RWMHpvSkg3RDVKUHlacXUwdUUtblY2OFIxcXEyY1RaQllKeFVhcXRsTzRqWFlHTk1WM1F0cFB0RzIwbUdmYVNINnJzbWlNWmdURFHSAXtBVV95cUxNTTRtVGNNUzU5UmZKM05KdTV2WWh2QXZZUVdzR05jYk5Ldm03SHlNZnZ0aVd0VEJNT1hSXzZLOTlyOV93dDlMSWd0NDVuaFhHYUFxY3QwTFNiQ1NjTElvTjVUb185cTQ3NzlVN3NkbVBlbTQ3NnFSXzJBX2s?oc=5",
+      "title": "Former defense secretary suggests Iran war may last until 2029: ‘It’s just gonna take a long time’",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPMkZlRVVheEtsay0zNTdaRTRQMFQ4SUhfWk5SSkxQTE5DRXFzcllkZERSRXdIU1prVVlGbUlNMVVPRDlPdmhsd2lkU0ZhWjJyb0M3Q3Ezc202RWFzZEh4UDNNTlZkcTVRWXRsRjAydXJpdk16NUlXWllFTlhuS2gtWA?oc=5",
       "title": "The Economic Costs of the Iran War: THB November Update",
       "important": false,
@@ -449,14 +441,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
       "title": "Xi, Putin blast Western 'protectionism' and sanctions as Trump lands in China",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOa3ZVWk5yazBTSDhiMUxINU5aLU9oazI5NmVCYW8xc29xNUEtVVFKV2hoaHlDYmFpWXhVZV8wbVpqR3MwZEl2ZUhvSERZb0J6c3ZhZWpscXZwSnZYN0V1R0RrMTY2TEVuVHZBeW5rV21PSUtRdTU0SVpWUWNRTnl2X3IwZjQ4U3NMLWJ2NUZ3UzZsX1oxNk5uaFYyWDM?oc=5",
-      "title": "PIPELINES AND PORTS: Iran War Spurs Gulf Infrastructure Investment",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -495,14 +479,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOTWtmQ1JBZmtWcnFCMFduMzB2YlptNURYdXNpbklwQzhncEFQcjFkcl8xNFJreVNINTVqckJlUUFuOWxjSi0zLTd6ZnlNeEliSVBHRFlwLUJEb1RmdC1wRlpzT0FSX3Q5WXdpRlhSNXI5T1BKSWdTRXUzYzdOVzZ4VFcydE56NEx1dzFzQkVNZFlwRlFfNTkzZXVta1Z3cXoySG9LWmpwNmdvNlNCNHZ5YXRSOFdYSENmVkNlcg?oc=5",
-      "title": "President of Azerbaijan and spouse begin official visit to Vietnam",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "unexplained_not_queued",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMzc3NDJ0VjhUdmg5TUtoY2x2b0o0enB5UXlWR3EwanB1S21fUXBKdHhCaWZXUmF3a3R3NWJSbEo4WWNDUFdzdFd4ckFQNndCRlViQ1NzejkxZnU3cmVJWGEwckRzWlJtdDdlM0xFeDVDYWszVkdDMHBLQk90c0ZmXzkzSDZFb3k2RGpGY2NaTVE3Y08wTWt1aGpRZlhKcEdJWmtGZlRxbTZTajF5czU5aF9JQ2RveGdkcEFnWjZB?oc=5",
       "title": "German president to visit Kenya on final Africa tour before leaving office",
       "important": false,
@@ -519,24 +495,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRlVLekJsV1lXTGsxOWFDNkJLTDZhV3JSeFRQWS1zNXlobWJ6cDB0dXdhUE5IZ2VBY3N1THJOdVFtNmhEcnVTcUpWS2x4cVJRV1BscHJ2cVRmbGxtUEJLd0xvRUhkYlpUZU1PcnZpUzJ5cWx5R3ZnWFN5VXdiWmkwczJpci1yQkpVWWtMNV9yY3JHc3NfNzc0V2R2ZWlkSDVaa3V1MUhJVUNoSV9MQl91ckE5c2J4c1c2VFlPSHBIYzAxX2RZYXpZ?oc=5",
-      "title": "Energy-security response to Iran war could cut oil demand by 4% by 2035, IEA says",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPOTRxeEU3aURIMTJqSHJmd0Q5S19EUTNnTVdab3RwVDBmQ3ZSR01LYUItUHdCTU1PbGFvWHh1b1d0YURuMG9PUEtZYXM0VkswLUVBNm1zeG4yRXdXTkd1amtVMU4xOEozNG1MY2NFdDNrTlJxbW4xS1VnbU16Qkxndy05ZDN0cm1IclhVUk0tWXJaQ0p3VFJ2bG1LOG9MTEV0ejRSM0FfQUNmUEVBeGNoZW5zX3V5eU50NEo1b0NnSWhjcU54RTcwWdIByAFBVV95cUxOQW9ZYWNWek9lQ2JaeklkSU4yOHYxUXVUa0tCMTdvYmo5dkozWllGMUloRVpvLWFCSW5iNDR3TWJBbU1yN2xwVHlOY0h2VGZFeXlnNVlmekdwd1c0MDE1UmhYWVN2a2lPVVlZNlpYdTBxeDBFR05fcEtFbkFhQWl6WHNuY05Qakh2bUxMTENJZ2xfa2NuS2VzS0I0cksxN194VERWNlI3ekl0TmNRODM0MVRpV0l5TmR4Q1JnYjA0dEpGdWk2dkFfSw?oc=5",
       "title": "How battle to host UN high seas treaty tests China’s push for global leadership",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNbWVldVlmTVBsLUFRbllWVElSLXJPeHk5V2tObUFMOTF2YUxUUVk4bldJU3V1NXZIVWN3LUVaUmFFdHdlM1BiVUtwc0cyRkhSZ0xwTXg1MFZOTDdoeDR4Sk5iOGJfOVpkVzRWUC1MaDlLRm5QUVNUQ21EOTFaemJfUklDNnhxMGJYeTRvTTF3VHhrQzIwRkxxN1FXeWlJVnZmMHF0QW9KQ083bHJtamNtMVVwUEdkLWxvVW1tdFRsOXNZczNnNE1sRlR4bw?oc=5",
-      "title": "Ignacio Galán meets British Prime Minister in Brussels during EU–UK Summit",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -633,6 +593,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNeDVqSjF0V2pJbmRWeGZwMkd5NVo3OTVrQ1gwX29oaWRwNjQ2cUkwQm5ZMkcxQTRKNzdoUGNRS2g3MS1VVmhJMm91bUU1Wm1pVzA0UVpLQ3VyVnNmQTUyZkhzWkljTU1DWTA3cjZPVGhtalR2Skk0dlhfZ0hyYkp4LXpxc0RTbWdndGEyVVBET3ZHYmdIMHBvY1pUcllLRFVvdkxIZUxRNlVzTGd0WDFTNQ?oc=5",
       "title": "Investing in Children’s Health: New Vaccine Warehouse Opens in Bishkek",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOLV9pWTNWU1JhZGRUOURfRktKSXlqU00tM05UMURhS3MyV3BLanlPVVJyQUlmSFVBaG5fVVEtQUFVNkVwTUtObGk2VGRPbUdWRE9CdjlIY19WblNiMlBZQV9FU1ZQYm1uMnhvRmN5b0xZUElUTHQyQ3d3Rnh4c3NGamVfN0ozeFFtQUZtemE1aVVvR0dFQzV2a1RTSEZycTFIeFl1V1phZk80XzVSZ201YXdLcV9OQ3ZvR0dv?oc=5",
+      "title": "Shivraj Singh Chouhan to Dedicate India’s First Indigenous H5N1 Chicken Vaccine on November 20",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
