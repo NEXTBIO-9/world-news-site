@@ -93,7 +93,7 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  tabs.append(alertBtn,marketBtn,riskBtn,calendarBtn);left.insertBefore(tabs,alerts);const marketList=node('div','nb2-list');marketList.id='nb-market-issues';marketList.hidden=true;left.append(marketList);const riskList=node('div','nb2-list');riskList.id='nb-risk-signals';riskList.hidden=true;left.append(riskList);const calendarList=node('div','nb2-list');calendarList.id='nb-global-calendar';calendarList.hidden=true;left.append(calendarList);bookmarks.hidden=true;bookmarks.style.display='none';
  for(const s of [...columns.children])if(s!==left)s.remove();
  const right=node('section','nbm-official');right.id='nbm-official';
- const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 감염병 발표, 동아시아 안보 동향 및 해상사전배치선단 공개 기록');
+ const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 감염병 발표, 동아시아 안보 동향 및 해상사전배치전단 공개 기록');
  const whoBtn=node('button','','🏥 공식 감염병 발표'),forecastBtn=node('button','','🌏 동아시아 안보 동향'),mpsBtn=node('button','','🚢 미군 사전배치전단'),manualBtn=node('button','','NEXT 썰');
  for(const b of [whoBtn,forecastBtn,mpsBtn,manualBtn]){b.type='button';b.setAttribute('role','tab');rightTabs.append(b)}right.append(rightTabs);
  officialMeta=node('div','nbm-meta','WHO 공식 발표 · 제목 번역 ON/OFF 연동');right.append(officialMeta);
@@ -142,7 +142,7 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  forecastPanel.style.cssText='padding:6px 0';
  const borderDetails=node('details','nbm-forecast-details');borderDetails.append(node('summary','','🧱 북한 장벽 요새화 현황 · 자세히 보기'),borderPanel);forecastPanel.append(borderDetails);right.append(forecastPanel);
  const mpsPanel=node('div','nbm-border-panel');mpsPanel.id='nbm-mps-panel';mpsPanel.setAttribute('role','tabpanel');mpsPanel.hidden=true;
- mpsPanel.append(node('h3','nbm-section-heading','🚢 동북아 미군 해상사전배치선단 · 최대 10건'));
+ mpsPanel.append(node('h3','nbm-section-heading','🚢 동북아 미군 해상사전배치전단 · 최대 10건'));
  mpsPanel.append(node('p','nbm-meta','한국·일본 지역 · 공식 발표에 나온 과거 활동 기록 · 실시간 위치 정보 아님'));
  const mpsRecords=[
   {date:'2026-06-13',place:'일본 오키나와 긴만',ship:'USNS 1st LT Jack Lummus',activity:'Freedom Banner 관련 입항',url:'https://www.dvidshub.net/news/568346/usns-lummus-arrives-okinawa-participate-freedom-banner-mpsron-3-group-sail'},
