@@ -173,7 +173,6 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  gnssPanel.append(node('h3','nbm-section-heading','📡 동북아 GPS·GNSS 교란 경보 · 최대 10건'));
  gnssPanel.append(node('p','nbm-meta','한국·일본 주변 항공안전 공고 및 공식 발표 · 하루 1회 공개 자료 확인 · 실시간 탐지 아님'));
  const gnssList=node('div','nbm-list');gnssList.style.cssText='max-height:210px;overflow-y:auto;scrollbar-width:thin';gnssList.append(node('p','nbm-empty','공개 GNSS 교란 공고를 불러오는 중입니다.'));gnssPanel.append(gnssList);
- gnssPanel.append(node('p','nbm-meta','※ 공고는 GPS 신호 이상에 대한 안전 경고이며, 군사행동이나 전쟁 임박의 증거가 아닙니다. 게시된 유효기간과 실제 현재 유효 여부는 원문에서 확인해 주세요.'));
  right.append(gnssPanel);
  async function loadGnss(){try{
   const response=await fetch('./data/gnss-alerts.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
