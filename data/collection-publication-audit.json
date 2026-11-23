@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-23T16:24:12.245395+00:00",
+  "updated": "2026-11-23T17:28:36.508486+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 27,
-    "not_in_current_queue": 39,
-    "pending": 14,
-    "published": 127
+    "important_unpublished": 30,
+    "not_in_current_queue": 38,
+    "pending": 17,
+    "published": 125
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 22,
-    "pending": 5
+    "not_in_current_queue": 23,
+    "pending": 7
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 20,
+    "source_blocked": 21,
     "repeated_extraction_failure": 2,
-    "in_retry_queue": 5
+    "in_retry_queue": 7
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -111,6 +111,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wRlVIcGZvdmNGWklnd2tHdXRNckQtTTNaOEItN3hIMVU1Q0dEeGg0ckNTbDAyYU1ndmNFWldoMlhmdk1FSVFCM0Z1aDFkTndkc0F2QU1ya3dkSDdWNnpjMFdTd0xpaUZuS2JMWQ?oc=5",
       "title": "Tangshan earthquake of 1976",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1YY3lla05RNFpOcDRNaS11SkhjSDhhSlhYWFJVT0JnN3pNNjdYOW5GaF8tZXNKaEtOTFl4czVHUEE5ZXU5SlFKREMyakh6TXFieTV4ZFlSWDJwT29Bc3hYZDc2M2QwWE5IVThNVXpjcWVFNzItREtZ?oc=5",
+      "title": "Federal Emergency Management Agency| FEMA, Hurricane Katrina, History, & Controversies",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -295,6 +303,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1YY3lla05RNFpOcDRNaS11SkhjSDhhSlhYWFJVT0JnN3pNNjdYOW5GaF8tZXNKaEtOTFl4czVHUEE5ZXU5SlFKREMyakh6TXFieTV4ZFlSWDJwT29Bc3hYZDc2M2QwWE5IVThNVXpjcWVFNzItREtZ?oc=5",
+      "title": "Federal Emergency Management Agency| FEMA, Hurricane Katrina, History, & Controversies",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBreVdobmx4V21tMFMtSTA4bndyeHk4S3AwT1hEQ1NxU00zRkpCa3JMaXcxd0NTUGFycGdwd2JiY0dMdUY5RGZfLTQ3ajcycE4wX1htY0Y1bVFqS1AxZld1bFJqb2Exay1mWXk2NVVPcmhMaDRjRC13?oc=5",
       "title": "Shaanxi province earthquake of 1556 | Deadliest, 8.0 Magnitude, China",
       "important": true,
@@ -399,6 +415,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUlo1VFNsWTI2TnpXVHZydE4tNjJOU3RNUm5BTUFranBUS3dzVi1PNm5DaFVrZHBBU0ZORl9IOFBhSW1vUThPWUlFZmp2OFFYN3Z2REJ0dkVHM05GRzYwUnJCb0ZORFZlT1FRRkhSSHJrMDZ5QjZMNURYZmNGbFZOWHliNHVHMnhxX002Z3l3?oc=5",
+      "title": "Deadly rabbit disease outbreak sweeps through snowshoe hares in Alberta",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPODVMcXZLbWZOSHFLU1p3Z2p1ZUdMYlFFOFVhN2dDLVJ3V2twQ01aZUlvMWgweHlrZVFTak1MeHkxaDlGVEZwM1R2WUgwM3otR2lpMVdfU25aOUkzbHp5bkRqb1FPdHc5YnhTV2F6UGNjTy1VUUwyQ1dDdkxHRkFrZGpTdms5b3VrUVA1cGFMS2xFMU9iSTIxZGNmdnFZZ2NfQ2MwZWZSMTV1alVHWFRyc20td3NqSVMtNjRUZtIBwgFBVV95cUxNMUZ4T0d3QTFGZG5FamQyYkRvbnZGNk5KWXhOME5CdThlZWFyY0V1YkNSN1dwTUZiMUpEbVNtOEp4ZUVnczVtdzVHNFZJdUVlUmw3SXcxNlR2WmVfM0ZPSUVJTVUyWGxVaGJSQUMyTzhpejFpRjgxUjdwQUZldDVpX29HRnFjOVBmT21MZFNyXzVsNzc3VHZZYlBYSjhqTFdabkdnblN0cHBvc3VJbzltRUFCWGlFSHZJZFhsSWZmVTV0UQ?oc=5",
       "title": "6.7 magnitude earthquake strikes Peru’s Andes: Tremors felt in capital Lima; no casualties or damage report...",
       "important": true,
@@ -415,11 +439,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxNYVlMOFBBT29oUXNBa2pISlgzM0Z4SWlUWmMzOEltaXB0S2tkYXVKcFdmLWc0VjRmd3REbHpNYzhkQUloVlplMkZJekhRUkc2cnZUWU1SMWZnTEpTdlVMREtJQ1BTTGFkbzlXcXlXOUpxWVBjcVRSU2dWWkp6dFJMYkRxSGlnQ0V5azEtd01SaUdONkIyZDEzdW9UVmdyak81VnJvRUNTbTBRbTNhdHhOOTVFcDY5WG44WlZpWVowSkhXbVU2QV81R2Z3XzFubjZxbTQ0bXIwNXVJejQzMzZVcDJ2azNMSkkwb0JTMlR3MGh3WWt3alJfWHh0b2J5QzRDeTN6Rk92cUhSTVlTRnRXWnIwLXk2clQwbnI2SlQ5TnVmX0dSYmZvZndVUGNWQTE5VnQ1MzhsMDJQbTNYNHdQYkFJdlVoRWw4UXhtTDl5SkRlMkhfMmc?oc=5",
-      "title": "Jyong Biotech Announces Receipt of Letter of Intent from a",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNa2VfaHQ1V0Q1VWpXVmxWM1pqa1hMa0hSSkEySFhrLW40VHM4RDMxNnhmaDc1am93LTNyLTZ3RmZEQk10Q1ppUUdRdFhXclM4eHpVeElPRzdVd0FfeVpuT2p0OGxDdGFqRFZWdTZ2VzVONlpUZmJLekdTWkg0R19WMERQbVh5WjRRM0tqQmc5QXZUVlZXNWVzaXhaOF9CX3M5OXkxa3cxY1FuQlpnZU5PX05YSHBTVkhUTkRTMWZobGVtRlMyT2RnU0JLaGt5dw?oc=5",
+      "title": "IDOH: Indiana experiencing measles outbreak",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
@@ -455,6 +479,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5XdWU1bUdLRDRyUWJQd0d6OVRrVEhaMGJOWkRkQ2ZLVHZFVGxjd3pzSk9na0VwRGUyeUt2dC1jenZVeld5bVF4a1lhX3d3Z2pSQnFCZ205bFN0LTIyYVhBc09iQ0dTYWs?oc=5",
+      "title": "Pakistan Floods of 2010",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBKM0dxeENwLTh3WUNyVGNpSVpjTWVwS0RQbzNjanoxa1l0V1FVb3NfTzhEVTRUYlpoaEZBcXFDRVhtS3diWjN4RnVGTWRoNWNBekZmWFBZOV9nYlFzbTJSNFVLaTFuOTg?oc=5",
       "title": "Pakistan floods of 2022",
       "important": false,
@@ -463,11 +495,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9TOXVYV2VSRkp0UVdmaTlXY1U3R3p0OXY0TExXWWt1N1lVbU5LVl9sVDdjanJiV1poaWlQRE84UVBfTV9DcXFhZVlEQUF1eTF5ZzBMci1ib3RoZ1JNYkxYZ0Z1MUJuRlltZ1E?oc=5",
-      "title": "올해 마지막 금통위, 한은 추가 금리 인상 나설 듯",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE45bWd1RldYMk5hQ3podzVwMmJDb1VOdjBwRTUtbmpXMURvZWtSQTZKZnF6T1J5U2FnekZXdDV5NFlyMG5vQlpZV2NjV1JROUZ0ZWhaWHF3SU40RlU2WUNOeUkzRTlHOWlyMm1scTBjRQ?oc=5",
+      "title": "Lao Deputy Prime Minister Leads Business Leaders to Malaysia to...",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -481,22 +513,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1WUTlQZThEeG1icUlrWmRXam9yRE1zdFBiN1VPOVFCb1dlSmN3c3dpRmVrZ0NXVlRPTWFvME1aTHg2b09fS2JITV9ubF9YaUk0UktkUGlUQW1FdFQ1N2NnM2NtTGZUY0ctY3FzMWJkRllwdkE?oc=5",
       "title": "French factory output PMI falls to 44.5 as recession risks rise",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeGVzSjhrbUhOTTctX0ViTkJTRnFEZnkwNTJQR3gySTJRQlk3aXNwenJ2Qk1DejVYcF84dmF4WDFPd2xKRzEwazEtOEdOb05OOFhJaXZQVTd3R2lDRHdGbTgtM1JSSEMxeFN5OTlLc0tLNE55MHlHRDZNU3lOVFBDaTJwQQ?oc=5",
-      "title": "Iran war live: Oil prices fall despite attacks in Strait of Hormuz",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPQlVQeENKbG40bHlSbEJPTmZIYmg2eElReEdHQV95b0JHRzRDLUdTMnFweW1KU2dVQUtlY2cxTkpJTzN3YW96Q2hvbmZYak9UZmNXNGJhYWhGOVRsdTBtQWxMUE9iajBKQjc5WHZ4VHRFRXNuNF9oeGVObFczTnE1c21HZ1pIZw?oc=5",
-      "title": "Colombia Marks 10 Years Since FARC Peace Deal: In Photos",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -527,16 +543,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqANBVV95cUxQcURscExGZzZ2SXRiQXVrY0JOTHZQVEljT2QxVFVsU0VEUEhXRFFMdGFjeXFzN2dsR1cyazRucWdCdm84S2ZsOXppOTlHcUVPM0dTMEhYckUwNGpta1FQSUUybDE5MVRTVUhocUtWN1d4ZlEyYVZqOWoycjlMZXhhbkhmYmdGUzJWeDd4emJOZmRTUGprUU1WZ1RINTNRMURvTUdWVHlzSjhFQ29zQ1JOMnJnNnc4UjJCTmp1NzBBWlg1T0JObldrMWRLWERja09CdVBvZ0VMYVJuZ21hUjVEeHFzdW9QdkhjbURsaUF3ZThLb3I2VF9TUXFRbE4wdkl2YnlLdFpDNlpiVWNMR09jbWI5dXJfQldkVTlqY0FjSk5abWczNURZcm1yMkthOXpOQzF2LUx4SVYtVzBzTFRkNnNNS09Fc2NhM2JoTkR4R3RQX2RSazNhY2E3M2tpUElvdy1kczlBNnF6VXpTM2xNTGh2THFlTDhFTFhzYVBkVjdCMWxiUzdtaTJRcWE4ZlJ6MXlaR0FVcVplMDBoYUhwNU5idjRXN0pw?oc=5",
-      "title": "Lao Deputy Prime Minister Leads Business Leaders to Malaysia to...",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbFBwX2c4aU9rVTBJS1NxcVROQUlTYmlGSGM3YXpwNEFCbFJzUWdzYlA5T09jZlJ2NGFmbk82Sk1FbHRNWXEwTlBuWnkwcG5OYUowSFNIZkhuaFdwVHc5M3lCS3Y3aDBkT21KR1VINzBkRmx6VDdtdFZ6QjRNczJySzJkREVPVmI2MEdwaTQ2cGVEbFdWSklNNkVzUWJGOTlYOUxOQVl3N0hYcTRJT1HSAa4BQVVfeXFMTWxQcF9nOGlPa1UwSUtTcXFUTkFJU2JpRkhjN2F6cDRBQmxSc1Fnc2JQOU9PY2ZSdjRhZm5PNkpNRWx0TVlxME5Qblp5MHBuTmFKMEhTSGZIbmhXcFR3OTN5Qkt2N2gwZE9tSkdVSDcwZEZselQ3bXRWekI0TXMycksyZERFT1ZiNjBHcGk0NnBlRGxXVkpJTTZFc1FiRjk5WDlMTkFZdzdIWHE0SU9R?oc=5",
-      "title": "Trump Says Putin Wants Diplomatic End To Ukraine War",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPb1A2RHl1RS1IaFcyWmlES0xYNW1lbnM5VlhwWVU5ajZhRVVBa0Mydi1OZG4tS0tCYVJKX1JiOUtmWlNTZVJmTGRTRlFtZTRXRTRxcXB1aGMya2JhWm41UXE5Y2pxTlFDNzVSQ2MyV0RPZzNoYlZtazdMX3RYRnB6VFFsaEFnTGI5RFk4TnczUE9aTXFqcGNxZ0psd1JUczRBNi1LSkpnVk8?oc=5",
+      "title": "EU Commission proposes ban on Russian athletes, ex-fighters in new Russia sanctions package",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -545,6 +553,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQaFpzWFkxRjE5clVpNmJJZmVPR0lleG9pVWlweE5ZQy1oSDJQc2dUNkxnc3MtWHhFSW1vbHFkbG1FVDgyNGd5U05DU2lySmhZeFB2bVVIdkx0cFJUTHdoU3NoS1pmSTF3VUZrcEFOMFJpdGUwd1hkdGJNWXNaaVYxT3JCTXAyend6UnpDekxXY1Q0bXlFcGU1a0VvQUpYLS1WMnhvUnNfN1F6cDdlX0ZUemNiWQ?oc=5",
       "title": "Six boats carrying 362 people reach El Hierro as Spain's election nears",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNbWVldVlmTVBsLUFRbllWVElSLXJPeHk5V2tObUFMOTF2YUxUUVk4bldJU3V1NXZIVWN3LUVaUmFFdHdlM1BiVUtwc0cyRkhSZ0xwTXg1MFZOTDdoeDR4Sk5iOGJfOVpkVzRWUC1MaDlLRm5QUVNUQ21EOTFaemJfUklDNnhxMGJYeTRvTTF3VHhrQzIwRkxxN1FXeWlJVnZmMHF0QW9KQ083bHJtamNtMVVwUEdkLWxvVW1tdFRsOXNZczNnNE1sRlR4bw?oc=5",
+      "title": "Ignacio Galán meets British Prime Minister in Brussels during EU–UK Summit",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -575,8 +591,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE0wc3BBVmtHREVPbjNlUHpEZVZVcFAtOVBTWDMzandkTVdWTHRXVjlhLVZFbmNDbWdlRnM3c01wTkJtajlzTF9kYXlkSFY3QVBnV0ZBT3RWVkZPSno0alN4d9IBYEFVX3lxTE0wc3BBVmtHREVPbjNlUHpEZVZVcFAtOVBTWDMzandkTVdWTHRXVjlhLVZFbmNDbWdlRnM3c01wTkJtajlzTF9kYXlkSFY3QVBnV0ZBT3RWVkZPSno0alN4dw?oc=5",
-      "title": "이번주 올해 마지막 한은 금통위…금리 인상에 무게",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBlSHlpUy1MQXB5Y255czFTMVJEUnY4VkM0S3M3cnIyRmR5bW9mSjJicFNGUndwZlNuSmRkbkZWWlBnRVJvRmM5WlRTZ2R1UVdqamFKVENjVFQ0VGthU2FVYXcwbW1XeFpNU0RXanVhQU03MXctV0pEa1hIQVNVZw?oc=5",
+      "title": "[바이오유럽] 사노피 \"임상 단계보다 중요한 건 기술력…기술이전·투자·M&A 강화\"",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -593,6 +609,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOWXB3SzBjQ05YN0t4ZHFpa0Y1NU5UMjRTYy1RTVdGcFotemFTTm1JOVhwTXJ0SklCeE9oUW9wMXZSSHh6Uzc1WHNERUxnZGNkTG02SmdNY0EwSmZiS2dQeDdUWE4xT0NiMkV3SVZkTFc0LTBNcVFDZXJ0Yzd6UWZGbklYdHYyNGdrcTVvNy1ieGQ2VWFRTUE?oc=5",
       "title": "Russian president ratifies gas pipeline via Turkey",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNTThVU2lKcnB2MkhRTEtZSXJtbV90N2Njdk9MUVhBWEw3Z3JUNTVUckVxeWdTNWZPVzRFMlo4RTRVMnFVdXdhUThVZDBRT2s0VTBLRm9BeUR4ZjJrckdReFlveUgxYW9xeDJCQjZtZmNBX1pvVkVjVVdrT1p6d2FLbXVMMkxZdHJBdUw4WnU3WlpoQUtfMHUyWEVmZS1Ec28?oc=5",
+      "title": "President Marcos Returns From China With Over PHP41 Billion Investment Pledges",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
