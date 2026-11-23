@@ -94,7 +94,7 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  for(const s of [...columns.children])if(s!==left)s.remove();
  const right=node('section','nbm-official');right.id='nbm-official';
  const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 감염병 발표, 동아시아 안보 동향 및 해상사전배치선단 공개 기록');
- const whoBtn=node('button','','🏥 공식 감염병 발표'),forecastBtn=node('button','','🌏 동아시아 안보 동향'),mpsBtn=node('button','','🚢 미군 사전배치선단'),manualBtn=node('button','','NEXT 썰');
+ const whoBtn=node('button','','🏥 공식 감염병 발표'),forecastBtn=node('button','','🌏 동아시아 안보 동향'),mpsBtn=node('button','','🚢 미군 사전배치전단'),manualBtn=node('button','','NEXT 썰');
  for(const b of [whoBtn,forecastBtn,mpsBtn,manualBtn]){b.type='button';b.setAttribute('role','tab');rightTabs.append(b)}right.append(rightTabs);
  officialMeta=node('div','nbm-meta','WHO 공식 발표 · 제목 번역 ON/OFF 연동');right.append(officialMeta);
  officialList=node('div','nbm-list');right.append(officialList);
