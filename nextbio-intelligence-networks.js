@@ -244,7 +244,7 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
   const data=await response.json();const items=Array.isArray(data.items)?data.items.slice(0,10):[];
   gnssList.replaceChildren();gnssCount.textContent=String(items.length).padStart(2,'0')+' NOTICE'+(items.length===1?'':'S');
   if(!items.length){gnssCode.textContent='—';gnssDates.replaceChildren();gnssList.append(node('p','nbm-empty','현재 등록된 공고가 없습니다.'));return}
-  const first=items[0],firstTitle=String(first.title||'');const code=firstTitle.match(/(?:RKRR\\s*)?[A-Z]\\d{4}\\/\\d{2}/i);gnssCode.textContent=code?code[0].replace(/^RKRR\\s*/i,''):'PUBLIC NOTICE';
+  const first=items[0],firstTitle=String(first.title||'');const code=firstTitle.match(new RegExp('(?:RKRR\\s*)?[A-Z]\\d{4}\\/\\d{2}','i'));gnssCode.textContent=code?code[0].replace(new RegExp('^RKRR\\s*','i'),''):'PUBLIC NOTICE';
   gnssRegion.textContent=/RKRR|인천|Korea|한국/i.test(firstTitle)?'RKRR / INCHEON FIR':/Japan|일본/i.test(firstTitle)?'JAPAN / PUBLIC NOTICE':'NORTHEAST ASIA';
   gnssDates.replaceChildren(node('span','','ISSUED '+String(first.published||'—')),node('span','','PUBLIC NOTICE'));
   for(const a of items){const item=node('div','nbm-gnss-entry');const title=String(a.title||'GNSS 관련 공고');if(typeof a.url==='string'&&/^https:\/\//.test(a.url)){const link=node('a','',title+' ↗');link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link)}else item.append(node('span','',title));item.append(node('small','',String(a.published||'날짜 미상')+' · '+String(a.source||'공개 자료')+' · '+String(a.type||'발표')));gnssList.append(item)}
