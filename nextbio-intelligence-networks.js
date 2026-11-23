@@ -151,6 +151,22 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  const mpsList=node('div','nbm-list');mpsList.style.cssText='max-height:210px;overflow-y:auto;scrollbar-width:thin';mpsPanel.append(node('p','nbm-meta','공개 확인 '+mpsRecords.length+'건 · 최근 최대 10건 표시'));
  for(const a of [...mpsRecords].sort((x,y)=>y.date.localeCompare(x.date)).slice(0,10)){const item=node('div','nbm-item');item.append(node('div','',a.date+' · '+a.place));const link=node('a','',a.ship+' — '+a.activity);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link);item.append(node('span','nbm-source','미군 공개 발표 · 당시 활동 위치'));mpsList.append(item)}
  mpsPanel.append(mpsList);
+ async function loadMpsNews(){try{
+  const response=await fetch('./data/mpsron-news.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});
+  if(!response.ok)throw Error('No report index yet');
+  const data=await response.json();const entries=Array.isArray(data.items)?data.items.slice(0,10):[];
+  if(!entries.length)return;
+  mpsList.replaceChildren();
+  const checked=data.last_checked?new Date(data.last_checked).toLocaleString('ko-KR'):'확인 전';
+  mpsList.append(node('p','nbm-meta','공개 발표 관련 보도 '+entries.length+'건 · 최근 확인 '+checked));
+  for(const a of entries){
+   const item=node('div','nbm-item');const link=node('a','',String(a.title||'공식 발표'));
+   if(typeof a.url==='string'&&/^https:\/\//.test(a.url)){link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link)}else item.append(node('span','',link.textContent));
+   item.append(node('span','nbm-source',String(a.published||'날짜 미상')+' · '+String(a.source||'공개 발표')+' · 실제 활동 위치는 원문 확인'));
+   mpsList.append(item);
+  }
+ }catch{ /* Keep curated confirmed records until the first scheduled run. */ }}
+ loadMpsNews();setInterval(loadMpsNews,3600000);
  mpsPanel.append(node('p','nbm-meta','※ 마지막 공개 확인 장소는 현재 정박지·항해 위치를 의미하지 않습니다. 새로운 발표는 검증 후 추가해야 합니다.'));
  right.append(mpsPanel);
  const navyPanel=node('div','nbm-border-panel');navyPanel.id='nbm-navy-panel';navyPanel.setAttribute('role','group');navyPanel.setAttribute('aria-label','중국 해군 최신 동향');navyPanel.append(node('h3','nbm-section-heading','⚓ 중국 해군 최신 동향'));navyPanel.append(node('div','nbm-meta','중국 해군·해경 훈련, 항모 활동, 해상 기동, 합동훈련 · 매일 1회 공개 보도 확인'));
