@@ -193,7 +193,6 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  bloodPanel.append(node('h3','nbm-section-heading','🩸 국내 혈액 수급 경보'));
  bloodPanel.append(node('p','nbm-meta','대한적십자사 적혈구제제 보유일수 · 매일 공개 자료 확인 · 실시간 수치 아님'));
  const bloodList=node('div','nbm-list');bloodList.style.cssText='max-height:210px;overflow-y:auto;scrollbar-width:thin';bloodList.append(node('p','nbm-empty','혈액 수급 자료를 불러오는 중입니다.'));bloodPanel.append(bloodList);
- bloodPanel.append(node('p','nbm-meta','※ 혈액 부족은 계절·헌혈 참여·의료 수요 등의 영향을 받으며 전쟁 임박을 의미하지 않습니다.'));
  right.append(bloodPanel);
  function bloodStage(days){return days>=5?'적정':days>=3?'관심':days>=2?'주의':days>=1?'경계':'심각'}
  async function loadBlood(){try{
