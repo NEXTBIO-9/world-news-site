@@ -93,9 +93,9 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  tabs.append(alertBtn,marketBtn,riskBtn,calendarBtn);left.insertBefore(tabs,alerts);const marketList=node('div','nb2-list');marketList.id='nb-market-issues';marketList.hidden=true;left.append(marketList);const riskList=node('div','nb2-list');riskList.id='nb-risk-signals';riskList.hidden=true;left.append(riskList);const calendarList=node('div','nb2-list');calendarList.id='nb-global-calendar';calendarList.hidden=true;left.append(calendarList);bookmarks.hidden=true;bookmarks.style.display='none';
  for(const s of [...columns.children])if(s!==left)s.remove();
  const right=node('section','nbm-official');right.id='nbm-official';
- const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 감염병 발표 및 동아시아 안보 동향');
- const whoBtn=node('button','','🏥 공식 감염병 발표'),forecastBtn=node('button','','🌏 동아시아 안보 동향'),manualBtn=node('button','','NEXT 썰');
- for(const b of [whoBtn,forecastBtn,manualBtn]){b.type='button';b.setAttribute('role','tab');rightTabs.append(b)}right.append(rightTabs);
+ const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 감염병 발표, 동아시아 안보 동향 및 해상사전배치선단 공개 기록');
+ const whoBtn=node('button','','🏥 공식 감염병 발표'),forecastBtn=node('button','','🌏 동아시아 안보 동향'),mpsBtn=node('button','','🚢 미군 사전배치선단'),manualBtn=node('button','','NEXT 썰');
+ for(const b of [whoBtn,forecastBtn,mpsBtn,manualBtn]){b.type='button';b.setAttribute('role','tab');rightTabs.append(b)}right.append(rightTabs);
  officialMeta=node('div','nbm-meta','WHO 공식 발표 · 제목 번역 ON/OFF 연동');right.append(officialMeta);
  officialList=node('div','nbm-list');right.append(officialList);
  const manualPanel=node('div','nbm-list');manualPanel.id='nbm-manual-panel';manualPanel.setAttribute('role','tabpanel');manualPanel.hidden=true;manualPanel.append(node('p','nbm-empty','자체 발행 기사를 불러오는 중입니다.'));right.append(manualPanel);
@@ -141,12 +141,22 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  for(const card of [nk,cn]){const strong=card.querySelector('strong');if(strong)strong.style.cssText='font-size:15px;line-height:1.25;margin:2px 0';const para=card.querySelector('p');if(para)para.style.cssText='margin:2px 0 0;font-size:11px;line-height:1.35'}
  forecastPanel.style.cssText='padding:6px 0';
  const borderDetails=node('details','nbm-forecast-details');borderDetails.append(node('summary','','🧱 북한 장벽 요새화 현황 · 자세히 보기'),borderPanel);forecastPanel.append(borderDetails);right.append(forecastPanel);
+ const mpsPanel=node('div','nbm-border-panel');mpsPanel.id='nbm-mps-panel';mpsPanel.setAttribute('role','tabpanel');mpsPanel.hidden=true;
+ mpsPanel.append(node('h3','nbm-section-heading','🚢 동북아 미군 해상사전배치선단 공개 기록'));
+ mpsPanel.append(node('p','nbm-meta','한국·일본 지역 · 공식 발표에 나온 과거 활동 기록 · 실시간 위치 정보 아님'));
+ const mpsRecords=[
+  {date:'2026-06-13',place:'일본 오키나와 긴만',ship:'USNS 1st LT Jack Lummus',activity:'Freedom Banner 관련 입항',url:'https://www.dvidshub.net/news/568346/usns-lummus-arrives-okinawa-participate-freedom-banner-mpsron-3-group-sail'},
+  {date:'2026-06-30 ~ 07-03',place:'한국 포항 인근 해상',ship:'MPSRON-3 소속 선박들',activity:'해상 합동훈련 (항구 입항 아님)',url:'https://www.dvidshub.net/news/printable/570560'}
+ ];
+ for(const a of mpsRecords){const item=node('div','nbm-item');item.append(node('div','',a.date+' · '+a.place));const link=node('a','',a.ship+' — '+a.activity);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link);item.append(node('span','nbm-source','미군 공개 발표 · 당시 활동 위치'));mpsPanel.append(item)}
+ mpsPanel.append(node('p','nbm-meta','※ 마지막 공개 확인 장소는 현재 정박지·항해 위치를 의미하지 않습니다. 새로운 발표는 검증 후 추가해야 합니다.'));
+ right.append(mpsPanel);
  const navyPanel=node('div','nbm-border-panel');navyPanel.id='nbm-navy-panel';navyPanel.setAttribute('role','group');navyPanel.setAttribute('aria-label','중국 해군 최신 동향');navyPanel.append(node('h3','nbm-section-heading','⚓ 중국 해군 최신 동향'));navyPanel.append(node('div','nbm-meta','중국 해군·해경 훈련, 항모 활동, 해상 기동, 합동훈련 · 매일 1회 공개 보도 확인'));
  const navyList=node('div','nbm-list');navyList.append(node('p','nbm-empty','중국 해군 동향 데이터를 불러오는 중입니다.'));navyPanel.append(navyList);navyPanel.style.cssText='padding:10px 0 4px;border-top:1px solid #3a536e;margin-top:8px';const navyDetails=node('details','nbm-forecast-details');navyDetails.append(node('summary','','⚓ 중국 해군 최신 동향 · 최대 10건'),navyPanel);forecastPanel.append(navyDetails);columns.append(right);
  async function loadNavy(){try{const r=await fetch('./data/china-navy-news.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!r.ok)throw Error('아직 수집되지 않음');const d=await r.json();navyList.replaceChildren();const checked=d.last_checked?new Date(d.last_checked).toLocaleString('ko-KR'):'확인 전';navyList.append(node('p','nbm-meta','최근 확인 '+checked+' · 최신 최대 10건 표시 (수집 '+(d.items||[]).length+'건)'));for(const a of (d.items||[]).slice(0,10)){const item=node('div','nbm-item');const title=node('span','',a.title_ko||a.title||'제목 없음');if(a.url&&/^https:\/\//.test(a.url)){const link=node('a','',title.textContent);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link)}else item.append(title);if(a.category)item.append(node('span','nbm-source',a.category));navyList.append(item)}if(!(d.items||[]).length)navyList.append(node('p','nbm-empty','현재 수집된 관련 보도가 없습니다.'))}catch(e){navyList.replaceChildren(node('p','nbm-empty','첫 수집 대기 중입니다. GitHub Actions 실행 후 표시됩니다.'))}}
  loadNavy();
- function showRight(tab){officialMeta.hidden=tab!=='who';officialList.hidden=tab!=='who';forecastPanel.hidden=tab!=='forecast';manualPanel.hidden=tab!=='manual';whoBtn.setAttribute('aria-selected',String(tab==='who'));forecastBtn.setAttribute('aria-selected',String(tab==='forecast'));manualBtn.setAttribute('aria-selected',String(tab==='manual'));}
- whoBtn.addEventListener('click',()=>showRight('who'));forecastBtn.addEventListener('click',()=>showRight('forecast'));manualBtn.addEventListener('click',()=>showRight('manual'));showRight('who');
+ function showRight(tab){officialMeta.hidden=tab!=='who';officialList.hidden=tab!=='who';forecastPanel.hidden=tab!=='forecast';manualPanel.hidden=tab!=='manual';mpsPanel.hidden=tab!=='mps';whoBtn.setAttribute('aria-selected',String(tab==='who'));forecastBtn.setAttribute('aria-selected',String(tab==='forecast'));manualBtn.setAttribute('aria-selected',String(tab==='manual'));mpsBtn.setAttribute('aria-selected',String(tab==='mps'));}
+ whoBtn.addEventListener('click',()=>showRight('who'));forecastBtn.addEventListener('click',()=>showRight('forecast'));manualBtn.addEventListener('click',()=>showRight('manual'));mpsBtn.addEventListener('click',()=>showRight('mps'));showRight('who');
  function show(tab){alerts.hidden=tab!=='alerts';marketList.hidden=tab!=='market';riskList.hidden=tab!=='risk';calendarList.hidden=tab!=='calendar';alertBtn.setAttribute('aria-selected',String(tab==='alerts'));marketBtn.setAttribute('aria-selected',String(tab==='market'));riskBtn.setAttribute('aria-selected',String(tab==='risk'));calendarBtn.setAttribute('aria-selected',String(tab==='calendar'))}
  alertBtn.addEventListener('click',()=>show('alerts'));marketBtn.addEventListener('click',()=>show('market'));riskBtn.addEventListener('click',()=>show('risk'));calendarBtn.addEventListener('click',()=>show('calendar'));show('alerts');
  // Repaint after creating the tab containers; the news feed may have rendered earlier.
