@@ -48,6 +48,19 @@ const style=document.createElement('style');style.textContent=`
 #nb-intelligence #nbm-blood-panel .nbm-blood-foot{font-size:10px;color:#91a9c4;line-height:1.6;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 #nb-intelligence #nbm-blood-panel .nbm-blood-foot a{font-size:10px;text-decoration:none}
 @media(max-width:460px){#nb-intelligence #nbm-blood-panel .nbm-blood-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+#nb-intelligence #nbm-mps-panel .nbm-mps-summary{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:7px 0 10px;color:#a6bed8;font-size:10px}
+#nb-intelligence #nbm-mps-panel .nbm-mps-count{padding:3px 9px;border-radius:99px;border:1px solid #48627e;background:#243850;color:#d9eafd;white-space:nowrap;font-weight:700}
+#nb-intelligence #nbm-mps-panel .nbm-mps-timeline{position:relative;margin:2px 0 0 6px;padding:0 0 0 19px;border-left:1px solid #476482}
+#nb-intelligence #nbm-mps-panel .nbm-mps-event{position:relative;padding:1px 0 13px;margin-bottom:8px;border-bottom:1px solid #354b65}
+#nb-intelligence #nbm-mps-panel .nbm-mps-event:last-child{margin-bottom:0;border-bottom:0}
+#nb-intelligence #nbm-mps-panel .nbm-mps-event:before{content:'';position:absolute;left:-25px;top:5px;width:9px;height:9px;border:2px solid #7acde9;background:#1c2b40;border-radius:50%;box-sizing:border-box;box-shadow:0 0 0 3px #1c2b40}
+#nb-intelligence #nbm-mps-panel .nbm-mps-date{color:#78cbe9;font-size:11px;font-weight:700;letter-spacing:.1px}
+#nb-intelligence #nbm-mps-panel .nbm-mps-place{color:#eaf3ff;font-size:12px;font-weight:750;margin:2px 0}
+#nb-intelligence #nbm-mps-panel .nbm-mps-link{display:block;color:#bbd8f6;font-size:11px;line-height:1.5;text-decoration:none}
+#nb-intelligence #nbm-mps-panel .nbm-mps-link:hover{text-decoration:underline;color:#fff}
+#nb-intelligence #nbm-mps-panel .nbm-mps-tag{display:inline-block;margin-top:5px;padding:2px 7px;background:#233b51;border:1px solid #385c72;border-radius:4px;color:#a7d7e5;font-size:10px}
+#nb-intelligence #nbm-mps-panel .nbm-mps-note{font-size:10px;color:#89a5c2;margin-top:8px}
 #nb-intelligence .nbm-border-panel[hidden],#nb-intelligence .nbm-official .nbm-list[hidden],#nb-intelligence .nbm-official .nbm-meta[hidden]{display:none!important}
 #nb-intelligence .nbm-forecast-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
 #nb-intelligence .nbm-forecast-summary .nbm-border-status{margin:0;min-width:0}
@@ -167,26 +180,31 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
   {date:'2026-06-13',place:'일본 오키나와 긴만',ship:'USNS 1st LT Jack Lummus',activity:'Freedom Banner 관련 입항',url:'https://www.dvidshub.net/news/568346/usns-lummus-arrives-okinawa-participate-freedom-banner-mpsron-3-group-sail'},
   {date:'2026-06-30 ~ 07-03',place:'한국 포항 인근 해상',ship:'MPSRON-3 소속 선박들',activity:'해상 합동훈련 (항구 입항 아님)',url:'https://www.dvidshub.net/news/printable/570560'}
  ];
- const mpsList=node('div','nbm-list');mpsList.style.cssText='max-height:210px;overflow-y:auto;scrollbar-width:thin';mpsPanel.append(node('p','nbm-meta','공개 확인 '+mpsRecords.length+'건 · 최근 최대 10건 표시'));
- for(const a of [...mpsRecords].sort((x,y)=>y.date.localeCompare(x.date)).slice(0,10)){const item=node('div','nbm-item');item.append(node('div','',a.date+' · '+a.place));const link=node('a','',a.ship+' — '+a.activity);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link);item.append(node('span','nbm-source','미군 공개 발표 · 당시 활동 위치'));mpsList.append(item)}
- mpsPanel.append(mpsList);
+ const mpsSummary=node('div','nbm-mps-summary');const mpsSummaryLabel=node('span','','공개 발표 기반 활동 기록');const mpsCount=node('span','nbm-mps-count','02 RECORDS');mpsSummary.append(mpsSummaryLabel,mpsCount);mpsPanel.append(mpsSummary);
+ const mpsList=node('div','nbm-mps-timeline');mpsList.style.cssText='max-height:185px;overflow-y:auto;scrollbar-width:thin';mpsPanel.append(mpsList);
+ function mpsEvent(a){
+  const event=node('div','nbm-mps-event');const date=String(a.date||a.published||'날짜 미상');const place=String(a.place||'활동 장소는 원문에서 확인');
+  event.append(node('div','nbm-mps-date',date),node('div','nbm-mps-place',place));
+  const title=a.ship?String(a.ship)+' — '+String(a.activity||'공개 활동'):String(a.title||'공식 발표');
+  if(typeof a.url==='string'&&/^https:\/\//.test(a.url)){const link=node('a','nbm-mps-link',title);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';event.append(link)}else event.append(node('div','nbm-mps-link',title));
+  event.append(node('span','nbm-mps-tag',a.activity?(a.activity.includes('입항 아님')?'해상훈련 · 입항 아님':a.activity.includes('입항')?'입항 기록':'공식 활동 기록'):'공개 발표 · 위치 원문 확인'));
+  return event;
+ }
+ function renderMps(entries,label){
+  mpsList.replaceChildren();for(const a of entries.slice(0,10))mpsList.append(mpsEvent(a));
+  mpsCount.textContent=String(Math.min(entries.length,10)).padStart(2,'0')+' RECORDS';mpsSummaryLabel.textContent=label;
+ }
+ renderMps([...mpsRecords].sort((x,y)=>y.date.localeCompare(x.date)),'미군 공식 발표 · 과거 활동');
  async function loadMpsNews(){try{
   const response=await fetch('./data/mpsron-news.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});
   if(!response.ok)throw Error('No report index yet');
   const data=await response.json();const entries=Array.isArray(data.items)?data.items.slice(0,10):[];
   if(!entries.length)return;
-  mpsList.replaceChildren();
   const checked=data.last_checked?new Date(data.last_checked).toLocaleString('ko-KR'):'확인 전';
-  mpsList.append(node('p','nbm-meta','공개 발표 관련 보도 '+entries.length+'건 · 최근 확인 '+checked));
-  for(const a of entries){
-   const item=node('div','nbm-item');const link=node('a','',String(a.title||'공식 발표'));
-   if(typeof a.url==='string'&&/^https:\/\//.test(a.url)){link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link)}else item.append(node('span','',link.textContent));
-   item.append(node('span','nbm-source',String(a.published||'날짜 미상')+' · '+String(a.source||'공개 발표')+' · 실제 활동 위치는 원문 확인'));
-   mpsList.append(item);
-  }
+  renderMps(entries,'공개 발표 관련 보도 · 최근 확인 '+checked);
  }catch{ /* Keep curated confirmed records until the first scheduled run. */ }}
  loadMpsNews();setInterval(loadMpsNews,3600000);
- mpsPanel.append(node('p','nbm-meta','※ 마지막 공개 확인 장소는 현재 정박지·항해 위치를 의미하지 않습니다. 새로운 발표는 검증 후 추가해야 합니다.'));
+ mpsPanel.append(node('p','nbm-mps-note','※ 마지막 공개 확인 장소는 현재 정박지·항해 위치를 의미하지 않습니다. 새로운 발표는 검증 후 추가해야 합니다.'));
  right.append(mpsPanel);
  const gnssPanel=node('div','nbm-border-panel');gnssPanel.id='nbm-gnss-panel';gnssPanel.setAttribute('role','tabpanel');gnssPanel.hidden=true;
  gnssPanel.append(node('h3','nbm-section-heading','📡 동북아 GPS·GNSS 교란 경보 · 최대 10건'));
