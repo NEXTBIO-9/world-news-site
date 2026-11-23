@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-22T23:02:52.732817+00:00",
+  "updated": "2026-11-23T00:02:52.459317+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
-  "collected_unique_urls": 178,
+  "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 18,
-    "not_in_current_queue": 31,
-    "pending": 9,
-    "published": 138
+    "important_unpublished": 21,
+    "not_in_current_queue": 30,
+    "pending": 13,
+    "published": 137
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 13,
-    "pending": 5
+    "not_in_current_queue": 15,
+    "pending": 6
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 10,
-    "repeated_extraction_failure": 3,
-    "in_retry_queue": 5
+    "source_blocked": 13,
+    "repeated_extraction_failure": 2,
+    "in_retry_queue": 6
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -61,14 +61,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNmszVVpQTVFYalNNNGFzd3VKX1hkZ0tYX3JRRmowOE8waFFCOEtHV0NqcGwxdUdDaklTUERGMnFubTd0eVhzc3hjS2NsWDlZTW9ueDQ1ZGhNNUczb29YdXZ6Tm9XZkFORWYyVzM3RnNPczZRb2xhcXpyUW5oaFpPOEZCdFZCRXRCN25SakkyZzVkdw?oc=5",
-      "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQzlVOGh5bjJSSVh4bzVTZm5ubDZ2TkYtQnNoUXhFTWxud2lFcy1sM1BYcjQ5NDlQQXJ1LTRQSW5VWTJzZnJNV3lhcTNuRkRVTDNKSjJGaVBhcF9hU0tMQzhrcFdZR0Rkdm5Jem11cVpYaFdCVkNBSUt0cUthSXlYNENSRHA0OHQ2ZEFudE9KQzRoQQ?oc=5",
       "title": "6.7-magnitude earthquake hits Peru, tremors felt in Lima",
       "important": true,
@@ -87,6 +79,30 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWDBQUTdkaEJ1cGFCcmpkbkFCTUppQUNNTE9DemN2ckwwWTU3eXNsQU81dzVnZHhHQmFXR3Q4azZQUkJkdG5JQUVabGxQeEEzaERncUg4RGctb0xCc1JmWWw4aVFUMU5vRGhROU5aZk1UU0RJOGZvVWtXWmNRcjlwSEFxQkh3S3BuckRpbW9rOVRhazE3YXNPX09sS2RyVmlfYWpBYw?oc=5",
       "title": "Antimicrobial resistance explained: What it is and why it matters",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVGJWTTEtbDlIbjNpYUVBSlBYdU9KSjJPNjdfaFRvU2xXRW1EcEZ4U1dkMGsxVDgyTkgwcG8taDJRdk9jZzZZbi1uYjZ4bWh6WDYyVUFhUEFLZEZKcEhnSjdpdTl1YXN3cWtOT1ppdWxjVGNMLUd5QnluNE0yemxIOUltZkE2SF9HelBtTHNtYktNR1g2SHJFRzhTdXdqLV9iUVhzM0RsdjVXbTlKMXc?oc=5",
+      "title": "What is behind the Russian missile incident in Poland during NATO allies' military drills?",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONEl1RDMta3FDb3VIeWczMlZkWG9ucE9zbEU1enpwWXplTzNNb0RBM1hTN1EzX0VnYXV4MzdvZkhiWmJGR09CTy11Yi1tOVpodTlGVXVUZTVuSUJ5Uld3RlVSX3VhelV1N0RTNzByQU1tcDBmRDFab0VHcDRaTDMxNEpCU3ZjOEF5NExBcmRjZHRqODhwV2paZUZkR0tuRUdnN1Q3UndEbDQzYUI4TE96UG4yLVZ6QQ?oc=5",
+      "title": "Chile’s Economic Recovery May Take Longer, Central Bank Chief Tells Newspaper",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZFR5dlNLLWN3VkdSVjhicHpPQ1lOZEZ1TnJEd1J0U2d6MFlmUzNzbkFDTlVvdGhFQUdRN3ZGVXlCdkllZ3BqNnNFWHhUM3ZKRkp5dlZfVGxVUFNpOG1OSWgwZzA0emFpNVQ0ZEpnWTlJdlJ6NmlzSDJ6cGNVRHA3clhpeDU0OFJvT1dBa2dEck5WR05nVjBKZ2kzdkgxS0FSR2tJSGZXWnBUSDdxc3Vja0JKX0tLMzA?oc=5",
+      "title": "Is a bigger earthquake coming to Lima? What Peru's scientists warn after the Junín 6.7",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -167,14 +183,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNmszVVpQTVFYalNNNGFzd3VKX1hkZ0tYX3JRRmowOE8waFFCOEtHV0NqcGwxdUdDaklTUERGMnFubTd0eVhzc3hjS2NsWDlZTW9ueDQ1ZGhNNUczb29YdXZ6Tm9XZkFORWYyVzM3RnNPczZRb2xhcXpyUW5oaFpPOEZCdFZCRXRCN25SakkyZzVkdw?oc=5",
-      "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQzlVOGh5bjJSSVh4bzVTZm5ubDZ2TkYtQnNoUXhFTWxud2lFcy1sM1BYcjQ5NDlQQXJ1LTRQSW5VWTJzZnJNV3lhcTNuRkRVTDNKSjJGaVBhcF9hU0tMQzhrcFdZR0Rkdm5Jem11cVpYaFdCVkNBSUt0cUthSXlYNENSRHA0OHQ2ZEFudE9KQzRoQQ?oc=5",
       "title": "6.7-magnitude earthquake hits Peru, tremors felt in Lima",
       "important": true,
@@ -193,6 +201,30 @@
     {
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWDBQUTdkaEJ1cGFCcmpkbkFCTUppQUNNTE9DemN2ckwwWTU3eXNsQU81dzVnZHhHQmFXR3Q4azZQUkJkdG5JQUVabGxQeEEzaERncUg4RGctb0xCc1JmWWw4aVFUMU5vRGhROU5aZk1UU0RJOGZvVWtXWmNRcjlwSEFxQkh3S3BuckRpbW9rOVRhazE3YXNPX09sS2RyVmlfYWpBYw?oc=5",
       "title": "Antimicrobial resistance explained: What it is and why it matters",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVGJWTTEtbDlIbjNpYUVBSlBYdU9KSjJPNjdfaFRvU2xXRW1EcEZ4U1dkMGsxVDgyTkgwcG8taDJRdk9jZzZZbi1uYjZ4bWh6WDYyVUFhUEFLZEZKcEhnSjdpdTl1YXN3cWtOT1ppdWxjVGNMLUd5QnluNE0yemxIOUltZkE2SF9HelBtTHNtYktNR1g2SHJFRzhTdXdqLV9iUVhzM0RsdjVXbTlKMXc?oc=5",
+      "title": "What is behind the Russian missile incident in Poland during NATO allies' military drills?",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONEl1RDMta3FDb3VIeWczMlZkWG9ucE9zbEU1enpwWXplTzNNb0RBM1hTN1EzX0VnYXV4MzdvZkhiWmJGR09CTy11Yi1tOVpodTlGVXVUZTVuSUJ5Uld3RlVSX3VhelV1N0RTNzByQU1tcDBmRDFab0VHcDRaTDMxNEpCU3ZjOEF5NExBcmRjZHRqODhwV2paZUZkR0tuRUdnN1Q3UndEbDQzYUI4TE96UG4yLVZ6QQ?oc=5",
+      "title": "Chile’s Economic Recovery May Take Longer, Central Bank Chief Tells Newspaper",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZFR5dlNLLWN3VkdSVjhicHpPQ1lOZEZ1TnJEd1J0U2d6MFlmUzNzbkFDTlVvdGhFQUdRN3ZGVXlCdkllZ3BqNnNFWHhUM3ZKRkp5dlZfVGxVUFNpOG1OSWgwZzA0emFpNVQ0ZEpnWTlJdlJ6NmlzSDJ6cGNVRHA3clhpeDU0OFJvT1dBa2dEck5WR05nVjBKZ2kzdkgxS0FSR2tJSGZXWnBUSDdxc3Vja0JKX0tLMzA?oc=5",
+      "title": "Is a bigger earthquake coming to Lima? What Peru's scientists warn after the Junín 6.7",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -263,6 +295,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOEJ4TWJwOHZkQTdBR1JtaDlFZG50TGRTM3JiMVdzLWFhSUZ2ZXBWeHEyRjVpeGowUFB3cG9tek5JbmdxdnU2ZjBuenBrZEVuLW5KazJJVk0tTEJNa0JnaXQtUWJZaGV3OFpWRjR3VzhmcklvTUtTelJFVlVYcEQzeTFOOU01M1c2dHlubTA3TQ?oc=5",
+      "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPODVMcXZLbWZOSHFLU1p3Z2p1ZUdMYlFFOFVhN2dDLVJ3V2twQ01aZUlvMWgweHlrZVFTak1MeHkxaDlGVEZwM1R2WUgwM3otR2lpMVdfU25aOUkzbHp5bkRqb1FPdHc5YnhTV2F6UGNjTy1VUUwyQ1dDdkxHRkFrZGpTdms5b3VrUVA1cGFMS2xFMU9iSTIxZGNmdnFZZ2NfQ2MwZWZSMTV1alVHWFRyc20td3NqSVMtNjRUZtIBwgFBVV95cUxNMUZ4T0d3QTFGZG5FamQyYkRvbnZGNk5KWXhOME5CdThlZWFyY0V1YkNSN1dwTUZiMUpEbVNtOEp4ZUVnczVtdzVHNFZJdUVlUmw3SXcxNlR2WmVfM0ZPSUVJTVUyWGxVaGJSQUMyTzhpejFpRjgxUjdwQUZldDVpX29HRnFjOVBmT21MZFNyXzVsNzc3VHZZYlBYSjhqTFdabkdnblN0cHBvc3VJbzltRUFCWGlFSHZJZFhsSWZmVTV0UQ?oc=5",
       "title": "6.7 magnitude earthquake strikes Peru’s Andes: Tremors felt in capital Lima; no casualties or damage report...",
       "important": true,
@@ -287,14 +327,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1CVmRIdURGTDV0cGZEZXhuWTJRSmhqdDJfUjFhVXBnS3ljNmdmRENFX2ZsOW5HUW9sN3h1RkpyRW5MZmo3d293Ynh5eHVFOE5zNHozOQ?oc=5",
-      "title": "이형일 부총리, 긴급 F4 회의 소집…美 반도체 폭락에 시장 점검",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFAweU9wcnAwSVpMMXYxRW9tRDhzMDg1SHp5V0lPc01PTEx2eElqQzZOcnV4Qm04eTlMZVFQS19tZS1TbnI5aGM4MjRyTzl5WEdRNzBFYQ?oc=5",
       "title": "약물과 AI 결합한 디지털융합의약품 개발 본격화 : 병원·제약",
       "important": false,
@@ -311,27 +343,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4tVGQ4eDZQTVlBNXRqOFVKZTkzZWNvRjNaLVctdm82R25OSnFOTDhYVVo2YlB3eVZFbnVSUERDMHNtWXpuWE5jQVFfYkMzeTViME9sQXNKU25jWDRLWG9GSnlua3M?oc=5",
-      "title": "반환 신약 다시 개발…한미 '에페' 상업화, JW·유한도 도전",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE51dzJ5MTNMSDU4d1dOSFNnbWVWTV9aQUlqbl9rVDdKZlhiRmZPaUNwNE1FUFBKdlVVLTRHZDRBTmxWV2c4cl9NNU9pR3NsYkEtd0VzRFhza3l3LVRXTU5hSWZHTzNodVZHS1E0?oc=5",
       "title": "Courtesy call on Prime Minister TAKAICHI by the members of Japan-Brazil Business Council Plenary Meeting",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5NeEFwOFZRdTJaNmVBdE11MUtKeWJaekw5TktWYTdIQVF3cDl4VlFzY2laWUFaUE1BcndIbmlaU1JSaklCVklmQ0FQUGYycm5YMDhidlJndDREY1h5MEhwSER0dFQ0MTd40gFuQVVfeXFMUHlual9LSEpuejYwNnNFMTAxTFVEcTFma2JvZjVjRzl0SV9ndDN1ai1kX0d3ak05RTM5czZ2eVB4b2RhU2ptZ29jS2Z4bXAtbXFzZm9UclpIRDNJdzFsSnoyNm5iZnNSZnk1MjA2dnc?oc=5",
-      "title": "'블랙 먼데이' 공포…韓 금리·美 물가가 증시 향방 가른다 - 머니투데이",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -345,6 +361,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE00MEhYOWxTTkNmZmFjZzdnTWp6SzhKOG9faWROREl2LXlJQ2tKR3dGbTZvQklyUENlWFhiZWIwSzB0ajk3cktybWRZV3V3ZWZpUmw4el8waXdfUWJQNnlxRGhMeERKazNsOUxzMg?oc=5",
       "title": "글로벌 제약사, AI로 신약 후보물질 개발기간 최대 절반 단축",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUm1qOUd2TkNtdS00VlBKMFdsenVTN1Nzdmk3WEJpZnZ4ZnhGQmJyeWo3c295UmZ1RnhMQTVhLUFiY0x1VWFkeDVBRFYxSE1iZWdXZ2RLakZkOG1QOFdHMnlTbGhnR29lZE1zR0pEdVBvUDVYajgwQ1drYmRNTlRVSg?oc=5",
+      "title": "\"AI로 신약 개발 효율 높인다\"…이노보테라퓨틱스, 기술 이전 성과 [상장人터뷰]",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -383,15 +407,15 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbFBwX2c4aU9rVTBJS1NxcVROQUlTYmlGSGM3YXpwNEFCbFJzUWdzYlA5T09jZlJ2NGFmbk82Sk1FbHRNWXEwTlBuWnkwcG5OYUowSFNIZkhuaFdwVHc5M3lCS3Y3aDBkT21KR1VINzBkRmx6VDdtdFZ6QjRNczJySzJkREVPVmI2MEdwaTQ2cGVEbFdWSklNNkVzUWJGOTlYOUxOQVl3N0hYcTRJT1HSAa4BQVVfeXFMTWxQcF9nOGlPa1UwSUtTcXFUTkFJU2JpRkhjN2F6cDRBQmxSc1Fnc2JQOU9PY2ZSdjRhZm5PNkpNRWx0TVlxME5Qblp5MHBuTmFKMEhTSGZIbmhXcFR3OTN5Qkt2N2gwZE9tSkdVSDcwZEZselQ3bXRWekI0TXMycksyZERFT1ZiNjBHcGk0NnBlRGxXVkpJTTZFc1FiRjk5WDlMTkFZdzdIWHE0SU9R?oc=5",
-      "title": "Trump Says Putin Wants Diplomatic End To Ukraine War",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNT0JEYTlwbVd6TXVhU3lMMnpSN251QUZhenhmbEk5enlPX0lUYjhMa29xOXZOamc4VnNiWGx1QVlfcTFIaW9PcVpYSFdXQ0o1dzZFNlRpamZFVWx1MF9ReGdfeHF1ZlFkdkhaaEM5eVQ3eEV6SE5jeVFUaEl5LVJhUmtiMktvRkxjM1lWV2FJV3JhaHJxUFM2cjlsRTg3QV9Sd0licGhvME9lYVU?oc=5",
+      "title": "EU Considers Stronger Measures Against Russia as War Diplomacy Stalls",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x0gG4AUFVX3lxTFBwVmMtRHJDV0lBNjhHMzhCR0xqV0NxTjUxU2hCX0pnVjd6Qy15U1I4LXFsMWRnWXZ3UjFOb2ZjVUs4bWF1R0lGZW9tZjZYbFR3MUVnSXZybGZDMkNzWlc4ZUJDSW5xb25zRGNwa250eXcwQnQ1N1NmeWkyTG5zUTRLdE1JSjZtOU5VeW5GQU9DdXZRdTA2T0ZJSmd2NXN6MGNRMkIzMndvVmw2cnplNjFaN0xYajJqbnE?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWnRsSTN2UHlvZ3hscnFOdktrT0UzVDdjM3hyeDM0ZWFkTGVuNjRMVGFMWnhPYVJHZHV5WmVINHp6R282a2xnVENuMWxhU3NLd1pxNUJ6ZUlacHU0WFR1SmprZEE5UUVDQm9HemliQ3NjWDVteHRnQWRNVWlHVE9tNk5tZUI0TXZqRW9WSUdVUmFHRXdwbkc5RDU2R2JWdE4xR0FGXzdBeW40bTV5XzFjSjJ3MNIBuAFBVV95cUxQcFZjLURyQ1dJQTY4RzM4QkdMaldDcU41MVNoQl9KZ1Y3ekMteVNSOC1xbDFkZ1l2d1IxTm9mY1VLOG1hdUdJRmVvbWY2WGxUdzFFZ0l2cmxmQzJDc1pXOGVCQ0lucW9uc0RjcGtudHl3MEJ0NTdTZnlpMkxuc1E0S3RNSUo2bTlOVXluRkFPQ3V2UXUwNk9GSUpndjVzejBjUTJCMzJ3b1ZsNnJ6ZTYxWjdMWGoyam5x?oc=5",
       "title": "Spain's Sanchez admits 'mistakes' in election debate with rival Feijoo",
       "important": false,
       "state": "not_in_current_queue",
@@ -407,11 +431,27 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNbWVldVlmTVBsLUFRbllWVElSLXJPeHk5V2tObUFMOTF2YUxUUVk4bldJU3V1NXZIVWN3LUVaUmFFdHdlM1BiVUtwc0cyRkhSZ0xwTXg1MFZOTDdoeDR4Sk5iOGJfOVpkVzRWUC1MaDlLRm5QUVNUQ21EOTFaemJfUklDNnhxMGJYeTRvTTF3VHhrQzIwRkxxN1FXeWlJVnZmMHF0QW9KQ083bHJtamNtMVVwUEdkLWxvVW1tdFRsOXNZczNnNE1sRlR4bw?oc=5",
-      "title": "Ignacio Galán meets British Prime Minister in Brussels during EU–UK Summit",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOU19mZlJnR3hiTGFuNFhCM0FQY18wOEx3amtwc2t5Q1dOSmYtVlp1RF9XeWtzVkRrZ29vVnRTTnlpSDhMQVVlc1R5S0Z4Q0xZNkRDbEdEV2ptdmNYSzhfYURHLTI4SVdrcFQzeVB5ZEhLSFh1V25ZakhYMV9ObHM4WjZJbVFDVDlvUDl2a3pvRE5QWlpFVVZZOXdwaDl4cmswWUM2blFTUzktRVYtR0ZfWmpKcnY2ajdKcm82d3pYV09ZLVdtVjRwdmFySUwxMTN2LU5zWkFISkg?oc=5",
+      "title": "The Philippines and Chile signed the Comprehensive Economic Partnership Agreement, a free trade agreement that will deepen trade relations between the two countries. Link to the full story in the comments section. | via ANC 24/7",
       "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE5SaVVHeXRnTlNKUmRWdUhtNUE5REp2NHNPTDd6REY2Yld3OXBwQjB2Z2lHWmNVQ1Z3UTdJ?oc=5",
+      "title": "\"A Biotech Fraud for the Ages\"? A Point-by-Point Review of Scorpion's Short Report on Abivax",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9xdGRRbmN0ZEhvdTIxV3gxakt0Z3U1SmhNU0UyMUtGRDhZeUNRb2hIZ3dyTDZrNVlEMDlEdU5oaGhBZlNZbmxESlhOU2JaVTZzem9UQUhEdTBTQdIBWEFVX3lxTFBDV3NVZUNlUXhqUU5OYzA4MFQ1RmFLM2ZTWlc4RnF5RFRCclN4TmM5N0RSVmdOVHduUGhpUFA3LW96YlBKTzR4RVRPelVHNHY1MTRyU2tCSEY?oc=5",
+      "title": "[국제금융리포트] 美 물가 상승·AI주 급락…글로벌 금융시장 불확실성 확대",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
