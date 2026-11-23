@@ -61,6 +61,28 @@ const style=document.createElement('style');style.textContent=`
 #nb-intelligence #nbm-mps-panel .nbm-mps-link:hover{text-decoration:underline;color:#fff}
 #nb-intelligence #nbm-mps-panel .nbm-mps-tag{display:inline-block;margin-top:5px;padding:2px 7px;background:#233b51;border:1px solid #385c72;border-radius:4px;color:#a7d7e5;font-size:10px}
 #nb-intelligence #nbm-mps-panel .nbm-mps-note{font-size:10px;color:#89a5c2;margin-top:8px}
+
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-head{display:flex;justify-content:space-between;align-items:center;gap:9px;margin:6px 0 9px}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-eyebrow{color:#91a6ba;font:10px ui-monospace,Consolas,monospace;letter-spacing:1px}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-heading{color:#edf3fa;font-size:14px;font-weight:750;margin-top:3px}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-count{color:#c4d2e0;font:10px ui-monospace,Consolas,monospace;padding:5px 8px;border:1px solid #41546a;border-radius:4px;white-space:nowrap}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-card{border:1px solid #35495d;border-radius:7px;background:#172637;padding:10px 12px;margin:0 0 10px}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-meta{display:flex;justify-content:space-between;gap:10px}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-label{color:#849ab0;font:9px ui-monospace,Consolas,monospace;letter-spacing:.7px}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-code{font:700 18px ui-monospace,Consolas,monospace;color:#f2f7fc;margin-top:3px}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-region{font:600 11px ui-monospace,Consolas,monospace;color:#d5e0ec;margin-top:5px;text-align:right}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-chartlabel{display:flex;justify-content:space-between;gap:8px;margin:10px 0 5px}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-chart{height:48px;display:flex;align-items:flex-end;gap:2px;overflow:hidden;padding:4px 4px 0;border-bottom:1px solid #354b5d;background:repeating-linear-gradient(to bottom,transparent 0,transparent 14px,#ffffff0a 15px)}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-bar{flex:1;min-width:1px;background:#7696aa;border-radius:1px 1px 0 0;transform-origin:bottom;animation:nbm-spectrum 4s ease-in-out infinite alternate}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-bar:nth-child(5n){background:#b5a47b}
+@keyframes nbm-spectrum{0%{transform:scaleY(.87);opacity:.7}50%{transform:scaleY(1.06);opacity:.96}100%{transform:scaleY(.93);opacity:.83}}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-dates{display:flex;justify-content:space-between;gap:10px;margin-top:9px;color:#c5d3e2;font:10px ui-monospace,Consolas,monospace}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-entries{max-height:120px;overflow-y:auto;scrollbar-width:thin}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-entry{padding:6px 0;border-top:1px solid #2e4358;font-size:11px}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-entry a{color:#b5d1e8;text-decoration:none}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-entry a:hover{text-decoration:underline}
+#nb-intelligence #nbm-gnss-panel .nbm-gnss-entry small{display:block;color:#849db6;font-size:10px;margin-top:3px}
+@media(prefers-reduced-motion:reduce){#nb-intelligence #nbm-gnss-panel .nbm-gnss-bar{animation:none}}
 #nb-intelligence .nbm-border-panel[hidden],#nb-intelligence .nbm-official .nbm-list[hidden],#nb-intelligence .nbm-official .nbm-meta[hidden]{display:none!important}
 #nb-intelligence .nbm-forecast-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
 #nb-intelligence .nbm-forecast-summary .nbm-border-status{margin:0;min-width:0}
@@ -207,22 +229,26 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  mpsPanel.append(node('p','nbm-mps-note','※ 마지막 공개 확인 장소는 현재 정박지·항해 위치를 의미하지 않습니다. 새로운 발표는 검증 후 추가해야 합니다.'));
  right.append(mpsPanel);
  const gnssPanel=node('div','nbm-border-panel');gnssPanel.id='nbm-gnss-panel';gnssPanel.setAttribute('role','tabpanel');gnssPanel.hidden=true;
- gnssPanel.append(node('h3','nbm-section-heading','📡 동북아 GPS·GNSS 교란 경보 · 최대 10건'));
- gnssPanel.append(node('p','nbm-meta','한국·일본 주변 항공안전 공고 및 공식 발표 · 하루 1회 공개 자료 확인 · 실시간 탐지 아님'));
- const gnssList=node('div','nbm-list');gnssList.style.cssText='max-height:210px;overflow-y:auto;scrollbar-width:thin';gnssList.append(node('p','nbm-empty','공개 GNSS 교란 공고를 불러오는 중입니다.'));gnssPanel.append(gnssList);
+ const gnssHead=node('div','nbm-gnss-head');const gnssHeadLeft=node('div','');gnssHeadLeft.append(node('div','nbm-gnss-eyebrow','NEXT BIO / SIGNAL INTELLIGENCE'),node('div','nbm-gnss-heading','GNSS Interference Monitor'));
+ const gnssCount=node('span','nbm-gnss-count','— NOTICE');gnssHead.append(gnssHeadLeft,gnssCount);gnssPanel.append(gnssHead);
+ const gnssCard=node('div','nbm-gnss-card');const gnssMeta=node('div','nbm-gnss-meta');const gnssCodeWrap=node('div','');gnssCodeWrap.append(node('div','nbm-gnss-label','NOTICE IDENTIFIER'));const gnssCode=node('div','nbm-gnss-code','—');gnssCodeWrap.append(gnssCode);const gnssRegionWrap=node('div','');gnssRegionWrap.append(node('div','nbm-gnss-label','REGION'));const gnssRegion=node('div','nbm-gnss-region','NORTHEAST ASIA');gnssRegionWrap.append(gnssRegion);gnssMeta.append(gnssCodeWrap,gnssRegionWrap);gnssCard.append(gnssMeta);
+ const chartLabel=node('div','nbm-gnss-chartlabel');chartLabel.append(node('span','nbm-gnss-label','SPECTRUM VISUALIZATION'),node('span','nbm-gnss-label','SIMULATED / NOT LIVE'));gnssCard.append(chartLabel);
+ const chart=node('div','nbm-gnss-chart');chart.setAttribute('aria-hidden','true');
+ for(let i=0;i<56;i++){const bar=node('div','nbm-gnss-bar');const peak=Math.exp(-Math.pow((i-17)/7,2))*55+Math.exp(-Math.pow((i-40)/5,2))*42;const variation=(Math.sin(i*2.7)+1)*7;bar.style.height=(10+peak+variation)+'%';bar.style.animationDelay=(-i*.11)+'s';bar.style.animationDuration=(3.1+(i%9)*.19)+'s';chart.append(bar)}
+ gnssCard.append(chart);
+ const gnssDates=node('div','nbm-gnss-dates');gnssCard.append(gnssDates);gnssPanel.append(gnssCard);
+ const gnssList=node('div','nbm-gnss-entries');gnssList.append(node('p','nbm-empty','공개 GNSS 교란 공고를 불러오는 중입니다.'));gnssPanel.append(gnssList);
  right.append(gnssPanel);
  async function loadGnss(){try{
   const response=await fetch('./data/gnss-alerts.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
   const data=await response.json();const items=Array.isArray(data.items)?data.items.slice(0,10):[];
-  gnssList.replaceChildren();
-  if(data.last_checked){const d=new Date(data.last_checked);if(!Number.isNaN(d.getTime()))gnssList.append(node('p','nbm-meta','최근 확인 '+d.toLocaleString('ko-KR')))}
-  if(!items.length){gnssList.append(node('p','nbm-empty','현재 등록된 공고가 없습니다.'));return}
-  for(const a of items){
-   const item=node('div','nbm-item');const title=String(a.title||'GNSS 관련 공고');
-   if(typeof a.url==='string'&&/^https:\/\//.test(a.url)){const link=node('a','',title);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link)}else item.append(node('span','',title));
-   item.append(node('span','nbm-source',String(a.published||'날짜 미상')+' · '+String(a.source||'공개 자료')+' · '+String(a.type||'발표')));
-   gnssList.append(item);
-  }
+  gnssList.replaceChildren();gnssCount.textContent=String(items.length).padStart(2,'0')+' NOTICE'+(items.length===1?'':'S');
+  if(!items.length){gnssCode.textContent='—';gnssDates.replaceChildren();gnssList.append(node('p','nbm-empty','현재 등록된 공고가 없습니다.'));return}
+  const first=items[0],firstTitle=String(first.title||'');const code=firstTitle.match(/(?:RKRR\\s*)?[A-Z]\\d{4}\\/\\d{2}/i);gnssCode.textContent=code?code[0].replace(/^RKRR\\s*/i,''):'PUBLIC NOTICE';
+  gnssRegion.textContent=/RKRR|인천|Korea|한국/i.test(firstTitle)?'RKRR / INCHEON FIR':/Japan|일본/i.test(firstTitle)?'JAPAN / PUBLIC NOTICE':'NORTHEAST ASIA';
+  gnssDates.replaceChildren(node('span','','ISSUED '+String(first.published||'—')),node('span','','PUBLIC NOTICE'));
+  for(const a of items){const item=node('div','nbm-gnss-entry');const title=String(a.title||'GNSS 관련 공고');if(typeof a.url==='string'&&/^https:\/\//.test(a.url)){const link=node('a','',title+' ↗');link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link)}else item.append(node('span','',title));item.append(node('small','',String(a.published||'날짜 미상')+' · '+String(a.source||'공개 자료')+' · '+String(a.type||'발표')));gnssList.append(item)}
+  if(data.last_checked){const d=new Date(data.last_checked);if(!Number.isNaN(d.getTime()))gnssList.append(node('small','nbm-gnss-label','최근 확인 '+d.toLocaleString('ko-KR')))}
  }catch{gnssList.replaceChildren(node('p','nbm-empty','공고 데이터를 불러오지 못했습니다.'))}}
  loadGnss();setInterval(loadGnss,3600000);
  const bloodPanel=node('div','nbm-border-panel');bloodPanel.id='nbm-blood-panel';bloodPanel.setAttribute('role','tabpanel');bloodPanel.hidden=true;
