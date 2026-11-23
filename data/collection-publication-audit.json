@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-23T02:39:48.455686+00:00",
+  "updated": "2026-11-23T03:57:38.927129+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
-  "collected_unique_urls": 179,
+  "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 22,
-    "not_in_current_queue": 34,
+    "important_unpublished": 21,
+    "not_in_current_queue": 31,
     "pending": 14,
-    "published": 131
+    "published": 135
   },
   "important_unpublished_by_state": {
     "not_in_current_queue": 15,
-    "pending": 7
+    "pending": 6
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 12,
-    "repeated_extraction_failure": 3,
-    "in_retry_queue": 7
+    "source_blocked": 13,
+    "repeated_extraction_failure": 2,
+    "in_retry_queue": 6
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -47,22 +47,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB4S2RfNW5leTNLcmVRTThLSEJCMnNsdURpMzN5S3dXSGl3REtlenkzbTBOZk81MG1Md25pUUlVVUQzRDM4T05DUTEtelRjaWxlbk400gFYQVVfeXFMT2wzWmo1dHo5eXZwYV9BX0tEQk15R19yZFVNTHA3U0hmYlAtX3RwUjl1MDlDaTIxWVZPcW93M21JaVdZd2tTVEFfM1R1azhKaVl3cTJWMHJTSA?oc=5",
       "title": "[글로벌 경제지표] '추수감사절' 뉴욕증시 한산할 듯…한국은행 기준금리 인상 가능성 주목",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
-      "title": "6.7 magnitude earthquake jolts central Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNmszVVpQTVFYalNNNGFzd3VKX1hkZ0tYX3JRRmowOE8waFFCOEtHV0NqcGwxdUdDaklTUERGMnFubTd0eVhzc3hjS2NsWDlZTW9ueDQ1ZGhNNUczb29YdXZ6Tm9XZkFORWYyVzM3RnNPczZRb2xhcXpyUW5oaFpPOEZCdFZCRXRCN25SakkyZzVkdw?oc=5",
-      "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
@@ -109,6 +93,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNV3lpb3JlTXdnLVVOVk02NURXbm9XcjFqWmpqcTdGMXBnTXE1YjVqQkFyU0gtR2dHU0lyYS1paVpvd0hYdF9qSldTQ082SW5zdGE1THp0ZGZfbVp2WWYyZEFpdmo1MXlaUzRuU3VwWEtQMGh2QXRhZkJsOXZlQkl2dDF3aWN0ZWtndzJLSXZ4UFBPMEJlV21WTWxvZnU3OEIwZnVSTV9WVXFjZ2YtWk9TQ3F0VU1UaW1xNzJjaVJwdjF5Z9IBxwFBVV95cUxQRTc4VUJDanF3Yms4dmtVLUpSNDNleUwzemV4MVJsUk9GeGl0dlg3YzFlcXV2Tkw1OVNJTnJGRG9FcElYS1JGTEVCWnF2OHJNYWRkU1VlZER4Y2haVmJqTTkwazNRZVpQZ04wcWlPUF90VDhuU1JkRmI4bWI4Q0t6UzBHeW0zZTZ1NGp0eUNCMUFwS3ZSV2pWcTY4b3laVTJCcTdJUTF6bDM5dVNzbWMyODdRZ3ZMaFB0OWhSWkVheW1Tc2IzUFhj?oc=5",
+      "title": "A dead man and dozens of injured people after a strong earthquake in central Peru",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcGliZ3U5b1Zic1MxN0N1b2NtX2ljZ0tmTm9NZEpxYV9JdkE1T1R6bEpMWW4wbk5sVW5NTFlTY2NXckNRRTllZXc0VE4tcHJ4Yy1PcHI0UVlLRGFINWZsSHpYMEFVSkpUeUd3cG1zalRtdENSYnJUczl5ajJZdEQ1X1J5Um9NRXVnUnhSdUpmOS1oNzdDZ0VTQm9mVmstRm1GVV9iSDVSelNKTmZrOEZ1c2p2Q00yT3ZZeXY2Q0Jxb1Zsdw?oc=5",
       "title": "How Biotech Upstart Beren Turned a Pharma Failure Into a First-in-Class FDA Approval",
       "important": true,
@@ -119,6 +111,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUUJ5QjBndGJPNTFwMHRqRzZVNHRqd0JpaW1oc2UxeGd0RXpYNDNWQlE2Yl9vLVBfbUxZS3ZqeG1iTnh3Um1vZXJRWU5aenBiaFlYRmRBVy00eFpYRVJFNHN0NTk2TVdWOXNfbHZKckxpRi05WDNJM2VaLWRjR1l0c3JrYkYyZEU0UFItS2NQR19Pb1cwWG1BNW43Y19mZE9EajUwZHA4RUJTOVFoOWdnbG5tT1pzdDhvVlI3MEZlcU50YWd0a2c?oc=5",
       "title": "Capricor's Duchenne treatment fails to get FDA approval, shares sink",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOV2FJUTFqcUVodkYwajBSdUxjYWlWdVd4TnhkMnRRZEFCdkYwN2NXRUxGYWs1dXAzN21LNFlZN2puVmhaQ3NNcHdiTXRJMFNsUzJNdGxPdUlFSHlkRnFINWw2TTU2aVVWSnNjLVRtR1N6MTFzZDl5WmY4bHhIcUk5SnpvYldGWkNVUFhNbExkY00tWXQwdzlnTXNBRXFmLUdEM2w1VWtwVU9ESHpEWG9vek13MmtialFNci1Od3A1ZENnYlhyZ0o5VG9xUdIB0AFBVV95cUxQWmRNeGpVN2tROUUwVnBpV2ZLNmttcDBrdXhnMFZfYzVRNFhfR0VUak9WWV8tUXFOZHQ1RUxmek5xU011VWlRdVlLWkJ5VHdYYnRPa3IwRmF0RmdLMVBrOEpDM0dZWXdQWWlUXzFpODFZR2N0Y1dZRjV2RU5UNnNLRUd5NGZaYXFYWWhnYkdaRG5WWFF6RTZOTjRVUkp2WFN0aTNUNnZzbC0yNlppaTV5M2RQMFR5QXFzdkdxU25INW9fX3FxTWQtTEMzNU1DRGZl?oc=5",
+      "title": "Home Security Camera Captures Moment Earthquake Shakes Peru",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -175,22 +175,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
-      "title": "6.7 magnitude earthquake jolts central Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNmszVVpQTVFYalNNNGFzd3VKX1hkZ0tYX3JRRmowOE8waFFCOEtHV0NqcGwxdUdDaklTUERGMnFubTd0eVhzc3hjS2NsWDlZTW9ueDQ1ZGhNNUczb29YdXZ6Tm9XZkFORWYyVzM3RnNPczZRb2xhcXpyUW5oaFpPOEZCdFZCRXRCN25SakkyZzVkdw?oc=5",
-      "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQzlVOGh5bjJSSVh4bzVTZm5ubDZ2TkYtQnNoUXhFTWxud2lFcy1sM1BYcjQ5NDlQQXJ1LTRQSW5VWTJzZnJNV3lhcTNuRkRVTDNKSjJGaVBhcF9hU0tMQzhrcFdZR0Rkdm5Jem11cVpYaFdCVkNBSUt0cUthSXlYNENSRHA0OHQ2ZEFudE9KQzRoQQ?oc=5",
       "title": "6.7-magnitude earthquake hits Peru, tremors felt in Lima",
       "important": true,
@@ -231,6 +215,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNV3lpb3JlTXdnLVVOVk02NURXbm9XcjFqWmpqcTdGMXBnTXE1YjVqQkFyU0gtR2dHU0lyYS1paVpvd0hYdF9qSldTQ082SW5zdGE1THp0ZGZfbVp2WWYyZEFpdmo1MXlaUzRuU3VwWEtQMGh2QXRhZkJsOXZlQkl2dDF3aWN0ZWtndzJLSXZ4UFBPMEJlV21WTWxvZnU3OEIwZnVSTV9WVXFjZ2YtWk9TQ3F0VU1UaW1xNzJjaVJwdjF5Z9IBxwFBVV95cUxQRTc4VUJDanF3Yms4dmtVLUpSNDNleUwzemV4MVJsUk9GeGl0dlg3YzFlcXV2Tkw1OVNJTnJGRG9FcElYS1JGTEVCWnF2OHJNYWRkU1VlZER4Y2haVmJqTTkwazNRZVpQZ04wcWlPUF90VDhuU1JkRmI4bWI4Q0t6UzBHeW0zZTZ1NGp0eUNCMUFwS3ZSV2pWcTY4b3laVTJCcTdJUTF6bDM5dVNzbWMyODdRZ3ZMaFB0OWhSWkVheW1Tc2IzUFhj?oc=5",
+      "title": "A dead man and dozens of injured people after a strong earthquake in central Peru",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcGliZ3U5b1Zic1MxN0N1b2NtX2ljZ0tmTm9NZEpxYV9JdkE1T1R6bEpMWW4wbk5sVW5NTFlTY2NXckNRRTllZXc0VE4tcHJ4Yy1PcHI0UVlLRGFINWZsSHpYMEFVSkpUeUd3cG1zalRtdENSYnJUczl5ajJZdEQ1X1J5Um9NRXVnUnhSdUpmOS1oNzdDZ0VTQm9mVmstRm1GVV9iSDVSelNKTmZrOEZ1c2p2Q00yT3ZZeXY2Q0Jxb1Zsdw?oc=5",
       "title": "How Biotech Upstart Beren Turned a Pharma Failure Into a First-in-Class FDA Approval",
       "important": true,
@@ -241,6 +233,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUUJ5QjBndGJPNTFwMHRqRzZVNHRqd0JpaW1oc2UxeGd0RXpYNDNWQlE2Yl9vLVBfbUxZS3ZqeG1iTnh3Um1vZXJRWU5aenBiaFlYRmRBVy00eFpYRVJFNHN0NTk2TVdWOXNfbHZKckxpRi05WDNJM2VaLWRjR1l0c3JrYkYyZEU0UFItS2NQR19Pb1cwWG1BNW43Y19mZE9EajUwZHA4RUJTOVFoOWdnbG5tT1pzdDhvVlI3MEZlcU50YWd0a2c?oc=5",
       "title": "Capricor's Duchenne treatment fails to get FDA approval, shares sink",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOV2FJUTFqcUVodkYwajBSdUxjYWlWdVd4TnhkMnRRZEFCdkYwN2NXRUxGYWs1dXAzN21LNFlZN2puVmhaQ3NNcHdiTXRJMFNsUzJNdGxPdUlFSHlkRnFINWw2TTU2aVVWSnNjLVRtR1N6MTFzZDl5WmY4bHhIcUk5SnpvYldGWkNVUFhNbExkY00tWXQwdzlnTXNBRXFmLUdEM2w1VWtwVU9ESHpEWG9vek13MmtialFNci1Od3A1ZENnYlhyZ0o5VG9xUdIB0AFBVV95cUxQWmRNeGpVN2tROUUwVnBpV2ZLNmttcDBrdXhnMFZfYzVRNFhfR0VUak9WWV8tUXFOZHQ1RUxmek5xU011VWlRdVlLWkJ5VHdYYnRPa3IwRmF0RmdLMVBrOEpDM0dZWXdQWWlUXzFpODFZR2N0Y1dZRjV2RU5UNnNLRUd5NGZaYXFYWWhnYkdaRG5WWFF6RTZOTjRVUkp2WFN0aTNUNnZzbC0yNlppaTV5M2RQMFR5QXFzdkdxU25INW9fX3FxTWQtTEMzNU1DRGZl?oc=5",
+      "title": "Home Security Camera Captures Moment Earthquake Shakes Peru",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -260,6 +260,14 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPbjFJRDBqcml5UlR1aGNDc2tGVlE2WFpuNmVMRjNTZ2dZRk9JX3hBaFJyZDUzb3dEYy1yZUt6ckJFVkRMaXd3dzBxM095RFhqTFA3czFxUTd2NHp1LTdNYWlIaV9xT0IzZ2gxTkVZRmNnN2dPQmVkckJORTNxbE9ZTlZyR3BCMENHdWZIRXBhYWpVY3RsdC1oR0ZMWGtmYlBUb2Z5MEVZMzlRdEVFRjcydDRPNS1leXRmdFVQV2pobFpoRUNNWC1NNTdYY1JoZjNYNXJnUlRR?oc=5",
+      "title": "Thailand Expects 31 Million Tourist Arrivals in 2026, Still Short of Pre-Pandemic Peak",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
@@ -295,35 +303,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQcGZZQ0NlcVFIRnc4bmhadHZmUEQxenVSUjBqeHAtSzN0Q0NHNDYwOUZ5UGVnaC1jbVU3ZVE4Tm5GM09nNU82WjkwUGlOOHBucHV0cUo4MElycm1keFdaU0ZUcFZHRHBLT0JiVEplcVU2dVZJQk5wNzZDYWprT2kwZ1NmYmx0al9WOUF0Unoxb05NRm4xUXQtYVVkX0Y1T3hLeUdjLUdRcFNuRS1pMTJxSQ?oc=5",
-      "title": "Russia Sells Gold as Poland Reaches 700 Tonnes: Central Bank Gold Splits in Two",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRXEyang3dHphaTE4TjJfSmFLV01uOHA1c19FYkVQckhaSEl1T2Nybnl2eU1tcHBMSURwRzBxWm8wZEZPeXJjTHJyZlZEaWo5TnpHSVFQUXk4aWpydkdnZWdsM2pzcDNxdHJiX0dRMGNENWNrc25LV21vOFQ3WWNNcURpTVFBQU1pWE10NG9zZkw?oc=5",
+      "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNd1ZLdDBnOVJfeGlMWGNOS0lFSjZJYXJFbUJKSGZDeDQySFZ5ZU4wa2JZUjV1cThnYmlOeFY5LXY5VUQybjRObW13d1F1YlItOUFnaDdfY0QwLWNqd2ZZbDFQMFZ3SHJ5YnctOXA1QklNUEtEeG5vdTE1Q3pubGZnSUJ3NVpvUGZvek5tUUdJQWQwNVE1Z1VwcFdXdmJKWVhoWUlCSG54R1J2RkhPXzZaM2Y1V2I?oc=5",
-      "title": "Wildfire Map Spotlight: De Hoop–Malgas–Potberg wildfire, Western Cape, South Africa",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPODVMcXZLbWZOSHFLU1p3Z2p1ZUdMYlFFOFVhN2dDLVJ3V2twQ01aZUlvMWgweHlrZVFTak1MeHkxaDlGVEZwM1R2WUgwM3otR2lpMVdfU25aOUkzbHp5bkRqb1FPdHc5YnhTV2F6UGNjTy1VUUwyQ1dDdkxHRkFrZGpTdms5b3VrUVA1cGFMS2xFMU9iSTIxZGNmdnFZZ2NfQ2MwZWZSMTV1alVHWFRyc20td3NqSVMtNjRUZtIBwgFBVV95cUxNMUZ4T0d3QTFGZG5FamQyYkRvbnZGNk5KWXhOME5CdThlZWFyY0V1YkNSN1dwTUZiMUpEbVNtOEp4ZUVnczVtdzVHNFZJdUVlUmw3SXcxNlR2WmVfM0ZPSUVJTVUyWGxVaGJSQUMyTzhpejFpRjgxUjdwQUZldDVpX29HRnFjOVBmT21MZFNyXzVsNzc3VHZZYlBYSjhqTFdabkdnblN0cHBvc3VJbzltRUFCWGlFSHZJZFhsSWZmVTV0UQ?oc=5",
-      "title": "6.7 magnitude earthquake strikes Peru’s Andes: Tremors felt in capital Lima; no casualties or damage report...",
-      "important": true,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPaWdfbXM0UEFxOGc5OGN3WnNsUVhwR2JVVDJTTnNoMGlrenZfOVF5QlRKQ3lJeFlMMHhmZDBLYXJvQ3Vaa2VYU21HWjIyOHBvLXBKNGpfcmdjY1Mxa3lQWHBVeFEtZGY4T3NxQVVhRXBreE5GSXMyMTN3eVpCZ1ZHTUUxWEE2cXozWm8zUk1DYkx6MVlGbXI1cDFWUFJwQkhuUGsyRmpST09FLUhZX1pFUEw1bTFkWU1DWENORlo5WnBteEtiR1d1VmtrdTJVSzJ6bG52QU530gHbAUFVX3lxTE44QTEtcXNmZWJST2Z0OFBzOFlpWHVqZ0hGam10cUkzOEVWY3RkdkxRTHFKeWtmdTZhaGI5MDFCcFM2dkw1V29pYWZ5b3F2WGM3RlhUQ2pYR3AwLWVPNlFJQ2pPT1RaT1lYOGVZaFdaRDQ1VXQwT3hVMDNpdHRiSVludnNqN0hBaGJBYkhZLW5IdGlhSEpUNzVPTFFPbUVBOEdDN0MxNnJfeExQWFBsSUt4Zy1xcHgwa0RrYkp6ZXF0Y3FtMm0zNG1tSUtFUFdWV0htY3REcm83cXlQVQ?oc=5",
-      "title": "Sudan civil war: Drone strikes damage homes, UN premises in capital Khartoum, casualties unclear",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -383,6 +367,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE45bWd1RldYMk5hQ3podzVwMmJDb1VOdjBwRTUtbmpXMURvZWtSQTZKZnF6T1J5U2FnekZXdDV5NFlyMG5vQlpZV2NjV1JROUZ0ZWhaWHF3SU40RlU2WUNOeUkzRTlHOWlyMm1scTBjRQ?oc=5",
+      "title": "Lao Deputy Prime Minister Leads Business Leaders to Malaysia to...",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5pRUdOMFRxajBpaFJrSzhZMkdYZHAyWWhHR1VYMnM0Qk90em9oRmxkWk41Sl9HVjJ1Y3RVWldjTWF1TXo0dWJZRTVhYXpGZ2d2UlRma1Jjd2xSSnhUb0o0amtkR2tKVy00Tjl2YndR?oc=5",
       "title": "Ronald Reagan - Cold War, Tax Cuts, Diplomacy",
       "important": false,
@@ -391,35 +383,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9kOWxobXF6YTB5MHdaZFVJcW1mQTNiVWpMTjhjQWNmZ19LYXB1MENodU9YZVJzMHlGUW1PQ2dzS20xR3Axcy1TLWhlU1Jkd3JQSFQtd3BreUVXaWlMbmFoYVFROGllWG5FbkxyV1dRZHZOU3Z5WHpSTg?oc=5",
-      "title": "Early Bird: Rate caps driving inflation up",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUm1qOUd2TkNtdS00VlBKMFdsenVTN1Nzdmk3WEJpZnZ4ZnhGQmJyeWo3c295UmZ1RnhMQTVhLUFiY0x1VWFkeDVBRFYxSE1iZWdXZ2RLakZkOG1QOFdHMnlTbGhnR29lZE1zR0pEdVBvUDVYajgwQ1drYmRNTlRVSg?oc=5",
-      "title": "\"AI로 신약 개발 효율 높인다\"…이노보테라퓨틱스, 기술 이전 성과 [상장人터뷰]",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeGVzSjhrbUhOTTctX0ViTkJTRnFEZnkwNTJQR3gySTJRQlk3aXNwenJ2Qk1DejVYcF84dmF4WDFPd2xKRzEwazEtOEdOb05OOFhJaXZQVTd3R2lDRHdGbTgtM1JSSEMxeFN5OTlLc0tLNE55MHlHRDZNU3lOVFBDaTJwQQ?oc=5",
       "title": "Iran war live: Bahrain reports damage to civilian industrial facility following attack",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbU9WMDczZHJocTZXNWxNYkxfb3hxOFN0ZUxCVl9PT2xxa281cXhCdGJ6Ty1UdVp1c3YtSWVHcW90Mm11ckFwVk90XzhPRWhOa1JxUnpjNUF4V1A0OUlYdHBwR1k4M1VYMDNvdnlkT2czZmh4cE56RDRqYWd1NlA5Rm9nN21LN0YzNDV4OHFheHlFY0RvcGc?oc=5",
-      "title": "‘Wildly naive’: Is New Zealand sleepwalking into a world of war?",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -439,14 +407,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQa0RCaVNESHIyME5LaU1tX3F0NjNKdDhKX2xmNVhXRWxWOF80U3J0Wm1YNmNSdmFlNEh4YlJ2NFVfaEJVVHEwWnBveFdyekJHVDI5N0VHWGZTaGtxdFA5OUJ0WFFmMVV3ajltU01OamstbFNhMHNFSm5jWGQ2MTlQa3FsM0pFdGZLaEJ5NnJRNXZXU0FkS251WnF2NkRwb2s?oc=5",
-      "title": "What We Don’t Know About the Iran War",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNT0JEYTlwbVd6TXVhU3lMMnpSN251QUZhenhmbEk5enlPX0lUYjhMa29xOXZOamc4VnNiWGx1QVlfcTFIaW9PcVpYSFdXQ0o1dzZFNlRpamZFVWx1MF9ReGdfeHF1ZlFkdkhaaEM5eVQ3eEV6SE5jeVFUaEl5LVJhUmtiMktvRkxjM1lWV2FJV3JhaHJxUFM2cjlsRTg3QV9Sd0licGhvME9lYVU?oc=5",
       "title": "EU Considers Stronger Measures Against Russia as War Diplomacy Stalls",
       "important": false,
@@ -457,6 +417,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbFBwX2c4aU9rVTBJS1NxcVROQUlTYmlGSGM3YXpwNEFCbFJzUWdzYlA5T09jZlJ2NGFmbk82Sk1FbHRNWXEwTlBuWnkwcG5OYUowSFNIZkhuaFdwVHc5M3lCS3Y3aDBkT21KR1VINzBkRmx6VDdtdFZ6QjRNczJySzJkREVPVmI2MEdwaTQ2cGVEbFdWSklNNkVzUWJGOTlYOUxOQVl3N0hYcTRJT1HSAa4BQVVfeXFMTWxQcF9nOGlPa1UwSUtTcXFUTkFJU2JpRkhjN2F6cDRBQmxSc1Fnc2JQOU9PY2ZSdjRhZm5PNkpNRWx0TVlxME5Qblp5MHBuTmFKMEhTSGZIbmhXcFR3OTN5Qkt2N2gwZE9tSkdVSDcwZEZselQ3bXRWekI0TXMycksyZERFT1ZiNjBHcGk0NnBlRGxXVkpJTTZFc1FiRjk5WDlMTkFZdzdIWHE0SU9R?oc=5",
       "title": "Trump Says Putin Wants Diplomatic End To Ukraine War",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWm9JUTF6SkM5cW1FT1BkWXBRZVVsbWVyb01xSFZLRWVKUFZpbmptLU1GSUlBVzFwUDd1VWVGM1ltU0d0dVpTMURPdjNPMHlEdHYyRHhtTGlyQ1BfMW1KdVJKYkpKTldBbFUzNUVyN0M5NWR5bElMcDZCZWpQWmxUSjVOTzlJUDBOQXI5MThLZ3FpUkd5OEN6T2ZkMTlFc2RPdzB6M3o2d044UVpEYUV0U9IBtgFBVV95cUxPODVDM2RTZktJbmNoeWhWalE0R01TNlJDcDFLT3VKVkloZ19GMzRwZXYyVm5CQ2h4S0ZON09vRjdTU193M1Z0Q2xJVFpVdndKbUJRT3lHeC04TEE5RWRsMy1FVVNuWDIyLWJzVEJNN3A3N2d2M0Z2TVVLUlRYM3A0NTAyRE5Zck9PYVpDVlZiNGpaTE8zSjlmOElTQTdDdEg4VVhfR2dEdXo2NXJqUEtRRTRjeHlxdw?oc=5",
+      "title": "IDF said to warn Netanyahu an Israeli attack on Iran could spark multifront war",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -497,6 +465,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5rLU5ycDlBUlVPdXVWVF9vT2pQWXlSUWR5MFNVSGRWQnFJN1BqUm8xNDF1T2IxT2JoOTcyV2tDTlZqQTZxMXkyMnNoMFZtZkp0ZlpZYU9CZ28yQkNfVmtkOGNxeGRjazFGRnNOWUZHMNIBb0FVX3lxTE5rLU5ycDlBUlVPdXVWVF9vT2pQWXlSUWR5MFNVSGRWQnFJN1BqUm8xNDF1T2IxT2JoOTcyV2tDTlZqQTZxMXkyMnNoMFZtZkp0ZlpZYU9CZ28yQkNfVmtkOGNxeGRjazFGRnNOWUZHMA?oc=5",
       "title": "인제니아, MSD에 기술이전한 'IGT-427' 임상3상 적응증 5개로 확대 - 머니투데이",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY2dLdFlkUTVsNHl2MThieS1BcFJEcGRQVFhEVnVJdWhNVDdaMVVUb2ZHLWdURFgwb2RqNkxHMFZRRmJrdFAxZ3NnbWtIWDQtMGQwVXo3aU9McUlleFpOTFR1VGJSRGZNZldHSUpxZ3pKMmhsNHc1RVJIbUpIVmYyNHBxT3J1MDNaVzU1VWRraUp0Nl9PZlE?oc=5",
+      "title": "Ackman Urges Fed to Raise Inflation Target to 3%",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
