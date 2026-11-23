@@ -21,12 +21,12 @@ try:
  request=urllib.request.Request(URL,headers=HEADERS)
  with urllib.request.urlopen(request,timeout=25) as response:
   raw=response.read(2000000).decode('utf-8','replace')
- clean=html.unescape(re.sub(r'<[^>]*>',' ',re.sub(r'<(script|style)\\b[^>]*>.*?</\\1>',' ',raw,flags=re.I|re.S)))
- clean=re.sub(r'\\s+',' ',clean)
- date_match=re.search(r'(20\\d{2})[.\\-/]\\s*(\\d{1,2})[.\\-/]\\s*(\\d{1,2})\\s*기준',clean)
+ clean=html.unescape(re.sub(r'<[^>]*>',' ',re.sub(r'<(script|style)\b[^>]*>.*?</\1>',' ',raw,flags=re.I|re.S)))
+ clean=re.sub(r'\s+',' ',clean)
+ date_match=re.search(r'(20\d{2})[.\-/]\s*(\d{1,2})[.\-/]\s*(\d{1,2})\s*기준',clean)
  # The Red Cross page lists red-cell inventory as a 5-column table:
  # 보유상태 | 합계 | A형 | B형 | O형 | AB형
- match=re.search(r'보유상태\\s*(\\d+(?:\\.\\d+)?)\\s*일?\\s*(\\d+(?:\\.\\d+)?)\\s*일?\\s*(\\d+(?:\\.\\d+)?)\\s*일?\\s*(\\d+(?:\\.\\d+)?)\\s*일?\\s*(\\d+(?:\\.\\d+)?)\\s*일?',clean)
+ match=re.search(r'보유상태\s*(\d+(?:\.\d+)?)\s*일?\s*(\d+(?:\.\d+)?)\s*일?\s*(\d+(?:\.\d+)?)\s*일?\s*(\d+(?:\.\d+)?)\s*일?\s*(\d+(?:\.\d+)?)\s*일?',clean)
  if not date_match or not match:raise ValueError('Red-cell holdings fields not found; site markup may have changed')
  day=dt.date(*map(int,date_match.groups())).isoformat()
  vals=list(map(float,match.groups()))
@@ -39,5 +39,5 @@ except Exception as exc:
  result['error']=str(exc)[:150]
  print('Unable to refresh Red Cross inventory:',exc)
 OUT.parent.mkdir(parents=True,exist_ok=True)
-OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
+OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print('status:',result['status'],'observation:',result['observation_date'])
