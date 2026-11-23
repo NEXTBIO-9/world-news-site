@@ -29,7 +29,26 @@ const style=document.createElement('style');style.textContent=`
 #nb-intelligence .nbm-official-tabs button{position:relative}
 #nb-intelligence .nbm-official-tabs button[aria-selected=true]::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:#48cbbb;border-radius:0 0 9px 9px;pointer-events:none}
 #nb-intelligence .nbm-border-panel{flex:1;min-height:0;overflow-y:auto;color:#d9e9fa;font-size:12px;line-height:1.65}
-#nb-intelligence #nbm-navy-panel[hidden],#nb-intelligence .nbm-border-panel[hidden],#nb-intelligence .nbm-official .nbm-list[hidden],#nb-intelligence .nbm-official .nbm-meta[hidden]{display:none!important}
+#nb-intelligence #nbm-navy-panel[hidden],
+#nb-intelligence #nbm-blood-panel .nbm-blood-hero{display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(120deg,#243b57,#1b2d43);border:1px solid #46617e;border-radius:10px;padding:11px 13px;margin:7px 0 10px}
+#nb-intelligence #nbm-blood-panel .nbm-blood-hero small{display:block;color:#a9bfd6;font-size:10px;letter-spacing:.3px}
+#nb-intelligence #nbm-blood-panel .nbm-blood-value{font-size:27px;font-weight:800;letter-spacing:-.7px;line-height:1.2;color:#f5f9ff}
+#nb-intelligence #nbm-blood-panel .nbm-blood-value span{font-size:12px;color:#b3c7dd;font-weight:500;margin-left:3px}
+#nb-intelligence #nbm-blood-panel .nbm-blood-badge{display:inline-flex;border-radius:99px;padding:5px 11px;background:#514027;color:#ffd48d;border:1px solid #967142;font-size:11px;font-weight:750;white-space:nowrap}
+#nb-intelligence #nbm-blood-panel .nbm-blood-badge[data-stage="적정"]{background:#173f39;color:#9ae8cb;border-color:#397e6a}
+#nb-intelligence #nbm-blood-panel .nbm-blood-badge[data-stage="주의"],#nb-intelligence #nbm-blood-panel .nbm-blood-badge[data-stage="경계"],#nb-intelligence #nbm-blood-panel .nbm-blood-badge[data-stage="심각"]{background:#572e37;color:#ffb4c2;border-color:#9a4e60}
+#nb-intelligence #nbm-blood-panel .nbm-blood-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-bottom:9px}
+#nb-intelligence #nbm-blood-panel .nbm-blood-type{background:#22354c;border:1px solid #3c536d;border-radius:8px;padding:8px 7px;min-width:0}
+#nb-intelligence #nbm-blood-panel .nbm-blood-type-label{color:#b8cbe0;font-size:11px;font-weight:700}
+#nb-intelligence #nbm-blood-panel .nbm-blood-type-number{color:#f4f9ff;font-size:17px;font-weight:800;line-height:1.3;margin:2px 0}
+#nb-intelligence #nbm-blood-panel .nbm-blood-type-number span{font-size:10px;font-weight:400;color:#9bb3ce}
+#nb-intelligence #nbm-blood-panel .nbm-blood-type-stage{font-size:10px;color:#e7bc79}
+#nb-intelligence #nbm-blood-panel .nbm-blood-type-stage[data-stage="적정"]{color:#88d6b8}
+#nb-intelligence #nbm-blood-panel .nbm-blood-type-stage[data-stage="주의"],#nb-intelligence #nbm-blood-panel .nbm-blood-type-stage[data-stage="경계"],#nb-intelligence #nbm-blood-panel .nbm-blood-type-stage[data-stage="심각"]{color:#ff9cae}
+#nb-intelligence #nbm-blood-panel .nbm-blood-foot{font-size:10px;color:#91a9c4;line-height:1.6;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+#nb-intelligence #nbm-blood-panel .nbm-blood-foot a{font-size:10px;text-decoration:none}
+@media(max-width:460px){#nb-intelligence #nbm-blood-panel .nbm-blood-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#nb-intelligence .nbm-border-panel[hidden],#nb-intelligence .nbm-official .nbm-list[hidden],#nb-intelligence .nbm-official .nbm-meta[hidden]{display:none!important}
 #nb-intelligence .nbm-forecast-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
 #nb-intelligence .nbm-forecast-summary .nbm-border-status{margin:0;min-width:0}
 #nb-intelligence .nbm-forecast-details{border-top:1px solid #3a536e;padding:8px 0}
@@ -198,12 +217,22 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
   const response=await fetch('./data/blood-supply.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
   const data=await response.json();bloodList.replaceChildren();
   if(typeof data.total_days!=='number'||!data.observation_date){bloodList.append(node('p','nbm-empty','공식 보유량 확인 대기 중입니다.'));return}
-  bloodList.append(node('p','nbm-meta','자료 기준일 '+data.observation_date+' · '+(data.status==='ok'?'공식 자료 확인':data.status==='seed'?'초기 공개 자료':'최근 확인 실패 · 이전 수치')));
-  bloodList.append(node('p','', '전국 적혈구 보유량 '+data.total_days.toFixed(1)+'일분 · '+bloodStage(data.total_days)+' 단계'));
-  const types=data.blood_types||{};for(const t of ['A','B','O','AB'])if(typeof types[t]==='number')bloodList.append(node('p','nbm-meta',t+'형 '+types[t].toFixed(1)+'일분 · '+bloodStage(types[t])));
-  bloodList.append(node('p','nbm-meta','공식 단계 기준: 적정 ≥5일 · 관심 <5일 · 주의 <3일 · 경계 <2일 · 심각 <1일'));
-  const a=node('a','','대한적십자사 혈액보유현황 원문 보기');a.href='https://www.bloodinfo.net/knrcbs/bi/info/bldHoldSttus.do?mi=1046';a.target='_blank';a.rel='noopener noreferrer';bloodList.append(a);
-  if(data.last_checked){const d=new Date(data.last_checked);if(!Number.isNaN(d.getTime()))bloodList.append(node('p','nbm-meta','자동 확인 시각 '+d.toLocaleString('ko-KR')))}
+  const stage=bloodStage(data.total_days);
+  const hero=node('div','nbm-blood-hero');const valueWrap=node('div','');
+  valueWrap.append(node('small','','전국 적혈구 보유량'));
+  const value=node('div','nbm-blood-value',data.total_days.toFixed(1));value.append(node('span','','일분'));valueWrap.append(value);
+  const badge=node('span','nbm-blood-badge',stage+' 단계');badge.dataset.stage=stage;hero.append(valueWrap,badge);bloodList.append(hero);
+  const grid=node('div','nbm-blood-grid');const types=data.blood_types||{};
+  for(const t of ['A','B','O','AB']){
+   const tile=node('div','nbm-blood-type');tile.append(node('div','nbm-blood-type-label',t+'형'));
+   if(typeof types[t]==='number'){const n=node('div','nbm-blood-type-number',types[t].toFixed(1));n.append(node('span','','일'));tile.append(n);const st=bloodStage(types[t]);const label=node('div','nbm-blood-type-stage',st);label.dataset.stage=st;tile.append(label)}
+   else tile.append(node('div','nbm-blood-type-number','—'));
+   grid.append(tile);
+  }
+  bloodList.append(grid);
+  const foot=node('div','nbm-blood-foot');
+  foot.append(node('span','','기준 '+data.observation_date+' · '+(data.status==='ok'?'공식 확인':data.status==='seed'?'초기 자료':'이전 자료 · 갱신 확인 필요')));
+  const a=node('a','','대한적십자사 원문 ↗');a.href='https://www.bloodinfo.net/knrcbs/bi/info/bldHoldSttus.do?mi=1046';a.target='_blank';a.rel='noopener noreferrer';foot.append(a);bloodList.append(foot);
  }catch{bloodList.replaceChildren(node('p','nbm-empty','자료를 불러오지 못했습니다.'))}}
  loadBlood();setInterval(loadBlood,3600000);
  const navyPanel=node('div','nbm-border-panel');navyPanel.id='nbm-navy-panel';navyPanel.setAttribute('role','group');navyPanel.setAttribute('aria-label','중국 해군 최신 동향');navyPanel.append(node('h3','nbm-section-heading','⚓ 중국 해군 최신 동향'));navyPanel.append(node('div','nbm-meta','중국 해군·해경 훈련, 항모 활동, 해상 기동, 합동훈련 · 매일 1회 공개 보도 확인'));
