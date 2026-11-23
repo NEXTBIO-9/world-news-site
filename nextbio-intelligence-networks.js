@@ -93,9 +93,9 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
  tabs.append(alertBtn,marketBtn,riskBtn,calendarBtn);left.insertBefore(tabs,alerts);const marketList=node('div','nb2-list');marketList.id='nb-market-issues';marketList.hidden=true;left.append(marketList);const riskList=node('div','nb2-list');riskList.id='nb-risk-signals';riskList.hidden=true;left.append(riskList);const calendarList=node('div','nb2-list');calendarList.id='nb-global-calendar';calendarList.hidden=true;left.append(calendarList);bookmarks.hidden=true;bookmarks.style.display='none';
  for(const s of [...columns.children])if(s!==left)s.remove();
  const right=node('section','nbm-official');right.id='nbm-official';
- const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 감염병 발표, 동아시아 안보 동향 및 해상사전배치전단 및 GNSS 교란 공개 기록');
- const whoBtn=node('button','','🏥 공식 감염병 발표'),forecastBtn=node('button','','🌏 동아시아 안보 동향'),mpsBtn=node('button','','🚢 미군 사전배치전단'),gnssBtn=node('button','','📡 동북아 GPS 교란 경보'),manualBtn=node('button','','NEXT 썰');
- for(const b of [whoBtn,forecastBtn,mpsBtn,gnssBtn,manualBtn]){b.type='button';b.setAttribute('role','tab');rightTabs.append(b)}right.append(rightTabs);
+ const rightTabs=node('div','nbm-official-tabs');rightTabs.setAttribute('role','tablist');rightTabs.setAttribute('aria-label','공식 감염병 발표, 동아시아 안보 동향 및 해상사전배치전단 및 GNSS 교란 및 혈액 수급 공개 기록');
+ const whoBtn=node('button','','🏥 공식 감염병 발표'),forecastBtn=node('button','','🌏 동아시아 안보 동향'),mpsBtn=node('button','','🚢 미군 사전배치전단'),gnssBtn=node('button','','📡 동북아 GPS 교란 경보'),bloodBtn=node('button','','🩸 국내 혈액 수급 경보'),manualBtn=node('button','','NEXT 썰');
+ for(const b of [whoBtn,forecastBtn,mpsBtn,gnssBtn,bloodBtn,manualBtn]){b.type='button';b.setAttribute('role','tab');rightTabs.append(b)}right.append(rightTabs);
  officialMeta=node('div','nbm-meta','WHO 공식 발표 · 제목 번역 ON/OFF 연동');right.append(officialMeta);
  officialList=node('div','nbm-list');right.append(officialList);
  const manualPanel=node('div','nbm-list');manualPanel.id='nbm-manual-panel';manualPanel.setAttribute('role','tabpanel');manualPanel.hidden=true;manualPanel.append(node('p','nbm-empty','자체 발행 기사를 불러오는 중입니다.'));right.append(manualPanel);
@@ -189,12 +189,31 @@ function init(){const columns=document.querySelector('#nb-intelligence .nb2-colu
   }
  }catch{gnssList.replaceChildren(node('p','nbm-empty','공고 데이터를 불러오지 못했습니다.'))}}
  loadGnss();setInterval(loadGnss,3600000);
+ const bloodPanel=node('div','nbm-border-panel');bloodPanel.id='nbm-blood-panel';bloodPanel.setAttribute('role','tabpanel');bloodPanel.hidden=true;
+ bloodPanel.append(node('h3','nbm-section-heading','🩸 국내 혈액 수급 경보'));
+ bloodPanel.append(node('p','nbm-meta','대한적십자사 적혈구제제 보유일수 · 매일 공개 자료 확인 · 실시간 수치 아님'));
+ const bloodList=node('div','nbm-list');bloodList.style.cssText='max-height:210px;overflow-y:auto;scrollbar-width:thin';bloodList.append(node('p','nbm-empty','혈액 수급 자료를 불러오는 중입니다.'));bloodPanel.append(bloodList);
+ bloodPanel.append(node('p','nbm-meta','※ 혈액 부족은 계절·헌혈 참여·의료 수요 등의 영향을 받으며 전쟁 임박을 의미하지 않습니다.'));
+ right.append(bloodPanel);
+ function bloodStage(days){return days>=5?'적정':days>=3?'관심':days>=2?'주의':days>=1?'경계':'심각'}
+ async function loadBlood(){try{
+  const response=await fetch('./data/blood-supply.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
+  const data=await response.json();bloodList.replaceChildren();
+  if(typeof data.total_days!=='number'||!data.observation_date){bloodList.append(node('p','nbm-empty','공식 보유량 확인 대기 중입니다.'));return}
+  bloodList.append(node('p','nbm-meta','자료 기준일 '+data.observation_date+' · '+(data.status==='ok'?'공식 자료 확인':data.status==='seed'?'초기 공개 자료':'최근 확인 실패 · 이전 수치')));
+  bloodList.append(node('p','', '전국 적혈구 보유량 '+data.total_days.toFixed(1)+'일분 · '+bloodStage(data.total_days)+' 단계'));
+  const types=data.blood_types||{};for(const t of ['A','B','O','AB'])if(typeof types[t]==='number')bloodList.append(node('p','nbm-meta',t+'형 '+types[t].toFixed(1)+'일분 · '+bloodStage(types[t])));
+  bloodList.append(node('p','nbm-meta','공식 단계 기준: 적정 ≥5일 · 관심 <5일 · 주의 <3일 · 경계 <2일 · 심각 <1일'));
+  const a=node('a','','대한적십자사 혈액보유현황 원문 보기');a.href='https://www.bloodinfo.net/knrcbs/bi/info/bldHoldSttus.do?mi=1046';a.target='_blank';a.rel='noopener noreferrer';bloodList.append(a);
+  if(data.last_checked){const d=new Date(data.last_checked);if(!Number.isNaN(d.getTime()))bloodList.append(node('p','nbm-meta','자동 확인 시각 '+d.toLocaleString('ko-KR')))}
+ }catch{bloodList.replaceChildren(node('p','nbm-empty','자료를 불러오지 못했습니다.'))}}
+ loadBlood();setInterval(loadBlood,3600000);
  const navyPanel=node('div','nbm-border-panel');navyPanel.id='nbm-navy-panel';navyPanel.setAttribute('role','group');navyPanel.setAttribute('aria-label','중국 해군 최신 동향');navyPanel.append(node('h3','nbm-section-heading','⚓ 중국 해군 최신 동향'));navyPanel.append(node('div','nbm-meta','중국 해군·해경 훈련, 항모 활동, 해상 기동, 합동훈련 · 매일 1회 공개 보도 확인'));
  const navyList=node('div','nbm-list');navyList.append(node('p','nbm-empty','중국 해군 동향 데이터를 불러오는 중입니다.'));navyPanel.append(navyList);navyPanel.style.cssText='padding:10px 0 4px;border-top:1px solid #3a536e;margin-top:8px';const navyDetails=node('details','nbm-forecast-details');navyDetails.append(node('summary','','⚓ 중국 해군 최신 동향 · 최대 10건'),navyPanel);forecastPanel.append(navyDetails);columns.append(right);
  async function loadNavy(){try{const r=await fetch('./data/china-navy-news.json?ts='+Math.floor(Date.now()/3600000),{cache:'no-store'});if(!r.ok)throw Error('아직 수집되지 않음');const d=await r.json();navyList.replaceChildren();const checked=d.last_checked?new Date(d.last_checked).toLocaleString('ko-KR'):'확인 전';navyList.append(node('p','nbm-meta','최근 확인 '+checked+' · 최신 최대 10건 표시 (수집 '+(d.items||[]).length+'건)'));for(const a of (d.items||[]).slice(0,10)){const item=node('div','nbm-item');const title=node('span','',a.title_ko||a.title||'제목 없음');if(a.url&&/^https:\/\//.test(a.url)){const link=node('a','',title.textContent);link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';item.append(link)}else item.append(title);if(a.category)item.append(node('span','nbm-source',a.category));navyList.append(item)}if(!(d.items||[]).length)navyList.append(node('p','nbm-empty','현재 수집된 관련 보도가 없습니다.'))}catch(e){navyList.replaceChildren(node('p','nbm-empty','첫 수집 대기 중입니다. GitHub Actions 실행 후 표시됩니다.'))}}
  loadNavy();
- function showRight(tab){officialMeta.hidden=tab!=='who';officialList.hidden=tab!=='who';forecastPanel.hidden=tab!=='forecast';manualPanel.hidden=tab!=='manual';mpsPanel.hidden=tab!=='mps';gnssPanel.hidden=tab!=='gnss';whoBtn.setAttribute('aria-selected',String(tab==='who'));forecastBtn.setAttribute('aria-selected',String(tab==='forecast'));manualBtn.setAttribute('aria-selected',String(tab==='manual'));mpsBtn.setAttribute('aria-selected',String(tab==='mps'));gnssBtn.setAttribute('aria-selected',String(tab==='gnss'));}
- whoBtn.addEventListener('click',()=>showRight('who'));forecastBtn.addEventListener('click',()=>showRight('forecast'));manualBtn.addEventListener('click',()=>showRight('manual'));mpsBtn.addEventListener('click',()=>showRight('mps'));gnssBtn.addEventListener('click',()=>showRight('gnss'));showRight('who');
+ function showRight(tab){officialMeta.hidden=tab!=='who';officialList.hidden=tab!=='who';forecastPanel.hidden=tab!=='forecast';manualPanel.hidden=tab!=='manual';mpsPanel.hidden=tab!=='mps';gnssPanel.hidden=tab!=='gnss';bloodPanel.hidden=tab!=='blood';whoBtn.setAttribute('aria-selected',String(tab==='who'));forecastBtn.setAttribute('aria-selected',String(tab==='forecast'));manualBtn.setAttribute('aria-selected',String(tab==='manual'));mpsBtn.setAttribute('aria-selected',String(tab==='mps'));gnssBtn.setAttribute('aria-selected',String(tab==='gnss'));bloodBtn.setAttribute('aria-selected',String(tab==='blood'));}
+ whoBtn.addEventListener('click',()=>showRight('who'));forecastBtn.addEventListener('click',()=>showRight('forecast'));manualBtn.addEventListener('click',()=>showRight('manual'));mpsBtn.addEventListener('click',()=>showRight('mps'));gnssBtn.addEventListener('click',()=>showRight('gnss'));bloodBtn.addEventListener('click',()=>showRight('blood'));showRight('who');
  function show(tab){alerts.hidden=tab!=='alerts';marketList.hidden=tab!=='market';riskList.hidden=tab!=='risk';calendarList.hidden=tab!=='calendar';alertBtn.setAttribute('aria-selected',String(tab==='alerts'));marketBtn.setAttribute('aria-selected',String(tab==='market'));riskBtn.setAttribute('aria-selected',String(tab==='risk'));calendarBtn.setAttribute('aria-selected',String(tab==='calendar'))}
  alertBtn.addEventListener('click',()=>show('alerts'));marketBtn.addEventListener('click',()=>show('market'));riskBtn.addEventListener('click',()=>show('risk'));calendarBtn.addEventListener('click',()=>show('calendar'));show('alerts');
  // Repaint after creating the tab containers; the news feed may have rendered earlier.
