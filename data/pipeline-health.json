@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T23:12:10.064394+00:00",
+  "updated": "2026-11-24T00:03:44.016026+00:00",
   "scope": "data_file_presence_json_syntax_and_nonblocking_warnings",
   "dataset_count": 17,
   "warning_count": 1,
@@ -7,15 +7,15 @@
     {
       "dataset": "collection-publication-audit.json",
       "reason": "important_collected_articles_unpublished",
-      "count": 26
+      "count": 23
     }
   ],
   "datasets": {
     "articles.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 894155,
-      "updated": "2026-11-23T22:49:30.761105+00:00"
+      "bytes": 893507,
+      "updated": "2026-11-23T23:46:52.763511+00:00"
     },
     "event-timelines.json": {
       "present": true,
@@ -32,26 +32,26 @@
     "weekly-report.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 50402,
-      "updated": "2026-11-23T23:12:09.770281+00:00"
+      "bytes": 49393,
+      "updated": "2026-11-24T00:03:43.575073+00:00"
     },
     "evidence-index.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 1018810,
-      "updated": "2026-11-23T23:12:09.589853+00:00"
+      "bytes": 1018210,
+      "updated": "2026-11-24T00:03:43.319512+00:00"
     },
     "geo-coverage.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 137132,
-      "updated": "2026-11-23T23:12:09.627849+00:00"
+      "bytes": 137461,
+      "updated": "2026-11-24T00:03:43.378198+00:00"
     },
     "coverage-profiles.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 363383,
-      "updated": "2026-11-23T23:12:09.666052+00:00"
+      "bytes": 360771,
+      "updated": "2026-11-24T00:03:43.418065+00:00"
     },
     "breaking-candidates.json": {
       "present": true,
@@ -62,32 +62,32 @@
     "historical-index.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 1324403,
-      "updated": "2026-11-23T23:12:09.731433+00:00"
+      "bytes": 1327136,
+      "updated": "2026-11-24T00:03:43.517222+00:00"
     },
     "country-coverage-trends.json": {
       "present": true,
       "valid_json": true,
       "bytes": 9943,
-      "updated": "2026-11-23T23:12:09.804953+00:00"
+      "updated": "2026-11-24T00:03:43.627493+00:00"
     },
     "specialized-indexes.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 167397,
-      "updated": "2026-11-23T23:12:09.838234+00:00"
+      "bytes": 165912,
+      "updated": "2026-11-24T00:03:43.681658+00:00"
     },
     "translation-quality.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 676184,
-      "updated": "2026-11-23T23:12:09.865225+00:00"
+      "bytes": 675709,
+      "updated": "2026-11-24T00:03:43.723938+00:00"
     },
     "source-provenance.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 557546,
-      "updated": "2026-11-23T23:12:09.904897+00:00"
+      "bytes": 557222,
+      "updated": "2026-11-24T00:03:43.783479+00:00"
     },
     "personalization-options.json": {
       "present": true,
@@ -98,14 +98,14 @@
     "publication-gaps.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 94420,
-      "updated": "2026-11-23T23:12:09.951674+00:00"
+      "bytes": 95805,
+      "updated": "2026-11-24T00:03:43.855098+00:00"
     },
     "collection-publication-audit.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 42772,
-      "updated": "2026-11-23T23:12:10.017825+00:00"
+      "bytes": 41473,
+      "updated": "2026-11-24T00:03:43.947229+00:00"
     },
     "cross-source-coverage.json": {
       "present": true,
@@ -116,14 +116,14 @@
   },
   "publication_metrics": {
     "published_total": 1000,
-    "pending_total": 170,
+    "pending_total": 173,
     "pending_important": 67,
     "latest_collection": {
       "collected": 180,
       "published": 123,
-      "pending": 15,
-      "not_in_current_queue": 42,
-      "important_unpublished": 26
+      "pending": 17,
+      "not_in_current_queue": 40,
+      "important_unpublished": 23
     }
   }
 }
