@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-24T01:23:45.706925+00:00",
+  "updated": "2026-11-24T02:42:19.588661+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 25,
-    "not_in_current_queue": 41,
-    "pending": 14,
-    "published": 125
+    "important_unpublished": 24,
+    "not_in_current_queue": 39,
+    "pending": 15,
+    "published": 126
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 19,
-    "pending": 6
+    "not_in_current_queue": 16,
+    "pending": 8
   },
   "important_unpublished_by_reason": {
     "repeated_extraction_failure": 3,
-    "source_blocked": 16,
-    "in_retry_queue": 6
+    "source_blocked": 13,
+    "in_retry_queue": 8
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
@@ -26,14 +26,6 @@
       "important": true,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxObHRpYkFSUkllUXpGY3Znek9aZjVXUVBnS09WUVdjblRkR0tiUmxycWpvaGVGOEQ4Sm1wbkV3R1FTY255bmxlR2RUZHB3TU1oUmhsakZrSkN4SlcyY3VWMkRzUmtyYW9uN1doZzE5YnoxUWRfZUhJczZUcjF3R3NjUWVrLVdfSHdILS1rQUlJUE1pZ0ZjSHd6bHFjZVhKdnNNVDRpVWlwNXNXS21DbGhMQkdJcFRXZF9wZlAzYmptSmtSajV3NFRfY29oVnUybGxLd0dpTWJFbzk?oc=5",
-      "title": "Massive Peru Earthquake Caught On Live TV: News Anchor Steadily Reports As Studio Shakes | Video | World News",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -69,14 +61,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
-      "title": "6.7 magnitude earthquake jolts central Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBFTjVGRlNCYmJkYm5iVW1PdjZYaVFsVlZhX3poZUh5Y1c2ZE5KMlVVaGUyRTJVS1JfaW9sSVBIWEVDbVQzcUdZUjZ5VWpLSldvSzRDSkprWXBUak9LU0NFdGY3bXNPWjBWUTJMcm5UTQ?oc=5",
       "title": "G20 factory investment plans fall to pandemic-era levels, OECD and UNCTAD find",
       "important": true,
@@ -95,22 +79,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQzlVOGh5bjJSSVh4bzVTZm5ubDZ2TkYtQnNoUXhFTWxud2lFcy1sM1BYcjQ5NDlQQXJ1LTRQSW5VWTJzZnJNV3lhcTNuRkRVTDNKSjJGaVBhcF9hU0tMQzhrcFdZR0Rkdm5Jem11cVpYaFdCVkNBSUt0cUthSXlYNENSRHA0OHQ2ZEFudE9KQzRoQQ?oc=5",
       "title": "6.7-magnitude earthquake hits Peru, tremors felt in Lima",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdUJETHJTZFVQYXhvOVdGNG9GTGlMN1NpZzQwcC05RG5hYzZUTDFvUmJEblp2MDN5anltNnRucXZYWHdPMm1qWXoyWUowaVR5SFd0UjBDRk44cHoyOGFlUjNPZkF6TU9FdEZycTVoMUtfbTFFcFR0WThzaVBEREZhWVVLZkYzU3JvQ1BuRERobjhKMzlIbWc?oc=5",
-      "title": "Bulgaria welcomes India’s Ukraine ceasefire proposal",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRW9STTNuU3hmcFRRN1h2T2J2WUUzWXdiSGxiVnpaWnJRV25RZ2Y3YmF4TW1HY25aeC03NnhUSkhGQUpfamt2dDFjR2Y5R3oxNUxGUEtjelBSaXNXLXdBemlHbGJaVXVIWU9ialBGYkw1cklQWUZIbkh1VEE0SDNmRnAxWkVCZEJFcGd5TmJmOTEzUktwODZldHhn?oc=5",
-      "title": "Magnitude 6.7 earthquake shakes Peru’s Andes, with no damage or casualties immediately reported",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -151,6 +119,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONEl1RDMta3FDb3VIeWczMlZkWG9ucE9zbEU1enpwWXplTzNNb0RBM1hTN1EzX0VnYXV4MzdvZkhiWmJGR09CTy11Yi1tOVpodTlGVXVUZTVuSUJ5Uld3RlVSX3VhelV1N0RTNzByQU1tcDBmRDFab0VHcDRaTDMxNEpCU3ZjOEF5NExBcmRjZHRqODhwV2paZUZkR0tuRUdnN1Q3UndEbDQzYUI4TE96UG4yLVZ6QQ?oc=5",
       "title": "Chile’s Economic Recovery May Take Longer, Central Bank Chief Tells Newspaper",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNV3lpb3JlTXdnLVVOVk02NURXbm9XcjFqWmpqcTdGMXBnTXE1YjVqQkFyU0gtR2dHU0lyYS1paVpvd0hYdF9qSldTQ082SW5zdGE1THp0ZGZfbVp2WWYyZEFpdmo1MXlaUzRuU3VwWEtQMGh2QXRhZkJsOXZlQkl2dDF3aWN0ZWtndzJLSXZ4UFBPMEJlV21WTWxvZnU3OEIwZnVSTV9WVXFjZ2YtWk9TQ3F0VU1UaW1xNzJjaVJwdjF5Z9IBxwFBVV95cUxQRTc4VUJDanF3Yms4dmtVLUpSNDNleUwzemV4MVJsUk9GeGl0dlg3YzFlcXV2Tkw1OVNJTnJGRG9FcElYS1JGTEVCWnF2OHJNYWRkU1VlZER4Y2haVmJqTTkwazNRZVpQZ04wcWlPUF90VDhuU1JkRmI4bWI4Q0t6UzBHeW0zZTZ1NGp0eUNCMUFwS3ZSV2pWcTY4b3laVTJCcTdJUTF6bDM5dVNzbWMyODdRZ3ZMaFB0OWhSWkVheW1Tc2IzUFhj?oc=5",
+      "title": "A dead man and dozens of injured people after a strong earthquake in central Peru",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -183,14 +159,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxObHRpYkFSUkllUXpGY3Znek9aZjVXUVBnS09WUVdjblRkR0tiUmxycWpvaGVGOEQ4Sm1wbkV3R1FTY255bmxlR2RUZHB3TU1oUmhsakZrSkN4SlcyY3VWMkRzUmtyYW9uN1doZzE5YnoxUWRfZUhJczZUcjF3R3NjUWVrLVdfSHdILS1rQUlJUE1pZ0ZjSHd6bHFjZVhKdnNNVDRpVWlwNXNXS21DbGhMQkdJcFRXZF9wZlAzYmptSmtSajV3NFRfY29oVnUybGxLd0dpTWJFbzk?oc=5",
-      "title": "Massive Peru Earthquake Caught On Live TV: News Anchor Steadily Reports As Studio Shakes | Video | World News",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOdmJWajk0WWQtaF82NEVXTlo3WERadE1EN3NyQmc2M3FjbTZGUTQwWEdkUkhfQ1FJYTc4VnZaRXNad2xRQTBuREt0NzFSWGJvOUlMM2FwdVhOakVYb3dfZm51Mzl3c3R6YnFZanh0LU92UFVXR0NqREpEX2JHNzE0d29keXRtNmRzbUs3UjdTdXdrdUM5eFlUMjEyZG9LbzNsaDBPNFg5cFRXWVRjV19zbVFtSjNvdDU5WkN4U3c5VUdwYlJwZk5mOHNBdnhsWi1ESjlXM2szOHRUOTBoYTR5Uy00RllvSHRBOFB6eTliWUtXVk3SAfgBQVVfeXFMTU4tNkExM3JVdWxlOFJYdklwOWNjRG42SzlHYkNHVEwwZ2ZyR0xjNDdmRjhjZEktTzl2NGxFMmVHUno0QVhUOEx3NkJOU3lRendLNnV4SG00SUhZT2tLcTFLLTQ0aU1jbktfYVhJMFBlY1BxbWFWZmJsejhRSGlBTUs0MjVQMEpFUU5ZMlQ4Z0RvMV9DZjV5WlFWMHNVbmtvMHpKQTF0TzhUQ0V5b0VCWG93OVFyQnNNNVRhaXBWZHpoYkpYa0NpWnVhTEFLWHdMczZLMG9mTHJkNjFuQXJqa0R2S0U1ay1WdzhRdzBadEkyUkZkcUJoMzE?oc=5",
       "title": "Amit Shah inaugurates earthquake-resistant NDRF campus in Arunachal, announces free swimming pool access",
       "important": true,
@@ -223,14 +191,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5hMEpQbUdIejdma1R4bEs4TGJqamwtYzVKTzlCR0luZ1hKUmk4ZTlheGpYWWE2aVdaU0dzWWY3X0tWZTFlNGpQem1EWlhlcjZPWEVPdll1ZnRwazR6cVBtRDRjNWY?oc=5",
-      "title": "6.7 magnitude earthquake jolts central Peru",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBFTjVGRlNCYmJkYm5iVW1PdjZYaVFsVlZhX3poZUh5Y1c2ZE5KMlVVaGUyRTJVS1JfaW9sSVBIWEVDbVQzcUdZUjZ5VWpLSldvSzRDSkprWXBUak9LU0NFdGY3bXNPWjBWUTJMcm5UTQ?oc=5",
       "title": "G20 factory investment plans fall to pandemic-era levels, OECD and UNCTAD find",
       "important": true,
@@ -249,22 +209,6 @@
     {
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQzlVOGh5bjJSSVh4bzVTZm5ubDZ2TkYtQnNoUXhFTWxud2lFcy1sM1BYcjQ5NDlQQXJ1LTRQSW5VWTJzZnJNV3lhcTNuRkRVTDNKSjJGaVBhcF9hU0tMQzhrcFdZR0Rkdm5Jem11cVpYaFdCVkNBSUt0cUthSXlYNENSRHA0OHQ2ZEFudE9KQzRoQQ?oc=5",
       "title": "6.7-magnitude earthquake hits Peru, tremors felt in Lima",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdUJETHJTZFVQYXhvOVdGNG9GTGlMN1NpZzQwcC05RG5hYzZUTDFvUmJEblp2MDN5anltNnRucXZYWHdPMm1qWXoyWUowaVR5SFd0UjBDRk44cHoyOGFlUjNPZkF6TU9FdEZycTVoMUtfbTFFcFR0WThzaVBEREZhWVVLZkYzU3JvQ1BuRERobjhKMzlIbWc?oc=5",
-      "title": "Bulgaria welcomes India’s Ukraine ceasefire proposal",
-      "important": true,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRW9STTNuU3hmcFRRN1h2T2J2WUUzWXdiSGxiVnpaWnJRV25RZ2Y3YmF4TW1HY25aeC03NnhUSkhGQUpfamt2dDFjR2Y5R3oxNUxGUEtjelBSaXNXLXdBemlHbGJaVXVIWU9ialBGYkw1cklQWUZIbkh1VEE0SDNmRnAxWkVCZEJFcGd5TmJmOTEzUktwODZldHhn?oc=5",
-      "title": "Magnitude 6.7 earthquake shakes Peru’s Andes, with no damage or casualties immediately reported",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -311,6 +255,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNV3lpb3JlTXdnLVVOVk02NURXbm9XcjFqWmpqcTdGMXBnTXE1YjVqQkFyU0gtR2dHU0lyYS1paVpvd0hYdF9qSldTQ082SW5zdGE1THp0ZGZfbVp2WWYyZEFpdmo1MXlaUzRuU3VwWEtQMGh2QXRhZkJsOXZlQkl2dDF3aWN0ZWtndzJLSXZ4UFBPMEJlV21WTWxvZnU3OEIwZnVSTV9WVXFjZ2YtWk9TQ3F0VU1UaW1xNzJjaVJwdjF5Z9IBxwFBVV95cUxQRTc4VUJDanF3Yms4dmtVLUpSNDNleUwzemV4MVJsUk9GeGl0dlg3YzFlcXV2Tkw1OVNJTnJGRG9FcElYS1JGTEVCWnF2OHJNYWRkU1VlZER4Y2haVmJqTTkwazNRZVpQZ04wcWlPUF90VDhuU1JkRmI4bWI4Q0t6UzBHeW0zZTZ1NGp0eUNCMUFwS3ZSV2pWcTY4b3laVTJCcTdJUTF6bDM5dVNzbWMyODdRZ3ZMaFB0OWhSWkVheW1Tc2IzUFhj?oc=5",
+      "title": "A dead man and dozens of injured people after a strong earthquake in central Peru",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcGliZ3U5b1Zic1MxN0N1b2NtX2ljZ0tmTm9NZEpxYV9JdkE1T1R6bEpMWW4wbk5sVW5NTFlTY2NXckNRRTllZXc0VE4tcHJ4Yy1PcHI0UVlLRGFINWZsSHpYMEFVSkpUeUd3cG1zalRtdENSYnJUczl5ajJZdEQ1X1J5Um9NRXVnUnhSdUpmOS1oNzdDZ0VTQm9mVmstRm1GVV9iSDVSelNKTmZrOEZ1c2p2Q00yT3ZZeXY2Q0Jxb1Zsdw?oc=5",
       "title": "How Biotech Upstart Beren Turned a Pharma Failure Into a First-in-Class FDA Approval",
       "important": true,
@@ -335,6 +287,22 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZDZ6TGdwbW01a1F3MXBtWS1ycmtSV3R2RTJfV2FnVlo3YkpjSnRrRHF3bjhhbnowMV9qakdzR2t4YzViUjJKcUp2cnIzclVlbXNRNlBIY3c2aVI3RnZXU1JaRllSaW9MV242a0N5YUZjb3JXaEFqYW5zS29STG0zTGxDZw?oc=5",
+      "title": "A powerful earthquake shook central Peru on Friday evening, sending re",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPWmFvWXZVUVI1SVJjelJSMTRFd0xLOVdEN1ZXYlA2bXg4TlA3am1ISmFOb21rZWxELWl1Z1Z2T0d4VnJsR0stYVB5Z21IREFISnBrRHhNQ090VUpMVFFjc1NBeXlIOUJfT05ieE1GV0NpUm8yZXJ2Uk1YX1JpMExlVVhwTXk2TkxWRS0wdXg0U09Jc3g3MVVVUmhzZjFkdENGMDU0cFBOWG9yb2U5Z01WOXhwcHd3RkxPcnhDdFV0OVRTRnFFV2R1ekd3SkMxT095Vmt0UjhMd3ZEdTNrRE81UlBoWVNXRExMNW1MaDFGMTV2eERlN0hwWWVXX3ltR1dyak9F?oc=5",
+      "title": "Magnitude 6.7 earthquake shakes Peru’s Andes, with no damage or casualties immediately reported",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOanVmQXA3NXR4MWsyOEFZM0hWWDRGZVU0TVVDQkZmSWhFUFNqTHlObGJyUGI1QmdWNmNFVklIQ1JzOEdfbUdaWnpmM1lMcUlTckVxeDVxQ24xb0o3TXUzRUNzMEF5ZzRzcUJQMl9hbjMwdDVaZnpRSmxKM19KZG81OE41WVZ1WGl10gGLAUFVX3lxTE5hN1E1REh0bXFwWnZ5TTdJZFFVaGMwcEl5UkU0eWZtN1R1aUdfVzBBVWpuMUxjR3c5UHpwNWUyMDkydWxwQlFpby04VWJ2VlpETWdrSWxGYS10LXRVN3BrWGVFYVFiNHA3QkY3RzN6QldwcTRZRVRDTzJFT2FwRW1kbS1ZT0gzdWVZWWs?oc=5",
       "title": "More than 700,000 Russian Soldiers Killed in Ukraine War, New Analysis Finds",
       "important": true,
@@ -343,7 +311,7 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOEJ4TWJwOHZkQTdBR1JtaDlFZG50TGRTM3JiMVdzLWFhSUZ2ZXBWeHEyRjVpeGowUFB3cG9tek5JbmdxdnU2ZjBuenBrZEVuLW5KazJJVk0tTEJNa0JnaXQtUWJZaGV3OFpWRjR3VzhmcklvTUtTelJFVlVYcEQzeTFOOU01M1c2dHlubTA3TQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRXEyang3dHphaTE4TjJfSmFLV01uOHA1c19FYkVQckhaSEl1T2Nybnl2eU1tcHBMSURwRzBxWm8wZEZPeXJjTHJyZlZEaWo5TnpHSVFQUXk4aWpydkdnZWdsM2pzcDNxdHJiX0dRMGNENWNrc25LV21vOFQ3WWNNcURpTVFBQU1pWE10NG9zZkw?oc=5",
       "title": "Article 5 must be triggered over ‘deliberate’ Poland missile strike - Vlad won’t stop without force, ex-Nato chief says",
       "important": true,
       "state": "pending",
@@ -407,19 +375,19 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9xdGRRbmN0ZEhvdTIxV3gxakt0Z3U1SmhNU0UyMUtGRDhZeUNRb2hIZ3dyTDZrNVlEMDlEdU5oaGhBZlNZbmxESlhOU2JaVTZzem9UQUhEdTBTQdIBWEFVX3lxTFBDV3NVZUNlUXhqUU5OYzA4MFQ1RmFLM2ZTWlc4RnF5RFRCclN4TmM5N0RSVmdOVHduUGhpUFA3LW96YlBKTzR4RVRPelVHNHY1MTRyU2tCSEY?oc=5",
-      "title": "[국제금융리포트] 美 물가 상승·AI주 급락…글로벌 금융시장 불확실성 확대",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE40WnNfSGhOMTRHbkVmLUJYQ3E3UWR4WC1fOHlkQVFvV2wzcFV4bldvX0NvTnJSdkZYRm45UFBQZnZTeG5sWlhtaGFCZUFVWkx6c0NrY0p4NDhJR240SHdlcw?oc=5",
       "title": "일동제약, 제프리스서 신약 기술이전 모색…비만약·파도프라잔 소개",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1BQkZIX1BBTmw3Q0o5SkZFZlRTWWRzQXRWLU9tdFVuZWJtXzdTYTBwbmVpSUIwTmtZMG5wbFJRXzdkWTljOEZsR3g5TENZMXJwZHdLSklFc1dIRmFueGlVdlFn?oc=5",
+      "title": "몽골 국회, 2027년 통화정책 승인…물가상승률 5% 안정 목표",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -431,11 +399,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9TOXVYV2VSRkp0UVdmaTlXY1U3R3p0OXY0TExXWWt1N1lVbU5LVl9sVDdjanJiV1poaWlQRE84UVBfTV9DcXFhZVlEQUF1eTF5ZzBMci1ib3RoZ1JNYkxYZ0Z1MUJuRlltZ1E?oc=5",
-      "title": "올해 마지막 금통위, 한은 추가 금리 인상 나설 듯",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE45bWd1RldYMk5hQ3podzVwMmJDb1VOdjBwRTUtbmpXMURvZWtSQTZKZnF6T1J5U2FnekZXdDV5NFlyMG5vQlpZV2NjV1JROUZ0ZWhaWHF3SU40RlU2WUNOeUkzRTlHOWlyMm1scTBjRQ?oc=5",
+      "title": "Lao Deputy Prime Minister Leads Business Leaders to Malaysia to...",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -444,6 +412,14 @@
       "important": false,
       "state": "not_in_current_queue",
       "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1WUTlQZThEeG1icUlrWmRXam9yRE1zdFBiN1VPOVFCb1dlSmN3c3dpRmVrZ0NXVlRPTWFvME1aTHg2b09fS2JITV9ubF9YaUk0UktkUGlUQW1FdFQ1N2NnM2NtTGZUY0ctY3FzMWJkRllwdkE?oc=5",
+      "title": "French factory output PMI falls to 44.5 as recession risks rise",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -463,11 +439,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbU9WMDczZHJocTZXNWxNYkxfb3hxOFN0ZUxCVl9PT2xxa281cXhCdGJ6Ty1UdVp1c3YtSWVHcW90Mm11ckFwVk90XzhPRWhOa1JxUnpjNUF4V1A0OUlYdHBwR1k4M1VYMDNvdnlkT2czZmh4cE56RDRqYWd1NlA5Rm9nN21LN0YzNDV4OHFheHlFY0RvcGc?oc=5",
-      "title": "‘Wildly naive’: Is New Zealand sleepwalking into a world of war?",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPMjBqM0dKTHRSeGhyenlKTWJsZGw3UWVoZzFEM1lnUWZrZmVJWXZoYzFyQ0J5NEhvTU91VHYzYzRFWnAwaGhsM0lGNXNRRjc3YlNJUy1zTEdOaXR2UkxWS2FlYUVlNlhfUjU4M0hnQnBiVzlFamRPTFBhNFpXNmRUT3dfdE5PUmtoanhpX0ZHeU1iQnVNV0NGWng0S2hZQQ?oc=5",
+      "title": "Indonesia, EU Seal Zero-Tariff Trade Deal After Decade-Long Talks",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "repeated_extraction_failure",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -495,8 +471,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiqANBVV95cUxQcURscExGZzZ2SXRiQXVrY0JOTHZQVEljT2QxVFVsU0VEUEhXRFFMdGFjeXFzN2dsR1cyazRucWdCdm84S2ZsOXppOTlHcUVPM0dTMEhYckUwNGpta1FQSUUybDE5MVRTVUhocUtWN1d4ZlEyYVZqOWoycjlMZXhhbkhmYmdGUzJWeDd4emJOZmRTUGprUU1WZ1RINTNRMURvTUdWVHlzSjhFQ29zQ1JOMnJnNnc4UjJCTmp1NzBBWlg1T0JObldrMWRLWERja09CdVBvZ0VMYVJuZ21hUjVEeHFzdW9QdkhjbURsaUF3ZThLb3I2VF9TUXFRbE4wdkl2YnlLdFpDNlpiVWNMR09jbWI5dXJfQldkVTlqY0FjSk5abWczNURZcm1yMkthOXpOQzF2LUx4SVYtVzBzTFRkNnNNS09Fc2NhM2JoTkR4R3RQX2RSazNhY2E3M2tpUElvdy1kczlBNnF6VXpTM2xNTGh2THFlTDhFTFhzYVBkVjdCMWxiUzdtaTJRcWE4ZlJ6MXlaR0FVcVplMDBoYUhwNU5idjRXN0pw?oc=5",
-      "title": "Lao Deputy Prime Minister Leads Business Leaders to Malaysia to...",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSmItNGJrSU5qSUZFYk8tS2w0eHpDOU14OGpBazdkR1ZZbjFtWGwxa25YZDF4RlYyT0ZqZElGTll4SlNWNmM0ZE9aai1BTDhiQlRrazdRa3BMX1BVWVZpV0VqVlpCX2VmczlqelBYMkJMa1NtYmtHVUE4QWVQREVUX08xbngwVFd1eUdVN0VMSWxwZVJ1ZlZEVEZBcFczTTdVNWRoZ2wtM3NSXzRiNTFjdWs0QQ?oc=5",
+      "title": "PCE Inflation and GDP Reports Land Wednesday: Numbers Fed Watchers Are Tracking",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -505,6 +481,14 @@
     {
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQaFpzWFkxRjE5clVpNmJJZmVPR0lleG9pVWlweE5ZQy1oSDJQc2dUNkxnc3MtWHhFSW1vbHFkbG1FVDgyNGd5U05DU2lySmhZeFB2bVVIdkx0cFJUTHdoU3NoS1pmSTF3VUZrcEFOMFJpdGUwd1hkdGJNWXNaaVYxT3JCTXAyend6UnpDekxXY1Q0bXlFcGU1a0VvQUpYLS1WMnhvUnNfN1F6cDdlX0ZUemNiWQ?oc=5",
       "title": "Six boats carrying 362 people reach El Hierro as Spain's election nears",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWk1idGtma2dreGtDQUZJRkkyc3NTRmo5d3VGc1FIVnhPWEhsdlRoRk5HcGJDcU1FcnJTbzlweUMwUkgwOWVGOWVKNWM2aXZRZ1hrWVNIZ3pzZ3FRTWlGckZuY1hoeDd0WlZscGlFVndDV25DZDdQeEdHWmtMczgtbUVSMnZNbEdidTE2N2lud3RYX2U5QjZlbmd3dXZaVDFaRkRIZUNfUlJ4WWJSU1BpSVFZMzk?oc=5",
+      "title": "Brazil cuts 2027 growth forecast to 1.8%, raises inflation outlook By Investing.com",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -535,27 +519,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOS0oyWEpBYnhHajg4MkVqQW11RXpWQ015WmZxY1JnVkRYZ3VwWmVRWTVrdlVFWVlJY1lfMWp1eEp3Z3p6S3ZSUDBVc19POWR1eHpjeVVYZlFBV3g4YmFsZmtVRUVDd2FhOVFweEZacHhHNFlaWGZyNnNIYXpnNjJNM3Z4VGg0RmNUdF9zMVpQVWlfTUptMS1xcjU1Y0RnMDE5a1hCRHlDbkJoM05ib2VfLUJQa1RkeEp0Q0g1TWUzbXFGT3dDRnc?oc=5",
-      "title": "US imposes sanctions on dozens linked to Iran’s shadow banking networks By Reuters",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRGpWQzBiZlpPYy1HUl8xcFJraGR6b2VXZ0lBeWpxbFI5NUljWTdoVGlqTk5oVkdKc0t0ZnRBMGhvQUlMcFJwTDJHRi1CSU1rTGJxa2N6eUdnSWdHcnZfdlJ3Z05fSzFXSlRvUWs4VnBIbTlza3dnaUI3QTJMa2ZYTDg5cmpWcEpEaXA1ZXhPaEVhc3BjOTlrUFNVOXdtaUpaa0hSRjJ6eFc2TWJvaTNyWDZ1ZWNrSFcwTHpsYTIwU3dqd3VYbjVr?oc=5",
       "title": "Devastating floods strike Indonesia’s Riau province, affecting 18,600 people",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNV1BIckNzcHIyeGRpa3dFVzhncWdEV0dIcTZIY1FZYlJXWmk0SHFEQXJUYmN3RTdwNVpaQ3JIdHVZbkQ2V0lsekZTa3VJM3BDc1hKVTA4RG16N0pfSDFiY1owLVBzZ3R2eWZCdTU1eHAwbVJ0MUM1a2tKQUpaQjJPVkhRMVl5Ukk5U2dEOWQ0cTJVRzZvX25LYWFPdUpUVWhPZ0JSRWVBUjdWbHRpVXFnR3NMbkhjZm9adFBJVTRhcmNLWmxodF92bVpXaWhOQzVVQmhYYw?oc=5",
-      "title": "Intelligence Council Report: Meeting the challenge of China’s biotech boom",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
@@ -567,16 +535,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5OQ2wwV2twX0MzUnVMZzlSNWNkZG5vVGVJTng4SnU5MnJYd0NaNWlWakhTeWFPSFFXc010a0NrdlVfZU1MQlV5aHN3UC1tZk5ZeFFoUHRER3hubExqTTBlM1dkV3hWcUZVeUJn?oc=5",
-      "title": "국가신약개발 58개 과제 선정…공개된 개발 과제, 항암제 중심",
-      "important": false,
-      "state": "pending",
-      "reason": "in_retry_queue",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5VTHpLZmpPTk1PR3FWT3RQclpkZ1VEdjd5VXg5WVNtenc1MWtqZjRzcXlRSFI5OGZyVndXQmxuMGV1amZ1S05qWXI3dzJ4SXJzWnhGOWY5Qm9YYmlVTjFjUEdlWnZOT3VBVTk3Wlk5RQ?oc=5",
-      "title": "EU Targets Russian Banks Soldiers and Athletes With Sanctions",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE90Z1E3RlNnRFdmVkYtUGpRcnhQUnNBamMwYk9WXzNxd01vTThDN0xCd0NpUXluQ19XUzJkOTREdGpWb1J0cFBVdVBjeUhfeW5LR1A2Nnhhai12cmQzRmtIV9IBeEFVX3lxTFBac04tWENTZ0V3Nkx3dXE0RXhWRHlFYTdjLW0zb2g0bDhBQW55WTNYdVJMMG43U0h5MHdNSDRfbGF2TkswdXpfUTg1WVFKMmJIaVdDWXZ2M0pUNTJFckM4NmJrc005OGFGcmJYR21GVl9hQjFZalBiVQ?oc=5",
+      "title": "\"심사 통과\"…동운아나텍, 침으로 당 수치 측정",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -591,24 +551,32 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBNNWlmSVJDZzI1RUxQQmlmbUxYb2w0MzYwYTJndExHYzd2MFV5OVVHM0RSdjVvdXhZbmJ6LWdRM0oya3pOcXpPZGFqN21NQkVEQTBDbTAyTTgydWJVVU1wQWV0em5aWWpyYVpNN1BNZ9IBb0FVX3lxTFBNNWlmSVJDZzI1RUxQQmlmbUxYb2w0MzYwYTJndExHYzd2MFV5OVVHM0RSdjVvdXhZbmJ6LWdRM0oya3pOcXpPZGFqN21NQkVEQTBDbTAyTTgydWJVVU1wQWV0em5aWWpyYVpNN1BNZw?oc=5",
-      "title": "넥스아이, 신규 표적 ADC 'NXI-S301' 국가신약개발사업 과제 선정 - 머니투데이",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE11eHMzd1Fia24waktWY2JPdU9HZ2J2QVIxZmJCMnRfMmJPREFxR2Y0S0MwYVFpZXh1OHZPdWpIaGxVUG4xYmh6c3hNMkVZMTh3aE44VnFCQUwtei02M21ZR0taYXpDOTdFOERwRmloalMwOHJD?oc=5",
+      "title": "日국책은행, 신약 최종 임상 공동 투자…제약사 부담 완화",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWHZKdy1JY0ZmckUtdGptZE1SUE92OEFrb21sbWNpMUJsRlJfRE0tcnBSbERlaE5jMXZkQ2hIODhOQ2JKeW9zR2NwcUkzVDBNNVg3WTVVaUJ6bW9EdjZzck93U2xBcTBLUTJCVFdSb055OWF4TjhxREpyYTk4OGFpVNIBlAFBVV95cUxQT2hwcTRiVkNyTFF0UlRac0dqYktiMWYyYmV3aGNjWVBwN3hmelFUZjI5ZGJ1aXViNS16dGJiWHAySVJXdDllU3IyRFQ2X2ZPdTJGTjNEYjIxZ21fcUd2R3AzRnVSWG9oaS1ERmRvQVNfV0dvN3F1MkdISndpVXRUN2ZESlBLeTQ3b2M1bm1lRmwtNUtf?oc=5",
-      "title": "Lilly strikes 2 biotech deals worth up to $2.2 billion in a week",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9CMFlPVVBEYjJqUnkwN2ZwUEtKR3FBblVDSE9NcjN0TkNYd0I1d0Q1STVRMmM2UUY3WmxYcC05MUhwbFA4bFBlaGZoSE9lbUZELUE5Q3o5Sk00clJTbHVTZUZYUmlDalROZE5tbGxpYjExSS1mYmdycFdicldRYzg?oc=5",
+      "title": "“아이들만 걸리는 병 아냐” 성인도 ‘RSV 백신’ 맞아야 할 이유",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRUV5RnhCWmVadF9XaGVzRnFmQkUxbFJPLXJLQWgwWHUtZFBTd0NPNXpxSEJ3eGZXVFdOZWZFMkdKbHZ1WTU3ZDgzLXRYcV9yczIwTmw0NG54bFlCSDlJN1VFVlBldENXdzg4YzEzamRRT2xBMXhDTldHeDVrRGg0OW9Mal9MTHpk?oc=5",
-      "title": "Personalized mRNA Vaccine Cuts Melanoma Recurrence Risk",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTEIwemx0TWd6ODRwMWMwTVQ0dFVjWVdvbkRrMXpHZ0M5MEtnSUhNNDJpS0xKdHNtRDRjS3FINS1JcTc1b1UzbFJPNmU1bkNSQUpXRldOVTdqSnBDcmJCRFVSNGRxendrNnZqeGJHVi1WT3dwTkxqclloWXhJUlRrUEJOZHRkTkpPZmdkVWVoQ2ZWUDNiS0Y4d2VJV2V5b1c1a0taRFJjV09zdw?oc=5",
+      "title": "Germany warns of the risk of Ukraine war spreading to the Baltic Sea",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOMkhyWHN3UDRCTGw3MEZYWEx3eDNwMkswbi1iYW9qUlJ3eEdWSmpiak1JazBEeTFDWk9RemNib1ludE5ZM1o1bV8xbmdqZU1fVU9QQ2x0RmdxcE1wczh2TTJTZDA1R3ltcmZNZHBZaHU3SktDRllXVkNTR3hJaG9mSGEzQ3o1YXZwN1k3NGlBbzFlVDdCVl9aWXB5QkZicVdHRDZKTEc5UzJxLW41bHZjNFhqUFV6Nl9EY3c?oc=5",
+      "title": "Global AI Sell Off Raises Concerns Over Semiconductor Industry and Data Centre Investments",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
