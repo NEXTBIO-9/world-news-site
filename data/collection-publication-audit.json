@@ -1,27 +1,52 @@
 {
-  "updated": "2026-11-27T04:22:34.259961+00:00",
+  "updated": "2026-11-27T05:28:01.272519+00:00",
   "scope": "latest_collected_batch_compared_to_published_and_pending_urls",
   "disclaimer": "Not-in-queue does not prove data loss: age limits, duplicate handling, failed summaries and publication caps can explain differences.",
   "collected_unique_urls": 180,
   "counts": {
-    "important_unpublished": 6,
-    "not_in_current_queue": 40,
-    "pending": 15,
-    "published": 125
+    "important_unpublished": 13,
+    "not_in_current_queue": 37,
+    "pending": 29,
+    "published": 114
   },
   "important_unpublished_by_state": {
-    "not_in_current_queue": 3,
-    "pending": 3
+    "not_in_current_queue": 6,
+    "pending": 7
   },
   "important_unpublished_by_reason": {
-    "source_blocked": 3,
-    "in_retry_queue": 3
+    "source_blocked": 5,
+    "repeated_extraction_failure": 1,
+    "in_retry_queue": 7
   },
   "blocked_important_rss_candidates": 0,
   "important_requires_review": [
     {
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeGVzSjhrbUhOTTctX0ViTkJTRnFEZnkwNTJQR3gySTJRQlk3aXNwenJ2Qk1DejVYcF84dmF4WDFPd2xKRzEwazEtOEdOb05OOFhJaXZQVTd3R2lDRHdGbTgtM1JSSEMxeFN5OTlLc0tLNE55MHlHRDZNU3lOVFBDaTJwQQ?oc=5",
-      "title": "Iran war live: Worker killed and refinery operations partially suspended following Saudi Jazan attack",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQWTFpaFVURGF5dHo0V3lmd1BsZThmRDJLM0xSZnRWdnY1WDl4am5EMFNkMFEyX2E5aGpZb2U3NkpDWmtBemtUZkswbVpjSXJmS04zVldQSTRFeThqcUMyMnBhaF94VDBzQk45Y1dsdWFweWc3a2x3WlFZU0ZsR1Q3TklaWTdGSk9KNG9nd3BZUUdGT1R6UUFQSE00ZHcyRmxvOHl2RDRTaFlwTXFpU0V4NFhmTXQtLTZOTEcwSjVCZVFNT2haSEMybWN4b2tEUUVablZxcTM0OXFrUQ?oc=5",
+      "title": "Central Pa. doctors urge sick Pennsylvanians to skip Thanksgiving gatherings amid measles outbreak",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5GQlI3V3BoZ3F3SkFkZGxTV21wZkwzSzlJc1ZvMVp0cm5XbWZsN0U4dy0zdTctSmZ0UU1XVVlyalIyVmhqS3lfdm5HWQ?oc=5",
+      "title": "증시 조정에도 물가·성장 우선…한은 기준금리 인상 : 금융",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOOFR4cExqSkJkMUFiVmlJTTFvN3lQeUZKT1ZYRWlGTldSQ19Zc3pjU2pSeXZUZGQwb3JfaFZyWXFteU03aTRtaUY5aVhkLXBiTXdLMU9EaWpZU1Z4ekRLck1QTVRvdE95Ml9ramNEVTlWUW9MVEFtR3BTakRCRzlEd2tRNXJ1LVJtSnBHT05oSUdWeVpuYm1aSFJrc2JTZTJaSUUtcQ?oc=5",
+      "title": "Oil Touches Two-Week High After Drone Attack on UAE Nuclear Power Plant",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRHJ4NFU4UzNNeGMtMzI4NlFBMVl5Ukxzd2JScHdZLVJkZTJReEFzSjRucjI5akhfR21SY0F3cUFWMHU4bnVjOU1vUlVlaVFvV2NCYkRjV28xcGlFN3phV2ctTi1ZeXZmZ09YdFNUbFZJVVRpb0tiWUxvcjRwM0lsRUZ5dDRSSHF3RWlEb21Lbzlxa1hERmhWZHl1cTdqaE9JRHBmbUVEY9IBrAFBVV95cUxQbllJTW9USlczRzZ5RDNCblVNcEg0T2tXcGZQc3JwZ2N5dnY1WVBDOTdLZVMwcXZNWkhRdFZxTWRZTlpnckVpeUhIUDM2OXRTZWpXTUd5Uk1YMnZRTE1yWEhPel9fS2lwemE4TTlBWTJ3S3BDallvUE82aHg4ME1YOGQ0UEwtajJhVS1GbUNqUkhUZ3ZIbVJ3alZLeGJENk9wZldZZWNJdWg5ZVdP?oc=5",
+      "title": "Syria’s Central Bank Eases Foreign Currency Restrictions - Enab Baladi",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -46,8 +71,32 @@
   ],
   "unpublished": [
     {
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeGVzSjhrbUhOTTctX0ViTkJTRnFEZnkwNTJQR3gySTJRQlk3aXNwenJ2Qk1DejVYcF84dmF4WDFPd2xKRzEwazEtOEdOb05OOFhJaXZQVTd3R2lDRHdGbTgtM1JSSEMxeFN5OTlLc0tLNE55MHlHRDZNU3lOVFBDaTJwQQ?oc=5",
-      "title": "Iran war live: Worker killed and refinery operations partially suspended following Saudi Jazan attack",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQWTFpaFVURGF5dHo0V3lmd1BsZThmRDJLM0xSZnRWdnY1WDl4am5EMFNkMFEyX2E5aGpZb2U3NkpDWmtBemtUZkswbVpjSXJmS04zVldQSTRFeThqcUMyMnBhaF94VDBzQk45Y1dsdWFweWc3a2x3WlFZU0ZsR1Q3TklaWTdGSk9KNG9nd3BZUUdGT1R6UUFQSE00ZHcyRmxvOHl2RDRTaFlwTXFpU0V4NFhmTXQtLTZOTEcwSjVCZVFNT2haSEMybWN4b2tEUUVablZxcTM0OXFrUQ?oc=5",
+      "title": "Central Pa. doctors urge sick Pennsylvanians to skip Thanksgiving gatherings amid measles outbreak",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5GQlI3V3BoZ3F3SkFkZGxTV21wZkwzSzlJc1ZvMVp0cm5XbWZsN0U4dy0zdTctSmZ0UU1XVVlyalIyVmhqS3lfdm5HWQ?oc=5",
+      "title": "증시 조정에도 물가·성장 우선…한은 기준금리 인상 : 금융",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOOFR4cExqSkJkMUFiVmlJTTFvN3lQeUZKT1ZYRWlGTldSQ19Zc3pjU2pSeXZUZGQwb3JfaFZyWXFteU03aTRtaUY5aVhkLXBiTXdLMU9EaWpZU1Z4ekRLck1QTVRvdE95Ml9ramNEVTlWUW9MVEFtR3BTakRCRzlEd2tRNXJ1LVJtSnBHT05oSUdWeVpuYm1aSFJrc2JTZTJaSUUtcQ?oc=5",
+      "title": "Oil Touches Two-Week High After Drone Attack on UAE Nuclear Power Plant",
+      "important": true,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRHJ4NFU4UzNNeGMtMzI4NlFBMVl5Ukxzd2JScHdZLVJkZTJReEFzSjRucjI5akhfR21SY0F3cUFWMHU4bnVjOU1vUlVlaVFvV2NCYkRjV28xcGlFN3phV2ctTi1ZeXZmZ09YdFNUbFZJVVRpb0tiWUxvcjRwM0lsRUZ5dDRSSHF3RWlEb21Lbzlxa1hERmhWZHl1cTdqaE9JRHBmbUVEY9IBrAFBVV95cUxQbllJTW9USlczRzZ5RDNCblVNcEg0T2tXcGZQc3JwZ2N5dnY1WVBDOTdLZVMwcXZNWkhRdFZxTWRZTlpnckVpeUhIUDM2OXRTZWpXTUd5Uk1YMnZRTE1yWEhPel9fS2lwemE4TTlBWTJ3S3BDallvUE82aHg4ME1YOGQ0UEwtajJhVS1GbUNqUkhUZ3ZIbVJ3alZLeGJENk9wZldZZWNJdWg5ZVdP?oc=5",
+      "title": "Syria’s Central Bank Eases Foreign Currency Restrictions - Enab Baladi",
       "important": true,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -86,11 +135,51 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1aQjg4NDNYUTBrOGE2SUtFZ1BnWHVDTC1uVE5XUFJNXy1SdFpncFdjMy1EOXpJcHMweHRQelU2VHhDSG5JMjJjVUJseFRvNVRnZlF4NTJR?oc=5",
+      "title": "South Korea’s central bank raises key interest rate to fight inflation",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBJRVdVdlJZQUdBMktWWHRYZTFQcDJ1bEViUGlnM05lVVVEOEFXOEE4Z0x4cWtiVExHMzVPMFJ3Vzg0Rmo2RXVjelJsMlJGUlF4bmE1Q1Q2aFZ3ckJMUy1SajJjZVA5ekJOMTVsUWpQWdIBb0FVX3lxTFBJRVdVdlJZQUdBMktWWHRYZTFQcDJ1bEViUGlnM05lVVVEOEFXOEE4Z0x4cWtiVExHMzVPMFJ3Vzg0Rmo2RXVjelJsMlJGUlF4bmE1Q1Q2aFZ3ckJMUy1SajJjZVA5ekJOMTVsUWpQWQ?oc=5",
+      "title": "한은, 기준금리 3.25%로 인상…AI發 성장 기대와 증시 불안 교차",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQ185SEE0SXFSb3BwaGlPOVYtclhlWDBTSkFYS1MwY1ZfT0o1bXc1RDdYaXJENE5LcEVibEo1a0pNOUUtVnp1SlItZWc0dHBkV0t6aHh2ekpGUXpXUlloLWpyaTVzSmNDZGZyeG44TEhNaEdhVzVCcWI4WHg4RTV4ZGgtTms3UmppSFM0b1BuOTdQb3lGZlZmS3FCX2NTbGN2UTkzRA?oc=5",
+      "title": "Bayer becomes latest Big Pharma to head to Hansoh in $3.3B deal for phase 1 ADC",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPdERlc0hkTkFiSVhlWjBOV1dzSWxoQl80b0t2Uko5eHNEN0xlNDY2S25FRjhuaVRRUkU5VmFtX0tNc0xHN0RHbXhwMnE5MEhvVDM3WXNBc3ExQ0NULXNlRm5ndElxUEZIRXh5OUotY3dPZlhZYmQtWEg1bE9sWEhaSThxcFhJUXRjcms1ZUFLUG1EQ2ZaNlNaZC1wYjRjZ0ZGZkM5bjdodXhTVG0tUVA3QmNFVVhlZlk?oc=5",
       "title": "Earthquake Emergency in Colombia Spurred Proposals for Technological Innovations",
       "important": true,
       "state": "pending",
       "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZ2FMYUw4SkNxM3cteXpSMl9SYkZBSHpEWEU2YWo4MFpidV91Q2JVSU1MLTJUM29veTRvSFZaR19pWHNjUEl3MlZsRXd3U09CUHV5eFZSM2hRcC04WUthb05nbXhZT1gtU0NiTjFYUUhWVk9DeVV6ZDBBU3hrTmM0aHRtTHJqYllOR2hLckZUUjU5Mmd6NEtyZWM4dEdsc3Z6NFJIU2RjMjc4dGNRdVBkeVdTNTZRMDdGNTFJ?oc=5",
+      "title": "Germany calls on Russia to show peace talks readiness through Black Sea ceasefire",
+      "important": true,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQR0UzY0tSYWYyMGRldElTZUNHOHI3eVZKM3RmRGJaZzNZVWRRY2hLbnNTOEk3bnYzbXQxMkJQNUFidnpzVjBfckdqVklEZHVFM0M0dlY5emxUc0tuN1VBRFotejhCN05xcXlOaXpScXktbEQtY0hablgwMnZSazNESUxyWTk3NEs1eG9BbGlnSGQ3S09tblpkcUxEb2RsMGV4M3VNVHRPU2FnSU9PV2tXUnVMMnp6MVhybzR0RmxZYjVyMWRDUU1TWFJLRTFKdVZDcWlhR2ZoekZUU084cWVnY1lUbzV1d0FDLVcwTmRsWThkT2EzenhuUkNCSdIBgAJBVV95cUxNeDhKQ3JPNUY1Nl80WEVPT2NoeTBPODZONWl2QW90M2Vwakt6TDVWNDlXUkl2cFg2eWI4dFNya2FxUGFJdlJxVm5hZk0tSDgxMWhUNHZjamYyWmE2c0R1a2ZYU1dIMzJmQWUySFBLcG1vbVRCRmpETl9MSjNaZ01qQmxkNm0tTmVrd29wa0RNazVja2xfNkNkNEZoRjhRLWtFV2wtN0hXUHRQa1BYZjhEeWZkaEQ5ZzRibDJyQmZYMWozNVRSVFR3eF9oQ0JYcDQtTUdsSU1vRTU5Q1FPWVU5RWhQaFE0N2RzT2ZDMmd6ZXM1R3dMNXNVVHpEVUxRNXJU?oc=5",
+      "title": "In New Zealand’s election, 38-year-old centrist emerges as kingmaker as Luxon loses majority",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
@@ -102,27 +191,27 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9QWlMzTUdfMWpXUFlUSUV1R3VpdGhWZTJ4dUpOX3RKa1BZc1BXd2ZMOTZoNk9Dd0VFNmxVTUtXSl9MOXFlcm9jWm15T0w4VGZhTVh4cmN3?oc=5",
-      "title": "The fight against antibiotic resistance: Living materials against resistant germs",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5PcWNnV3JBZ3VHSjA3SU95cjdCWF9nWXFHVEd6VTE1b2l0Zlk4Q3U0VU9nTWI4Z3lzRHZaX1NUelVWTDNEdGIySWZGUU80MzVjQ0Jj0gFYQVVfeXFMTXZOQnRkQ2J6YjRhdC0xOU5SVC12VlhOMkJUREd5dHBvY3BZR29IdXhYdzBXY2lKOE9hcTlSZGNaQ3NVdEFtLUVrZzZYVFJteVdHbmRBRVVhYg?oc=5",
+      "title": "[집중진단] 주식은 폭락, 대출이자는 껑충…주담대 금리 5%도 버거운데 한은 또 금리 인상",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "repeated_extraction_failure",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE82Z0hhUjNRZE56Y0ZYdGNHNGpsd3FHUUl6OEdqTUVLZjIteGw1Q251LUd0Q0t4b2tiOFdfaHZSbXowa0NnZUF5SDVVNHlFSFE3TE4tUE9R?oc=5",
+      "title": "드림씨아이에스, 전략적 투자 과실…기술이전·IPO 잇따라",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9kaklIVXZ4N3R2T2xRT0dWU0J4bGVXTVRKdktEekdOcC15d0Q2c3dDbzk2MWtBSkxiMWsyUmprem5wMFVjNkhTUlI0ODFyM1d2aWs1cFY2MXVRMXM?oc=5",
-      "title": "Experts warn nuclear referendum could slow Taiwan’s clean energy transition-News-Radio Taiwan International",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9xRWpqa1hWeFVIRlY0a0NOU3NxY1pGNmI2TGk2Q3FZZWt4TjVUamF2V2ZfQThhd2NyQlRhejJRb2o1c3RuSVlUSnFkQmtlX0FZMWxBakh0WjdHYzh2cmJNbNIBeEFVX3lxTE1JamkyTG1mOTY3NVN2WF9xcjRQN2pHNXE3OUtUTmRsYzZfQXItaDFpYTV1R2ZzN09YWDd4dHdmMjdMWTQ4ME1lbDZCd0VhMk9FNUdIeElTbno2aDM0enhnSVI0aUJkOTFCRklFZEhWdEZwVkdVMGl0dQ?oc=5",
+      "title": "\"기술이전 잘하면 뭐하나\"…'주가 바닥' K-바이오",
       "important": false,
       "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB6MWxBdFQ2ZGpvQ3U5X2V3THBycW12bng3QkFQQzhBRXFybndNVFM5TWhxNW8xUkoxUWRxT3hvZUdmcTdVclR2aVhrZ3o3WDBUXzlxRVlqQVE?oc=5",
-      "title": "El-Sisi calls for stronger trade, investment ties with Equatorial Guinea in talks with vice president - Foreign Affairs - Egypt",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "reason": "repeated_extraction_failure",
       "rss_fallback_candidate": false
     },
     {
@@ -158,6 +247,14 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNOWdWb2dMWm9CejdzTmVMN1dXYjdsNEs1LTZ2ekowMmZ3TFRJdklWU0FRUmZDV2VLUzNOMmp4VmpoMlpKWFpQamQ4Q05ORjg3Y21ySzBzSVpISV9DU2YxSUhESjFDc2ZSMEpiOU5sWEtMYnZqVXE4dnJLYmdkUFVYQ1o5d1dnNGdYT3pMTUVIbEXSAZYBQVVfeXFMT1FYbE1DaXZxYzBOMUpnY1NIOUpvTmRUTHZBOXB6OEhXbzlpeWFEcnRueEFoM1ZGMmtlRDl0ajNfSzlYbW10Z3psTUFNM1dNNEV6WkhxLXQzVTJ2ZE5sN2JPd1BIT3RHUF8zMERvOHY0cUlDRkZRbTZwa0UwS1pTd0lVdmwyNlROYWNMa204UzRUX0hnZTB3?oc=5",
+      "title": "Will UK settlement sanctions galvanise an EU shift on Israel?",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdzltd2VqQjF0ZnpySkxVaUhqTVU5VGxwRXdVTUd2a1VFWWJXd1IxYTZjUXk2QS1Fb0NnV3dvS1RlNFdMUW5LX09hVEhIRmQ0RGVzanBwYjU2WW8zMV9PWUZvMEJPaThLakZabzR0bFgyWnBveFp2RDA5LVh3SElpbzVQUzJ1ZTA5OXdzeTdJRGhyZw?oc=5",
       "title": "Mexico's Ebrard presses Asia-Pacific partners to curb tariff dodging",
       "important": false,
@@ -166,8 +263,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQWx4UGRCb0pZWjBqSTRHQjUyZjZ1ZjdGa3ZKclkyUDVncUFBTGZ2RmZ3eTdzNm92RTZRZFB2a0FRNl9LMm10bXpqcWU2d2JRVEJpNHdyVHhkYm5uZnhOU09vc3dobXdfaE0wTFRUOGxucnJ4Y3Q0WkxWc1RCRk9zWkpScWhNbTU2V2didWlXeXpQVms?oc=5",
-      "title": "Indonesia Welcomes US Support for Its Nuclear Energy Bid",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVWQ3MnMzTlQ5Y2lUTW9RTzloTmp3MmtycjBUbmZUOTExYWNsVmlXX1JmLVJGYUYyRjNHSGV1b2hzLWhWclNBRDRZb2hyQ2UxSE9tYktjUTBKR2VDU2w1YlZlU0xaZ0JSMlQ1ZzhwMEJpSVk5N05XbHhnNi1ESktvTVNGNlZpMkNjX0dUNHdvLWJ2YTVqeDFv?oc=5",
+      "title": "China and other US trading partners hit back at Trump’s new tariff plans",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNYUJrQ3VzcUs4NmJmXzMtVmx0dUYzaUZ0ZGw0MUM2X29UdG83c2Z1d2ZRR1JIQVYzbC1BQlA5NzgwUnFJUERLTG81aHd1WmptOU43UjFaekpVWGFFeDJtQUtybnpoNUVsUTdYbDV3MF9MME1hN2hvWl9BQ1U4NUd4NmZwR1FlTXBhckdUQTE1c21JMFR5ZHlOQWtR?oc=5",
+      "title": "China reserves right to take ‘necessary measures’ after Trump’s new tariff proposals",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -182,40 +287,24 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQXVNYXFYazVYTU9MNFotbnZRQUwtQ1VBT1RNbGo2WThBZVBYVGVlWnZKMk9kemw1T2draE1qREd6VzNvRXlrdy1WM2I4UDdVa3BxRDhyelY2MGNZVjRYaDM2eG9tRHFKN2ppY3RsaXZiT0NadTVaMU1IUnFaQkxScnlTazBhcDZ5VGVCczFkblhPdlFXNXVqR0tZMTBGalRGZWc?oc=5",
-      "title": "Breaking: Japan’s Tokyo CPI inflation climbs 2.8% in November",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQYVJiUzZkaFZQVnNCcENNT1N2SzhhaTJHMGx3dEJnR3Zmc3EzdmJ2anhaSVdHV1V0eGlXUFlEOUlyeFFlZXJGZFpOc1cyMm1NYmc0cl8yM2k3dGxFaDE3MjBKVTk3S1ppQVRuTnh0bXIyYWpRWkMxMDlaUDFiWXh5QVFBSG5SeWc3dFJ4ZkdSRGkxemc5dFRaUG43ZS1KT2FlSGQ4ak12MA?oc=5",
+      "title": "Brazil expresses \"outrage\" at new US tariff proposals",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMk1aTmhuREJTOHBvYUpNdFFpTGN2TjA5Z3ctbWhGNGxTQ0pFR3BZV2JGV2gtMk1kODY5V3pBZDFHSmh0RjZqUkFnejRZMWc3S0lCXzhXX01maHZNTm9HUzRUdXBQNEZDNzZwZFdXUDZxQWQtZjVORjFWSEFMTTNGRW1xZGxucE9xcFVJTzRKSHB4ZUMyQy16bDh4bkYtVXFJemfSAaoBQVVfeXFMTVhHc1VCNVE3dlo4QUtRZ2p0aElZTWxlUkxNVzBDbXl5ZU1qMzRFazVWUHhkQTI5dGRDcnJrRUhiQVhVODVHVEhVVWxCYktPbDBBY1VtMHBtLVlDTVl2TFgzbmg4X1BCTmdTcTUwNEhLMW83NHk5ajlLZG15OUF2azg2dU5Ea0Q1T0NPWHZtS2NPaVpHcEtNR3JPd183YnVfZ1pGTEZaSDd3eUE?oc=5",
-      "title": "US Tariff Plan Raises Stakes For India To Clinch Trade Deal",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNOTNEQVptbHhSM2pUalBpRTRfZlJLNndOeHo2QlhJdDlUWExfbnFjdVpyaVFUampZZHNJb04zSkg1dnZuSTR4QVRmdkRiaWdZSEVkOFdsak1oX1NhQ2hJWFhVNkN5cjFUY3NFMkpFOU9tODVUUjhkd3I1YTMyTEJjanBibWMwcEY4elRiRFNXdURYLXVSOTFEelFRQW9DMjFmdWxwX19KTjl5QQ?oc=5",
+      "title": "House report targets China-originated biotech deals, clinical data",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNS3NyOFFZY3BES2RUSW1SemdaTWUwNGplTjBWQ2drSjc0cy1RV0pIdEMzbmdadV8wbUViUXI1eEFDQlNjN3pCT2M1LWVYYU42OEtYTU1meEZKT2ZqeFVrUlU5cUdia1pJMHlFNDVYZGRGWmE1WDZmQWcxQTl6UkstWElHbmlKSXpHNHdna2x5OXlsTlg0eWRuZ1B6ejhwdF9nM1o2ZGNIMA?oc=5",
-      "title": "China Braces for Tariff Hike After US Announcement",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQRmdGMDdiZVhMaEZiM2hLVlNhdXQzZkM1b2F5NXFYaWZzbC1mX25kLU56ZThrNjFmZ2JVMW9fbjJhbUMwMXdzN3JLYXAyNE02a0FqclFyblhxZmxfbWRLVlQ5OFdoQkdmNEF1ZTlZUzRVVkkxQm14eDY0R1ZtUXJpRWhaNDE5c1hOM3pUYUhiRmJ1NnlTaGVrQk9uNGwwU2w5UmliTkRpZGQ?oc=5",
-      "title": "US to cap India tariff at 17% if trade deal is reached, USTR says",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOZ3FRUlFJUHYzZ3BXeUtTbWtxZjNRa2RYU3JoQnFtNTRtc0t1RGxFZmtyekRYOGZRUGwySFFJUUQxQnozcThjb3RfVHExRmpPR01WZllQdmozeGpaY1Iwc1RJSnF3OHlTNUlZTGktcmpsOVdZSXZnQkRJV0h3Q25QSzJXM1h3N3JoT25LcXYwd3pNc0pVd1pNNjlaTG5pRjRMaVROcWpnVi0xTTJK?oc=5",
-      "title": "President Mnangagwa arrives in Nairobi ahead of inaugural Zimbabwe-Kenya BNC",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPVXhNdDJtUlExRTZrc2ZCajc3aGo5X2p4bktubHhHX20ydVZDaXp0ejl3b1dGWjdtUU94TjloM0NhNjV1b2RwaFFfNE5PY3BHU09VNGNkM0xkT01mZjNCZmpvNktiRUtaUXJrU2JWa2VnX2toQXZXX1p0RWRmVEdqY0tZQXNXQnlUMVYxU0R0NElEUTZLRnFnVkpXb1FrS1A0YmNjdndDT1h4ck0?oc=5",
+      "title": "Researchers Discover How Tuberculosis Bacteria Form Cords",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -230,32 +319,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNWHlBT1BrNUloZk0zeFd5cktUNjNudElUQjZjLTBCZlhqS0d6bTZnckZGaVk3TG9QRk5MbUlrM25qNm9BblVKYnFoWk5FNG9NWFRyNERKY2JlTTBkUEpFQy0tQlBQbW1Lc2lJVEczdTcyRTJ4WndWX1p4MWF6eDNOU2p6MG90ajJtc2ppeWdGX0hzWEdQaTZTYmQyWE11ZEhqcTFLbjVPTkdFSWN0WVE?oc=5",
-      "title": "China and Japan hit back at Trump’s new tariff plans",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxORWFfbHkxOU16RE96OEZMVTN2VHVUWFBuVEYxWUlBRDRqQk1HcFJYWlp6WUlkdW5IcmdYV29iX293NENYdlNUbVE0NjAzMkxielRZOXZkYlhJb3JlSTVQa2VTVlNSWndiRjB5SEpPeUJsQXU3cGVIdUFRZ3JyQzM4U2FDS3NGYktvNmlLNEFvZWRvQ2RlazZ5WmJoWldjTzZ4cEZ4WThyVlpZNnZQemc?oc=5",
-      "title": "South Africa producer inflation up to 8.1% y/y in October",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbVotdVJ4b2tWMGJNLTJsR2VYbHBYb2syaEE0VXhBanNDUllPc2VjcWdFNHVWbm4xTG9DZnQybmY3ZHJYakNBUU1Ca0pIcTZySGxpTVJMc3B0U3JKOTl0ek5kRk04S2toU3Q0T1lvd2tPRWRlZDFqTlo3T3RTcDZFUUliVUtac1U0TnRmVWtpVXhWNENmbHIwTDNHa0IxRENESnk0bi0zWTQ2elBQenlj?oc=5",
       "title": "Spanish Polls: Anti-Israel Prime Minister Pedro Sánchez Trails Conservatives",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa0JqQ3k0WGk0NVoxbHRNTHBTeDZxaVkyYmdzdGptNVB2MUVjb3lmcG1OTXRrWGs0U016Vi0tWTU5UmdYbk5IWHJfSTV0UEpEUkZvM0s1WjkwT3E1NFVfMzdGb3pyZ0J3cmhGWXMzVWJnSmpTTVh0MU1VcUJUcFZBamRua0kyOFVWSGUtQ243M2lITElJbmRRS3ZhNTNTenJJcXJTbFZiU0hJVFl1SHl5MnVB?oc=5",
-      "title": "Yemen’s Long War, Saudi Arabia’s Security Dilemma, and the Shifting Middle East",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -278,16 +343,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcUlqOWVpREpNM3JhZURpakpsU1BiUVBweTRuOHN6a2wxQWh6U3hIZUpwUm0tUThrNXVDVzJCX1M3WG9VaDZaQ2RqMkVjZklNZ0dIeTF6dmNBajRVV0oxZGFCV2xWT0xpYW1vVmlfSjRPd3hSc1o2QWhTM3g2MEZSOHJnUndtOHlxdl9NeVBaU2dCUjgtVG0yUDFHbVpMVEhDcmhEaGg0X3VGamcxRzNjdEQ3MNIBuwFBVV95cUxPZGhkWnBQN0hWV3BGc05CX0p6aXUtMU52R1owTnVOenItSVdIZEk1aTNMN05sYVBqanFUR2QzZGl1Y3FQN1JncGttUld6bGZWSkRnd0x1WmJrakJNT25HV0Y0a2JhZFZPMlJ1R05vb2RnTUJrRnBIYnFWUWtYdld5YVdnd3QwMjZlVk01RFVxRGNHVFozRkVIWmFhUVBmNjVhMUNSUGczNzE1cWprSEhGNk5wSmZKVHdNLXV3?oc=5",
-      "title": "Trump's New Tariff Threat To India Comes With Relief Clause, But At A Cost",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQlAtT3dPUUQ5T3YxTVBXWjA5Y0ZKdUtJZEp5dlVpaDhlTExVNnNVTk0yT014eWhoX3R0TEc4V0l5aTk5ZjNHOWdhUU5aQzlRYUZRSkU2RGlYM1NRS212NjY2bDUxMVVLSy1CUXBjQTd4b0xsM0JLYnJZTnFaNGltQW5YSkJReGZxZ1J2V2U1X2hBQTU5Q2h3SGlnMGtJRkhBUXd3QkpPS1BuRGJTX2U4akFpT0g?oc=5",
-      "title": "Japan Protests New US Tariff Rate, Allegation of Excess Capacity",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOU3lxZGdfOVhqQ05VUHJFOHgtSVlUU0xGTEZVVHY5SFhNenJUajJLVnExZ1hBbmp1RDE4Tm9tZnZYRWVyQTRhUUZRUjZSc1ZwZG55RW1NZHY5RDZGYUU5SGpaalhlU3VuZDVOelFqeWVrTi1YaVEwVlB1OU1qNXRhd0hScXRwZ0N6SDdyQkk5ckhOZFlNMkkxeTYydWhLSXFsd3h0bE1uQWVFS3h0NEhfbkZObw?oc=5",
+      "title": "New Zealand’s Official Election Results Reveal Hung Parliament",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -310,8 +367,16 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNOGNtOUF2NndXVHFVUjR6N3JjQjJQRDJmTzBkTHVuNDJqbzdvcWVPT2FxdDhOdGFLMjNJa25NQU4wSXVfWkd6aDhVNUpOVkc3Y2FpWkVqNjRibWhnS3N6T0RVczhrMDNTaUZ3WThvVVE0bGEwaGJpTWUyb3NMUncxTEtxRk5GZ2FvSG1vZWdxYlJkU2hLakVDQUlsRGI5bFVTREV1M2kxUWItSzFCU0kzWDRnVkltbTA?oc=5",
-      "title": "Japan conveys regrets to U.S. over new tariff plan: gov't spokesman",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOU0Z3NmZOeC0wNHZnYWM1Uk9oMnhBNjI3NEl2anpZbnVIeUUyVDhoRmhZb2tFRjZXTkx4RjhqWmpKUEpQWlBVQWNWeTI1UDAtOUNWQUhaQzc5UmZPVDhDcncxTHlyTl96elA2RncxS19aN0tUdDhXcjhyVHlZVVNndkxua3lzXzA4NVhLU2FSbE1LM1lFZTFyMS1qT2RvUmliQjd0c19OWXpRUC1YRk1sOWNlQWhvZw?oc=5",
+      "title": "Spain to Back Tougher China Policy If Conservatives Win Election",
+      "important": false,
+      "state": "not_in_current_queue",
+      "reason": "source_blocked",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVHh0LWZCMTM1ZTN3MF82aldGb3JGV0xrdXBNemo1cTZldE04Uk9HQWZ1RVpkY3VQQllNQkJlbEUtcTgyYTBHQWx2NEtWRDFzeUVZY09mUHU5dkJZYmt0dmsxUElVRUhUSm1XakJvZFFJLXltSUZJcGw2NzN3U0o0M3ZEZjQtRFRUMDhhRjJzak4xaV81cVVab1dYeFQ5MXR2Tl9scUxsRS1rSVJfZmVQYjIxbEtKZw?oc=5",
+      "title": "Sweden Riksbank's Jansson says inflation risks are on the rise",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -326,14 +391,6 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOVmxNd0t6a1VJOEozTUFERHVNUFZkcjZtdkI3VlhGUW5kb0tXbUtGbm9JZTFDZWdtbXdKYjIzcXQwRHZqa25TQllheDVjQmV0SU5qY3BEdnJXY1diVGg4VnpUSXBtSVVfQWFpQlRHUi1EN3RnaGtoZVpZb1VlUWpWQ3VUdUpzUW1rOWxfd3pLMzNBQXU2eFJzcDJxaTNMM01DUy1kRDJtOE5LdzF4bFZwb1VDVl8zQ2llbi1MZzRn0gHDAUFVX3lxTE5GNGNzMEZWdHRCeVgyeFlWbVBkWXVBVWxEQjVtUnRzSnVlTGRaeXZxRml2STFCRkVIOVVpd2M3eUJYOVRCZk1iVXNVcXFJN0tQMFZ0bTFzOU85bWM5eEh6c2R3WjJ5UGRFMFVpQ0tqNmVab29XZnBUdUctUEpTTGhnV0E2M2p1ZUNycDA0S3Frdy1xN2NMMnc5VTRsS3NxVXlhWVNFTHVhdFgzY2E1NnZiYjlWcmpLaWxlajRoVEdtUlpmVQ?oc=5",
-      "title": "Spain election 2026: Why Pedro Sánchez faces a tough fight against the right",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPaGVfYjZEakFKMm9nVy05U1B3TVVlZmN2RTQ0TmY2OWhqYXAxWjJHMEdCQnU5eVdTNjFZR1kxOTdPUnZXdzA0d0tmYkNOZXlYNG9wRTRKa1pQTm1WN2RpWGFIUW81SDJDQVdGTzR4QjQza0RqMGZiSDFZWlZwMDVBYVVkMFFjcjVXdnBGRzR5Y0sxOWl4ZmJPYm13OXF6SzVRaUcxeFhNeWJJenRpUnF6RVhicGlQWDJuZm1mQ0pQUXlNdw?oc=5",
       "title": "Canada 2027 Economic Outlook: Growth Could Rebound, but Inflation and Trade Risks Remain",
       "important": false,
@@ -342,24 +399,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbV9pcVF5eVhtT3lrNURzd0NOU0g3RWd6WDlxSDM2elZoVHJGaTFHbGZjTEFwWG9NTW1Zb0oxV0h0ODVYZU1ObmJZd2VWdnJxOTZlT1RnVWNlemNXbkJiOHlYRkdzWDJicFBJN3pDV0hoZm1ZanB2T1pCdnFpRTJrZlNLb1hva0RGa1BGTzluenA1UmdLMDk1bkM2T1Q4ZzhYZUdpenh1X3hBZENaN2tmbnJBSDBpZmI4dlhZS3ZjRHJtanc?oc=5",
-      "title": "Canada’s AtkinsRealis Expects Poland to Choose Second Nuclear Plant Partner in 2027",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNUEd4WlRDNlIyRnBHdFRWWDJYOFFwRmZ1LWJ5WlUtUmVtajFXQXBnbUV1OERLaGxBQVNfWDVNSjNma3hVNUxWaHJkbjNMUk1xRWYwNExzTXJuYWxPNXdEbUFMNE56V3RrLTlPalpGdmtnM3hyMHl2b3lHOWRlVWtMNGZmQVktcFUwWHEzck1VN1REMlNjUGxSSUY0Vm16SEFqcjFCOEtTR0hUNkhYS1FvUDBCY052S2Y2RXhjMFU2UHFVd1NM?oc=5",
       "title": "How Spain’s Election Will Shape Policy on Renewables and Nuclear",
-      "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
-      "rss_fallback_candidate": false
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNeDBuN1dIb2FGVkt1ZnV4bGVIeGVNbVRFNnRCZENfZldteDlIeDRXWDBxY1puUzZsZHdDNUJIV3BKSENHYzZ2ZC01NW9Qa3l6YUtlM1I3ZVAyd3FudGcxakNITDZuQXpaVjdOeHpGZzlnRmY3bHliblRBMF9FamJONzAtSFVHWFd3UVcwdUJXYWVNYkRpMm8wbURmSzZ5M2NBZW5lWVl5N2xObzhVNlRWZExKS1piQ2RGcjV6ODZPT2M4NFpQNVZiSw?oc=5",
-      "title": "South Korea Raises Interest Rates as Inflation and Financial Stability Risks Return to Focus",
       "important": false,
       "state": "not_in_current_queue",
       "reason": "source_blocked",
@@ -382,11 +423,11 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPMEx0TFdQZHM1WG1WcnZLbnRlWHpBM2dFZDlBRV83UHJ1aWswQWJuQjR6UGs2SmFBQlZBVENPSlNhTEQ3Z2ZsWFNsZVJxdmdfS0ZaeWR3YlhuUGxVLU9FRld5cEdQZkltcDQ5cnlKWl9jY1F3dGVxRVhkbDd2YlRrWS14NGU2U0wzS3d1ZEdhd09iMjk3UmNONjVfYkZ3TElRcDhOQXBUVGlxSnhVdUlaMlE4MjVJN3lMbjBBeFM5bGpLdk95TEE4ZHBFcG_SAdQBQVVfeXFMTUZubWFiNlN2bm9kNGRNN2ZFRnhfWXBDNDB5cVlBdG5ScjZrcmhGV3FjMm1WMDdJOU5QREliazFrYzJtWG5oeW9ta0VmYl9RMnRQaS01Z095Y3ZKaVM1eERZUGhvemtyeHlGTTBEVW9jSTF5Q0hTdlN2LVdNTVdqMllOUmxiVXJXeWlfTUFSN21sSFZWRkZBU2tSX0lLQi1QR0lGZlZCQl9XQ08yNExhc2NZb2VRaTh0cUJYekp5Q1haSk1jVmdtSm03bFJuempOSzVLaVg?oc=5",
-      "title": "US Cited India's Excess Manufacturing Capacity Behind 25% Tariff Plan. Data Suggests Otherwise",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNMm1hM3JVUHM0VHo3Q2ZtZVc0c1R4Unc3dHN1dXVPME5DLUZYbl9Lbi1zWkpCSEJNaGloZ0pEdTlDT3JBVExZcVVQdy1VQ29JVEw0SnRVdGhiLTNDX3c0THE3eElBNV83bnhqbW5rRE1BeDdhN2FMZjNYRk5NYzhjWXg2TWZsbFZNTllTYW5YWVhsOUl5YTUzYVhWWkpWREZPX2o3WUN3OXA0ckxBUy13LXFyZHBFSmNmdlZNTFNXVDBtTTBhYnkwMUpCcG44V2w0VWdmLWhsNVJacm5s?oc=5",
+      "title": "President William Samoei Ruto: We appreciate that our relationship between Kenya and Germany is growing",
       "important": false,
-      "state": "not_in_current_queue",
-      "reason": "source_blocked",
+      "state": "pending",
+      "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
@@ -398,16 +439,64 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPXy1pa052Y3RHV09PZnJQdWoyYjBoekNpMFJNRUhIU1RqTHk4R2ZmanEwSmhSaG10Z01SQTByU2V1RkNtd0VIQ1RHOWpoU1RRTFNxY2dCbWJRcXc0VjJXT0Fvc1pST1pnc010b1liMk1sN3JWdU9aTUlRaWJTaVhpUUhHVlVaRndyYjlrcmZYa3pyMnNZejRwLVp6aGZPNmYwT09CTUVLVFNOTGduX0pHT1BEdlZTZE1CVVlpdEVTYldhQUdqZ0JGZm5tOTJSYmR3TG42Y3ViYkhsSExZU1ln?oc=5",
-      "title": "𝗗𝗶𝗴𝗶𝘁𝗮𝗹 𝗲𝗰𝗼𝗻𝗼𝗺𝘆 𝗮𝗻𝗱 𝘁𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝘆 Partnerships between our universities, research institutions and technology enterprises will be instrumental in advancing innovation and positioning Kenya as a regional technology hub. ~ President William Samo",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMVZqVEhYOVJva3VjVXFRVURiNlBnbkVTZFZ2QlVMM0xfeXQ4RUhrX1BDYVhZLUkyM0tsZ0hCaWJMOGdNNEU5aFBvZ2FJYXU0cmk5eDZqSU84ekxMUjlRZy01VUd1SEd5bDFUSnZxV3djQ0Q0TUIzRzQ3WFB2b1JsaGZ2SFJBeHZqOXl4UG41VmRJcGN1Ym9FQXduTEhVejVTRFZQM1ZhZzdhaUNTZTFCVFhiWDBELTh4NDRBT3ZEUFFOd1A4VzE0c1RjT2kzVnBwWnd4RVhkZ21zb3pQT2c?oc=5",
+      "title": "President William Samoei Ruto and Germany President Frank-Walter Steinmeier witness the signing of a bilateral Memorandum of Understanding between Kenya and Germany at State House, Nairobi.",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQVVp3d0phV3pZNTd2NWRBWlpiZlNJRDBLMnMwNG92UTNaTHBlaFRSTThoLXdJWURMYXgwckRZRVU4YUxUTWx6VHdPVEstVnVERmpBeFh2bUxSRXE5ajI1eFM2VFY0NS1BN1dQa1lTaUR1MUFMX1ptRnV3V2RYTTFCNHlITHR1VUVueUNCaTJoZzhaYU0xNHduckFtem8wNWZpcWRWbkFOanBVVEloUko0MDB4T01icGVrSHc0V0Q2ZVk3bnlpYXVFd2c1YWh5T3FCREJ1SUdBRnMzTTZlTkFF?oc=5",
-      "title": "Kenya News Agency - KNA. . President William Samoei Ruto: Kenya appreciates Germany's role in peace and security in Africa.",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQTERtNjcyTlMwZkF1ZjF1eG9HelVoUGJVZ2xBTjBlTUlWVmw5YUFvTVVBT29PLTBoT3d3aTVWTVpIZC1OcTl1ell0cGVhQUg4bUFSV3FSdGN1VGpacWQzUzQyMHI5d3dleWdPbWtGTVZ6cER6UFZsU2d5X2E4dks5VG9fNU9CWUZSdTA5eFcweGNUODNpSUFMd0JwMWJyRFl1enVfTWVwTDh6X2ZuQzBzQmxWNnlzNTllanJvYjZMQ21FMnZjN0dPV1VnamFXUDk4UnNON0gzT2UtdG5zOWc?oc=5",
+      "title": "President Steinmeier: Kenya is not the same as it was 15 years ago; there is economic growth and the Nairobi capital has transformed",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNVndocmhpY1ZtNkppRHV2VlRhdkdETGtiYXR5N0RhaXVFTXpqMlNybG41ZHBpcjZIX2lIcFF0WWJCam9icGw2RU5RUUR4VENDZld2UWIyYVhidWRWaUdQZmlRd1JmajRqQ0c3b2p4YUx0TVlqdXI1WTNNTDV2WnB4ck10MFJoZFdzRzRZc2gwUm5EMFQ5TlM3b0YxSmd2cDBXNkhsY2JnVnVMUTdtRDZzWjhYSjZvN3JIS1FMdEdTV28xUG9JTktZa0tVU0ZPUTVZNUx6MnctNDRJSkNoNUpnNWdwOXdRbURa?oc=5",
+      "title": "New US tariff proposal could help India tap $2.69 billion of Vietnam’s exports to America",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE05RGJNRjczYmhZbzF6R1N1VEtjNlBOeThkam5QWjBpNFhJVno1ZnRHZURvMS1aMjdSVmZvZnhpZ3JKRE1EcjNUUVFKRVVYaXpDcXZJelV3NzVXQQ?oc=5",
+      "title": "국회 입법조사처 \"2030 남성 보수화론은 과장\"",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0xdmVYMUVVNm53dzZOX0dveURCQUdlM1gwb3pXTjlpakVPdWZicVVFcFFpTkxQazNTOGJ0QUJURldYZUlnMldfYU16M3BuWlp6TUt5c1phZGtOYlBPNzVV?oc=5",
+      "title": "반도체 수출 1조6000억달러⋯원유·가스 첫 추월",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9Oal9fQzdsUW16cDFGNUtpdHB1cGV5RG1KenRUMWZjQUl5b3FFUHJ0dlBTT2FvbV9MREVfaDJ1aU1NaUlza01Vb2tzWHBvWVpQaVpyU3NNVzMxeHE5bUhCRTlnMXI5aTA?oc=5",
+      "title": "신약 개발 성공해도 돈 벌기 어렵다…10개 중 9개 투자비 회수 난망",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBNbWY3Z2hNLWJsb3dsYmdKakJjZEVaU21VaTV3WEFZV196bldhMGJEeUlFMHJlSjV2UHU5eFhrTS1BQldGTTdKemhscThySFJfLW55ZE1PUGpFeHN0bUtjaDR5MzNHZ3RVODBhU0IxTnBuNmdySG400gF8QVVfeXFMTkRUVDZGZkdHZ1VDMWpGcWtvc01hVlJwd0lwdDJUYU9OZXV2NjdYRFNTUmprbFRuWEkxd1lrOFJfR1NVbXE3S0dMMXBLNk9qTGlsSFBDVEtqYWxuOXc4WTMzUHFZTENRQlFLeDM3cldOTHpxVlYzR2NNRC1BcQ?oc=5",
+      "title": "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1Ic0ZvSFRUTW1kSHk1emdQUmg3dUFvb3VMM3lVeHpKWEQwaVhiSlJVaUg2NnhXemhhOHZDSXVwYS0xYXlydFNCOXlsRjQtLUs4b2pwTkxpaGJOZUxZbmN4OFFRcmZWanF2ZHctN1BTdDNOdDlI?oc=5",
+      "title": "국회입법조사처 \"정치 양극화·2030남성 보수화, 과장 가능성\"",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -422,16 +511,24 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNOFMxekR2cDh2Rmd2dk5tSmw2SDhNQUozWFFHVXV3M2hhdV9lX20xQy15YWZSV3NIRkJoZDNTTVhEVkJxaHVHcEhuSDhrNGFGRHo4cTItM0NxdTRwdWhKeUVjOHVDMm84a3lFaDJUeXJtUlBuMVBNNlJsYXRyVXk1ODRKd1lob3l2MlRQUTFLYU8?oc=5",
-      "title": "Indonesia Seeks 'Fair Trade Ties' After Trump’s 18% Tariff",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORUpobE96bFJKSTEwVFQ4NkY4bnhHSHY2TXZyN050a2dRYjQ3eGlhRVVlTkRyUDJ2N3laeGtnUDB6S2VWM0NlRlJFaVFORlFQVGpKWG1xSWVvLWE1OG4xR1dTdmI1cEttZlNMYjBOYXBZNUE5UFN6d3VReGRvOVloZzlfMHZmdW8?oc=5",
+      "title": "프로지니어 “미국 항암백신 4종 ‘프로롱’ 비독점 기술이전…동일 암종 추가 계약 가능”",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNR1p4TjdNMDJQSHBJdXc4aHF1dFhFRWF3TXdabFBWTkY4Mko3Q3ozX295Ti1aYWRUTUZJUXo5aS11SjBKWmRBZUdaRjd5X082aDY1MC02VzVlcFpKQ0hTa1UySGpKYmU1SExKQXZ5MFRmYVU5QjhHdTRSUzhKTldHcWxUSldDUTdscnY2eWR2UWp1Mm5lcWc?oc=5",
-      "title": "US Tariff Hike on Bangladesh Exports | US proposes tariffs of up to 18% on Bangladesh’s goods",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQNHVBdWN4bDRaT3JHREc0RkRyeHY0SEg4a0M2aDBvSjNBNm5aWDhnTEJ4N24xX3RfMzZpaEZGVEduSVFsdWZkZzZTNUo0Z0YxWEhodXZYZzU3cTFweVlTTTV4eU9kc2lhTEpNc2xtbEl4anJUcV9aY2xEZWJZQS1tU0hyc1k5dGt6OVE?oc=5",
+      "title": "Soviet atomic bomb birthplace to help Uzbekistan develop small nuclear plants",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUHJ0UWQ0RnY0U1lfb21fRmR2QzNFNTVGeTdsNFhNeHNLd1BHc3lOakVuZzktX0xBWWZsLTRxLUpOU0hjQjhMRDJGdG9vbFctZXZ1LWdYcXRWMzdXMEw5SDU0QWpFclNwcUVYNjhlTFNRUnp1WkF2LWp4SGc2bW1rbF9ydENvdWFFV1A4?oc=5",
+      "title": "Brazil’s Inflation Print Cooled, But Food Prices Ran Hot",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -446,8 +543,8 @@
       "rss_fallback_candidate": false
     },
     {
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOWTEyTzlnRXBUSFRJTXhaTVVkaEhFT0NsMlVYOWhWUFZ4WHZpemczblFySzBBZHZ4WHlZaVVrWlNBTTNLLU5ValZJQ0lSNUoxTnJoaldJU3k2UHBFU3pOYlM3aEZ5ZlU2aF9rdGtaTHo3M1pFZ0JHSlJuOUg1cjZaUmVsYm4zakllZG5KSVA2dFNfWER3NmxmQlVpR2h3anN0dmo4Y0VYSHIyNTdmdTc0?oc=5",
-      "title": "Breaking: Official results of New Zealand's national election announced",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQ3prY0RNaTlvcm5tZE93WTBpMHlnczAxdW9Cc3lmaEZpTEd5bG81X1dXUmIzVklZdV9IRVYtUXJMM1lmRTI4eHlZYWp5UmNoYm1qWmFzeGZ5M1FkT2J5VUhpb0pxUDJHcGtfNDdGMm0tQ1d3ZkllS0xDaVN6cDRURWQtU1ExekpsOHRfS0xLc19lbUpuYmU2eWJJc192c1p2c01yQlRHcEt3SGdCeDU4bQ?oc=5",
+      "title": "Pakistan and Bangladesh entering new era of ties, says Bangladesh Parliament Speaker",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
@@ -462,8 +559,24 @@
       "rss_fallback_candidate": false
     },
     {
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcE1ualZDVENvOENGZXAwQnlzdmdTdG5IVzNRUTNhRmFaYVJ3ZE5NMGh2Nk1IU2R4cFdyU3FKNHJMTU9tckFHU1Q0UnYxYXc0Q2QyS3lLS3czUV92V2VJc0MzSTFXNGZlTk9xN3hfeHZJQmRnaENTcWhwRTE2RTNsRjh5NEVOd0hJSk9WRVEzbVR5c1dHNjJXSkpZdGZmdFQ3SHhudUtEMXdLMWJDZVJ2bGFzck1DTHlueGc?oc=5",
+      "title": "UK shields fighter jets, contacts reservists in Cold War-scale push amid Russia threat",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQb3ROdFBZMEI5cWlYS0o1T191S1h1d0o3dldObnFnVk5Ta0x3WmJ2SzRSNkZJUWRfVFdMNlZ4TW9QbUt3WXQ2ZUVkVEpjV1l1WU1qV0hxMTRWMFdScVU4Yjc4d0pNWk5id3o1Njc0UGwyM0d3YXFKam1fNTJUUjgtUk5LVEUwYkpJNG5lbTNHcnZoaks0VXhlaTJHN19CQmpnS2JJMzVzbmJ2b3JpNy1Ba3RDQ3d2MEs0MjNtMg?oc=5",
       "title": "Why Did a US Jury Convict China’s Huawei? Iran Sanctions Case Deals Blow to Beijing",
+      "important": false,
+      "state": "pending",
+      "reason": "in_retry_queue",
+      "rss_fallback_candidate": false
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQM2EtcU9JbGxRRjY1bmpzc184eWpRSlNnaGNFVWpPN3VOUld2bTJOTm9uU3N1TUJMNmFpeThIWi1tZEJqYkI2SjlaVXh2WXY5T09sXzc3bVpVU3J1Vm5qeF9RWDlCREx1ZV82LUIwdmR4ZGRINE9FV0ZJQXRLWEJzeWdWUzQ5VVpzNm1SSEI3VkVERnZYeVFaeU9WT2pId1NIVTYtTm5nRG5UWENkUXBvT3NhRUlXNGVGQ1pjTHJBOA?oc=5",
+      "title": "New Zealand faces hung Parliament as coalition loses majority",
       "important": false,
       "state": "pending",
       "reason": "in_retry_queue",
