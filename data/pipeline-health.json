@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T15:27:51.294249+00:00",
+  "updated": "2026-11-28T16:06:44.709380+00:00",
   "scope": "data_file_presence_json_syntax_and_nonblocking_warnings",
   "dataset_count": 17,
   "warning_count": 1,
@@ -7,15 +7,15 @@
     {
       "dataset": "collection-publication-audit.json",
       "reason": "important_collected_articles_unpublished",
-      "count": 1
+      "count": 14
     }
   ],
   "datasets": {
     "articles.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 909193,
-      "updated": "2026-11-28T14:45:31.549549+00:00"
+      "bytes": 908786,
+      "updated": "2026-11-28T15:43:06.005217+00:00"
     },
     "event-timelines.json": {
       "present": true,
@@ -32,26 +32,26 @@
     "weekly-report.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 46214,
-      "updated": "2026-11-28T15:27:50.814288+00:00"
+      "bytes": 46264,
+      "updated": "2026-11-28T16:06:44.387062+00:00"
     },
     "evidence-index.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 1042977,
-      "updated": "2026-11-28T15:27:50.535926+00:00"
+      "bytes": 1042482,
+      "updated": "2026-11-28T16:06:44.144012+00:00"
     },
     "geo-coverage.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 154445,
-      "updated": "2026-11-28T15:27:50.596412+00:00"
+      "bytes": 154832,
+      "updated": "2026-11-28T16:06:44.198150+00:00"
     },
     "coverage-profiles.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 396946,
-      "updated": "2026-11-28T15:27:50.634223+00:00"
+      "bytes": 397172,
+      "updated": "2026-11-28T16:06:44.224432+00:00"
     },
     "breaking-candidates.json": {
       "present": true,
@@ -62,32 +62,32 @@
     "historical-index.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 1788290,
-      "updated": "2026-11-28T15:27:50.740501+00:00"
+      "bytes": 1790550,
+      "updated": "2026-11-28T16:06:44.297619+00:00"
     },
     "country-coverage-trends.json": {
       "present": true,
       "valid_json": true,
       "bytes": 9946,
-      "updated": "2026-11-28T15:27:50.878011+00:00"
+      "updated": "2026-11-28T16:06:44.429730+00:00"
     },
     "specialized-indexes.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 162212,
-      "updated": "2026-11-28T15:27:50.931154+00:00"
+      "bytes": 162256,
+      "updated": "2026-11-28T16:06:44.463995+00:00"
     },
     "translation-quality.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 689323,
-      "updated": "2026-11-28T15:27:50.971899+00:00"
+      "bytes": 688924,
+      "updated": "2026-11-28T16:06:44.491610+00:00"
     },
     "source-provenance.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 568733,
-      "updated": "2026-11-28T15:27:51.030931+00:00"
+      "bytes": 568522,
+      "updated": "2026-11-28T16:06:44.530300+00:00"
     },
     "personalization-options.json": {
       "present": true,
@@ -98,14 +98,14 @@
     "publication-gaps.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 122389,
-      "updated": "2026-11-28T15:27:51.103612+00:00"
+      "bytes": 126281,
+      "updated": "2026-11-28T16:06:44.581787+00:00"
     },
     "collection-publication-audit.json": {
       "present": true,
       "valid_json": true,
-      "bytes": 9668,
-      "updated": "2026-11-28T15:27:51.215883+00:00"
+      "bytes": 33934,
+      "updated": "2026-11-28T16:06:44.655183+00:00"
     },
     "cross-source-coverage.json": {
       "present": true,
@@ -116,14 +116,14 @@
   },
   "publication_metrics": {
     "published_total": 1000,
-    "pending_total": 219,
+    "pending_total": 226,
     "pending_important": 87,
     "latest_collection": {
-      "collected": 1000,
-      "published": 985,
-      "pending": 0,
-      "not_in_current_queue": 15,
-      "important_unpublished": 1
+      "collected": 180,
+      "published": 130,
+      "pending": 20,
+      "not_in_current_queue": 30,
+      "important_unpublished": 14
     }
   }
 }
